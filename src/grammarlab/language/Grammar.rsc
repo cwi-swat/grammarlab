@@ -6,7 +6,7 @@ alias GProdSet  =  set[GProd];
 alias GExprList = list[GExpr];
 alias GExprSet  =  set[GExpr];
 
-alias GGrammar = tuple[list[str] nts, set[str] roots, GProds prods];
+data GGrammar = grammar(list[str] nts, list[str] roots, GProds prods);
 alias GProds = map[str,GProdList];
 
 data GProd =
