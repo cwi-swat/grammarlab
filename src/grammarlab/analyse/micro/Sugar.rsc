@@ -5,9 +5,6 @@ import grammarlab::language::Grammar;
 import grammarlab::language::Micro;
 import grammarlab::transform::Normal;
 
-// set[str] check4mp(contains-star(), GGrammar g) = {n | str n <- g.nts, /star(_) := g.prods[n]};
-// bool     check4mp(contains-star(), GGrammar g, str n) = n in g.nts && /star(_) := g.prods[n];
-
 set[str] check4mp(fakeOptional(), GGrammar g) = {n | str n <- g.nts, isfakeopt(normanon(g.prods[n]))};
 bool     check4mp(fakeOptional(), GGrammar g, str n) = n in g.nts && isfakeopt(normanon(g.prods[n]));
 
