@@ -8,6 +8,7 @@ extend grammarlab::analyse::micro::Metasyntax;
 extend grammarlab::analyse::micro::Global;
 extend grammarlab::analyse::micro::Sugar;
 extend grammarlab::analyse::micro::Naming;
+extend grammarlab::analyse::micro::Concrete;
 
 bool bracketpair("\"","\"") = true;
 bool bracketpair("\'","\'") = true;

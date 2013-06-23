@@ -64,7 +64,7 @@ data Micropattern
 	| miltiwordLax()
 	// Concrete
 	| preterminal()
-	| keyword()
+	| \keyword()
 	| keywords()
 	| operator()
 	| operators()
