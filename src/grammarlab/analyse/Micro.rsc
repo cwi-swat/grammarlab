@@ -6,6 +6,19 @@ import grammarlab::language::Micro;
 
 extend grammarlab::analyse::micro::Metasyntax;
 extend grammarlab::analyse::micro::Global;
+extend grammarlab::analyse::micro::Sugar;
+
+bool bracketpair("\"","\"") = true;
+bool bracketpair("\'","\'") = true;
+bool bracketpair("(",")") = true;
+bool bracketpair("[","]") = true;
+bool bracketpair("[[","]]") = true;
+bool bracketpair("{","}") = true;
+bool bracketpair("{{","}}") = true;
+bool bracketpair("\<","\>") = true;
+bool bracketpair("\<\<","\>\>") = true;
+bool bracketpair("\<!--","--\>") = true; // !!!
+default bool bracketpair(str x, str y) = false;
 
 @doc{Checks one nonterminal in a grammar for a micropattern}
 // by default, the micropattern is assumed to NOT be satisfied

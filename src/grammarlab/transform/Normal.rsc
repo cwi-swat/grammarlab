@@ -3,6 +3,11 @@ module grammarlab::transform::Normal;
 
 import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
+import grammarlab::transform::SLEIR;
+
+public GGrammar  normanon(GGrammar g)   =  RetireSs(RetireLs(g));
+public GProdList normanon(GProdList ps) = [RetireSs(RetireLs(p)) | p <- ps];
+public GProd     normanon(GProd p)      =  RetireSs(RetireLs(p));
 
 public GGrammar normalise(GGrammar g)
 {
