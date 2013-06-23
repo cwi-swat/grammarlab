@@ -20,7 +20,7 @@ data GExpr
 	= epsilon()									// empty string language or trivial term language
 	| empty()									// empty language
 	| anything()								// universal symbol
-	| val(BGFValue v)							// built-in syntactic category
+	| val(GValue v)								// built-in syntactic category
 	| nonterminal(str t)						// user-defined syntactic category
 	| terminal(str t)							// static part of the structure
 	| labelled(str lab, GExpr expr)				// labelled part: e.g., a constructor, a line number

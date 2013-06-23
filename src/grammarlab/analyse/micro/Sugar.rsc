@@ -11,8 +11,8 @@ bool     check4mp(fakeOptional(), GGrammar g, str n) = n in g.nts && isfakeopt(n
 // N = … | ε, in all the variants
 bool isfakeopt([production(_,choice([nonterminal(_),epsilon()]))]) = true;
 bool isfakeopt([production(_,choice([epsilon(),nonterminal(_)]))]) = true;
-bool isfakeopt([production(_,nonterminal(_)),producton(_,epsilon())]) = true;
-bool isfakeopt([producton(_,epsilon()),production(_,nonterminal(_))]) = true;
+bool isfakeopt([production(_,nonterminal(_)),production(_,epsilon())]) = true;
+bool isfakeopt([production(_,epsilon()),production(_,nonterminal(_))]) = true;
 bool isfakeopt(GProdList _) = false;
 
 // TODO: does not work on vertically defined fake separator lists
@@ -35,7 +35,7 @@ bool isfakeseplist(str L, choice([sequence([GExpr E,GExpr S,nonterminal(L)]),E])
 default bool isfakeseplist(str _, GExpr _) = false;
 
 set[str] check4mp(fakeSLStar(), GGrammar g) = {n | str n <- g.nts, [production(str nt,optional(GExpr e))] := g.prods[n],   isfakeseplist(normanon(nt,e))};
-bool     check4mp(fakeSLStar(), GGrammar g, str n) = n in g.nts && [production(str nt,optional(GExpr e))] := g.prods[n] && isfakeseplist(normanon(nt,e))};
+bool     check4mp(fakeSLStar(), GGrammar g, str n) = n in g.nts && [production(str nt,optional(GExpr e))] := g.prods[n] && isfakeseplist(normanon(nt,e));
 
 set[str] check4mp(fakeSL(), GGrammar g) = check4mp(fakeSLPlus(), g) + check4mp(fakeSLStar(), g);
 bool     check4mp(fakeSL(), GGrammar g, str n) = check4mp(fakeSLPlus(), g, n) && check4mp(fakeSLStar(), g, n);

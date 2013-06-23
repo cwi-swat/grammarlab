@@ -7,7 +7,7 @@ import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
 import grammarlab::lib::Sizes;
 
-public BGFGrammar readBGF(loc f)
+public GGrammar readBGF(loc f)
 {
 	if (document(element(namespace(_,"http://planet-sl.org/bgf"),"grammar",L)) := parseXMLDOMTrim(readFile(f)))
 		return grammar(

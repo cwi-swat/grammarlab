@@ -25,7 +25,7 @@ Node prod2xml(GProd p)
 		rhs = e;
 	}
 	else
-		rhs = p.rhs
+		rhs = p.rhs;
 	kids += element(none(),"nonterminal",[charData(p.lhs)]);
 	kids += expr2xml(rhs);
 	return element(namespace("bgf","http://planet-sl.org/bgf"),"production",kids);

@@ -26,13 +26,13 @@ set[str] check4mp(disallowed(), GGrammar g) = {n | str n <- g.nts, [production(n
 bool     check4mp(disallowed(), GGrammar g, str n) = n in g.nts && [production(n,empty())] := g.prods[n];
 
 set[str] check4mp(singleton(), GGrammar g) = {n | str n <- g.nts, [production(n,E)] := g.prods[n],   choice(_) !:= E,   empty() !:= E};
-bool     check4mp(singleton(), GGrammar g, str n) = n in g.nts && [production(n,E)] := g.prods[n] && choice(_) !:= E && empty() !:= E};
+bool     check4mp(singleton(), GGrammar g, str n) = n in g.nts && [production(n,E)] := g.prods[n] && choice(_) !:= E && empty() !:= E;
 
 set[str] check4mp(horizontal(), GGrammar g) = {n | str n <- g.nts, [production(n,choice(L))] := g.prods[n],   allnonterminals(L)};
 bool     check4mp(horizontal(), GGrammar g, str n) = n in g.nts && [production(n,choice(L))] := g.prods[n] && allnonterminals(L);
 
 set[str] check4mp(vertical(), GGrammar g) = {n | str n <- g.nts, len(g.prods[n])>1,   /production(n,choice(_)) !:= g.prods[n]};
-bool     check4mp(vertical(), GGrammar g, str n) = n in g.nts && len(g.prods[n])>1 && /production(n,choice(_)) !:= g.prods[n]};
+bool     check4mp(vertical(), GGrammar g, str n) = n in g.nts && len(g.prods[n])>1 && /production(n,choice(_)) !:= g.prods[n];
 
 set[str] check4mp(zigzag(), GGrammar g) = {n | str n <- g.nts, len(g.prods[n])>1,   /production(n,choice(_)) := g.prods[n]};
-bool     check4mp(zigzag(), GGrammar g, str n) = n in g.nts && len(g.prods[n])>1 && /production(n,choice(_)) := g.prods[n]};
+bool     check4mp(zigzag(), GGrammar g, str n) = n in g.nts && len(g.prods[n])>1 && /production(n,choice(_)) := g.prods[n];

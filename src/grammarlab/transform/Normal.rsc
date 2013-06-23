@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::transform::Normal;
+module grammarlab::transform::Normal
 
 import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
