@@ -6,15 +6,18 @@ alias GProdSet  =  set[GProd];
 alias GExprList = list[GExpr];
 alias GExprSet  =  set[GExpr];
 
-data GGrammar = grammar(list[str] nts, list[str] roots, GProds prods);
 alias GProds = map[str,GProdList];
 
-data GProd =
-	production (str lhs, GExpr rhs)
+data GGrammar
+	= grammar(list[str] nts, list[str] roots, GProds prods)
 ;
 
-data GExpr =
-	  epsilon()									// empty string language or trivial term language
+data GProd
+	= production (str lhs, GExpr rhs)
+;
+
+data GExpr
+	= epsilon()									// empty string language or trivial term language
 	| empty()									// empty language
 	| anything()								// universal symbol
 	| val(BGFValue v)							// built-in syntactic category
