@@ -9,7 +9,7 @@ public GGrammar normalise(GGrammar g)
 	list[str] nts = g.nts;
 	GProds ps = normalise(g.prods);
 	
-	for (n <- {n | /nonterminal(n) := ps})
+	for (n <- toSet(g.roots) + {n | /nonterminal(n) := ps})
 		if (n notin nts)
 		{
 			g.nts += n;

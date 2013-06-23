@@ -7,33 +7,16 @@ import grammarlab::language::Micro;
 extend grammarlab::analyse::micro::Metasyntax;
 extend grammarlab::analyse::micro::Global;
 
-// alias MicroGrammar = map[str,MicroClassify];
-// alias MicroClassify = set[Micropattern];
-
 @doc{Checks one nonterminal in a grammar for a micropattern}
-default bool check4mp(Micropattern mp, str n, GGrammar g)
-{
-	// ...
-	return false;
-}
+// by default, the micropattern is assumed to NOT be satisfied
+default bool check4mp(Micropattern mp, str n, GGrammar g) = false;
 
 @doc{Checks one nonterminal in a grammar for all micropatterns}
-default MicroClassify nt2mp(str n, GGrammar g)
-{
-	// ...
-	return {};
-}
+MicroClassify nt2mp(str n, GGrammar g) = {mp | Micropattern mp <- ALLMPatterns, check4mp(mp,n,g)};
 
 @doc{Checks all nonterminals in a grammar for all micropatterns}
-default MicroGrammar g2mp(GGrammar g)
-{
-	// ...
-	return ();
-}
+MicroGrammar g2mp(GGrammar g) = (nt:nt2mp(nt,g) | str nt <- g.gnts);
 
 @doc{Checks all nonterminals in a grammar for a micropattern}
-default set[str] check4mp(Micropattern mp, GGrammar g)
-{
-	// ...
-	return {};
-}
+// this is always correct, but non-default variants are better optimised
+default set[str] check4mp(Micropattern mp, GGrammar g) = {n | str n <- g.nts, check4mp(mp,n,g)};
