@@ -111,4 +111,20 @@ data Micropattern
 	| pureSequence()
 ;
 
-MicroClassify ALLMPatterns = {containsStar(), containsPlus(), containsOptional(), containsEpsilon(), containsFailure(), containsUniversal(), containsInteger(), containsString(), containsBoolean(), containsSelector(), containsLabel(), containsMark(), containsSequence(), containsDisjunction(), containsConjunction(), containsNegation(), containsSLStar(), containsSLPlus(), containsTerminal(), containsNonterminal(), abstractSyntax(), top(), bottom(), leaf(), root(), multiroot(), disallowed(), singleton(), horizontal(), vertical(), zigzag(), fakeOptional(), fakeSL(), fakeSLStar(), fakeSLPlus(), exprInfixLayer(), exprPrefixLayer(), exprPostfixLayer(), exprLowestLayer(), yaccPlusLeft(), yaccPlusRight(), yaccStarLeft(), yaccStarRight(), camelCase(), mixedCase(), lowerCase(), upperCase(), miltiword(), camelCaseLax(), mixedCaseLax(), lowerCaseLax(), upperCaseLax(), miltiwordLax(), preterminal(), keyword(), keywords(), operator(), operators(), operatorsMixed(), words(), tokens(), modifiers(), range(), literalNumeric(), literalSimple(), literalFirstRest(), emptyStatement(), chomskyNormalForm(), greibachNormalForm(), abstractNormalForm(), justEmpty(), justFailure(), justOptional(), justPlus(), justStar(), justSLPlus(), justSLStar(), justChains(), justOneChain(), reflexiveChain(), chainOrTerminal(), chainsAndTerminals(), constructor(), \bracket(), bracketSelf(), bracketFakeSLStar(), bracketFakeSLPlus(), bracketOptional(), bracketPlus(), bracketStar(), bracketSLStar(), bracketSLPlus(), delimited(), distinguished(), elementAccess(), pureSequence()};
+MicroClassify ALLMPatterns =
+	{containsStar(), containsPlus(), containsOptional(), containsEpsilon(), containsFailure(),
+	containsUniversal(), containsInteger(), containsString(), containsBoolean(), containsSelector(),
+	containsLabel(), containsMark(), containsSequence(), containsDisjunction(), containsConjunction(),
+	containsNegation(), containsSLStar(), containsSLPlus(), containsTerminal(), containsNonterminal(),
+	abstractSyntax(), top(), bottom(), leaf(), root(), multiroot(), disallowed(), singleton(), horizontal(),
+	vertical(), zigzag(), fakeOptional(), fakeSL(), fakeSLStar(), fakeSLPlus(), exprInfixLayer(),
+	exprPrefixLayer(), exprPostfixLayer(), exprLowestLayer(), yaccPlusLeft(), yaccPlusRight(), yaccStarLeft(),
+	yaccStarRight(), camelCase(), mixedCase(), lowerCase(), upperCase(), miltiword(), camelCaseLax(),
+	mixedCaseLax(), lowerCaseLax(), upperCaseLax(), miltiwordLax(), preterminal(), keyword(), keywords(),
+	operator(), operators(), operatorsMixed(), words(), tokens(), modifiers(), range(), literalNumeric(),
+	literalSimple(), literalFirstRest(), emptyStatement(), chomskyNormalForm(), greibachNormalForm(),
+	abstractNormalForm(), justEmpty(), justFailure(), justOptional(), justPlus(), justStar(), justSLPlus(),
+	justSLStar(), justChains(), justOneChain(), reflexiveChain(), chainOrTerminal(), chainsAndTerminals(),
+	constructors(), \bracket(), bracketSelf(), bracketFakeSLStar(), bracketFakeSLPlus(), bracketOptional(),
+	bracketPlus(), bracketStar(), bracketSLStar(), bracketSLPlus(), delimited(), distinguished(),
+	elementAccess(), pureSequence()};

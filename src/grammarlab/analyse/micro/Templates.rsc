@@ -112,17 +112,17 @@ set[str] check4mp(distinguished(), GGrammar g) = {n | str n <- g.nts,
 	(  [production(n,choice(L))] := normanon(g.prods[n])
 	|| [production(n,star(choice(L)))] := normanon(g.prods[n])
 	|| [production(n,plus(choice(L)))] := normanon(g.prods[n])
-	| it && terminal(_) := e
-		 && sequence([terminal(_),nonterminal(_)]) := e ||
-		 && sequence([terminal(_),optional(nonterminal(_))]) := e
+	| it && (terminal(_) := e ||
+			sequence([terminal(_),nonterminal(_)]) := e ||
+			sequence([terminal(_),optional(nonterminal(_))]) := e)
 	| e <- L )};
 bool     check4mp(distinguished(), GGrammar g, str n) = n in g.nts &&
 	(  [production(n,choice(L))] := normanon(g.prods[n])
 	|| [production(n,star(choice(L)))] := normanon(g.prods[n])
 	|| [production(n,plus(choice(L)))] := normanon(g.prods[n])
-	| it && terminal(_) := e
-		 && sequence([terminal(_),nonterminal(_)]) := e ||
-		 && sequence([terminal(_),optional(nonterminal(_))]) := e
+	| it && (terminal(_) := e ||
+			sequence([terminal(_),nonterminal(_)]) := e ||
+			sequence([terminal(_),optional(nonterminal(_))]) := e)
 	| e <- L );
 
 set[str] check4mp(elementAccess(), GGrammar g) = {n | str n <- g.nts,
