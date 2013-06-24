@@ -10,10 +10,13 @@ import grammarlab::lib::Sizes;
 public GGrammar readBGF(loc f)
 {
 	if (document(element(namespace(_,"http://planet-sl.org/bgf"),"grammar",L)) := parseXMLDOMTrim(readFile(f)))
+	{
+		ps = [mapprod(p) | p:element(namespace(_,"http://planet-sl.org/bgf"),_,_) <- L];
 		return grammar(
-			squeeze([nt | element(namespace(_,"http://planet-sl.org/bgf"),nt,_) <- L]),
+			squeeze([p.lhs | p <- ps]),
 			[s | element(none(),"root",[charData(str s)]) <- L],
-			prodsByNT([mapprod(p) | element(namespace(_,"http://planet-sl.org/bgf"),name,kids) <- L]));
+			prodsByNT(ps));
+	}
 	else
 		throw "<f> is not a proper BGF file";
 }
