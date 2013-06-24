@@ -11,6 +11,7 @@ extend grammarlab::analyse::micro::Naming;
 extend grammarlab::analyse::micro::Concrete;
 extend grammarlab::analyse::micro::Normal;
 extend grammarlab::analyse::micro::Folding;
+extend grammarlab::analyse::micro::Templates;
 
 bool bracketpair("\"","\"") = true;
 bool bracketpair("\'","\'") = true;
