@@ -115,18 +115,18 @@ default bool yaccPR(GProdList _) = false;
 set[str] check4mp(yaccStarLeft(), GGrammar g) = {n | str n <- g.nts, yaccSL(normanon(g.prods[x]))};
 bool     check4mp(yaccStarLeft(), GGrammar g, str n) = n in g.nts && yaccSL(normanon(g.prods[n]));
 
-bool yaccPR([production(x,sequence([nonterminal(x),nonterminal(_)])), production(x,epsilon())]) = true;
-bool yaccPR([production(x,epsilon()), production(x,sequence([nonterminal(x),nonterminal(_)]))]) = true;
-bool yaccPR([production(x,choice([sequence([nonterminal(x),nonterminal(_)]),epsilon()]))]) = true;
-bool yaccPR([production(x,choice([epsilon(),sequence([nonterminal(x),nonterminal(_)])]))]) = true;
+bool yaccSL([production(x,sequence([nonterminal(x),nonterminal(_)])), production(x,epsilon())]) = true;
+bool yaccSL([production(x,epsilon()), production(x,sequence([nonterminal(x),nonterminal(_)]))]) = true;
+bool yaccSL([production(x,choice([sequence([nonterminal(x),nonterminal(_)]),epsilon()]))]) = true;
+bool yaccSL([production(x,choice([epsilon(),sequence([nonterminal(x),nonterminal(_)])]))]) = true;
 default bool yaccSL(GProdList _) = false;
 
 
 set[str] check4mp(yaccStarRight(), GGrammar g) = {n | str n <- g.nts, yaccSR(normanon(g.prods[x]))};
 bool     check4mp(yaccStarRight(), GGrammar g, str n) = n in g.nts && yaccSR(normanon(g.prods[n]));
 
-bool yaccPR([production(x,sequence([nonterminal(_),nonterminal(x)])),production(x,epsilon())]) = true;
-bool yaccPR([production(x,epsilon()),production(x,sequence([nonterminal(_),nonterminal(x)]))]) = true;
-bool yaccPR([production(x,choice([sequence([nonterminal(_),nonterminal(x)]),epsilon()]))]) = true;
-bool yaccPR([production(x,choice([epsilon(),sequence([nonterminal(_),nonterminal(x)])]))]) = true;
-default bool yaccSL(GProdList _) = false;
+bool yaccSR([production(x,sequence([nonterminal(_),nonterminal(x)])),production(x,epsilon())]) = true;
+bool yaccSR([production(x,epsilon()),production(x,sequence([nonterminal(_),nonterminal(x)]))]) = true;
+bool yaccSR([production(x,choice([sequence([nonterminal(_),nonterminal(x)]),epsilon()]))]) = true;
+bool yaccSR([production(x,choice([epsilon(),sequence([nonterminal(_),nonterminal(x)])]))]) = true;
+default bool yaccSR(GProdList _) = false;

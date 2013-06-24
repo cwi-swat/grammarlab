@@ -3,6 +3,7 @@ module grammarlab::analyse::Micro
 
 import grammarlab::language::Grammar;
 import grammarlab::language::Micro;
+import IO;
 
 extend grammarlab::analyse::micro::Metasyntax;
 extend grammarlab::analyse::micro::Global;
@@ -27,14 +28,25 @@ default bool bracketpair(str x, str y) = false;
 
 @doc{Checks one nonterminal in a grammar for a micropattern}
 // by default, the micropattern is assumed to NOT be satisfied
-default bool check4mp(Micropattern mp, str n, GGrammar g) = false;
+default bool check4mp(Micropattern mp, GGrammar g, str n)
+ //= false;
+{
+	println("Default case of check4mp of <mp> of <n>!");
+	return false;
+}
+
+bool debug_check4mp(Micropattern mp, GGrammar g, str n)
+{
+	println("Checking check4mp of <mp> of <n>...");
+	return check4mp(mp,g,n);
+}
 
 @doc{Checks one nonterminal in a grammar for all micropatterns}
-MicroClassify nt2mp(str n, GGrammar g) = {mp | Micropattern mp <- ALLMPatterns, check4mp(mp,n,g)};
+public MicroClassify nt2mp(GGrammar g, str n) = {mp | Micropattern mp <- ALLMPatterns, check4mp(mp,g,n)};
 
 @doc{Checks all nonterminals in a grammar for all micropatterns}
-MicroGrammar g2mp(GGrammar g) = (nt:nt2mp(nt,g) | str nt <- g.gnts);
+public MicroGrammar g2mp(GGrammar g) = (nt:nt2mp(g,nt) | str nt <- g.nts);
 
 @doc{Checks all nonterminals in a grammar for a micropattern}
 // this is always correct, but non-default variants are better optimised
-default set[str] check4mp(Micropattern mp, GGrammar g) = {n | str n <- g.nts, check4mp(mp,n,g)};
+public default set[str] check4mp(Micropattern mp, GGrammar g) = {n | str n <- g.nts, check4mp(mp,g,n)};

@@ -111,7 +111,10 @@ data Micropattern
 	| pureSequence()
 ;
 
-MicroClassify ALLMPatterns =
+public MicroClassify ALLMPatterns1 =
+	{chomskyNormalForm()};
+	
+public MicroClassify ALLMPatterns =
 	{containsStar(), containsPlus(), containsOptional(), containsEpsilon(), containsFailure(),
 	containsUniversal(), containsInteger(), containsString(), containsBoolean(), containsSelector(),
 	containsLabel(), containsMark(), containsSequence(), containsDisjunction(), containsConjunction(),

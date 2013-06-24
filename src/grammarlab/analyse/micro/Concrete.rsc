@@ -4,14 +4,11 @@ module grammarlab::analyse::micro::Concrete
 import grammarlab::language::Grammar;
 import grammarlab::language::Micro;
 
-// set[str] check4mp(containsStar(), GGrammar g) = {n | str n <- g.nts, /star(_) := g.prods[n]};
-// bool     check4mp(containsStar(), GGrammar g, str n) = n in g.nts && /star(_) := g.prods[n];
-
 set[str] check4mp(preterminal(), GGrammar g) = {n | str n <- g.nts, !isEmpty(g.prods[n]), allofterminals(g.prods[n])};
 bool     check4mp(preterminal(), GGrammar g, str n) = n in g.nts && allofterminals(g.prods[n]);
 
-bool allofterminals(GProdList ps)  = ( true | it && allofterminals(p.rhs) | p <- ps );
-// bool allofterminals(BGFExprList xs) = ( true | it && allofterminals(e) | e <- xs );
+bool allofterminals(GProdList ps) = ( true | it && allofterminals(p.rhs) | p <- ps );
+bool allofterminals(GExprList xs) = ( true | it && allofterminals(e) | e <- xs );
 bool allofterminals(terminal(_)) = true;
 bool allofterminals(selectable(_,E)) = allofterminals(E); // arguable
 bool allofterminals(labelled(_,E)) = allofterminals(E); // arguable
@@ -58,7 +55,7 @@ default bool prods2words(GProdList ps) = false;
 set[str] check4mp(tokens(), GGrammar g) = {n | str n <- g.nts, aretokens(normanon(g.prods[n]))};
 bool     check4mp(tokens(), GGrammar g, str n) = n in g.nts && aretokens(normanon(g.prods[n]));
 
-bool aretokens([production(_,choice(L))]) = ( !isEmpty(L) | it && terminal(x) := e && len(x)>1 | e <- xs );
+bool aretokens([production(_,choice(L))]) = ( !isEmpty(L) | it && terminal(x) := e && len(x)>1 | e <- L );
 default bool aretokens(GProdList ps) = false;
 
 set[str] check4mp(modifiers(), GGrammar g) = {n | str n <- g.nts, alllookslikemodifier(normanon(g.prods[n]))};
@@ -100,19 +97,21 @@ bool alldigits(GExprList es) = ( !isEmpty(es) | it && terminal(x) := e && /^[0-9
 
 set[str] check4mp(literalSimple(), GGrammar g) = {n | str n <- g.nts,
 	[production(n,plus(choice(L)))] := normanon(g.prods[n]),
-	(true | it && terminal(x) := e && len(x)==1 | e <- L)};
+	areSimpleLiterals(L)};
 bool     check4mp(literalSimple(), GGrammar g, str n) = n in g.nts
 	&& [production(n,plus(choice(L)))] := normanon(g.prods[n])
-	&& (!isEmpty(L) | it && terminal(x) := e && len(x)==1 | e <- L);
+	&& areSimpleLiterals(L);
+
+bool areSimpleLiterals(GExprList L) = (!isEmpty(L) | it && terminal(x) := e && len(x)==1 | e <- L);
 
 set[str] check4mp(literalFirstRest(), GGrammar g) = {n | str n <- g.nts,
 	[production(n,sequence([choice(L1),star(choice(L2))]))] := normanon(g.prods[n]),
-	(!isEmpty(L1) | it && terminal(x) := e && len(x)==1 | e <- L1),
-	(!isEmpty(L2) | it && terminal(x) := e && len(x)==1 | e <- L2)};
+	areSimpleLiterals(L1),
+	areSimpleLiterals(L2)};
 bool     check4mp(literalFirstRest(), GGrammar g, str n) = n in g.nts
 	&& [production(n,sequence([choice(L1),star(choice(L2))]))] := normanon(g.prods[n])
-	&& (!isEmpty(L1) | it && terminal(x) := e && len(x)==1 | e <- L1)
-	&& (!isEmpty(L2) | it && terminal(x) := e && len(x)==1 | e <- L2);
+	&& areSimpleLiterals(L1)
+	&& areSimpleLiterals(L2);
 
 set[str] check4mp(emptyStatement(), GGrammar g) = {n | str n <- g.nts, isTStatement(normanon(g.prods[n]))};
 bool     check4mp(emptyStatement(), GGrammar g, str n) = n in g.nts && isTStatement(normanon(g.prods[n]));
@@ -129,22 +128,24 @@ bool isWord(str x) = /^[\w\.\-\#]+$/ := x;
 bool isTrivial(str x) = len(x)==1;
 
 bool isKeyword(terminal(x)) = isWord(x);
-bool isKeyword(sequence(L)) = allkeywords(L); // SIC!
+bool isKeyword(sequence(L)) = ( !isEmpty(L) | it && isKeyword(e) | e <- L); // SIC!
 default bool isKeyword(GExpr e) = false;
 
 bool isSpecialOrWord(str x) = isWord(x) || isSpecial(x);
 
 // universal higher-order function to check that all terminals within the list of production rules, conform to some given function
-bool allConform2(GProdList ps, bool(GExpr) check) = ( !isEmpty(ps) | it && isSpecialProd(p)
+bool allConform2(GProdList ps, bool(GExpr) check) = ( !isEmpty(ps) | it &&
 	(
 		check(p.rhs)
 	||
-		(choice(L) := p.rhs && ( !isEmpty(L) | it && check(e) | e <- L ))
+		(choice(L) := p.rhs && allConform2(L,check))
 	) | p <- ps );
+bool allConform2(GExprList es, bool(GExpr) check) = ( !isEmpty(es) | it && check(e) | e <- es );
 
-bool allTconform2(GProdList ps, bool(str) check) = ( !isEmpty(ps) | it && isSpecialProd(p)
+bool allTconform2(GProdList ps, bool(str) check) = ( !isEmpty(ps) | it &&
 	(
 		(terminal(str x) := p.rhs && check(x))
 	||
-		(choice(L) := p.rhs && ( !isEmpty(L) | it && terminal(str y) := e && check(y) | e <- L ))
+		(choice(L) := p.rhs && allTconform2(L,check))
 	) | p <- ps );
+bool allTconform2(GExprList es, bool(str) check) = ( !isEmpty(es) | it && terminal(str y) := e && check(y) | e <- es );

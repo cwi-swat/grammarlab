@@ -25,14 +25,11 @@ bool     check4mp(justSLPlus(), GGrammar g, str n) = n in g.nts && [production(n
 set[str] check4mp(justSLStar(), GGrammar g) = {n | str n <- g.nts, [production(n,sepliststar(nonterminal(_),terminal(_)))] := g.prods[n]};
 bool     check4mp(justSLStar(), GGrammar g, str n) = n in g.nts && [production(n,sepliststar(nonterminal(_),terminal(_)))] := g.prods[n];
 
-set[str] check4mp(justChains(), GGrammar g) = {n | str n <- g.nts,
-	( len(g.prods[n]) > 1 | it && production(_,_,nonterminal(_)) := p  | p <- g.prods[n] )
-	||
-	( [production(n,choice(L))] := g.prods[n] | it && nonterminal(_) := e | e <- L )};
-bool     check4mp(justChains(), GGrammar g, str n) = n in g.nts &&
-	(( len(g.prods[n]) > 1 | it && production(_,_,nonterminal(_)) := p  | p <- g.prods[n] )
-	||
-	( [production(n,choice(L))] := g.prods[n] | it && nonterminal(_) := e | e <- L ));
+set[str] check4mp(justChains(), GGrammar g) = {n | str n <- g.nts, alljustchains(g.prods[n])};
+bool     check4mp(justChains(), GGrammar g, str n) = n in g.nts && alljustchains(g.prods[n]);
+
+bool alljustchains([production(n,choice(L))]) = (true | it && nonterminal(_) := e | e <- L );
+default bool alljustchains(GProdList ps) = ( len(ps) > 1 | it && production(_,_,nonterminal(_)) := p  | p <- ps );
 
 set[str] check4mp(justOneChain(), GGrammar g) = {n | str n <- g.nts, [production(n,nonterminal(_))] := g.prods[n]};
 bool     check4mp(justOneChain(), GGrammar g, str n) = n in g.nts && [production(n,nonterminal(_))] := g.prods[n];

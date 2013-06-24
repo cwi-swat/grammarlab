@@ -3,15 +3,19 @@ module grammarlab::analyse::micro::Templates
 
 import grammarlab::language::Grammar;
 import grammarlab::language::Micro;
+import List; // toSet - no better way?!
+import grammarlab::lib::Sizes;
 
 set[str] check4mp(constructors(), GGrammar g) = {n | str n <- g.nts,
 	( [production(n,choice(L))] := g.prods[n]
-	  && ( !isEmpty(g.prods[n]) | it && labelled(str x, _) := p.rhs && !isEmpty(x) | p <- L )
-	) || ( !isEmpty(g.prods[n]) | it && labelled(str x, _) := p.rhs && !isEmpty(x) | p <- g.prods[n] )};
+	  && arecons(L)
+	) || arecons(g.prods[n])};
 bool     check4mp(constructors(), GGrammar g, str n) = n in g.nts &&
 	( [production(n,choice(L))] := g.prods[n]
-	  && ( !isEmpty(g.prods[n]) | it && labelled(str x, _) := p.rhs && !isEmpty(x) | p <- L )
-	) || ( !isEmpty(g.prods[n]) | it && labelled(str x, _) := p.rhs && !isEmpty(x) | p <- g.prods[n] );
+	  && arecons(L)
+	) || arecons(g.prods[n]);
+bool arecons(GProdList L) = ( !isEmpty(L) | it && labelled(str x, _) := p.rhs && !isEmpty(x) | p <- L );
+bool arecons(GExprList L) = ( !isEmpty(L) | it && labelled(str x, _) := e     && !isEmpty(x) | e <- L );
 
 set[str] check4mp(\bracket(), GGrammar g) = {n | str n <- g.nts,
 	{production(n,sequence([terminal(str x),nonterminal(_),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])),
@@ -107,22 +111,22 @@ bool     check4mp(delimited(), GGrammar g, str n) = n in g.nts &&
 	{production(n,sequence([terminal(str x),nonterminal(_),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])) &&
 	!bracketpair(x,y);
 
-// TODO: we can arguable relax it by not posing any conditions of the tail
+// TODO: we can arguably relax it by not posing any conditions of the tail
 set[str] check4mp(distinguished(), GGrammar g) = {n | str n <- g.nts,
 	(  [production(n,choice(L))] := normanon(g.prods[n])
 	|| [production(n,star(choice(L)))] := normanon(g.prods[n])
-	|| [production(n,plus(choice(L)))] := normanon(g.prods[n])
-	| it && (terminal(_) := e ||
-			sequence([terminal(_),nonterminal(_)]) := e ||
-			sequence([terminal(_),optional(nonterminal(_))]) := e)
-	| e <- L )};
+	|| [production(n,plus(choice(L)))] := normanon(g.prods[n])),
+	allstartwitht(L)};
 bool     check4mp(distinguished(), GGrammar g, str n) = n in g.nts &&
 	(  [production(n,choice(L))] := normanon(g.prods[n])
 	|| [production(n,star(choice(L)))] := normanon(g.prods[n])
 	|| [production(n,plus(choice(L)))] := normanon(g.prods[n])
-	| it && (terminal(_) := e ||
-			sequence([terminal(_),nonterminal(_)]) := e ||
-			sequence([terminal(_),optional(nonterminal(_))]) := e)
+	) && allstartwitht(L);
+
+bool allstartwitht(GExprList L) = (true | it
+	&& (terminal(_) := e
+	||	sequence([terminal(_),nonterminal(_)]) := e
+	||	sequence([terminal(_),optional(nonterminal(_))]) := e)
 	| e <- L );
 
 set[str] check4mp(elementAccess(), GGrammar g) = {n | str n <- g.nts,
