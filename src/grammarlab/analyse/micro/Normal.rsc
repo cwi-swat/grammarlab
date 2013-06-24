@@ -42,4 +42,4 @@ bool     check4mp(abstractNormalForm(), GGrammar g, str n) = n in g.nts
 bool isANF([]) = true;
 bool isANF([production(_,choice(L))]) = allnonterminals(L);
 bool isANF([GProd p]) = choice(_) !:= p.rhs;
-default bool isANF(GProdList ps) = len(ps)>1 && ( true | it && production(_,nonterminal(_)) := p  | p <- ps );
+default bool isANF(GProdList ps) = ( len(ps)>1 | it && production(_,nonterminal(_)) := p  | p <- ps );

@@ -60,4 +60,4 @@ default bool allchainort(GProdList ps)
 
 bool findt(GExprList es) = ( false | it || terminal(_) := e | e <- es);
 bool findchain(GExprList es) = ( false | it || nonterminal(_) := e | e <- es);
-bool allchainort(GProdList ps) = ( !isEmpty(ps) | it && (terminal(_) := p.rhs || nonterminal(_) := p.rhs) | p <- ps );
+bool allnort(GExprList es) = ( !isEmpty(es) | it && (terminal(_) := e || nonterminal(_) := e) | e <- es );

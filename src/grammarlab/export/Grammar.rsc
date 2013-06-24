@@ -103,7 +103,7 @@ public str ppx(GExpr::sepliststar(GExpr expr, GExpr sep), EBNF meta) =
 	getMeta(end_seplist_star_symbol(), meta);
 
 public str ppx(GExpr::seplistplus(GExpr expr, GExpr sep), EBNF meta) =
-	getMeta(plust_seplist_plus_symbol(), meta)
+	getMeta(start_seplist_plus_symbol(), meta)
 	+ppx(expr,meta)+
 	getMeta(concatenate_symbol(), meta)
 	+ppx(sep,meta)+

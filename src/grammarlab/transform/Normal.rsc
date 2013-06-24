@@ -8,6 +8,7 @@ import grammarlab::transform::SLEIR;
 public GGrammar  normanon(GGrammar g)   =  RetireSs(RetireLs(g));
 public GProdList normanon(GProdList ps) = [RetireSs(RetireLs(p)) | p <- ps];
 public GProd     normanon(GProd p)      =  RetireSs(RetireLs(p));
+public GExpr     normanon(GExpr e)      =  RetireSs(RetireLs(e));
 
 public GGrammar normalise(GGrammar g)
 {

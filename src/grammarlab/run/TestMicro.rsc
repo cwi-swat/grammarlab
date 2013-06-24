@@ -10,7 +10,8 @@ import IO;
 
 public void main()
 {
-	GGrammar g = readBGF(|home:///projects/webslps/tank/fl/rascal-a.bgf|);
+	//GGrammar g = readBGF(|home:///projects/webslps/tank/fl/rascal-c.bgf|);
+	GGrammar g = readBGF(|home:///projects/webslps/zoo/odf/opendoc-1.1.bgf|);
 	//iprintln(g);
 	println(ppx(g));
 	mp = g2mp(g);

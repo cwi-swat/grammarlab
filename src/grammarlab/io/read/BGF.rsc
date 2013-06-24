@@ -30,7 +30,7 @@ GProds prodsByNT(GProdList ps)
 		if (p.lhs notin res)
 			res[p.lhs] = [p];
 		else
-			res[p.lhs] += p;
+			res[p.lhs] += [p];
 	}
 	return res;
 }

@@ -112,7 +112,7 @@ data Micropattern
 ;
 
 public MicroClassify ALLMPatterns1 =
-	{chomskyNormalForm()};
+	{singleton(), horizontal(), vertical(), zigzag()};
 	
 public MicroClassify ALLMPatterns =
 	{containsStar(), containsPlus(), containsOptional(), containsEpsilon(), containsFailure(),

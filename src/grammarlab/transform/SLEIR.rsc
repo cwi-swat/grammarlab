@@ -12,6 +12,7 @@ public GGrammar RetireSs(GGrammar g)
 	return grammar(g.nts, g.roots, normalise(ps));
 }
 public GProd RetireSs(GProd p) {return visit(p) {case selectable(_,GExpr e) => e};}
+public GExpr RetireSs(GExpr x) {return visit(x) {case selectable(_,GExpr e) => e};}
 
 public GGrammar RetireLs(GGrammar g)
 {
@@ -20,3 +21,4 @@ public GGrammar RetireLs(GGrammar g)
 }
 
 public GProd RetireLs(GProd p) {return visit(p) {case labelled(_,GExpr e) => e};}
+public GExpr RetireLs(GExpr x) {return visit(x) {case labelled(_,GExpr e) => e};}

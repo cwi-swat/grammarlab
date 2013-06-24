@@ -34,8 +34,8 @@ bool isfakeseplist(str L, choice([sequence([GExpr E,GExpr S,nonterminal(L)]),E])
 // otherwise, no
 default bool isfakeseplist(str _, GExpr _) = false;
 
-set[str] check4mp(fakeSLStar(), GGrammar g) = {n | str n <- g.nts, [production(str nt,optional(GExpr e))] := g.prods[n],   isfakeseplist(normanon(nt,e))};
-bool     check4mp(fakeSLStar(), GGrammar g, str n) = n in g.nts && [production(str nt,optional(GExpr e))] := g.prods[n] && isfakeseplist(normanon(nt,e));
+set[str] check4mp(fakeSLStar(), GGrammar g) = {n | str n <- g.nts, [production(str nt,optional(GExpr e))] := g.prods[n],   isfakeseplist(nt,normanon(e))};
+bool     check4mp(fakeSLStar(), GGrammar g, str n) = n in g.nts && [production(str nt,optional(GExpr e))] := g.prods[n] && isfakeseplist(nt,normanon(e));
 
 set[str] check4mp(fakeSL(), GGrammar g) = check4mp(fakeSLPlus(), g) + check4mp(fakeSLStar(), g);
 bool     check4mp(fakeSL(), GGrammar g, str n) = check4mp(fakeSLPlus(), g, n) && check4mp(fakeSLStar(), g, n);
@@ -49,9 +49,9 @@ bool     check4mp(fakeSL(), GGrammar g, str n) = check4mp(fakeSLPlus(), g, n) &&
 set[str] check4mp(exprInfixLayer(), GGrammar g) = {n | str n <- g.nts, [production(str n,nonterminal(str n2)),*L] := normanon(g.prods[n]),   allInfixLayers(n,n2,L)};
 bool     check4mp(exprInfixLayer(), GGrammar g, str n) = n in g.nts && [production(str n,nonterminal(str n2)),*L] := normanon(g.prods[n]) && allInfixLayers(n,n2,L);
 
-bool allInfixLayers(str n1, str n2, GExprList es) = ( true | it &&
-	sequence([nonterminal(str x1),terminal(_),nonterminal(str x2)]) := e
-	&& {x1,x2} == {n1,n2} | e <- es );
+bool allInfixLayers(str n1, str n2, GProdList ps) = ( true | it &&
+	sequence([nonterminal(str x1),terminal(_),nonterminal(str x2)]) := p.rhs
+	&& {x1,x2} == {n1,n2} | p <- ps );
 
 // UnaryExpression ::= PreIncrementExpression
 // UnaryExpression ::= PreDecrementExpression

@@ -42,7 +42,7 @@ bool debug_check4mp(Micropattern mp, GGrammar g, str n)
 }
 
 @doc{Checks one nonterminal in a grammar for all micropatterns}
-public MicroClassify nt2mp(GGrammar g, str n) = {mp | Micropattern mp <- ALLMPatterns, check4mp(mp,g,n)};
+public MicroClassify nt2mp(GGrammar g, str n) = {mp | Micropattern mp <- ALLMPatterns, debug_check4mp(mp,g,n)};
 
 @doc{Checks all nonterminals in a grammar for all micropatterns}
 public MicroGrammar g2mp(GGrammar g) = (nt:nt2mp(g,nt) | str nt <- g.nts);
