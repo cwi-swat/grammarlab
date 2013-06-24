@@ -16,7 +16,10 @@ public str ppx(GProd smth) = ppx(smth,DefaultEBNF);
 public str ppx(GGrammar smth) = ppx(smth,DefaultEBNF);
 
 // TODO roots?
-public str ppx(GGrammar g, EBNF meta) = /grammarSymbol(b,e) := meta ? b+ppx(g.nts,g.prods,meta)+e : ppx(g.nts,g.prods,meta); 
+public str ppx(GGrammar g, EBNF meta) =
+	getMeta(start_grammar_symbol(), meta)
+	+ppx(g.nts,g.prods,meta)+
+	getMeta(end_grammar_symbol(), meta);
 public str ppx(list[str] nts, GProds prods, EBNF meta)
 {
 	str res = "";
@@ -25,55 +28,87 @@ public str ppx(list[str] nts, GProds prods, EBNF meta)
 	return res;
 }
 
-public str ppx(GProd p, EBNF meta)
-{
-	str ds = /definingSymbol(dss) := meta ? dss : "";
-	str ts = /terminatorSymbol(tss) := meta ? tss : "";
-	// TODO: not used/propagated yet
-	str ss = /defSeparatorSymbol(sss) := meta ? sss : "";
-	return p.lhs + ds + ppx(p.rhs) + ts;
-}
-//alias GProdList = list[GProd];
-//alias GProdSet  =  set[GProd];
-//alias GExprList = list[GExpr];
-//alias GExprSet  =  set[GExpr];
-//
-//alias GProds = map[str,GProdList];
-//
-//data GGrammar
-//	= grammar(list[str] nts, list[str] roots, GProds prods)
-//;
-//
-//data GProd
-//	= production (str lhs, GExpr rhs)
-//;
+public str ppx(GProd p, EBNF meta) =
+	getMeta(start_nonterminal_symbol(), meta)
+	+p.lhs+
+	getMeta(end_nonterminal_symbol(), meta)+
+	getMetaE(defining_symbol(), meta)
+	+ppx(p.rhs, meta)+
+	getMetaE(terminator_symbol(), meta);
 
-
-public str ppx(GExpr::epsilon(), EBNF meta) = /epsilonSymbol(s) := meta ? s : "EPSILON";
-public str ppx(GExpr::empty(), EBNF meta) = /emptyLanguageSymbol(s) := meta ? s : "EMPTY";
-public str ppx(GExpr::anything(), EBNF meta) = /universalSymbol(s) := meta ? s : "ANY";
+public str ppx(GExpr::epsilon(), EBNF meta) = getMetaE(epsilon_metasymbol(), meta);
+public str ppx(GExpr::empty(), EBNF meta) = getMetaE(empty_metasymbol(), meta);
+public str ppx(GExpr::anything(), EBNF meta) = getMetaE(universal_metasymbol(), meta);
+// TODO always or not?
 public str ppx(GExpr::val(GValue v), EBNF meta) = ppx(v, meta);
-public str ppx(GExpr::nonterminal(str t), EBNF meta) = /nonterminalSymbol(b,e) := meta ? b+t+e : t;
-public str ppx(GExpr::terminal(str t), EBNF meta) = /terminalSymbol(b,e) := meta ? b+t+e : t;
-public str ppx(GExpr::labelled(str lab, GExpr expr), EBNF meta) = "labelled(<lab>,<pp(expr)>)";
-public str ppx(GExpr::selectable(str sel, GExpr expr), EBNF meta) = "selectable(<sel>,<pp(expr)>)";
-public str ppx(GExpr::marked(GExpr expr), EBNF meta) = "marked(<pp(expr)>)";
+public str ppx(GExpr::nonterminal(str t), EBNF meta) =
+	getMeta(start_nonterminal_symbol(), meta)
+	+t+
+	getMeta(end_nonterminal_symbol(), meta);
+public str ppx(GExpr::terminal(str t), EBNF meta) =
+	getMeta(start_terminal_symbol(), meta)
+	+t+
+	getMeta(end_terminal_symbol(), meta);
+public str ppx(GExpr::labelled(str lab, GExpr expr), EBNF meta) =
+	getMetaE(start_label_symbol(), meta)
+	+lab+
+	getMetaE(end_label_symbol(), meta)+
+	getMeta(concatenate_symbol(), meta)
+	+ppx(expr,meta);
+public str ppx(GExpr::selectable(str sel, GExpr expr), EBNF meta) =
+	getMetaE(start_selector_symbol(), meta)
+	+sel+
+	getMetaE(end_selector_symbol(), meta)
+	+ppx(expr,meta);
+public str ppx(GExpr::marked(GExpr expr), EBNF meta) =
+	getMetaE(start_mark_symbol(), meta)
+	+ppx(expr,meta)+
+	getMetaE(end_mark_symbol(), meta);
 public str ppx(GExpr::sequence(GExprList exprs), EBNF meta) =
-	/concatenationSymbol(s) := meta ?
-	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs, s) : 
-	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs);
+	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs, getMeta(concatenate_symbol(), meta));
 public str ppx(GExpr::choice(GExprList exprs), EBNF meta) =
-	/defSeparatorSymbol(s) := meta ?
-	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs, s) : 
-	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs);
+	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs, getMetaE(definition_separator_symbol(), meta));
 
 public str ppx(GExpr::allof(GExprList exprs), EBNF meta) = "allof(<pp(exprs)>)";
 public str ppx(GExpr::not(GExpr expr), EBNF meta) = "not(<pp(expr)>)";
-public str ppx(GExpr::optional(GExpr expr), EBNF meta) = "optional(<ppx(expr,meta)>)";
-public str ppx(GExpr::star(GExpr expr), EBNF meta) = "star(<ppx(expr,meta)>)";
-public str ppx(GExpr::plus(GExpr expr), EBNF meta) = "plus(<ppx(expr,meta)>)";
-public str ppx(GExpr::sepliststar(GExpr expr, GExpr sep), EBNF meta) = "sepliststar(<pp(expr)>,<pp(sep)>)";
-public str ppx(GExpr::seplistplus(GExpr expr, GExpr sep), EBNF meta) = "seplistplus(<pp(expr)>,<pp(sep)>)";
+public str ppx(GExpr::optional(GExpr expr), EBNF meta) = 
+	getMeta(start_option_symbol(), meta)+getMeta(end_option_symbol(), meta)+getMeta(postfix_option_symbol(), meta)=="" ?
+	"ERRORopt(<ppx(expr,meta)>)":
+	getMeta(start_option_symbol(), meta)
+	+ppx(expr,meta)+
+	getMeta(end_option_symbol(), meta)+
+	getMeta(postfix_option_symbol(), meta);
+	
+public str ppx(GExpr::star(GExpr expr), EBNF meta) =
+	getMeta(start_repetition_star_symbol(), meta)+getMeta(end_repetition_star_symbol(), meta)+getMeta(postfix_option_symbol(), meta)=="" ?
+	"ERRORstar(<ppx(expr,meta)>)":
+	getMeta(start_repetition_star_symbol(), meta)
+	+ppx(expr,meta)+
+	getMeta(end_repetition_star_symbol(), meta)+
+	getMeta(postfix_repetition_star_symbol(), meta);
+
+public str ppx(GExpr::plus(GExpr expr), EBNF meta) =
+	getMeta(start_repetition_star_symbol(), meta)+getMeta(end_repetition_star_symbol(), meta)+getMeta(postfix_option_symbol(), meta)=="" ?
+	"ERRORplus(<ppx(expr,meta)>)":
+	getMeta(start_repetition_star_symbol(), meta)
+	+ppx(expr,meta)+
+	getMeta(end_repetition_star_symbol(), meta)+
+	getMeta(postfix_repetition_plus_symbol(), meta);
+
+public str ppx(GExpr::sepliststar(GExpr expr, GExpr sep), EBNF meta) =
+	getMeta(start_seplist_star_symbol(), meta)
+	+ppx(expr,meta)+
+	getMeta(concatenate_symbol(), meta)
+	+ppx(sep,meta)+
+	getMeta(end_seplist_star_symbol(), meta);
+
+public str ppx(GExpr::seplistplus(GExpr expr, GExpr sep), EBNF meta) =
+	getMeta(plust_seplist_plus_symbol(), meta)
+	+ppx(expr,meta)+
+	getMeta(concatenate_symbol(), meta)
+	+ppx(sep,meta)+
+	getMeta(end_seplist_plus_symbol(), meta);
+
 public default str ppx(GExpr smth, EBNF meta) = "??<smth>??";
 
 public str ppx(GValue::string(), EBNF meta) = "string()";
