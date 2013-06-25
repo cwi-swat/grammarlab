@@ -10,8 +10,8 @@ bool     check4mp(top(), GGrammar g, str n) = n in g.nts && /nonterminal(n) !:= 
 set[str] check4mp(bottom(), GGrammar g) = {n | /nonterminal(str n) := g.prods} - toSet(g.nts);
 bool     check4mp(bottom(), GGrammar g, str n) = n notin g.nts && /nonterminal(n) := g.prods;
 
-set[str] check4mp(leaf(), GGrammar g) = {n | str n <- g.nts, isEmpty(g.prods[n]),   /nonterminal(_) !:= g.prods[n]};
-bool     check4mp(leaf(), GGrammar g, str n) = n in g.nts && isEmpty(g.prods[n]) && /nonterminal(_) !:= g.prods[n];
+set[str] check4mp(leaf(), GGrammar g) = {n | str n <- g.nts, !isEmpty(g.prods[n]),   /nonterminal(_) !:= g.prods[n]};
+bool     check4mp(leaf(), GGrammar g, str n) = n in g.nts && !isEmpty(g.prods[n]) && /nonterminal(_) !:= g.prods[n];
 
 set[str] check4mp(root(), GGrammar g) = toSet(g.roots & g.nts);
 bool     check4mp(root(), GGrammar g, str n) = n in g.roots && n in g.nts;

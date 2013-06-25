@@ -34,7 +34,7 @@ default bool isfakeseplist(str _, GExpr _) = false;
 
 bool     check4mp(fakeSLStar(), GGrammar g, str n) = n in g.nts && [production(str nt,optional(GExpr e))] := g.prods[n] && isfakeseplist(nt,normanon(e));
 
-bool     check4mp(fakeSL(), GGrammar g, str n) = check4mp(fakeSLPlus(), g, n) && check4mp(fakeSLStar(), g, n);
+bool     check4mp(fakeSL(), GGrammar g, str n) = check4mp(fakeSLPlus(), g, n) || check4mp(fakeSLStar(), g, n);
 
 // possible TODO: all layer detection mechanisms now work only on vertical production rules
 

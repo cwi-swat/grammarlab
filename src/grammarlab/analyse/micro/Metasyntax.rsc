@@ -16,20 +16,20 @@ bool     check4mp(containsOptional(), GGrammar g, str n) = n in g.nts && /option
 set[str] check4mp(containsEpsilon(), GGrammar g) = {n | str n <- g.nts, /epsilon() := g.prods[n]};
 bool     check4mp(containsEpsilon(), GGrammar g, str n) = n in g.nts && /epsilon() := g.prods[n];
                           
-set[str] check4mp(containsFailure(), GGrammar g) = {n | str n <- g.nts, /empty(_) := g.prods[n]};
-bool     check4mp(containsFailure(), GGrammar g, str n) = n in g.nts && /empty(_) := g.prods[n];
+set[str] check4mp(containsFailure(), GGrammar g) = {n | str n <- g.nts, /empty() := g.prods[n]};
+bool     check4mp(containsFailure(), GGrammar g, str n) = n in g.nts && /empty() := g.prods[n];
                           
-set[str] check4mp(containsUniversal(), GGrammar g) = {n | str n <- g.nts, /anything(_) := g.prods[n]};
-bool     check4mp(containsUniversal(), GGrammar g, str n) = n in g.nts && /anything(_) := g.prods[n];
+set[str] check4mp(containsUniversal(), GGrammar g) = {n | str n <- g.nts, /anything() := g.prods[n]};
+bool     check4mp(containsUniversal(), GGrammar g, str n) = n in g.nts && /anything() := g.prods[n];
                           
-set[str] check4mp(containsInteger(), GGrammar g) = {n | str n <- g.nts, /val(integer(_)) := g.prods[n]};
-bool     check4mp(containsInteger(), GGrammar g, str n) = n in g.nts && /val(integer(_)) := g.prods[n];
+set[str] check4mp(containsInteger(), GGrammar g) = {n | str n <- g.nts, /val(integer()) := g.prods[n]};
+bool     check4mp(containsInteger(), GGrammar g, str n) = n in g.nts && /val(integer()) := g.prods[n];
                           
-set[str] check4mp(containsString(), GGrammar g) = {n | str n <- g.nts, /val(string(_)) := g.prods[n]};
-bool     check4mp(containsString(), GGrammar g, str n) = n in g.nts && /val(string(_)) := g.prods[n];
+set[str] check4mp(containsString(), GGrammar g) = {n | str n <- g.nts, /val(string()) := g.prods[n]};
+bool     check4mp(containsString(), GGrammar g, str n) = n in g.nts && /val(string()) := g.prods[n];
                           
-set[str] check4mp(containsBoolean(), GGrammar g) = {n | str n <- g.nts, /val(boolean(_)) := g.prods[n]};
-bool     check4mp(containsBoolean(), GGrammar g, str n) = n in g.nts && /val(boolean(_)) := g.prods[n];
+set[str] check4mp(containsBoolean(), GGrammar g) = {n | str n <- g.nts, /val(boolean()) := g.prods[n]};
+bool     check4mp(containsBoolean(), GGrammar g, str n) = n in g.nts && /val(boolean()) := g.prods[n];
                           
 set[str] check4mp(containsSelector(), GGrammar g) = {n | str n <- g.nts, /selectable(_,_) := g.prods[n]};
 bool     check4mp(containsSelector(), GGrammar g, str n) = n in g.nts && /selectable(_,_) := g.prods[n];
@@ -52,11 +52,11 @@ bool     check4mp(containsConjunction(), GGrammar g, str n) = n in g.nts && /all
 set[str] check4mp(containsNegation(), GGrammar g) = {n | str n <- g.nts, /not(_) := g.prods[n]};
 bool     check4mp(containsNegation(), GGrammar g, str n) = n in g.nts && /not(_) := g.prods[n];
                           
-set[str] check4mp(containsSLStar(), GGrammar g) = {n | str n <- g.nts, /sepliststar(_) := g.prods[n]};
-bool     check4mp(containsSLStar(), GGrammar g, str n) = n in g.nts && /sepliststar(_) := g.prods[n];
+set[str] check4mp(containsSLStar(), GGrammar g) = {n | str n <- g.nts, /sepliststar(_,_) := g.prods[n]};
+bool     check4mp(containsSLStar(), GGrammar g, str n) = n in g.nts && /sepliststar(_,_) := g.prods[n];
                           
-set[str] check4mp(containsSLPlus(), GGrammar g) = {n | str n <- g.nts, /seplistplus(_) := g.prods[n]};
-bool     check4mp(containsSLPlus(), GGrammar g, str n) = n in g.nts && /seplistplus(_) := g.prods[n];
+set[str] check4mp(containsSLPlus(), GGrammar g) = {n | str n <- g.nts, /seplistplus(_,_) := g.prods[n]};
+bool     check4mp(containsSLPlus(), GGrammar g, str n) = n in g.nts && /seplistplus(_,_) := g.prods[n];
                           
 set[str] check4mp(containsTerminal(), GGrammar g) = {n | str n <- g.nts, /terminal(_) := g.prods[n]};
 bool     check4mp(containsTerminal(), GGrammar g, str n) = n in g.nts && /terminal(_) := g.prods[n];
