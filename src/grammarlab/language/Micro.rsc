@@ -1,7 +1,8 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::Micro
 
-alias MicroGrammar = map[str,MicroClassify];
+alias MicroNperP = map[Micropattern,set[str]];
+alias MicroPperN = map[str,MicroClassify];
 alias MicroClassify = set[Micropattern];
 data Micropattern
 	// Metasyntax

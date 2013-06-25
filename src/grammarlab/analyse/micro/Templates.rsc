@@ -3,33 +3,30 @@ module grammarlab::analyse::micro::Templates
 
 import grammarlab::language::Grammar;
 import grammarlab::language::Micro;
-import List; // toSet - no better way?!
+import List; // head, tail
 import grammarlab::lib::Sizes;
 
-set[str] check4mp(constructors(), GGrammar g) = {n | str n <- g.nts,
-	( [production(n,choice(L))] := g.prods[n]
-	  && arecons(L)
-	) || arecons(g.prods[n])};
 bool     check4mp(constructors(), GGrammar g, str n) = n in g.nts &&
 	( [production(n,choice(L))] := g.prods[n]
 	  && arecons(L)
 	) || arecons(g.prods[n]);
+
 bool arecons(GProdList L) = ( !isEmpty(L) | it && labelled(str x, _) := p.rhs && !isEmpty(x) | p <- L );
 bool arecons(GExprList L) = ( !isEmpty(L) | it && labelled(str x, _) := e     && !isEmpty(x) | e <- L );
 
-set[str] check4mp(\bracket(), GGrammar g) = {n | str n <- g.nts,
-	{production(n,sequence([terminal(str x),nonterminal(_),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])),
-	bracketpair(x,y)};
-bool     check4mp(\bracket(), GGrammar g, str n) = n in g.nts &&
-	{production(n,sequence([terminal(str x),nonterminal(_),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])) &&
-	bracketpair(x,y);
+bool     check4mp(\bracket(), GGrammar g, str n) = n in g.nts && oneisbracket(normanon(g.prods[n]));
 
-set[str] check4mp(bracketSelf(), GGrammar g) = {n | str n <- g.nts,
-	{production(n,sequence([terminal(str x),nonterminal(n),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])),
-	bracketpair(x,y)};
-bool     check4mp(bracketSelf(), GGrammar g, str n) = n in g.nts &&
-	{production(n,sequence([terminal(str x),nonterminal(n),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])) &&
-	bracketpair(x,y);
+bool oneisbracket([]) = false;
+default bool oneisbracket(GProdList ps)
+	= (production(_,sequence([terminal(str x),nonterminal(_),terminal(str y)])) := head(ps) && bracketpair(x,y))
+	|| oneisbracket(tail(ps));
+
+bool     check4mp(bracketSelf(), GGrammar g, str n) = n in g.nts &&	oneisbracketself(normanon(g.prods[n]));
+
+bool oneisbracketself([]) = false;
+default bool oneisbracketself(GProdList ps)
+	= (production(str n,sequence([terminal(str x),nonterminal(n),terminal(str y)])) := head(ps) && bracketpair(x,y))
+	|| oneisbracketself(tail(ps));
 
 set[str] check4mp(bracketFakeSLStar(), GGrammar g) = {n | str n <- g.nts,
 	([production(n,sequence([terminal(str x),
@@ -104,12 +101,12 @@ bool     check4mp(bracketSLStar(), GGrammar g, str n) = n in g.nts &&
 	[production(n,sequence([terminal(str x),sepliststar(nonterminal(_),terminal(_)),terminal(str y)]))] := normanon(g.prods[n]) &&
 	bracketpair(x,y);
 
-set[str] check4mp(delimited(), GGrammar g) = {n | str n <- g.nts,
-	{production(n,sequence([terminal(str x),nonterminal(_),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])),
-	!bracketpair(x,y)};
-bool     check4mp(delimited(), GGrammar g, str n) = n in g.nts &&
-	{production(n,sequence([terminal(str x),nonterminal(_),terminal(str y)])),*P2} := toSet(normanon(g.prods[n])) &&
-	!bracketpair(x,y);
+bool     check4mp(delimited(), GGrammar g, str n) = n in g.nts && oneisdelimited(g.prods[n]);
+
+bool oneisdelimited([]) = false;
+default bool oneisdelimited(GProdList ps)
+	= (production(_,sequence([terminal(str x),nonterminal(_),terminal(str y)])) := head(ps) && !bracketpair(x,y))
+	|| oneisdelimited(tail(ps));
 
 // TODO: we can arguably relax it by not posing any conditions of the tail
 set[str] check4mp(distinguished(), GGrammar g) = {n | str n <- g.nts,

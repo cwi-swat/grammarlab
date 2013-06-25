@@ -86,14 +86,22 @@ bool     check4mp(range(), GGrammar g, str n) = n in g.nts && allTconform2(norma
 set[str] check4mp(literalNumeric(), GGrammar g) = {n | str n <- g.nts, [p] := normanon(g.prods[n]),   lookslikeint(p.rhs)};
 bool     check4mp(literalNumeric(), GGrammar g, str n) = n in g.nts && [p] := normanon(g.prods[n]) && lookslikeint(p.rhs);
 
-bool lookslikeint(plus(choice(L2))) = alldigits(L2);
-bool lookslikeint(sequence([optional(choice(L3)),plus(choice(L4))])) = allops(L3) && alldigits(L4);
-bool lookslikeint(choice([terminal("0"),sequence([choice(L5),star(choice(L6))])])) = alldigits(L5) && alldigits(L6);
-bool lookslikeint(choice(L1)) = alldigits(L1); // OOPS: probably not safe for next versions of Rascal
-bool lookslikeint(sequence([optional(choice(L7)),choice([terminal("0"),sequence([choice(L8),star(choice(L9))])])])) = allops(L7) && alldigits(L8) && alldigits(L9);
-default bool lookslikeint(GExpr e) = false;
-// underscore for Eiffel’s sake
-bool alldigits(GExprList es) = ( !isEmpty(es) | it && terminal(x) := e && /^[0-9A-Fa-f\_]$/ := x | e <- es );
+bool lookslikeint(plus(choice(L2))) 
+	= allTconform2(L2,isDigit);
+bool lookslikeint(sequence([optional(choice(L3)),plus(choice(L4))]))
+	=  allTconform2(L3,isSpecial)
+	&& allTconform2(L4,isDigit);
+bool lookslikeint(choice([terminal("0"),sequence([choice(L5),star(choice(L6))])]))
+	=  allTconform2(L5,isDigit)
+	&& allTconform2(L6,isDigit);
+bool lookslikeint(choice(L1))
+// OOPS: probably not safe for next versions of Rascal
+	= allTconform2(L1,isDigit);
+bool lookslikeint(sequence([optional(choice(L7)),choice([terminal("0"),sequence([choice(L8),star(choice(L9))])])]))
+	=  allTconform2(L7,isSpecial)
+	&& allTconform2(L8,isDigit)
+	&& allTconform2(L9,isDigit);
+default bool lookslikeint(GExpr _) = false;
 
 set[str] check4mp(literalSimple(), GGrammar g) = {n | str n <- g.nts,
 	[production(n,plus(choice(L)))] := normanon(g.prods[n]),
@@ -126,6 +134,8 @@ default bool isTStatement(GProdList _) = false;
 bool isSpecial(str x) = /[a-zA-Z]/ !:= x; // NB: no start/end constraints!
 bool isWord(str x) = /^[\w\.\-\#]+$/ := x;
 bool isTrivial(str x) = len(x)==1;
+// underscore for Eiffel’s sake
+bool isDigit(str x) = /^[0-9A-Fa-f\_]$/ := x;
 
 bool isKeyword(terminal(x)) = isWord(x);
 bool isKeyword(sequence(L)) = ( !isEmpty(L) | it && isKeyword(e) | e <- L); // SIC!

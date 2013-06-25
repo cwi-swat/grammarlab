@@ -14,7 +14,7 @@ public void main()
 	GGrammar g = readBGF(|home:///projects/webslps/zoo/odf/opendoc-1.1.bgf|);
 	//iprintln(g);
 	println(ppx(g));
-	mp = g2mp(g);
+	mp = g2ppn(g);
 	for (str n <- mp)
 		if (!isEmpty(mp[n]))
 			println("<n> classified as: <mp[n]>");

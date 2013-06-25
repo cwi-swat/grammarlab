@@ -15,6 +15,9 @@ public str ppx(GProdSet smth) = ppx(smth,DefaultEBNF);
 public str ppx(GProd smth) = ppx(smth,DefaultEBNF);
 public str ppx(GGrammar smth) = ppx(smth,DefaultEBNF);
 
+public str ppx(GProdList smth, EBNF meta) = mapjoin(str(GProd p){return ppx(p,meta);}, smth);
+public str ppx(GExprList smth, EBNF meta) = mapjoin(str(GExpr e){return ppx(e,meta);}, smth, getMeta(concatenate_symbol(), meta));
+
 // TODO roots?
 public str ppx(GGrammar g, EBNF meta) =
 	getMeta(start_grammar_symbol(), meta)
