@@ -61,6 +61,10 @@ data Metasymbol
 	| break_tokens_at_whitespace()
 	| disregard_labels()
 	| consider_indentation()
+	// Boolean grammars arsenal
+	| conjunction_symbol()
+	| prefix_negation_symbol()
+	| postfix_negation_symbol()
 ;
 
 public EBNF DefaultEBNF = (
@@ -91,7 +95,9 @@ public EBNF DefaultEBNF = (
 	end_seplist_plus_symbol(): "}+",
 	postfix_option_symbol(): "?",
 	postfix_repetition_star_symbol(): "*",
-	postfix_repetition_plus_symbol(): "+"
+	postfix_repetition_plus_symbol(): "+",
+	conjunction_symbol(): " & ",
+	prefix_negation_symbol(): "¬"
 );
 
 public str getMeta(Metasymbol ms, EBNF ebnf) = ms in ebnf ? ebnf[ms] : "";
