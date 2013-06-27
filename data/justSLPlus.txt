@@ -1,0 +1,32 @@
+--------------------ada::cordy-hyaric.bgf--------------------
+defining_identifier_list ::= {defining_identifier ","}+ ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+attribute-list ::= {attribute ","}+ ;
+qualified-identifier ::= {lex-csharp/identifier "."}+ ;
+statement-expression-list ::= {statement-expression ","}+ ;
+fixed-parameters ::= {fixed-parameter ","}+ ;
+expression-list ::= {expression ","}+ ;
+qualified-identifier-list ::= {qualified-identifier ","}+ ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Rename_list ::= {Rename_pair ","}+ ;
+Entity_declaration_list ::= {Entity_declaration_group ";"}+ ;
+Key_list ::= {Manifest_string ","}+ ;
+Converter_list ::= {Converter ","}+ ;
+Formal_generic_list ::= {Formal_generic ","}+ ;
+Agent_actual_list ::= {Agent_actual ","}+ ;
+Identifier_list ::= {Identifier ","}+ ;
+Parent_list ::= {Parent ";"}+ ;
+Choices ::= {Choice ","}+ ;
+Actual_list ::= {Expression ","}+ ;
+Note_values ::= {Note_item ","}+ ;
+External_file_list ::= {External_file ","}+ ;
+Creation_procedure_list ::= {Creation_procedure ","}+ ;
+New_export_list ::= {New_export_item ";"}+ ;
+Then_part_list ::= {Then_part "elseif"}+ ;
+Feature_list ::= {Feature_name ","}+ ;
+New_feature_list ::= {New_feature ","}+ ;
+Class_list ::= {Class_name ","}+ ;
+Type_list ::= {Type ","}+ ;
+Constraint_list ::= {Single_constraint ","}+ ;
+--------------------metasyntax::lll-kort.bgf--------------------
+disjunction ::= {conjunction "|"}+ ;

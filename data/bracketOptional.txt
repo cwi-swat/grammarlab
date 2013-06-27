@@ -1,0 +1,158 @@
+--------------------c::iso-9899-1999.bgf--------------------
+compound-statement ::= "{" block-item-list? "}" ;
+--------------------c::iso-9899-tc2.bgf--------------------
+compound-statement ::= "{" block-item-list? "}" ;
+--------------------c::iso-9899-tc3.bgf--------------------
+compound-statement ::= "{" block-item-list? "}" ;
+--------------------c::malton-dahn.bgf--------------------
+array_declarator_extension ::= "[" constant_expression? "]" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+array_declarator_extension ::= "[" constant_expression? "]" ;
+--------------------c::cordy-malton.bgf--------------------
+array_declarator_extension ::= "[" constant_expression? "]" ;
+--------------------cpp::iso-n2723.bgf--------------------
+compound-statement ::= "{" statement-seq? "}" ;
+lambda-introducer ::= "[" lambda-capture? "]" ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+compound-statement ::= "{" statement-seq? "}" ;
+new-initializer ::= "(" expression-list? ")" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+anonymous-method-signature ::= "(" anonymous-method-parameter-list? ")" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+generic-dimension-specifier ::= "<" commas? ">" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+anonymous-method-signature ::= "(" anonymous-method-parameter-list? ")" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+generic-dimension-specifier ::= "<" commas? ">" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+rank-specifier ::= "[" dim-separators? "]" ;
+block ::= "{" statement-list? "}" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+anonymous-method-signature ::= "(" anonymous-method-parameter-list? ")" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+generic-dimension-specifier ::= "<" commas? ">" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+explicit-anonymous-function-signature ::= "(" explicit-anonymous-function-parameter-list? ")" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+generic-dimension-specifier ::= "<" commas? ">" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+explicit-anonymous-function-signature ::= "(" explicit-anonymous-function-parameter-list? ")" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+generic-dimension-specifier ::= "<" commas? ">" ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+attribute-arguments ::= "(" expression-list? ")" ;
+--------------------cs::csharp-cordy.bgf--------------------
+anonymous_method_signature ::= "(" anonymous_method_parameter_list? ")" ;
+object_formals ::= "(" formal_parameter_list? ")" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+block ::= "{" statement-list? "}" ;
+rank-specifier ::= "[" dim-separators? "]" ;
+struct-body ::= "{" struct-member-declarations? "}" ;
+class-body ::= "{" class-member-declarations? "}" ;
+interface-body ::= "{" interface-member-declarations? "}" ;
+switch-block ::= "{" switch-sections? "}" ;
+--------------------dart::spec-0.01.bgf--------------------
+arguments ::= "(" argumentList? ")" ;
+--------------------dart::google.bgf--------------------
+arguments ::= "(" argumentList? ")" ;
+--------------------dart::spec-0.05.bgf--------------------
+arguments ::= "(" argumentList? ")" ;
+--------------------java::java-1-jls-impl.bgf--------------------
+Block ::= "{" BlockStatements? "}" ;
+InterfaceBody ::= "{" InterfaceMemberDeclarations? "}" ;
+ClassBody ::= "{" ClassBodyDeclarations? "}" ;
+--------------------java::java-1-jls-read.bgf--------------------
+Block ::= "{" BlockStatements? "}" ;
+InterfaceBody ::= "{" InterfaceMemberDeclarations? "}" ;
+ClassBody ::= "{" ClassBodyDeclarations? "}" ;
+--------------------java::java-2-jls-read.bgf--------------------
+Block ::= "{" BlockStatements? "}" ;
+InterfaceBody ::= "{" InterfaceMemberDeclarations? "}" ;
+ClassBody ::= "{" ClassBodyDeclarations? "}" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+AnnotationTypeBody ::= "{" AnnotationTypeElementDeclarations? "}" ;
+FormalParameters ::= "(" FormalParameterDecls? ")" ;
+--------------------java::java-5-jls-read.bgf--------------------
+Block ::= "{" BlockStatements? "}" ;
+InterfaceBody ::= "{" InterfaceMemberDeclarations? "}" ;
+AnnotationTypeBody ::= "{" AnnotationTypeElementDeclarations? "}" ;
+ClassBody ::= "{" ClassBodyDeclarations? "}" ;
+Arguments ::= "(" ArgumentList? ")" ;
+--------------------java::java-5-parr.bgf--------------------
+formalParameters ::= "(" formalParameterDecls? ")" ;
+arguments ::= "(" expressionList? ")" ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+dimension ::= "[" expression? "]" ;
+--------------------java::java-4-sdf.bgf--------------------
+DimExprInitialized ::= "[" Expression? "]" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+dimension ::= "[" expression? "]" ;
+--------------------modula::sdf.bgf--------------------
+GenFmls ::= "(" IdList? ")" ;
+EnumType ::= "{" IdList? "}" ;
+GenActls ::= "(" IdList? ")" ;
+--------------------modula::src-052.bgf--------------------
+EnumType ::= "{" IDList? "}" ;
+--------------------modula::dagenais-cordy.bgf--------------------
+GenFmls ::= "(" IdList? ")" ;
+GenActls ::= "(" IdList? ")" ;
+EnumerationType ::= "{" IdList? "}" ;
+--------------------occam::mu-mitchell.bgf--------------------
+compound-statement ::= "{" statement-seq? "}" ;
+new-initializer ::= "(" expression-list? ")" ;
+--------------------php::cordy.bgf--------------------
+exit_value ::= "(" Expr? ")" ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+html-comment ::= "<!--" characters? "-->" ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+comment ::= "<!--" Text? "-->" ;

@@ -1,0 +1,739 @@
+--------------------ada::kellogg.bgf--------------------
+compound_name ::= IDENTIFIER (DOT IDENTIFIER)* ;
+discriminant_specifications ::= discriminant_specification (SEMI discriminant_specification)* ;
+enum_id_s ::= enumeration_literal_specification (COMMA enumeration_literal_specification)* ;
+defining_identifier_list ::= IDENTIFIER (COMMA IDENTIFIER)* ;
+except_choice_s ::= exception_choice (PIPE exception_choice)* ;
+index_or_discrete_range_s ::= index_or_discrete_range (COMMA index_or_discrete_range)* ;
+c_name_list ::= compound_name (COMMA compound_name)* ;
+value_s ::= value (COMMA value)* ;
+choice_s ::= choice (PIPE choice)* ;
+BASED_INTEGER ::= EXTENDED_DIGIT ("_"? EXTENDED_DIGIT)* ;
+ranged_expr_s ::= ranged_expr (PIPE ranged_expr)* ;
+--------------------ada::kempe.bgf--------------------
+numeral ::= digit (underline? digit)* ;
+defining_identifier_list ::= defining_identifier ("," defining_identifier)* ;
+term ::= factor (multiplying_operator factor)* ;
+discrete_choice_list ::= discrete_choice ("|" discrete_choice)* ;
+based_numeral ::= extended_digit (underline? extended_digit)* ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+defining_identifier_list ::= defining_identifier ("," defining_identifier)* ;
+term ::= factor (multiplying_operator factor)* ;
+discrete_choice_list ::= discrete_choice ("|" discrete_choice)* ;
+--------------------ada::lncs-2219.bgf--------------------
+numeral ::= digit (underline? digit)* ;
+defining_identifier_list ::= defining_identifier ("," defining_identifier)* ;
+term ::= factor (multiplying_operator factor)* ;
+discrete_choice_list ::= discrete_choice ("|" discrete_choice)* ;
+based_numeral ::= extended_digit (underline? extended_digit)* ;
+--------------------ada::lncs-4348.bgf--------------------
+numeral ::= digit (underline? digit)* ;
+defining_identifier_list ::= defining_identifier ("," defining_identifier)* ;
+term ::= factor (multiplying_operator factor)* ;
+discrete_choice_list ::= discrete_choice ("|" discrete_choice)* ;
+interface_list ::= interface_subtype_mark ("and" interface_subtype_mark)* ;
+based_numeral ::= extended_digit (underline? extended_digit)* ;
+--------------------ada::cordy-hyaric.bgf--------------------
+interface_list ::= subtype_mark | (subtype_mark "and" interface_list) ;
+--------------------c::iso-9899-1999.bgf--------------------
+AND-expression ::= equality-expression | (AND-expression "&" equality-expression) ;
+logical-OR-expression ::= logical-AND-expression | (logical-OR-expression "||" logical-AND-expression) ;
+init-declarator-list ::= init-declarator | (init-declarator-list "," init-declarator) ;
+expression ::= assignment-expression | (expression "," assignment-expression) ;
+enumerator-list ::= enumerator | (enumerator-list "," enumerator) ;
+argument-expression-list ::= assignment-expression | (argument-expression-list "," assignment-expression) ;
+exclusive-OR-expression ::= AND-expression | (exclusive-OR-expression "^" AND-expression) ;
+identifier-list ::= identifier | (identifier-list "," identifier) ;
+parameter-list ::= parameter-declaration | (parameter-list "," parameter-declaration) ;
+logical-AND-expression ::= inclusive-OR-expression | (logical-AND-expression "&&" inclusive-OR-expression) ;
+struct-declarator-list ::= struct-declarator | (struct-declarator-list "," struct-declarator) ;
+inclusive-OR-expression ::= exclusive-OR-expression | (inclusive-OR-expression "|" exclusive-OR-expression) ;
+--------------------c::iso-9899-tc2.bgf--------------------
+AND-expression ::= equality-expression | (AND-expression "&" equality-expression) ;
+logical-OR-expression ::= logical-AND-expression | (logical-OR-expression "||" logical-AND-expression) ;
+init-declarator-list ::= init-declarator | (init-declarator-list "," init-declarator) ;
+expression ::= assignment-expression | (expression "," assignment-expression) ;
+enumerator-list ::= enumerator | (enumerator-list "," enumerator) ;
+argument-expression-list ::= assignment-expression | (argument-expression-list "," assignment-expression) ;
+exclusive-OR-expression ::= AND-expression | (exclusive-OR-expression "^" AND-expression) ;
+identifier-list ::= identifier | (identifier-list "," identifier) ;
+parameter-list ::= parameter-declaration | (parameter-list "," parameter-declaration) ;
+logical-AND-expression ::= inclusive-OR-expression | (logical-AND-expression "&&" inclusive-OR-expression) ;
+struct-declarator-list ::= struct-declarator | (struct-declarator-list "," struct-declarator) ;
+inclusive-OR-expression ::= exclusive-OR-expression | (inclusive-OR-expression "|" exclusive-OR-expression) ;
+--------------------c::iso-9899-tc3.bgf--------------------
+AND-expression ::= equality-expression | (AND-expression "&" equality-expression) ;
+logical-OR-expression ::= logical-AND-expression | (logical-OR-expression "||" logical-AND-expression) ;
+init-declarator-list ::= init-declarator | (init-declarator-list "," init-declarator) ;
+expression ::= assignment-expression | (expression "," assignment-expression) ;
+enumerator-list ::= enumerator | (enumerator-list "," enumerator) ;
+argument-expression-list ::= assignment-expression | (argument-expression-list "," assignment-expression) ;
+exclusive-OR-expression ::= AND-expression | (exclusive-OR-expression "^" AND-expression) ;
+identifier-list ::= identifier | (identifier-list "," identifier) ;
+parameter-list ::= parameter-declaration | (parameter-list "," parameter-declaration) ;
+logical-AND-expression ::= inclusive-OR-expression | (logical-AND-expression "&&" inclusive-OR-expression) ;
+struct-declarator-list ::= struct-declarator | (struct-declarator-list "," struct-declarator) ;
+inclusive-OR-expression ::= exclusive-OR-expression | (inclusive-OR-expression "|" exclusive-OR-expression) ;
+--------------------c::malton-dahn.bgf--------------------
+binary_expression ::= unary_expression | (binary_expression binary_operator unary_expression) ;
+--------------------c::cordy-malton.bgf--------------------
+binary_expression ::= unary_expression | (binary_expression binary_operator unary_expression) ;
+--------------------cpp::iso-n2723.bgf--------------------
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+logical-or-expression ::= logical-and-expression | (logical-or-expression "||" logical-and-expression) ;
+init-declarator-list ::= init-declarator | (init-declarator-list "," init-declarator) ;
+lambda-parameter-declaration-list ::= lambda-parameter | (lambda-parameter "," lambda-parameter-declaration-list) ;
+expression ::= assignment-expression | (expression "," assignment-expression) ;
+enumerator-list ::= enumerator-definition | (enumerator-list "," enumerator-definition) ;
+member-declarator-list ::= member-declarator | (member-declarator-list "," member-declarator) ;
+template-parameter-list ::= template-parameter | (template-parameter-list "," template-parameter) ;
+parameter-declaration-list ::= parameter-declaration | (parameter-declaration-list "," parameter-declaration) ;
+capture-list ::= capture | (capture-list "," capture) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+logical-and-expression ::= inclusive-or-expression | (logical-and-expression "&&" inclusive-or-expression) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+--------------------cpp::elges-cordy.bgf--------------------
+template_argument_list ::= template_argument | (template_argument_list "," template_argument) ;
+template_parameter_list ::= template_parameter | (template_parameter_list "," template_parameter) ;
+expression ::= assignment_expression | (expression "," assignment_expression) ;
+type_list ::= type_name | (type_list "," type_name) ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+logical-or-expression ::= logical-and-expression | (logical-or-expression "||" logical-and-expression) ;
+init-declarator-list ::= init-declarator | (init-declarator-list "," init-declarator) ;
+type-id-list ::= type-id | (type-id-list "," type-id) ;
+template-argument-list ::= template-argument | (template-argument-list "," template-argument) ;
+initializer-list ::= initializer-clause | (initializer-list "," initializer-clause) ;
+base-specifier-list ::= base-specifier | (base-specifier-list "," base-specifier) ;
+expression ::= assignment-expression | (expression "," assignment-expression) ;
+enumerator-list ::= enumerator-definition | (enumerator-list "," enumerator-definition) ;
+member-declarator-list ::= member-declarator | (member-declarator-list "," member-declarator) ;
+template-parameter-list ::= template-parameter | (template-parameter-list "," template-parameter) ;
+parameter-declaration-list ::= parameter-declaration | (parameter-declaration-list "," parameter-declaration) ;
+expression-list ::= assignment-expression | (expression-list "," assignment-expression) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+logical-and-expression ::= inclusive-or-expression | (logical-and-expression "&&" inclusive-or-expression) ;
+mem-initializer-list ::= mem-initializer | (mem-initializer "," mem-initializer-list) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+argument-list ::= argument | (argument-list "," argument) ;
+namespace-or-type-name ::= identifier | (namespace-or-type-name "." identifier) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+null-coalescing-expression ::= conditional-or-expression | (conditional-or-expression "??" null-coalescing-expression) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+anonymous-method-parameter-list ::= anonymous-method-parameter | (anonymous-method-parameter-list "," anonymous-method-parameter) ;
+argument-list ::= argument | (argument-list "," argument) ;
+type-arguments ::= type-argument | (type-arguments "," type-argument) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+null-coalescing-expression ::= conditional-or-expression | (conditional-or-expression "??" null-coalescing-expression) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+anonymous-method-parameter-list ::= anonymous-method-parameter | (anonymous-method-parameter-list "," anonymous-method-parameter) ;
+argument-list ::= argument | (argument-list "," argument) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+type-arguments ::= type-argument | (type-arguments "," type-argument) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+argument-list ::= argument | (argument-list "," argument) ;
+namespace-or-type-name ::= identifier | (namespace-or-type-name "." identifier) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+null-coalescing-expression ::= conditional-or-expression | (conditional-or-expression "??" null-coalescing-expression) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+anonymous-method-parameter-list ::= anonymous-method-parameter | (anonymous-method-parameter-list "," anonymous-method-parameter) ;
+argument-list ::= argument | (argument-list "," argument) ;
+type-arguments ::= type-argument | (type-arguments "," type-argument) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+expression-list ::= expression | (expression-list "," expression) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+argument-list ::= argument | (argument-list "," argument) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+namespace-or-type-name ::= identifier | (namespace-or-type-name "." identifier) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+expression-list ::= expression | (expression-list "," expression) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+argument-list ::= argument | (argument-list "," argument) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+namespace-or-type-name ::= identifier | (namespace-or-type-name "." identifier) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+orderings ::= ordering | (orderings "," ordering) ;
+explicit-anonymous-function-parameter-list ::= explicit-anonymous-function-parameter | (explicit-anonymous-function-parameter-list "," explicit-anonymous-function-parameter) ;
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+member-initializer-list ::= member-initializer | (member-initializer-list "," member-initializer) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+null-coalescing-expression ::= conditional-or-expression | (conditional-or-expression "??" null-coalescing-expression) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+element-initializer-list ::= element-initializer | (element-initializer-list "," element-initializer) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+implicit-anonymous-function-parameter-list ::= implicit-anonymous-function-parameter | (implicit-anonymous-function-parameter-list "," implicit-anonymous-function-parameter) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+argument-list ::= argument | (argument-list "," argument) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+member-declarator-list ::= member-declarator | (member-declarator-list "," member-declarator) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+type-arguments ::= type-argument | (type-arguments "," type-argument) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+orderings ::= ordering | (orderings "," ordering) ;
+explicit-anonymous-function-parameter-list ::= explicit-anonymous-function-parameter | (explicit-anonymous-function-parameter-list "," explicit-anonymous-function-parameter) ;
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+member-initializer-list ::= member-initializer | (member-initializer-list "," member-initializer) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+null-coalescing-expression ::= conditional-or-expression | (conditional-or-expression "??" null-coalescing-expression) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+element-initializer-list ::= element-initializer | (element-initializer-list "," element-initializer) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+implicit-anonymous-function-parameter-list ::= implicit-anonymous-function-parameter | (implicit-anonymous-function-parameter-list "," implicit-anonymous-function-parameter) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+argument-list ::= argument | (argument-list "," argument) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+member-declarator-list ::= member-declarator | (member-declarator-list "," member-declarator) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+type-arguments ::= type-argument | (type-arguments "," type-argument) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------cs::csharp-cordy.bgf--------------------
+null_coalescing_expression ::= conditional_or_expression | (conditional_or_expression "??" null_coalescing_expression) ;
+conditional_or_expression ::= conditional_and_expression | (conditional_or_expression "||" conditional_and_expression) ;
+conditional_and_expression ::= inclusive_or_expression | (conditional_and_expression "&&" inclusive_or_expression) ;
+exclusive_or_expression ::= and_expression | (exclusive_or_expression "^" and_expression) ;
+inclusive_or_expression ::= exclusive_or_expression | (inclusive_or_expression "|" exclusive_or_expression) ;
+and_expression ::= equality_expression | (and_expression "&" equality_expression) ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+interface-type-list ::= interface-type | (interface-type-list "," interface-type) ;
+conditional-or-expression ::= conditional-and-expression | (conditional-or-expression "||" conditional-and-expression) ;
+named-argument-list ::= named-argument | (named-argument-list "," named-argument) ;
+variable-initializer-list ::= variable-initializer | (variable-initializer-list "," variable-initializer) ;
+qualified-identifier ::= identifier | (qualified-identifier "." identifier) ;
+constant-declarators ::= constant-declarator | (constant-declarators "," constant-declarator) ;
+positional-argument-list ::= positional-argument | (positional-argument-list "," positional-argument) ;
+statement-expression-list ::= statement-expression | (statement-expression-list "," statement-expression) ;
+conditional-and-expression ::= inclusive-or-expression | (conditional-and-expression "&&" inclusive-or-expression) ;
+local-variable-declarators ::= local-variable-declarator | (local-variable-declarators "," local-variable-declarator) ;
+exclusive-or-expression ::= and-expression | (exclusive-or-expression "^" and-expression) ;
+expression-list ::= expression | (expression-list "," expression) ;
+variable-declarators ::= variable-declarator | (variable-declarators "," variable-declarator) ;
+attribute-list ::= attribute | (attribute-list "," attribute) ;
+and-expression ::= equality-expression | (and-expression "&" equality-expression) ;
+argument-list ::= argument | (argument-list "," argument) ;
+namespace-or-type-name ::= identifier | (namespace-or-type-name "." identifier) ;
+fixed-parameters ::= fixed-parameter | (fixed-parameters "," fixed-parameter) ;
+inclusive-or-expression ::= exclusive-or-expression | (inclusive-or-expression "|" exclusive-or-expression) ;
+enum-member-declarations ::= enum-member-declaration | (enum-member-declarations "," enum-member-declaration) ;
+--------------------dart::spec-0.01.bgf--------------------
+initializedIdentifierList ::= initializedIdentifier ("," initializedIdentifier)* ;
+typeList ::= type ("," type)* ;
+logicalAndExpression ::= bitwiseOrExpression ("&&" bitwiseOrExpression)* ;
+expressionList ::= expression ("," expression)* ;
+logicalOrExpression ::= logicalAndExpression ("||" logicalAndExpression)* ;
+staticFinalDeclarationList ::= staticFinalDeclaration ("," staticFinalDeclaration)* ;
+normalFormalParameters ::= normalFormalParameter ("," normalFormalParameter)* ;
+--------------------dart::google.bgf--------------------
+initializedIdentifierList ::= initializedIdentifier ("," initializedIdentifier)* ;
+typeList ::= type ("," type)* ;
+logicalAndExpression ::= bitwiseOrExpression ("&&" bitwiseOrExpression)* ;
+expressionList ::= expression ("," expression)* ;
+logicalOrExpression ::= logicalAndExpression ("||" logicalAndExpression)* ;
+staticFinalDeclarationList ::= staticFinalDeclaration ("," staticFinalDeclaration)* ;
+--------------------dart::spec-0.05.bgf--------------------
+typeList ::= type ("," type)* ;
+logicalAndExpression ::= bitwiseOrExpression ("&&" bitwiseOrExpression)* ;
+expressionList ::= expression ("," expression)* ;
+logicalOrExpression ::= logicalAndExpression ("||" logicalAndExpression)* ;
+staticFinalDeclarationList ::= staticFinalDeclaration ("," staticFinalDeclaration)* ;
+normalFormalParameters ::= normalFormalParameter ("," normalFormalParameter)* ;
+--------------------fortran::derricks.bgf--------------------
+OptionalParList ::= OptionalPar ("," OptionalPar)* ;
+AllocationList ::= Allocation ("," Allocation)* ;
+AccessIdList ::= AccessId ("," AccessId)* ;
+DeferredShapeSpecList ::= DeferredShapeSpec ("," DeferredShapeSpec)* ;
+PointerObjectList ::= PointerObject ("," PointerObject)* ;
+AllocateObjectList ::= AllocateObject ("," AllocateObject)* ;
+ArrayAllocationList ::= ArrayAllocation ("," ArrayAllocation)* ;
+EquivalenceSetList ::= EquivalenceSet ("," EquivalenceSet)* ;
+CloseSpecList ::= CloseSpec ("," CloseSpec)* ;
+SFDummyArgNameList ::= SFDummyArgName ("," SFDummyArgName)* ;
+Datalist ::= DataStmtSet ("," DataStmtSet)* ;
+SavedEntityList ::= SavedEntity ("," SavedEntity)* ;
+NamedConstantDefList ::= NamedConstantDef ("," NamedConstantDef)* ;
+ComponentDeclList ::= ComponentDecl ("," ComponentDecl)* ;
+ConnectSpecList ::= ConnectSpec ("," ConnectSpec)* ;
+PointerStmtObjectList ::= PointerStmtObject ("," PointerStmtObject)* ;
+CommonBlockObjectList ::= CommonBlockObject ("," CommonBlockObject)* ;
+DataStmtValueList ::= DataStmtValue ("," DataStmtValue)* ;
+RenameList ::= Rename ("," Rename)* ;
+ProcedureNameList ::= ProcedureName ("," ProcedureName)* ;
+InputItemList ::= InputItem ("," InputItem)* ;
+OutputItemList ::= OutputItem ("," OutputItem)* ;
+DataStmtObjectList ::= DataStmtObject ("," DataStmtObject)* ;
+TargetObjectList ::= TargetObject ("," TargetObject)* ;
+AcValueList ::= AcValue ("," AcValue)* ;
+OnlyList ::= Only ("," Only)* ;
+ArrayDeclaratorList ::= ArrayDeclarator ("," ArrayDeclarator)* ;
+FormatItemList ::= FormatItem ("," FormatItem)* ;
+ComponentAttrSpecList ::= ComponentAttrSpec ("," ComponentAttrSpec)* ;
+DataIDoObjectList ::= DataIDoObject ("," DataIDoObject)* ;
+ExplicitShapeSpecList ::= ExplicitShapeSpec ("," ExplicitShapeSpec)* ;
+SectionSubscriptList ::= SectionSubscript ("," SectionSubscript)* ;
+IntentParList ::= IntentPar ("," IntentPar)* ;
+UFFactor ::= UFPrimary | (UFPrimary PowerOp UFFactor) ;
+--------------------fortran::waite-cordy.bgf--------------------
+UFFactor ::= UFPrimary | (UFPrimary PowerOp UFFactor) ;
+--------------------java::java-2-jls-impl.bgf--------------------
+TypeList ::= Type ("," Type)* ;
+VariableDeclarators ::= VariableDeclarator ("," VariableDeclarator)* ;
+QualifiedIdentifier ::= Identifier ("." Identifier)* ;
+QualifiedIdentifierList ::= QualifiedIdentifier ("," QualifiedIdentifier)* ;
+--------------------java::java-5-habelitz.bgf--------------------
+relationalExpression ::= shiftExpression (LESS_OR_EQUAL | GREATER_OR_EQUAL | LESS_THAN | GREATER_THAN shiftExpression)* ;
+qualifiedTypeIdent ::= typeIdent (DOT typeIdent)* ;
+shiftExpression ::= additiveExpression (BIT_SHIFT_RIGHT | SHIFT_RIGHT | SHIFT_LEFT additiveExpression)* ;
+exclusiveOrExpression ::= andExpression (XOR andExpression)* ;
+typeList ::= type (COMMA type)* ;
+expressionList ::= expression (COMMA expression)* ;
+qualifiedIdentList ::= qualifiedIdentifier (COMMA qualifiedIdentifier)* ;
+qualifiedTypeIdentSimplified ::= typeIdentSimplified (DOT typeIdentSimplified)* ;
+equalityExpression ::= instanceOfExpression (EQUAL | NOT_EQUAL instanceOfExpression)* ;
+classFieldDeclaratorList ::= classFieldDeclarator (COMMA classFieldDeclarator)* ;
+interfaceFieldDeclaratorList ::= interfaceFieldDeclarator (COMMA interfaceFieldDeclarator)* ;
+andExpression ::= equalityExpression (AND equalityExpression)* ;
+enumConstants ::= enumConstant (COMMA enumConstant)* ;
+multiplicativeExpression ::= unaryExpression (STAR | DIV | MOD unaryExpression)* ;
+inclusiveOrExpression ::= exclusiveOrExpression (OR exclusiveOrExpression)* ;
+logicalAndExpression ::= inclusiveOrExpression (LOGICAL_AND inclusiveOrExpression)* ;
+qualifiedIdentifier ::= IDENT (DOT ident::IDENT)* ;
+additiveExpression ::= multiplicativeExpression (PLUS | MINUS multiplicativeExpression)* ;
+logicalOrExpression ::= logicalAndExpression (LOGICAL_OR logicalAndExpression)* ;
+--------------------java::java-5-jls-impl.bgf--------------------
+Bound ::= Type ("&" Type)* ;
+TypeList ::= Type ("," Type)* ;
+VariableDeclarators ::= VariableDeclarator ("," VariableDeclarator)* ;
+QualifiedIdentifier ::= Identifier ("." Identifier)* ;
+QualifiedIdentifierList ::= QualifiedIdentifier ("," QualifiedIdentifier)* ;
+--------------------java::java-5-parr.bgf--------------------
+relationalExpression ::= shiftExpression (relationalOp shiftExpression)* ;
+shiftExpression ::= additiveExpression (shiftOp additiveExpression)* ;
+annotationName ::= Identifier ("." Identifier)* ;
+exclusiveOrExpression ::= andExpression ("^" andExpression)* ;
+typeList ::= type ("," type)* ;
+expressionList ::= expression ("," expression)* ;
+equalityExpression ::= instanceOfExpression ("==" | "!=" instanceOfExpression)* ;
+andExpression ::= equalityExpression ("&" equalityExpression)* ;
+enumConstants ::= enumConstant ("," enumConstant)* ;
+multiplicativeExpression ::= unaryExpression ("*" | "/" | "%" unaryExpression)* ;
+conditionalAndExpression ::= inclusiveOrExpression ("&&" inclusiveOrExpression)* ;
+qualifiedName ::= Identifier ("." Identifier)* ;
+inclusiveOrExpression ::= exclusiveOrExpression ("|" exclusiveOrExpression)* ;
+variableDeclarators ::= variableDeclarator ("," variableDeclarator)* ;
+qualifiedNameList ::= qualifiedName ("," qualifiedName)* ;
+typeBound ::= type ("&" type)* ;
+additiveExpression ::= multiplicativeExpression ("+" | "-" multiplicativeExpression)* ;
+elementValuePairs ::= elementValuePair ("," elementValuePair)* ;
+conditionalOrExpression ::= conditionalAndExpression ("||" conditionalAndExpression)* ;
+--------------------java::java-5-stahl.bgf--------------------
+parameterDeclarationList ::= (parameterDeclaration (COMMA parameterDeclaration)*)? ;
+andExpression ::= equalityExpression (BAND equalityExpression)* ;
+multiplicativeExpression ::= unaryExpression (STAR | DIV | MOD unaryExpression)* ;
+shiftExpression ::= additiveExpression (SL | SR | BSR additiveExpression)* ;
+exclusiveOrExpression ::= andExpression (BXOR andExpression)* ;
+identifier ::= IDENT (DOT IDENT)* ;
+inclusiveOrExpression ::= exclusiveOrExpression (BOR exclusiveOrExpression)* ;
+expressionList ::= expression (COMMA expression)* ;
+logicalAndExpression ::= inclusiveOrExpression (LAND inclusiveOrExpression)* ;
+variableDefinitions ::= variableDeclarator (COMMA variableDeclarator)* ;
+additiveExpression ::= multiplicativeExpression (PLUS | MINUS multiplicativeExpression)* ;
+logicalOrExpression ::= logicalAndExpression (LOR logicalAndExpression)* ;
+equalityExpression ::= relationalExpression (NOT_EQUAL | EQUAL relationalExpression)* ;
+--------------------java::java-5-studman.bgf--------------------
+anntotationMemberValuePairs ::= annotationMemberValuePair (COMMA annotationMemberValuePair)* ;
+andExpression ::= equalityExpression (BAND equalityExpression)* ;
+multiplicativeExpression ::= unaryExpression (STAR | DIV | MOD unaryExpression)* ;
+shiftExpression ::= additiveExpression (SL | SR | BSR additiveExpression)* ;
+exclusiveOrExpression ::= andExpression (BXOR andExpression)* ;
+identifier ::= IDENT (DOT IDENT)* ;
+inclusiveOrExpression ::= exclusiveOrExpression (BOR exclusiveOrExpression)* ;
+expressionList ::= expression (COMMA expression)* ;
+logicalAndExpression ::= inclusiveOrExpression (LAND inclusiveOrExpression)* ;
+variableDefinitions ::= variableDeclarator (COMMA variableDeclarator)* ;
+additiveExpression ::= multiplicativeExpression (PLUS | MINUS multiplicativeExpression)* ;
+logicalOrExpression ::= logicalAndExpression (LOR logicalAndExpression)* ;
+equalityExpression ::= relationalExpression (NOT_EQUAL | EQUAL relationalExpression)* ;
+--------------------java::java-4-sdf.bgf--------------------
+StatementExpressionList ::= StatementExpression ("," StatementExpression)* ;
+--------------------modula::sdf.bgf--------------------
+IdList ::= Id ("," Id)* ;
+--------------------modula::src-052.bgf--------------------
+E4 ::= E5 (Addop E5)* ;
+E3 ::= E4 (Relop E4)* ;
+E1 ::= E2 ("AND" E2)* ;
+IDList ::= Ident ("," Ident)* ;
+Expr ::= E1 ("OR" E1)* ;
+SetCons ::= SetElt ("." SetElt)* ;
+RecordCons ::= RecordElt ("," RecordElt)* ;
+E5 ::= E6 (Mulop E6)* ;
+--------------------xpath::w3c-xpath1.bgf--------------------
+AndExpr ::= [NT-AndExpr] EqualityExpr | (AndExpr "and" EqualityExpr) ;
+OrExpr ::= [NT-OrExpr] AndExpr | (OrExpr "or" AndExpr) ;
+UnionExpr ::= [NT-UnionExpr] PathExpr | (UnionExpr "|" PathExpr) ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+page-name ::= title-character (space? title-character)* ;
+line ::= plain-text+ (spaces plain-text+)* ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+balanced_text ::= text_without_consecutive_equal_braces (include text_without_consecutive_equal_braces)* ;
+table_body ::= table_header_cell | table_cell (table_row table_header_cell | table_cell)* ;
+--------------------fl::antlr.bgf--------------------
+binary ::= l::atom (o::ops r::atom)* ;
+--------------------fl::python.bgf--------------------
+binary ::= atom (operators atom)* ;
+--------------------metasyntax::bnf-sdf.bgf--------------------
+Elements ::= Element ("|" Element)* ;
+--------------------metasyntax::ebnf-bgf.bgf--------------------
+definition ::= expression (" " expression)* ;
+--------------------metasyntax::ebnf-iso-1.bgf--------------------
+definitions_list ::= single_definition (definition_separator_symbol single_definition)* ;
+single_definition ::= syntactic_term (concatenate_symbol syntactic_term)* ;
+--------------------metasyntax::ebnf-iso-2.bgf--------------------
+definitions_list ::= single_definition ("|" single_definition)* ;
+single_definition ::= term ("," term)* ;
+--------------------metasyntax::ebnf-iso-3.bgf--------------------
+DEFINITIONS_LIST ::= SINGLE_DEFINITION ("/" SINGLE_DEFINITION)* ;
+SINGLE_DEFINITION ::= TERM ("," TERM)* ;
+--------------------tescol::00000.bgf--------------------
+addsubexp ::= multidivexp (ADD | SUB multidivexp)* ;
+compexp ::= addsubexp (comparisonsymbol addsubexp)* ;
+paralist ::= (parameter COMMA)* parameter ;
+multidivexp ::= expoexp (MULTI | DIV expoexp)* ;
+connexp ::= c1::compexp (co1::compoperator c2::compexp)* ;
+--------------------tescol::00001.bgf--------------------
+plusexpr ::= multExpr (PLUS | MINUS multExpr)* ;
+boolExpr ::= andExpr (DISJ andExpr)* ;
+andExpr ::= compExpr (CONJ compExpr)* ;
+multExpr ::= expExp (MULTI | DIV expExp)* ;
+expExp ::= atom (EXP atom)* ;
+--------------------tescol::00010.bgf--------------------
+arithmeticExpr ::= exprLevel1 (PLUS | MINUS exprLevel1)* ;
+booleanExpr ::= conjunctionExpr (OR conjunctionExpr)* ;
+args ::= arithmeticExpr (COMMA arithmeticExpr)* ;
+conjunctionExpr ::= booleanAtom (AND booleanAtom)* ;
+expExpr ::= unaryExpr (EXPONENTIATE unaryExpr)* ;
+exprLevel1 ::= expExpr (MULTIPLY | DIVIDE expExpr)* ;
+--------------------tescol::00011.bgf--------------------
+paramlist ::= param (COMMA param)* ;
+functionparamlist ::= expression (COMMA expression)* ;
+--------------------tescol::00100.bgf--------------------
+parameters ::= parameter (COMMA parameter)* ;
+realParameters ::= aritExpr (COMMA aritExpr)* ;
+multExpr ::= orderExpr (multOperand orderExpr)* ;
+booleanDisj ::= booleanConj (DISJUNCTION booleanConj)* ;
+aritExpr ::= multExpr (addOperand multExpr)* ;
+booleanConj ::= booleanExpression (CONJUNCTION booleanExpression)* ;
+--------------------tescol::00101.bgf--------------------
+boolean_OR ::= a::boolean_AND (OR b::boolean_AND)* ;
+parameter_list_inside ::= parameter_element (COMMA parameter_element)* ;
+arith_expo ::= a::arith_atom (EXPONENTIAL b::arith_atom)* ;
+arith_addsub ::= a::arith_muldiv (ADDITION | SUBTRACTION b::arith_muldiv)* ;
+arith_muldiv ::= a::arith_expo (MULTIPLICATION | DIVISION b::arith_expo)* ;
+boolean_AND ::= a::boolean_predicate (AND b::boolean_predicate)* ;
+--------------------tescol::00110.bgf--------------------
+parameters ::= parameter (COMMA parameter)* ;
+procedureParams ::= expression (COMMA expression)* ;
+expression ::= conjunction (DISJUNCT conjunction)* ;
+relational ::= condExpr (EQUALITY | NOT_EQUAL | LESS_THAN | LESS_THAN_OR_EQUAL | GREATER_THAN | GREATER_THAN_OR_EQUAL condExpr)* ;
+conjunction ::= relational (CONJ relational)* ;
+add ::= mult (PLUS | MINUS mult)* ;
+mult ::= unary (MULT | DIV | EXPON unary)* ;
+--------------------tescol::00111.bgf--------------------
+prodExpr ::= exponentialExpr (MULTIPLICATION | DIVISION exponentialExpr)* ;
+conjBooleanExpr ::= booleanExpr (CONJUNCTION booleanExpr)* ;
+expr ::= prodExpr (ADDITION | SUBTRACTION prodExpr)* ;
+commaSeparatedArithEx ::= (arithEx (COMMA arithEx)*)? ;
+disjBooleanExpr ::= conjBooleanExpr (DISJUNCTION conjBooleanExpr)* ;
+--------------------tescol::01000.bgf--------------------
+multiExpr ::= expExpr (MULT | DIV expExpr)* ;
+andExpr ::= comparExpr (CONJ comparExpr)* ;
+orExpr ::= andExpr (DISJ andExpr)* ;
+comparExpr ::= arithExpr (comparOps arithExpr)* ;
+expExpr ::= atom (EXP atom)* ;
+arithExpr ::= multiExpr (ADD | SUB multiExpr)* ;
+--------------------tescol::01001.bgf--------------------
+plus_min_exp ::= mult_div_exp (PLUS | MINUS mult_div_exp)* ;
+bool_exp ::= con_exp (DISJ con_exp)* ;
+params_given ::= (arith_exp (COMMA arith_exp)*)? ;
+mult_div_exp ::= exp_exp (MULT | DIV exp_exp)* ;
+con_exp ::= comp_exp (CONJ comp_exp)* ;
+param_list ::= (param_item (COMMA param_item)*)? ;
+--------------------tescol::01010.bgf--------------------
+mul_div_expr ::= expexpr (MUL | DIV expexpr)* ;
+andcond ::= pred (AND pred)* ;
+cond ::= andcond (OR andcond)* ;
+sub_add_expr ::= mul_div_expr (addsub mul_div_expr)* ;
+--------------------tescol::01011.bgf--------------------
+relation ::= addition (EQUALITY | LTHAN | MTHAN | NOTEQUAL | LEQUAL | MEQUAL addition)* ;
+addition ::= mult (PLUS | MINUS mult)* ;
+conj ::= relation (CONJ relation)* ;
+mult ::= unary (MULTI | DIVIS | EXPO unary)* ;
+--------------------tescol::01101.bgf--------------------
+bool_disjunction ::= bool_conjunction (DISJUNCTION bool_conjunction)* ;
+arithmetic_expression ::= multiplication_division (ADD | SUB multiplication_division)* ;
+parameters ::= mix_fix (COMMA mix_fix)* ;
+bool_atom ::= arithmetic_expression (NONEQUALITY | EQUALITY | MOREOREQUAL | LESSOREQUAL | MORETHEN | LESSTHEN arithmetic_expression)* ;
+multiplication_division ::= exponential (MUL | DIV exponential)* ;
+exponential ::= negation (EXP negation)* ;
+bool_conjunction ::= bool_atom (CONJUNCTION bool_atom)* ;
+--------------------tescol::01110.bgf--------------------
+relation ::= addSubExpr (EQUALITY | NON_EQUALITY | LESS | LESS_EQUAL | GREATER_EQUAL | GREATER addSubExpr)* ;
+expoExpr ::= unary (EXPONENTIATION unary)* ;
+multDivExpr ::= expoExpr (MULTIPLICATION | DIVISION expoExpr)* ;
+addSubExpr ::= multDivExpr (ADDITION | SUBTRACTION multDivExpr)* ;
+conjDisjunExpr ::= relation (CONJUNCTION | DISJUNCTION relation)* ;
+--------------------tescol::01111.bgf--------------------
+paramList ::= varDec (COMMA varDec)* ;
+mulExpr ::= divExpr (MULTIPLICATION divExpr)* ;
+divExpr ::= expExpr (DIVISION expExpr)* ;
+addExpr ::= mulExpr (ADDITION mulExpr)* ;
+disjBool ::= conjBool (DISJUNCTION conjBool)* ;
+subExpr ::= addExpr (SUBTRACTION addExpr)* ;
+subExprList ::= arithmeticExpression (COMMA arithmeticExpression)* ;
+expExpr ::= atom (EXPONENTION atom)* ;
+conjBool ::= boolExpr (CONJUNCTION boolExpr)* ;
+--------------------tescol::10000.bgf--------------------
+boolExpr ::= andExpr (DISJUNCTION andExpr)* ;
+andExpr ::= compExpr (CONJUNCTION compExpr)* ;
+multExpr ::= expoExpr (MULTIPLICATION | DIVISION expoExpr)* ;
+expr ::= multExpr (ADDITION | SUBTRACTION multExpr)* ;
+--------------------tescol::10001.bgf--------------------
+boolExpr ::= andExpr (DISJUNCTION andExpr)* ;
+andExpr ::= compExpr (CONJUNCTION compExpr)* ;
+multExpr ::= atom (MULTIPLICATION | DIVISION | EXPONENTIATION atom)* ;
+expr ::= multExpr (ADDITION | SUBTRACTION multExpr)* ;
+--------------------tescol::10010.bgf--------------------
+arithmetic ::= number (arithmeticOperator number)* ;
+expression ::= number (arithmeticOperator number)* ;
+expressionList ::= arithmeticExpression (COMMA arithmeticExpression)* ;
+conjExpression ::= disjExpression (DISJUNC disjExpression)* ;
+booleanExpression ::= conjExpression (CONJUNC conjExpression)* ;
+--------------------tescol::10011.bgf--------------------
+expon ::= sign (EXPON sign)* ;
+paramlist ::= parameter (COMMA parameter)* ;
+bexpr ::= con (DISJUN con)* ;
+multExpr ::= expon (MULT | DIV expon)* ;
+aexprlist ::= aexpr (COMMA aexpr)* ;
+con ::= ropexpr (CONJUN ropexpr)* ;
+--------------------tescol::10100.bgf--------------------
+andExpression ::= orExpression (CONJUNCTION orExpression)* ;
+orExpression ::= relationalExpression (DISJUNCTION relationalExpression)* ;
+addExpression ::= multExpression (ADDITION | SUBTRACTION multExpression)* ;
+multExpression ::= atom (DIVISION | MULTIPLICATION | EXPONENTIATION atom)* ;
+--------------------tescol::10101.bgf--------------------
+boolExpr ::= andExpr (DISJUNCTION andExpr)* ;
+andExpr ::= compExpr (CONJUNCTION compExpr)* ;
+multExpr ::= exponExpr (MULTIPLICATION | DIVISION exponExpr)* ;
+expr ::= multExpr (ADDITION | SUBTRACTION multExpr)* ;
+compExpr ::= expr (GREATEREQUAL | LESSEQUAL | GREATER | LESS | EQUALITY | NONEQUALITY expr)* ;
+--------------------tescol::10110.bgf--------------------
+boolExpr ::= andExpr (DISJ andExpr)* ;
+expr2 ::= multExpr (ADD | SUBTRACT multExpr)* ;
+andExpr ::= compExpr (CONJ compExpr)* ;
+powerExpr ::= atom (EXPONENTIATION atom)* ;
+multExpr ::= powerExpr (MULTIPLY | DIVIDE powerExpr)* ;
+--------------------tescol::10111.bgf--------------------
+pred_base ::= expr (comparator expr)* ;
+div_subterm ::= molecule (SYM_DIV molecule)* ;
+term ::= div_subterm (SYM_MULT div_subterm)* ;
+subtraction_subexpr ::= term (SYM_SUB term)* ;
+pred_term ::= pred_base (SYM_AND pred_base)* ;
+predicate ::= pred_term (SYM_OR pred_term)* ;
+expr ::= subtraction_subexpr (SYM_ADD subtraction_subexpr)* ;
+--------------------tescol::11000.bgf--------------------
+addition ::= multiply (ADDITION multiply)* ;
+parameters ::= (parameter (COMMA parameter)*)? ;
+conjunction ::= booleanop (AND booleanop)* ;
+subtraction ::= addition (SUBTRACTION addition)* ;
+multiply ::= divide (MULTIPLICATION divide)* ;
+disjunction ::= conjunction (OR conjunction)* ;
+--------------------tescol::11001.bgf--------------------
+exp_exp ::= l::atom_exp (EXP r::atom_exp)* ;
+addition_exp ::= l::multiply_exp ((o::PLUS) | (o::MINUS) r::multiply_exp)* ;
+conjunction ::= l::disjunction (AND r::disjunction)* ;
+multiply_exp ::= l::exp_exp ((o::MUL) | (o::FSLASH) r::exp_exp)* ;
+disjunction ::= l::comparison (OR r::comparison)* ;
+--------------------tescol::11010.bgf--------------------
+boolExpr ::= andExpr (DISJUNCTION andExpr)* ;
+andExpr ::= compExpr (CONJUNCTION compExpr)* ;
+paramList ::= varDec (COMMA varDec)* ;
+mulExpr ::= divExpr (MULTIPLY divExpr)* ;
+divExpr ::= expExpr (DIVIDE expExpr)* ;
+addExpr ::= mulExpr (PLUS mulExpr)* ;
+subExpr ::= addExpr (MINUS addExpr)* ;
+exprList ::= compExpr (COMMA compExpr)* ;
+expExpr ::= atom (EXPONENTIATION atom)* ;
+--------------------tescol::11011.bgf--------------------
+exp_exp ::= atom (ARITH_EXP atom)* ;
+exp_multi ::= exp_exp (ARITH_MUL | ARITH_DIV exp_exp)* ;
+exp_bools ::= exp_and (DISJ exp_and)* ;
+exp_and ::= exp_comp (CONJ exp_comp)* ;
+exp_addsub ::= exp_multi (ARITH_ADD | ARITH_SUB exp_multi)* ;
+--------------------tescol::11100.bgf--------------------
+addition ::= t::mult (addop mult)* ;
+parameters ::= parameter (COMMA parameter)* ;
+arguments ::= expression (COMMA expression)* ;
+boolexp ::= t::predicate (BOOLOPERATOR u::predicate)* ;
+mult ::= t::unary (MULTIPLIER unary)* ;
+--------------------tescol::11101.bgf--------------------
+andexpression ::= c1::compexpression (CONJUNCTION compexpression)* ;
+multdivexpression ::= a1::atom (EXPONENTIATION | DIVISION | MULTIPLICATION a2::atom)* ;
+arguments ::= e1::expression (COMMA e2::expression)* ;
+arithexpression ::= m1::multdivexpression (ADDITION | SUBTRACTION m2::multdivexpression)* ;
+booleanexpression ::= an1::andexpression (DISJUNCTION andexpression)* ;
+--------------------tescol::11110.bgf--------------------
+conjunctionExpression ::= equalityExpression (CONJUNCTION equalityExpression)* ;
+booleanExpr ::= conjunctionExpression (DISJUNCTION conjunctionExpression)* ;
+addtExpr ::= multExpr (ADDITION | SUBTRACTION multExpr)* ;
+parameterList ::= parameterElement ("," parameterElement)* ;
+expressionList ::= arithmeticExpr ("," arithmeticExpr)* ;
+multExpr ::= unaryExpr (MULTIPLICATION | DIVISION | EXPONENTIATION unaryExpr)* ;
+--------------------tescol::11111.bgf--------------------
+expon ::= unary (EXPONENTIATION unary)* ;
+relational ::= add (relational_op add)* ;
+conjunction ::= relational (CONJUNCTION relational)* ;
+disjunction ::= conjunction (DISJUNCTION conjunction)* ;
+add ::= mult (ADDITION | SUBTRACTION mult)* ;
+mult ::= expon (MULTIPLICATION | DIVISION expon)* ;
+--------------------tescol::reference.bgf--------------------
+exp ::= a::unary (EXP unary)* ;
+disj ::= a::equality (DISJUNC b::equality)* ;
+conj ::= a::disj (CONJUNC b::disj)* ;
+add ::= a::mult (ADD | SUB b::mult)* ;
+mult ::= a::exp (MULTOP b::exp)* ;

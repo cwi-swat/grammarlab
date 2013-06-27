@@ -1,0 +1,505 @@
+--------------------ada::kellogg.bgf--------------------
+EXTENDED_DIGIT ::= DIGIT | "a" | "b" | "c" | "d" | "e" | "f" ;
+--------------------ada::kempe.bgf--------------------
+discrete_subtype_definition ::= discrete_subtype_indication | "range" ;
+string_element ::= """" | non_quotation_mark_graphic_character ;
+discrete_choice ::= expression | discrete_range | "others" ;
+extended_digit ::= digit | "A" | "B" | "C" | "D" | "E" | "F" ;
+subprogram_default ::= default_name | "<>" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+discrete_subtype_definition ::= discrete_subtype_indication | "range" ;
+discrete_choice ::= expression | discrete_range | "others" ;
+subprogram_default ::= default_name | "<>" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::lncs-2219.bgf--------------------
+string_element ::= """" | non_quotation_mark_graphic_character ;
+discrete_choice ::= expression | discrete_range | "others" ;
+extended_digit ::= digit | "A" | "B" | "C" | "D" | "E" | "F" ;
+subprogram_default ::= default_name | "<>" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::lncs-4348.bgf--------------------
+string_element ::= """" | non_quotation_mark_graphic_character ;
+discrete_choice ::= expression | discrete_range | "others" ;
+extended_digit ::= digit | "A" | "B" | "C" | "D" | "E" | "F" ;
+subprogram_default ::= default_name | "<>" | "null" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+expression_or_null ::= expression | "<>" ;
+discrete_choice ::= expression | discrete_range | "others" ;
+subprogram_default ::= default_name | "<>" | "null" ;
+exception_choice ::= name | "others" ;
+--------------------c::iso-9899-1999.bgf--------------------
+type-specifier ::= "void" | "char" | "short" | "int" | "long" | "float" | "double" | "signed" | "unsigned" | "_Bool" | "_Complex" | "_Imaginary" | struct-or-union-specifier | enum-specifier | typedef-name ;
+--------------------c::iso-9899-tc2.bgf--------------------
+type-specifier ::= "void" | "char" | "short" | "int" | "long" | "float" | "double" | "signed" | "unsigned" | "_Bool" | "_Complex" | struct-or-union-specifier | enum-specifier | typedef-name ;
+--------------------c::iso-9899-tc3.bgf--------------------
+type-specifier ::= "void" | "char" | "short" | "int" | "long" | "float" | "double" | "signed" | "unsigned" | "_Bool" | "_Complex" | struct-or-union-specifier | enum-specifier | typedef-name ;
+--------------------c::malton-dahn.bgf--------------------
+asm_or_cv ::= "__asm__" | "asm" | "asm__" | "__asm" | cv_qualifier ;
+simple_type_name ::= "char" | "int" | "void" | "float" | "double" | type_id ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+cv_qualifier ::= "const" | "volatile" | "CONST" | "__const" | "__const__" | "const__" | "__volatile__" | "__volatile" | "volatile__" | "__iomem" | initdata | "internal_function" | "yyconst" | "pascal" | upper_macro_name ;
+statement_declaration_or_end ::= declaration_or_statement | "}" ;
+simple_type_name ::= "char" | "int" | "void" | "float" | "double" | type_id ;
+--------------------c::cordy-malton.bgf--------------------
+simple_type_name ::= "char" | "int" | "void" | "float" | "double" | type_id ;
+--------------------cpp::iso-n2723.bgf--------------------
+decl-specifier ::= storage-class-specifier | type-specifier | function-specifier | "friend" | "typedef" | "constexpr" | alignment-specifier ;
+--------------------cpp::elges-cordy.bgf--------------------
+decl_specifier ::= storage_class_specifier | type_specifier | function_specifier | "friend" | "typedef" ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+decl-specifier ::= storage-class-specifier | type-specifier | function-specifier | "friend" | "typedef" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+attribute-target ::= "field" | "event" | "method" | "param" | "property" | "return" | type ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+finalizer-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+primary-constraint ::= class-type | "class" | "struct" ;
+accessor-body ::= block | ";" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | right-shift | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+return-type ::= type | "void" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | right-shift-assignment ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+finalizer-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+accessor-body ::= block | ";" ;
+primary-constraint ::= class-type | "class" | "struct" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | right-shift | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+return-type ::= type | "void" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | right-shift-assignment ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+finalizer-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+primary-constraint ::= class-type | "class" | "struct" ;
+accessor-body ::= block | ";" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | right-shift | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+return-type ::= type | "void" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | right-shift-assignment ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+attribute-target ::= "field" | "event" | "method" | "param" | "property" | "return" | type ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+attribute-target ::= "field" | "event" | "method" | "param" | "property" | "return" | type ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+local-variable-type ::= type | "var" ;
+accessor-body ::= block | ";" ;
+primary-constraint ::= class-type | "class" | "struct" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | right-shift | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | right-shift-assignment ;
+attribute-target ::= "field" | "event" | "method" | "param" | "property" | "return" | type ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+class-type ::= type-name | "object" | "dynamic" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+local-variable-type ::= type | "var" ;
+accessor-body ::= block | ";" ;
+primary-constraint ::= class-type | "class" | "struct" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | right-shift | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | right-shift-assignment ;
+attribute-target ::= "field" | "event" | "method" | "param" | "property" | "return" | type ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+overloadable-unary-operator ::= lex-csharp-extra/plus | lex-csharp-extra/minus | increment-decrement | "!" | "~" | "true" | "false" ;
+type-or-void ::= type | "void" ;
+overloadable-binary-operator ::= lex-csharp-extra/plus | lex-csharp-extra/minus | "*" | "/" | "%" | lex-csharp-extra/ampersand | lex-csharp-extra/bar | "^" | "<<" | ">>" | "==" | "!=" | lex-csharp-extra/greater-than | lex-csharp-extra/less-than | ">=" | "<=" ;
+expression-unary-operator ::= lex-csharp-extra/plus | lex-csharp-extra/minus | increment-decrement | "!" | "~" | "*" ;
+expression-relational-operator ::= lex-csharp-extra/less-than | lex-csharp-extra/greater-than | "<=" | ">=" | "is" | "as" ;
+built-in-type ::= integral-type | built-in-class-type | "bool" | "decimal" | "float" | "double" ;
+--------------------cs::csharp-cordy.bgf--------------------
+numeric_type ::= integral_type | floating_point_type | "decimal" ;
+primary_constraint ::= class_type | "class" | "struct" ;
+return_type ::= type | "void" ;
+simple_type ::= numeric_type | "bool" ;
+argument_list_or_key ::= argument_list | "in" ;
+class_type ::= type_name | "object" | "string" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+class-type ::= type-name | "object" | "string" ;
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+numeric-type ::= integral-type | floating-point-type | "decimal" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+attribute-target ::= "field" | "event" | "method" | "module" | "param" | "property" | "return" | type ;
+--------------------dart::spec-0.01.bgf--------------------
+IDENTIFIER_START ::= IDENTIFIER_START_NO_DOLLAR | "$" ;
+returnType ::= "void" | type ;
+HEX_DIGIT ::= "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" | DIGIT ;
+IDENTIFIER_START_NO_DOLLAR ::= LETTER | "_" ;
+operator ::= unaryOperator | binaryOperator | "[]" | "[]=" | "negate" ;
+assignmentOperator ::= "=" | compoundAssignmentOperator ;
+--------------------dart::google.bgf--------------------
+IDENTIFIER_START ::= IDENTIFIER_START_NO_DOLLAR | "$" ;
+HEX_DIGIT ::= "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" | DIGIT ;
+IDENTIFIER_START_NO_DOLLAR ::= LETTER | "_" ;
+--------------------dart::spec-0.05.bgf--------------------
+IDENTIFIER_START ::= IDENTIFIER_START_NO_DOLLAR | "$" ;
+returnType ::= "void" | type ;
+prefixOperator ::= "-" | negateOperator ;
+BUILT_IN_IDENTIFIER ::= "abstract" | "assert" | "Dynamic" | "factory" | "get" | "implements" | import | "interface" | "library" | "negate" | operator | "set" | "source" | "static" | "typedef" ;
+assignmentOperator ::= "=" | compoundAssignmentOperator ;
+--------------------eiffel::bezault.bgf--------------------
+Feature_set ::= Feature_list | "all" ;
+Expression ::= "Current" | "Result" | Call | Operator_expression | Equality | Manifest_array | Old | Strip | Boolean_constant | Bit_constant | Integer | Real | Manifest_string | Character_constant | Wide_character_constant | Wide_manifest_string | Hexadecimal_constant ;
+Address_mark ::= Feature_name | "Current" | "Result" ;
+Anchor ::= Identifier | "Current" ;
+Call_target ::= Parenthesized | "Result" | "Current" | Precursor ;
+Writable ::= Identifier | "Result" ;
+--------------------eiffel::cordy.bgf--------------------
+Local ::= Identifier | "Result" ;
+Feature_set ::= Feature_list | "all" ;
+Address_mark ::= Feature_name | "Current" | "Result" ;
+Read_only ::= Formal | "Current" ;
+Anchor ::= Identifier | "Current" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Unary ::= "not" | "+" | "-" | Free_unary ;
+Local ::= Identifier | "Result" ;
+Feature_set ::= Feature_list | "all" ;
+Routine_mark ::= "do" | Once ;
+Read_only ::= Formal | Constant_attribute | "Current" ;
+Anchor ::= Feature_name | "Current" ;
+--------------------fortran::derricks.bgf--------------------
+TypeParamValue ::= SpecificationExpr | "*" ;
+UnitIdentifier ::= UFExpr | "*" ;
+SubroutinePar ::= DummyArgName | "*" ;
+FormatIdentifier ::= LblRef | CExpr | "*" ;
+--------------------fortran::waite-cordy.bgf--------------------
+TypeParamValue ::= Expr | "*" ;
+UnitIdentifier ::= UFExpr | "*" ;
+SubroutinePar ::= DummyArgName | "*" ;
+FormatIdentifier ::= LblRef | CExpr | "*" ;
+--------------------java::java-1-jls-impl.bgf--------------------
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+TypeDeclaration ::= ClassDeclaration ;
+ TypeDeclaration ::= InterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-1-jls-read.bgf--------------------
+ResultType ::= Type ;
+ ResultType ::= "void" ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+TypeDeclaration ::= ClassDeclaration ;
+ TypeDeclaration ::= InterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-2-jls-impl.bgf--------------------
+TypeDeclaration ::= ClassOrInterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-2-jls-read.bgf--------------------
+ClassMemberDeclaration ::= FieldDeclaration ;
+ ClassMemberDeclaration ::= MethodDeclaration ;
+ ClassMemberDeclaration ::= ClassDeclaration ;
+ ClassMemberDeclaration ::= InterfaceDeclaration ;
+ ClassMemberDeclaration ::= ";" ;
+ResultType ::= Type ;
+ ResultType ::= "void" ;
+InterfaceMemberDeclaration ::= ConstantDeclaration ;
+ InterfaceMemberDeclaration ::= AbstractMethodDeclaration ;
+ InterfaceMemberDeclaration ::= ClassDeclaration ;
+ InterfaceMemberDeclaration ::= InterfaceDeclaration ;
+ InterfaceMemberDeclaration ::= ";" ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+TypeDeclaration ::= ClassDeclaration ;
+ TypeDeclaration ::= InterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-5-habelitz.bgf--------------------
+JAVA_ID_PART ::= JAVA_ID_START | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+Modifier ::= Annotation ;
+ Modifier ::= "public" ;
+ Modifier ::= "protected" ;
+ Modifier ::= "private" ;
+ Modifier ::= "static" ;
+ Modifier ::= "abstract" ;
+ Modifier ::= "final" ;
+ Modifier ::= "native" ;
+ Modifier ::= "synchronized" ;
+ Modifier ::= "transient" ;
+ Modifier ::= "volatile" ;
+ Modifier ::= "strictfp" ;
+TypeDeclaration ::= ClassOrInterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-5-jls-read.bgf--------------------
+ClassModifier ::= Annotation ;
+ ClassModifier ::= "public" ;
+ ClassModifier ::= "protected" ;
+ ClassModifier ::= "private" ;
+ ClassModifier ::= "abstract" ;
+ ClassModifier ::= "static" ;
+ ClassModifier ::= "final" ;
+ ClassModifier ::= "strictfp" ;
+ConstantModifier ::= Annotation ;
+ ConstantModifier ::= "public" ;
+ ConstantModifier ::= "static" ;
+ ConstantModifier ::= "final" ;
+AbstractMethodModifier ::= Annotation ;
+ AbstractMethodModifier ::= "public" ;
+ AbstractMethodModifier ::= "abstract" ;
+MethodModifier ::= Annotation ;
+ MethodModifier ::= "public" ;
+ MethodModifier ::= "protected" ;
+ MethodModifier ::= "private" ;
+ MethodModifier ::= "abstract" ;
+ MethodModifier ::= "static" ;
+ MethodModifier ::= "final" ;
+ MethodModifier ::= "synchronized" ;
+ MethodModifier ::= "native" ;
+ MethodModifier ::= "strictfp" ;
+ClassMemberDeclaration ::= FieldDeclaration ;
+ ClassMemberDeclaration ::= MethodDeclaration ;
+ ClassMemberDeclaration ::= ClassDeclaration ;
+ ClassMemberDeclaration ::= InterfaceDeclaration ;
+ ClassMemberDeclaration ::= ";" ;
+ResultType ::= Type ;
+ ResultType ::= "void" ;
+InterfaceMemberDeclaration ::= ConstantDeclaration ;
+ InterfaceMemberDeclaration ::= AbstractMethodDeclaration ;
+ InterfaceMemberDeclaration ::= ClassDeclaration ;
+ InterfaceMemberDeclaration ::= InterfaceDeclaration ;
+ InterfaceMemberDeclaration ::= ";" ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+VariableModifier ::= "final" ;
+ VariableModifier ::= Annotation ;
+FieldModifier ::= Annotation ;
+ FieldModifier ::= "public" ;
+ FieldModifier ::= "protected" ;
+ FieldModifier ::= "private" ;
+ FieldModifier ::= "static" ;
+ FieldModifier ::= "final" ;
+ FieldModifier ::= "transient" ;
+ FieldModifier ::= "volatile" ;
+ConstructorModifier ::= Annotation ;
+ ConstructorModifier ::= "public" ;
+ ConstructorModifier ::= "protected" ;
+ ConstructorModifier ::= "private" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+TypeDeclaration ::= ClassDeclaration ;
+ TypeDeclaration ::= InterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+InterfaceModifier ::= Annotation ;
+ InterfaceModifier ::= "public" ;
+ InterfaceModifier ::= "protected" ;
+ InterfaceModifier ::= "private" ;
+ InterfaceModifier ::= "abstract" ;
+ InterfaceModifier ::= "static" ;
+ InterfaceModifier ::= "strictfp" ;
+--------------------java::java-5-parr.bgf--------------------
+literal ::= integerLiteral | FloatingPointLiteral | CharacterLiteral | StringLiteral | booleanLiteral | "null" ;
+modifier ::= annotation | "public" | "protected" | "private" | "static" | "abstract" | "final" | "native" | "synchronized" | "transient" | "volatile" | "strictfp" ;
+classOrInterfaceModifier ::= annotation | "public" | "protected" | "private" | "abstract" | "static" | "final" | "strictfp" ;
+variableModifier ::= "final" | annotation ;
+typeDeclaration ::= classOrInterfaceDeclaration | ";" ;
+--------------------java::java-4-sdf.bgf--------------------
+MethodRes ::= "void" ;
+ MethodRes ::= Type ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+ClassBodyDeclaration ::= ClassMemberDeclaration ;
+ ClassBodyDeclaration ::= StaticInitializer ;
+ ClassBodyDeclaration ::= ConstructorDeclaration ;
+ ClassBodyDeclaration ::= ";" ;
+ ClassBodyDeclaration ::= ClassDeclaration ;
+ ClassBodyDeclaration ::= InterfaceDeclaration ;
+TypeDeclaration ::= ClassDeclaration ;
+ TypeDeclaration ::= InterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+class_instance_declaration ::= class_instance_creation_expression | "class" ;
+--------------------java::java-5-landman.bgf--------------------
+InterfaceMemberDec ::= [semicolon] ";" ;
+ InterfaceMemberDec ::= InterfaceDec ;
+ InterfaceMemberDec ::= AbstractMethodDec ;
+ InterfaceMemberDec ::= ClassDec ;
+ InterfaceMemberDec ::= ConstantDec ;
+TypeDec ::= InterfaceDec ;
+ TypeDec ::= ClassDec ;
+ TypeDec ::= [semicolon] ";" ;
+ResultType ::= Type ;
+ ResultType ::= [void] "void" ;
+MethodBody ::= [noMethodBody] ";" ;
+ MethodBody ::= Block ;
+PrimType ::= NumType ;
+ PrimType ::= [boolean] "boolean" ;
+ClassMemberDec ::= ClassDec ;
+ ClassMemberDec ::= MethodDec ;
+ ClassMemberDec ::= FieldDec ;
+ ClassMemberDec ::= [semicolon] ";" ;
+ ClassMemberDec ::= InterfaceDec ;
+--------------------modula::src-052.bgf--------------------
+OtherChar ::= " " | "!" | "#" | "$" | "%" | "&" | "(" | ")" | "*" | "+" | "," | "-" | "." | "/" | ":" | ";" | "<" | "=" | ">" | "?" | "@" | "[" | "]" | "^" | "_" | "‘" | "{" | "|" | "}" | "~" | ExtendedChar ;
+Ancestor ::= TypeName | ObjectType | "UNTRACED" ;
+HexDigit ::= Digit | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" ;
+--------------------xpath::w3c-xpath1.bgf--------------------
+Operator ::= [NT-Operator] OperatorName | MultiplyOperator | "/" | "//" | "|" | "+" | "-" | "=" | "!=" | "<" | "<=" | ">" | ">=" ;
+ExprToken ::= [NT-ExprToken] "(" | ")" | "[" | "]" | "." | ".." | "@" | "," | "::" | NameTest | NodeType | Operator | FunctionName | AxisName | Literal | Number | VariableReference ;
+--------------------assembly::delphi.bgf--------------------
+asm_prefixop ::= "high" | "low" | "offset" | "dmtindex" | "vmtoffset" | "type" | "not" | "&" | sign | "@" ;
+--------------------basic::vb6-cordy.bgf--------------------
+charpos ::= expn | ";" ;
+variable_declaration_keyword ::= "dim" | "redim" | access_modifier ;
+--------------------dot::rascal-concrete.bgf--------------------
+Graph ::= "digraph" ;
+ Graph ::= AttrTag ;
+ Graph ::= "graph" ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_literal ::= "null" | "true" | "false" | js_numeric_literal | js_string_literal | js_regular_expn_literal ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+table-data-pilot-subtotal-attlist ::= table:function::("auto" | "average" | "count" | "countnums" | "max" | "min" | "product" | "stdev" | "stdevp" | "sum" | "var" | "varp" | string) ;
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+targetFrameName ::= "_self" | "_blank" | "_parent" | "_top" | string ;
+lineWidth ::= "auto" | "normal" | "bold" | "thin" | "dash" | "medium" | "thick" | positiveInteger | percent | positiveLength ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.0.bgf--------------------
+table-data-pilot-subtotal-attlist ::= table:function::("auto" | "average" | "count" | "countnums" | "max" | "min" | "product" | "stdev" | "stdevp" | "sum" | "var" | "varp" | string) ;
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+targetFrameName ::= "_self" | "_blank" | "_parent" | "_top" | string ;
+lineWidth ::= "auto" | "normal" | "bold" | "thin" | "dash" | "medium" | "thick" | positiveInteger | percent | positiveLength ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+table-data-pilot-subtotal-attlist ::= table:function::("auto" | "average" | "count" | "countnums" | "max" | "min" | "product" | "stdev" | "stdevp" | "sum" | "var" | "varp" | string) ;
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+targetFrameName ::= "_self" | "_blank" | "_parent" | "_top" | string ;
+lineWidth ::= "auto" | "normal" | "bold" | "thin" | "dash" | "medium" | "thick" | positiveInteger | percent | positiveLength ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.1.bgf--------------------
+table-data-pilot-subtotal-attlist ::= table:function::("auto" | "average" | "count" | "countnums" | "max" | "min" | "product" | "stdev" | "stdevp" | "sum" | "var" | "varp" | string) ;
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+targetFrameName ::= "_self" | "_blank" | "_parent" | "_top" | string ;
+lineWidth ::= "auto" | "normal" | "bold" | "thin" | "dash" | "medium" | "thick" | positiveInteger | percent | positiveLength ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.2.bgf--------------------
+table-data-pilot-subtotal-attlist ::= table:function::("auto" | "average" | "count" | "countnums" | "max" | "min" | "product" | "stdev" | "stdevp" | "sum" | "var" | "varp" | string) ;
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+targetFrameName ::= "_self" | "_blank" | "_parent" | "_top" | string ;
+lineWidth ::= "auto" | "normal" | "bold" | "thin" | "medium" | "thick" | positiveInteger | percent | positiveLength ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------pascal::delphi.bgf--------------------
+procedure_body ::= sequence_stm | "forward" ;
+call_stm ::= expr | "inherited" ;
+--------------------pascal::delphipp.bgf--------------------
+codetoken ::= "(" | ")" | "." | ";" | ":" | "," | "[" | "]" | "+" | "-" | "*" | "/" | "^" | "=" | "@" | ">" | "<" | "<>" | ">=" | "<=" | ":=" | "//" | id | anynumber | charlit | space ;
+--------------------pascal::object.bgf--------------------
+parm_qual ::= var | "const" | "out" ;
+--------------------xml::zhang-cordy.bgf--------------------
+contentspec ::= "EMPTY" | "ANY" | mixed | children ;
+--------------------markup::docbook-walsh.bgf--------------------
+notation.class ::= "BMP" | "CGM-CHAR" | "CGM-BINARY" | "CGM-CLEAR" | "DITROFF" | "DVI" | "EPS" | "EQN" | "FAX" | "GIF" | "GIF87a" | "GIF89a" | "JPG" | "JPEG" | "IGES" | "PCX" | "PIC" | "PNG" | "PS" | "SGML" | "TBL" | "TEX" | "TIFF" | "WMF" | "WPG" | "SVG" | "linespecific" | local.notation.class ;
+--------------------markup::json-rascal-concrete.bgf--------------------
+Value ::= NumericLiteral ;
+ Value ::= StringLiteral ;
+ Value ::= [True] "true" ;
+ Value ::= Object ;
+ Value ::= Array ;
+ Value ::= [Null] "null" ;
+ Value ::= [False] "false" ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+title-legal-char ::= space | "%" | "!" | """ | "$" | "&" | "'" | "(" | ")" | "*" | "," | "-" | "." | "/" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | ":" | ";" | "=" | "?" | "@" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "\" | "^" | "_" | "`" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "~" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | "" | " " | "¡" | "¢" | "£" | "¤" | "¥" | "¦" | "§" | "¨" | "©" | "ª" | "«" | "¬" | "­" | "®" | "¯" | "°" | "±" | "²" | "³" | "´" | "µ" | "¶" | "·" | "¸" | "¹" | "º" | "»" | "¼" | "½" | "¾" | "¿" | "À" | "Á" | "Â" | "Ã" | "Ä" | "Å" | "Æ" | "Ç" | "È" | "É" | "Ê" | "Ë" | "Ì" | "Í" | "Î" | "Ï" | "Ð" | "Ñ" | "Ò" | "Ó" | "Ô" | "Õ" | "Ö" | "×" | "Ø" | "Ù" | "Ú" | "Û" | "Ü" | "Ý" | "Þ" | "ß" | "à" | "á" | "â" | "ã" | "ä" | "å" | "æ" | "ç" | "è" | "é" | "ê" | "ë" | "ì" | "í" | "î" | "ï" | "ð" | "ñ" | "ò" | "ó" | "ô" | "õ" | "ö" | "÷" | "ø" | "ù" | "ú" | "û" | "ü" | "ý" | "þ" | "ÿ" | "+" ;
+hex-digit ::= decimal-digit | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" ;
+symbol ::= html-unsafe-symbol | underscore | "." | "," ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+URL_char ::= ASCII_letter | digit | "-" | "_" | "." | "~" | "!" | "*" | "'" | "(" | ")" | ";" | ":" | "@" | "&" | "=" | "+" | "$" | "," | "/" | "?" | "%" | "#" | "[" | "]" ;
+--------------------metasyntax::txl.bgf--------------------
+ruleid ::= id | special | "#" | key ;
+--------------------metasyntax::lll-kort.bgf--------------------
+basis ::= ident | literal | "%epsilon" | alternation | group ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+derivationSet ::= "#all" | reducedDerivationControl ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+Character ::= [eof] "\EOF" ;
+ Character ::= [short] ShortChar ;
+ Character ::= [Numeric] NumChar ;
+ Character ::= [top] "\TOP" ;
+ Character ::= [label_start] "\LABEL_START" ;
+ Character ::= [bot] "\BOT" ;

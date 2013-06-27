@@ -1,0 +1,9 @@
+--------------------java::java-5-stahl.bgf--------------------
+parameterDeclarationList ::= (parameterDeclaration (COMMA parameterDeclaration)*)? ;
+--------------------tescol::00111.bgf--------------------
+commaSeparatedArithEx ::= (arithEx (COMMA arithEx)*)? ;
+--------------------tescol::01001.bgf--------------------
+params_given ::= (arith_exp (COMMA arith_exp)*)? ;
+param_list ::= (param_item (COMMA param_item)*)? ;
+--------------------tescol::11000.bgf--------------------
+parameters ::= (parameter (COMMA parameter)*)? ;

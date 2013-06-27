@@ -1,0 +1,660 @@
+--------------------c::bruneliere.bgf--------------------
+Integer ::= integer() ;
+--------------------cpp::bruneliere.bgf--------------------
+Integer ::= integer() ;
+--------------------cs::csharp-bruneliere.bgf--------------------
+Integer ::= integer() ;
+--------------------java::jdt.bgf--------------------
+Integer ::= integer() ;
+--------------------java::jvm-level0.bgf--------------------
+Instruction ::= (fieldRef::(opcode::integer() owner::string() name::string() description::string())) | (increment::(index::integer() amount::integer())) | (instruction::(opcode::integer())) | (integer::(opcode::integer() operand::integer())) | (jump::(opcode::integer() labelIndex::integer())) | (label::(index::integer())) | (lineNumber::(line::integer() labelIndex::integer())) | (localVariable::(opcode::integer() index::integer())) | (loadConstantString::(stringValue::string())) | (loadConstantInteger::(integerValue::integer())) | (loadConstantLong::(longValue::integer())) | (loadConstantFloat::(floatValue::integer())) | (loadConstantDouble::(doubleValue::integer())) | (lookupSwitch::(defaultLabelIndex::integer() keys::(integer()*) cases::(integer()*))) | (method::(opcode::integer() owner::string() name::string() description::string())) | (multiANewArray::(description::string() dimensions::integer())) | (tableSwitch::(minIndex::integer() maxIndex::integer() defaultLabelIndex::integer() cases::(integer()*))) | (type::(opcode::integer() description::string())) ;
+TryCatchBlock ::= (tryCatchBlock::(startLabelIndex::integer() endLabelIndex::integer() handlerLabelIndex::integer() type::string())) | (finallyBlock::(startLabelIndex::integer() endLabelIndex::integer() handlerLabelIndex::integer())) ;
+Field ::= (field::(access::integer() name::string() description::string() signature::string() value::α)) | (field::(access::integer() name::string() description::string() signature::string())) ;
+Class ::= (class::(version::integer() access::integer() name::string() signature::string() superName::string() interfaces::(string()*) sourceFile::string() sourceDebug::string() outerClass::string() outerMethod::string() outerMethodDescription::string() innerClasses::(InnerClass*) fields::(Field*) methods::(Method*))) | (class::(version::integer() access::integer() name::string() signature::string() superName::string() interfaces::(string()*) innerClasses::(InnerClass*) fields::(Field*) methods::(Method*))) ;
+LocalVariable ::= localVariable::(name::string() description::string() signature::string() startLabelIndex::integer() endLabelIndex::integer() index::integer()) ;
+InnerClass ::= (innerClass::(name::string() outerName::string() innerName::string() access::integer())) | (innerClass::(name::string() access::integer())) ;
+Method ::= method::(access::integer() name::string() description::string() signature::string() exceptions::(string()*) instructions::(Instruction*) tryCatchBlocks::(TryCatchBlock*) localVariables::(LocalVariable*)) ;
+--------------------java::java-5-giquel.bgf--------------------
+Integer ::= integer() ;
+--------------------java::jvm-level1.bgf--------------------
+Instruction ::= (getStatic::(owner::string() name::string() description::string())) | (putStatic::(owner::string() name::string() description::string())) | (getField::(owner::string() name::string() description::string())) | (putField::(owner::string() name::string() description::string())) | (increment::(index::integer() amount::integer())) | (nop::ε) | (aConstNull::ε) | (iConstM1::ε) | (iConst0::ε) | (iConst1::ε) | (iConst2::ε) | (iConst3::ε) | (iConst4::ε) | (iConst5::ε) | (lConst0::ε) | (lConst1::ε) | (fConst0::ε) | (fConst1::ε) | (fConst2::ε) | (dConst0::ε) | (dConst1::ε) | (iaLoad::ε) | (laLoad::ε) | (faLoad::ε) | (daLoad::ε) | (aaLoad::ε) | (baLoad::ε) | (caLoad::ε) | (saLoad::ε) | (iaStore::ε) | (laStore::ε) | (faStore::ε) | (daStore::ε) | (aaStore::ε) | (baStore::ε) | (caStore::ε) | (saStore::ε) | (pop::ε) | (pop2::ε) | (dup::ε) | (dupX1::ε) | (dupX2::ε) | (dup2::ε) | (dup2X1::ε) | (dup2X2::ε) | (swap::ε) | (iAdd::ε) | (lAdd::ε) | (fAdd::ε) | (dAdd::ε) | (iSub::ε) | (lSub::ε) | (fSub::ε) | (dSub::ε) | (iMul::ε) | (lMul::ε) | (fMul::ε) | (dMul::ε) | (iDiv::ε) | (lDiv::ε) | (fDiv::ε) | (dDiv::ε) | (iRem::ε) | (lRem::ε) | (fRem::ε) | (dRem::ε) | (iNeg::ε) | (lNeg::ε) | (fNeg::ε) | (dNeg::ε) | (iShl::ε) | (lShl::ε) | (iShr::ε) | (lShr::ε) | (iuShr::ε) | (luShr::ε) | (iAnd::ε) | (lAnd::ε) | (iOr::ε) | (lOr::ε) | (iXor::ε) | (lXor::ε) | (i2l::ε) | (i2f::ε) | (i2d::ε) | (l2i::ε) | (l2f::ε) | (l2d::ε) | (f2i::ε) | (f2l::ε) | (f2d::ε) | (d2i::ε) | (d2l::ε) | (d2f::ε) | (i2b::ε) | (i2c::ε) | (i2s::ε) | (lCmp::ε) | (fCmpL::ε) | (fCmpG::ε) | (dCmpL::ε) | (dCmpH::ε) | (iReturn::ε) | (lReturn::ε) | (fReturn::ε) | (dReturn::ε) | (aReturn::ε) | (return::ε) | (arrayLength::ε) | (aThrow::ε) | (monitorEnter::ε) | (monitorExit::ε) | (biPush::(operand::integer())) | (siPush::(operand::integer())) | (newArray::(operand::integer())) | (ifEq::(label::integer())) | (ifNe::(label::integer())) | (ifLt::(label::integer())) | (ifGe::(label::integer())) | (ifGt::(label::integer())) | (ifLe::(label::integer())) | (ifICmpEq::(label::integer())) | (ifICmpNe::(label::integer())) | (ifICmpLt::(label::integer())) | (ifICmpGe::(label::integer())) | (ifICmpGt::(label::integer())) | (ifICmpLe::(label::integer())) | (ifACmpEq::(label::integer())) | (ifACmpNe::(label::integer())) | (goto::(label::integer())) | (jsr::(label::integer())) | (ifNull::(label::integer())) | (ifNonNull::(label::integer())) | (label::(index::integer())) | (lineNumber::(line::integer() labelIndex::integer())) | (localVariable::(opcode::integer() index::integer())) | (iLoad::(index::integer())) | (lLoad::(index::integer())) | (fLoad::(index::integer())) | (dLoad::(index::integer())) | (aLoad::(index::integer())) | (iStore::(index::integer())) | (lStore::(index::integer())) | (fStore::(index::integer())) | (dStore::(index::integer())) | (aStore::(index::integer())) | (ret::(index::integer())) | (ldcString::(string::string())) | (ldcInt::(int::integer())) | (ldcLong::(long::integer())) | (ldcFloat::(float::integer())) | (ldcDouble::(double::integer())) | (lookupSwitch::(defaultLabel::integer() keys::(integer()*) cases::(integer()*))) | (invokeVirtual::(owner::string() name::string() description::string())) | (invokeSpecial::(owner::string() name::string() description::string())) | (invokeStatic::(owner::string() name::string() description::string())) | (invokeInterface::(owner::string() name::string() description::string())) | (invokeDynamic::(owner::string() name::string() description::string())) | (multiANewArray::(description::string() dimensions::integer())) | (tableSwitch::(min::integer() max::integer() defaultLabel::integer() cases::(integer()*))) | (new::(internalName::string())) | (aNewArray::(internalName::string())) | (checkCast::(internalName::string())) | (instanceOf::(internalName::string())) ;
+TryCatchBlock ::= (tryCatchBlock::(startLabelIndex::integer() endLabelIndex::integer() handlerLabelIndex::integer() type::string())) | (finallyBlock::(startLabelIndex::integer() endLabelIndex::integer() handlerLabelIndex::integer())) ;
+Class ::= (class::(version::integer() modifiers::(ClassModifier*) name::string() signature::string() superName::string() interfaces::(string()*) sourceFile::string() sourceDebug::string() outerClass::string() outerMethod::string() outerMethodDescription::string() innerClasses::(InnerClass*) fields::(Field*) methods::(Method*))) | (class::(version::integer() modifiers::(ClassModifier*) name::string() signature::string() superName::string() interfaces::(string()*) innerClasses::(InnerClass*) fields::(Field*) methods::(Method*))) ;
+LocalVariable ::= localVariable::(name::string() description::string() signature::string() startLabelIndex::integer() endLabelIndex::integer() index::integer()) ;
+--------------------basic::vb-glineur.bgf--------------------
+Integer ::= integer() ;
+--------------------bibtex::bibtex-1.1.bgf--------------------
+Integer ::= integer() ;
+--------------------bibtex::bibtex-1.bgf--------------------
+Integer ::= integer() ;
+--------------------dot::doux.bgf--------------------
+Integer ::= integer() ;
+--------------------dot::palies.bgf--------------------
+Integer ::= integer() ;
+--------------------dot::rascal-abstract.bgf--------------------
+Outline ::= (key::integer() args::(string()*))* ;
+--------------------html::allilaire.bgf--------------------
+Integer ::= integer() ;
+--------------------html::guyard.bgf--------------------
+Integer ::= integer() ;
+--------------------occam::mu-srour.bgf--------------------
+Integer ::= integer() ;
+--------------------occam::srour.bgf--------------------
+Integer ::= integer() ;
+--------------------odf::opendoc-1.0-manifest.bgf--------------------
+key-derivation-attlist ::= manifest:key-derivation-name::string() ;
+ key-derivation-attlist ::= manifest:salt::string() ;
+ key-derivation-attlist ::= manifest:iteration-count::integer() ;
+file-entry-attlist ::= manifest:full-path::string() ;
+ file-entry-attlist ::= (manifest:size::integer())? ;
+ file-entry-attlist ::= manifest:media-type::string() ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+integer ::= integer() ;
+nonNegativeInteger ::= integer() ;
+positiveInteger ::= integer() ;
+--------------------odf::opendoc-1.0.bgf--------------------
+integer ::= integer() ;
+nonNegativeInteger ::= integer() ;
+positiveInteger ::= integer() ;
+--------------------odf::opendoc-1.1-manifest.bgf--------------------
+key-derivation-attlist ::= manifest:key-derivation-name::string() ;
+ key-derivation-attlist ::= manifest:salt::string() ;
+ key-derivation-attlist ::= manifest:iteration-count::integer() ;
+file-entry-attlist ::= manifest:full-path::string() ;
+ file-entry-attlist ::= (manifest:size::integer())? ;
+ file-entry-attlist ::= manifest:media-type::string() ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+integer ::= integer() ;
+nonNegativeInteger ::= integer() ;
+positiveInteger ::= integer() ;
+--------------------odf::opendoc-1.1.bgf--------------------
+integer ::= integer() ;
+nonNegativeInteger ::= integer() ;
+positiveInteger ::= integer() ;
+--------------------odf::opendoc-1.2-manifest.bgf--------------------
+nonNegativeInteger ::= integer() ;
+--------------------odf::opendoc-1.2.bgf--------------------
+nonNegativeDecimal ::= integer() ;
+integer ::= integer() ;
+zeroToOneDecimal ::= integer() ;
+nonNegativeInteger ::= integer() ;
+positiveInteger ::= integer() ;
+--------------------pl1::bruneliere.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::collab.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::extended.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::fragment.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::oocm.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::reuse.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::statecharts.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::stereo.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::uml-uc.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::uml2.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::umldi-2.0.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::umldi-ag.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::umldi-c.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::umldi-mm.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::umldi-sm.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::umldi-uc.bgf--------------------
+Integer ::= integer() ;
+--------------------uml::yuml.bgf--------------------
+Integer ::= integer() ;
+--------------------xml::rosendal.bgf--------------------
+Integer ::= integer() ;
+--------------------xml::rascal.bgf--------------------
+Node ::= (document::(root::Node)) | (attribute::(namespace::Namespace name::string() text::string())) | (element::(namespace::Namespace name::string() children::(Node*))) | (charData::(text::string())) | (cdata::(text::string())) | (comment::(text::string())) | (pi::(target::string() text::string())) | (entityRef::(name::string())) | (charRef::(code::integer())) ;
+--------------------xquery::rosendal.bgf--------------------
+Integer ::= integer() ;
+--------------------xslt::clark.bgf--------------------
+number.datatype ::= integer() ;
+--------------------xslt::rosendal.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::atom.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::cml.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::kml.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::graphml-doux.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::json-rascal-abstract.bgf--------------------
+Value ::= (null::ε) | (object::(members::((memberName::string() memberValue::Value)*))) | (array::(values::(Value*))) | (integer::(n::integer())) | (float::(r::integer())) | (string::(s::string())) | (boolean::(b::("true" | "false"))) ;
+--------------------markup::json-zaytsev-abstract.bgf--------------------
+JSO ::= (jsnumber::(n::integer())) | (jsstring::(s::string())) | (jsboolean::(b::("true" | "false"))) | (jsarray::(xs::(JSO*))) | (jsobject::(kvs::((JSO JSO)*))) | (jsnull::ε) ;
+--------------------markup::mathml-furubayashi.bgf--------------------
+mml.align.datatype ::= "top" | "bottom" | "center" | "baseline" | "axis" integer()? ;
+mml.positiveinteger.datatype ::= integer() ;
+mml.number.datatype ::= integer() ;
+--------------------markup::pnml-conventions.bgf--------------------
+positiveintegerlabel.content ::= text::integer() annotationstandard.content ;
+nonnegativeintegerlabel.content ::= text::integer() annotationstandard.content ;
+--------------------markup::r2ml.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::pnml-ext-inhibitor.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+positiveintegerlabel.content ::= text::integer() annotationstandard.content ;
+positiveDecimal.content ::= integer() ;
+nonnegativeintegerlabel.content ::= text::integer() annotationstandard.content ;
+--------------------markup::pnml-ext-reset.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+positiveintegerlabel.content ::= text::integer() annotationstandard.content ;
+positiveDecimal.content ::= integer() ;
+nonnegativeintegerlabel.content ::= text::integer() annotationstandard.content ;
+--------------------markup::pnml-ext-resetinhibitor.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+positiveintegerlabel.content ::= text::integer() annotationstandard.content ;
+positiveDecimal.content ::= integer() ;
+nonnegativeintegerlabel.content ::= text::integer() annotationstandard.content ;
+--------------------markup::pnml-finiteintranges.bgf--------------------
+FiniteIntRange ::= finiteintrange::(start::integer() end::integer()) ;
+FiniteIntRangeConstant ::= finiteintrangeconstant::(value::integer() FiniteIntRange BuiltInConstant.content) ;
+--------------------markup::pnml-guyard-basic.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::pnml-guyard-modular.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::pnml-guyard-simplified.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::pnml-guyard-structured.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::pnml-highlevelnet.bgf--------------------
+Sublist ::= sublist::(start::integer() length::integer() ListOperator.content) ;
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+NumberConstant ::= numberconstant::(value::integer() BuiltInConstant.content Number) ;
+FiniteIntRange ::= finiteintrange::(start::integer() end::integer()) ;
+MemberAtIndex ::= memberatindex::(index::integer() ListOperator.content) ;
+positiveDecimal.content ::= integer() ;
+FiniteIntRangeConstant ::= finiteintrangeconstant::(value::integer() FiniteIntRange BuiltInConstant.content) ;
+Substring ::= substring::(start::integer() length::integer() StringOperator.content) ;
+--------------------markup::pnml-hlpng.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+positiveDecimal.content ::= integer() ;
+--------------------markup::pnml-integers.bgf--------------------
+NumberConstant ::= numberconstant::(value::integer() BuiltInConstant.content Number) ;
+--------------------markup::pnml-lists.bgf--------------------
+Sublist ::= sublist::(start::integer() length::integer() ListOperator.content) ;
+MemberAtIndex ::= memberatindex::(index::integer() ListOperator.content) ;
+--------------------markup::rss.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::pnml-pnmlcoremodel.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+positiveDecimal.content ::= integer() ;
+--------------------markup::pnml-ptnet.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+positiveintegerlabel.content ::= text::integer() annotationstandard.content ;
+positiveDecimal.content ::= integer() ;
+nonnegativeintegerlabel.content ::= text::integer() annotationstandard.content ;
+--------------------markup::pnml-strings.bgf--------------------
+Substring ::= substring::(start::integer() length::integer() StringOperator.content) ;
+--------------------markup::pnml-symmetricnet.bgf--------------------
+font.element ::= font::((family::string())? (style::string())? (weight::string())? (size::string())? (decoration::("underline" | "overline" | "line-through"))? (align::("left" | "center" | "right"))? (rotation::integer())?) ;
+coordinate.attributes ::= x::integer() y::integer() ;
+NumberConstant ::= numberconstant::(value::integer() BuiltInConstant.content Number) ;
+FiniteIntRange ::= finiteintrange::(start::integer() end::integer()) ;
+positiveDecimal.content ::= integer() ;
+FiniteIntRangeConstant ::= finiteintrangeconstant::(value::integer() FiniteIntRange BuiltInConstant.content) ;
+--------------------markup::pnml-touzet.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::svg-furubayashi-basic.bgf--------------------
+SVG.Number.datatype ::= integer() ;
+SVG.Integer.datatype ::= integer() ;
+--------------------markup::svg-furubayashi-tiny.bgf--------------------
+SVG.Number.datatype ::= integer() ;
+SVG.Integer.datatype ::= integer() ;
+--------------------markup::svg-furubayashi.bgf--------------------
+SVG.Number.datatype ::= integer() ;
+SVG.Integer.datatype ::= integer() ;
+--------------------markup::svg-palies.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::uiml.bgf--------------------
+Integer ::= integer() ;
+--------------------markup::wiki-table.bgf--------------------
+Integer ::= integer() ;
+--------------------fl::ecore.bgf--------------------
+LiteralExp ::= value::integer() ;
+--------------------fl::emf.bgf--------------------
+Literal ::= info::integer() ;
+--------------------fl::jaxb.bgf--------------------
+Literal ::= Info::integer() ;
+--------------------fl::om.bgf--------------------
+Literal ::= info::integer() ;
+--------------------fl::python.bgf--------------------
+literal ::= "-"? integer() ;
+--------------------fl::rascal-a.bgf--------------------
+FLExpr ::= (binary::(e1::FLExpr op::FLOp e2::FLExpr)) | (apply::(f::string() vargs::(FLExpr*))) | (ifThenElse::(c::FLExpr t::FLExpr e::FLExpr)) | (argument::(a::string())) | (literal::(i::integer())) ;
+--------------------fl::xsd.bgf--------------------
+Literal ::= info::integer() ;
+--------------------metasyntax::xsd-guyard.bgf--------------------
+Integer ::= integer() ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+totalDigits ::= totalDigits::(facet value::integer()) ;
+rangeFacet ::= facet value::(integer() | string() | "UNKNOWN data") ;
+allNNI ::= integer() | "unbounded" ;
+occurs ::= ((minOccurs::integer()) | (maxOccurs::allNNI))* ;
+numFacet ::= facet value::integer() ;
+--------------------metamodels::ACG.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ACME.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ASM.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ATL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::AWKPrograms.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Agate.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Amble.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::AnyLogic.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Architectural_Description.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::AsmL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Automaton.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::BMM.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::BPMN.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Book.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Bossa.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::BusinessEntityModel.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::BusinessProcessModel.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CDE.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CFG.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::COBOL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CORBAComponent.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CPL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CPR.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CSM.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CWMCore.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CWMRelationalData.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Class.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ChocoModel.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ClassicModels.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Cocus.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DSL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::CompanyStructure.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ComponentUML.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Conference.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Contact.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ControllerUML.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Cristal.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DSLModel.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DSLtools.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DTMP.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DXF.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DeploymentReport.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DiagramInterchange.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DoDAF.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::DotNET_SystemReflection.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::EAI.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::EG.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::EQN.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::EXPRESS.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::EXPRESSb.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::EclipsePlugIn.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Family.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::FeatureDiagrams.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::FiniteStateMachine.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::FlatSignalFlow.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::GUI.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::GWPNV4.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::GWPNV5.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Gantt.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::GenericEditor.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::GenericOutline.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::GeoTrans.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::HAL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::HPROF.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::HierarchicalSignalFlow.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::HierarchicalStateMachine.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::HybridAutomata.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::IRL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::IMSTransactionMessage.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::M.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Jess.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::KDM.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::KDMSimplified.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::KM3.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Klaper.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::LQN.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::LaTeX.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Marte.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::METAH.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MICRO.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLBasicDef.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLPrintingSetup.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLSimplified.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLStyles.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLWorkbookProp.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLWorksheetOpt.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLBasicDef.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLSimplified.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLStyles.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLTableElts.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSProject2.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSVisio_DatadiagramMLBasicDef.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSVisio_DatadiagramMLSimplified.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSVisio_DatadiagramMLTextFormat.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MSVisio_DatadiagramMLXForm.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Mantis.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Matlab.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Measure.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Metrics.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MoMM.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MiningMart_ViewCaseRepresentation.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MiningMart_ViewDataRepresentation.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MonitorProgram.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MySQL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::News.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::OWL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::OpenConf.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::PCS.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::PDG.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::PRR.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Perceptory.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Person.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::PetriNet_extended.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::PluginEclipse.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ProMarte.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Program.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Promenade.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::PtolemyII.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Publication.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::QVT.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::QoS.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::QoS_Characteristic.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::RDFS.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::QoS_Profile.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::QoS_Statement.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Relational.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::RelationalDBContent.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::RelationalDBSchema.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Repository.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SBVRvoc.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SCADE.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SDM.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SEE_Design.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SPL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SQLDDL.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SWRC.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SQLDML.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Scilab.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SecureUML.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SeminarSchedulingSystem.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SignalFlow.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SimpleAirlineDomain.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SysML.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SimpleSBVR.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SimulinkStateFlow.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SoftwareQualityControl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::SyncCharts.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::Trace.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::USECASE1.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::USECASE2.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::UnifiedOntologyLanguage.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::UsiXML-task.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::WSLink.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::WebApplications_AbstractModel.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::WebApplications_ConceptualModel.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::XAML-Perspective.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::XAML-ResourceDictionary.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::XPDL-1.14.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::XUL-Interactorl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::cmt.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::confOf.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::confious.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::crs_dr.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::edas.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::ekaw.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::iasted.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::mlhim2.bgf--------------------
+DvInt ::= dv::integer() ;
+--------------------metamodels::paperdyne.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::sigkdd.owl.bgf--------------------
+Integer ::= integer() ;
+--------------------metamodels::MiningMart.bgf--------------------
+Integer ::= integer() ;
+--------------------ocl::expressions.bgf--------------------
+Integer ::= integer() ;
+--------------------ocl::operations.bgf--------------------
+Integer ::= integer() ;
+--------------------ocl::types.bgf--------------------
+Integer ::= integer() ;
+--------------------ocl::uml.bgf--------------------
+Integer ::= integer() ;
+--------------------ocl::values.bgf--------------------
+Integer ::= integer() ;
+--------------------slps::btf.bgf--------------------
+tree ::= (epsilon::ε) | (any::α) | (terminal::terminal) | (nonterminal::(production tree)) | (selectable::(selector::selector tree)) | (value::((int::integer()) | (string::string()))) | (sequence::(tree*)) | (choice::(expression tree)) | (optional::(tree?)) | (plus::(tree+)) | (star::(tree*)) ;
+--------------------slps::ldf-v10.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v11.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v11.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v11.2-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v12.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v13.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v13.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v14.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v15.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v15.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v16.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v17.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v18.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v18.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v3.0-xsd.bgf--------------------
+title ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v4.0-xsd.bgf--------------------
+title ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v5.0-xsd.bgf--------------------
+title ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v6.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v7.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::slps-btf.bgf--------------------
+tree ::= (epsilon::ε) | (any::α) | (terminal::terminal) | (nonterminal::(production tree)) | (selectable::(selector::selector tree)) | (value::((int::integer()) | (string::string()))) | (sequence::(tree*)) | (choice::(expression tree)) | (optional::(tree?)) | (plus::(tree+)) | (star::(tree*)) ;
+--------------------slps::ldf-v7.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v8.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v8.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v9.0-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------slps::ldf-v9.1-xsd.bgf--------------------
+titlePage ::= (body::body number::integer()) | ((author::string())+) topic::string() (version::string()) | (edition::string()) status::status date::string() ;
+--------------------develop::bugzilla.bgf--------------------
+Integer ::= integer() ;
+--------------------saf::abstract.bgf--------------------
+Spec ::= (attribute::(name::string() strength::integer())) | (behavior::(cond::Cond move::Action fight::Action)) ;

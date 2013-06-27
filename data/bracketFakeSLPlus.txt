@@ -1,0 +1,53 @@
+--------------------ada::kempe.bgf--------------------
+generic_actual_part ::= "(" generic_association ("," generic_association)* ")" ;
+discriminant_constraint ::= "(" discriminant_association ("," discriminant_association)* ")" ;
+actual_parameter_part ::= "(" parameter_association ("," parameter_association)* ")" ;
+index_constraint ::= "(" discrete_range ("," discrete_range)* ")" ;
+known_discriminant_part ::= "(" discriminant_specification (";" discriminant_specification)* ")" ;
+formal_part ::= "(" parameter_specification (";" parameter_specification)* ")" ;
+named_array_aggregate ::= "(" array_component_association ("," array_component_association)* ")" ;
+enumeration_type_definition ::= "(" enumeration_literal_specification ("," enumeration_literal_specification)* ")" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+generic_actual_part ::= "(" generic_association ("," generic_association)* ")" ;
+discriminant_constraint ::= "(" discriminant_association ("," discriminant_association)* ")" ;
+actual_parameter_part ::= "(" parameter_association ("," parameter_association)* ")" ;
+index_constraint ::= "(" discrete_range ("," discrete_range)* ")" ;
+known_discriminant_part ::= "(" discriminant_specification (";" discriminant_specification)* ")" ;
+formal_part ::= "(" parameter_specification (";" parameter_specification)* ")" ;
+named_array_aggregate ::= "(" array_component_association ("," array_component_association)* ")" ;
+enumeration_type_definition ::= "(" enumeration_literal_specification ("," enumeration_literal_specification)* ")" ;
+--------------------ada::lncs-2219.bgf--------------------
+generic_actual_part ::= "(" generic_association ("," generic_association)* ")" ;
+discriminant_constraint ::= "(" discriminant_association ("," discriminant_association)* ")" ;
+actual_parameter_part ::= "(" parameter_association ("," parameter_association)* ")" ;
+index_constraint ::= "(" discrete_range ("," discrete_range)* ")" ;
+known_discriminant_part ::= "(" discriminant_specification (";" discriminant_specification)* ")" ;
+formal_part ::= "(" parameter_specification (";" parameter_specification)* ")" ;
+named_array_aggregate ::= "(" array_component_association ("," array_component_association)* ")" ;
+enumeration_type_definition ::= "(" enumeration_literal_specification ("," enumeration_literal_specification)* ")" ;
+--------------------ada::lncs-4348.bgf--------------------
+generic_actual_part ::= "(" generic_association ("," generic_association)* ")" ;
+discriminant_constraint ::= "(" discriminant_association ("," discriminant_association)* ")" ;
+actual_parameter_part ::= "(" parameter_association ("," parameter_association)* ")" ;
+index_constraint ::= "(" discrete_range ("," discrete_range)* ")" ;
+known_discriminant_part ::= "(" discriminant_specification (";" discriminant_specification)* ")" ;
+formal_part ::= "(" parameter_specification (";" parameter_specification)* ")" ;
+named_array_aggregate ::= "(" array_component_association ("," array_component_association)* ")" ;
+enumeration_type_definition ::= "(" enumeration_literal_specification ("," enumeration_literal_specification)* ")" ;
+--------------------dart::spec-0.01.bgf--------------------
+typeParameters ::= "<" typeParameter ("," typeParameter)* ">" ;
+namedFormalParameters ::= "[" defaultFormalParameter ("," defaultFormalParameter)* "]" ;
+--------------------dart::google.bgf--------------------
+typeParameters ::= "<" typeParameter ("," typeParameter)* ">" ;
+namedFormalParameters ::= "[" defaultFormalParameter ("," defaultFormalParameter)* "]" ;
+--------------------dart::spec-0.05.bgf--------------------
+typeParameters ::= "<" typeParameter ("," typeParameter)* ">" ;
+namedFormalParameters ::= "[" defaultFormalParameter ("," defaultFormalParameter)* "]" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+TypeArguments ::= "<" TypeArgument ("," TypeArgument)* ">" ;
+TypeParameters ::= "<" TypeParameter ("," TypeParameter)* ">" ;
+--------------------java::java-5-parr.bgf--------------------
+typeArguments ::= "<" typeArgument ("," typeArgument)* ">" ;
+typeParameters ::= "<" typeParameter ("," typeParameter)* ">" ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+template ::= "{{" title ("|" part)* "}}" ;

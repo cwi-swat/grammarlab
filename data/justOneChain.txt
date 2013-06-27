@@ -1,0 +1,2381 @@
+--------------------ada::kellogg.bgf--------------------
+condition ::= expression ;
+selector_name ::= IDENTIFIER ;
+abortable_part ::= stmts_opt ;
+enumeration_aggregate ::= parenth_values ;
+label_name ::= IDENTIFIER ;
+local_enum_name ::= IDENTIFIER ;
+separate ::= SEPARATE ;
+discriminant_direct_name ::= IDENTIFIER ;
+discrim_part ::= discrim_part_text ;
+--------------------ada::kempe.bgf--------------------
+first_bit ::= static_simple_expression ;
+condition ::= boolean_expression ;
+statement_identifier ::= direct_name ;
+default_expression ::= expression ;
+operator_symbol ::= string_literal ;
+defining_character_literal ::= character_literal ;
+subtype_mark ::= subtype_name ;
+parent_unit_name ::= name ;
+base ::= numeral ;
+implicit_dereference ::= name ;
+defining_identifier ::= identifier ;
+choice_parameter_specification ::= defining_identifier ;
+formal_access_type_definition ::= access_type_definition ;
+defining_operator_symbol ::= operator_symbol ;
+position ::= static_expression ;
+default_name ::= name ;
+abortable_part ::= sequence_of_statements ;
+enumeration_aggregate ::= array_aggregate ;
+entry_index ::= expression ;
+last_bit ::= static_simple_expression ;
+formal_array_type_definition ::= array_type_definition ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+first_bit ::= static_simple_expression ;
+condition ::= boolean_expression ;
+statement_identifier ::= direct_name ;
+default_expression ::= expression ;
+operator_symbol ::= string_literal ;
+defining_character_literal ::= character_literal ;
+subtype_mark ::= subtype_name ;
+parent_unit_name ::= name ;
+implicit_dereference ::= name ;
+defining_identifier ::= identifier ;
+choice_parameter_specification ::= defining_identifier ;
+formal_access_type_definition ::= access_type_definition ;
+defining_operator_symbol ::= operator_symbol ;
+position ::= static_expression ;
+default_name ::= name ;
+abortable_part ::= sequence_of_statements ;
+enumeration_aggregate ::= array_aggregate ;
+entry_index ::= expression ;
+last_bit ::= static_simple_expression ;
+formal_array_type_definition ::= array_type_definition ;
+--------------------ada::lncs-2219.bgf--------------------
+first_bit ::= static_simple_expression ;
+condition ::= boolean_expression ;
+statement_identifier ::= direct_name ;
+default_expression ::= expression ;
+operator_symbol ::= string_literal ;
+defining_character_literal ::= character_literal ;
+subtype_mark ::= subtype_name ;
+parent_unit_name ::= name ;
+base ::= numeral ;
+implicit_dereference ::= name ;
+defining_identifier ::= identifier ;
+choice_parameter_specification ::= defining_identifier ;
+formal_access_type_definition ::= access_type_definition ;
+defining_operator_symbol ::= operator_symbol ;
+position ::= static_expression ;
+default_name ::= name ;
+abortable_part ::= sequence_of_statements ;
+enumeration_aggregate ::= array_aggregate ;
+entry_index ::= expression ;
+last_bit ::= static_simple_expression ;
+formal_array_type_definition ::= array_type_definition ;
+--------------------ada::lncs-4348.bgf--------------------
+procedure_prefix ::= prefix ;
+first_bit ::= static_simple_expression ;
+restriction_identifier ::= identifier ;
+exception_name ::= name ;
+statement_identifier ::= direct_name ;
+procedure_name ::= name ;
+label_name ::= name ;
+parent_subtype_indication ::= subtype_indication ;
+subtype_mark ::= subtype_name ;
+variable_name ::= name ;
+generic_formal_parameter_selector_name ::= selector_name ;
+formal_access_type_definition ::= access_type_definition ;
+block_statement_identifier ::= statement_identifier ;
+pragma_argument_identifier ::= identifier ;
+non_quotation_mark_graphic_character ::= graphic_character ;
+package_name ::= name ;
+label_statement_identifier ::= statement_identifier ;
+last_bit ::= static_simple_expression ;
+library_unit_name ::= name ;
+component_local_name ::= local_name ;
+callable_entity_name ::= name ;
+generic_procedure_name ::= name ;
+protected_identifier ::= identifier ;
+function_prefix ::= prefix ;
+default_expression ::= expression ;
+delay_expression ::= expression ;
+entry_direct_name ::= direct_name ;
+defining_character_literal ::= character_literal ;
+base ::= numeral ;
+choice_parameter_specification ::= defining_identifier ;
+generic_package_name ::= name ;
+default_name ::= name ;
+discrete_subtype_indication ::= subtype_indication ;
+enumeration_aggregate ::= array_aggregate ;
+loop_name ::= name ;
+entry_index ::= expression ;
+discriminant_direct_name ::= direct_name ;
+formal_array_type_definition ::= array_type_definition ;
+package_instance_name ::= name ;
+entry_name ::= name ;
+interface_subtype_mark ::= subtype_mark ;
+loop_statement_identifier ::= statement_identifier ;
+static_simple_expression ::= simple_expression ;
+first_subtype_local_name ::= local_name ;
+subtype_name ::= name ;
+ancestor_subtype_indication ::= subtype_indication ;
+generic_function_name ::= name ;
+position ::= static_expression ;
+component_selector_name ::= selector_name ;
+subprogram_name ::= name ;
+loop_identifier ::= identifier ;
+task_identifier ::= identifier ;
+formal_interface_type_definition ::= interface_type_definition ;
+block_identifier ::= identifier ;
+condition ::= boolean_expression ;
+entry_identifier ::= identifier ;
+operator_symbol ::= string_literal ;
+restriction_parameter_identifier ::= identifier ;
+function_name ::= name ;
+parent_unit_name ::= name ;
+implicit_dereference ::= name ;
+defining_identifier ::= identifier ;
+boolean_expression ::= expression ;
+discriminant_selector_name ::= selector_name ;
+defining_operator_symbol ::= operator_symbol ;
+object_name ::= name ;
+static_expression ::= expression ;
+abortable_part ::= sequence_of_statements ;
+string_expression ::= expression ;
+formal_parameter_selector_name ::= selector_name ;
+task_name ::= name ;
+--------------------ada::cordy-hyaric.bgf--------------------
+first_bit ::= simple_expression ;
+abort_name ::= name ;
+statement_identifier ::= direct_name ;
+used_subtype_mark ::= subtype_mark ;
+subtype_mark ::= name ;
+formal_access_type_definition ::= access_type_definition ;
+position ::= expression ;
+restriction_parameter_argument ::= expression ;
+index_expression ::= expression ;
+last_bit ::= simple_expression ;
+with_name ::= name ;
+explicit_actual_parameter ::= expression ;
+function_call_component ::= actual_parameter_part ;
+formal_interface_type_definition ::= interface_type_definition ;
+library_unit_name ::= name ;
+condition ::= expression ;
+character_literal ::= charlit ;
+default_expression ::= expression ;
+blockeol ::= NL ;
+operator_symbol ::= string_literal ;
+defining_character_literal ::= character_literal ;
+prefix ::= name ;
+parent_unit_name ::= name ;
+implicit_dereference ::= name ;
+defining_identifier ::= identifier ;
+choice_parameter_specification ::= defining_identifier ;
+used_name ::= name ;
+defining_operator_symbol ::= operator_symbol ;
+default_name ::= name ;
+abortable_part ::= sequence_of_statements ;
+enumeration_aggregate ::= array_aggregate ;
+entry_index ::= expression ;
+program ::= compilation ;
+formal_array_type_definition ::= array_type_definition ;
+eol ::= NL ;
+string_literal ::= stringlit ;
+--------------------c::iso-9899-1999.bgf--------------------
+typedef-name ::= identifier ;
+constant-expression ::= conditional-expression ;
+--------------------c::iso-9899-tc2.bgf--------------------
+typedef-name ::= identifier ;
+constant-expression ::= conditional-expression ;
+--------------------c::iso-9899-tc3.bgf--------------------
+typedef-name ::= identifier ;
+constant-expression ::= conditional-expression ;
+--------------------c::malton-dahn.bgf--------------------
+tagged_attribute_number ::= number ;
+reference_id ::= id ;
+asm_template ::= string ;
+null_statement ::= semi ;
+label_id ::= id ;
+program ::= C_compilation_unit ;
+null_declaration ::= semi ;
+tagged_reference_id ::= reference_id ;
+tagged_attribute_id ::= id ;
+type_id ::= reference_id ;
+--------------------c::bruneliere.bgf--------------------
+CStructuralFeature ::= CField ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+macro_type_argument ::= argument_expression ;
+macro_name ::= id ;
+element_name ::= id ;
+nosemiNL ::= NL ;
+upper_macro_name ::= upperlowerid ;
+asm_statement ::= asm_spec ;
+macro_specifier ::= macro_call ;
+expression ::= assignment_expression ;
+asm_unit ::= token_or_key ;
+ps_name ::= id ;
+label_id ::= id ;
+program ::= compilation_unit ;
+constant_expression ::= conditional_expression ;
+null_declaration ::= semi ;
+type_id ::= reference_id ;
+--------------------c::cordy-malton.bgf--------------------
+reference_id ::= id ;
+null_statement ::= semi ;
+label_id ::= id ;
+program ::= C_compilation_unit ;
+constant_expression ::= conditional_expression ;
+tagged_reference_id ::= reference_id ;
+type_id ::= reference_id ;
+--------------------cpp::iso-n2723.bgf--------------------
+namespace-alias ::= identifier ;
+template-name ::= identifier ;
+typedef-name ::= identifier ;
+declaration-statement ::= block-declaration ;
+original-namespace-name ::= identifier ;
+enum-name ::= identifier ;
+enumerator ::= identifier ;
+expression-list ::= initializer-list ;
+constant-expression ::= conditional-expression ;
+--------------------cpp::bruneliere.bgf--------------------
+CBehavorialFeature ::= CFunction ;
+CStructured ::= CPPClass ;
+--------------------cpp::elges-cordy.bgf--------------------
+namespace_name ::= id ;
+character_constant ::= charlit ;
+declaration_statement ::= declaration ;
+program ::= declaration_list ;
+constant_expression ::= conditional_expression ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+namespace-alias ::= identifier ;
+template-name ::= identifier ;
+typedef-name ::= identifier ;
+declaration-statement ::= block-declaration ;
+original-namespace-name ::= identifier ;
+function-body ::= compound-statement ;
+enum-name ::= identifier ;
+enumerator ::= identifier ;
+constant-expression ::= conditional-expression ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+non-array-type ::= type ;
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attribute-argument-expression ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+positional-argument ::= attribute-argument-expression ;
+simple-name ::= identifier ;
+enum-type ::= type-name ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+global-attributes ::= global-attribute-sections ;
+constant-expression ::= expression ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attribute-argument-expression ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+type-parameter ::= identifier ;
+positional-argument ::= attribute-argument-expression ;
+enum-type ::= type-name ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+global-attributes ::= global-attribute-sections ;
+constant-expression ::= expression ;
+type-argument ::= type ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+attribute-argument-expression ::= expression ;
+positional-argument ::= attribute-argument-expression ;
+type-parameter ::= identifier ;
+enum-type ::= type-name ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+constant-expression ::= expression ;
+global-attributes ::= global-attribute-sections ;
+type-argument ::= type ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+non-array-type ::= type ;
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attribute-argument-expression ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+positional-argument ::= attribute-argument-expression ;
+simple-name ::= identifier ;
+enum-type ::= type-name ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+global-attributes ::= global-attribute-sections ;
+constant-expression ::= expression ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attribute-argument-expression ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+type-parameter ::= identifier ;
+positional-argument ::= attribute-argument-expression ;
+enum-type ::= type-name ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+global-attributes ::= global-attribute-sections ;
+constant-expression ::= expression ;
+type-argument ::= type ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+non-array-type ::= type ;
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+for-condition ::= boolean-expression ;
+attributes ::= attribute-sections ;
+attribute-argument-expression ::= expression ;
+enum-type ::= type-name ;
+simple-name ::= identifier ;
+positional-argument ::= attribute-argument-expression ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+constant-expression ::= expression ;
+global-attributes ::= global-attribute-sections ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+non-array-type ::= type ;
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+for-condition ::= boolean-expression ;
+attributes ::= attribute-sections ;
+attribute-argument-expression ::= expression ;
+enum-type ::= type-name ;
+simple-name ::= identifier ;
+positional-argument ::= attribute-argument-expression ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+constant-expression ::= expression ;
+global-attributes ::= global-attribute-sections ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+implicit-anonymous-function-parameter ::= identifier ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+attribute-argument-expression ::= expression ;
+type-parameter ::= identifier ;
+positional-argument ::= attribute-argument-expression ;
+for-iterator ::= statement-expression-list ;
+type-argument ::= type ;
+interface-type ::= type-name ;
+non-array-type ::= type ;
+enum-type ::= type-name ;
+delegate-type ::= type-name ;
+non-nullable-value-type ::= type ;
+constant-expression ::= expression ;
+global-attributes ::= global-attribute-sections ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+implicit-anonymous-function-parameter ::= identifier ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+attribute-argument-expression ::= expression ;
+type-parameter ::= identifier ;
+for-iterator ::= statement-expression-list ;
+type-argument ::= type ;
+interface-type ::= type-name ;
+non-array-type ::= type ;
+enum-type ::= type-name ;
+delegate-type ::= type-name ;
+non-nullable-value-type ::= type ;
+constant-expression ::= expression ;
+global-attributes ::= global-attribute-sections ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+attribute-name ::= qualified-identifier ;
+--------------------cs::csharp-cordy.bgf--------------------
+sel_expr ::= expression ;
+character_literal ::= charlit ;
+enum_type ::= type_name ;
+attribute_argument_expression ::= expression ;
+attributes ::= attribute_sections ;
+key_expr ::= expression ;
+delegate_type ::= type_name ;
+global_attributes ::= global_attribute_sections ;
+pred_expr ::= expression ;
+constant_expression ::= expression ;
+src_expr ::= expression ;
+type_name ::= namespace_or_type_name ;
+boolean_expression ::= expression ;
+namespace_name ::= namespace_or_type_name ;
+attribute_name ::= type_name ;
+positional_argument ::= attribute_argument_expression ;
+variable_reference ::= expression ;
+for_condition ::= boolean_expression ;
+type_parameter ::= id ;
+for_iterator ::= statement_expression_list ;
+program ::= compilation_unit ;
+type_argument ::= type ;
+string_literal ::= stringlit ;
+interface_type ::= type_name ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+non-array-type ::= type ;
+interface-type ::= type-name ;
+type-name ::= namespace-or-type-name ;
+boolean-expression ::= expression ;
+namespace-name ::= namespace-or-type-name ;
+attribute-name ::= type-name ;
+variable-reference ::= expression ;
+attribute-argument-expression ::= expression ;
+attributes ::= attribute-sections ;
+for-condition ::= boolean-expression ;
+positional-argument ::= attribute-argument-expression ;
+simple-name ::= identifier ;
+enum-type ::= type-name ;
+for-iterator ::= statement-expression-list ;
+delegate-type ::= type-name ;
+global-attributes ::= global-attribute-sections ;
+constant-expression ::= expression ;
+--------------------dart::spec-0.01.bgf--------------------
+postfixOperator ::= incrementOperator ;
+unaryOperator ::= negateOperator ;
+--------------------dart::google.bgf--------------------
+constantExpression ::= expression ;
+postfixOperator ::= incrementOperator ;
+--------------------dart::spec-0.05.bgf--------------------
+postfixOperator ::= incrementOperator ;
+unaryOperator ::= negateOperator ;
+--------------------eiffel::bezault.bgf--------------------
+Boolean_expression ::= Expression ;
+Attribute ::= Identifier ;
+Tag ::= Identifier ;
+Procedure_name ::= Identifier ;
+Message ::= Manifest_string ;
+Debug_key ::= Manifest_string ;
+Formal_generic_name ::= Identifier ;
+Language_name ::= Manifest_string ;
+Class_name ::= Identifier ;
+--------------------eiffel::cordy.bgf--------------------
+Comment ::= comment ;
+Real ::= real_number ;
+Integer ::= integer ;
+Attribute ::= Identifier ;
+Character_constant ::= character_constant ;
+Tag ::= Identifier ;
+Infix_name ::= Manifest_string ;
+Expression ::= Equality ;
+Prefix_name ::= Manifest_string ;
+Free_operator ::= free_operator ;
+Bit_constant ::= Bit_sequence ;
+Bit_sequence ::= bit_sequence ;
+Debug_key ::= Manifest_string ;
+Language_name ::= Manifest_string ;
+Class_name ::= Identifier ;
+Boolean_expression ::= Expression ;
+Formal ::= Identifier ;
+Header_comment ::= Comment ;
+Identifier ::= id ;
+Message ::= Manifest_string ;
+Formal_generic_name ::= Identifier ;
+Manifest_string ::= string ;
+Constant_attribute ::= Entity ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Formal ::= Identifier ;
+External_type ::= Simple_string ;
+Header_comment ::= Comment ;
+Unregistered_language ::= Manifest_string ;
+Tag ::= Identifier ;
+Variable_attribute ::= Feature_name ;
+DLL_index ::= Integer ;
+Message ::= Manifest_string ;
+DLL_identifier ::= Simple_string ;
+Feature_name ::= Identifier ;
+Creation_procedure ::= Feature_name ;
+Class_name ::= Identifier ;
+Constant_attribute ::= Feature_name ;
+--------------------fortran::derricks.bgf--------------------
+EntryName ::= Ident ;
+SubroutineNameUse ::= Ident ;
+SpecificationExpr ::= Expr ;
+ModuleName ::= Ident ;
+ScalarNumericExpr ::= Expr ;
+ScalarLogicalExpr ::= Expr ;
+Target ::= Expr ;
+CommonBlockName ::= Ident ;
+SFDummyArgName ::= Ident ;
+Name ::= Ident ;
+Subscript ::= Expr ;
+NamedConstantUse ::= Ident ;
+Int-Real-Dp-Expression ::= Expr ;
+EndName ::= Ident ;
+ArrayName ::= Ident ;
+FunctionName ::= Ident ;
+BlockDataName ::= Ident ;
+GenericName ::= Ident ;
+MaskExpr ::= Expr ;
+NamelistGroupName ::= Ident ;
+BlockDataBodyConstruct ::= SpecificationPartConstruct ;
+ProcedureName ::= Ident ;
+LblRef ::= Icon ;
+LowerBound ::= SpecificationExpr ;
+NamedConstant ::= Ident ;
+UpperBound ::= SpecificationExpr ;
+IntrinsicProcedureName ::= Ident ;
+DummyArgName ::= Ident ;
+ScalarIntExpr ::= Expr ;
+ExternalName ::= Ident ;
+NamelistGroupObject ::= VariableName ;
+UseName ::= Ident ;
+SubroutineName ::= Ident ;
+ImpliedDoVariable ::= Ident ;
+ProgramName ::= Ident ;
+DefinedBinaryOp ::= Dop ;
+ObjectName ::= Ident ;
+FunctionPar ::= DummyArgName ;
+ComponentName ::= Ident ;
+VariableName ::= Ident ;
+DefinedUnaryOp ::= Dop ;
+IfConstructName ::= Ident ;
+IntentPar ::= DummyArgName ;
+TypeName ::= Ident ;
+OptionalPar ::= DummyArgName ;
+--------------------fortran::waite-cordy.bgf--------------------
+SFVarName ::= Ident ;
+EntryName ::= Ident ;
+SubroutineNameUse ::= Ident ;
+ModuleName ::= Ident ;
+Target ::= Expr ;
+DoLabelStmt ::= ActionStmt ;
+CommonBlockName ::= Ident ;
+SFDummyArgName ::= Ident ;
+Subscript ::= Expr ;
+Name ::= Ident ;
+EquivalenceObject ::= Variable ;
+NamedConstantUse ::= Ident ;
+EndName ::= Ident ;
+ArrayName ::= Ident ;
+FunctionName ::= Ident ;
+GenericName ::= Ident ;
+BlockDataName ::= Ident ;
+NamelistGroupName ::= Ident ;
+MaskExpr ::= Expr ;
+ProcedureName ::= Ident ;
+BlockDataBodyConstruct ::= SpecificationPartConstruct ;
+LblRef ::= Label ;
+NamedConstant ::= Ident ;
+LowerBound ::= Expr ;
+UpperBound ::= Expr ;
+IntrinsicProcedureName ::= Ident ;
+DummyArgName ::= Ident ;
+ExternalName ::= Ident ;
+NamelistGroupObject ::= VariableName ;
+Label ::= Icon ;
+UseName ::= Ident ;
+Ident ::= id ;
+SubroutineName ::= Ident ;
+ProgramName ::= Ident ;
+ImpliedDoVariable ::= Ident ;
+DefinedBinaryOp ::= Dop ;
+ObjectName ::= Ident ;
+FunctionPar ::= DummyArgName ;
+ComponentName ::= Ident ;
+DefinedUnaryOp ::= Dop ;
+VariableName ::= Ident ;
+TypeName ::= Ident ;
+IntentPar ::= DummyArgName ;
+OptionalPar ::= DummyArgName ;
+--------------------java::java-1-jls-impl.bgf--------------------
+SimpleName ::= Identifier ;
+ConstantExpression ::= Expression ;
+Expression ::= AssignmentExpression ;
+ClassOrInterfaceType ::= Name ;
+ConstantDeclaration ::= FieldDeclaration ;
+InterfaceType ::= ClassOrInterfaceType ;
+ClassType ::= ClassOrInterfaceType ;
+ForUpdate ::= StatementExpressionList ;
+--------------------java::java-1-jls-read.bgf--------------------
+ConstantExpression ::= Expression ;
+Expression ::= AssignmentExpression ;
+InterfaceType ::= TypeName ;
+ClassType ::= TypeName ;
+ForUpdate ::= StatementExpressionList ;
+--------------------java::java-2-jls-impl.bgf--------------------
+ConstantExpression ::= Expression ;
+StatementExpression ::= Expression ;
+MethodBody ::= Block ;
+--------------------java::java-2-jls-read.bgf--------------------
+InstanceInitializer ::= Block ;
+ConstantExpression ::= Expression ;
+Expression ::= AssignmentExpression ;
+InterfaceType ::= TypeName ;
+ClassType ::= TypeName ;
+ForUpdate ::= StatementExpressionList ;
+--------------------java::java-5-habelitz.bgf--------------------
+javaSource ::= compilationUnit ;
+annotationElementValueExpression ::= conditionalExpression ;
+expression ::= assignmentExpression ;
+--------------------java::java-5-jls-impl.bgf--------------------
+ConstantExpression ::= Expression ;
+StatementExpression ::= Expression ;
+AnnotationConstantRest ::= VariableDeclarators ;
+MethodBody ::= Block ;
+EnumConstantName ::= Identifier ;
+--------------------java::java-5-jls-read.bgf--------------------
+InstanceInitializer ::= Block ;
+ConstantExpression ::= Expression ;
+Expression ::= AssignmentExpression ;
+TypeVariable ::= Identifier ;
+ForUpdate ::= StatementExpressionList ;
+EnumConstantName ::= Identifier ;
+--------------------java::java-5-parr.bgf--------------------
+constantExpression ::= expression ;
+statementExpression ::= expression ;
+annotationConstantRest ::= variableDeclarators ;
+methodBody ::= block ;
+forUpdate ::= expressionList ;
+enumConstantName ::= Identifier ;
+--------------------java::java-5-stahl.bgf--------------------
+expression ::= assignmentExpression ;
+--------------------java::java-5-studman.bgf--------------------
+expression ::= assignmentExpression ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+argument ::= expression ;
+numeric_literal ::= number ;
+character_literal ::= charlit ;
+expression ::= assignment_expression ;
+label_name ::= reference ;
+field_declaration ::= variable_declaration ;
+constant_expression ::= expression ;
+class_name ::= declared_name ;
+formal_parameter_name ::= variable_name ;
+interface_name ::= declared_name ;
+declared_name ::= reference ;
+qualified_name ::= reference ;
+package_or_type_name ::= qualified_name ;
+local_variable_declaration ::= variable_declaration ;
+method_name ::= declared_name ;
+class_body ::= class_or_interface_body ;
+interface_body ::= class_or_interface_body ;
+class_or_interface_name ::= qualified_name ;
+package_name ::= qualified_name ;
+program ::= package_declaration ;
+string_literal ::= stringlit ;
+--------------------java::java-3-bruneliere.bgf--------------------
+PrimitiveType ::= Int ;
+--------------------java::java-4-sdf.bgf--------------------
+SimpleName ::= Identifier ;
+ClassOrInterfaceType ::= Name ;
+ConstantDeclaration ::= FieldDeclaration ;
+Top-sort ::= CompilationUnits ;
+InterfaceType ::= ClassOrInterfaceType ;
+ForUpdate ::= StatementExpressionList ;
+ClassType ::= ClassOrInterfaceType ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+numeric_literal ::= number ;
+character_literal ::= charlit ;
+expression ::= assignment_expression ;
+nested_annotation ::= annotation ;
+label_name ::= reference ;
+field_declaration ::= variable_declaration ;
+class_name ::= declared_name ;
+formal_parameter_name ::= variable_name ;
+interface_name ::= declared_name ;
+qualified_name ::= reference ;
+package_or_type_name ::= qualified_name ;
+local_variable_declaration ::= variable_declaration ;
+method_name ::= declared_name ;
+class_body ::= class_or_interface_body ;
+interface_body ::= class_or_interface_body ;
+package_name ::= qualified_name ;
+program ::= package_declaration ;
+string_literal ::= stringlit ;
+--------------------java::java-5-giquel.bgf--------------------
+MultipleValuedNamedElement ::= FieldDeclaration ;
+--------------------java::java-5-landman.bgf--------------------
+ExceptionType ::= ClassType ;
+TypeVarId ::= Id ;
+--------------------modula::src-052.bgf--------------------
+ConstExpr ::= Expr ;
+--------------------modula::dagenais-cordy.bgf--------------------
+ConstExpr ::= Expr ;
+--------------------assembly::delphi.bgf--------------------
+procedure_body ::= asm_stmtblock ;
+unlabeled_stm ::= asm_stmtblock ;
+--------------------basic::vb-glineur.bgf--------------------
+obeo/psm/vb/projects/VB_1/core/VB_Type ::= obeo/psm/vb/projects/VB_1/core/VB_Class ;
+obeo/psm/vb/resources/LocatedElement ::= obeo/psm/vb/resources/VB_LangElement ;
+--------------------bibtex::bibtex-1.1.bgf--------------------
+BookTitledEntry ::= InCollection ;
+--------------------bibtex::bibtex-1.2.bgf--------------------
+BookTitledEntry ::= InCollection ;
+--------------------bibtex::bibtex-1.bgf--------------------
+LocatedElement ::= Entry ;
+--------------------bibtex::bql.bgf--------------------
+LocatedElement ::= Entry ;
+--------------------dot::doux.bgf--------------------
+LocatedElement ::= NamedElement ;
+--------------------html::clark-basic.bgf--------------------
+kbd.attlist ::= Common.attrib ;
+code.attlist ::= Common.attrib ;
+dfn.attlist ::= Common.attrib ;
+Block.mix ::= Block.class ;
+span.attlist ::= Common.attrib ;
+I18n.attrib ::= lang.attrib ;
+em.attlist ::= Common.attrib ;
+dl.attlist ::= Common.attrib ;
+var.attlist ::= Common.attrib ;
+caption.attlist ::= Common.attrib ;
+Heading.attrib ::= Common.attrib ;
+acronym.attlist ::= Common.attrib ;
+body.attlist ::= Common.attrib ;
+LinkTypes.datatype ::= NMTOKENS.datatype ;
+dd.attlist ::= Common.attrib ;
+li.attlist ::= Common.attrib ;
+ol.attlist ::= Common.attrib ;
+Form.class ::= form ;
+Heading.content ::= Inline.model ;
+title.attlist ::= I18n.attrib ;
+strong.attlist ::= Common.attrib ;
+cite.attlist ::= Common.attrib ;
+ul.attlist ::= Common.attrib ;
+address.attlist ::= Common.attrib ;
+th.attlist ::= Cell.attrib ;
+div.attlist ::= Common.attrib ;
+samp.attlist ::= Common.attrib ;
+abbr.attlist ::= Common.attrib ;
+p.attlist ::= Common.attrib ;
+td.attlist ::= Cell.attrib ;
+br.attlist ::= Core.attrib ;
+dt.attlist ::= Common.attrib ;
+--------------------html::clark.bgf--------------------
+ins.attlist ::= Edit.attrib ;
+kbd.attlist ::= Common.attrib ;
+code.attlist ::= Common.attrib ;
+link.attrib ::= target.attrib ;
+dfn.attlist ::= Common.attrib ;
+i.attlist ::= Common.attrib ;
+em.attlist ::= Common.attrib ;
+fieldset.attlist ::= Common.attrib ;
+var.attlist ::= Common.attrib ;
+noframes.attlist ::= Common.attrib ;
+b.attlist ::= Common.attrib ;
+LinkTypes.datatype ::= NMTOKENS.datatype ;
+Heading.content ::= Inline.model ;
+title.attlist ::= I18n.attrib ;
+strong.attlist ::= Common.attrib ;
+cite.attlist ::= Common.attrib ;
+center.attlist ::= Common.attrib ;
+dt.attlist ::= Common.attrib ;
+sup.attlist ::= Common.attrib ;
+noscript.attlist ::= Common.attrib ;
+del.attlist ::= Edit.attrib ;
+span.attlist ::= Common.attrib ;
+small.attlist ::= Common.attrib ;
+acronym.attlist ::= Common.attrib ;
+tt.attlist ::= Common.attrib ;
+dd.attlist ::= Common.attrib ;
+big.attlist ::= Common.attrib ;
+sub.attlist ::= Common.attrib ;
+u.attlist ::= Common.attrib ;
+address.attlist ::= Common.attrib ;
+th.attlist ::= Cell.attrib ;
+s.attlist ::= Common.attrib ;
+strike.attlist ::= Common.attrib ;
+samp.attlist ::= Common.attrib ;
+abbr.attlist ::= Common.attrib ;
+td.attlist ::= Cell.attrib ;
+--------------------html::guyard.bgf--------------------
+Flow ::= Inline ;
+I18n ::= Map ;
+ObjectElement ::= Param ;
+Specialpre ::= Span ;
+NMTOKEN ::= LanguageCode ;
+Inline ::= inline ;
+Special ::= Specialpre ;
+PreContent ::= Specialpre ;
+FieldsetElement ::= Legend ;
+--------------------html::clark-strict.bgf--------------------
+ins.attlist ::= Edit.attrib ;
+kbd.attlist ::= Common.attrib ;
+code.attlist ::= Common.attrib ;
+link.attrib ::= target.attrib ;
+dfn.attlist ::= Common.attrib ;
+i.attlist ::= Common.attrib ;
+em.attlist ::= Common.attrib ;
+fieldset.attlist ::= Common.attrib ;
+var.attlist ::= Common.attrib ;
+caption.attlist ::= Common.attrib ;
+b.attlist ::= Common.attrib ;
+LinkTypes.datatype ::= NMTOKENS.datatype ;
+ol.attlist ::= Common.attrib ;
+Heading.content ::= Inline.model ;
+title.attlist ::= I18n.attrib ;
+strong.attlist ::= Common.attrib ;
+cite.attlist ::= Common.attrib ;
+ul.attlist ::= Common.attrib ;
+div.attlist ::= Common.attrib ;
+br.attlist ::= Core.attrib ;
+dt.attlist ::= Common.attrib ;
+sup.attlist ::= Common.attrib ;
+noscript.attlist ::= Common.attrib ;
+del.attlist ::= Edit.attrib ;
+Block.mix ::= Block.class ;
+span.attlist ::= Common.attrib ;
+hr.attlist ::= Common.attrib ;
+dl.attlist ::= Common.attrib ;
+small.attlist ::= Common.attrib ;
+Heading.attrib ::= Common.attrib ;
+acronym.attlist ::= Common.attrib ;
+tt.attlist ::= Common.attrib ;
+dd.attlist ::= Common.attrib ;
+big.attlist ::= Common.attrib ;
+sub.attlist ::= Common.attrib ;
+li.attlist ::= Common.attrib ;
+address.attlist ::= Common.attrib ;
+th.attlist ::= Cell.attrib ;
+samp.attlist ::= Common.attrib ;
+abbr.attlist ::= Common.attrib ;
+p.attlist ::= Common.attrib ;
+td.attlist ::= Cell.attrib ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_formal_parameter ::= id ;
+js_regular_expn_literal ::= js_regexp ;
+js_property_set_parameter ::= id ;
+program ::= js_program ;
+--------------------occam::mu-mitchell.bgf--------------------
+template-name ::= identifier ;
+namespace-alias ::= identifier ;
+typedef-name ::= identifier ;
+declaration-statement ::= block-declaration ;
+original-namespace-name ::= identifier ;
+function-body ::= compound-statement ;
+enum-name ::= identifier ;
+enumerator ::= identifier ;
+constant-expression ::= conditional-expression ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+office-spreadsheet-content-epilogue ::= table-functions ;
+style-properties-content ::= anyAttListOrElements ;
+text-section-source-dde ::= office-dde-source ;
+office-text-content-epilogue ::= table-functions ;
+coordinate ::= length ;
+style-table-properties-elements ::= style-background-image ;
+distance ::= length ;
+text-get-page-variable-attlist ::= common-field-num-format-attlist ;
+form-generic-control-attlist ::= form-control-attlist ;
+office-image-content-main ::= draw-frame ;
+form-item-attlist ::= label ;
+office-chart-content-main ::= chart-chart ;
+office-chart-content-epilogue ::= table-functions ;
+office-drawing-content-epilogue ::= table-functions ;
+style-chart-properties-content ::= style-properties-content ;
+text-note-ref-content ::= text-note-class ;
+style-table-row-properties-elements ::= style-background-image ;
+style-header-footer-properties-elements ::= style-background-image ;
+style-table-cell-properties-elements ::= style-background-image ;
+--------------------odf::opendoc-1.0.bgf--------------------
+office-spreadsheet-content-epilogue ::= table-functions ;
+style-list-level-properties-content ::= style-properties-content ;
+style-table-column-properties-content ::= style-properties-content ;
+style-properties-content ::= anyAttListOrElements ;
+text-section-source-dde ::= office-dde-source ;
+style-table-properties-content ::= style-properties-content ;
+style-paragraph-properties-content ::= style-properties-content ;
+office-text-content-epilogue ::= table-functions ;
+coordinate ::= length ;
+style-table-properties-elements ::= style-background-image ;
+style-ruby-properties-content ::= style-properties-content ;
+distance ::= length ;
+text-get-page-variable-attlist ::= common-field-num-format-attlist ;
+style-drawing-page-properties-content ::= style-properties-content ;
+form-generic-control-attlist ::= form-control-attlist ;
+office-image-content-main ::= draw-frame ;
+style-table-cell-properties-content ::= style-properties-content ;
+form-item-attlist ::= label ;
+style-table-row-properties-content ::= style-properties-content ;
+style-header-footer-properties-content ::= style-properties-content ;
+office-chart-content-main ::= chart-chart ;
+style-chart-properties-content ::= style-properties-content ;
+office-chart-content-epilogue ::= table-functions ;
+office-drawing-content-epilogue ::= table-functions ;
+text-note-ref-content ::= text-note-class ;
+style-table-row-properties-elements ::= style-background-image ;
+style-section-properties-content ::= style-properties-content ;
+style-text-properties-content ::= style-properties-content ;
+style-header-footer-properties-elements ::= style-background-image ;
+office-meta-content ::= anyElements ;
+style-table-cell-properties-elements ::= style-background-image ;
+style-graphic-properties-content ::= style-properties-content ;
+style-page-layout-properties-content ::= style-properties-content ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+office-spreadsheet-content-epilogue ::= table-functions ;
+style-properties-content ::= anyAttListOrElements ;
+text-section-source-dde ::= office-dde-source ;
+office-text-content-epilogue ::= table-functions ;
+coordinate ::= length ;
+style-table-properties-elements ::= style-background-image ;
+distance ::= length ;
+text-get-page-variable-attlist ::= common-field-num-format-attlist ;
+form-generic-control-attlist ::= form-control-attlist ;
+office-image-content-main ::= draw-frame ;
+form-item-attlist ::= label ;
+office-chart-content-main ::= chart-chart ;
+office-chart-content-epilogue ::= table-functions ;
+office-drawing-content-epilogue ::= table-functions ;
+text-note-ref-content ::= text-note-class ;
+style-table-row-properties-elements ::= style-background-image ;
+style-header-footer-properties-elements ::= style-background-image ;
+style-table-cell-properties-elements ::= style-background-image ;
+--------------------odf::opendoc-1.1.bgf--------------------
+office-spreadsheet-content-epilogue ::= table-functions ;
+style-list-level-properties-content ::= style-properties-content ;
+style-table-column-properties-content ::= style-properties-content ;
+style-properties-content ::= anyAttListOrElements ;
+text-section-source-dde ::= office-dde-source ;
+style-table-properties-content ::= style-properties-content ;
+style-paragraph-properties-content ::= style-properties-content ;
+office-text-content-epilogue ::= table-functions ;
+coordinate ::= length ;
+style-table-properties-elements ::= style-background-image ;
+style-ruby-properties-content ::= style-properties-content ;
+distance ::= length ;
+text-get-page-variable-attlist ::= common-field-num-format-attlist ;
+style-drawing-page-properties-content ::= style-properties-content ;
+form-generic-control-attlist ::= form-control-attlist ;
+office-image-content-main ::= draw-frame ;
+style-table-cell-properties-content ::= style-properties-content ;
+form-item-attlist ::= label ;
+style-table-row-properties-content ::= style-properties-content ;
+style-header-footer-properties-content ::= style-properties-content ;
+office-chart-content-main ::= chart-chart ;
+style-chart-properties-content ::= style-properties-content ;
+office-chart-content-epilogue ::= table-functions ;
+office-drawing-content-epilogue ::= table-functions ;
+text-note-ref-content ::= text-note-class ;
+style-table-row-properties-elements ::= style-background-image ;
+style-section-properties-content ::= style-properties-content ;
+style-text-properties-content ::= style-properties-content ;
+style-header-footer-properties-elements ::= style-background-image ;
+office-meta-content ::= anyElements ;
+style-table-cell-properties-elements ::= style-background-image ;
+style-graphic-properties-content ::= style-properties-content ;
+style-page-layout-properties-content ::= style-properties-content ;
+--------------------odf::opendoc-1.2.bgf--------------------
+office-spreadsheet-content-epilogue ::= table-functions ;
+text-section-source-dde ::= office-dde-source ;
+office-text-content-epilogue ::= table-functions ;
+coordinate ::= length ;
+style-table-properties-elements ::= style-background-image ;
+distance ::= length ;
+style-list-level-properties-elements ::= style-list-level-label-alignment ;
+text-get-page-variable-attlist ::= common-field-num-format-attlist ;
+form-generic-control-attlist ::= form-control-attlist ;
+office-image-content-main ::= draw-frame ;
+form-item-attlist ::= label ;
+office-chart-content-main ::= chart-chart ;
+office-chart-content-epilogue ::= table-functions ;
+office-drawing-content-epilogue ::= table-functions ;
+style-table-row-properties-elements ::= style-background-image ;
+style-header-footer-properties-elements ::= style-background-image ;
+style-table-cell-properties-elements ::= style-background-image ;
+office-annotation-end-attlist ::= common-office-annotation-name-attlist ;
+--------------------pascal::object.bgf--------------------
+ref_name ::= object ;
+--------------------uml::extended.bgf--------------------
+Namespace ::= GeneralizableElement ;
+GeneralizableElement ::= Classifier ;
+StructureFeature ::= Attribute ;
+Classifier ::= Class ;
+--------------------uml::stereo.bgf--------------------
+GeneralizableElement ::= Stereotype ;
+--------------------uml::uml-uc.bgf--------------------
+ModelElement ::= ExtensionPoint ;
+--------------------uml::uml2.bgf--------------------
+CreateLinkAction ::= CreateLinkObjectAction ;
+ExecutableNode ::= Action ;
+InputPin ::= ValuePin ;
+StructuralFeature ::= Property ;
+DeployedArtifact ::= Artifact ;
+CentralBufferNode ::= DataStoreNode ;
+DeploymentTarget ::= Node ;
+EncapsulatedClassifier ::= Class ;
+--------------------uml::umldi-2.0.bgf--------------------
+StructuralFeature ::= Attribute ;
+Signal ::= Exception ;
+--------------------uml::umldi-ag.bgf--------------------
+Element ::= ModelElement ;
+Namespace ::= Classifier ;
+BehavioralFeature ::= Operation ;
+GeneralizableElement ::= Classifier ;
+Relationship ::= Generalization ;
+Feature ::= BehavioralFeature ;
+--------------------uml::umldi-c.bgf--------------------
+Element ::= ModelElement ;
+StructuralFeature ::= Attribute ;
+Signal ::= Exception ;
+--------------------uml::umldi-mm.bgf--------------------
+Element ::= ModelElement ;
+Relationship ::= Generalization ;
+Classifier ::= Subsystem ;
+--------------------uml::umldi-sm.bgf--------------------
+Element ::= ModelElement ;
+Namespace ::= Classifier ;
+GeneralizableElement ::= Classifier ;
+Relationship ::= Generalization ;
+Feature ::= BehavioralFeature ;
+Classifier ::= Signal ;
+--------------------uml::umldi-uc.bgf--------------------
+Element ::= ModelElement ;
+Namespace ::= Classifier ;
+StructuralFeature ::= Attribute ;
+Feature ::= StructuralFeature ;
+--------------------xml::zhang-cordy.bgf--------------------
+pitarget ::= name ;
+prolog ::= dtd_body ;
+not_dquote ::= token ;
+chardata ::= token ;
+not_quote ::= token ;
+--------------------xslt::clark.bgf--------------------
+top-level-extension ::= any ;
+--------------------logo::sdf.bgf--------------------
+Program ::= Commands ;
+--------------------php::cordy.bgf--------------------
+Directive ::= id ;
+EncapsedInlineHTML ::= tag_token_or_key ;
+popid ::= id ;
+Name ::= id ;
+StaticScalar ::= Primary ;
+HTMLSection ::= InlineHTML ;
+CompoundVariable ::= VariableName ;
+VariableOrFunctionCall ::= ObjectCVar ;
+Expr ::= LogicalOrExpr ;
+InlineHTMLtoken ::= tag_token_or_key ;
+CVar ::= ReferenceVariable ;
+program ::= Document ;
+ClassName ::= id ;
+BlockStatement ::= Block ;
+TypeHint ::= id ;
+TVariable ::= SimpleVariableName ;
+--------------------python::sorochan-cordy.bgf--------------------
+yield_stmt ::= yield_expr ;
+encoding_decl ::= id ;
+program ::= file_input ;
+--------------------markup::cml.bgf--------------------
+AtomRefs_Element ::= _StringBuiltin ;
+--------------------markup::docbook-walsh.bgf--------------------
+pubdate.role.attrib ::= role.attrib ;
+glosslist.role.attrib ::= role.attrib ;
+personblurb.role.attrib ::= role.attrib ;
+constant.role.attrib ::= role.attrib ;
+lineannotation.role.attrib ::= role.attrib ;
+mediaobject.role.attrib ::= role.attrib ;
+abbrev.role.attrib ::= role.attrib ;
+partinfo.role.attrib ::= role.attrib ;
+keysysm.role.attrib ::= role.attrib ;
+artpagenums.role.attrib ::= role.attrib ;
+fax.role.attrib ::= role.attrib ;
+msgexplan.role.attrib ::= role.attrib ;
+tbl.table-titles.mdl ::= titles ;
+email.role.attrib ::= role.attrib ;
+refsect2.role.attrib ::= role.attrib ;
+member.role.attrib ::= role.attrib ;
+symbol.role.attrib ::= role.attrib ;
+ooclass.role.attrib ::= role.attrib ;
+subjectterm.role.attrib ::= role.attrib ;
+mousebutton.role.attrib ::= role.attrib ;
+void.role.attrib ::= role.attrib ;
+synopsis.role.attrib ::= role.attrib ;
+bibliosource.role.attrib ::= role.attrib ;
+medialabel.role.attrib ::= role.attrib ;
+blockquote.role.attrib ::= role.attrib ;
+fieldsynopsis.role.attrib ::= role.attrib ;
+filename.role.attrib ::= role.attrib ;
+issn.role.attrib ::= role.attrib ;
+classname.role.attrib ::= role.attrib ;
+street.role.attrib ::= role.attrib ;
+sbr.role.attrib ::= role.attrib ;
+otheraddr.role.attrib ::= role.attrib ;
+remark.role.attrib ::= role.attrib ;
+programlisting.role.attrib ::= role.attrib ;
+preface.role.attrib ::= role.attrib ;
+emphasis.role.attrib ::= role.attrib ;
+msgrel.role.attrib ::= role.attrib ;
+qandaentry.role.attrib ::= role.attrib ;
+appendixinfo.role.attrib ::= role.attrib ;
+toclevel2.role.attrib ::= role.attrib ;
+simplesect.role.attrib ::= role.attrib ;
+part.role.attrib ::= role.attrib ;
+ulink.role.attrib ::= role.attrib ;
+refentryinfo.role.attrib ::= role.attrib ;
+bodyatt ::= label.attrib ;
+olink.role.attrib ::= role.attrib ;
+bridgehead.role.attrib ::= role.attrib ;
+book.role.attrib ::= role.attrib ;
+inlineequation.role.attrib ::= role.attrib ;
+section.role.attrib ::= role.attrib ;
+prompt.role.attrib ::= role.attrib ;
+revremark.role.attrib ::= role.attrib ;
+set.role.attrib ::= role.attrib ;
+optional.role.attrib ::= role.attrib ;
+personname.role.attrib ::= role.attrib ;
+footnote.role.attrib ::= role.attrib ;
+pubsnumber.role.attrib ::= role.attrib ;
+setindexinfo.role.attrib ::= role.attrib ;
+sidebar.role.attrib ::= role.attrib ;
+revision.role.attrib ::= role.attrib ;
+confgroup.role.attrib ::= role.attrib ;
+imageobject.role.attrib ::= role.attrib ;
+primsecter.role.attrib ::= role.attrib ;
+arg.role.attrib ::= role.attrib ;
+graphicco.role.attrib ::= role.attrib ;
+sect5.role.attrib ::= role.attrib ;
+legalnotice.role.attrib ::= role.attrib ;
+application.role.attrib ::= role.attrib ;
+glossseealso.role.attrib ::= role.attrib ;
+simplelist.role.attrib ::= role.attrib ;
+mediaobjectco.role.attrib ::= role.attrib ;
+sect1.role.attrib ::= role.attrib ;
+equation.role.attrib ::= role.attrib ;
+refsect3info.role.attrib ::= role.attrib ;
+refsect2info.role.attrib ::= role.attrib ;
+refsect1info.role.attrib ::= role.attrib ;
+toc.role.attrib ::= role.attrib ;
+sgmltag.role.attrib ::= role.attrib ;
+copyright.role.attrib ::= role.attrib ;
+shortcut.role.attrib ::= role.attrib ;
+imageobjectco.role.attrib ::= role.attrib ;
+refclass.role.attrib ::= role.attrib ;
+interfacename.role.attrib ::= role.attrib ;
+acronym.role.attrib ::= role.attrib ;
+refdescriptor.role.attrib ::= role.attrib ;
+funcdef.role.attrib ::= role.attrib ;
+refentry.role.attrib ::= role.attrib ;
+indexterm.role.attrib ::= role.attrib ;
+glossdef.role.attrib ::= role.attrib ;
+authorinitials.role.attrib ::= role.attrib ;
+phrase.role.attrib ::= role.attrib ;
+informalfigure.role.attrib ::= role.attrib ;
+action.role.attrib ::= role.attrib ;
+anchor.role.attrib ::= role.attrib ;
+areaset.role.attrib ::= role.attrib ;
+contractnum.role.attrib ::= role.attrib ;
+varname.role.attrib ::= role.attrib ;
+listitem.role.attrib ::= role.attrib ;
+msginfo.role.attrib ::= role.attrib ;
+msgtext.role.attrib ::= role.attrib ;
+prefaceinfo.role.attrib ::= role.attrib ;
+subject.role.attrib ::= role.attrib ;
+tocentry.role.attrib ::= role.attrib ;
+seriesvolnums.role.attrib ::= role.attrib ;
+videodata.role.attrib ::= role.attrib ;
+abstract.role.attrib ::= role.attrib ;
+glossary.role.attrib ::= role.attrib ;
+firstterm.role.attrib ::= role.attrib ;
+othername.role.attrib ::= role.attrib ;
+refsect1.role.attrib ::= role.attrib ;
+guilabel.role.attrib ::= role.attrib ;
+contrib.role.attrib ::= role.attrib ;
+literallayout.role.attrib ::= role.attrib ;
+refmeta.role.attrib ::= role.attrib ;
+citerefentry.role.attrib ::= role.attrib ;
+audioobject.role.attrib ::= role.attrib ;
+revhistory.role.attrib ::= role.attrib ;
+state.role.attrib ::= role.attrib ;
+bibliographyinfo.role.attrib ::= role.attrib ;
+msgaud.role.attrib ::= role.attrib ;
+replaceable.role.attrib ::= role.attrib ;
+foreignphrase.role.attrib ::= role.attrib ;
+postcode.role.attrib ::= role.attrib ;
+destructorsynopsis.role.attrib ::= role.attrib ;
+area.role.attrib ::= role.attrib ;
+classsynopsis.role.attrib ::= role.attrib ;
+bibliomset.role.attrib ::= role.attrib ;
+author.role.attrib ::= role.attrib ;
+ackno.role.attrib ::= role.attrib ;
+sidebarinfo.role.attrib ::= role.attrib ;
+refsynopsisdiv.role.attrib ::= role.attrib ;
+seglistitem.role.attrib ::= role.attrib ;
+indexes.role.attrib ::= role.attrib ;
+database.role.attrib ::= role.attrib ;
+link.role.attrib ::= role.attrib ;
+productname.role.attrib ::= role.attrib ;
+synopfragmentref.role.attrib ::= role.attrib ;
+referenceinfo.role.attrib ::= role.attrib ;
+toclevel5.role.attrib ::= role.attrib ;
+productnumber.role.attrib ::= role.attrib ;
+option.role.attrib ::= role.attrib ;
+toclevel1.role.attrib ::= role.attrib ;
+label.role.attrib ::= role.attrib ;
+primsecterie.role.attrib ::= role.attrib ;
+affiliation.role.attrib ::= role.attrib ;
+epigraph.role.attrib ::= role.attrib ;
+orgname.role.attrib ::= role.attrib ;
+objectinfo.role.attrib ::= role.attrib ;
+methodname.role.attrib ::= role.attrib ;
+city.role.attrib ::= role.attrib ;
+inlinemediaobject.role.attrib ::= role.attrib ;
+accel.role.attrib ::= role.attrib ;
+graphic.role.attrib ::= role.attrib ;
+caption.role.attrib ::= role.attrib ;
+question.role.attrib ::= role.attrib ;
+tables.role.attrib ::= role.attrib ;
+figure.role.attrib ::= role.attrib ;
+confnum.role.attrib ::= role.attrib ;
+honorific.role.attrib ::= role.attrib ;
+indexentry.role.attrib ::= role.attrib ;
+envar.role.attrib ::= role.attrib ;
+modespec.role.attrib ::= role.attrib ;
+partintro.role.attrib ::= role.attrib ;
+seg.role.attrib ::= role.attrib ;
+sect4.role.attrib ::= role.attrib ;
+chapter.role.attrib ::= role.attrib ;
+keycode.role.attrib ::= role.attrib ;
+step.role.attrib ::= role.attrib ;
+command.role.attrib ::= role.attrib ;
+biblioset.role.attrib ::= role.attrib ;
+reference.role.attrib ::= role.attrib ;
+shortaffil.role.attrib ::= role.attrib ;
+printhistory.role.attrib ::= role.attrib ;
+wordasword.role.attrib ::= role.attrib ;
+structfield.role.attrib ::= role.attrib ;
+simplemsgentry.role.attrib ::= role.attrib ;
+systemitem.role.attrib ::= role.attrib ;
+returnvalue.role.attrib ::= role.attrib ;
+itemizedlist.role.attrib ::= role.attrib ;
+edition.role.attrib ::= role.attrib ;
+answer.role.attrib ::= role.attrib ;
+year.role.attrib ::= role.attrib ;
+pagenums.role.attrib ::= role.attrib ;
+firstname.role.attrib ::= role.attrib ;
+tocpart.role.attrib ::= role.attrib ;
+classsynopsisinfo.role.attrib ::= role.attrib ;
+beginpage.role.attrib ::= role.attrib ;
+dedication.role.attrib ::= role.attrib ;
+simpara.role.attrib ::= role.attrib ;
+subjectset.role.attrib ::= role.attrib ;
+footnoteref.role.attrib ::= role.attrib ;
+trademark.role.attrib ::= role.attrib ;
+segmentedlist.role.attrib ::= role.attrib ;
+date.role.attrib ::= role.attrib ;
+guibutton.role.attrib ::= role.attrib ;
+textobject.role.attrib ::= role.attrib ;
+ssscript.role.attrib ::= role.attrib ;
+refpurpose.role.attrib ::= role.attrib ;
+glossentry.role.attrib ::= role.attrib ;
+qandaset.role.attrib ::= role.attrib ;
+articleinfo.role.attrib ::= role.attrib ;
+bibliomixed.role.attrib ::= role.attrib ;
+segtitle.role.attrib ::= role.attrib ;
+bibliomisc.role.attrib ::= role.attrib ;
+informalequation.role.attrib ::= role.attrib ;
+refsectioninfo.role.attrib ::= role.attrib ;
+msgsub.role.attrib ::= role.attrib ;
+refname.role.attrib ::= role.attrib ;
+tocchap.role.attrib ::= role.attrib ;
+xref.role.attrib ::= role.attrib ;
+biblioentry.role.attrib ::= role.attrib ;
+bookinfo.role.attrib ::= role.attrib ;
+country.role.attrib ::= role.attrib ;
+informalexample.role.attrib ::= role.attrib ;
+keycap.role.attrib ::= role.attrib ;
+sectioninfo.role.attrib ::= role.attrib ;
+constructorsynopsis.role.attrib ::= role.attrib ;
+issuenum.role.attrib ::= role.attrib ;
+collab.role.attrib ::= role.attrib ;
+othercredit.role.attrib ::= role.attrib ;
+glosssee.role.attrib ::= role.attrib ;
+admon.role.attrib ::= role.attrib ;
+varargs.role.attrib ::= role.attrib ;
+indexinfo.role.attrib ::= role.attrib ;
+audiodata.role.attrib ::= role.attrib ;
+quote.role.attrib ::= role.attrib ;
+videoobject.role.attrib ::= role.attrib ;
+bibliodiv.role.attrib ::= role.attrib ;
+refentrytitle.role.attrib ::= role.attrib ;
+token.role.attrib ::= role.attrib ;
+synopfragment.role.attrib ::= role.attrib ;
+toclevel4.role.attrib ::= role.attrib ;
+glossterm.role.attrib ::= role.attrib ;
+confsponsor.role.attrib ::= role.attrib ;
+errorcode.role.attrib ::= role.attrib ;
+phone.role.attrib ::= role.attrib ;
+itermset.role.attrib ::= role.attrib ;
+co.role.attrib ::= role.attrib ;
+screen.role.attrib ::= role.attrib ;
+term.role.attrib ::= role.attrib ;
+example.role.attrib ::= role.attrib ;
+keyword.role.attrib ::= role.attrib ;
+seeseealso.role.attrib ::= role.attrib ;
+citation.role.attrib ::= role.attrib ;
+substeps.role.attrib ::= role.attrib ;
+screenshot.role.attrib ::= role.attrib ;
+bibliography.role.attrib ::= role.attrib ;
+confdates.role.attrib ::= role.attrib ;
+tocfront.role.attrib ::= role.attrib ;
+userinput.role.attrib ::= role.attrib ;
+surname.role.attrib ::= role.attrib ;
+exceptionname.role.attrib ::= role.attrib ;
+keywordset.role.attrib ::= role.attrib ;
+paramdef.role.attrib ::= role.attrib ;
+funcsynopsis.role.attrib ::= role.attrib ;
+title.role.attrib ::= role.attrib ;
+modifier.role.attrib ::= role.attrib ;
+qandadiv.role.attrib ::= role.attrib ;
+property.role.attrib ::= role.attrib ;
+procedure.role.attrib ::= role.attrib ;
+sect3.role.attrib ::= role.attrib ;
+methodparam.role.attrib ::= role.attrib ;
+funcparams.role.attrib ::= role.attrib ;
+appendix.role.attrib ::= role.attrib ;
+colophon.role.attrib ::= role.attrib ;
+errortype.role.attrib ::= role.attrib ;
+msgorig.role.attrib ::= role.attrib ;
+lotentry.role.attrib ::= role.attrib ;
+jobtitle.role.attrib ::= role.attrib ;
+blockinfo.role.attrib ::= role.attrib ;
+type.role.attrib ::= role.attrib ;
+seealsoie.role.attrib ::= role.attrib ;
+corpauthor.role.attrib ::= role.attrib ;
+guiicon.role.attrib ::= role.attrib ;
+bibliorelation.role.attrib ::= role.attrib ;
+callout.role.attrib ::= role.attrib ;
+authorblurb.role.attrib ::= role.attrib ;
+literal.role.attrib ::= role.attrib ;
+seeie.role.attrib ::= role.attrib ;
+invpartnumber.role.attrib ::= role.attrib ;
+volumenum.role.attrib ::= role.attrib ;
+parameter.role.attrib ::= role.attrib ;
+alt.role.attrib ::= role.attrib ;
+markup.role.attrib ::= role.attrib ;
+coref.role.attrib ::= role.attrib ;
+msglevel.role.attrib ::= role.attrib ;
+bibliocoverage.role.attrib ::= role.attrib ;
+refsect3.role.attrib ::= role.attrib ;
+guimenu.role.attrib ::= role.attrib ;
+screeninfo.role.attrib ::= role.attrib ;
+variablelist.role.attrib ::= role.attrib ;
+subtitle.role.attrib ::= role.attrib ;
+collabname.role.attrib ::= role.attrib ;
+errorname.role.attrib ::= role.attrib ;
+biblioid.role.attrib ::= role.attrib ;
+msgentry.role.attrib ::= role.attrib ;
+setinfo.role.attrib ::= role.attrib ;
+keycombo.role.attrib ::= role.attrib ;
+lineage.role.attrib ::= role.attrib ;
+orderedlist.role.attrib ::= role.attrib ;
+publishername.role.attrib ::= role.attrib ;
+funcsynopsisinfo.role.attrib ::= role.attrib ;
+imagedata.role.attrib ::= role.attrib ;
+guisubmenu.role.attrib ::= role.attrib ;
+msg.role.attrib ::= role.attrib ;
+sect5info.role.attrib ::= role.attrib ;
+group.role.attrib ::= role.attrib ;
+attribution.role.attrib ::= role.attrib ;
+indexdiv.role.attrib ::= role.attrib ;
+sect4info.role.attrib ::= role.attrib ;
+sect3info.role.attrib ::= role.attrib ;
+sect2info.role.attrib ::= role.attrib ;
+publisher.role.attrib ::= role.attrib ;
+sect1info.role.attrib ::= role.attrib ;
+chapterinfo.role.attrib ::= role.attrib ;
+titleabbrev.role.attrib ::= role.attrib ;
+revdescription.role.attrib ::= role.attrib ;
+toclevel3.role.attrib ::= role.attrib ;
+isbn.role.attrib ::= role.attrib ;
+article.role.attrib ::= role.attrib ;
+methodsynopsis.role.attrib ::= role.attrib ;
+address.role.attrib ::= role.attrib ;
+refsection.role.attrib ::= role.attrib ;
+ooexception.role.attrib ::= role.attrib ;
+namvolnum.role.attrib ::= role.attrib ;
+editor.role.attrib ::= role.attrib ;
+programlistingco.role.attrib ::= role.attrib ;
+citebiblioid.role.attrib ::= role.attrib ;
+hardware.role.attrib ::= role.attrib ;
+initializer.role.attrib ::= role.attrib ;
+citetitle.role.attrib ::= role.attrib ;
+structname.role.attrib ::= role.attrib ;
+para.role.attrib ::= role.attrib ;
+funcprototype.role.attrib ::= role.attrib ;
+computeroutput.role.attrib ::= role.attrib ;
+oointerface.role.attrib ::= role.attrib ;
+function.role.attrib ::= role.attrib ;
+screenco.role.attrib ::= role.attrib ;
+textdata.role.attrib ::= role.attrib ;
+authorgroup.role.attrib ::= role.attrib ;
+lot.role.attrib ::= role.attrib ;
+formalpara.role.attrib ::= role.attrib ;
+sect2.role.attrib ::= role.attrib ;
+cmdsynopsis.role.attrib ::= role.attrib ;
+calloutlist.role.attrib ::= role.attrib ;
+varlistentry.role.attrib ::= role.attrib ;
+glossaryinfo.role.attrib ::= role.attrib ;
+contractsponsor.role.attrib ::= role.attrib ;
+areaspec.role.attrib ::= role.attrib ;
+glossdiv.role.attrib ::= role.attrib ;
+pob.role.attrib ::= role.attrib ;
+msgset.role.attrib ::= role.attrib ;
+menuchoice.role.attrib ::= role.attrib ;
+highlights.role.attrib ::= role.attrib ;
+msgmain.role.attrib ::= role.attrib ;
+interface.role.attrib ::= role.attrib ;
+refsynopsisdivinfo.role.attrib ::= role.attrib ;
+errortext.role.attrib ::= role.attrib ;
+releaseinfo.role.attrib ::= role.attrib ;
+corpname.role.attrib ::= role.attrib ;
+conftitle.role.attrib ::= role.attrib ;
+refnamediv.role.attrib ::= role.attrib ;
+inlinegraphic.role.attrib ::= role.attrib ;
+tocback.role.attrib ::= role.attrib ;
+guimenuitem.role.attrib ::= role.attrib ;
+orgdiv.role.attrib ::= role.attrib ;
+refmiscinfo.role.attrib ::= role.attrib ;
+revnumber.role.attrib ::= role.attrib ;
+holder.role.attrib ::= role.attrib ;
+--------------------markup::kml.bgf--------------------
+RootNode ::= KMLRootNode ;
+--------------------markup::json-zaytsev-concrete.bgf--------------------
+JSONString ::= DoubleQuotedString ;
+JSONData ::= JSONBasicType ;
+--------------------markup::mathml-furubayashi.bgf--------------------
+mml.pactions ::= mml.maction.qname ;
+mml.ccalcop1ary ::= mml.ln.qname ;
+mml.carithoproot ::= mml.root.qname ;
+mml.carithop1or2ary ::= mml.minus.qname ;
+mml.clalgopnary ::= mml.selector.qname ;
+mml.csetop1ary ::= mml.card.qname ;
+mml.csetop2ary ::= mml.setdiff.qname ;
+mml.cstatopmoment ::= mml.moment.qname ;
+mml.clogicop1ary ::= mml.not.qname ;
+mml.clogicop2ary ::= mml.implies.qname ;
+mml.petoken ::= mml.mspace.qname ;
+mml.cseqrel2ary ::= mml.tendsto.qname ;
+mml.columnspan.datatype ::= mml.positiveinteger.datatype ;
+--------------------markup::pnml-arbitrarydeclarations.bgf--------------------
+SortDeclaration ::= ArbitrarySort ;
+Declaration ::= Unparsed ;
+OperatorDeclaration ::= ArbitraryOperator ;
+--------------------markup::pnml-booleans.bgf--------------------
+BooleanOperator.content ::= BuiltInOperator.content ;
+BuiltInConstant ::= BooleanConstant ;
+BuiltInOperator ::= BooleanOperator ;
+BuiltInSort ::= Bool ;
+--------------------markup::pnml-cyclicenumerations.bgf--------------------
+CyclicEnumOperator.content ::= BuiltInOperator.content ;
+BuiltInOperator ::= CyclicEnumOperator ;
+BuiltInSort ::= CyclicEnumeration ;
+--------------------markup::pnml-dots.bgf--------------------
+BuiltInConstant ::= DotConstant ;
+BuiltInSort ::= Dot ;
+--------------------markup::pnml-ext-inhibitor.bgf--------------------
+pnml.content ::= net.element ;
+pagegraphics.content ::= nodegraphics.content ;
+--------------------markup::pnml-ext-reset.bgf--------------------
+pnml.content ::= net.element ;
+pagegraphics.content ::= nodegraphics.content ;
+--------------------markup::pnml-ext-resetinhibitor.bgf--------------------
+pnml.content ::= net.element ;
+pagegraphics.content ::= nodegraphics.content ;
+--------------------markup::pnml-finiteenumerations.bgf--------------------
+OperatorDeclaration ::= FEConstant ;
+BuiltInSort ::= FiniteEnumeration ;
+--------------------markup::pnml-finiteintranges.bgf--------------------
+FiniteIntRangeOperator.content ::= BuiltInOperator.content ;
+BuiltInConstant ::= FiniteIntRangeConstant ;
+BuiltInOperator ::= FiniteIntRangeOperator ;
+BuiltInSort ::= FiniteIntRange ;
+--------------------markup::pnml-guyard-simplified.bgf--------------------
+LabeledElement ::= Name ;
+--------------------markup::pnml-highlevelnet.bgf--------------------
+IntegerOperator.content ::= BuiltInOperator.content ;
+ListOperator.content ::= BuiltInOperator.content ;
+FiniteIntRangeOperator.content ::= BuiltInOperator.content ;
+CyclicEnumOperator.content ::= BuiltInOperator.content ;
+PartitionOperator.content ::= BuiltInOperator.content ;
+pnml.content ::= net.element ;
+MultisetOperator.content ::= Operator.content ;
+SortDeclaration.content ::= Declaration.content ;
+BooleanOperator.content ::= BuiltInOperator.content ;
+pagegraphics.content ::= nodegraphics.content ;
+BuiltInConstant.content ::= Operator.content ;
+BuiltInOperator.content ::= Operator.content ;
+OperatorDeclaration.content ::= Declaration.content ;
+StringOperator.content ::= BuiltInOperator.content ;
+--------------------markup::pnml-hlpng.bgf--------------------
+SortDeclaration ::= NamedSort ;
+pnml.content ::= net.element ;
+MultisetOperator.content ::= Operator.content ;
+SortDeclaration.content ::= Declaration.content ;
+BooleanOperator.content ::= BuiltInOperator.content ;
+OperatorDeclaration ::= NamedOperator ;
+pagegraphics.content ::= nodegraphics.content ;
+BuiltInConstant.content ::= Operator.content ;
+BuiltInOperator.content ::= Operator.content ;
+OperatorDeclaration.content ::= Declaration.content ;
+--------------------markup::pnml-integers.bgf--------------------
+IntegerOperator.content ::= BuiltInOperator.content ;
+BuiltInConstant ::= NumberConstant ;
+BuiltInOperator ::= IntegerOperator ;
+BuiltInSort ::= Number ;
+--------------------markup::pnml-lists.bgf--------------------
+ListOperator.content ::= BuiltInOperator.content ;
+BuiltInConstant ::= EmptyList ;
+BuiltInOperator ::= ListOperator ;
+BuiltInSort ::= List ;
+--------------------markup::pnml-partitions.bgf--------------------
+SortDeclaration ::= Partition ;
+PartitionOperator.content ::= BuiltInOperator.content ;
+BuiltInOperator ::= PartitionOperator ;
+OperatorDeclaration ::= PartitionElement ;
+--------------------markup::pnml-pnmlcoremodel.bgf--------------------
+pnml.content ::= net.element ;
+pagegraphics.content ::= nodegraphics.content ;
+--------------------markup::pnml-ptnet.bgf--------------------
+pnml.content ::= net.element ;
+pagegraphics.content ::= nodegraphics.content ;
+--------------------markup::pnml-strings.bgf--------------------
+BuiltInConstant ::= StringConstant ;
+BuiltInOperator ::= StringOperator ;
+BuiltInSort ::= String ;
+StringOperator.content ::= BuiltInOperator.content ;
+--------------------markup::pnml-symmetricnet.bgf--------------------
+IntegerOperator.content ::= BuiltInOperator.content ;
+FiniteIntRangeOperator.content ::= BuiltInOperator.content ;
+CyclicEnumOperator.content ::= BuiltInOperator.content ;
+PartitionOperator.content ::= BuiltInOperator.content ;
+pnml.content ::= net.element ;
+MultisetOperator.content ::= Operator.content ;
+SortDeclaration.content ::= Declaration.content ;
+BooleanOperator.content ::= BuiltInOperator.content ;
+pagegraphics.content ::= nodegraphics.content ;
+BuiltInConstant.content ::= Operator.content ;
+BuiltInOperator.content ::= Operator.content ;
+OperatorDeclaration.content ::= Declaration.content ;
+--------------------markup::pnml-terms.bgf--------------------
+SortDeclaration ::= NamedSort ;
+MultisetOperator.content ::= Operator.content ;
+SortDeclaration.content ::= Declaration.content ;
+OperatorDeclaration ::= NamedOperator ;
+BuiltInConstant.content ::= Operator.content ;
+BuiltInOperator.content ::= Operator.content ;
+OperatorDeclaration.content ::= Declaration.content ;
+--------------------markup::svg-palies.bgf--------------------
+ReferencedFile ::= SvgFile ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+nowiki-body ::= characters ;
+pre-body ::= characters ;
+link-description ::= article-title ;
+caption ::= inline-text ;
+html-body ::= characters ;
+url-char ::= LEGAL_URL_ENTITY ;
+html-entity-name ::= wgHtmlEntities ;
+sort-key ::= any-text ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+name ::= balanced_text ;
+title ::= balanced_text ;
+value ::= balanced_text ;
+--------------------fl::python.bgf--------------------
+_Literal ::= Literal ;
+--------------------fl::xsd.bgf--------------------
+Fragment ::= Expr ;
+--------------------metasyntax::txl.bgf--------------------
+ruleoptNL ::= NL ;
+varid ::= id ;
+NEWoptNL ::= NL ;
+optNL ::= NL ;
+--------------------metasyntax::ebnf-iso-1.bgf--------------------
+first_terminal_character ::= terminal_character ;
+special_sequence_character ::= terminal_character ;
+second_terminal_character ::= terminal_character ;
+syntactic_exception ::= syntactic-factor ;
+--------------------metasyntax::ebnf-iso-2.bgf--------------------
+exception ::= factor ;
+--------------------metasyntax::ebnf-iso-3.bgf--------------------
+EXCEPTION ::= FACTOR ;
+--------------------metasyntax::xsd-guyard.bgf--------------------
+NamedElement ::= XSchemaContentElement ;
+--------------------metasyntax::yacc-txl.bgf--------------------
+program ::= Yacc_Txl_Grammar ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+documentationContent ::= anyContent ;
+appinfoContent ::= anyContent ;
+--------------------tescol::00000.bgf--------------------
+constantid ::= CONSTID ;
+identifier ::= ID ;
+--------------------tescol::00001.bgf--------------------
+comment ::= COMMENT ;
+--------------------tescol::00100.bgf--------------------
+expOperand ::= EXPONENTIATION ;
+expression ::= condExpr ;
+--------------------tescol::00101.bgf--------------------
+boolean_expr ::= boolean_OR ;
+arith_expr ::= arith_addsub ;
+program ::= stat ;
+--------------------tescol::00111.bgf--------------------
+alternative ::= compoundStatement ;
+consequent ::= compoundStatement ;
+--------------------tescol::01001.bgf--------------------
+variable ::= VAR_ID ;
+constant ::= CONST_ID ;
+var_id ::= VAR_ID ;
+--------------------tescol::01100.bgf--------------------
+constidentifier ::= CONSTID ;
+expression ::= condExp ;
+--------------------tescol::01101.bgf--------------------
+conIDs ::= CID ;
+--------------------tescol::01111.bgf--------------------
+comment ::= COMMENT ;
+--------------------tescol::10011.bgf--------------------
+aexpr ::= cexpr ;
+--------------------tescol::10110.bgf--------------------
+comment ::= COMMENT ;
+whitespace ::= WS ;
+cidentifier ::= CID ;
+--------------------tescol::11000.bgf--------------------
+skip ::= SKIP ;
+expression ::= runproc ;
+--------------------tescol::11101.bgf--------------------
+constantidentifier ::= CONSTID ;
+varprocidentifier ::= VARPROCID ;
+--------------------tescol::11110.bgf--------------------
+skipStm ::= SKIP ;
+stat ::= compilationUnit ;
+--------------------tescol::11111.bgf--------------------
+negation ::= SUBTRACTION ;
+--------------------hats::abs.bgf--------------------
+SqlTupleScalarFunction ::= SqlTupleScalarFunctionConcat ;
+TYPE_IDENTIFIER ::= TYPE_IDENTIFIER_OLD ;
+InitBlock ::= Block ;
+ModuleName ::= TypeName ;
+SqlAttrRef ::= DataExp ;
+DataExp ::= OrExp ;
+Appcond ::= OrAppcond ;
+--------------------metamodels::ACG.bgf--------------------
+CollectionExp ::= SequenceExp ;
+--------------------metamodels::ASM.bgf--------------------
+VariableDecl ::= Argument ;
+--------------------metamodels::ATL.bgf--------------------
+InPatternElement ::= SimpleInPatternElement ;
+--------------------metamodels::Agate.bgf--------------------
+GenericActor ::= Actor ;
+GenericSite ::= Site ;
+GenericRole ::= Role ;
+GenericCenter ::= Center ;
+Actor ::= TelecomOperator ;
+GenericStandard ::= Standard ;
+Entity ::= Object ;
+GenericThreat ::= Threat ;
+--------------------metamodels::AntScripts.bgf--------------------
+CommentableElement ::= TaskElement ;
+--------------------metamodels::AnyLogic.bgf--------------------
+Experiment ::= SimulationExperiment ;
+--------------------metamodels::AsmL.bgf--------------------
+VarOrCase ::= Case ;
+--------------------metamodels::BMM.bgf--------------------
+Influencer ::= Regulation ;
+--------------------metamodels::BPEL.bgf--------------------
+IImport ::= WSDLImport ;
+IBindingInput ::= BindingInput ;
+IMessage ::= Message ;
+IOperation ::= Operation ;
+IBindingOutput ::= BindingOutput ;
+XSDAttributeGroupContent ::= XSDAttributeUse ;
+IDefinition ::= Definition ;
+IExtensibilityElement ::= ExtensibilityElement ;
+IBinding ::= Binding ;
+IService ::= Service ;
+IPart ::= Part ;
+IBindingOperation ::= BindingOperation ;
+IPort ::= Port ;
+XSDParticleContent ::= XSDTerm ;
+IBindingFault ::= BindingFault ;
+IPortType ::= PortType ;
+ITypes ::= Types ;
+--------------------metamodels::BusinessEntityModel.bgf--------------------
+Class ::= BusinessEntity ;
+Action ::= BusinessRole ;
+DataType ::= BusinessEntityPropertySet ;
+--------------------metamodels::BusinessProcessModel.bgf--------------------
+Parameter ::= DataElement ;
+Output ::= Exception ;
+--------------------metamodels::CDE.bgf--------------------
+IUmlClass ::= IUmlComponent ;
+IUmlMember ::= ICdeMember ;
+--------------------metamodels::CPL.bgf--------------------
+Action ::= SignallingAction ;
+--------------------metamodels::CSM.bgf--------------------
+PassiveResource ::= Component ;
+--------------------metamodels::Cocus.owl.bgf--------------------
+Request ::= Help_Request ;
+URL ::= Event_URL ;
+--------------------metamodels::Conference.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+URL ::= Event_URL ;
+Registeered_applicant ::= Paid_applicant ;
+Accepted_contribution ::= Camera_ready_contribution ;
+Extended_abstract ::= Abstract ;
+--------------------metamodels::DTD.bgf--------------------
+AttributeType ::= Enumeration ;
+--------------------metamodels::DoDAF-OV5.bgf--------------------
+InformationAsset ::= AM ;
+--------------------metamodels::DoDAF-SV5.bgf--------------------
+InformationAsset ::= AM ;
+--------------------metamodels::DoDAF.bgf--------------------
+ServiceProvider ::= ServiceMediator ;
+--------------------metamodels::EAI.bgf--------------------
+EAIResource ::= EAIQueue ;
+FCMSource ::= EAISource ;
+FCMSink ::= EAISink ;
+--------------------metamodels::Grafcet.bgf--------------------
+LocatedElement ::= NamedElement ;
+--------------------metamodels::HAL.bgf--------------------
+AutreType ::= Autre ;
+TheseType ::= These ;
+BrevetType ::= Brevet ;
+OuvrageType ::= Ouvrage ;
+AbstractMetaLab ::= MetaLab ;
+ArtOuvrageType ::= ArtOuvrage ;
+--------------------metamodels::KDMSimplified.bgf--------------------
+KDMFramework ::= KDMModel ;
+--------------------metamodels::Marte.bgf--------------------
+ExecutableNode ::= Action ;
+Event ::= TimeEvent ;
+StructuralFeature ::= Property ;
+DeployedArtifact ::= Artifact ;
+TemplateableElement ::= StringExpression ;
+DeploymentTarget ::= InstanceSpecification ;
+MessageEnd ::= Gate ;
+EncapsulatedClassifier ::= Class ;
+ObjectNode ::= Pin ;
+--------------------metamodels::MICRO.owl.bgf--------------------
+Proceedings ::= Conference_Proceedings ;
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Introduction ::= Introduction_of_speaker ;
+Conference_days ::= One_conference_day ;
+Multi-author_Volume ::= Proceedings ;
+Presenter ::= Invited_Speaker ;
+Submitted_Paper ::= Assigned_Paper ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+Social_program ::= Dinner_banquet ;
+Card ::= Credit_card ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLSimplified.bgf--------------------
+BlockLevelChunkElt ::= ParaElt ;
+BlockLevelElt ::= BlockLevelChunkElt ;
+ParaContentElt ::= RunElt ;
+--------------------metamodels::MSProject.bgf--------------------
+NamedElement ::= Task ;
+--------------------metamodels::MSVisio_DatadiagramMLBasicDef.bgf--------------------
+IXElt ::= XYElt ;
+XYABCDEElt ::= NURBSTo ;
+DelElt ::= XYElt ;
+TextElt ::= StringElt ;
+--------------------metamodels::MSVisio_DatadiagramMLSimplified.bgf--------------------
+IXElt ::= XYElt ;
+XYABCDEElt ::= NURBSTo ;
+DelElt ::= XYElt ;
+TextElt ::= StringElt ;
+--------------------metamodels::MSVisio_DatadiagramMLTextFormat.bgf--------------------
+XYABCDEElt ::= NURBSTo ;
+DelElt ::= XYElt ;
+--------------------metamodels::MSVisio_DatadiagramMLXForm.bgf--------------------
+XYABCDEElt ::= NURBSTo ;
+--------------------metamodels::MavenMaven.bgf--------------------
+DocumentationTask ::= Javadoc ;
+CompileTask ::= Javac ;
+ArchiveTask ::= Jar ;
+--------------------metamodels::MiningMart_SimplifiedMetamodel.bgf--------------------
+StructuralFeature ::= Attribute ;
+--------------------metamodels::MiningMart_ViewCaseRepresentation.bgf--------------------
+StructuralFeature ::= Attribute ;
+MultiRelFeatureConstr ::= Agregation ;
+--------------------metamodels::MiningMart_ViewDataRepresentation.bgf--------------------
+StructuralFeature ::= Attribute ;
+Ordinal ::= Scalar ;
+--------------------metamodels::ODP-NV.bgf--------------------
+NamingDomain ::= EngineeringInterfaceReferenceManagementDomain ;
+--------------------metamodels::OpenConf.owl.bgf--------------------
+Organizer ::= CommitteeMember ;
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Introduction ::= Introduction_of_speaker ;
+Conference_days ::= One_conference_day ;
+Presenter ::= Invited_Speaker ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Reviewed_Paper ::= Planed_Paper ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+Social_program ::= Dinner_banquet ;
+Card ::= Credit_card ;
+--------------------metamodels::PCS.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Introduction ::= Introduction_of_speaker ;
+Conference_days ::= One_conference_day ;
+Presenter ::= Invited_Speaker ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Reviewed_Paper ::= Planed_Paper ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+Social_program ::= Dinner_banquet ;
+Card ::= Credit_card ;
+--------------------metamodels::PIF.bgf--------------------
+Object ::= Agent ;
+Activity ::= Decision ;
+--------------------metamodels::PetriNet_extended.bgf--------------------
+LocatedElement ::= NamedElement ;
+--------------------metamodels::ProMarte.bgf--------------------
+EventOccurence ::= TimedEventOccurence ;
+DiscreteTimeInterval ::= MetricTimeInterval ;
+DiscreteTimeValue ::= MetricTimeValue ;
+--------------------metamodels::QVT.bgf--------------------
+Extent ::= URIExtent ;
+OpaqueExpression ::= ExpressionInOcl ;
+--------------------metamodels::QoS.bgf--------------------
+DataType ::= Domain ;
+--------------------metamodels::QoS_Statement.bgf--------------------
+QoSCharacteristic ::= QualificationKind ;
+--------------------metamodels::RequisitePro.bgf--------------------
+TypedElt ::= Attribute ;
+--------------------metamodels::SCADE.bgf--------------------
+StateObj ::= GraphicalObject ;
+Entity ::= StateObj ;
+Base ::= StateBase ;
+--------------------metamodels::SDM.bgf--------------------
+EndpointMember ::= OBEndpoint ;
+SystemMember ::= OBSubsystem ;
+ResourceMember ::= OBResource ;
+--------------------metamodels::SPEM.bgf--------------------
+WorkItem ::= WorkDefinition ;
+--------------------metamodels::SWRC.bgf--------------------
+Graduate ::= PhDStudent ;
+--------------------metamodels::Sharengo.bgf--------------------
+Flow ::= Service2BusinessObjectFlow ;
+--------------------metamodels::SysML.bgf--------------------
+ConnectorEnd ::= NestedConnectorEnd ;
+ActivityPartition ::= AllocateActivityPartition ;
+Dependency ::= Conform ;
+Interface ::= FlowSpecification ;
+Realization ::= Satisfy ;
+Abstraction ::= Allocate ;
+Package ::= View ;
+DataType ::= ValueType ;
+--------------------metamodels::SimpleSBVR.bgf--------------------
+BindableTarget ::= Variable ;
+FactType ::= BinaryFactType ;
+--------------------metamodels::SoftwareQualityControl.bgf--------------------
+ControlType ::= BugTracking ;
+--------------------metamodels::UnifiedOntologyLanguage.bgf--------------------
+Package ::= Ontology ;
+--------------------metamodels::UnixFS.bgf--------------------
+NamedElement ::= File ;
+--------------------metamodels::XAML-Perspective.bgf--------------------
+WinFXElement ::= Name ;
+GraphicalContainer ::= Grid ;
+Object3D ::= Workshop3D ;
+--------------------metamodels::XAML-ResourceDictionary.bgf--------------------
+WinFXElement ::= Key ;
+Material ::= DiffuseMaterial ;
+--------------------metamodels::cmt.owl.bgf--------------------
+Thing ::= Conference ;
+--------------------metamodels::confOf.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Accepted_contribution ::= Camera_ready_contribution ;
+Extended_abstract ::= Abstract ;
+Regular_contribution ::= Extended_abstract ;
+--------------------metamodels::confious.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Accepted_contribution ::= Camera_ready_contribution ;
+Extended_abstract ::= Abstract ;
+Regular_contribution ::= Extended_abstract ;
+--------------------metamodels::crs_dr.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Accepted_contribution ::= Camera_ready_contribution ;
+Extended_abstract ::= Abstract ;
+--------------------metamodels::edas.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Accepted_contribution ::= Camera_ready_contribution ;
+Extended_abstract ::= Abstract ;
+Regular_contribution ::= Extended_abstract ;
+--------------------metamodels::ekaw.owl.bgf--------------------
+Proceedings ::= Conference_Proceedings ;
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Multi-author_Volume ::= Proceedings ;
+Presenter ::= Invited_Speaker ;
+Submitted_Paper ::= Assigned_Paper ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+--------------------metamodels::iasted.owl.bgf--------------------
+Proceedings ::= Conference_Proceedings ;
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Introduction ::= Introduction_of_speaker ;
+Conference_days ::= One_conference_day ;
+Multi-author_Volume ::= Proceedings ;
+Presenter ::= Invited_Speaker ;
+Submitted_Paper ::= Assigned_Paper ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+Social_program ::= Dinner_banquet ;
+Card ::= Credit_card ;
+--------------------metamodels::mlhim2.bgf--------------------
+ExceptionalValue ::= NI ;
+--------------------metamodels::paperdyne.owl.bgf--------------------
+Organizer ::= CommitteeMember ;
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Introduction ::= Introduction_of_speaker ;
+Conference_days ::= One_conference_day ;
+Presenter ::= Invited_Speaker ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Reviewed_Paper ::= Planed_Paper ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+Social_program ::= Dinner_banquet ;
+Card ::= Credit_card ;
+--------------------metamodels::sbvrEclipse.bgf--------------------
+Statement ::= GuidanceStatement ;
+AdviceOfPermission ::= AdviceOfOptionality ;
+NonnegativeInteger ::= PositiveInteger ;
+IntensionalDefinition ::= DefiniteDescription ;
+Quantity ::= Number ;
+ContextualizationFactType ::= IsfacetofFactType ;
+Number ::= Integer ;
+Expression ::= Text ;
+ContextualizedConcept ::= Facet ;
+BinaryFactType ::= PartitiveFactType ;
+AssociativeFactType ::= IspropertyofFactType ;
+Vocabulary ::= BusinessVocabulary ;
+AdviceOfPossibility ::= AdviceOfContingency ;
+ConceptType ::= CharacteristicType ;
+StateOfAffairs ::= Actuality ;
+NonverbalDesignation ::= Icon ;
+Actuality ::= Representation ;
+--------------------metamodels::sbvrOMG.bgf--------------------
+Statement ::= GuidanceStatement ;
+AdviceOfPermission ::= AdviceOfOptionality ;
+NonnegativeInteger ::= PositiveInteger ;
+IntensionalDefinition ::= DefiniteDescription ;
+Quantity ::= Number ;
+ContextualizationFactType ::= IsfacetofFactType ;
+Number ::= Integer ;
+Expression ::= Text ;
+ContextualizedConcept ::= Facet ;
+BinaryFactType ::= PartitiveFactType ;
+AssociativeFactType ::= IspropertyofFactType ;
+Vocabulary ::= BusinessVocabulary ;
+AdviceOfPossibility ::= AdviceOfContingency ;
+ConceptType ::= CharacteristicType ;
+StateOfAffairs ::= Actuality ;
+NonverbalDesignation ::= Icon ;
+Actuality ::= Representation ;
+--------------------metamodels::sigkdd.owl.bgf--------------------
+Conference_applicant ::= Registeered_applicant ;
+Request ::= Help_Request ;
+Registeered_applicant ::= Paid_applicant ;
+Introduction ::= Introduction_of_speaker ;
+Conference_days ::= One_conference_day ;
+Presenter ::= Invited_Speaker ;
+Accepted_contribution ::= Camera_ready_contribution ;
+OC_Member ::= OC_Chair ;
+Reviewed_Paper ::= Planed_Paper ;
+Conference_Session ::= Industrial_Session ;
+Regular_contribution ::= Extended_abstract ;
+Social_program ::= Dinner_banquet ;
+Card ::= Credit_card ;
+--------------------slps::cbgf-xsd.bgf--------------------
+disappear-appear ::= production ;
+inject-project ::= production ;
+chain-unchain ::= production ;
+unchain-chain ::= production ;
+abridge-detour ::= production ;
+anonymize-deanonymize ::= production ;
+deanonymize-anonymize ::= production ;
+iterate ::= production ;
+concretize-abstractize ::= production ;
+detour ::= production ;
+inline ::= nonterminal ;
+permute ::= production ;
+vertical ::= scope ;
+detour-abridge ::= production ;
+appear ::= production ;
+anonymize ::= production ;
+designate ::= production ;
+concretize ::= production ;
+deanonymize ::= production ;
+abstractize ::= production ;
+abstractize-concretize ::= production ;
+appear-disappear ::= production ;
+abridge ::= production ;
+lassoc ::= production ;
+unchain ::= production ;
+project-inject ::= production ;
+disappear ::= production ;
+rassoc ::= production ;
+unlabel-designate ::= production ;
+designate-unlabel ::= production ;
+distribute ::= scope ;
+chain ::= production ;
+--------------------slps::ldf-v1.0-xsd.bgf--------------------
+tail ::= mixedType ;
+--------------------slps::ldf-v10.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v11.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v11.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v11.2-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v12.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v13.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v13.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v14.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v15.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+runnable ::= runnableType ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+sample ::= sampleType ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+tail ::= mixedType ;
+--------------------slps::ldf-v15.1-xsd.bgf--------------------
+mrow ::= anyMath ;
+runnable ::= runnableType ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+sample ::= sampleType ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+tail ::= mixedType ;
+--------------------slps::ldf-v16.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+runnable ::= runnableType ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+sample ::= sampleType ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+tail ::= mixedType ;
+--------------------slps::ldf-v17.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+runnable ::= runnableType ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+sample ::= sampleType ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+tail ::= mixedType ;
+--------------------slps::ldf-v18.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v18.1-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v19.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v2.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v2.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v20.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v20.1-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v21.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v21.1-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v22.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v23.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+mi ::= anyMath ;
+mtext ::= anyMath ;
+math ::= anyMath ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v3.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v4.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v5.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v6.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v7.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v7.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v8.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v8.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v9.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v9.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::slps-cbgf-xsd.bgf--------------------
+disappear-appear ::= production ;
+inject-project ::= production ;
+chain-unchain ::= production ;
+unchain-chain ::= production ;
+abridge-detour ::= production ;
+anonymize-deanonymize ::= production ;
+deanonymize-anonymize ::= production ;
+iterate ::= production ;
+concretize-abstractize ::= production ;
+detour ::= production ;
+inline ::= nonterminal ;
+permute ::= production ;
+vertical ::= scope ;
+detour-abridge ::= production ;
+appear ::= production ;
+anonymize ::= production ;
+designate ::= production ;
+concretize ::= production ;
+deanonymize ::= production ;
+abstractize ::= production ;
+abstractize-concretize ::= production ;
+appear-disappear ::= production ;
+abridge ::= production ;
+lassoc ::= production ;
+unchain ::= production ;
+project-inject ::= production ;
+disappear ::= production ;
+rassoc ::= production ;
+unlabel-designate ::= production ;
+designate-unlabel ::= production ;
+distribute ::= scope ;
+chain ::= production ;
+--------------------slps::slps-xbgf-xsd.bgf--------------------
+iterate ::= production ;
+detour ::= production ;
+inline ::= nonterminal ;
+permute ::= production ;
+vertical ::= scope ;
+appear ::= production ;
+anonymize ::= production ;
+designate ::= production ;
+concretize ::= production ;
+deanonymize ::= production ;
+abstractize ::= production ;
+abridge ::= production ;
+lassoc ::= production ;
+unchain ::= production ;
+disappear ::= production ;
+rassoc ::= production ;
+distribute ::= scope ;
+chain ::= production ;
+--------------------slps::slps-xldf.bgf--------------------
+iterate ::= production ;
+detour ::= production ;
+inline ::= nonterminal ;
+permute ::= production ;
+vertical ::= scope ;
+appear ::= production ;
+anonymize ::= production ;
+designate ::= production ;
+concretize ::= production ;
+deanonymize ::= production ;
+abstractize ::= production ;
+abridge ::= production ;
+lassoc ::= production ;
+unchain ::= production ;
+disappear ::= production ;
+rassoc ::= production ;
+distribute ::= scope ;
+chain ::= production ;
+--------------------slps::xbgf-xsd.bgf--------------------
+iterate ::= production ;
+detour ::= production ;
+inline ::= nonterminal ;
+permute ::= production ;
+vertical ::= scope ;
+appear ::= production ;
+anonymize ::= production ;
+designate ::= production ;
+concretize ::= production ;
+deanonymize ::= production ;
+abstractize ::= production ;
+abridge ::= production ;
+lassoc ::= production ;
+unchain ::= production ;
+disappear ::= production ;
+rassoc ::= production ;
+distribute ::= scope ;
+chain ::= production ;
+--------------------develop::ant.bgf--------------------
+DocumentationTask ::= Javadoc ;
+CompileTask ::= Javac ;
+ArchiveTask ::= Jar ;

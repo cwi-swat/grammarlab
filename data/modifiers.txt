@@ -1,0 +1,39 @@
+--------------------ada::kempe.bgf--------------------
+mode ::= ("in"?) | ("in" "out") | "out" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+mode ::= ("in"?) | ("in" "out") | "out" ;
+--------------------ada::lncs-2219.bgf--------------------
+mode ::= ("in"?) | ("in" "out") | "out" ;
+--------------------ada::lncs-4348.bgf--------------------
+mode ::= ("in"?) | ("in" "out") | "out" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+mode ::= ("in"?) | ("in" "out") | "out" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern") ;
+--------------------cs::csharp-cordy.bgf--------------------
+static_constructor_modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+ static_constructor_modifiers ::= ("extern"? "unsafe"? "static") | ("unsafe"? "extern"? "static") | ("extern"? "static" "unsafe"?) | ("unsafe"? "static" "extern"?) | ("static" "extern"? "unsafe"?) | ("static" "unsafe"? "extern"?) ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+static-constructor-modifiers ::= ("extern"? "static") | ("static" "extern"?) ;
+--------------------fortran::derricks.bgf--------------------
+IntentSpec ::= "in" | "out" | ("in" "out") ;
+--------------------basic::vb6-cordy.bgf--------------------
+access_mode ::= "read" | "write" | ("read" "write") ;

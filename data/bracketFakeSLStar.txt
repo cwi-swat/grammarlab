@@ -1,0 +1,16 @@
+--------------------dart::google.bgf--------------------
+mapLiteral ::= "{" (mapLiteralEntry ("," mapLiteralEntry)* ","?)? "}" ;
+--------------------fortran::derricks.bgf--------------------
+SubroutineParList ::= "(" (SubroutinePar ("," SubroutinePar)*)? ")" ;
+FunctionParList ::= "(" (FunctionPar ("," FunctionPar)*)? ")" ;
+--------------------java::java-2-jls-impl.bgf--------------------
+FormalParameters ::= "(" (FormalParameter ("," FormalParameter)*)? ")" ;
+ArrayInitializer ::= "{" (VariableInitializer ("," VariableInitializer)* ","?)? "}" ;
+Arguments ::= "(" (Expression ("," Expression)*)? ")" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+ArrayInitializer ::= "{" (VariableInitializer ("," VariableInitializer)* ","?)? "}" ;
+Arguments ::= "(" (Expression ("," Expression)*)? ")" ;
+--------------------java::java-5-parr.bgf--------------------
+arrayInitializer ::= "{" (variableInitializer ("," variableInitializer)* ","?)? "}" ;
+--------------------modula::src-052.bgf--------------------
+Raises ::= "{" (ExceptionID ("," ExceptionID)*)? "}" ;

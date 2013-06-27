@@ -1,0 +1,47 @@
+--------------------ada::kempe.bgf--------------------
+string_literal ::= """ string_element* """ ;
+--------------------ada::lncs-2219.bgf--------------------
+string_literal ::= """ string_element* """ ;
+--------------------ada::lncs-4348.bgf--------------------
+string_literal ::= """ string_element* """ ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+block ::= "{" statement* "}" ;
+struct-body ::= "{" struct-member-declaration* "}" ;
+class-body ::= "{" class-member-declaration* "}" ;
+interface-body ::= "{" interface-member-declaration* "}" ;
+--------------------java::java-2-jls-impl.bgf--------------------
+InterfaceBody ::= "{" InterfaceBodyDeclaration* "}" ;
+ClassBody ::= "{" ClassBodyDeclaration* "}" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+InterfaceBody ::= "{" InterfaceBodyDeclaration* "}" ;
+ClassBody ::= "{" ClassBodyDeclaration* "}" ;
+--------------------java::java-5-parr.bgf--------------------
+block ::= "{" blockStatement* "}" ;
+annotationTypeBody ::= "{" annotationTypeElementDeclaration* "}" ;
+interfaceBody ::= "{" interfaceBodyDeclaration* "}" ;
+classBody ::= "{" classBodyDeclaration* "}" ;
+--------------------java::java-4-sdf.bgf--------------------
+Block ::= "{" BlockStatement* "}" ;
+InterfaceBody ::= "{" InterfaceMemberDeclaration* "}" ;
+ClassBody ::= "{" ClassBodyDeclaration* "}" ;
+--------------------java::java-5-landman.bgf--------------------
+Block ::= [block] "{" BlockStm* "}" ;
+ClassBody ::= [classBody] "{" ClassBodyDec* "}" ;
+--------------------dot::rascal-concrete.bgf--------------------
+AttrList0 ::= "[" DotAttr* "]" ;
+--------------------pascal::delphipp.bgf--------------------
+cmbracketblock ::= "{" bracketbody* "}" ;
+--------------------pascal::object.bgf--------------------
+property_parameter_list ::= "[" idList_colonTypeId_semicolon* "]" ;
+--------------------xml::zhang-cordy.bgf--------------------
+declbody ::= "[" decl* "]" ;
+longstringlit ::= """ not_dquote* """ ;
+longcharlit ::= "'" not_quote* "'" ;
+--------------------logo::sdf.bgf--------------------
+Block ::= "[" Command* "]" ;
+--------------------metasyntax::s-expressions.bgf--------------------
+List ::= "(" SExp* ")" ;
+--------------------metasyntax::yacc-txl.bgf--------------------
+Ccode ::= "{" Ccode_or_token* "}" ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+Renamings ::= [Renamings] "[" Renaming* "]" ;

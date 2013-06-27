@@ -1,0 +1,10 @@
+--------------------c::cordy-malton-dahn.bgf--------------------
+attribute_arguments ::= "(" attribute_argument+ ")" ;
+--------------------cs::csharp-cordy.bgf--------------------
+element_access_operator ::= "[" expression+ "]" ;
+type_argument_list ::= "<" type_argument+ ">" ;
+--------------------basic::vb6-cordy.bgf--------------------
+event_argument_list ::= "(" event_argument+ ")" ;
+--------------------pascal::delphi.bgf--------------------
+enumerated_type ::= "(" enum_spec+ ")" ;
+prop_indexes ::= "[" prop_index_decl+ "]" ;

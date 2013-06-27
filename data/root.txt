@@ -1,0 +1,742 @@
+--------------------ada::cordy-hyaric.bgf--------------------
+program ::= compilation ;
+--------------------c::iso-9899-1999.bgf--------------------
+translation-unit ::= external-declaration | (translation-unit external-declaration) ;
+--------------------c::iso-9899-tc2.bgf--------------------
+translation-unit ::= external-declaration | (translation-unit external-declaration) ;
+--------------------c::iso-9899-tc3.bgf--------------------
+translation-unit ::= external-declaration | (translation-unit external-declaration) ;
+--------------------c::antoniol.bgf--------------------
+program ::= line* ;
+--------------------c::malton-dahn.bgf--------------------
+program ::= C_compilation_unit ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+program ::= compilation_unit ;
+--------------------c::cordy-malton.bgf--------------------
+program ::= C_compilation_unit ;
+--------------------cpp::iso-n2723.bgf--------------------
+translation-unit ::= declaration-seq? ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+translation-unit ::= declaration-seq? ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+compilation-unit ::= extern-alias-directives? using-directives? global-attributes? namespace-member-declarations? ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+compilation-unit ::= using-directives? global-attributes? namespace-member-declarations? ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+compilation-unit ::= using-directives? global-attributes? namespace-member-declarations? ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+compilation-unit ::= (extern-alias-directives? using-directives? global-attributes?) | (namespace-member-declarations?) ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+compilation-unit ::= (extern-alias-directives? using-directives? global-attributes?) | (namespace-member-declarations?) ;
+--------------------cs::csharp-antoniol.bgf--------------------
+program ::= line* ;
+--------------------cs::csharp-cordy.bgf--------------------
+program ::= compilation_unit ;
+--------------------dart::google.bgf--------------------
+libraryUnit ::= libraryDefinition EOF ;
+compilationUnit ::= HASHBANG? directive* topLevelDefinition* EOF ;
+--------------------fortran::derricks.bgf--------------------
+ExecutableProgram ::= StartCommentBlock? ProgramUnit+ ;
+--------------------java::java-1-jls-impl.bgf--------------------
+CompilationUnit ::= PackageDeclaration? ImportDeclarations? TypeDeclarations? ;
+--------------------java::java-1-jls-read.bgf--------------------
+CompilationUnit ::= PackageDeclaration? ImportDeclarations? TypeDeclarations? ;
+--------------------java::java-2-jls-impl.bgf--------------------
+CompilationUnit ::= ("package" QualifiedIdentifier ";")? ImportDeclaration* TypeDeclaration* ;
+--------------------java::java-2-jls-read.bgf--------------------
+CompilationUnit ::= PackageDeclaration? ImportDeclarations? TypeDeclarations? ;
+--------------------java::java-5-habelitz.bgf--------------------
+javaSource ::= compilationUnit ;
+--------------------java::java-5-jls-impl.bgf--------------------
+CompilationUnit ::= (Annotations? "package" QualifiedIdentifier ";")? ImportDeclaration* TypeDeclaration* ;
+--------------------java::java-5-jls-read.bgf--------------------
+CompilationUnit ::= PackageDeclaration? ImportDeclarations? TypeDeclarations? ;
+--------------------java::java-5-parr.bgf--------------------
+compilationUnit ::= (annotations (packageDeclaration importDeclaration* typeDeclaration*) | (classOrInterfaceDeclaration typeDeclaration*)) | (packageDeclaration? importDeclaration* typeDeclaration*) ;
+--------------------java::java-5-stahl.bgf--------------------
+compilationUnit ::= packageDefinition | ε importDefinition* typeDefinition* ;
+--------------------java::java-5-studman.bgf--------------------
+compilationUnit ::= packageDefinition | ε importDefinition* typeDefinition* ;
+--------------------java::java-4-sdf.bgf--------------------
+Top-sort ::= CompilationUnits ;
+--------------------modula::sdf.bgf--------------------
+Compilation ::= "UNSAFE"? Interface | Module | GenInf | GenMod ;
+--------------------modula::dagenais-cordy.bgf--------------------
+program ::= Interface | Module | GInterface | GModule | IInterface | IModule ;
+--------------------basic::vb6-cordy.bgf--------------------
+program ::= class_file_header? declaration_or_statement* ;
+--------------------html::clark-basic.bgf--------------------
+html ::= html::(html.attlist head body) ;
+--------------------html::clark.bgf--------------------
+html ::= html::(html.attlist head frameset) ;
+ html ::= html::(html.attlist head body) ;
+--------------------html::cordy.bgf--------------------
+program ::= element* ;
+--------------------html::clark-strict.bgf--------------------
+html ::= html::(html.attlist head body) ;
+--------------------odf::opendoc-1.0-manifest.bgf--------------------
+manifest ::= manifest:manifest::(file-entry+) ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+office-document ::= office:document::(office-document-attrs office-document-common-attrs office-meta office-settings office-scripts office-font-face-decls office-styles office-automatic-styles office-master-styles office-body) ;
+office-document-content ::= office:document-content::(office-document-common-attrs office-scripts office-font-face-decls office-automatic-styles office-body) ;
+office-document-meta ::= office:document-meta::(office-document-common-attrs office-meta) ;
+office-document-settings ::= office:document-settings::(office-document-common-attrs office-settings) ;
+office-document-styles ::= office:document-styles::(office-document-common-attrs office-font-face-decls office-styles office-automatic-styles office-master-styles) ;
+--------------------odf::opendoc-1.0.bgf--------------------
+office-document ::= office:document::(office-document-attrs office-document-common-attrs office-meta office-settings office-scripts office-font-face-decls office-styles office-automatic-styles office-master-styles office-body) ;
+office-document-content ::= office:document-content::(office-document-common-attrs office-scripts office-font-face-decls office-automatic-styles office-body) ;
+office-document-meta ::= office:document-meta::(office-document-common-attrs office-meta) ;
+office-document-settings ::= office:document-settings::(office-document-common-attrs office-settings) ;
+office-document-styles ::= office:document-styles::(office-document-common-attrs office-font-face-decls office-styles office-automatic-styles office-master-styles) ;
+--------------------odf::opendoc-1.1-manifest.bgf--------------------
+manifest ::= manifest:manifest::(file-entry+) ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+office-document ::= office:document::(office-document-attrs office-document-common-attrs office-meta office-settings office-scripts office-font-face-decls office-styles office-automatic-styles office-master-styles office-body) ;
+office-document-content ::= office:document-content::(office-document-common-attrs office-scripts office-font-face-decls office-automatic-styles office-body) ;
+office-document-meta ::= office:document-meta::(office-document-common-attrs office-meta) ;
+office-document-settings ::= office:document-settings::(office-document-common-attrs office-settings) ;
+office-document-styles ::= office:document-styles::(office-document-common-attrs office-font-face-decls office-styles office-automatic-styles office-master-styles) ;
+--------------------odf::opendoc-1.1.bgf--------------------
+office-document ::= office:document::(office-document-attrs office-document-common-attrs office-meta office-settings office-scripts office-font-face-decls office-styles office-automatic-styles office-master-styles office-body) ;
+office-document-content ::= office:document-content::(office-document-common-attrs office-scripts office-font-face-decls office-automatic-styles office-body) ;
+office-document-meta ::= office:document-meta::(office-document-common-attrs office-meta) ;
+office-document-settings ::= office:document-settings::(office-document-common-attrs office-settings) ;
+office-document-styles ::= office:document-styles::(office-document-common-attrs office-font-face-decls office-styles office-automatic-styles office-master-styles) ;
+--------------------odf::opendoc-1.2-dsig.bgf--------------------
+dsig-document-signatures ::= dsig:document-signatures::(dsig-document-signatures-attlist ds-signature+) ;
+--------------------odf::opendoc-1.2-manifest.bgf--------------------
+manifest ::= manifest:manifest::(manifest-attlist file-entry+) ;
+--------------------odf::opendoc-1.2.bgf--------------------
+office-document ::= office:document::(office-document-attrs office-document-common-attrs office-meta office-settings office-scripts office-font-face-decls office-styles office-automatic-styles office-master-styles office-body) ;
+office-document-content ::= office:document-content::(office-document-common-attrs office-scripts office-font-face-decls office-automatic-styles office-body) ;
+office-document-meta ::= office:document-meta::(office-document-common-attrs office-meta) ;
+office-document-settings ::= office:document-settings::(office-document-common-attrs office-settings) ;
+office-document-styles ::= office:document-styles::(office-document-common-attrs office-font-face-decls office-styles office-automatic-styles office-master-styles) ;
+--------------------xml::zhang-cordy.bgf--------------------
+program ::= prolog element ;
+--------------------xslt::clark.bgf--------------------
+stylesheet.element ::= stylesheet::stylesheet.model ;
+transform.element ::= transform::stylesheet.model ;
+literal-result-element-as-stylesheet ::= version::version literal-result-element-no-version.atts template.model ;
+--------------------logo::sdf.bgf--------------------
+Program ::= Commands ;
+--------------------php::cordy.bgf--------------------
+program ::= Document ;
+--------------------python::indent-cordy.bgf--------------------
+program ::= line* ;
+--------------------python::sorochan-cordy.bgf--------------------
+program ::= file_input ;
+--------------------markup::docbook-walsh.bgf--------------------
+refentry ::= refentry::(refentry.attlist beginpage? ndxterm.class* refentryinfo? refmeta? (remark | link.char.class)* refnamediv refsynopsisdiv? (refsect1+) | (refsection+)) ;
+glossary ::= glossary::(glossary.attlist glossaryinfo? bookcomponent.title.content? component.mix* (glossdiv+) | (glossentry+) bibliography?) ;
+article ::= article::(article.attlist div.title.content? articleinfo? tocchap? lot* bookcomponent.content (nav.class | appendix.class | ackno)*) ;
+part ::= part::(part.attlist beginpage? partinfo? bookcomponent.title.content partintro? partcontent.mix+) ;
+sect5 ::= sect5::(sect5.attlist sect5info? sect.title.content nav.class* (divcomponent.mix+ (refentry.class*) | (simplesect*)) | (refentry.class+) | (simplesect+) nav.class*) ;
+index ::= index::(index.attlist indexinfo? bookcomponent.title.content? component.mix* (indexdiv*) | (indexentry*)) ;
+sect4 ::= sect4::(sect4.attlist sect4info? sect.title.content nav.class* (divcomponent.mix+ (refentry.class*) | (sect5*) | (simplesect*)) | (refentry.class+) | (sect5+) | (simplesect+) nav.class*) ;
+sect3 ::= sect3::(sect3.attlist sect3info? sect.title.content nav.class* (divcomponent.mix+ (refentry.class*) | (sect4*) | (simplesect*)) | (refentry.class+) | (sect4+) | (simplesect+) nav.class*) ;
+setindex ::= setindex::(setindex.attlist setindexinfo? bookcomponent.title.content? component.mix* (indexdiv*) | (indexentry*)) ;
+sect2 ::= sect2::(sect2.attlist sect2info? sect.title.content nav.class* (divcomponent.mix+ (refentry.class*) | (sect3*) | (simplesect*)) | (refentry.class+) | (sect3+) | (simplesect+) nav.class*) ;
+sect1 ::= sect1::(sect1.attlist sect1info? sect.title.content nav.class* (divcomponent.mix+ (refentry.class*) | (sect2*) | (simplesect*)) | (refentry.class+) | (sect2+) | (simplesect+) nav.class*) ;
+chapter ::= chapter::(chapter.attlist beginpage? chapterinfo? bookcomponent.title.content nav.class* tocchap? bookcomponent.content nav.class*) ;
+reference ::= reference::(reference.attlist beginpage? referenceinfo? bookcomponent.title.content partintro? refentry.class+) ;
+appendix ::= appendix::(appendix.attlist beginpage? appendixinfo? bookcomponent.title.content nav.class* tocchap? bookcomponent.content nav.class*) ;
+book ::= book::(book.attlist div.title.content? bookinfo? (dedication | toc | lot | glossary | bibliography | preface | chapter.class | reference | part | article.class | appendix.class | index.class | colophon)*) ;
+section ::= section::(section.attlist sectioninfo? sect.title.content nav.class* (divcomponent.mix+ (refentry.class*) | (section.class*) | (simplesect*)) | (refentry.class+) | (section.class+) | (simplesect+) nav.class*) ;
+bibliography ::= bibliography::(bibliography.attlist bibliographyinfo? bookcomponent.title.content? component.mix* (bibliodiv+) | ((biblioentry | bibliomixed)+)) ;
+set ::= set::(set.attlist div.title.content? setinfo? toc? book.class+ setindex?) ;
+para ::= para::(para.attlist (para.char.mix | para.mix)*) ;
+preface ::= preface::(preface.attlist beginpage? prefaceinfo? bookcomponent.title.content nav.class* tocchap? bookcomponent.content nav.class*) ;
+--------------------markup::mathml-furubayashi.bgf--------------------
+mml.math.qname ::= math::(mml.MathExpression mml.att-topinfo mml.att-browif) ;
+--------------------markup::pnml-ext-inhibitor.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-ext-reset.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-ext-resetinhibitor.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-highlevelnet.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-hlpng.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-pnmlcoremodel.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-ptnet.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::pnml-symmetricnet.bgf--------------------
+pnml.element ::= pnml::(pnml.content+) ;
+--------------------markup::svg-furubayashi-basic.bgf--------------------
+SVG.svg ::= svg::((SVG.Description.class | SVG.Animation.class | SVG.Structure.class | SVG.Conditional.class | SVG.Image.class | SVG.Style.class | SVG.Shape.class | SVG.Text.class | SVG.Marker.class | SVG.Profile.class | SVG.Gradient.class | SVG.Pattern.class | SVG.Clip.class | SVG.Mask.class | SVG.Filter.class | SVG.Cursor.class | SVG.Hyperlink.class | SVG.View.class | SVG.Script.class | SVG.Font.class)* SVG.Core.attrib SVG.Conditional.attrib SVG.Style.attrib SVG.Presentation.attrib SVG.DocumentEvents.attrib SVG.GraphicalEvents.attrib SVG.External.attrib (x::SVG.Coordinate.datatype)? (y::SVG.Coordinate.datatype)? (width::SVG.Length.datatype)? (height::SVG.Length.datatype)? (viewBox::SVG.ViewBoxSpec.datatype)? (preserveAspectRatio::SVG.PreserveAspectRatioSpec.datatype)? (zoomAndPan::("disable" | "magnify"))? version::SVG.Number.datatype (baseProfile::SVG.Text.datatype)? (contentScriptType::SVG.ContentType.datatype)? (contentStyleType::SVG.ContentType.datatype)?) ;
+--------------------markup::svg-furubayashi-tiny.bgf--------------------
+SVG.svg ::= svg::((SVG.Description.class | SVG.Animation.class | SVG.Structure.class | SVG.Conditional.class | SVG.Image.class | SVG.Style.class | SVG.Shape.class | SVG.Text.class | SVG.Marker.class | SVG.Profile.class | SVG.Gradient.class | SVG.Pattern.class | SVG.Clip.class | SVG.Mask.class | SVG.Filter.class | SVG.Cursor.class | SVG.Hyperlink.class | SVG.View.class | SVG.Script.class | SVG.Font.class)* SVG.Core.attrib SVG.Conditional.attrib SVG.Style.attrib SVG.Presentation.attrib SVG.DocumentEvents.attrib SVG.GraphicalEvents.attrib SVG.External.attrib (x::SVG.Coordinate.datatype)? (y::SVG.Coordinate.datatype)? (width::SVG.Length.datatype)? (height::SVG.Length.datatype)? (viewBox::SVG.ViewBoxSpec.datatype)? (preserveAspectRatio::SVG.PreserveAspectRatioSpec.datatype)? (zoomAndPan::("disable" | "magnify"))? version::SVG.Number.datatype (baseProfile::SVG.Text.datatype)?) ;
+--------------------markup::svg-furubayashi.bgf--------------------
+SVG.svg ::= svg::((SVG.Description.class | SVG.Animation.class | SVG.Structure.class | SVG.Conditional.class | SVG.Image.class | SVG.Style.class | SVG.Shape.class | SVG.Text.class | SVG.Marker.class | SVG.Profile.class | SVG.Gradient.class | SVG.Pattern.class | SVG.Clip.class | SVG.Mask.class | SVG.Filter.class | SVG.Cursor.class | SVG.Hyperlink.class | SVG.View.class | SVG.Script.class | SVG.Font.class)* SVG.Core.attrib SVG.Conditional.attrib SVG.Style.attrib SVG.Presentation.attrib SVG.DocumentEvents.attrib SVG.GraphicalEvents.attrib SVG.External.attrib (x::SVG.Coordinate.datatype)? (y::SVG.Coordinate.datatype)? (width::SVG.Length.datatype)? (height::SVG.Length.datatype)? (viewBox::SVG.ViewBoxSpec.datatype)? (preserveAspectRatio::SVG.PreserveAspectRatioSpec.datatype)? (zoomAndPan::("disable" | "magnify"))? version::SVG.Number.datatype (baseProfile::SVG.Text.datatype)? (contentScriptType::SVG.ContentType.datatype)? (contentStyleType::SVG.ContentType.datatype)?) ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+wiki-page ::= (redirect article?) | (article?) ;
+--------------------fl::txl.bgf--------------------
+program ::= fun+ ;
+--------------------fl::xsd.bgf--------------------
+Program ::= (function::Function)+ ;
+Fragment ::= Expr ;
+--------------------metasyntax::bnf-sdf.bgf--------------------
+Rules ::= Rule* ;
+--------------------metasyntax::ebnf-bgf.bgf--------------------
+grammar ::= production+ ;
+--------------------metasyntax::relaxng.bgf--------------------
+pattern ::= (element::((name::string()) | open-name-class common-atts open-patterns)) | (attribute::(common-atts (name::string()) | open-name-class other pattern?)) | (group::(common-atts open-patterns)) | (interleave::(common-atts open-patterns)) | (choice::(common-atts open-patterns)) | (optional::(common-atts open-patterns)) | (zeroOrMore::(common-atts open-patterns)) | (oneOrMore::(common-atts open-patterns)) | (list::(common-atts open-patterns)) | (mixed::(common-atts open-patterns)) | (ref::(name::string() common-atts other)) | (parentRef::(name::string() common-atts other)) | (empty::(common-atts other)) | (text::(common-atts other)) | (value::((type::string())? common-atts string())) | (data::(type::string() common-atts other (param::(name::string() common-atts string()))* (except::(common-atts open-patterns))?)) | (notAllowed::(common-atts other)) | (externalRef::(href::string() common-atts other)) | (grammar::(common-atts grammar-content)) ;
+--------------------metasyntax::ebnf-sdf.bgf--------------------
+Grammar ::= Rule* ;
+--------------------metasyntax::lll-kort.bgf--------------------
+specification ::= rule+ ;
+--------------------metasyntax::lll-ldta.bgf--------------------
+grammar ::= rule+ ;
+--------------------metasyntax::yacc-sdf.bgf--------------------
+Grammar ::= C-declarations Yacc-declarations "%%" Grammar-rules "%%" Extra-C-code ;
+--------------------metasyntax::yacc-txl.bgf--------------------
+program ::= Yacc_Txl_Grammar ;
+--------------------tescol::10011.bgf--------------------
+program ::= TROLLEY CONSTANT CONTAINS declaration* CHECKOUT statementlist SEMI DONE SEMI ;
+--------------------slps::bgf-1.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression*)) | (choice::(expression*)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (name::string())? (root::nonterminal)* production* ;
+--------------------slps::bgf-2.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression*)) | (choice::(expression*)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-2.1-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::btf.bgf--------------------
+root ::= grammar tree ;
+--------------------slps::bgf-3.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (marked::(expression*)) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-3.1-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (marked::expression) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-4.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (marked::expression) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) | (seplistplus::(expression expression)) | (sepliststar::(expression expression)) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-4.1-adt.bgf--------------------
+BGFExpression ::= (epsilon::ε) | (empty::ε) | (val::(v::BGFValue)) | (anything::ε) | (terminal::(t::string())) | (nonterminal::(t::string())) | (selectable::(selector::string() expr::BGFExpression)) | (sequence::(exprs::(BGFExpression*))) | (choice::(exprs::(BGFExpression*))) | (marked::(expr::BGFExpression)) | (optional::(expr::BGFExpression)) | (plus::(expr::BGFExpression)) | (star::(expr::BGFExpression)) | (starsepplus::(expr::BGFExpression sep::BGFExpression)) | (starsepstar::(expr::BGFExpression sep::BGFExpression)) ;
+--------------------slps::bgf-4.3-adt.bgf--------------------
+BGFGrammar ::= grammar::(roots::(string()*) prods::BGFProdList) ;
+--------------------slps::bgf-5.0-adt.bgf--------------------
+BGFGrammar ::= grammar::(roots::(string()*) prods::BGFProdList) ;
+--------------------slps::bgf-5.1-adt.bgf--------------------
+BGFGrammar ::= grammar::(roots::(string()*) prods::BGFProdList) ;
+--------------------slps::bgf-5.2-xsd.bgf--------------------
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-5.3-adt.bgf--------------------
+BGFGrammar ::= grammar::(roots::(string()*) prods::BGFProdList) ;
+--------------------slps::bgf-v1.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression*)) | (choice::(expression*)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (name::string())? (root::nonterminal)* production* ;
+--------------------slps::bgf-v2.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression*)) | (choice::(expression*)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-v2.1-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-v3.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (marked::(expression*)) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-v3.1-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (marked::expression) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-v4.0-xsd.bgf--------------------
+production ::= (label::label)? nonterminal::nonterminal expression ;
+expression ::= (epsilon::ε) | (empty::ε) | (value::value) | (any::ε) | (terminal::terminal) | (nonterminal::nonterminal) | (selectable::(selector::selector expression)) | (sequence::(expression+)) | (marked::expression) | (choice::(expression+)) | (optional::expression) | (plus::expression) | (star::expression) | (seplistplus::(expression expression)) | (sepliststar::(expression expression)) ;
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::bgf-v5.2-xsd.bgf--------------------
+grammar ::= (root::nonterminal)* production* ;
+--------------------slps::cbgf-adt.bgf--------------------
+CBGFSequence ::= CBGFCommand* ;
+--------------------slps::cbgf-xsd.bgf--------------------
+sequence ::= (transformation | atomic)* ;
+--------------------slps::edd.bgf--------------------
+config ::= ((start-grammar-symbol::string()) | (end-grammar-symbol::string()) | (line-continuation-symbol::string()) | (tabulation-symbol::string()) | (start-label-symbol::string()) | (end-label-symbol::string()) | (defining-symbol::string()) | (multiple-defining-symbol::string()) | (terminator-symbol::string()) | (definition-separator-symbol::string()) | (concatenate-symbol::string()) | (start-comment-symbol::string()) | (end-comment-symbol::string()) | (start-group-symbol::string()) | (end-group-symbol::string()) | (start-option-symbol::string()) | (end-option-symbol::string()) | (start-terminal-symbol::string()) | (end-terminal-symbol::string()) | (start-nonterminal-symbol::string()) | (end-nonterminal-symbol::string()) | (start-seplist-star-symbol::string()) | (end-seplist-star-symbol::string()) | (start-seplist-plus-symbol::string()) | (end-seplist-plus-symbol::string()) | (start-repetition-star-symbol::string()) | (end-repetition-star-symbol::string()) | (start-repetition-plus-symbol::string()) | (end-repetition-plus-symbol::string()) | (postfix-option-symbol::string()) | (postfix-repetition-star-symbol::string()) | (postfix-repetition-plus-symbol::string()) | (nonterminals-may-start-with::string()) | (nonterminals-may-contain::string()) | (nonterminal-if-contains::string()) | (terminal-if-undefined::((except::string())*)) | (nonterminal-if-defined::((except::string())*)) | (decompose-symbols::((except::string())*)) | (terminal-if-uppercase::α) | (terminal-if-lowercase::α) | (terminal-if-mixedcase::α) | (terminal-if-camelcase::α) | (nonterminal-if-uppercase::α) | (nonterminal-if-lowercase::α) | (nonterminal-if-mixedcase::α) | (nonterminal-if-camelcase::α) | (glue-nonalphanumeric-terminals::α) | (break-tokens-at-whitespace::α) | (disregard-labels::α) | (consider-indentation::α) | (ignore::(((newline::α) | (space::α) | (same-indentation::α) | (lines-containing::string()))+)) | (mask::(token::string() (terminal::string()) | (epsilon::α))))* ;
+--------------------slps::ldf-Readable.bgf--------------------
+document ::= document-metadata part+ ;
+--------------------slps::ldf-v1.0-xsd.bgf--------------------
+reference ::= string() ;
+document ::= title::string() author::string() abstract::string() content::contentType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v10.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-section+) (lists::(front-list+))? (lexicalPart::(LexicalSection+))? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v11.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-section+) (lists::(front-list+))? (lexicalPart::(LexicalSection+))? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v11.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v11.2-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v12.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v13.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v13.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v14.0-xsd.bgf--------------------
+code ::= string() ;
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+reference ::= string() ;
+link ::= (text::string())? reference::string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v15.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+mi ::= anyMath ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+link ::= (text::string())? reference::string() ;
+mtext ::= anyMath ;
+msub ::= anyMath ;
+tail ::= mixedType ;
+code ::= string() ;
+mrow ::= anyMath ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v15.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+mi ::= anyMath ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(frontSection+) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? (core::structuredSection)+ (annex::structuredSection)* ;
+link ::= (text::string())? reference::string() ;
+mtext ::= anyMath ;
+msub ::= anyMath ;
+tail ::= mixedType ;
+code ::= string() ;
+mrow ::= anyMath ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v16.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+mi ::= anyMath ;
+document ::= titlePage::titlePage frontMatter::(topSection*) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? ((core::structuredSection)+) | ((part::((core::structuredSection)+))+) (backMatter::(topSection*))? (annex::structuredSection)* ;
+link ::= (text::string())? reference::string() ;
+mtext ::= anyMath ;
+msub ::= anyMath ;
+tail ::= mixedType ;
+code ::= string() ;
+mrow ::= anyMath ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v17.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+mi ::= anyMath ;
+document ::= titlePage::titlePage frontMatter::(topSection*) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? ((core::structuredSection)+) | ((part::((core::structuredSection)+))+) (backMatter::(topSection*))? (annex::structuredSection)* ;
+link ::= (text::string())? reference::string() ;
+mtext ::= anyMath ;
+msub ::= anyMath ;
+tail ::= mixedType ;
+code ::= string() ;
+mrow ::= anyMath ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v18.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+code ::= string() ;
+mi ::= anyMath ;
+document ::= titlePage::titlePage frontMatter::(topSection*) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? ((core::structuredSection)+) | ((part::((core::structuredSection)+))+) (backMatter::(topSection*))? (annex::structuredSection)* ;
+mtext ::= anyMath ;
+link ::= (text::string())? reference::string() ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v18.1-xsd.bgf--------------------
+mrow ::= anyMath ;
+code ::= string() ;
+mi ::= anyMath ;
+document ::= titlePage::titlePage frontMatter::(topSection*) (lists::(frontList+))? (lexicalPart::(lexicalSection+))? ((core::structuredSection)+) | ((part::((core::structuredSection)+))+) (backMatter::(topSection*))? (annex::structuredSection)* ;
+mtext ::= anyMath ;
+link ::= (text::string())? (reference::string()) | (external::string()) ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v19.0-xsd.bgf--------------------
+mrow ::= anyMath ;
+code ::= string() ;
+mi ::= anyMath ;
+document ::= document-metainfo::document-metainfo (part::part)+ ;
+mtext ::= anyMath ;
+link ::= (text::string())? (reference::string()) | (external::string()) ;
+keyword ::= string() ;
+math ::= anyMath ;
+formula ::= α+ ;
+varepsilon ::= ε ;
+msub ::= anyMath ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v2.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= title::string() author::string() abstract::string() content::contentType ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v2.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= title::string() author::string() abstract::string() content::contentType ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v20.0-xsd.bgf--------------------
+composite-section ::= section+ ;
+mi ::= anyMath ;
+lexical-section ::= role::lexical-section-role metainfo content::textual-content ;
+document ::= title-page content::(part+) ;
+mtext ::= anyMath ;
+link ::= (text::string())? (reference::string()) | (external::string()) ;
+normative-role ::= (synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) ;
+previous ::= title::string() (version::string()) | (edition::string()) (uri::string())? ;
+list-section ::= role::list-section-role metainfo content::(term+) ;
+msub ::= anyMath ;
+placeholder ::= (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) ;
+metainfo ::= (id::string())? (title::string())? (author::string())* ;
+part ::= role::part-role metainfo content::(section+) ;
+status ::= (unknown::ε) | (draft::ε) | (candidate::ε) | (proposed::ε) | (approved::ε) | (revised::ε) | (obsolete::ε) | (withdrawn::ε) | (collection::ε) | (trial::ε) | (errata::ε) | (report::ε) ;
+table ::= (header::table-row)* (row::table-row)+ ;
+mrow ::= anyMath ;
+code ::= string() ;
+term ::= name::string() definition::textual-content ;
+simple-section ::= role::simple-section-role metainfo content::textual-content ;
+keyword ::= string() ;
+structured-section ::= metainfo content::(structured-section-element+) ;
+math ::= anyMath ;
+informative-role ::= (example::ε) | (rationale::ε) | (update::ε) ;
+formula ::= α+ ;
+figure ::= metainfo (source::figure-source)+ ;
+title-page ::= (body number::string())? metainfo status (version::string()) | (edition::string()) previous* date::string() ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+body ::= (ansi::ε) | (ecma::ε) | (ieee::ε) | (iso::ε) | (iso/iet::ε) | (itu::ε) | (iec::ε) | (ietf::ε) | (oasis::ε) | (omg::ε) | (wsa::ε) | (w3c::ε) ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v20.1-xsd.bgf--------------------
+composite-section ::= section+ ;
+mi ::= anyMath ;
+lexical-section ::= role::lexical-section-role metainfo content::textual-content ;
+document ::= title-page content::(part+) ;
+mtext ::= anyMath ;
+link ::= (text::string())? (reference::string()) | (external::string()) ;
+normative-role ::= (synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) ;
+previous ::= title::string() ((version::string()) | (edition::string()))? (uri::string())? ;
+list-section ::= role::list-section-role metainfo content::(term+) ;
+msub ::= anyMath ;
+placeholder ::= (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) ;
+metainfo ::= (id::string())? (title::string())? (author::string())* ;
+part ::= role::part-role metainfo content::(section+) ;
+status ::= (unknown::ε) | (draft::ε) | (candidate::ε) | (proposed::ε) | (approved::ε) | (revised::ε) | (obsolete::ε) | (withdrawn::ε) | (collection::ε) | (trial::ε) | (errata::ε) | (report::ε) ;
+table ::= (header::table-row)* (row::table-row)+ ;
+mrow ::= anyMath ;
+code ::= string() ;
+term ::= name::string() definition::textual-content ;
+simple-section ::= role::simple-section-role metainfo content::textual-content ;
+keyword ::= string() ;
+structured-section ::= metainfo content::(structured-section-element+) ;
+math ::= anyMath ;
+informative-role ::= (example::ε) | (rationale::ε) | (update::ε) ;
+formula ::= α+ ;
+figure ::= metainfo (source::figure-source)+ ;
+title-page ::= (body number::string())? metainfo status (version::string()) | (edition::string()) previous* date::string() ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+body ::= (ansi::ε) | (ecma::ε) | (ieee::ε) | (iso::ε) | (iso/iet::ε) | (itu::ε) | (iec::ε) | (ietf::ε) | (oasis::ε) | (omg::ε) | (wsa::ε) | (w3c::ε) ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v21.0-xsd.bgf--------------------
+composite-section ::= section+ ;
+mi ::= anyMath ;
+lexical-section ::= role::lexical-section-role metainfo content::textual-content ;
+document ::= title-page content::(part+) ;
+mtext ::= anyMath ;
+link ::= (text::string())? (reference::string()) | (external::string()) ;
+normative-role ::= (synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) ;
+previous ::= title::string() ((version::string()) | (edition::string()))? (uri::string())? ;
+list-section ::= role::list-section-role metainfo content::(term+) ;
+anchor ::= id::string() ;
+msub ::= anyMath ;
+placeholder ::= (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) ;
+metainfo ::= (id::string())? (title::string())? (author::string())* ;
+part ::= role::part-role metainfo content::(section+) ;
+status ::= (unknown::ε) | (draft::ε) | (candidate::ε) | (proposed::ε) | (approved::ε) | (revised::ε) | (obsolete::ε) | (withdrawn::ε) | (collection::ε) | (trial::ε) | (errata::ε) | (report::ε) ;
+table ::= (header::table-row)* (row::table-row)+ ;
+mrow ::= anyMath ;
+code ::= string() ;
+term ::= name::string() definition::textual-content ;
+simple-section ::= role::simple-section-role metainfo content::textual-content ;
+keyword ::= string() ;
+structured-section ::= metainfo content::(structured-section-element+) ;
+math ::= anyMath ;
+informative-role ::= (example::ε) | (rationale::ε) | (update::ε) ;
+formula ::= α+ ;
+figure ::= metainfo (source::figure-source)+ ;
+title-page ::= (body number::string())? metainfo status (version::string()) | (edition::string()) previous* date::string() ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+body ::= (ansi::ε) | (ecma::ε) | (ieee::ε) | (iso::ε) | (iso/iet::ε) | (itu::ε) | (iec::ε) | (ietf::ε) | (oasis::ε) | (omg::ε) | (wsa::ε) | (w3c::ε) ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v21.1-xsd.bgf--------------------
+composite-section ::= section+ ;
+mi ::= anyMath ;
+lexical-section ::= role::lexical-section-role metainfo content::textual-content ;
+document ::= title-page content::(part+) ;
+mtext ::= anyMath ;
+link ::= (text::string())? (reference::string()) | (external::string()) ;
+normative-role ::= (synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) ;
+previous ::= title::string() ((version::string()) | (edition::string()))? (uri::string())? ;
+list-section ::= role::list-section-role metainfo content::(term+) ;
+anchor ::= id::string() ;
+msub ::= anyMath ;
+placeholder ::= (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) ;
+metainfo ::= (id::string())? (title::string())? (author::string())* ;
+part ::= role::part-role metainfo content::(section+) ;
+status ::= (unknown::ε) | (draft::ε) | (candidate::ε) | (proposed::ε) | (approved::ε) | (revised::ε) | (obsolete::ε) | (withdrawn::ε) | (collection::ε) | (trial::ε) | (errata::ε) | (report::ε) ;
+table ::= (header::table-row)* (row::table-row)+ ;
+mrow ::= anyMath ;
+code ::= string() ;
+term ::= name::string() definition::textual-content ;
+simple-section ::= role::simple-section-role metainfo content::textual-content ;
+keyword ::= string() ;
+structured-section ::= metainfo content::(structured-section-element+) ;
+math ::= anyMath ;
+informative-role ::= (example::ε) | (rationale::ε) | (update::ε) ;
+formula ::= α+ ;
+figure ::= metainfo (source::figure-source)+ ;
+title-page ::= (body number::string())? metainfo status (version::string()) | (edition::string()) previous* date::string() ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+body ::= (ansi::ε) | (ecma::ε) | (ieee::ε) | (iso::ε) | (iso/iet::ε) | (itu::ε) | (iec::ε) | (ietf::ε) | (oasis::ε) | (omg::ε) | (wsa::ε) | (w3c::ε) ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v22.0-xsd.bgf--------------------
+composite-section ::= section+ ;
+mi ::= anyMath ;
+lexical-section ::= role::lexical-section-role metainfo content::textual-content ;
+document ::= metadata::((body::((ansi::ε) | (ecma::ε) | (ieee::ε) | (iso::ε) | (iso/iet::ε) | (itu::ε) | (iec::ε) | (ietf::ε) | (oasis::ε) | (omg::ε) | (wsa::ε) | (w3c::ε)))? (number::string())? (author::person)* topic::string() status::((unknown::ε) | (draft::ε) | (candidate::ε) | (proposed::ε) | (approved::ε) | (revised::ε) | (obsolete::ε) | (withdrawn::ε) | (collection::ε) | (trial::ε) | (errata::ε) | (report::ε)) (version::string()) | (edition::string()) (previous::title-ve-uri)* date::string()) (part::part-type)+ ;
+mtext ::= anyMath ;
+link ::= (text::string())? (nonterminal::string()) | (reference::string()) | (external::string()) ;
+normative-role ::= (synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) ;
+list-section ::= role::list-section-role metainfo content::(term+) ;
+anchor ::= id::string() ;
+msub ::= anyMath ;
+placeholder ::= (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) ;
+metainfo ::= (id::string())? (title::string())? (author::string())* ;
+table ::= (header::table-row)* (row::table-row)+ ;
+mrow ::= anyMath ;
+code ::= string() ;
+term ::= name::string() definition::textual-content ;
+simple-section ::= metainfo content::textual-content ;
+keyword ::= string() ;
+structured-section ::= metainfo content::(structured-section-element+) ;
+math ::= anyMath ;
+informative-role ::= (example::ε) | (rationale::ε) | (update::ε) ;
+formula ::= α+ ;
+figure ::= metainfo (source::figure-source)+ ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v23.0-xsd.bgf--------------------
+composite-section ::= any-section+ ;
+mi ::= anyMath ;
+lexical-section ::= role::lexical-section-role metainfo content::textual-content ;
+document ::= metadata::((body::((ansi::ε) | (ecma::ε) | (ieee::ε) | (iso::ε) | (iso/iet::ε) | (itu::ε) | (iec::ε) | (ietf::ε) | (oasis::ε) | (omg::ε) | (wsa::ε) | (w3c::ε)))? (number::string())? (author::person)* topic::string() status::((unknown::ε) | (draft::ε) | (candidate::ε) | (proposed::ε) | (approved::ε) | (revised::ε) | (obsolete::ε) | (withdrawn::ε) | (collection::ε) | (trial::ε) | (errata::ε) | (report::ε)) (version::string()) | (edition::string()) (previous::named-link)* date::string()) (part::part-type)+ ;
+mtext ::= anyMath ;
+link ::= (text::string())? (nonterminal::string()) | (reference::string()) | (external::string()) ;
+normative-role ::= (synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) ;
+list-section ::= role::list-section-role metainfo content::(term+) ;
+anchor ::= id::string() ;
+msub ::= anyMath ;
+placeholder ::= (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) ;
+metainfo ::= (id::string())? (title::string())? (author::string())* ;
+table ::= (header::table-row)* (row::table-row)+ ;
+mrow ::= anyMath ;
+code ::= string() ;
+term ::= name::string() definition::textual-content ;
+simple-section ::= metainfo content::textual-content ;
+keyword ::= string() ;
+structured-section ::= metainfo content::(structured-section-element+) ;
+math ::= anyMath ;
+informative-role ::= (example::ε) | (rationale::ε) | (update::ε) ;
+formula ::= α+ ;
+figure ::= metainfo (source::figure-source)+ ;
+varepsilon ::= ε ;
+mo ::= anyMath ;
+msup ::= anyMath ;
+mfenced ::= anyMath ;
+--------------------slps::ldf-v3.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= title::title (placeholder::generated)* frontMatter::frontMatter (languageOverview::ListOfTerms)? (lexicalSection::LexicalSection)+ top-section+ (annex::TopSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v4.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= title::title (placeholder::generated)* frontMatter::frontMatter (languageOverview::ListOfTerms)? lexical+ (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v5.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= title::title (placeholder::generated)* frontMatter::frontMatter lists::frontLists lexicalPart::lexical (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v6.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= title::titlePage (placeholder::generated)* frontMatter::frontMatter lists::frontLists lexicalPart::lexical (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v7.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::frontMatter (lists::frontLists)? (lexicalPart::lexical)? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::slps-btf.bgf--------------------
+root ::= grammar tree ;
+--------------------slps::ldf-v7.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-sections+) (lists::frontLists)? (lexicalPart::lexical)? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v8.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-section+) (lists::(front-list+))? (lexicalPart::(lexical+))? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v8.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-section+) (lists::(front-list+))? (lexicalPart::(lexical+))? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+tail ::= mixedType ;
+--------------------slps::ldf-v9.0-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-section+) (lists::(front-list+))? (lexicalPart::(lexical+))? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::ldf-v9.1-xsd.bgf--------------------
+runnable ::= runnableType ;
+document ::= titlePage::titlePage (placeholder::generated)* frontMatter::(front-simple-section+) (lists::(front-list+))? (lexicalPart::(lexical+))? (core::StructuredSection)+ (annex::StructuredSection)* ;
+reference ::= string() ;
+sample ::= sampleType ;
+keyword ::= string() ;
+tail ::= mixedType ;
+--------------------slps::slps-cbgf-adt.bgf--------------------
+CBGFSequence ::= CBGFCommand* ;
+--------------------slps::slps-cbgf-xsd.bgf--------------------
+sequence ::= (transformation | atomic)* ;
+--------------------slps::slps-edd.bgf--------------------
+config ::= ((start-grammar-symbol::string()) | (end-grammar-symbol::string()) | (line-continuation-symbol::string()) | (tabulation-symbol::string()) | (start-label-symbol::string()) | (end-label-symbol::string()) | (defining-symbol::string()) | (multiple-defining-symbol::string()) | (terminator-symbol::string()) | (definition-separator-symbol::string()) | (concatenate-symbol::string()) | (start-comment-symbol::string()) | (end-comment-symbol::string()) | (start-group-symbol::string()) | (end-group-symbol::string()) | (start-option-symbol::string()) | (end-option-symbol::string()) | (start-terminal-symbol::string()) | (end-terminal-symbol::string()) | (start-nonterminal-symbol::string()) | (end-nonterminal-symbol::string()) | (start-seplist-star-symbol::string()) | (end-seplist-star-symbol::string()) | (start-seplist-plus-symbol::string()) | (end-seplist-plus-symbol::string()) | (start-repetition-star-symbol::string()) | (end-repetition-star-symbol::string()) | (start-repetition-plus-symbol::string()) | (end-repetition-plus-symbol::string()) | (postfix-option-symbol::string()) | (postfix-repetition-star-symbol::string()) | (postfix-repetition-plus-symbol::string()) | (nonterminals-may-start-with::string()) | (nonterminals-may-contain::string()) | (nonterminal-if-contains::string()) | (terminal-if-undefined::((except::string())*)) | (nonterminal-if-defined::((except::string())*)) | (decompose-symbols::((except::string())*)) | (terminal-if-uppercase::α) | (terminal-if-lowercase::α) | (terminal-if-mixedcase::α) | (terminal-if-camelcase::α) | (nonterminal-if-uppercase::α) | (nonterminal-if-lowercase::α) | (nonterminal-if-mixedcase::α) | (nonterminal-if-camelcase::α) | (glue-nonalphanumeric-terminals::α) | (break-tokens-at-whitespace::α) | (disregard-labels::α) | (consider-indentation::α) | (ignore::(((newline::α) | (space::α) | (same-indentation::α) | (lines-containing::string()))+)) | (mask::(token::string() (terminal::string()) | (epsilon::α))))* ;
+--------------------slps::slps-exbgf.bgf--------------------
+sequence ::= (atomic | shielded | shieldedD | shieldedU | tempunfold | atomicI | atomicC | atomicH | atomicV | yaccifyH | deyaccifyH | deyaccifyC | regroupLR | regroupRL | massage1S2P | massageS12P | massageC2S | massage12C | massageO2C | massageC2O | massage-double | massageOP2S | promoteP2S | promoteY2S | double-inline | inlineYO | inlineYF | unite-many | eliminate-many | distributeV | distributeH | inlineY | inlineYH | inlineV | inlineU | chainV | chainX | introduceH | defineH | reyaccify | reextract | reextractY | extract-twice | redefine | redefineH | metachangeT2N | renameN | addV | addH | addX | removeV | removeH | extractV | extractC | narrowS21 | narrowP21 | narrowO21 | widen12O | widen12S | widen12P | widenP2S | unfoldV | unfold | unfoldY | foldY | factor-out | pull-out)* ;
+--------------------slps::slps-lcf.bgf--------------------
+scenario ::= shortcut* tools source+ target+ testset* ;
+--------------------slps::slps-xbgf-adt.bgf--------------------
+XBGFSequence ::= XBGFCommand* ;
+--------------------slps::slps-xbgf-xsd.bgf--------------------
+sequence ::= (transformation | atomic)* ;
+--------------------slps::slps-xedd.bgf--------------------
+introduce ::= metasymbol::confixMetasymbols start::string() end::string() ;
+rename ::= metasymbol::metasymbols from::string() to::string() ;
+evolution ::= step* ;
+eliminate ::= metasymbol::metasymbols ;
+--------------------slps::slps-xldf.bgf--------------------
+evolutionSequence ::= documentTransformation* ;
+--------------------slps::xbgf-adt.bgf--------------------
+XBGFSequence ::= XBGFCommand* ;
+--------------------slps::xbgf-xsd.bgf--------------------
+sequence ::= (transformation | atomic)* ;
+--------------------pico::sdf.bgf--------------------
+PROGRAM ::= "begin" DECLS (STATEMENT (";" STATEMENT)*)? "end" ;

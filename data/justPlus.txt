@@ -1,0 +1,295 @@
+--------------------ada::kellogg.bgf--------------------
+variant_s ::= variant+ ;
+alternative_s ::= case_statement_alternative+ ;
+--------------------ada::cordy-hyaric.bgf--------------------
+sequence_of_statements ::= statement+ ;
+--------------------c::antoniol.bgf--------------------
+long_comment ::= comment+ ;
+--------------------c::malton-dahn.bgf--------------------
+string ::= stringlit+ ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+asm_template ::= string_unit_NL+ ;
+decl_specifiers ::= decl_qualifier_or_type_specifier+ ;
+expression_list ::= expression+ ;
+--------------------c::cordy-malton.bgf--------------------
+expression ::= assignment_expression+ ;
+string ::= stringlit+ ;
+--------------------c::lankamp.bgf--------------------
+TranslationUnit ::= ExternalDeclaration+ ;
+--------------------cpp::elges-cordy.bgf--------------------
+statement_list ::= statement+ ;
+declarator_list ::= init_declarator+ ;
+initializer_list ::= initializer_element+ ;
+type_specifiers ::= type_specifier+ ;
+decl_specifiers ::= decl_specifier+ ;
+const_volatile_qualifier_list ::= const_volatile_qualifier+ ;
+member_declarator_list ::= member_declarator+ ;
+expression_list ::= assignment_expression+ ;
+mem_initializer_list ::= mem_initializer+ ;
+--------------------cs::csharp-antoniol.bgf--------------------
+long_comment ::= comment+ ;
+--------------------cs::csharp-cordy.bgf--------------------
+variable_initializer_list ::= variable_initializer+ ;
+enum_modifiers ::= enum_modifier+ ;
+interface_type_list ::= interface_type+ ;
+indexer_modifiers ::= indexer_modifier+ ;
+interface_member_declarations ::= interface_member_declaration+ ;
+constructor_modifiers ::= constructor_modifier+ ;
+field_modifiers ::= field_modifier+ ;
+class_member_declarations ::= class_member_declaration+ ;
+class_modifiers ::= class_modifier+ ;
+local_variable_declarators ::= local_variable_declarator+ ;
+attribute_sections ::= attribute_section+ ;
+statement_list ::= statement+ ;
+switch_labels ::= switch_label+ ;
+expression_list ::= expression+ ;
+attribute_list ::= attribute+ ;
+operator_modifiers ::= operator_modifier+ ;
+constant_modifiers ::= constant_modifier+ ;
+member_initializer_list ::= member_initializer+ ;
+variable_declarators ::= variable_declarator+ ;
+method_modifiers ::= method_modifier+ ;
+namespace_member_declarations ::= namespace_member_declaration+ ;
+class_and_interface_type_ist ::= class_or_interface_type+ ;
+switch_sections ::= switch_section+ ;
+event_modifiers ::= event_modifier+ ;
+fixed_pointer_declarators ::= fixed_pointer_declarator+ ;
+statement_expression_list ::= statement_expression+ ;
+fixed_parameters ::= fixed_parameter+ ;
+struct_member_declarations ::= struct_member_declaration+ ;
+specific_catch_clauses ::= specific_catch_clause+ ;
+struct_modifiers ::= struct_modifier+ ;
+property_modifiers ::= property_modifier+ ;
+type_parameters ::= attributes_type_parameter+ ;
+global_attribute_sections ::= global_attribute_section+ ;
+constant_declarators ::= constant_declarator+ ;
+delegate_modifiers ::= delegate_modifier+ ;
+type_parameter_constraints_clauses ::= type_parameter_constraints_clause+ ;
+anonymous_method_parameter_list ::= anonymous_method_parameter+ ;
+enum_member_declarations ::= enum_member_declaration+ ;
+--------------------eiffel::cordy.bgf--------------------
+Features ::= feature_Feature_clause+ ;
+Creators ::= creation_Creation_clause+ ;
+New_feature_list ::= New_feature+ ;
+When_part_list ::= when_When_part+ ;
+Identifier_list ::= Identifier+ ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Features ::= Feature_clause+ ;
+Inheritance ::= Inherit_clause+ ;
+Creators ::= Creation_clause+ ;
+When_part_list ::= When_part+ ;
+Digit_sequence ::= Digit+ ;
+--------------------fortran::derricks.bgf--------------------
+SelectCaseBody ::= CaseBodyConstruct+ ;
+BlockDataBody ::= BlockDataBodyConstruct+ ;
+Body ::= BodyConstruct+ ;
+--------------------fortran::waite-cordy.bgf--------------------
+OptionalParList ::= OptionalPar+ ;
+AllocationList ::= Allocation+ ;
+AccessIdList ::= AccessId+ ;
+DeferredShapeSpecList ::= DeferredShapeSpec+ ;
+CaseValueRangeList ::= CaseValueRange+ ;
+PointerObjectList ::= PointerObject+ ;
+AllocateObjectList ::= AllocateObject+ ;
+ExecutableProgram ::= ProgramUnit+ ;
+ArrayAllocationList ::= ArrayAllocation+ ;
+EquivalenceSetList ::= EquivalenceSet+ ;
+SFDummyArgNameList ::= SFDummyArgName+ ;
+SubscriptList ::= Subscript+ ;
+EquivalenceObjectList ::= EquivalenceObject+ ;
+SavedEntityList ::= SavedEntity+ ;
+NamedConstantDefList ::= NamedConstantDef+ ;
+ComponentDeclList ::= ComponentDecl+ ;
+IntrinsicList ::= IntrinsicProcedureName+ ;
+PointerStmtObjectList ::= PointerStmtObject+ ;
+ImplicitSpecList ::= ImplicitSpec+ ;
+DataStmtValueList ::= DataStmtValue+ ;
+ProcedureNameList ::= ProcedureName+ ;
+RenameList ::= Rename+ ;
+LblRefList ::= LblRef+ ;
+InputItemList ::= InputItem+ ;
+ExternalNameList ::= ExternalName+ ;
+ExprList ::= Expr+ ;
+DataStmtObjectList ::= DataStmtObject+ ;
+TargetObjectList ::= TargetObject+ ;
+EntityDeclList ::= EntityDecl+ ;
+OnlyList ::= Only+ ;
+ArrayDeclaratorList ::= ArrayDeclarator+ ;
+ComponentAttrSpecList ::= ComponentAttrSpec+ ;
+DataIDoObjectList ::= DataIDoObject+ ;
+ExplicitShapeSpecList ::= ExplicitShapeSpec+ ;
+SectionSubscriptList ::= SectionSubscript+ ;
+IntentParList ::= IntentPar+ ;
+Body ::= BodyConstruct+ ;
+--------------------java::java-5-habelitz.bgf--------------------
+catches ::= catchClause+ ;
+arrayDeclaratorList ::= arrayDeclarator+ ;
+--------------------java::java-5-parr.bgf--------------------
+annotations ::= annotation+ ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+variable_declarators ::= variable_declarator+ ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+variable_declarators ::= variable_declarator+ ;
+--------------------dot::rascal-concrete.bgf--------------------
+EdgeRhs ::= Edg+ ;
+--------------------html::clark-basic.bgf--------------------
+Block.model ::= Block.mix+ ;
+--------------------html::clark.bgf--------------------
+Block.model ::= Block.mix+ ;
+--------------------html::clark-strict.bgf--------------------
+Block.model ::= Block.mix+ ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_expn ::= js_assignment_expn+ ;
+--------------------odf::opendoc-1.2.bgf--------------------
+CURIEs ::= CURIE+ ;
+--------------------pascal::object.bgf--------------------
+class_element_list ::= class_element_semi+ ;
+--------------------php::cordy.bgf--------------------
+VarModifiers ::= VarModifier+ ;
+--------------------python::sorochan-cordy.bgf--------------------
+decorators ::= decorator+ ;
+dotted_as_names ::= dotted_as_name+ ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+extra-description ::= letter+ ;
+spaces ::= space+ ;
+hex-number ::= hex-digit+ ;
+characters ::= character+ ;
+digits ::= decimal-digit+ ;
+space-tabs ::= space-tab+ ;
+decimal-number ::= decimal-digit+ ;
+--------------------fl::dcg.bgf--------------------
+program ::= function+ ;
+--------------------fl::sdf.bgf--------------------
+Program ::= Function+ ;
+--------------------fl::txl.bgf--------------------
+program ::= fun+ ;
+--------------------metasyntax::ebnf-bgf.bgf--------------------
+grammar ::= production+ ;
+--------------------metasyntax::ebnf-iso-1.bgf--------------------
+integer ::= decimal_digit+ ;
+--------------------metasyntax::ebnf-iso-2.bgf--------------------
+integer ::= decimal_digit+ ;
+syntax ::= syntax_rule+ ;
+--------------------metasyntax::ebnf-iso-3.bgf--------------------
+INTEGER ::= DIGIT+ ;
+SYNTAX ::= SYNTAX_RULE+ ;
+--------------------metasyntax::lll-kort.bgf--------------------
+conjunction ::= term+ ;
+specification ::= rule+ ;
+--------------------metasyntax::lll-ldta.bgf--------------------
+grammar ::= rule+ ;
+--------------------tescol::00010.bgf--------------------
+INT ::= DIGIT+ ;
+--------------------tescol::01100.bgf--------------------
+declaration ::= dec+ ;
+--------------------tescol::01111.bgf--------------------
+program ::= progTree+ ;
+--------------------tescol::10001.bgf--------------------
+prog ::= stat+ ;
+--------------------tescol::11010.bgf--------------------
+program ::= progTree+ ;
+--------------------tescol::11110.bgf--------------------
+prog ::= stat+ ;
+--------------------slps::cbgf-xsd.bgf--------------------
+introduce ::= production+ ;
+atomic ::= transformation+ ;
+yaccify-deyaccify ::= production+ ;
+deyaccify-yaccify ::= production+ ;
+define-undefine ::= production+ ;
+import ::= production+ ;
+undefine-define ::= production+ ;
+yaccify ::= production+ ;
+introduce-eliminate ::= production+ ;
+eliminate-introduce ::= production+ ;
+--------------------slps::ldf-v10.0-xsd.bgf--------------------
+SimpleText ::= SimpleTextElement+ ;
+--------------------slps::ldf-v11.0-xsd.bgf--------------------
+SimpleText ::= SimpleTextElement+ ;
+--------------------slps::ldf-v11.1-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v11.2-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v12.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v13.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v13.1-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v14.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v15.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v15.1-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v16.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v17.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v18.0-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v18.1-xsd.bgf--------------------
+simpleText ::= simpleTextElement+ ;
+--------------------slps::ldf-v19.0-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= section+ ;
+--------------------slps::ldf-v20.0-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= section+ ;
+--------------------slps::ldf-v20.1-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= section+ ;
+--------------------slps::ldf-v21.0-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= section+ ;
+--------------------slps::ldf-v21.1-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= section+ ;
+--------------------slps::ldf-v22.0-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= section+ ;
+--------------------slps::ldf-v23.0-xsd.bgf--------------------
+textual-content ::= text-element+ ;
+composite-section ::= any-section+ ;
+--------------------slps::ldf-v5.0-xsd.bgf--------------------
+lexical ::= lexicals+ ;
+--------------------slps::ldf-v6.0-xsd.bgf--------------------
+lexical ::= lexicalGroup+ ;
+--------------------slps::ldf-v7.0-xsd.bgf--------------------
+SimpleText ::= insideSimpleText+ ;
+lexical ::= lexicalGroup+ ;
+--------------------slps::ldf-v7.1-xsd.bgf--------------------
+SimpleText ::= insideSimpleText+ ;
+lexical ::= lexicalGroup+ ;
+--------------------slps::ldf-v8.0-xsd.bgf--------------------
+SimpleText ::= insideSimpleText+ ;
+--------------------slps::ldf-v8.1-xsd.bgf--------------------
+SimpleText ::= insideSimpleText+ ;
+--------------------slps::ldf-v9.0-xsd.bgf--------------------
+SimpleText ::= insideSimpleText+ ;
+--------------------slps::ldf-v9.1-xsd.bgf--------------------
+SimpleText ::= insideSimpleText+ ;
+--------------------slps::slps-cbgf-xsd.bgf--------------------
+introduce ::= production+ ;
+atomic ::= transformation+ ;
+yaccify-deyaccify ::= production+ ;
+deyaccify-yaccify ::= production+ ;
+define-undefine ::= production+ ;
+import ::= production+ ;
+undefine-define ::= production+ ;
+yaccify ::= production+ ;
+introduce-eliminate ::= production+ ;
+eliminate-introduce ::= production+ ;
+--------------------slps::slps-xbgf-xsd.bgf--------------------
+introduce ::= production+ ;
+atomic ::= transformation+ ;
+import ::= production+ ;
+yaccify ::= production+ ;
+--------------------slps::slps-xldf.bgf--------------------
+introduce ::= production+ ;
+import ::= production+ ;
+yaccify ::= production+ ;
+--------------------slps::xbgf-xsd.bgf--------------------
+introduce ::= production+ ;
+atomic ::= transformation+ ;
+import ::= production+ ;
+yaccify ::= production+ ;

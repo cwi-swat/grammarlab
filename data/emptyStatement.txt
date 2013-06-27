@@ -1,0 +1,45 @@
+--------------------ada::kempe.bgf--------------------
+terminate_alternative ::= "terminate" ";" ;
+null_statement ::= "null" ";" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+terminate_alternative ::= "terminate" ";" ;
+null_statement ::= "null" ";" ;
+--------------------ada::lncs-2219.bgf--------------------
+terminate_alternative ::= "terminate" ";" ;
+null_statement ::= "null" ";" ;
+--------------------ada::lncs-4348.bgf--------------------
+terminate_alternative ::= "terminate" ";" ;
+null_statement ::= "null" ";" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+continue-statement ::= "continue" ";" ;
+break-statement ::= "break" ";" ;

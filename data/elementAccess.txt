@@ -1,0 +1,47 @@
+--------------------ada::kempe.bgf--------------------
+slice ::= prefix "(" discrete_range ")" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+slice ::= prefix "(" discrete_range ")" ;
+--------------------ada::lncs-2219.bgf--------------------
+slice ::= prefix "(" discrete_range ")" ;
+--------------------ada::lncs-4348.bgf--------------------
+slice ::= prefix "(" discrete_range ")" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+type_conversion ::= subtype_mark "(" expression ")" ;
+--------------------c::malton-dahn.bgf--------------------
+asm_operand ::= string "(" expression ")" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+alignof_expression ::= alignof_specifier "(" expression_or_type_name ")" ;
+typeof_expression ::= typeof_specifier "(" expression_or_type_name ")" ;
+macro_call ::= macro_name "(" macro_arguments ")" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" argument-list "]" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+element-access ::= primary-no-array-creation-expression "[" expression-list "]" ;
+--------------------dart::google.bgf--------------------
+libraryDefinition ::= LIBRARY "{" libraryBody "}" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Bracket_expression ::= Bracket_target "[" Actuals "]" ;
+--------------------fortran::derricks.bgf--------------------
+ArrayDeclarator ::= VariableName "(" ArraySpec ")" ;
+--------------------fortran::waite-cordy.bgf--------------------
+ArrayDeclarator ::= VariableName "(" ArraySpec ")" ;
+StructureConstructor ::= TypeName "(" ExprList ")" ;
+--------------------modula::dagenais-cordy.bgf--------------------
+Constructor ::= Type "{" AnyCons "}" ;

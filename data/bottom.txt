@@ -1,0 +1,1976 @@
+--------------------ada::kempe.bgf--------------------
+UNDEFINED generic_formal_parameter_selector_name
+UNDEFINED block_statement_identifier
+UNDEFINED pragma_argument_identifier
+UNDEFINED label_statement_identifier
+UNDEFINED library_unit_name
+UNDEFINED generic_procedure_name
+UNDEFINED protected_identifier
+UNDEFINED other_control_function
+UNDEFINED discriminant_direct_name
+UNDEFINED package_instance_name
+UNDEFINED static_simple_expression
+UNDEFINED non_end_of_line_character
+UNDEFINED subprogram_name
+UNDEFINED task_identifier
+UNDEFINED block_identifier
+UNDEFINED restriction_parameter_identifier
+UNDEFINED object_name
+UNDEFINED procedure_prefix
+UNDEFINED component_local_name
+UNDEFINED loop_name
+UNDEFINED space_character
+UNDEFINED ancestor_subtype_indication
+UNDEFINED digit
+UNDEFINED component_selector_name
+UNDEFINED loop_identifier
+UNDEFINED special_character
+UNDEFINED boolean_expression
+UNDEFINED discriminant_selector_name
+UNDEFINED static_expression
+UNDEFINED task_name
+UNDEFINED restriction_identifier
+UNDEFINED parent_subtype_indication
+UNDEFINED label_name
+UNDEFINED non_quotation_mark_graphic_character
+UNDEFINED package_name
+UNDEFINED function_prefix
+UNDEFINED entry_direct_name
+UNDEFINED delay_expression
+UNDEFINED underline
+UNDEFINED first_subtype_local_name
+UNDEFINED entry_identifier
+UNDEFINED function_name
+UNDEFINED formal_parameter_selector_name
+UNDEFINED format_effector
+UNDEFINED identifier_letter
+UNDEFINED exception_name
+UNDEFINED procedure_name
+UNDEFINED variable_name
+UNDEFINED callable_entity_name
+UNDEFINED renamespackage_name
+UNDEFINED generic_package_name
+UNDEFINED discrete_subtype_indication
+UNDEFINED entry_name
+UNDEFINED loop_statement_identifier
+UNDEFINED subtype_name
+UNDEFINED generic_function_name
+--------------------ada::laemmel-verhoef.bgf--------------------
+UNDEFINED generic_formal_parameter_selector_name
+UNDEFINED block_statement_identifier
+UNDEFINED pragma_argument_identifier
+UNDEFINED label_statement_identifier
+UNDEFINED library_unit_name
+UNDEFINED generic_procedure_name
+UNDEFINED protected_identifier
+UNDEFINED discriminant_direct_name
+UNDEFINED package_instance_name
+UNDEFINED static_simple_expression
+UNDEFINED subprogram_name
+UNDEFINED task_identifier
+UNDEFINED block_identifier
+UNDEFINED character_literal
+UNDEFINED restriction_parameter_identifier
+UNDEFINED object_name
+UNDEFINED procedure_prefix
+UNDEFINED numeric_literal
+UNDEFINED component_local_name
+UNDEFINED loop_name
+UNDEFINED ancestor_subtype_indication
+UNDEFINED component_selector_name
+UNDEFINED loop_identifier
+UNDEFINED boolean_expression
+UNDEFINED discriminant_selector_name
+UNDEFINED static_expression
+UNDEFINED task_name
+UNDEFINED restriction_identifier
+UNDEFINED parent_subtype_indication
+UNDEFINED label_name
+UNDEFINED package_name
+UNDEFINED function_prefix
+UNDEFINED entry_direct_name
+UNDEFINED delay_expression
+UNDEFINED first_subtype_local_name
+UNDEFINED identifier
+UNDEFINED entry_identifier
+UNDEFINED function_name
+UNDEFINED formal_parameter_selector_name
+UNDEFINED string_literal
+UNDEFINED exception_name
+UNDEFINED procedure_name
+UNDEFINED variable_name
+UNDEFINED callable_entity_name
+UNDEFINED renamespackage_name
+UNDEFINED generic_package_name
+UNDEFINED discrete_subtype_indication
+UNDEFINED entry_name
+UNDEFINED loop_statement_identifier
+UNDEFINED subtype_name
+UNDEFINED generic_function_name
+--------------------ada::lncs-2219.bgf--------------------
+UNDEFINED generic_formal_parameter_selector_name
+UNDEFINED block_statement_identifier
+UNDEFINED pragma_argument_identifier
+UNDEFINED label_statement_identifier
+UNDEFINED library_unit_name
+UNDEFINED generic_procedure_name
+UNDEFINED protected_identifier
+UNDEFINED other_control_function
+UNDEFINED discriminant_direct_name
+UNDEFINED package_instance_name
+UNDEFINED static_simple_expression
+UNDEFINED non_end_of_line_character
+UNDEFINED subprogram_name
+UNDEFINED task_identifier
+UNDEFINED block_identifier
+UNDEFINED restriction_parameter_identifier
+UNDEFINED object_name
+UNDEFINED procedure_prefix
+UNDEFINED component_local_name
+UNDEFINED loop_name
+UNDEFINED space_character
+UNDEFINED ancestor_subtype_indication
+UNDEFINED digit
+UNDEFINED component_selector_name
+UNDEFINED loop_identifier
+UNDEFINED special_character
+UNDEFINED boolean_expression
+UNDEFINED discriminant_selector_name
+UNDEFINED static_expression
+UNDEFINED task_name
+UNDEFINED restriction_identifier
+UNDEFINED parent_subtype_indication
+UNDEFINED label_name
+UNDEFINED non_quotation_mark_graphic_character
+UNDEFINED package_name
+UNDEFINED function_prefix
+UNDEFINED entry_direct_name
+UNDEFINED delay_expression
+UNDEFINED underline
+UNDEFINED first_subtype_local_name
+UNDEFINED entry_identifier
+UNDEFINED function_name
+UNDEFINED formal_parameter_selector_name
+UNDEFINED format_effector
+UNDEFINED identifier_letter
+UNDEFINED exception_name
+UNDEFINED procedure_name
+UNDEFINED variable_name
+UNDEFINED callable_entity_name
+UNDEFINED generic_package_name
+UNDEFINED discrete_subtype_indication
+UNDEFINED entry_name
+UNDEFINED loop_statement_identifier
+UNDEFINED subtype_name
+UNDEFINED generic_function_name
+--------------------ada::lncs-4348.bgf--------------------
+UNDEFINED letter_uppercase
+UNDEFINED number_letter
+UNDEFINED letter_other
+UNDEFINED punctuation_connector
+UNDEFINED letter_lowercase
+UNDEFINED letter_modifier
+UNDEFINED underline
+UNDEFINED letter_titlecase
+UNDEFINED graphic_character
+UNDEFINED mark_non_spacing
+UNDEFINED number_decimal
+UNDEFINED mark_spacing_combining
+UNDEFINED other_format
+--------------------ada::cordy-hyaric.bgf--------------------
+UNDEFINED SPOFF
+UNDEFINED decimal_literal
+UNDEFINED NL
+UNDEFINED charlit
+UNDEFINED IN
+UNDEFINED id
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED EX
+UNDEFINED SP
+UNDEFINED based_literal
+--------------------c::iso-9899-1999.bgf--------------------
+UNDEFINED string-literal
+UNDEFINED enumeration-constant
+UNDEFINED identifier
+UNDEFINED constant
+--------------------c::iso-9899-tc2.bgf--------------------
+UNDEFINED string-literal
+UNDEFINED enumeration-constant
+UNDEFINED identifier
+UNDEFINED constant
+--------------------c::iso-9899-tc3.bgf--------------------
+UNDEFINED string-literal
+UNDEFINED enumeration-constant
+UNDEFINED identifier
+UNDEFINED constant
+--------------------c::antoniol.bgf--------------------
+UNDEFINED comment
+UNDEFINED ifdef_line
+UNDEFINED token
+UNDEFINED elsifdef_line
+UNDEFINED elsedef_line
+UNDEFINED endifdef_line
+UNDEFINED other_preprocessor_line
+UNDEFINED newline
+--------------------c::malton-dahn.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED NL
+UNDEFINED dotfloat
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED long
+UNDEFINED comment
+UNDEFINED key
+UNDEFINED SP
+UNDEFINED float
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED hex
+UNDEFINED id
+UNDEFINED integernumber
+--------------------c::cordy-malton-dahn.bgf--------------------
+UNDEFINED SPON
+UNDEFINED upperlowerid
+UNDEFINED token
+UNDEFINED TAB_1
+UNDEFINED stringlit
+UNDEFINED foreachid
+UNDEFINED preprocessor_line
+UNDEFINED SPOFF
+UNDEFINED NL
+UNDEFINED dotfloat
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED long
+UNDEFINED key
+UNDEFINED SP
+UNDEFINED float
+UNDEFINED whileeachid
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED hex
+UNDEFINED id
+UNDEFINED integernumber
+--------------------c::cordy-malton.bgf--------------------
+UNDEFINED long
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED key
+UNDEFINED SP
+UNDEFINED float
+UNDEFINED SPOFF
+UNDEFINED number
+UNDEFINED NL
+UNDEFINED dotfloat
+UNDEFINED EX
+UNDEFINED IN
+UNDEFINED hex
+UNDEFINED id
+UNDEFINED integernumber
+UNDEFINED charlit
+--------------------c::lankamp.bgf--------------------
+UNDEFINED StringConstant
+UNDEFINED IntegerConstant
+UNDEFINED HexadecimalConstant
+UNDEFINED FloatingPointConstant
+UNDEFINED CharacterConstant
+UNDEFINED Identifier
+--------------------cpp::iso-n2723.bgf--------------------
+UNDEFINED string-literal
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cpp::elges-cordy.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED EX_2
+UNDEFINED IN_2
+UNDEFINED charlit
+UNDEFINED key
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED hexnumber
+UNDEFINED id
+UNDEFINED integernumber
+--------------------cpp::iso-14882-1998.bgf--------------------
+UNDEFINED string-literal
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+UNDEFINED right-shift
+UNDEFINED literal
+UNDEFINED identifier
+UNDEFINED right-shift-assignment
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+UNDEFINED right-shift
+UNDEFINED literal
+UNDEFINED identifier
+UNDEFINED right-shift-assignment
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------cs::csharp-zaytsev.bgf--------------------
+UNDEFINED lex-csharp-extra/minus
+UNDEFINED lex-csharp-extra/bar
+UNDEFINED lex-csharp/literal
+UNDEFINED lex-csharp-extra/ampersand
+UNDEFINED lex-csharp-extra/plus
+UNDEFINED lex-csharp-extra/greater-than
+UNDEFINED lex-csharp/identifier
+UNDEFINED lex-csharp-extra/less-than
+--------------------cs::csharp-antoniol.bgf--------------------
+UNDEFINED comment
+UNDEFINED ifdef_line
+UNDEFINED token
+UNDEFINED elsifdef_line
+UNDEFINED elsedef_line
+UNDEFINED endifdef_line
+UNDEFINED other_preprocessor_line
+UNDEFINED newline
+--------------------cs::csharp-cordy.bgf--------------------
+UNDEFINED decimal_integer_literal
+UNDEFINED NL
+UNDEFINED charlit
+UNDEFINED IN
+UNDEFINED id
+UNDEFINED real_literal
+UNDEFINED stringlit
+UNDEFINED EX
+UNDEFINED key
+UNDEFINED hexadecimal_integer_literal
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+UNDEFINED literal
+UNDEFINED identifier
+--------------------dart::spec-0.01.bgf--------------------
+UNDEFINED EOF
+UNDEFINED declaredIndentifier
+UNDEFINED typeVariables
+--------------------dart::google.bgf--------------------
+UNDEFINED EOF
+--------------------dart::spec-0.05.bgf--------------------
+UNDEFINED constantObjectExpression
+UNDEFINED EOF
+UNDEFINED initializedIdentifierList
+UNDEFINED staticFinalDeclaration
+UNDEFINED constantExpression
+--------------------eiffel::bezault.bgf--------------------
+UNDEFINED Free_operator
+UNDEFINED Header_comment
+UNDEFINED Real
+UNDEFINED Bit_constant
+UNDEFINED Decimal_digit
+UNDEFINED Hexadecimal_constant
+UNDEFINED Letter
+UNDEFINED Comment
+UNDEFINED Character_constant
+UNDEFINED Manifest_string
+--------------------eiffel::cordy.bgf--------------------
+UNDEFINED character_constant
+UNDEFINED NL
+UNDEFINED bit_sequence
+UNDEFINED EX
+UNDEFINED comment
+UNDEFINED integer
+UNDEFINED IN
+UNDEFINED id
+UNDEFINED free_operator
+UNDEFINED string
+UNDEFINED real_number
+--------------------eiffel::iso-25436-2006.bgf--------------------
+UNDEFINED Blanks_or_tabs
+UNDEFINED Identifier
+UNDEFINED Real
+UNDEFINED Free_unary
+UNDEFINED Line_wrapping_part
+UNDEFINED Line_sequence
+UNDEFINED New_line
+UNDEFINED Simple_string
+UNDEFINED Free_binary
+UNDEFINED Character
+--------------------fortran::derricks.bgf--------------------
+UNDEFINED Rcon
+UNDEFINED OctalConstant
+UNDEFINED Ident
+UNDEFINED HexConstant
+UNDEFINED Dop
+UNDEFINED Character
+UNDEFINED EOS
+UNDEFINED BinaryConstant
+UNDEFINED Label
+UNDEFINED StartCommentBlock
+UNDEFINED ScalarIntLiteralConstant
+UNDEFINED Icon
+UNDEFINED Scon
+UNDEFINED Letter
+--------------------fortran::waite-cordy.bgf--------------------
+UNDEFINED TAB_9
+UNDEFINED TAB_7
+UNDEFINED TAB_2
+UNDEFINED SPOFF
+UNDEFINED EX_6
+UNDEFINED EX_2
+UNDEFINED IN_6
+UNDEFINED IN_2
+UNDEFINED newline
+UNDEFINED Fcon
+UNDEFINED Pcon
+UNDEFINED Dop
+UNDEFINED id
+UNDEFINED SPON
+UNDEFINED Zcon
+UNDEFINED Ocon
+UNDEFINED Icon
+UNDEFINED comment
+UNDEFINED SP
+UNDEFINED Scon
+UNDEFINED Hcon
+UNDEFINED Xcon
+UNDEFINED RDcon
+UNDEFINED Bcon
+--------------------java::java-1-jls-impl.bgf--------------------
+UNDEFINED Identifier
+UNDEFINED IntegerLiteral
+UNDEFINED BooleanLiteral
+UNDEFINED CharacterLiteral
+UNDEFINED FloatingPointLiteral
+UNDEFINED StringLiteral
+UNDEFINED NullLiteral
+--------------------java::java-1-jls-read.bgf--------------------
+UNDEFINED Identifier
+UNDEFINED IntegerLiteral
+UNDEFINED BooleanLiteral
+UNDEFINED CharacterLiteral
+UNDEFINED FloatingPointLiteral
+UNDEFINED StringLiteral
+UNDEFINED NullLiteral
+--------------------java::java-2-jls-impl.bgf--------------------
+UNDEFINED CharacterLiteral
+UNDEFINED Identifier
+UNDEFINED FloatingPointLiteral
+UNDEFINED StringLiteral
+UNDEFINED IntegerLiteral
+UNDEFINED NullLiteral
+UNDEFINED BooleanLiteral
+--------------------java::java-2-jls-read.bgf--------------------
+UNDEFINED Identifier
+UNDEFINED IntegerLiteral
+UNDEFINED BooleanLiteral
+UNDEFINED CharacterLiteral
+UNDEFINED FloatingPointLiteral
+UNDEFINED StringLiteral
+UNDEFINED NullLiteral
+--------------------java::java-5-jls-impl.bgf--------------------
+UNDEFINED CharacterLiteral
+UNDEFINED Identifier
+UNDEFINED FloatingPointLiteral
+UNDEFINED StringLiteral
+UNDEFINED IntegerLiteral
+UNDEFINED NullLiteral
+UNDEFINED BooleanLiteral
+--------------------java::java-5-jls-read.bgf--------------------
+UNDEFINED Identifier
+UNDEFINED IntegerLiteral
+UNDEFINED BooleanLiteral
+UNDEFINED CharacterLiteral
+UNDEFINED FloatingPointLiteral
+UNDEFINED StringLiteral
+UNDEFINED NullLiteral
+--------------------java::java-1-cordy-guo.bgf--------------------
+UNDEFINED stringlit
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED id
+--------------------java::java-4-sdf.bgf--------------------
+UNDEFINED DoubleLiteral
+UNDEFINED HexIntegerLiteral
+UNDEFINED OctalLongLiteral
+UNDEFINED CharacterLiteral
+UNDEFINED FloatingPointLiteral
+UNDEFINED NatCon
+UNDEFINED StringLiteral
+UNDEFINED IfThenElseStatementNoShortIf
+UNDEFINED DecimalIntegerLiteral
+UNDEFINED DecimalLongLiteral
+UNDEFINED OctalIntegerLiteral
+UNDEFINED HexLongLiteral
+UNDEFINED ForStatementNoShortIf
+UNDEFINED NullLiteral
+UNDEFINED BooleanLiteral
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED id
+--------------------modula::sdf.bgf--------------------
+UNDEFINED TextLiteral
+UNDEFINED Literal
+--------------------modula::src-052.bgf--------------------
+UNDEFINED TypeID
+UNDEFINED UtherChar
+UNDEFINED RepeatStmt
+UNDEFINED Expt
+--------------------modula::dagenais-cordy.bgf--------------------
+UNDEFINED stringlit
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED Number
+UNDEFINED IN
+UNDEFINED id
+--------------------xpath::w3c-xpath1.bgf--------------------
+UNDEFINED QName
+UNDEFINED FunctionName
+UNDEFINED NCName
+UNDEFINED S
+UNDEFINED Literal
+--------------------assembly::delphi.bgf--------------------
+UNDEFINED NL
+UNDEFINED sign
+UNDEFINED SPON
+UNDEFINED end_struct
+UNDEFINED anynumber
+UNDEFINED stringlit
+UNDEFINED key
+UNDEFINED colon
+UNDEFINED SP
+UNDEFINED asmlbl
+UNDEFINED id
+UNDEFINED SPOFF
+UNDEFINED number
+UNDEFINED integernumber
+UNDEFINED label_id
+UNDEFINED space
+UNDEFINED charlit
+--------------------basic::vb6-cordy.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED EX
+UNDEFINED newline
+UNDEFINED TAB
+UNDEFINED octnumber
+UNDEFINED key
+UNDEFINED SP
+UNDEFINED number
+UNDEFINED vbcomment
+UNDEFINED datelit
+UNDEFINED IN
+UNDEFINED hexnumber
+UNDEFINED returncode
+UNDEFINED id
+--------------------bibtex::bibtex-1.2.bgf--------------------
+UNDEFINED SchoolEntry
+UNDEFINED JournalEntry
+UNDEFINED InstitutionEntry
+UNDEFINED PublisheredEntry
+UNDEFINED EditoredEntry
+UNDEFINED NotedEntry
+--------------------dot::palies.bgf--------------------
+UNDEFINED Double
+--------------------dot::rascal-concrete.bgf--------------------
+UNDEFINED Id
+UNDEFINED LAYOUT
+--------------------html::cordy.bgf--------------------
+UNDEFINED NL
+UNDEFINED SP
+UNDEFINED SPON
+UNDEFINED id
+UNDEFINED punctuation
+UNDEFINED token
+UNDEFINED fileref
+UNDEFINED EX
+UNDEFINED SPOFF
+UNDEFINED url
+UNDEFINED number
+UNDEFINED stringlit
+UNDEFINED IN
+UNDEFINED x_id
+--------------------html::guyard.bgf--------------------
+UNDEFINED AContent
+UNDEFINED FormContent
+UNDEFINED MapElement
+--------------------javascript::synytskyy-cordy.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED comment
+UNDEFINED SPOFF
+UNDEFINED number
+UNDEFINED js_regexp
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED IN
+UNDEFINED js_hex_number
+UNDEFINED id
+UNDEFINED charlit
+--------------------occam::mu-mitchell.bgf--------------------
+UNDEFINED string-literal
+UNDEFINED literal
+UNDEFINED identifier
+--------------------occam::mu-srour.bgf--------------------
+UNDEFINED Operand
+--------------------pascal::delphi.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED SP
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED hexnumber
+UNDEFINED id
+--------------------pascal::delphipp.bgf--------------------
+UNDEFINED SPON
+UNDEFINED token
+UNDEFINED stringlit
+UNDEFINED hexnumber
+UNDEFINED EOL
+UNDEFINED key
+UNDEFINED id
+UNDEFINED SPOFF
+UNDEFINED number
+UNDEFINED space
+UNDEFINED charlit
+--------------------pascal::object.bgf--------------------
+UNDEFINED SPON
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED SP
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED id
+--------------------uml::extended.bgf--------------------
+UNDEFINED Key
+UNDEFINED Constraint
+--------------------uml::uml2.bgf--------------------
+UNDEFINED ParameterableClassifier
+UNDEFINED Type
+UNDEFINED TemplateableClassifier
+UNDEFINED UnlimitedNatural
+--------------------uml::umldi-2.0.bgf--------------------
+UNDEFINED Double
+UNDEFINED PresentationElement
+--------------------uml::umldi-mm.bgf--------------------
+UNDEFINED Feature
+--------------------xml::zhang-cordy.bgf--------------------
+UNDEFINED charref
+UNDEFINED token
+UNDEFINED dname
+UNDEFINED stringlit
+UNDEFINED comment
+UNDEFINED EX
+UNDEFINED IN
+UNDEFINED newline
+UNDEFINED name
+UNDEFINED regexp
+UNDEFINED space
+UNDEFINED charlit
+--------------------logo::sdf.bgf--------------------
+UNDEFINED Formal
+UNDEFINED Integer
+UNDEFINED QuotedId
+UNDEFINED Color
+--------------------php::cordy.bgf--------------------
+UNDEFINED SPON
+UNDEFINED token
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED FL
+UNDEFINED Hexa
+UNDEFINED NL
+UNDEFINED EX
+UNDEFINED charlit
+UNDEFINED Octa
+UNDEFINED key
+UNDEFINED SP
+UNDEFINED MagicConstant
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED CommandString
+UNDEFINED id
+--------------------python::indent-cordy.bgf--------------------
+UNDEFINED comment
+UNDEFINED SP
+UNDEFINED token
+UNDEFINED tab
+UNDEFINED newline
+UNDEFINED space
+--------------------python::sorochan-cordy.bgf--------------------
+UNDEFINED SPON
+UNDEFINED longstringlit
+UNDEFINED stringlit
+UNDEFINED SPOFF
+UNDEFINED pointfloat
+UNDEFINED hexinteger
+UNDEFINED EX
+UNDEFINED newline
+UNDEFINED longcharlit
+UNDEFINED charlit
+UNDEFINED comment
+UNDEFINED number
+UNDEFINED IN
+UNDEFINED octinteger
+UNDEFINED id
+UNDEFINED integernumber
+--------------------markup::cml.bgf--------------------
+UNDEFINED _StringBuiltin
+--------------------markup::cnf.bgf--------------------
+UNDEFINED Comment
+UNDEFINED Number
+UNDEFINED Prologue
+UNDEFINED Disjunct
+--------------------markup::csv-rascal-concrete.bgf--------------------
+UNDEFINED UQStr
+UNDEFINED EOL
+UNDEFINED QStr
+--------------------markup::kml.bgf--------------------
+UNDEFINED Double
+--------------------markup::json-rascal-concrete.bgf--------------------
+UNDEFINED StringLiteral
+UNDEFINED NumericLiteral
+--------------------markup::json-zaytsev-concrete.bgf--------------------
+UNDEFINED DoubleQuotedString
+UNDEFINED Digits
+--------------------markup::pnml-arbitrarydeclarations.bgf--------------------
+UNDEFINED Sort
+UNDEFINED SortDeclaration.content
+UNDEFINED Declaration.content
+UNDEFINED OperatorDeclaration.content
+UNDEFINED anyElement
+--------------------markup::pnml-booleans.bgf--------------------
+UNDEFINED Operator.content
+UNDEFINED BuiltInOperator.content
+UNDEFINED BuiltInConstant.content
+--------------------markup::pnml-conventions.bgf--------------------
+UNDEFINED annotationstandard.content
+--------------------markup::pnml-cyclicenumerations.bgf--------------------
+UNDEFINED FiniteEnumeration.content
+UNDEFINED BuiltInOperator.content
+--------------------markup::r2ml.bgf--------------------
+UNDEFINED Vocabulary/VocBuiltin/ExternalVocabulary
+UNDEFINED Rules/ReactionRule
+UNDEFINED Rules/ProductionRule
+UNDEFINED Rules/DerivationRule
+UNDEFINED Vocabulary/VocBasic/Vocabulary
+UNDEFINED Rules/IntegrityRule
+--------------------markup::pnml-finiteenumerations.bgf--------------------
+UNDEFINED OperatorDeclaration.content
+--------------------markup::pnml-finiteintranges.bgf--------------------
+UNDEFINED BuiltInConstant.content
+UNDEFINED BuiltInOperator.content
+--------------------markup::pnml-hlcorestructure.bgf--------------------
+UNDEFINED Sort
+UNDEFINED Term
+UNDEFINED Declarations
+UNDEFINED simpletextlabel.content
+--------------------markup::pnml-integers.bgf--------------------
+UNDEFINED BuiltInConstant.content
+UNDEFINED BuiltInOperator.content
+--------------------markup::pnml-lists.bgf--------------------
+UNDEFINED Sort
+UNDEFINED BuiltInConstant.content
+UNDEFINED BuiltInOperator.content
+--------------------markup::pnml-multisets.bgf--------------------
+UNDEFINED Sort
+UNDEFINED MultisetOperator.content
+UNDEFINED BuiltInOperator.content
+--------------------markup::pnml-partitions.bgf--------------------
+UNDEFINED Sort
+UNDEFINED Term
+UNDEFINED SortDeclaration.content
+UNDEFINED BuiltInOperator.content
+UNDEFINED OperatorDeclaration.content
+--------------------markup::pnml-strings.bgf--------------------
+UNDEFINED BuiltInOperator.content
+UNDEFINED BuiltInConstant.content
+--------------------markup::svg-palies.bgf--------------------
+UNDEFINED Double
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+UNDEFINED CSS
+UNDEFINED EOF
+UNDEFINED html-table-attributes
+UNDEFINED math-block
+UNDEFINED html-cell-attributes
+UNDEFINED wgHtmlEntities
+UNDEFINED inline-html
+UNDEFINED LEGAL_URL_ENTITY
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+UNDEFINED whitespace
+UNDEFINED line_break
+UNDEFINED label_extension
+UNDEFINED label
+UNDEFINED style
+UNDEFINED text_without_consecutive_equal_braces
+UNDEFINED Text
+--------------------markup::wiki-simple.bgf--------------------
+UNDEFINED PageName
+UNDEFINED MWWord
+--------------------fl::antlr.bgf--------------------
+UNDEFINED INT
+UNDEFINED ID
+UNDEFINED NEWLINE
+--------------------fl::dcg.bgf--------------------
+UNDEFINED int
+UNDEFINED name
+UNDEFINED newline
+--------------------fl::python.bgf--------------------
+UNDEFINED Literal
+UNDEFINED StringEnd
+--------------------fl::rascal-a.bgf--------------------
+UNDEFINED str
+--------------------fl::rascal-c.bgf--------------------
+UNDEFINED Int
+UNDEFINED Name
+--------------------fl::rascal.bgf--------------------
+UNDEFINED Int
+UNDEFINED Name
+UNDEFINED Newline
+--------------------fl::sdf.bgf--------------------
+UNDEFINED Int
+UNDEFINED Name
+UNDEFINED Newline
+--------------------fl::txl.bgf--------------------
+UNDEFINED id
+UNDEFINED number
+UNDEFINED newline
+--------------------metasyntax::txl.bgf--------------------
+UNDEFINED token
+UNDEFINED TAB
+UNDEFINED stringlit
+UNDEFINED lengthrule
+UNDEFINED key
+UNDEFINED comment
+UNDEFINED SP
+UNDEFINED TAB_24
+UNDEFINED NL
+UNDEFINED special
+UNDEFINED EX
+UNDEFINED TAB_16
+UNDEFINED IN
+UNDEFINED id
+--------------------metasyntax::ebnf-iso-1.bgf--------------------
+UNDEFINED syntactic-factor
+--------------------metasyntax::ebnf-iso-2.bgf--------------------
+UNDEFINED decimal_digit
+UNDEFINED character
+UNDEFINED letter
+--------------------metasyntax::ebnf-iso-3.bgf--------------------
+UNDEFINED DIGIT
+UNDEFINED CHARACTER
+UNDEFINED LETTER
+--------------------metasyntax::lll-kort.bgf--------------------
+UNDEFINED literal
+UNDEFINED ident
+--------------------metasyntax::lll-ldta.bgf--------------------
+UNDEFINED literal
+UNDEFINED sort
+--------------------metasyntax::yacc-sdf.bgf--------------------
+UNDEFINED Literal
+UNDEFINED Terminal
+UNDEFINED NonTerminal
+UNDEFINED C-code
+UNDEFINED Extra-C-code
+UNDEFINED C-declarations
+UNDEFINED String
+--------------------metasyntax::s-expressions.bgf--------------------
+UNDEFINED QuotedString
+UNDEFINED Token
+UNDEFINED Raw
+UNDEFINED Base64Char
+UNDEFINED HexDigit
+--------------------metasyntax::yacc-txl.bgf--------------------
+UNDEFINED NL
+UNDEFINED token
+UNDEFINED EX
+UNDEFINED stringlit
+UNDEFINED IN
+UNDEFINED key
+UNDEFINED SP
+UNDEFINED id
+UNDEFINED number
+UNDEFINED yac_keyword
+UNDEFINED charlit
+--------------------metasyntax::aterms-rascal.bgf--------------------
+UNDEFINED IdCon
+UNDEFINED NatCon
+UNDEFINED StrCon
+--------------------metasyntax::box-rascal.bgf--------------------
+UNDEFINED WhitespaceAndComment
+UNDEFINED NatCon
+UNDEFINED StrCon
+--------------------metasyntax::sdf-rascal.bgf--------------------
+UNDEFINED Sort
+UNDEFINED StrCon
+UNDEFINED SingleQuotedStrCon
+UNDEFINED NumChar
+UNDEFINED ShortChar
+UNDEFINED ModuleId
+UNDEFINED IdCon
+UNDEFINED NatCon
+--------------------hats::abs.bgf--------------------
+UNDEFINED RIGHT
+UNDEFINED LET
+UNDEFINED DOTORIGINAL
+UNDEFINED RBRACKET
+UNDEFINED BAR
+UNDEFINED ADDS
+UNDEFINED MOVECOGTO
+UNDEFINED DEF
+UNDEFINED OR
+UNDEFINED HASINTERFACE
+UNDEFINED HASMETHOD
+UNDEFINED RPAREN
+UNDEFINED ORIGINAL
+UNDEFINED OPTFEATURES
+UNDEFINED USES
+UNDEFINED AFTER
+UNDEFINED EXCLUDE
+UNDEFINED AND
+UNDEFINED EXPORT
+UNDEFINED IMPLEMENTS
+UNDEFINED SQL
+UNDEFINED DATA
+UNDEFINED FROM
+UNDEFINED IMPORT
+UNDEFINED CRITICAL
+UNDEFINED CORE
+UNDEFINED PLUS
+UNDEFINED DELTA
+UNDEFINED DURATION
+UNDEFINED TRUE
+UNDEFINED LT
+UNDEFINED NULL
+UNDEFINED NEW
+UNDEFINED SKIP
+UNDEFINED Attributes
+UNDEFINED NEGATION
+UNDEFINED STRINGLITERAL
+UNDEFINED FATHER
+UNDEFINED COG
+UNDEFINED CLASS
+UNDEFINED LBRACE
+UNDEFINED ASSERT
+UNDEFINED REQUIRE
+UNDEFINED PRODUCTLINE
+UNDEFINED COLON
+UNDEFINED UNTIL
+UNDEFINED USCORE
+UNDEFINED WHEN
+UNDEFINED TYPE
+UNDEFINED ELSE
+UNDEFINED GET
+UNDEFINED AWAIT
+UNDEFINED RETURN
+UNDEFINED MULT
+UNDEFINED CASE
+UNDEFINED ORDER
+UNDEFINED IS
+UNDEFINED JOIN
+UNDEFINED DOT
+UNDEFINED IN
+UNDEFINED VALUES
+UNDEFINED LOC
+UNDEFINED IF
+UNDEFINED INTERFACE
+UNDEFINED ALLOF
+UNDEFINED TYPE_IDENTIFIER_OLD
+UNDEFINED CONCAT
+UNDEFINED GUARDAND
+UNDEFINED WHILE
+UNDEFINED OROR
+UNDEFINED FALSE
+UNDEFINED IFIN
+UNDEFINED RBRACE
+UNDEFINED SUBLOC
+UNDEFINED DISTINCT
+UNDEFINED SELECT
+UNDEFINED IFOUT
+UNDEFINED REBIND
+UNDEFINED COUNT
+UNDEFINED ASSIGN
+UNDEFINED GT
+UNDEFINED ROOT
+UNDEFINED MOD
+UNDEFINED Component
+UNDEFINED COREFEATURES
+UNDEFINED MODIFIES
+UNDEFINED RARROW
+UNDEFINED PRODUCT
+UNDEFINED UPDATE
+UNDEFINED WHERE
+UNDEFINED LBRACKET
+UNDEFINED END
+UNDEFINED INSERT
+UNDEFINED COMMA
+UNDEFINED NOT
+UNDEFINED EQ
+UNDEFINED ANDAND
+UNDEFINED HASFIELD
+UNDEFINED NOTEQ
+UNDEFINED QMARK
+UNDEFINED THIS
+UNDEFINED ONEOF
+UNDEFINED IMPLIES
+UNDEFINED OPT
+UNDEFINED DESC
+UNDEFINED SEMICOLON
+UNDEFINED PORT
+UNDEFINED TO
+UNDEFINED EXTENDS
+UNDEFINED DIV
+UNDEFINED SQLSTRINGLITERAL
+UNDEFINED MODULE
+UNDEFINED INTO
+UNDEFINED GROUP
+UNDEFINED PRIME
+UNDEFINED GTEQ
+UNDEFINED EQEQ
+UNDEFINED BY
+UNDEFINED ASC
+UNDEFINED MINUS
+UNDEFINED REMOVES
+UNDEFINED SET
+UNDEFINED Comment
+UNDEFINED BANG
+UNDEFINED LTEQ
+UNDEFINED AS
+UNDEFINED EXTENSION
+UNDEFINED LPAREN
+UNDEFINED THEN
+UNDEFINED SUSPEND
+UNDEFINED Constraints
+UNDEFINED EQUIV
+UNDEFINED LEFT
+UNDEFINED BUILTIN
+--------------------metamodels::ATL.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::Agate.bgf--------------------
+UNDEFINED Vulnerability
+UNDEFINED Means
+--------------------metamodels::AnyLogic.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::BPEL.bgf--------------------
+UNDEFINED XSDDOMElement
+UNDEFINED EString
+UNDEFINED QName
+UNDEFINED EInt
+UNDEFINED Value
+UNDEFINED DOMNode
+UNDEFINED EBooleanObject
+UNDEFINED DOMAttr
+UNDEFINED EJavaObject
+UNDEFINED EBoolean
+UNDEFINED OperationType
+UNDEFINED XSDDOMDocument
+--------------------metamodels::BPMN.bgf--------------------
+UNDEFINED ID
+--------------------metamodels::BusinessEntityModel.bgf--------------------
+UNDEFINED BusinessEntityPropertySet
+--------------------metamodels::ClassicModels.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::Cocus.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED date
+UNDEFINED unsignedLong
+--------------------metamodels::DSL.bgf--------------------
+UNDEFINED PrimitiveTypes/String
+UNDEFINED PrimitiveTypes/Boolean
+UNDEFINED PrimitiveTypes/Integer
+--------------------metamodels::Conference.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED date
+UNDEFINED unsignedLong
+--------------------metamodels::DSLModel.bgf--------------------
+UNDEFINED PrimitiveTypes/Double
+UNDEFINED PrimitiveTypes/String
+UNDEFINED PrimitiveTypes/Boolean
+UNDEFINED PrimitiveTypes/Integer
+--------------------metamodels::DSLtools.bgf--------------------
+UNDEFINED PrimitiveTypes/String
+UNDEFINED PrimitiveTypes/Boolean
+UNDEFINED PrimitiveTypes/Integer
+--------------------metamodels::DXF.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::DiagramInterchange.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::EXPRESS.bgf--------------------
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASpecializedType
+UNDEFINED Expressions/UnaryOperator
+UNDEFINED Instances/EntityName
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AConstant
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AAliasVariable
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ADomainRole
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AEnumerationType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ALISTType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASelectType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AVariableType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3APartialEntityType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AAttribute
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASchemaElement
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AAGGREGATEType
+UNDEFINED MOF/Integer
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AEntityInstance
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AInverseAttribute
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AInVariable
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ANamedType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AScopedId
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3AQueryVariable
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3ANamedVariable
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3APartialEntityValue
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AProcedure
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AProcedureCall
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASizeConstraint
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AEntityType
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AActualDataType
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AEnumerationItem
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AParameterType
+UNDEFINED MOF/Boolean
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ARelationship
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AVARVariable
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AActualStructureConstraint
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AConcreteValue
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AAttributeType
+UNDEFINED Core/ExpressText
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3ASingleEntityValue
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASingleEntityType
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AArrayBound
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3ASimpleValue
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASchema
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AFunctionResult
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ARedeclaration
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3ASkipStatement
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3AActualParameter
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ABAGType
+UNDEFINED Rules/Express_metamodel%3A%3ARules%3A%3ASubtypeConstraint
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AExpression
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AParameter
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3ARepeatCount
+UNDEFINED Expressions/BinaryOperator
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AArrayMember
+UNDEFINED Rules/Express_metamodel%3A%3ARules%3A%3AGlobalRule
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AInstance
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3ACaseAction
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AEntityValue
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AListMember
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AVARExpression
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AScope
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AInvertibleAttribute
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ARangeRole
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AAliasStatement
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AVariable
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ADataType
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3ABagMember
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ANamedElement
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3APopulation
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3ARepeatStatement
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ARemark
+UNDEFINED Rules/Express_metamodel%3A%3ARules%3A%3AExtent
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AExplicitAttribute
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AIndeterminate
+UNDEFINED Rules/Express_metamodel%3A%3ARules%3A%3ANamedRule
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ARole
+UNDEFINED Core/Identifier
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ASETType
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AActualStructure
+UNDEFINED Rules/Express_metamodel%3A%3ARules%3A%3ASupertypeRule
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AInParameter
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AActualTypeConstraint
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3AMemberBinding
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AUniqueRule
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3AFunctionCall
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AARRAYType
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AAttributeValue
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AInterfacedElement
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AGenericType
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AStatementBlock
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AControlVariable
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3ALengthConstraint
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AFunction
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3AQueryExpression
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AConcreteType
+UNDEFINED Expressions/Express_metamodel%3A%3AExpressions%3A%3AAttributeBinding
+UNDEFINED Instances/Express_metamodel%3A%3AInstances%3A%3AGenericAggregate
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AAlgorithm
+UNDEFINED Algorithms/Express_metamodel%3A%3AAlgorithms%3A%3AStatement
+UNDEFINED Statements/Express_metamodel%3A%3AStatements%3A%3AEscapeStatement
+UNDEFINED Core/Express_metamodel%3A%3ACore%3A%3AInstantiableType
+--------------------metamodels::EXPRESSb.bgf--------------------
+UNDEFINED mof/Boolean
+UNDEFINED core/UniqueRule
+UNDEFINED instances/ConcreteValue
+UNDEFINED algorithms/VARVariable
+UNDEFINED rules/GlobalRule
+UNDEFINED instances/SingleEntityValue
+UNDEFINED core/ParameterType
+UNDEFINED core/LengthConstraint
+UNDEFINED core/ConcreteType
+UNDEFINED core/InstantiableType
+UNDEFINED algorithms/InVariable
+UNDEFINED core/DomainRole
+UNDEFINED instances/EntityInstance
+UNDEFINED algorithms/Variable
+UNDEFINED expressions/ActualParameter
+UNDEFINED core/AttributeType
+UNDEFINED core/SelectType
+UNDEFINED core/VariableType
+UNDEFINED algorithms/Algorithm
+UNDEFINED algorithms/Statement
+UNDEFINED rules/Extent
+UNDEFINED statements/AliasVariable
+UNDEFINED expressions/RepeatCount
+UNDEFINED instances/EntityName
+UNDEFINED instances/PartialEntityValue
+UNDEFINED algorithms/ActualDataType
+UNDEFINED core/InverseAttribute
+UNDEFINED core/ScopedId
+UNDEFINED core/Redeclaration
+UNDEFINED instances/BagMember
+UNDEFINED algorithms/ActualTypeConstraint
+UNDEFINED core/SizeConstraint
+UNDEFINED core/EntityType
+UNDEFINED algorithms/NamedVariable
+UNDEFINED instances/Indeterminate
+UNDEFINED instances/EnumerationItem
+UNDEFINED statements/RepeatStatement
+UNDEFINED core/Relationship
+UNDEFINED algorithms/Procedure
+UNDEFINED statements/ProcedureCall
+UNDEFINED core/InvertibleAttribute
+UNDEFINED core/Scope
+UNDEFINED core/RangeRole
+UNDEFINED algorithms/Function
+UNDEFINED algorithms/FunctionResult
+UNDEFINED rules/SubtypeConstraint
+UNDEFINED algorithms/ActualStructure
+UNDEFINED instances/GenericAggregate
+UNDEFINED algorithms/InParameter
+UNDEFINED core/Identifier
+UNDEFINED core/ExplicitAttribute
+UNDEFINED algorithms/ActualStructureConstraint
+UNDEFINED expressions/MemberBinding
+UNDEFINED instances/Constant
+UNDEFINED core/ArrayBound
+UNDEFINED core/SingleEntityType
+UNDEFINED core/Schema
+UNDEFINED statements/CaseAction
+UNDEFINED instances/SimpleValue
+UNDEFINED statements/ControlVariable
+UNDEFINED core/ExpressText
+UNDEFINED expressions/FunctionCall
+UNDEFINED instances/ListMember
+UNDEFINED core/Expression
+UNDEFINED statements/SkipStatement
+UNDEFINED core/Instance
+UNDEFINED statements/EscapeStatement
+UNDEFINED instances/ArrayMember
+UNDEFINED core/GenericType
+UNDEFINED core/InterfacedElement
+UNDEFINED expressions/UnaryOperator
+UNDEFINED instances/Population
+UNDEFINED algorithms/Parameter
+UNDEFINED rules/NamedRule
+UNDEFINED expressions/AttributeBinding
+UNDEFINED instances/EntityValue
+UNDEFINED expressions/BinaryOperator
+UNDEFINED rules/SupertypeRule
+UNDEFINED core/DataType
+UNDEFINED statements/VARExpression
+UNDEFINED core/NamedElement
+UNDEFINED mof/Integer
+UNDEFINED core/EnumerationType
+UNDEFINED expressions/QueryVariable
+UNDEFINED core/Remark
+UNDEFINED core/PartialEntityType
+UNDEFINED core/Attribute
+UNDEFINED core/SchemaElement
+UNDEFINED core/AGGREGATEType
+UNDEFINED statements/StatementBlock
+UNDEFINED instances/AttributeValue
+UNDEFINED core/Role
+UNDEFINED core/NamedType
+--------------------metamodels::GeoTrans.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::HPROF.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::IRL.bgf--------------------
+UNDEFINED IRLDeclarations/PropertyDefinition
+UNDEFINED Type
+UNDEFINED RuleSetDeclaration
+UNDEFINED IRLExpressions/LoopExpression
+UNDEFINED IRLRules/RuleVariable
+UNDEFINED Double
+UNDEFINED IRLExpressions/Expression
+UNDEFINED IRLRules/RuleAction
+UNDEFINED IRLDeclarations/VariableDeclaration
+UNDEFINED IRLExpressions/VariableExpression
+UNDEFINED IRLRules/Binding
+UNDEFINED Typed
+UNDEFINED IRLRules/RuleDefinition
+UNDEFINED RulesetElementDefinition
+UNDEFINED IRLDeclarations/RuleSetDeclaration
+UNDEFINED IRLExpressions/Iterator
+UNDEFINED IRLRules/RuleCondition
+UNDEFINED IRLRules/RulesetElementDefinition
+--------------------metamodels::M.bgf--------------------
+UNDEFINED Types/TypeReference
+UNDEFINED Expressions/ValueExpression
+UNDEFINED Double
+UNDEFINED Expressions/InExpression
+UNDEFINED Expressions/InitializationExpression
+UNDEFINED Expressions/Expression
+UNDEFINED Expressions/QueryExpression
+UNDEFINED Expressions/WhereExpression
+UNDEFINED Expressions/CollectionExpression
+UNDEFINED Types/Field
+UNDEFINED Types/DerivedType
+--------------------metamodels::Jess.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::KDM.bgf--------------------
+UNDEFINED code/PreprocessorDirective
+UNDEFINED core/KDMRelationship
+UNDEFINED data/ReferenceKey
+UNDEFINED kdm/KDMModel
+UNDEFINED code/Module
+UNDEFINED code/CallableKind
+UNDEFINED build/SymbolicLink
+UNDEFINED build/Supplier
+UNDEFINED data/AbstractDataElement
+UNDEFINED ui/UIEvent
+UNDEFINED conceptual/AbstractConceptualElement
+UNDEFINED code/ExportKind
+UNDEFINED action/AbstractActionRelationship
+UNDEFINED data/ColumnSet
+UNDEFINED code/Datatype
+UNDEFINED source/SourceRef
+UNDEFINED code/ControlElement
+UNDEFINED build/BuildStep
+UNDEFINED source/AbstractInventoryElement
+UNDEFINED kdm/TagDefinition
+UNDEFINED build/BuildDescription
+UNDEFINED code/ComputationalObject
+UNDEFINED code/ValueElement
+UNDEFINED source/SourceFile
+UNDEFINED data/DataEvent
+UNDEFINED platform/AbstractPlatformElement
+UNDEFINED platform/RuntimeResource
+UNDEFINED source/Image
+UNDEFINED event/Event
+UNDEFINED code/MacroKind
+UNDEFINED data/DataResource
+UNDEFINED event/State
+UNDEFINED build/Tool
+UNDEFINED event/AbstractEventElement
+UNDEFINED code/ItemUnit
+UNDEFINED kdm/Segment
+UNDEFINED code/IndexUnit
+UNDEFINED conceptual/ConceptualContainer
+UNDEFINED platform/DeployedResource
+UNDEFINED code/DataElement
+UNDEFINED code/Value
+UNDEFINED core/Integer
+UNDEFINED action/ActionElement
+UNDEFINED platform/PlatformEvent
+UNDEFINED data/AbstractContentElement
+UNDEFINED data/ComplexContentType
+UNDEFINED data/ContentItem
+UNDEFINED core/KDMEntity
+UNDEFINED platform/ResourceType
+UNDEFINED core/ModelElement
+UNDEFINED code/CodeItem
+UNDEFINED core/String
+UNDEFINED code/TemplateUnit
+UNDEFINED ui/UIResource
+UNDEFINED code/ParameterKind
+UNDEFINED platform/DeployedComponent
+UNDEFINED core/Boolean
+UNDEFINED code/MethodKind
+UNDEFINED code/StorableKind
+UNDEFINED build/AbstractBuildElement
+UNDEFINED kdm/Stereotype
+UNDEFINED ui/AbstractUIElement
+UNDEFINED code/AbstractCodeElement
+UNDEFINED code/ParameterUnit
+UNDEFINED event/Transition
+UNDEFINED data/UniqueKey
+UNDEFINED action/EntryFlow
+UNDEFINED structure/AbstractStructureElement
+UNDEFINED source/SourceRegion
+--------------------metamodels::KDMSimplified.bgf--------------------
+UNDEFINED KDMContainer
+UNDEFINED KDMRelationship
+UNDEFINED KDMGroup
+UNDEFINED KDMModel
+--------------------metamodels::Marte.bgf--------------------
+UNDEFINED BasicNFP_Types/NFP_Area
+UNDEFINED BasicNFP_Types/BurstPattern
+UNDEFINED MARTE_DesignModel/SRM/SW_Interaction/MutualExclusionResourceKind
+UNDEFINED MARTE_Foundations/NFPs/Unit
+UNDEFINED MARTE_DataTypes/NFP_NaturalInterval
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/ROM_Type
+UNDEFINED GRM_BasicTypes/PeriodicServerParameters
+UNDEFINED MARTE_DataTypes/NFP_FrequencyInterval
+UNDEFINED BasicNFP_Types/IrregularPattern
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/MemoryOrganization
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwCommunication/HwArbiter
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwCommunication/HwMedia
+UNDEFINED BasicNFP_Types/NFP_Length
+UNDEFINED BasicNFP_Types/NFP_Power
+UNDEFINED MARTE_Foundations/GRM/ProcessingResource
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/HwBranchPredictor
+UNDEFINED MARTE_Foundations/Time/Clock
+UNDEFINED MARTE_DesignModel/RTEMoCC/ConcurrencyKind
+UNDEFINED MARTE_DesignModel/HRM/HwPhysical/HwLayout/ConditionType
+UNDEFINED BasicNFP_Types/SporadicPattern
+UNDEFINED MARTE_Annexes/RSM/Tiler
+UNDEFINED BasicNFP_Types/NFP_DataTxRate
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwTiming/HwClock
+UNDEFINED BasicNFP_Types/NFP_CommonType
+UNDEFINED RS_Library/ShapeSpecification
+UNDEFINED MARTE_Foundations/GRM/Scheduler
+UNDEFINED MARTE_Foundations/Alloc/AllocationKind
+UNDEFINED GRM_BasicTypes/EDFParameters
+UNDEFINED MARTE_Foundations/Time/ClockType
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/PLD_Technology
+UNDEFINED MeasurementUnits/DataTxRateUnitKind
+UNDEFINED MARTE_Foundations/Time/TimedInstantObservation
+UNDEFINED MARTE_DesignModel/SRM/SW_Brokering/AccessPolicyKind
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/CacheType
+UNDEFINED ActivityEdge
+UNDEFINED MARTE_AnalysisModel/GQAM/GaWorkloadBehavior
+UNDEFINED MARTE_DesignModel/SRM/SW_Interaction/ConcurrentAccessProtocolKind
+UNDEFINED BasicNFP_Types/NFP_Energy
+UNDEFINED MARTE_AnalysisModel/GQAM/GaExecHost
+UNDEFINED MARTE_DesignModel/HRM/HwPhysical/HwLayout/CompnentState
+UNDEFINED BasicNFP_Types/NFP_Natural
+UNDEFINED BasicNFP_Types/NFP_Boolean
+UNDEFINED TimeLibrary/EventKind
+UNDEFINED TimeLibrary/TUK
+UNDEFINED MARTE_DesignModel/SRM/SW_Interaction/MessageResourceKind
+UNDEFINED MeasurementUnits/PowerUnitKind
+UNDEFINED Type
+UNDEFINED GRM_BasicTypes/PeriodicServerKind
+UNDEFINED MARTE_DataTypes/UtilityType
+UNDEFINED MARTE_DesignModel/SRM/SW_Interaction/QueuePolicyKind
+UNDEFINED MARTE_PrimitivesTypes/Real
+UNDEFINED MARTE_DesignModel/RTEMoCC/ExecutionKind
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwGeneral/HwResourceService
+UNDEFINED MARTE_Foundations/NFPs/ConstraintKind
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/HwRAM
+UNDEFINED MARTE_PrimitivesTypes/String
+UNDEFINED MARTE_DesignModel/SRM/SW_Interaction/NotificationKind
+UNDEFINED TimeLibrary/ClockedValueSpecification
+UNDEFINED BasicNFP_Types/NFP_DataSize
+UNDEFINED MARTE_AnalysisModel/GQAM/GaResourcesPlatform
+UNDEFINED MARTE_PrimitivesTypes/Boolean
+UNDEFINED MARTE_AnalysisModel/GQAM/GaScenario
+UNDEFINED MARTE_DataTypes/IntegerMatrix
+UNDEFINED MARTE_DataTypes/TransmModeKind
+UNDEFINED BasicNFP_Types/NFP_Frequency
+UNDEFINED MARTE_Foundations/GRM/ResourceUsage
+UNDEFINED MARTE_Annexes/VSL/Variables/VariableDirectionKind
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/PLD_Class
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/ISA_Type
+UNDEFINED MARTE_DataTypes/VSL_Expression
+UNDEFINED MARTE_DesignModel/RTEMoCC/SynchronizationKind
+UNDEFINED MARTE_DesignModel/SRM/SW_Concurrency/InterruptKind
+UNDEFINED BasicNFP_Types/NFP_Real
+UNDEFINED MARTE_Foundations/Alloc/ExecutionPlatformAllocationEnd
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/HWCache
+UNDEFINED GRM_BasicTypes/PoolingParameters
+UNDEFINED InvocationAction
+UNDEFINED MARTE_AnalysisModel/GQAM/LaxityKind
+UNDEFINED MARTE_DesignModel/HRM/HwPhysical/HwLayout/ComponentKind
+UNDEFINED BasicNFP_Types/NFP_String
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwCommunication/HwEndPoint
+UNDEFINED MARTE_DesignModel/HRM/HwPhysical/HwLayout/Env_Condition
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwStorageManager/HwMMU
+UNDEFINED MARTE_AnalysisModel/GQAM/GaStep
+UNDEFINED ExecutionSpecification
+UNDEFINED BasicNFP_Types/PeriodicPattern
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/HwProcessor
+UNDEFINED MARTE_Foundations/NFPs/NfpConstraint
+UNDEFINED MARTE_AnalysisModel/GQAM/GaTimingObs
+UNDEFINED BasicNFP_Types/StatisticalQualifierKind
+UNDEFINED BasicNFP_Types/BasicNFP_Types_DirectionKind
+UNDEFINED GRM_BasicTypes/FixedPriorityParameters
+UNDEFINED BasicNFP_Types/SourceKind
+UNDEFINED MARTE_PrimitivesTypes/UnlimitedNatural
+UNDEFINED MeasurementUnits/LengthUnitKind
+UNDEFINED MeasurementUnits/FrequencyUnitKind
+UNDEFINED GRM_BasicTypes/ProtectProtocolKind
+UNDEFINED MARTE_AnalysisModel/SAM/OptimallityCriterionKind
+UNDEFINED MARTE_DataTypes/IntegerInterval
+UNDEFINED RS_Library/TilerSpecification
+UNDEFINED MARTE_DataTypes/IntegerVector
+UNDEFINED MARTE_Foundations/GCM/BFeatureKind
+UNDEFINED MeasurementUnits/TimeUnitKind
+UNDEFINED BasicNFP_Types/NFP_BoundedDuration
+UNDEFINED MeasurementUnits/DataSizeUnitKind
+UNDEFINED MARTE_AnalysisModel/GQAM/GaWorkloadGenerator
+UNDEFINED MARTE_Foundations/GRM/Resource
+UNDEFINED MARTE_Foundations/GCM/DirectionKind
+UNDEFINED BasicNFP_Types/NFP_Integer
+UNDEFINED BasicNFP_Types/NFP_Percentage
+UNDEFINED MARTE_DesignModel/RTEMoCC/CallConcurrencyKind
+UNDEFINED MARTE_DataTypes/Realnterval
+UNDEFINED MARTE_Foundations/Alloc/AllocationNature
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/HwMemory
+UNDEFINED GRM_BasicTypes/SchedParameters
+UNDEFINED GRM_BasicTypes/SchedPolicyKind
+UNDEFINED MARTE_DesignModel/SRM/SW_Interaction/NotificationResourceKind
+UNDEFINED MARTE_DesignModel/RTEMoCC/PoolMgtPolicyKind
+UNDEFINED MARTE_AnalysisModel/GQAM/GaWorkloadEvent
+UNDEFINED MeasurementUnits/AreaUnitKind
+UNDEFINED TimeLibrary/TimeStandardKind
+UNDEFINED MeasurementUnits/EnergyUnitKind
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/Repl_Policy
+UNDEFINED MARTE_Foundations/GRM/ComputingResource
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/Timing
+UNDEFINED MARTE_PrimitivesTypes/DateTime
+UNDEFINED MARTE_PrimitivesTypes/Integer
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/HwISA
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwComputing/PLD_Organization
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwGeneral/HwResource
+UNDEFINED MARTE_Foundations/Alloc/ApplicationAllocationEnd
+UNDEFINED BasicNFP_Types/ArrivalPattern
+UNDEFINED BasicNFP_Types/ClosedPattern
+UNDEFINED MARTE_AnalysisModel/GQAM/GaEventTrace
+UNDEFINED TimeTypesLibrary/TimeNatureKind
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/WritePolicy
+UNDEFINED BasicNFP_Types/AperiodicPattern
+UNDEFINED MARTE_DesignModel/HRM/HwLogical/HwMemory/CacheStructure
+UNDEFINED BasicNFP_Types/NFP_DateTime
+UNDEFINED MARTE_Foundations/GRM/SchedulableResource
+UNDEFINED TimeTypesLibrary/TimeInterpretationKind
+UNDEFINED MARTE_AnalysisModel/GQAM/GaRequestedService
+UNDEFINED MARTE_Foundations/Time/ClockConstraint
+UNDEFINED BasicNFP_Types/NFP_Duration
+--------------------metamodels::MICRO.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLBasicDef.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLPrintingSetup.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLSimplified.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLStyles.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLWorkbookProp.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLWorksheetOpt.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeWord_WordprocessingMLBasicDef.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeWord_WordprocessingMLStyles.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSOfficeWord_WordprocessingMLTableElts.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSProject2.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSVisio_DatadiagramMLBasicDef.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSVisio_DatadiagramMLSimplified.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSVisio_DatadiagramMLTextFormat.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::MSVisio_DatadiagramMLXForm.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::Measure.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::Metrics.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::PASSI.bgf--------------------
+UNDEFINED Solution Domain/FIPA-platform Task
+UNDEFINED Solution Domain/FIPA-Platform Agent
+UNDEFINED Problem Domain/Scenario
+UNDEFINED Problem Domain/Requirement
+UNDEFINED Problem Domain/Ontology
+UNDEFINED Agency Domain/AIP
+UNDEFINED Problem Domain/Non functionnal Requirement
+UNDEFINED Agency Domain/Message
+UNDEFINED Agency Domain/Role
+UNDEFINED Agency Domain/Communication
+UNDEFINED Agency Domain/Agent
+UNDEFINED Agency Domain/Task
+UNDEFINED Agency Domain/Performative
+UNDEFINED Solution Domain/Service
+UNDEFINED Problem Domain/Ressource
+--------------------metamodels::ODP-IV.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::OpenConf.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED double
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+UNDEFINED time
+--------------------metamodels::PCS.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED double
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+UNDEFINED time
+--------------------metamodels::PRR.bgf--------------------
+UNDEFINED PRRExpressions/TypeExp
+UNDEFINED PRRExpressions/VariableExp
+UNDEFINED PRRExpressions/VariableDeclaration
+UNDEFINED PRRExpressions/LoopExp
+UNDEFINED PRRExpressions/Iterator
+UNDEFINED Double
+UNDEFINED OclExpression
+UNDEFINED PRRExpressions/OclExpression
+UNDEFINED PRRTypes/OclType
+UNDEFINED PRRExpressions/AllInstanceExp
+--------------------metamodels::ProMarte.bgf--------------------
+UNDEFINED Event
+UNDEFINED ResourceClassifier
+UNDEFINED ResourceInstanceSpecification
+UNDEFINED ResourceServiceClassifier
+UNDEFINED ResourceServiceInstanceSpecification
+--------------------metamodels::QVT.bgf--------------------
+UNDEFINED Real
+UNDEFINED UnlimitedNatural
+--------------------metamodels::RequisitePro.bgf--------------------
+UNDEFINED ContainedElt
+--------------------metamodels::SCADE.bgf--------------------
+UNDEFINED Char
+UNDEFINED Double
+--------------------metamodels::WebApplications_AbstractModel.bgf--------------------
+UNDEFINED Server/ServerPage
+UNDEFINED Client/ClientPage
+UNDEFINED Server/DesignTemplate
+UNDEFINED Server/BusinessLogic
+--------------------metamodels::WebApplications_ConceptualModel.bgf--------------------
+UNDEFINED Server/Renderer
+UNDEFINED Client/ClientPage
+UNDEFINED Server/LogicModule
+UNDEFINED Server/ServerPage
+UNDEFINED Server/UseCase
+UNDEFINED Server/ServerPageModule
+UNDEFINED Server/LogicElement
+UNDEFINED Server/Data
+UNDEFINED Server/DesignModule
+UNDEFINED Server/Link
+UNDEFINED Server/Processor
+UNDEFINED Server/Alternative
+--------------------metamodels::XAML-Perspective.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::XAML-ResourceDictionary.bgf--------------------
+UNDEFINED Double
+--------------------metamodels::cmt.owl.bgf--------------------
+UNDEFINED date
+UNDEFINED anyURI
+UNDEFINED unsignedLong
+--------------------metamodels::confOf.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED unsignedLong
+--------------------metamodels::confious.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED unsignedLong
+--------------------metamodels::crs_dr.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+--------------------metamodels::edas.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+--------------------metamodels::ekaw.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+--------------------metamodels::iasted.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+--------------------metamodels::paperdyne.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED double
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+UNDEFINED time
+--------------------metamodels::sbvrEclipse.bgf--------------------
+UNDEFINED integer
+--------------------metamodels::sbvrOMG.bgf--------------------
+UNDEFINED integer
+--------------------metamodels::sigkdd.owl.bgf--------------------
+UNDEFINED anyURI
+UNDEFINED double
+UNDEFINED dateTime
+UNDEFINED unsignedLong
+UNDEFINED time
+--------------------metamodels::MiningMart.bgf--------------------
+UNDEFINED DataRepresentation/MultiColumnFeature
+UNDEFINED DataRepresentation/FeatureAttribute
+UNDEFINED CaseRepresentation/Step
+UNDEFINED CaseRepresentation/Transformation
+UNDEFINED CaseRepresentation/DataObject
+UNDEFINED DataRepresentation/Value
+UNDEFINED SimplfiedMiningMart/DataType
+UNDEFINED CaseRepresentation/Parameter
+UNDEFINED DataRepresentation/Table
+UNDEFINED CaseRepresentation/ExecutionElement
+UNDEFINED CaseRepresentation/Operator
+UNDEFINED DataRepresentation/ColumnSet
+UNDEFINED DataRepresentation/BaseAttribute
+UNDEFINED CaseRepresentation/ParameterType
+UNDEFINED DataRepresentation/Concept
+UNDEFINED DataRepresentation/RelationShip
+UNDEFINED DataRepresentation/Column
+UNDEFINED SimplfiedMiningMart/Attribute
+UNDEFINED DataRepresentation/UserInput
+UNDEFINED DataRepresentation/Key
+UNDEFINED CaseRepresentation/TransformationGroup
+UNDEFINED SimplfiedMiningMart/Class
+UNDEFINED DataRepresentation/ForeignKey
+UNDEFINED CaseRepresentation/Case
+UNDEFINED DataRepresentation/DomainDataType
+--------------------ocl::expressions.bgf--------------------
+UNDEFINED Type
+UNDEFINED OperationExp
+UNDEFINED QueryExp
+--------------------ocl::operations.bgf--------------------
+UNDEFINED Double
+UNDEFINED OclExpression
+--------------------ocl::values.bgf--------------------
+UNDEFINED Type
+UNDEFINED CollectionValue
+UNDEFINED Double
+--------------------slps::cbgf-adt.bgf--------------------
+UNDEFINED XBGFScope
+UNDEFINED BGFProduction
+UNDEFINED BGFExpression
+--------------------slps::ldf-Readable.bgf--------------------
+UNDEFINED ID
+UNDEFINED timestamp
+UNDEFINED anyURI
+--------------------slps::ldf-v10.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v11.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v11.1-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v11.2-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v12.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v13.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v13.1-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v14.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v15.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v15.1-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v16.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v17.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v18.0-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v18.1-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v19.0-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v20.0-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v20.1-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v21.0-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v22.0-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v23.0-xsd.bgf--------------------
+UNDEFINED production
+--------------------slps::ldf-v3.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v4.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v5.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v6.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v7.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v7.1-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v8.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v8.1-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v9.0-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::ldf-v9.1-xsd.bgf--------------------
+UNDEFINED production
+UNDEFINED sampleType
+--------------------slps::slps-cbgf-adt.bgf--------------------
+UNDEFINED XBGFScope
+UNDEFINED BGFProduction
+UNDEFINED BGFExpression
+--------------------slps::slps-exbgf.bgf--------------------
+UNDEFINED unfoldY
+UNDEFINED atomicI
+UNDEFINED atomicH
+UNDEFINED unfoldV
+UNDEFINED shieldedD
+UNDEFINED massageC2S
+UNDEFINED foldY
+UNDEFINED atomicC
+UNDEFINED widen12S
+UNDEFINED massageO2C
+UNDEFINED massageC2O
+UNDEFINED extractV
+UNDEFINED widen12P
+UNDEFINED widen12O
+UNDEFINED promoteP2S
+UNDEFINED inlineYO
+UNDEFINED reextract
+UNDEFINED tempunfold
+UNDEFINED defineH
+UNDEFINED inlineYH
+UNDEFINED inlineYF
+UNDEFINED regroupRL
+UNDEFINED extractC
+UNDEFINED inlineY
+UNDEFINED inlineV
+UNDEFINED extract-twice
+UNDEFINED inlineU
+UNDEFINED redefineH
+UNDEFINED addX
+UNDEFINED massage12C
+UNDEFINED widenP2S
+UNDEFINED addV
+UNDEFINED narrowP21
+UNDEFINED massage-double
+UNDEFINED removeV
+UNDEFINED factor-out
+UNDEFINED renameN
+UNDEFINED unite-many
+UNDEFINED shielded
+UNDEFINED addH
+UNDEFINED pull-out
+UNDEFINED removeH
+UNDEFINED promoteY2S
+UNDEFINED chainX
+UNDEFINED chainV
+UNDEFINED deyaccifyH
+UNDEFINED yaccifyH
+UNDEFINED regroupLR
+UNDEFINED deyaccifyC
+UNDEFINED redefine
+UNDEFINED reextractY
+UNDEFINED massage1S2P
+UNDEFINED atomic
+UNDEFINED eliminate-many
+UNDEFINED massageS12P
+UNDEFINED metachangeT2N
+UNDEFINED unfold
+UNDEFINED narrowS21
+UNDEFINED double-inline
+UNDEFINED distributeV
+UNDEFINED narrowO21
+UNDEFINED massageOP2S
+UNDEFINED shieldedU
+UNDEFINED atomicV
+UNDEFINED introduceH
+UNDEFINED distributeH
+UNDEFINED reyaccify
+--------------------slps::slps-xbgf-adt.bgf--------------------
+UNDEFINED BGFProduction
+UNDEFINED BGFExpression
+--------------------slps::slps-xldf.bgf--------------------
+UNDEFINED simpleText
+UNDEFINED simpleTextElement
+UNDEFINED informative
+UNDEFINED frontList
+UNDEFINED lexicalSection
+UNDEFINED structuredSection
+UNDEFINED topSection
+UNDEFINED simpleFigure
+UNDEFINED generated
+UNDEFINED normative
+--------------------slps::slps-xoutcome.bgf--------------------
+UNDEFINED XBGFScope
+UNDEFINED BGFProduction
+UNDEFINED BGFExpression
+UNDEFINED BGFGrammar
+UNDEFINED XBGFCommand
+--------------------slps::xbgf-adt.bgf--------------------
+UNDEFINED BGFProduction
+UNDEFINED BGFExpression
+--------------------slps::xbgf-xoutcome.bgf--------------------
+UNDEFINED XBGFScope
+UNDEFINED BGFProduction
+UNDEFINED BGFExpression
+UNDEFINED BGFGrammar
+UNDEFINED XBGFCommand
+--------------------pico::rascal.bgf--------------------
+UNDEFINED Id
+UNDEFINED Natural
+UNDEFINED String
+--------------------pico::sdf.bgf--------------------
+UNDEFINED PICO-ID
+UNDEFINED StrCon
+UNDEFINED NatCon
+--------------------saf::concrete.bgf--------------------
+UNDEFINED Id
+UNDEFINED Number

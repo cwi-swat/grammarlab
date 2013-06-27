@@ -1,0 +1,813 @@
+--------------------ada::kellogg.bgf--------------------
+COLON ::= ":" ;
+TIC ::= "'" ;
+SEMI ::= ";" ;
+LPAREN ::= "(" ;
+PIPE ::= "|" ;
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+GT ::= ">" ;
+EQ ::= "=" ;
+PLUS ::= "+" ;
+DOT ::= "." ;
+RPAREN ::= ")" ;
+LT_ ::= "<" ;
+COMMA ::= "," ;
+CONCAT ::= "&" ;
+STAR ::= "*" ;
+DIV ::= "/" ;
+MINUS ::= "-" ;
+--------------------ada::kempe.bgf--------------------
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::lncs-2219.bgf--------------------
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::lncs-4348.bgf--------------------
+digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+colon ::= ":" ;
+unary_adding_operator ::= "+" | "-" ;
+orbar ::= "|" | "!" ;
+--------------------c::iso-9899-1999.bgf--------------------
+unary-operator ::= "&" | "*" | "+" | "-" | "~" | "!" ;
+--------------------c::iso-9899-tc2.bgf--------------------
+unary-operator ::= "&" | "*" | "+" | "-" | "~" | "!" ;
+--------------------c::iso-9899-tc3.bgf--------------------
+unary-operator ::= "&" | "*" | "+" | "-" | "~" | "!" ;
+--------------------c::malton-dahn.bgf--------------------
+slash ::= "/" | "\" | "." | ":" ;
+designator_assignment ::= ":" | "=" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+additive_operator ::= "+" | "-" ;
+--------------------c::cordy-malton.bgf--------------------
+slash ::= "/" | "\" | "." | ":" ;
+--------------------cpp::iso-n2723.bgf--------------------
+capture-default ::= "&" | "=" ;
+unary-operator ::= "*" | "&" | "+" | "-" | "!" | "~" ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+unary-operator ::= "*" | "&" | "+" | "-" | "!" | "~" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+empty-statement ::= ";" ;
+--------------------cs::csharp-cordy.bgf--------------------
+empty_statement ::= ";" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+empty-statement ::= ";" ;
+--------------------dart::spec-0.01.bgf--------------------
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+LETTER ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+negateOperator ::= "!" | "~" ;
+bitwiseOperator ::= "&" | "^" | "|" ;
+additiveOperator ::= "+" | "-" ;
+--------------------dart::google.bgf--------------------
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+negateOperator ::= "!" | "~" ;
+LETTER ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+bitwiseOperator ::= "&" | "^" | "|" ;
+additiveOperator ::= "+" | "-" ;
+--------------------dart::spec-0.05.bgf--------------------
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+negateOperator ::= "!" | "~" ;
+bitwiseOperator ::= "&" | "^" | "|" ;
+additiveOperator ::= "+" | "-" ;
+--------------------eiffel::bezault.bgf--------------------
+Sign ::= "+" | "-" ;
+--------------------eiffel::cordy.bgf--------------------
+Sign ::= "+" | "-" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" | "_" ;
+Sign ::= "+" | "-" ;
+Attachment_mark ::= "?" | "!" ;
+Integer_base_letter ::= "b" | "c" | "x" | "B" | "C" | "X" ;
+Open_bracket ::= "[" | "{" ;
+Close_bracket ::= "]" | "}" ;
+--------------------fortran::derricks.bgf--------------------
+DeferredShapeSpec ::= ":" ;
+Sign ::= "+" | "-" ;
+AddOp ::= "+" | "-" ;
+MultOp ::= "*" | "/" ;
+--------------------fortran::waite-cordy.bgf--------------------
+DeferredShapeSpec ::= ":" ;
+Sign ::= "+" | "-" ;
+Formatsep ::= "/" | ":" ;
+PlusMinus ::= "+" | "-" ;
+AddOp ::= "+" | "-" ;
+MultOp ::= "*" | "/" ;
+--------------------java::java-1-jls-impl.bgf--------------------
+EmptyStatement ::= ";" ;
+--------------------java::java-1-jls-read.bgf--------------------
+EmptyStatement ::= ";" ;
+--------------------java::java-2-jls-read.bgf--------------------
+EmptyStatement ::= ";" ;
+--------------------java::java-5-habelitz.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+LOGICAL_NOT ::= "!" ;
+XOR ::= "^" ;
+RCURLY ::= "}" ;
+JAVA_ID_START ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+PLUS ::= "+" ;
+RPAREN ::= ")" ;
+AND ::= "&" ;
+COMMA ::= "," ;
+INTEGER_TYPE_SUFFIX ::= "l" | "L" ;
+NOT ::= "~" ;
+FLOAT_TYPE_SUFFIX ::= "f" | "F" | "d" | "D" ;
+AT ::= "@" ;
+STAR ::= "*" ;
+DIV ::= "/" ;
+MINUS ::= "-" ;
+ASSIGN ::= "=" ;
+SEMI ::= ";" ;
+LBRACK ::= "[" ;
+HEX_DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" ;
+DOT ::= "." ;
+LESS_THAN ::= "<" ;
+RBRACK ::= "]" ;
+GREATER_THAN ::= ">" ;
+QUESTION ::= "?" ;
+OR ::= "|" ;
+MOD ::= "%" ;
+LCURLY ::= "{" ;
+--------------------java::java-5-jls-read.bgf--------------------
+EmptyStatement ::= ";" ;
+--------------------java::java-5-parr.bgf--------------------
+IntegerTypeSuffix ::= "l" | "L" ;
+FloatTypeSuffix ::= "f" | "F" | "d" | "D" ;
+Letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+HexDigit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" ;
+JavaIDDigit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+--------------------java::java-5-stahl.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+RCURLY ::= "}" ;
+PLUS ::= "+" ;
+BXOR ::= "^" ;
+RPAREN ::= ")" ;
+BAND ::= "&" ;
+COMMA ::= "," ;
+FLOAT_SUFFIX ::= "f" | "F" | "d" | "D" ;
+AT ::= "@" ;
+STAR ::= "*" ;
+DIV ::= "/" ;
+BNOT ::= "~" ;
+MINUS ::= "-" ;
+ASSIGN ::= "=" ;
+SEMI ::= ";" ;
+GT ::= ">" ;
+LBRACK ::= "[" ;
+HEX_DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" ;
+DOT ::= "." ;
+LT ::= "<" ;
+RBRACK ::= "]" ;
+LNOT ::= "!" ;
+QUESTION ::= "?" ;
+BOR ::= "|" ;
+MOD ::= "%" ;
+LCURLY ::= "{" ;
+--------------------java::java-5-studman.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+RCURLY ::= "}" ;
+PLUS ::= "+" ;
+BXOR ::= "^" ;
+RPAREN ::= ")" ;
+BAND ::= "&" ;
+COMMA ::= "," ;
+FLOAT_SUFFIX ::= "f" | "F" | "d" | "D" ;
+AT ::= "@" ;
+STAR ::= "*" ;
+DIV ::= "/" ;
+BNOT ::= "~" ;
+MINUS ::= "-" ;
+ASSIGN ::= "=" ;
+SEMI ::= ";" ;
+GT ::= ">" ;
+LBRACK ::= "[" ;
+HEX_DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" ;
+DOT ::= "." ;
+LT ::= "<" ;
+RBRACK ::= "]" ;
+LNOT ::= "!" ;
+QUESTION ::= "?" ;
+BOR ::= "|" ;
+MOD ::= "%" ;
+LCURLY ::= "{" ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+add_op ::= "+" | "-" ;
+unary_op ::= "+" | "-" | "~" | "!" ;
+mult_op ::= "*" | "/" | "%" ;
+--------------------java::java-4-sdf.bgf--------------------
+EmptyStatement ::= ";" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+add_op ::= "+" | "-" ;
+annot_marker ::= "@" ;
+unary_op ::= "+" | "-" | "~" | "!" ;
+mult_op ::= "*" | "/" | "%" ;
+--------------------modula::sdf.bgf--------------------
+Addop ::= "+" | "-" | "&" ;
+--------------------modula::src-052.bgf--------------------
+ExtendedChar ::= " " | "¡" | "¢" | "£" | "¤" | "¥" | "¦" | "§" | "¨" | "©" | "ª" | "«" | "¬" | "­" | "®" | "¯" | "°" | "±" | "²" | "³" | "´" | "µ" | "¶" | "·" | "¸" | "¹" | "º" | "»" | "¼" | "½" | "¾" | "¿" | "À" | "Á" | "Â" | "Ã" | "Ä" | "Å" | "Æ" | "Ç" | "È" | "É" | "Ê" | "Ë" | "Ì" | "Í" | "Î" | "Ï" | "Ð" | "Ñ" | "Ò" | "Ó" | "Ô" | "Õ" | "Ö" | "×" | "Ø" | "Ù" | "Ú" | "Û" | "Ü" | "Ý" | "Þ" | "ß" | "à" | "á" | "â" | "ã" | "ä" | "å" | "æ" | "ç" | "è" | "é" | "ê" | "ë" | "ì" | "í" | "î" | "ï" | "ð" | "ñ" | "ò" | "ó" | "ô" | "õ" | "ö" | "÷" | "ø" | "ù" | "ú" | "û" | "ü" | "ý" | "þ" | "ÿ" ;
+Digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+Letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+OctalDigit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" ;
+Addop ::= "+" | "-" | "&" ;
+--------------------modula::dagenais-cordy.bgf--------------------
+SignOp ::= "+" | "-" ;
+AddOp ::= "+" | "-" | "&" ;
+--------------------xpath::w3c-xpath1.bgf--------------------
+MultiplyOperator ::= [NT-MultiplyOperator] "*" ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_additive_op ::= "+" | "-" ;
+js_empty_statement ::= ";" ;
+js_multiplicative_op ::= "*" | "/" | "%" ;
+--------------------occam::mu-mitchell.bgf--------------------
+unary-operator ::= "*" | "&" | "+" | "-" | "!" | "~" ;
+--------------------odf::opendoc-1.2.bgf--------------------
+chart-dimension ::= "x" | "y" | "z" ;
+--------------------pascal::delphi.bgf--------------------
+sign ::= "+" | "-" ;
+file_end ::= "." ;
+equal ::= "=" ;
+--------------------xml::zhang-cordy.bgf--------------------
+repetition ::= "?" | "*" | "+" ;
+--------------------php::cordy.bgf--------------------
+PlusMinus ::= "+" | "-" ;
+CaseSeparator ::= ";" | ":" ;
+AddOp ::= "+" | "-" ;
+MultOp ::= "*" | "/" | "%" ;
+--------------------python::sorochan-cordy.bgf--------------------
+arith_op ::= "+" | "-" ;
+unary_op ::= "+" | "-" | "~" ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+pipe ::= "|" ;
+ucase-letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+external-link-end ::= "]" ;
+underscore ::= "_" ;
+harmless-character ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+bad-title-characters ::= "[" | "]" | "{" | "}" | "<" | ">" | "_" | "|" | "#" ;
+unescaped-greater-than ::= ">" ;
+lcase-letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+space ::= " " ;
+sub-page-separator ::= "/" ;
+wiki-markup-characters ::= "|" | "[" | "]" | "*" | "#" | ":" | ";" | "<" | ">" | "=" | "'" | "{" | "}" ;
+unescaped-less-than ::= "<" ;
+unescaped-ampersand ::= "&" ;
+external-link-start ::= "[" ;
+decimal-digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+digit ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "0" ;
+ASCII_letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+--------------------metasyntax::ebnf-bgf.bgf--------------------
+end-group-metasymbol ::= ")" ;
+end-terminal-metasymbol ::= """ ;
+optionality-metasymbol ::= "?" ;
+repetition-metasymbol ::= "+" | "*" ;
+start-group-metasymbol ::= "(" ;
+start-terminal-metasymbol ::= """ ;
+defining-metasymbol ::= ":" ;
+--------------------metasyntax::ebnf-iso-1.bgf--------------------
+defining_symbol ::= "=" ;
+decimal_digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+except_symbol ::= "-" ;
+definition_separator_symbol ::= "|" | "/" | "!" ;
+end_group_symbol ::= ")" ;
+other_character ::= " " | ":" | "+" | "_" | "%" | "@" | "&" | "#" | "$" | "<" | ">" | "\" | "^" | "‘" | "~" ;
+first_quote_symbol ::= "’" ;
+second_quote_symbol ::= """ ;
+repetition_symbol ::= "*" ;
+letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+start_group_symbol ::= "(" ;
+concatenate_symbol ::= "," ;
+space_character ::= " " ;
+terminator_symbol ::= ";" | "." ;
+special_sequence_symbol ::= "?" ;
+--------------------metasyntax::lll-kort.bgf--------------------
+repetition ::= "+" | "*" | "?" ;
+--------------------metasyntax::lll-ldta.bgf--------------------
+repetition ::= "*" | "+" | "?" ;
+--------------------metasyntax::yacc-txl.bgf--------------------
+plusOrStar ::= "+" | "*" ;
+--------------------metasyntax::box-rascal.bgf--------------------
+Context ::= "H" ;
+ Context ::= "V" ;
+--------------------tescol::00000.bgf--------------------
+RPAR ::= ")" ;
+COLON ::= ":" ;
+QMARK ::= "?" ;
+SEMI ::= ";" ;
+GT ::= ">" ;
+MULTI ::= "*" ;
+LT ::= "<" ;
+LBRACE ::= "{" ;
+LPAR ::= "(" ;
+COMMA ::= "," ;
+DIV ::= "/" ;
+ADD ::= "+" ;
+RBRACE ::= "}" ;
+SUB ::= "-" ;
+--------------------tescol::00001.bgf--------------------
+COLON ::= ":" ;
+SEMI ::= ";" ;
+OCB ::= "{" ;
+CPAR ::= ")" ;
+GT ::= ">" ;
+PLUS ::= "+" ;
+MIXFIX ::= "?" ;
+MULTI ::= "*" ;
+LT ::= "<" ;
+CCB ::= "}" ;
+OPAR ::= "(" ;
+COM ::= "," ;
+DIV ::= "/" ;
+MINUS ::= "-" ;
+--------------------tescol::00010.bgf--------------------
+RPAR ::= ")" ;
+COLON ::= ":" ;
+SEMI ::= ";" ;
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+CONDITION ::= "?" ;
+GREATER ::= ">" ;
+PLUS ::= "+" ;
+LESS ::= "<" ;
+DIVIDE ::= "/" ;
+RCURLYPAR ::= "}" ;
+LPAR ::= "(" ;
+COMMA ::= "," ;
+MULTIPLY ::= "*" ;
+MINUS ::= "-" ;
+LCURLYPAR ::= "{" ;
+--------------------tescol::00011.bgf--------------------
+OPARAN ::= "(" ;
+COLON ::= ":" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+CPARAN ::= ")" ;
+LESS ::= "<" ;
+MIXFIX ::= "?" ;
+MORE ::= ">" ;
+COMMA ::= "," ;
+MULTIPLY ::= "*" ;
+SUBTRACT ::= "-" ;
+OBRACE ::= "{" ;
+CBRACE ::= "}" ;
+--------------------tescol::00100.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+negation ::= "-" ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::00101.bgf--------------------
+COLON ::= ":" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+G_THAN ::= ">" ;
+MIXFIX ::= "?" ;
+CLOSEPAR ::= ")" ;
+OPENPAR ::= "(" ;
+MULTIPLICATION ::= "*" ;
+OPENCURL ::= "{" ;
+COMMA ::= "," ;
+L_THAN ::= "<" ;
+SUBTRACTION ::= "-" ;
+CLOSECURL ::= "}" ;
+SEMICOLON ::= ";" ;
+--------------------tescol::00110.bgf--------------------
+COLON ::= ":" ;
+SEMI ::= ";" ;
+Q_MARK ::= "?" ;
+PLUS ::= "+" ;
+LESS_THAN ::= "<" ;
+RIGHT_PAREN ::= ")" ;
+GREATER_THAN ::= ">" ;
+RIGHT_BRACKET ::= "}" ;
+COMMA ::= "," ;
+EQUAL ::= "=" ;
+LEFT_PAREN ::= "(" ;
+DIV ::= "/" ;
+LEFT_BRACKET ::= "{" ;
+MULT ::= "*" ;
+MINUS ::= "-" ;
+--------------------tescol::00111.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::01000.bgf--------------------
+SEMI ::= ";" ;
+GT ::= ">" ;
+LBRACK ::= "(" ;
+LT ::= "<" ;
+RCBRACK ::= "}" ;
+RBRACK ::= ")" ;
+COMMA ::= "," ;
+QUES ::= "?" ;
+LCBRACK ::= "{" ;
+DIV ::= "/" ;
+ADD ::= "+" ;
+COL ::= ":" ;
+MULT ::= "*" ;
+SUB ::= "-" ;
+--------------------tescol::01001.bgf--------------------
+COLON ::= ":" ;
+SEMI ::= ";" ;
+PLUS ::= "+" ;
+OPEN ::= "(" ;
+GRT ::= ">" ;
+LESS ::= "<" ;
+CLOSE ::= ")" ;
+COMMA ::= "," ;
+QUEST ::= "?" ;
+STST ::= "{" ;
+DIV ::= "/" ;
+MULT ::= "*" ;
+MINUS ::= "-" ;
+STED ::= "}" ;
+--------------------tescol::01010.bgf--------------------
+COLON ::= ":" ;
+RCURL ::= "}" ;
+SEMI ::= ";" ;
+LST ::= "<" ;
+LPARA ::= "(" ;
+POSITIVE ::= "+" ;
+GRT ::= ">" ;
+LCURL ::= "{" ;
+NEGATIVE ::= "-" ;
+COMMA ::= "," ;
+MUL ::= "*" ;
+RPARA ::= ")" ;
+QUEST ::= "?" ;
+DIV ::= "/" ;
+--------------------tescol::01011.bgf--------------------
+COLON ::= ":" ;
+MTHAN ::= ">" ;
+SEMI ::= ";" ;
+LTHAN ::= "<" ;
+LBRACK ::= "(" ;
+DIVIS ::= "/" ;
+PLUS ::= "+" ;
+MULTI ::= "*" ;
+LBRACE ::= "{" ;
+RBRACK ::= ")" ;
+COMMA ::= "," ;
+negation ::= "-" ;
+RBRACE ::= "}" ;
+MINUS ::= "-" ;
+--------------------tescol::01100.bgf--------------------
+LEFTPARENTHESIS ::= "(" ;
+COLON ::= ":" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+RIGHTPARENTHESIS ::= ")" ;
+SUBSTRACTION ::= "-" ;
+LEFTCURLY ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTIONMARK ::= "?" ;
+STRICTLYDIFFERENT ::= "<" | ">" ;
+RIGHTCURLY ::= "}" ;
+SEMICOLON ::= ";" ;
+COMA ::= "," ;
+--------------------tescol::01101.bgf--------------------
+COLON ::= ":" ;
+OPENBRACKET ::= "{" ;
+SEMI ::= ";" ;
+OPENPARENTHESIS ::= "(" ;
+CLOSEDBRACKET ::= "}" ;
+CLOSEDPARENTHESIS ::= ")" ;
+LESSTHEN ::= "<" ;
+COMMA ::= "," ;
+MUL ::= "*" ;
+MORETHEN ::= ">" ;
+MIX_FIX ::= "?" ;
+DIV ::= "/" ;
+ADD ::= "+" ;
+SUB ::= "-" ;
+--------------------tescol::01110.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+negation ::= "-" ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::01111.bgf--------------------
+RPAR ::= "}" ;
+COLON ::= ":" ;
+CPAR ::= ")" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATERTHAN ::= ">" ;
+LESSTHAN ::= "<" ;
+UNDER ::= "_" ;
+QUESTION ::= "?" ;
+MULTIPLICATION ::= "*" ;
+LPAR ::= "{" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+OPAR ::= "(" ;
+--------------------tescol::10000.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::10001.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::10010.bgf--------------------
+COLON ::= ":" ;
+SEMI ::= ";" ;
+LPAREN ::= "(" ;
+CRPAREN ::= "}" ;
+LESSTHAN ::= "<" ;
+DIVIDE ::= "/" ;
+RPAREN ::= ")" ;
+MORETHAN ::= ">" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+MULTIPLY ::= "*" ;
+SUBTRACT ::= "-" ;
+ADD ::= "+" ;
+CLPAREN ::= "{" ;
+--------------------tescol::10011.bgf--------------------
+RPAR ::= ")" ;
+COLON ::= ":" ;
+SEMI ::= ";" ;
+QM ::= "?" ;
+LCPAR ::= "{" ;
+PLUS ::= "+" ;
+LESS ::= "<" ;
+MORE ::= ">" ;
+COMMA ::= "," ;
+LPAR ::= "(" ;
+DIV ::= "/" ;
+RCPAR ::= "}" ;
+MULT ::= "*" ;
+MINUS ::= "-" ;
+--------------------tescol::10100.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::10101.bgf--------------------
+COLON ::= ":" ;
+PARENCLOSE ::= ")" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+MIXFIX ::= "?" ;
+STATEMENTCLOSE ::= "}" ;
+STATEMENTOPEN ::= "{" ;
+MULTIPLICATION ::= "*" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+PARENOPEN ::= "(" ;
+DECIMAL ::= "." ;
+--------------------tescol::10110.bgf--------------------
+RPAR ::= ")" ;
+COLON ::= ":" ;
+SEMI ::= ";" ;
+CURLY_L ::= "{" ;
+DIVIDE ::= "/" ;
+LESS_THAN ::= "<" ;
+QUESTION ::= "?" ;
+GREATER_THAN ::= ">" ;
+negation ::= "-" ;
+LPAR ::= "(" ;
+COMMA ::= "," ;
+EQUAL ::= "=" ;
+MULTIPLY ::= "*" ;
+SUBTRACT ::= "-" ;
+ADD ::= "+" ;
+CURLY_R ::= "}" ;
+--------------------tescol::10111.bgf--------------------
+SYM_OPEN_PAREN ::= "(" ;
+SYM_COMMA ::= "," ;
+SYM_CLOSE_PAREN ::= ")" ;
+SYM_DIV ::= "/" ;
+SYM_ADD ::= "+" ;
+SYM_MULT ::= "*" ;
+SYM_SUB ::= "-" ;
+SYM_COLON ::= ":" ;
+SYM_OPEN_BRACE ::= "{" ;
+SYM_SEMI ::= ";" ;
+SYM_GT ::= ">" ;
+SYM_CLOSE_BRACE ::= "}" ;
+SYM_QM ::= "?" ;
+SYM_LT ::= "<" ;
+--------------------tescol::11000.bgf--------------------
+COLON ::= ":" ;
+CURLYRIGHT ::= "}" ;
+SEMI ::= ";" ;
+ADDITION ::= "+" ;
+RIGHTBRACKET ::= ")" ;
+GREATERTHAN ::= ">" ;
+LESSTHAN ::= "<" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+CURLYLEFT ::= "{" ;
+LEFTBRACKET ::= "(" ;
+--------------------tescol::11001.bgf--------------------
+EQUALS ::= "=" ;
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+PLUS ::= "+" ;
+BANG ::= "!" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+LANGLE ::= "<" ;
+FSLASH ::= "/" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+MUL ::= "*" ;
+RBRACE ::= "}" ;
+RANGLE ::= ">" ;
+MINUS ::= "-" ;
+--------------------tescol::11010.bgf--------------------
+COLON ::= ":" ;
+SEMI ::= ";" ;
+LEFTBRACE ::= "{" ;
+LESSTHAN ::= "<" ;
+PLUS ::= "+" ;
+LEFTPAR ::= "(" ;
+DIVIDE ::= "/" ;
+RIGHTBRACE ::= "}" ;
+MORETHAN ::= ">" ;
+QUESTION ::= "?" ;
+RIGHTPAR ::= ")" ;
+COMMA ::= "," ;
+MULTIPLY ::= "*" ;
+MINUS ::= "-" ;
+--------------------tescol::11011.bgf--------------------
+RPAR ::= ")" ;
+COLON ::= ":" ;
+ARITH_DIV ::= "/" ;
+ARITH_ADD ::= "+" ;
+QMARK ::= "?" ;
+SEMI ::= ";" ;
+ARITH_SUB ::= "-" ;
+COND_COMP_LESS ::= ">" ;
+LCB ::= "{" ;
+COND_COMP_GREAT ::= "<" ;
+LPAR ::= "(" ;
+COMMA ::= "," ;
+ARITH_MUL ::= "*" ;
+RCB ::= "}" ;
+--------------------tescol::11100.bgf--------------------
+COLON ::= ":" ;
+QMARK ::= "?" ;
+SEMI ::= ";" ;
+LEFTBRACE ::= "{" ;
+RIGHTBRACKET ::= ")" ;
+PLUS ::= "+" ;
+RIGHTBRACE ::= "}" ;
+COMMA ::= "," ;
+LEFTBRACKET ::= "(" ;
+MINUS ::= "-" ;
+--------------------tescol::11101.bgf--------------------
+COLON ::= ":" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+PARENTHESISR ::= ")" ;
+BRACKETR ::= "}" ;
+MULTIPLICATION ::= "*" ;
+PARENTHESISL ::= "(" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+BRACKETL ::= "{" ;
+--------------------tescol::11110.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+QUESTION ::= "?" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::11111.bgf--------------------
+COLON ::= ":" ;
+LPAREN ::= "(" ;
+SEMI ::= ";" ;
+DIVISION ::= "/" ;
+ADDITION ::= "+" ;
+GREATER ::= ">" ;
+MIXFIX ::= "?" ;
+LESS ::= "<" ;
+RPAREN ::= ")" ;
+LBRACE ::= "{" ;
+MULTIPLICATION ::= "*" ;
+COMMA ::= "," ;
+SUBTRACTION ::= "-" ;
+RBRACE ::= "}" ;
+--------------------tescol::reference.bgf--------------------
+RPAR ::= ")" ;
+COLON ::= ":" ;
+SEMI ::= ";" ;
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+GT ::= ">" ;
+LT ::= "<" ;
+LBRACE ::= "{" ;
+LPAR ::= "(" ;
+COMMA ::= "," ;
+UPPER ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+LOWER ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+TE ::= "?" ;
+DIV ::= "/" ;
+ADD ::= "+" ;
+RBRACE ::= "}" ;
+MULT ::= "*" ;
+SUB ::= "-" ;

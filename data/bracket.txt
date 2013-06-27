@@ -1,0 +1,475 @@
+--------------------ada::kempe.bgf--------------------
+character_literal ::= "'" graphic_character "'" ;
+label ::= "<<" label_statement_identifier ">>" ;
+record_aggregate ::= "(" record_component_association_list ")" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+label ::= "<<" label_statement_identifier ">>" ;
+record_aggregate ::= "(" record_component_association_list ")" ;
+--------------------ada::lncs-2219.bgf--------------------
+character_literal ::= "'" graphic_character "'" ;
+label ::= "<<" label_statement_identifier ">>" ;
+record_aggregate ::= "(" record_component_association_list ")" ;
+--------------------ada::lncs-4348.bgf--------------------
+character_literal ::= "'" graphic_character "'" ;
+label ::= "<<" label_statement_identifier ">>" ;
+record_aggregate ::= "(" record_component_association_list ")" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+accept_statement_entry_index ::= "(" entry_index ")" ;
+range_attribute_designator_expression ::= "(" expression ")" ;
+entry_declaration_subtype ::= "(" discrete_subtype_definition ")" ;
+entry_body_formal_part_specification ::= "(" entry_index_specification ")" ;
+known_discriminant_part ::= "(" discriminant_specification_list ")" ;
+wide_identifier ::= "[" stringlit "]" ;
+label ::= "<<" statement_identifier ">>" ;
+record_aggregate ::= "(" record_component_association_list ")" ;
+attribute_designator_expression ::= "(" expression ")" ;
+slice_component ::= "(" discrete_range ")" ;
+--------------------c::malton-dahn.bgf--------------------
+compound_statement_expression ::= "(" compound_statement ")" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+compound_statement_expression ::= "(" compound_statement ")" ;
+ps_arguments ::= "(" ps_argument_list ")" ;
+cast_operator ::= "(" type_name ")" ;
+bracketed_id ::= "[" id "]" ;
+--------------------c::lankamp.bgf--------------------
+Expression ::= CharacterConstant ;
+ Expression ::= Expression "--" ;
+ Expression ::= [Variable] Identifier ;
+ Expression ::= Expression "[" Expression "]" ;
+ Expression ::= [Bracket] "(" Expression ")" ;
+ Expression ::= "sizeof" "(" TypeName ")" ;
+ Expression ::= Expression "++" ;
+ Expression ::= FloatingPointConstant ;
+ Expression ::= Expression "." Identifier ;
+ Expression ::= StringConstant ;
+ Expression ::= IntegerConstant ;
+ Expression ::= HexadecimalConstant ;
+ Expression ::= Expression "->" Identifier ;
+ Expression ::= Expression "(" {NonCommaExpression ","}* ")" ;
+ Expression ::= Expression ;
+ Expression ::= [SizeOfExpression] "sizeof" exp::Expression ;
+ Expression ::= "&" Expression ;
+ Expression ::= "!" Expression ;
+ Expression ::= "(" TypeName ")" Expression ;
+ Expression ::= "*" Expression ;
+ Expression ::= "+" Expression ;
+ Expression ::= "-" Expression ;
+ Expression ::= "~" Expression ;
+ Expression ::= [MultiplicationExpression] lexp::Expression "*" rexp::Expression ;
+ Expression ::= Expression "/" Expression ;
+ Expression ::= Expression "%" Expression ;
+ Expression ::= Expression "+" Expression ;
+ Expression ::= Expression "-" Expression ;
+ Expression ::= Expression ">>" Expression ;
+ Expression ::= Expression "<<" Expression ;
+ Expression ::= Expression "<=" Expression ;
+ Expression ::= Expression ">=" Expression ;
+ Expression ::= Expression ">" Expression ;
+ Expression ::= Expression "<" Expression ;
+ Expression ::= Expression "==" Expression ;
+ Expression ::= Expression "!=" Expression ;
+ Expression ::= Expression "&" Expression ;
+ Expression ::= Expression "^" Expression ;
+ Expression ::= Expression "|" Expression ;
+ Expression ::= Expression "&&" Expression ;
+ Expression ::= Expression "||" Expression ;
+ Expression ::= Expression "?" Expression ":" Expression ;
+ Expression ::= Expression "|=" Expression ;
+ Expression ::= Expression "&=" Expression ;
+ Expression ::= Expression "*=" Expression ;
+ Expression ::= Expression "/=" Expression ;
+ Expression ::= Expression "+=" Expression ;
+ Expression ::= Expression ">>=" Expression ;
+ Expression ::= Expression "^=" Expression ;
+ Expression ::= Expression "-=" Expression ;
+ Expression ::= Expression "<<=" Expression ;
+ Expression ::= Expression "%=" Expression ;
+ Expression ::= Expression "=" Expression ;
+ Expression ::= [CommaExpression] Expression "," Expression ;
+AbstractDeclarator ::= [Identifier] AnonymousIdentifier ;
+ AbstractDeclarator ::= [ArrayDeclarator] decl::AbstractDeclarator "[" exp::(Expression?) "]" ;
+ AbstractDeclarator ::= [Bracket] "(" decl::AbstractDeclarator ")" ;
+ AbstractDeclarator ::= [FunctionDeclarator] decl::AbstractDeclarator "(" params::(Parameters?) ")" ;
+ AbstractDeclarator ::= [PointerDeclarator] "*" qualifiers::(TypeQualifier*) decl::AbstractDeclarator ;
+PrototypeDeclarator ::= [FunctionDeclarator] decl::PrototypeDeclarator "(" params::(PrototypeParameters?) ")" ;
+ PrototypeDeclarator ::= [Identifier] Identifier ;
+ PrototypeDeclarator ::= [Bracket] "(" decl::AbstractDeclarator ")" ;
+ PrototypeDeclarator ::= [ArrayDeclarator] decl::PrototypeDeclarator "[" exp::(Expression?) "]" ;
+ PrototypeDeclarator ::= [PointerDeclarator] "*" qualifiers::(TypeQualifier*) decl::PrototypeDeclarator ;
+Declarator ::= [ArrayDeclarator] decl::Declarator "[" exp::(Expression?) "]" ;
+ Declarator ::= [Identifier] Identifier ;
+ Declarator ::= [FunctionDeclarator] decl::Declarator "(" params::(Parameters?) ")" ;
+ Declarator ::= [Bracket] "(" decl::Declarator ")" ;
+ Declarator ::= [PointerDeclarator] "*" qualifiers::(TypeQualifier*) decl::Declarator ;
+--------------------cpp::iso-n2723.bgf--------------------
+new-placement ::= "(" expression-list ")" ;
+--------------------cpp::elges-cordy.bgf--------------------
+placement ::= "(" expression_list ")" ;
+template_arguments ::= "<" template_argument_list ">" ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+new-placement ::= "(" expression-list ")" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+parenthesized-expression ::= "(" expression ")" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+type-argument-list ::= "<" type-arguments ">" ;
+parenthesized-expression ::= "(" expression ")" ;
+type-parameter-list ::= "<" type-parameters ">" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+type-argument-list ::= "<" type-arguments ">" ;
+parenthesized-expression ::= "(" expression ")" ;
+type-parameter-list ::= "<" type-parameters ">" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+parenthesized-expression ::= "(" expression ")" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+type-argument-list ::= "<" type-arguments ">" ;
+parenthesized-expression ::= "(" expression ")" ;
+type-parameter-list ::= "<" type-parameters ">" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+parenthesized-expression ::= "(" expression ")" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+parenthesized-expression ::= "(" expression ")" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+type-argument-list ::= "<" type-arguments ">" ;
+parenthesized-expression ::= "(" expression ")" ;
+type-parameter-list ::= "<" type-parameters ">" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+variant-type-parameter-list ::= "<" variant-type-parameters ">" ;
+type-argument-list ::= "<" type-arguments ">" ;
+parenthesized-expression ::= "(" expression ")" ;
+type-parameter-list ::= "<" type-parameters ">" ;
+--------------------cs::csharp-cordy.bgf--------------------
+parenthesized_expression ::= "(" expression ")" ;
+pointer_element_access_operator ::= "[" expression "]" ;
+type_parameter_list ::= "<" type_parameters ">" ;
+attribute_arguments ::= "(" attribute_argument_list ")" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+parenthesized-expression ::= "(" expression ")" ;
+--------------------dart::spec-0.01.bgf--------------------
+block ::= "{" statements "}" ;
+typeArguments ::= "<" typeList ">" ;
+--------------------dart::google.bgf--------------------
+block ::= "{" statements "}" ;
+expressionInParentheses ::= "(" expression ")" ;
+typeArguments ::= "<" typeList ">" ;
+--------------------dart::spec-0.05.bgf--------------------
+block ::= "{" statements "}" ;
+typeArguments ::= "<" typeList ">" ;
+--------------------eiffel::bezault.bgf--------------------
+Parenthesized ::= "(" Expression ")" ;
+Parent_qualification ::= "{" Class_name "}" ;
+Manifest_array ::= "<<" Expression_list ">>" ;
+Clients ::= "{" Class_list "}" ;
+Formal_arguments ::= "(" Entity_declaration_list ")" ;
+Actuals ::= "(" Actual_list ")" ;
+Debug_keys ::= "(" Debug_key_list ")" ;
+--------------------eiffel::cordy.bgf--------------------
+Actual_generics ::= "[" Type_list "]" ;
+Parenthesized ::= "(" Expression ")" ;
+Formal_generics ::= "[" Formal_generic_list "]" ;
+Manifest_array ::= "<<" Expression_list ">>" ;
+Restricted_actual_generics ::= "[" Restricted_type_list "]" ;
+Clients ::= "{" Class_list "}" ;
+Formal_arguments ::= "(" Formal_entity_declaration_list ")" ;
+Actuals ::= "(" Actual_list ")" ;
+Debug_keys ::= "(" Debug_key_list ")" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Parenthesized ::= "(" Expression ")" ;
+External_user_file ::= """ Simple_string """ ;
+Character_constant ::= "'" Character "'" ;
+Parent_qualification ::= "{" Class_name "}" ;
+External_system_file ::= "<" Simple_string ">" ;
+Manifest_tuple ::= "[" Expression_list "]" ;
+Basic_manifest_string ::= """ String_content """ ;
+Explicit_creation_type ::= "{" Type "}" ;
+Actual_generics ::= "[" Type_list "]" ;
+Multiple_constraint ::= "{" Constraint_list "}" ;
+Formal_generics ::= "[" Formal_generic_list "]" ;
+External_argument_types ::= "(" External_type_list ")" ;
+Agent_actuals ::= "(" Agent_actual_list ")" ;
+Tuple_parameter_list ::= "[" Tuple_parameters "]" ;
+Manifest_type ::= "{" Type "}" ;
+Clients ::= "{" Class_list "}" ;
+Formal_arguments ::= "(" Entity_declaration_list ")" ;
+Actuals ::= "(" Actual_list ")" ;
+--------------------fortran::derricks.bgf--------------------
+SubstringRange ::= "(" SubscriptTriplet ")" ;
+RdFmtIdExpr ::= "(" UFExpr ")" ;
+AllocatedShape ::= "(" SectionSubscriptList ")" ;
+--------------------fortran::waite-cordy.bgf--------------------
+SectionSubscriptRef ::= "(" SectionSubscriptList ")" ;
+RdFmtIdExpr ::= "(" UFExpr ")" ;
+AllocatedShape ::= "(" SectionSubscriptList ")" ;
+SubscriptListRef ::= "(" SubscriptList ")" ;
+LengthSelector ::= "*" CharLength ;
+ LengthSelector ::= "(" TypeParamValue ")" ;
+--------------------java::java-1-jls-impl.bgf--------------------
+DimExpr ::= "[" Expression "]" ;
+PrimaryNoNewArray ::= Literal ;
+ PrimaryNoNewArray ::= "this" ;
+ PrimaryNoNewArray ::= "(" Expression ")" ;
+ PrimaryNoNewArray ::= ClassInstanceCreationExpression ;
+ PrimaryNoNewArray ::= FieldAccess ;
+ PrimaryNoNewArray ::= MethodInvocation ;
+ PrimaryNoNewArray ::= ArrayAccess ;
+--------------------java::java-1-jls-read.bgf--------------------
+DimExpr ::= "[" Expression "]" ;
+PrimaryNoNewArray ::= Literal ;
+ PrimaryNoNewArray ::= "this" ;
+ PrimaryNoNewArray ::= "(" Expression ")" ;
+ PrimaryNoNewArray ::= ClassInstanceCreationExpression ;
+ PrimaryNoNewArray ::= FieldAccess ;
+ PrimaryNoNewArray ::= MethodInvocation ;
+ PrimaryNoNewArray ::= ArrayAccess ;
+--------------------java::java-2-jls-impl.bgf--------------------
+Selector ::= "." Identifier Arguments? ;
+ Selector ::= "." "this" ;
+ Selector ::= "." "super" SuperSuffix ;
+ Selector ::= "." "new" InnerCreator ;
+ Selector ::= "[" Expression "]" ;
+Block ::= "{" BlockStatements "}" ;
+ParExpression ::= "(" Expression ")" ;
+Primary ::= "(" Expression ")" ;
+ Primary ::= "this" Arguments? ;
+ Primary ::= "super" SuperSuffix ;
+ Primary ::= Literal ;
+ Primary ::= "new" Creator ;
+ Primary ::= Identifier ("." Identifier)* IdentifierSuffix? ;
+ Primary ::= BasicType BracketsOpt "." "class" ;
+ Primary ::= "void" "." "class" ;
+--------------------java::java-2-jls-read.bgf--------------------
+DimExpr ::= "[" Expression "]" ;
+PrimaryNoNewArray ::= Literal ;
+ PrimaryNoNewArray ::= Type "." "class" ;
+ PrimaryNoNewArray ::= "void" "." "class" ;
+ PrimaryNoNewArray ::= "this" ;
+ PrimaryNoNewArray ::= ClassName "." "this" ;
+ PrimaryNoNewArray ::= "(" Expression ")" ;
+ PrimaryNoNewArray ::= ClassInstanceCreationExpression ;
+ PrimaryNoNewArray ::= FieldAccess ;
+ PrimaryNoNewArray ::= MethodInvocation ;
+ PrimaryNoNewArray ::= ArrayAccess ;
+--------------------java::java-5-jls-impl.bgf--------------------
+Block ::= "{" BlockStatements "}" ;
+ParExpression ::= "(" Expression ")" ;
+NonWildcardTypeArguments ::= "<" TypeList ">" ;
+--------------------java::java-5-jls-read.bgf--------------------
+DimExpr ::= "[" Expression "]" ;
+TypeArguments ::= "<" ActualTypeArgumentList ">" ;
+PrimaryNoNewArray ::= Literal ;
+ PrimaryNoNewArray ::= Type "." "class" ;
+ PrimaryNoNewArray ::= "void" "." "class" ;
+ PrimaryNoNewArray ::= "this" ;
+ PrimaryNoNewArray ::= ClassName "." "this" ;
+ PrimaryNoNewArray ::= "(" Expression ")" ;
+ PrimaryNoNewArray ::= ClassInstanceCreationExpression ;
+ PrimaryNoNewArray ::= FieldAccess ;
+ PrimaryNoNewArray ::= MethodInvocation ;
+ PrimaryNoNewArray ::= ArrayAccess ;
+NonWildTypeArguments ::= "<" ReferenceTypeList ">" ;
+TypeParameters ::= "<" TypeParameterList ">" ;
+--------------------java::java-5-parr.bgf--------------------
+parExpression ::= "(" expression ")" ;
+nonWildcardTypeArguments ::= "<" typeList ">" ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+subscript ::= "[" expression "]" ;
+--------------------java::java-4-sdf.bgf--------------------
+DimExpr ::= "[" Expression "]" ;
+PrimaryNoNewArray ::= Literal ;
+ PrimaryNoNewArray ::= "this" ;
+ PrimaryNoNewArray ::= Name "." "this" ;
+ PrimaryNoNewArray ::= "(" Expression ")" ;
+ PrimaryNoNewArray ::= ClassInstanceCreationExpression ;
+ PrimaryNoNewArray ::= FieldAccess ;
+ PrimaryNoNewArray ::= MethodInvocation ;
+ PrimaryNoNewArray ::= ArrayAccess ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+subscript ::= "[" expression "]" ;
+annotation_value_spec ::= "(" annotation_value_list ")" ;
+--------------------java::java-5-landman.bgf--------------------
+DimExpr ::= [dim] "[" Expr "]" ;
+Expr ::= [postDecr] Expr "--" ;
+ Expr ::= [postIncr] Expr "++" ;
+ Expr ::= [castPrim] "(" PrimType ")" Expr ;
+ Expr ::= [castRef] "(" RefType ")" Expr ;
+ Expr ::= [minus] Expr ;
+ Expr ::= [preIncr] "++" Expr ;
+ Expr ::= [plus] Expr ;
+ Expr ::= [preDecr] "--" Expr ;
+ Expr ::= [this] "this" ;
+ Expr ::= [mul] Expr "*" Expr ;
+ Expr ::= [div] Expr Expr ;
+ Expr ::= [remain] Expr "%" Expr ;
+ Expr ::= [qThis] TypeName "." "this" ;
+ Expr ::= [complement] "~" Expr ;
+ Expr ::= [not] "!" Expr ;
+ Expr ::= [plus] Expr Expr ;
+ Expr ::= [minus] Expr Expr ;
+ Expr ::= [uRightShift] Expr ">>>" Expr ;
+ Expr ::= [rightShift] Expr ">>" Expr ;
+ Expr ::= [leftShift] Expr "<<" Expr ;
+ Expr ::= [ltEq] Expr "<=" Expr ;
+ Expr ::= [lt] Expr "<" Expr ;
+ Expr ::= [gtEq] Expr ">=" Expr ;
+ Expr ::= [instanceOf] Expr "instanceof" RefType ;
+ Expr ::= [gt] Expr ">" Expr ;
+ Expr ::= [eq] Expr "==" Expr ;
+ Expr ::= [notEq] Expr "!=" Expr ;
+ Expr ::= [and] Expr "&" Expr ;
+ Expr ::= [excOr] Expr "^" Expr ;
+ Expr ::= [or] Expr "|" Expr ;
+ Expr ::= [lazyAnd] Expr "&&" Expr ;
+ Expr ::= [lazyOr] Expr "||" Expr ;
+ Expr ::= [cond] Expr CondMid Expr ;
+ Expr ::= [assignMinus] LHS "-=" Expr ;
+ Expr ::= [assignExcOr] LHS "^=" Expr ;
+ Expr ::= [assignPlus] LHS "+=" Expr ;
+ Expr ::= [assignURightShift] LHS ">>>=" Expr ;
+ Expr ::= [assignAnd] LHS "&=" Expr ;
+ Expr ::= [assignDiv] LHS "/=" Expr ;
+ Expr ::= [assignMul] LHS "*=" Expr ;
+ Expr ::= [assignRemain] LHS "%=" Expr ;
+ Expr ::= [assignLeftShift] LHS "<<=" Expr ;
+ Expr ::= [assignRightShift] LHS ">>=" Expr ;
+ Expr ::= [assignOr] LHS "|=" Expr ;
+ Expr ::= [assign] LHS "=" Expr ;
+ Expr ::= [qNewInstance] Expr "." "new" TypeArgs? Id TypeArgs? "(" {Expr ","}* ")" ClassBody? ;
+ Expr ::= [lit] Literal ;
+ Expr ::= [newInstance] "new" TypeArgs? ClassOrInterfaceType "(" {Expr ","}* ")" ClassBody? ;
+ Expr ::= [exprName] ExprName ;
+ Expr ::= ArrayCreationExpr ;
+ Expr ::= "(" Expr ")" ;
+ Expr ::= ε ;
+ Expr ::= [invoke] MethodSpec "(" {Expr ","}* ")" ;
+ArraySubscript ::= "[" Expr "]" ;
+--------------------modula::dagenais-cordy.bgf--------------------
+ParenthesizedId ::= "(" id ")" ;
+ParenthesizedType ::= "(" Type ")" ;
+ParenthesizedExpr ::= "(" Expr ")" ;
+--------------------xpath::w3c-xpath1.bgf--------------------
+Predicate ::= [NT-Predicate] "[" PredicateExpr "]" ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_subscripts ::= "[" js_expn "]" ;
+--------------------occam::mu-mitchell.bgf--------------------
+new-placement ::= "(" expression-list ")" ;
+--------------------pascal::delphi.bgf--------------------
+guid_decl ::= "[" expr "]" ;
+--------------------pascal::object.bgf--------------------
+object_heritage ::= "(" ref_name ")" ;
+--------------------markup::wiki-simple.bgf--------------------
+WikiLink ::= [barred] "[[" destination::PageName "|" description::(MWWord+) "]]" ;
+ WikiLink ::= [simple] "[[" destination::PageName "]]" ;
+--------------------fl::dcg.bgf--------------------
+atom ::= [literal] int ;
+ atom ::= [argument] name ;
+ atom ::= "(" expr ")" ;
+--------------------fl::rascal-c.bgf--------------------
+Expr ::= [ifThenElse] "if" cond::Expr "then" thenbranch::Expr "else" elsebranch::Expr ;
+ Expr ::= "(" e::Expr ")" ;
+ Expr ::= [literal] i::Int ;
+ Expr ::= [argument] a::Name ;
+ Expr ::= [binary] lexpr::Expr op::Ops rexpr::Expr ;
+ Expr ::= [apply] f::Name vargs::(Expr+) ;
+--------------------fl::rascal.bgf--------------------
+Expr ::= [binary] Expr Ops Expr ;
+ Expr ::= [apply] Name Expr+ ;
+ Expr ::= [ifThenElse] "if" Expr "then" Expr "else" Expr ;
+ Expr ::= "(" Expr ")" ;
+ Expr ::= [argument] Name ;
+ Expr ::= [literal] Int ;
+--------------------fl::sdf.bgf--------------------
+Expr ::= [binary] Expr Ops Expr ;
+ Expr ::= [apply] Name Expr+ ;
+ Expr ::= [ifThenElse] "if" Expr "then" Expr "else" Expr ;
+ Expr ::= "(" Expr ")" ;
+ Expr ::= [argument] Name ;
+ Expr ::= [literal] Int ;
+--------------------metasyntax::txl.bgf--------------------
+formatCue ::= "[" formatId "]" ;
+--------------------metasyntax::ebnf-bgf.bgf--------------------
+marked-expression ::= "<" expression ">" ;
+--------------------metasyntax::ebnf-iso-2.bgf--------------------
+repeated_sequence ::= "{" definitions_list "}" ;
+grouped_sequence ::= "(" definitions_list ")" ;
+optional_sequence ::= "[" definitions_list "]" ;
+--------------------metasyntax::ebnf-iso-3.bgf--------------------
+GROUPED_SEQUENCE ::= "(" DEFINITIONS_LIST ")" ;
+--------------------metasyntax::lll-kort.bgf--------------------
+group ::= "(" disjunction ")" ;
+--------------------metasyntax::s-expressions.bgf--------------------
+Display ::= "[" SimpleString "]" ;
+--------------------metasyntax::aterms-rascal.bgf--------------------
+ATerm ::= [Appl] AFun "(" {ATerm ","}+ ")" ;
+ ATerm ::= [Real] RealCon ;
+ ATerm ::= [List] "[" {ATerm ","}* "]" ;
+ ATerm ::= [Annotated] ATerm Annotation ;
+ ATerm ::= [Placeholder] "<" ATerm ">" ;
+ ATerm ::= [Int] IntCon ;
+ ATerm ::= [Fun] AFun ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+Group ::= [NonTransitive] Group "." ;
+ Group ::= [AssocGroup] "{" Assoc ":" Prods "}" ;
+ Group ::= [WithArguments] Group ArgumentIndicator ;
+ Group ::= [SimpleGroup] Prod ;
+ Group ::= [ProdsGroup] "{" Prods "}" ;
+ATerm ::= [Real] RealCon ;
+ ATerm ::= [Appl] AFun "(" {ATerm ","}+ ")" ;
+ ATerm ::= [Annotated] ATerm Annotation ;
+ ATerm ::= [Placeholder] "<" ATerm ">" ;
+ ATerm ::= [Int] IntCon ;
+ ATerm ::= [Fun] AFun ;
+ ATerm ::= [List] "[" {ATerm ","}* "]" ;
+Class ::= [SimpleCharClass] "[" Range* "]" ;
+ Class ::= [Bracket] "(" Class ")" ;
+ Class ::= [Comp] "~" Class ;
+ Class ::= [Diff] Class "/" Class ;
+ Class ::= [ISect] Class "/\" Class ;
+ Class ::= [Union] Class "\/" Class ;
+Sym ::= [Empty] "(" ")" ;
+ Sym ::= [Lit] StrCon ;
+ Sym ::= [Opt] Sym "?" ;
+ Sym ::= [Seq] "(" Sym Sym+ ")" ;
+ Sym ::= [Bracket] "(" Sym ")" ;
+ Sym ::= [CILit] SingleQuotedStrCon ;
+ Sym ::= [Varsym] "<" Sym "-VAR" ">" ;
+ Sym ::= [Sort] Sort ;
+ Sym ::= [Lex] "<" Sym "-LEX" ">" ;
+ Sym ::= [Layout] "LAYOUT" ;
+ Sym ::= [CF] "<" Sym "-CF" ">" ;
+ Sym ::= [ParameterizedSort] Sort "[[" {Sym ","}+ "]]" ;
+ Sym ::= [IterStar] Sym "*" ;
+ Sym ::= [IterStarSep] "{" Sym Sym "}" "*" ;
+ Sym ::= [Iter] Sym "+" ;
+ Sym ::= [Class] Class ;
+ Sym ::= [IterSep] "{" Sym Sym "}" "+" ;
+ Sym ::= [Alt] Sym "|" Sym ;
+ Sym ::= [Label] Label ":" Sym ;
+Import ::= [Bracket] "(" Import ")" ;
+ Import ::= [Module] ModuleName ;
+ Import ::= [RenamedModule] ModuleName Renamings ;
+Lookaheads ::= [Single] Lookahead ;
+ Lookaheads ::= [Alt] Lookaheads "|" Lookaheads ;
+ Lookaheads ::= [List] "[[" {Lookahead ","}* "]]" ;
+ Lookaheads ::= [Bracket] "(" Lookaheads ")" ;
+--------------------metamodels::logic-concrete.bgf--------------------
+True ::= "(" True ")" ;
+ True ::= "true" ;
+ True ::= "not" f::False ;
+ True ::= lt::True "and" rt::True ;
+ True ::= lt::True "or" rt::True ;
+ True ::= lt::True "or" rf::False ;
+ True ::= lf::False "or" rt::True ;
+False ::= "false" ;
+ False ::= "not" t::True ;
+ False ::= "(" False ")" ;
+ False ::= lf::False "and" rt::True ;
+ False ::= lf::False "and" rf::False ;
+ False ::= lt::True "and" rf::False ;
+ False ::= lf::False "or" rf::False ;
+--------------------pico::rascal.bgf--------------------
+Expression ::= "(" e::Expression ")" ;
+ Expression ::= [natcon] natcon::Natural ;
+ Expression ::= [id] name::Id ;
+ Expression ::= [strcon] string::String ;
+ Expression ::= [concat] lhs::Expression "||" rhs::Expression ;
+ Expression ::= [add] lhs::Expression "+" rhs::Expression ;
+ Expression ::= [min] lhs::Expression "-" rhs::Expression ;

@@ -1,0 +1,71 @@
+--------------------ada::kellogg.bgf--------------------
+access_opt ::= ACCESS? ;
+private_opt ::= PRIVATE? ;
+reverse_opt ::= REVERSE? ;
+abstract_opt ::= ABSTRACT? ;
+discrim_part_opt ::= discrim_part_text? ;
+aliased_opt ::= ALIASED? ;
+range_constraint_opt ::= range_constraint? ;
+until_opt ::= UNTIL? ;
+protected_opt ::= PROTECTED? ;
+--------------------ada::kempe.bgf--------------------
+parameter_profile ::= formal_part? ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+parameter_profile ::= formal_part? ;
+--------------------ada::lncs-2219.bgf--------------------
+parameter_profile ::= formal_part? ;
+--------------------ada::lncs-4348.bgf--------------------
+parameter_profile ::= formal_part? ;
+--------------------ada::cordy-hyaric.bgf--------------------
+parameter_profile ::= formal_part? ;
+--------------------cpp::iso-n2723.bgf--------------------
+namespace-body ::= declaration-seq? ;
+translation-unit ::= declaration-seq? ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+namespace-body ::= declaration-seq? ;
+translation-unit ::= declaration-seq? ;
+--------------------eiffel::bezault.bgf--------------------
+Actual_generics ::= Type_list? ;
+Formal_generics ::= Formal_generic_list? ;
+--------------------fortran::derricks.bgf--------------------
+LblDef ::= Label? ;
+--------------------java::java-5-habelitz.bgf--------------------
+forCondition ::= expression? ;
+forUpdater ::= expressionList? ;
+--------------------java::java-5-stahl.bgf--------------------
+forCond ::= expression? ;
+forIter ::= expressionList? ;
+--------------------java::java-5-studman.bgf--------------------
+forCond ::= expression? ;
+forIter ::= expressionList? ;
+--------------------modula::dagenais-cordy.bgf--------------------
+Fields ::= FieldList? ;
+Overrides ::= OverrideList? ;
+Methods ::= MethodList? ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_array_element ::= js_assignment_expn? ;
+--------------------occam::mu-mitchell.bgf--------------------
+namespace-body ::= declaration-seq? ;
+translation-unit ::= declaration-seq? ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+style-drawing-page-properties-elements ::= presentation-sound? ;
+common-field-num-format-attlist ::= common-num-format-attlist? ;
+--------------------odf::opendoc-1.0.bgf--------------------
+style-drawing-page-properties-elements ::= presentation-sound? ;
+common-field-num-format-attlist ::= common-num-format-attlist? ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+style-drawing-page-properties-elements ::= presentation-sound? ;
+common-field-num-format-attlist ::= common-num-format-attlist? ;
+--------------------odf::opendoc-1.1.bgf--------------------
+style-drawing-page-properties-elements ::= presentation-sound? ;
+common-field-num-format-attlist ::= common-num-format-attlist? ;
+--------------------odf::opendoc-1.2.bgf--------------------
+style-drawing-page-properties-elements ::= presentation-sound? ;
+common-db-default-value ::= common-value-and-type-attlist? ;
+common-field-num-format-attlist ::= common-num-format-attlist? ;
+text-list-header-attr ::= xml-id? ;
+--------------------markup::docbook-walsh.bgf--------------------
+titles ::= title? ;
+--------------------markup::pnml-hlcorestructure.bgf--------------------
+arc.labels ::= HLAnnotation? ;
+transition.labels ::= Condition? ;

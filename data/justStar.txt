@@ -1,0 +1,237 @@
+--------------------ada::kellogg.bgf--------------------
+prot_op_decl_s ::= prot_op_decl* ;
+--------------------ada::kempe.bgf--------------------
+context_clause ::= context_item* ;
+declarative_part ::= declarative_item* ;
+compilation ::= compilation_unit* ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+context_clause ::= context_item* ;
+declarative_part ::= declarative_item* ;
+compilation ::= compilation_unit* ;
+--------------------ada::lncs-2219.bgf--------------------
+context_clause ::= context_item* ;
+declarative_part ::= declarative_item* ;
+compilation ::= compilation_unit* ;
+--------------------ada::lncs-4348.bgf--------------------
+context_clause ::= context_item* ;
+declarative_part ::= declarative_item* ;
+compilation ::= compilation_unit* ;
+--------------------ada::cordy-hyaric.bgf--------------------
+context_clause ::= context_item* ;
+declarative_part ::= declarative_item* ;
+compilation ::= compilation_unit* ;
+--------------------c::antoniol.bgf--------------------
+any_other_line ::= not_newline* ;
+program ::= line* ;
+--------------------c::malton-dahn.bgf--------------------
+C_compilation_unit ::= declaration_or_function_definition* ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+compound_statement_body ::= declaration_or_statement* ;
+macro_arguments ::= macro_argument* ;
+compilation_unit ::= function_definition_or_declaration* ;
+--------------------c::cordy-malton.bgf--------------------
+C_compilation_unit ::= declaration_or_function_definition* ;
+--------------------cpp::elges-cordy.bgf--------------------
+declaration_list ::= declaration* ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+attributes ::= attribute-section* ;
+global-attributes ::= global-attribute-section* ;
+--------------------cs::csharp-antoniol.bgf--------------------
+any_other_line ::= not_newline* ;
+program ::= line* ;
+--------------------cs::csharp-cordy.bgf--------------------
+rank_specifiers ::= rank_specifier* ;
+interface_modifiers ::= interface_modifier* ;
+--------------------dart::spec-0.01.bgf--------------------
+statements ::= statement* ;
+--------------------dart::google.bgf--------------------
+statements ::= statement* ;
+--------------------dart::spec-0.05.bgf--------------------
+statements ::= statement* ;
+--------------------eiffel::cordy.bgf--------------------
+Formal_entity_declaration_list ::= Formal_entity_declaration_group_Separator* ;
+New_export_list ::= New_export_item_Separator* ;
+program ::= Class_declaration* ;
+Parent_list ::= Parent_Separator* ;
+--------------------fortran::waite-cordy.bgf--------------------
+ConditionalBody ::= ExecutionPartConstruct* ;
+--------------------java::java-2-jls-impl.bgf--------------------
+SwitchBlockStatementGroups ::= SwitchBlockStatementGroup* ;
+ModifiersOpt ::= Modifier* ;
+BlockStatements ::= BlockStatement* ;
+--------------------java::java-5-habelitz.bgf--------------------
+annotationList ::= annotation* ;
+modifierList ::= modifier* ;
+switchCaseLabels ::= switchCaseLabel* ;
+localModifierList ::= localModifier* ;
+--------------------java::java-5-jls-impl.bgf--------------------
+SwitchBlockStatementGroups ::= SwitchBlockStatementGroup* ;
+BlockStatements ::= BlockStatement* ;
+--------------------java::java-5-parr.bgf--------------------
+classOrInterfaceModifiers ::= classOrInterfaceModifier* ;
+modifiers ::= modifier* ;
+switchBlockStatementGroups ::= switchBlockStatementGroup* ;
+variableModifiers ::= variableModifier* ;
+--------------------java::java-5-stahl.bgf--------------------
+annotations ::= annotation* ;
+caseSList ::= statement* ;
+--------------------java::java-5-studman.bgf--------------------
+annotations ::= annotation* ;
+caseSList ::= statement* ;
+--------------------java::java-4-sdf.bgf--------------------
+CompilationUnits ::= CompilationUnit* ;
+--------------------basic::vb6-cordy.bgf--------------------
+sub_scope ::= declaration_or_statement* ;
+--------------------dot::rascal-abstract.bgf--------------------
+Stms ::= Stm* ;
+Attrs ::= Attr* ;
+--------------------dot::rascal-concrete.bgf--------------------
+AttrList ::= AttrList0* ;
+StatementList ::= StatementOptional* ;
+--------------------html::cordy.bgf--------------------
+tag_elements ::= element* ;
+program ::= element* ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_program ::= js_declaration_or_statement* ;
+js_subscope ::= js_declaration_or_statement* ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+office-spreadsheet-content-main ::= table-table* ;
+office-presentation-content-main ::= draw-page* ;
+office-drawing-content-main ::= draw-page* ;
+presentation-decls ::= presentation-decl* ;
+office-meta-content-strict ::= office-meta-data* ;
+region-content ::= text-p* ;
+--------------------odf::opendoc-1.0.bgf--------------------
+office-spreadsheet-content-main ::= table-table* ;
+office-presentation-content-main ::= draw-page* ;
+office-drawing-content-main ::= draw-page* ;
+presentation-decls ::= presentation-decl* ;
+office-meta-content-strict ::= office-meta-data* ;
+region-content ::= text-p* ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+office-spreadsheet-content-main ::= table-table* ;
+office-presentation-content-main ::= draw-page* ;
+office-drawing-content-main ::= draw-page* ;
+presentation-decls ::= presentation-decl* ;
+office-meta-content-strict ::= office-meta-data* ;
+region-content ::= text-p* ;
+--------------------odf::opendoc-1.1.bgf--------------------
+office-spreadsheet-content-main ::= table-table* ;
+office-presentation-content-main ::= draw-page* ;
+office-drawing-content-main ::= draw-page* ;
+presentation-decls ::= presentation-decl* ;
+office-meta-content-strict ::= office-meta-data* ;
+region-content ::= text-p* ;
+--------------------odf::opendoc-1.2.bgf--------------------
+office-spreadsheet-content-main ::= table-table* ;
+office-presentation-content-main ::= draw-page* ;
+office-drawing-content-main ::= draw-page* ;
+presentation-decls ::= presentation-decl* ;
+office-meta-content-strict ::= office-meta-data* ;
+region-content ::= text-p* ;
+--------------------pascal::delphi.bgf--------------------
+intfdecl_block ::= intfdecl_section* ;
+impldecl_block ::= impldecl_section* ;
+nested_decl_block ::= nested_decl_section* ;
+--------------------pascal::delphipp.bgf--------------------
+delphipp_file ::= pp_stmt_or_water* ;
+--------------------pascal::object.bgf--------------------
+contains_clause ::= contains_idList_semicolon* ;
+class_method_list ::= class_visibility_method_list* ;
+class_property_list ::= class_visibility_property_list* ;
+requires_clause ::= requires_idList_semicolon* ;
+--------------------xml::zhang-cordy.bgf--------------------
+spaces ::= space_or_newline* ;
+--------------------logo::sdf.bgf--------------------
+Commands ::= Command* ;
+--------------------php::cordy.bgf--------------------
+PHPSection ::= TopStatement* ;
+InlineHTML ::= InlineHTMLtoken* ;
+--------------------python::indent-cordy.bgf--------------------
+program ::= line* ;
+--------------------python::sorochan-cordy.bgf--------------------
+file_input ::= stmt_or_newline* ;
+--------------------markup::pnml-finiteenumerations.bgf--------------------
+FiniteEnumeration.content ::= FEConstant* ;
+--------------------markup::pnml-highlevelnet.bgf--------------------
+FiniteEnumeration.content ::= FEConstant* ;
+--------------------markup::pnml-hlcorestructure.bgf--------------------
+page.labels ::= HLDeclaration* ;
+net.labels ::= HLDeclaration* ;
+--------------------markup::pnml-symmetricnet.bgf--------------------
+FiniteEnumeration.content ::= FEConstant* ;
+--------------------markup::svg-furubayashi-basic.bgf--------------------
+SVG.foreignObject.content ::= SVG.foreignObject.class* ;
+--------------------markup::svg-furubayashi-tiny.bgf--------------------
+SVG.foreignObject.content ::= SVG.foreignObject.class* ;
+--------------------markup::svg-furubayashi.bgf--------------------
+SVG.foreignObject.content ::= SVG.foreignObject.class* ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+any-text ::= unicode-character* ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+text ::= Unicode_char* ;
+--------------------metasyntax::bnf-sdf.bgf--------------------
+Rules ::= Rule* ;
+--------------------metasyntax::txl.bgf--------------------
+program ::= statement* ;
+--------------------metasyntax::ebnf-sdf.bgf--------------------
+Grammar ::= Rule* ;
+--------------------metasyntax::lll-ldta.bgf--------------------
+alt ::= term* ;
+--------------------metasyntax::yacc-sdf.bgf--------------------
+Yacc-declarations ::= Yacc-declaration* ;
+Grammar-rules ::= Rule* ;
+--------------------metasyntax::yacc-txl.bgf--------------------
+productionDefinitions ::= productionDefinition* ;
+literalsAndTypes ::= literalOrType* ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+Aliases ::= Alias* ;
+Sections ::= Section* ;
+Imports ::= Import* ;
+Syms ::= Sym* ;
+Prods ::= Prod* ;
+--------------------tescol::01010.bgf--------------------
+comments ::= COMMENT* ;
+--------------------slps::bgf-4.3-adt.bgf--------------------
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-5.0-adt.bgf--------------------
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-5.1-adt.bgf--------------------
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-5.3-adt.bgf--------------------
+BGFProdSet ::= BGFProduction* ;
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-v5.0-adt.bgf--------------------
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-v5.1-adt.bgf--------------------
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::cbgf-adt.bgf--------------------
+CBGFSequence ::= CBGFCommand* ;
+--------------------slps::slps-cbgf-adt.bgf--------------------
+CBGFSequence ::= CBGFCommand* ;
+--------------------slps::slps-xbgf-adt.bgf--------------------
+XBGFSequence ::= XBGFCommand* ;
+--------------------slps::slps-xedd.bgf--------------------
+evolution ::= step* ;
+--------------------slps::slps-xldf.bgf--------------------
+evolutionSequence ::= documentTransformation* ;
+--------------------slps::xbgf-adt.bgf--------------------
+XBGFSequence ::= XBGFCommand* ;
+--------------------slps::bgf-v4.3-adt.bgf--------------------
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-v5.3-adt.bgf--------------------
+BGFProdSet ::= BGFProduction* ;
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;
+--------------------slps::bgf-v5.4-adt.bgf--------------------
+BGFExprSet ::= BGFExpression* ;
+BGFProdSet ::= BGFProduction* ;
+BGFProdList ::= BGFProduction* ;
+BGFExprList ::= BGFExpression* ;

@@ -1,0 +1,2 @@
+--------------------modula::dagenais-cordy.bgf--------------------
+program ::= Interface | Module | GInterface | GModule | IInterface | IModule ;

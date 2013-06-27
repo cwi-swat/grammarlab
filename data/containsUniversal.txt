@@ -1,0 +1,932 @@
+--------------------ada::kellogg.bgf--------------------
+COMMENT ::= COMMENT_INTRO α* "\n" | ("\r" "\n"?) ;
+CHAR_STRING ::= """ α* """ ;
+CHARACTER_LITERAL ::= "'" α "'" ;
+--------------------dart::spec-0.01.bgf--------------------
+scriptTag ::= "#!" α* NEWLINE ;
+SINGLE_LINE_COMMENT ::= "//" α* NEWLINE? ;
+MULTI_LINE_COMMENT ::= "/*" α* ;
+MULTI_LINE_STRING ::= (""""" α* """"") | ("'''" α* "'''") ;
+SINGLE_LINE_STRING ::= (""" STRING_CONTENT_DQ* """) | ("'" STRING_CONTENT_SQ* "'") | ("@" "'" α* "'") | ("@" """ α* """) ;
+STRING_CONTENT_SQ ::= α | ("\" α) | STRING_INTERPOLATION ;
+STRING_CONTENT_DQ ::= α | ("\" α) | STRING_INTERPOLATION ;
+--------------------dart::google.bgf--------------------
+MULTI_LINE_STRING ::= (""""" α* """"") | ("\'\'\'" α* "\'\'\'") ;
+HASHBANG ::= "#!" α* NEWLINE? ;
+SINGLE_LINE_STRING ::= (""" STRING_CONTENT_DQ* """) | ("\'" STRING_CONTENT_SQ* "\'") | ("@" "\'" α* "\'") | ("@" """ α* """) ;
+STRING_CONTENT_SQ ::= α | ("\\" α) ;
+STRING_CONTENT_DQ ::= α | ("\\" α) ;
+--------------------java::jdt.bgf--------------------
+ReturnStatement ::= expression::α ;
+SimpleName ::= identifier::α declaration::α ;
+ArrayAccess ::= array::α index::α ;
+SwitchStatement ::= expression::α (statements::α)+ ;
+MemberRef ::= name::α qualifier::α ;
+Modifier ::= abstract::α final::α native::α none::α private::α protected::α public::α static::α strictfp::α synchronized::α transient::α volatile::α ;
+MethodRefParameter ::= name::α type::α varargs::α ;
+ThisExpression ::= qualifier::α ;
+VariableDeclarationExpression ::= (fragments::α)+ (modifiers::α)+ type::α ;
+TypeLiteral ::= type::α ;
+ImportDeclaration ::= onDemand::α static::α name::α ;
+PackageDeclaration ::= (annotations::α)+ javadoc::α name::α ;
+ParameterizedType ::= type::α (typeArguments::α)+ ;
+SingleMemberAnnotation ::= value::α ;
+MethodInvocation ::= (arguments::α)+ expression::α name::α (typeArguments::α)+ ;
+TextElement ::= text::α ;
+TypeParameter ::= name::α (typeBounds::α)+ ;
+Block ::= (statements::α)+ ;
+Assignment ::= leftHandSide::α operator::α rightHandSide::α ;
+PrefixExpression ::= operand::α operator::α ;
+CatchClause ::= body::α exception::α ;
+ArrayInitializer ::= (expressions::α)+ ;
+ContinueStatement ::= label::α ;
+InfixExpression ::= (extendedOperands::α)+ leftOperand::α operator::α rightOperand::α ;
+CharacterLiteral ::= charValue::α escapedValue::α ;
+AST ::= root::α ;
+WhileStatement ::= body::α expression::α ;
+FieldAccess ::= expression::α name::α ;
+EnhancedForStatement ::= body::α expression::α parameter::α ;
+CastExpression ::= expression::α type::α ;
+AnnotationTypeMemberDeclaration ::= default::α name::α type::α ;
+SingleVariableDeclaration ::= type::α varargs::α (modifiers::α)+ ;
+QualifiedType ::= name::α qualifier::α ;
+EnumConstantDeclaration ::= (arguments::α)+ anonymousClassDeclaration::α name::α ;
+WildcardType ::= bound::α upperBound::α ;
+ParenthesizedExpression ::= expression::α ;
+MethodRef ::= name::α qualifier::α (parameters::α)+ ;
+VariableDeclarationStatement ::= (fragments::α)+ (modifiers::α)+ type::α ;
+MemberValuePair ::= name::α value::α ;
+BreakStatement ::= label::α ;
+AnonymousClassDeclaration ::= (bodyDeclarations::α)+ ;
+PostfixExpression ::= operand::α operator::α ;
+SuperMethodInvocation ::= (arguments::α)+ name::α qualifier::α (typeArguments::α)+ ;
+ThrowStatement ::= expression::α ;
+CompilationUnit ::= (comments::α)+ package::α (imports::α)+ (types::α)+ ;
+ForStatement ::= body::α expression::α (initializers::α)+ (updaters::α)+ ;
+Initializer ::= body::α ;
+TypeDeclaration ::= superclassType::α interface::α (superInterfaceTypes::α)+ (typeParameters::α)+ ;
+FieldDeclaration ::= (fragments::α)+ type::α ;
+StringLiteral ::= escapedValue::α literalValue::α ;
+LabeledStatement ::= body::α label::α ;
+MethodDeclaration ::= body::α extraDimensions::α name::α returnType::α constructor::α varargs::α (parameters::α)+ (thrownExceptions::α)+ (typeParameters::α)+ ;
+ArrayCreation ::= (dimensions::α)+ initializer::α type::α ;
+Javadoc ::= (tags::α)+ ;
+IfStatement ::= elseStatement::α expression::α thenStatement::α ;
+BlockComment ::= alternateRoot::α ;
+VariableDeclarationFragment ::= extraDimensions::α initializer::α name::α ;
+SimpleType ::= name::α ;
+LineComment ::= alternateRoot::α ;
+MarkerAnnotation ::= typeName::α ;
+AssertStatement ::= expression::α message::α ;
+QualifiedName ::= name::α qualifier::α ;
+SwitchCase ::= expression::α default::α ;
+SuperFieldAccess ::= name::α qualifier::α ;
+TagElement ::= (fragments::α)+ tagName::α nested::α ;
+PrimitiveType ::= code::α ;
+ConditionalExpression ::= elseExpression::α expression::α thenExpression::α ;
+SynchronizedStatement ::= body::α expression::α ;
+EnumDeclaration ::= (superInterfaceTypes::α)+ (enumConstants::α)+ ;
+ExpressionStatement ::= expression::α ;
+NormalAnnotation ::= (values::α)+ ;
+TryStatement ::= (catchClauses::α)+ body::α finally::α ;
+ArrayType ::= componentType::α dimensions::α elementType::α ;
+AnnotationTypeDeclaration ::= (bodyDeclarations::α)+ name::α localTypeDeclaration::α memberTypeDeclaration::α packageMemberTypeDeclaration::α ;
+TypeDeclarationStatement ::= declaration::α ;
+SuperConstructorInvocation ::= (arguments::α)+ expression::α (typeArguments::α)+ ;
+ClassInstanceCreation ::= (arguments::α)+ anonymousClassDeclaration::α expression::α type::α (typeArguments::α)+ ;
+ConstructorInvocation ::= (arguments::α)+ (typeArguments::α)+ ;
+NullLiteral ::= resolveBoxing::α resolveUnboxing::α ;
+BooleanLiteral ::= booleanValue::α ;
+NumberLiteral ::= token::α ;
+DoStatement ::= body::α expression::α ;
+InstanceofExpression ::= leftOperand::α rightOperand::α ;
+--------------------java::jvm-level0.bgf--------------------
+Field ::= (field::(access::integer() name::string() description::string() signature::string() value::α)) | (field::(access::integer() name::string() description::string() signature::string())) ;
+--------------------java::jvm-level1.bgf--------------------
+Field ::= (field::(modifiers::(FieldModifier*) name::string() description::string() signature::string() value::α)) | (field::(modifiers::(FieldModifier*) name::string() description::string() signature::string())) ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+mathMarkup ::= (α | string() | mathMarkup)* ;
+--------------------odf::opendoc-1.0.bgf--------------------
+mathMarkup ::= (α | string() | mathMarkup)* ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+mathMarkup ::= (α | string() | mathMarkup)* ;
+--------------------odf::opendoc-1.1.bgf--------------------
+mathMarkup ::= (α | string() | mathMarkup)* ;
+--------------------odf::opendoc-1.2-dsig.bgf--------------------
+dsMarkup ::= (α | string() | dsMarkup)* ;
+--------------------odf::opendoc-1.2.bgf--------------------
+mathMarkup ::= (α | string() | mathMarkup)* ;
+--------------------xslt::clark.bgf--------------------
+any ::= (α | string() | any)* ;
+extension.atts ::= α* ;
+--------------------markup::pnml-anyElement.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-ext-inhibitor.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-ext-reset.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-ext-resetinhibitor.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-highlevelnet.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-hlpng.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-pnmlcoremodel.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-ptnet.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::pnml-symmetricnet.bgf--------------------
+anyElement ::= (α | string() | anyElement)* ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+random-character ::= α ;
+any-supported-unicode-character ::= α ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+Unicode_char ::= α ;
+--------------------metasyntax::relaxng.bgf--------------------
+any ::= (α | string() | any)* ;
+common-atts ::= (ns::string())? (datatypeLibrary::string())? α* ;
+other ::= ((α | string() | any)*)* ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+anyContent ::= (string() | (α* anyContent))* ;
+--------------------tescol::00000.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::00001.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::00010.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::00011.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::00100.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::00101.bgf--------------------
+COMMENT_BLOCK ::= "/*" α* "*/" ;
+--------------------tescol::00110.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::00111.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::01000.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::01001.bgf--------------------
+COM ::= "/*" α* "*/" ;
+--------------------tescol::01010.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::01011.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::01100.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::01101.bgf--------------------
+COMMENT ::= BEGINCOMMENT α* ENDCOMMENT ;
+--------------------tescol::01110.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::01111.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::10000.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::10001.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::10010.bgf--------------------
+CMT ::= "/*" α* "*/" ;
+--------------------tescol::10100.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::10101.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::10110.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::10111.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11000.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11001.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11010.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11011.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11100.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11101.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------tescol::11110.bgf--------------------
+COMMENTS ::= "/*" α* "*/" ;
+--------------------tescol::11111.bgf--------------------
+COMMENT ::= "/*" α* "*/" ;
+--------------------metamodels::GWPNV4.bgf--------------------
+PTArc ::= dst::α src::α ;
+Net ::= (place::α)+ (transition::α)+ ;
+Place ::= net::α (out::α)+ (in::α)+ ;
+TPArc ::= src::α dst::α ;
+Transition ::= net::α (in::α)+ (out::α)+ ;
+--------------------metamodels::GWPNV5.bgf--------------------
+PTArc ::= dst::α src::α ;
+Net ::= (place::α)+ (transition::α)+ ;
+Token ::= place::α ;
+Place ::= net::α (out::α)+ (in::α)+ (token::α)+ ;
+TPArc ::= src::α dst::α ;
+Transition ::= net::α (in::α)+ (out::α)+ ;
+--------------------metamodels::ifc2x3.bgf--------------------
+IfcSoundProperties ::= IsAttenuating::α SoundScale::α SoundValues::α ;
+IfcStructuralLoadSingleForce ::= ForceX::α ForceY::α ForceZ::α MomentX::α MomentY::α MomentZ::α ;
+IfcRamp ::= ShapeType::α ;
+IfcBuildingStorey ::= Elevation::α ;
+IfcElectricalBaseProperties ::= ElectricCurrentType::α InputVoltage::α InputFrequency::α FullLoadCurrent::α MinimumCircuitCurrent::α MaximumPowerInput::α RatedPowerInput::α InputPhase::α ;
+IfcOrganizationRelationship ::= Name::α Description::α RelatingOrganization::α (RelatedOrganizations::α)+ ;
+IfcAsymmetricIShapeProfileDef ::= TopFlangeWidth::α TopFlangeThickness::α TopFlangeFilletRadius::α CentreOfGravityInY::α ;
+IfcTShapeProfileDef ::= Depth::α FlangeWidth::α WebThickness::α FlangeThickness::α FilletRadius::α FlangeEdgeRadius::α WebEdgeRadius::α WebSlope::α FlangeSlope::α CentreOfGravityInY::α ;
+IfcFuelProperties ::= CombustionTemperature::α CarbonContent::α LowerHeatingValue::α HigherHeatingValue::α ;
+IfcQuantityVolume ::= VolumeValue::α ;
+IfcShellBasedSurfaceModel ::= (SbsmBoundary::α)+ ;
+IfcConstructionResource ::= ResourceIdentifier::α ResourceGroup::α ResourceConsumption::α BaseQuantity::α ;
+IfcActorRole ::= Role::α UserDefinedRole::α Description::α ;
+IfcRoundedRectangleProfileDef ::= RoundingRadius::α ;
+IfcDistributionChamberElementType ::= PredefinedType::α ;
+IfcDerivedUnitElement ::= Unit::α Exponent::α ;
+IfcQuantityTime ::= TimeValue::α ;
+IfcChamferEdgeFeature ::= Width::α Height::α ;
+IfcDefinedSymbol ::= Definition::α Target::α ;
+IfcCsgSolid ::= TreeRootExpression::α ;
+IfcLine ::= Pnt::α Dir::α ;
+IfcUnitAssignment ::= (Units::α)+ ;
+IfcMetricValueSelect ::= IfcDateTimeSelectvalue::α IfcTextvalue::α IfcCostValuevalue::α IfcTimeSeriesvalue::α IfcTablevalue::α IfcMeasureWithUnitvalue::α ;
+IfcStructuralPlanarAction ::= ProjectedOrTrue::α ;
+IfcRelConnectsStructuralMember ::= RelatingStructuralMember::α RelatedStructuralConnection::α AppliedCondition::α AdditionalConditions::α ConditionCoordinateSystem::α SupportedLength::α ;
+IfcEdgeFeature ::= FeatureLength::α ;
+IfcSectionProperties ::= StartProfile::α EndProfile::α SectionType::α ;
+IfcDamperType ::= PredefinedType::α ;
+IfcRelAssociatesApproval ::= RelatingApproval::α ;
+IfcAsset ::= OriginalValue::α CurrentValue::α TotalReplacementCost::α Owner::α User::α ResponsiblePerson::α IncorporationDate::α DepreciatedValue::α AssetID::α ;
+IfcStructuralLoad ::= Name::α ;
+IfcRelOverridesProperties ::= (OverridingProperties::α)+ ;
+IfcRectangleProfileDef ::= XDim::α YDim::α ;
+IfcRailingType ::= PredefinedType::α ;
+IfcVibrationIsolatorType ::= PredefinedType::α ;
+IfcSizeSelect ::= IfcPositiveRatioMeasurevalue::α IfcNormalisedRatioMeasurevalue::α IfcPositiveLengthMeasurevalue::α IfcDescriptiveMeasurevalue::α IfcLengthMeasurevalue::α IfcRatioMeasurevalue::α ;
+IfcBSplineCurve ::= Degree::α CurveForm::α ClosedCurve::α SelfIntersect::α ControlPointsList::α ;
+IfcTimeSeriesSchedule ::= (ApplicableDates::α)+ TimeSeries::α TimeSeriesScheduleType::α ;
+IfcCartesianTransformationOperator3D ::= Axis3::α ;
+IfcSweptAreaSolid ::= SweptArea::α Position::α ;
+IfcSurfaceStyleRefraction ::= RefractionIndex::α DispersionFactor::α ;
+IfcTrimmingSelect ::= IfcParameterValuevalue::α IfcCartesianPointvalue::α ;
+IfcMove ::= MoveFrom::α MoveTo::α (PunchList::α)+ ;
+IfcQuantityLength ::= LengthValue::α ;
+IfcControl ::= Controls::α ;
+IfcLibraryReference ::= ReferenceIntoLibrary::α ;
+IfcFlowMeterType ::= PredefinedType::α ;
+IfcOpticalMaterialProperties ::= VisibleTransmittance::α SolarTransmittance::α ThermalIrTransmittance::α ThermalIrEmissivityBack::α ThermalIrEmissivityFront::α VisibleReflectanceBack::α VisibleReflectanceFront::α SolarReflectanceFront::α SolarReflectanceBack::α ;
+IfcEvaporativeCoolerType ::= PredefinedType::α ;
+IfcPerformanceHistory ::= LifeCyclePhase::α ;
+IfcVector ::= Orientation::α Magnitude::α ;
+IfcRelConnectsWithRealizingElements ::= (RealizingElements::α)+ ConnectionType::α ;
+IfcPropertySet ::= (HasProperties::α)+ ;
+IfcVertexPoint ::= VertexGeometry::α ;
+IfcSurfaceCurveSweptAreaSolid ::= StartParam::α EndParam::α Directrix::α ReferenceSurface::α ;
+IfcLightSourcePositional ::= Radius::α ConstantAttenuation::α DistanceAttenuation::α QuadricAttenuation::α Position::α ;
+IfcContextDependentUnit ::= Name::α ;
+IfcBuilding ::= ElevationOfRefHeight::α ElevationOfTerrain::α BuildingAddress::α ;
+IfcRelConnectsPorts ::= RelatingPort::α RelatedPort::α RealizingElement::α ;
+IfcDoor ::= OverallHeight::α OverallWidth::α ;
+IfcDuctSilencerType ::= PredefinedType::α ;
+IfcStructuralReaction ::= Causes::α ;
+IfcFillAreaStyleTileSymbolWithStyle ::= Symbol::α ;
+IfcCsgPrimitive3D ::= Position::α ;
+IfcProductDefinitionShape ::= HasShapeAspects::α ;
+IfcPostalAddress ::= InternalLocation::α (AddressLines::α)+ PostalBox::α Town::α Region::α PostalCode::α Country::α ;
+IfcStructuralConnection ::= ConnectsStructuralMembers::α AppliedCondition::α ;
+IfcSlabType ::= PredefinedType::α ;
+IfcPhysicalSimpleQuantity ::= Unit::α ;
+IfcDoorLiningProperties ::= LiningDepth::α LiningThickness::α ThresholdDepth::α ThresholdThickness::α TransomThickness::α TransomOffset::α LiningOffset::α ThresholdOffset::α CasingThickness::α CasingDepth::α ShapeAspectStyle::α ;
+IfcCableSegmentType ::= PredefinedType::α ;
+IfcRelFlowControlElements ::= (RelatedControlElements::α)+ RelatingFlowElement::α ;
+IfcRelAssignsToControl ::= RelatingControl::α ;
+IfcShapeModel ::= OfShapeAspect::α ;
+IfcRelAssociatesClassification ::= RelatingClassification::α ;
+IfcElectricGeneratorType ::= PredefinedType::α ;
+IfcCostSchedule ::= Status::α ID::α PredefinedType::α SubmittedBy::α PreparedBy::α SubmittedOn::α (TargetUsers::α)+ UpdateDate::α ;
+IfcSpecularHighlightSelect ::= IfcSpecularRoughnessvalue::α IfcSpecularExponentvalue::α ;
+IfcColourOrFactor ::= IfcNormalisedRatioMeasurevalue::α IfcColourRgbvalue::α ;
+IfcPropertyTableValue ::= (DefiningValues::α)+ (DefinedValues::α)+ DefiningUnit::α DefinedUnit::α Expression::α ;
+IfcPresentationLayerWithStyle ::= LayerOn::α LayerFrozen::α LayerBlocked::α (LayerStyles::α)+ ;
+IfcIShapeProfileDef ::= OverallWidth::α OverallDepth::α WebThickness::α FlangeThickness::α FilletRadius::α ;
+IfcGroup ::= IsGroupedBy::α ;
+IfcDirection ::= DirectionRatios::α ;
+IfcPolygonalBoundedHalfSpace ::= Position::α PolygonalBoundary::α ;
+IfcRectangleHollowProfileDef ::= WallThickness::α InnerFilletRadius::α OuterFilletRadius::α ;
+IfcCoilType ::= PredefinedType::α ;
+IfcMappedItem ::= MappingSource::α MappingTarget::α ;
+IfcPlateType ::= PredefinedType::α ;
+IfcQuantityWeight ::= WeightValue::α ;
+IfcProduct ::= ReferencedBy::α ObjectPlacement::α Representation::α ReferencedInStructures::α ContainedInStructure::α ;
+IfcProxy ::= ProxyType::α Tag::α ;
+IfcFanType ::= PredefinedType::α ;
+IfcDuctSegmentType ::= PredefinedType::α ;
+IfcMaterialLayer ::= LayerThickness::α IsVentilated::α ToMaterialLayerSet::α Material::α ;
+IfcMeasureWithUnit ::= ValueComponent::α UnitComponent::α ;
+IfcCircleHollowProfileDef ::= WallThickness::α ;
+IfcSIUnit ::= Prefix::α Name::α ;
+IfcTextStyleTextModel ::= TextAlign::α TextDecoration::α TextTransform::α TextIndent::α LetterSpacing::α WordSpacing::α LineHeight::α ;
+IfcStructuralLoadLinearForce ::= LinearForceX::α LinearForceY::α LinearForceZ::α LinearMomentX::α LinearMomentY::α LinearMomentZ::α ;
+IfcColourRgb ::= Red::α Green::α Blue::α ;
+IfcLaborResource ::= SkillSet::α ;
+IfcGeometricRepresentationSubContext ::= TargetScale::α TargetView::α UserDefinedTargetView::α ParentContext::α ;
+IfcRelDefinesByType ::= RelatingType::α ;
+IfcCircle ::= Radius::α ;
+IfcTrapeziumProfileDef ::= BottomXDim::α TopXDim::α YDim::α TopXOffset::α ;
+IfcRelAssociatesProfileProperties ::= ProfileOrientation::α RelatingProfileProperties::α ProfileSectionLocation::α ;
+IfcManifoldSolidBrep ::= Outer::α ;
+IfcPropertyBoundedValue ::= UpperBoundValue::α LowerBoundValue::α Unit::α ;
+IfcSite ::= RefLatitude::α RefLongitude::α RefElevation::α LandTitleNumber::α SiteAddress::α ;
+IfcConstructionMaterialResource ::= (Suppliers::α)+ UsageRatio::α ;
+IfcGrid ::= (UAxes::α)+ (VAxes::α)+ (WAxes::α)+ ;
+IfcAirToAirHeatRecoveryType ::= PredefinedType::α ;
+IfcZShapeProfileDef ::= Depth::α FlangeWidth::α WebThickness::α FlangeThickness::α FilletRadius::α EdgeRadius::α ;
+IfcRepresentationMap ::= MapUsage::α MappingOrigin::α MappedRepresentation::α ;
+IfcApproval ::= Description::α ApprovalStatus::α ApprovalLevel::α ApprovalQualifier::α Name::α Identifier::α Actors::α IsRelatedWith::α Relates::α ApprovalDateTime::α ;
+IfcDistributionFlowElement ::= HasControlElements::α ;
+IfcMaterialProperties ::= Material::α ;
+IfcProtectiveDeviceType ::= PredefinedType::α ;
+IfcBoilerType ::= PredefinedType::α ;
+IfcConstraintRelationship ::= Name::α Description::α RelatingConstraint::α (RelatedConstraints::α)+ ;
+IfcOrganization ::= Id::α Name::α Description::α IsRelatedBy::α Relates::α Engages::α (Roles::α)+ (Addresses::α)+ ;
+IfcColumnType ::= PredefinedType::α ;
+IfcMechanicalConcreteMaterialProperties ::= CompressiveStrength::α MaxAggregateSize::α AdmixturesDescription::α Workability::α ProtectivePoreRatio::α WaterImpermeability::α ;
+IfcDateAndTime ::= DateComponent::α TimeComponent::α ;
+IfcCompositeCurve ::= (Segments::α)+ SelfIntersect::α ;
+IfcFooting ::= PredefinedType::α ;
+IfcCartesianPoint ::= Coordinates::α ;
+IfcCraneRailFShapeProfileDef ::= OverallHeight::α HeadWidth::α Radius::α HeadDepth2::α HeadDepth3::α WebThickness::α BaseDepth1::α BaseDepth2::α CentreOfGravityInY::α ;
+IfcTimeSeries ::= Name::α Description::α TimeSeriesDataType::α DataOrigin::α UserDefinedDataOrigin::α DocumentedBy::α StartTime::α EndTime::α Unit::α ;
+IfcReinforcingBar ::= NominalDiameter::α CrossSectionArea::α BarLength::α BarRole::α BarSurface::α ;
+IfcSectionReinforcementProperties ::= LongitudinalStartPosition::α LongitudinalEndPosition::α TransversePosition::α ReinforcementRole::α SectionDefinition::α (CrossSectionReinforcementDefinitions::α)+ ;
+IfcRelAssignsToProduct ::= RelatingProduct::α ;
+IfcStructuralLoadSingleForceWarping ::= WarpingMoment::α ;
+IfcComplexProperty ::= (HasProperties::α)+ UsageName::α ;
+IfcElementarySurface ::= Position::α ;
+IfcPropertyListValue ::= (ListValues::α)+ Unit::α ;
+IfcConic ::= Position::α ;
+IfcRelConnectsElements ::= ConnectionGeometry::α RelatingElement::α RelatedElement::α ;
+IfcRoundedEdgeFeature ::= Radius::α ;
+IfcReinforcingElement ::= SteelGrade::α ;
+IfcFireSuppressionTerminalType ::= PredefinedType::α ;
+IfcOpeningElement ::= HasFillings::α ;
+IfcSurfaceStyle ::= Styles::α Side::α ;
+IfcEdgeLoop ::= (EdgeList::α)+ ;
+IfcCurveStyleFontAndScaling ::= Name::α CurveFontScaling::α CurveFont::α ;
+IfcRepresentationItem ::= StyledByItem::α ;
+IfcBuildingElementProxyType ::= PredefinedType::α ;
+IfcBoundingBox ::= XDim::α YDim::α ZDim::α Corner::α ;
+IfcCompositeProfileDef ::= Profiles::α Label::α ;
+IfcPipeSegmentType ::= PredefinedType::α ;
+IfcLibraryInformation ::= Name::α Version::α Publisher::α VersionDate::α (LibraryReference::α)+ ;
+IfcActor ::= IsActingUpon::α TheActor::α ;
+IfcTextureCoordinate ::= AnnotatedSurface::α ;
+IfcPlanarExtent ::= SizeInX::α SizeInY::α ;
+IfcGeometricRepresentationContext ::= CoordinateSpaceDimension::α Precision::α HasSubContexts::α WorldCoordinateSystem::α TrueNorth::α ;
+IfcTerminatorSymbol ::= AnnotatedCurve::α ;
+IfcTelecomAddress ::= (TelephoneNumbers::α)+ (FacsimileNumbers::α)+ PagerNumber::α (ElectronicMailAddresses::α)+ WWWHomePageURL::α ;
+IfcSurfaceStyleRendering ::= Transparency::α ReflectanceMethod::α DiffuseColour::α TransmissionColour::α DiffuseTransmissionColour::α ReflectionColour::α SpecularColour::α SpecularHighlight::α ;
+IfcObjectPlacement ::= PlacesObject::α ReferencedByPlacements::α ;
+IfcPlacement ::= Location::α ;
+IfcProperty ::= Name::α Description::α PropertyForDependance::α PropertyDependsOn::α PartOfComplex::α ;
+IfcConversionBasedUnit ::= ConversionFactor::α Name::α ;
+IfcActuatorType ::= PredefinedType::α ;
+IfcConnectionPointEccentricity ::= EccentricityInX::α EccentricityInY::α EccentricityInZ::α ;
+IfcRelAssociatesMaterial ::= RelatingMaterial::α ;
+IfcProcedure ::= ProcedureID::α ProcedureType::α UserDefinedProcedureType::α ;
+IfcRightCircularCylinder ::= Height::α Radius::α ;
+IfcApplication ::= Version::α ApplicationFullName::α ApplicationIdentifier::α ApplicationDeveloper::α ;
+IfcPumpType ::= PredefinedType::α ;
+IfcFeatureElementAddition ::= ProjectsElements::α ;
+IfcMechanicalFastener ::= NominalDiameter::α NominalLength::α ;
+IfcPolyline ::= Points::α ;
+IfcRelDefines ::= (RelatedObjects::α)+ ;
+IfcRelAssociatesDocument ::= RelatingDocument::α ;
+IfcOccupant ::= PredefinedType::α ;
+IfcConnectionCurveGeometry ::= CurveOnRelatingElement::α CurveOnRelatedElement::α ;
+IfcRationalBezierCurve ::= WeightsData::α ;
+IfcDerivedUnit ::= UnitType::α UserDefinedType::α (Elements::α)+ ;
+IfcStructuralConnectionCondition ::= Name::α ;
+IfcAirTerminalType ::= PredefinedType::α ;
+IfcPropertyEnumeratedValue ::= (EnumerationValues::α)+ EnumerationReference::α ;
+IfcDraughtingCalloutRelationship ::= Name::α Description::α RelatingDraughtingCallout::α RelatedDraughtingCallout::α ;
+IfcSweptSurface ::= SweptCurve::α Position::α ;
+IfcElectricMotorType ::= PredefinedType::α ;
+IfcTrimmedCurve ::= SenseAgreement::α MasterRepresentation::α Trim1::α Trim2::α BasisCurve::α ;
+IfcFillAreaStyleTiles ::= TilingPattern::α (Tiles::α)+ TilingScale::α ;
+IfcTextureCoordinateGenerator ::= (Parameter::α)+ Mode::α ;
+IfcPointOnSurface ::= PointParameterU::α PointParameterV::α BasisSurface::α ;
+IfcPermit ::= PermitID::α ;
+IfcTypeObject ::= ObjectTypeOf::α (HasPropertySets::α)+ ApplicableOccurrence::α ;
+IfcPreDefinedItem ::= Name::α ;
+IfcMaterialLayerSet ::= (MaterialLayers::α)+ LayerSetName::α ;
+IfcFillAreaStyleHatching ::= StartOfNextHatchLine::α HatchLineAppearance::α PointOfReferenceHatchLine::α PatternStart::α HatchLineAngle::α ;
+IfcDoorStyle ::= OperationType::α ConstructionType::α ParameterTakesPrecedence::α Sizeable::α ;
+IfcRelCoversSpaces ::= RelatedSpace::α (RelatedCoverings::α)+ ;
+IfcTransportElement ::= OperationType::α CapacityByWeight::α CapacityByNumber::α ;
+IfcDimensionalExponents ::= LengthExponent::α MassExponent::α TimeExponent::α ElectricCurrentExponent::α ThermodynamicTemperatureExponent::α AmountOfSubstanceExponent::α LuminousIntensityExponent::α ;
+IfcAppliedValueSelect ::= IfcMonetaryMeasurevalue::α IfcRatioMeasurevalue::α IfcMeasureWithUnitvalue::α ;
+IfcStairFlight ::= NumberOfRiser::α NumberOfTreads::α RiserHeight::α TreadLength::α ;
+IfcTendon ::= PredefinedType::α NominalDiameter::α CrossSectionArea::α TensionForce::α PreStress::α FrictionCoefficient::α AnchorageSlip::α MinCurvatureRadius::α ;
+IfcStructuralLoadPlanarForce ::= PlanarForceX::α PlanarForceY::α PlanarForceZ::α ;
+IfcPermeableCoveringProperties ::= OperationType::α PanelPosition::α FrameDepth::α FrameThickness::α ShapeAspectStyle::α ;
+IfcOffsetCurve3D ::= Distance::α SelfIntersect::α BasisCurve::α RefDirection::α ;
+IfcMotorConnectionType ::= PredefinedType::α ;
+IfcWorkControl ::= Identifier::α Purpose::α Duration::α TotalFloat::α WorkControlType::α UserDefinedControlType::α CreationDate::α (Creators::α)+ StartTime::α FinishTime::α ;
+IfcAnnotationFillArea ::= OuterBoundary::α (InnerBoundaries::α)+ ;
+IfcReferencesValueDocument ::= Name::α Description::α ReferencedDocument::α (ReferencingValues::α)+ ;
+IfcLightDistributionData ::= MainPlaneAngle::α (SecondaryPlaneAngle::α)+ (LuminousIntensity::α)+ ;
+IfcSubedge ::= ParentEdge::α ;
+IfcWindow ::= OverallHeight::α OverallWidth::α ;
+IfcActionRequest ::= RequestID::α ;
+IfcTextStyleWithBoxCharacteristics ::= BoxHeight::α BoxWidth::α BoxSlantAngle::α BoxRotateAngle::α CharacterSpacing::α ;
+IfcRelInteractionRequirements ::= DailyInteraction::α ImportanceRating::α LocationOfInteraction::α RelatedSpaceProgram::α RelatingSpaceProgram::α ;
+IfcAddress ::= Purpose::α Description::α UserDefinedPurpose::α OfPerson::α OfOrganization::α ;
+IfcValue ::= IfcAbsorbedDoseMeasurevalue::α IfcAccelerationMeasurevalue::α IfcAmountOfSubstanceMeasurevalue::α IfcAngularVelocityMeasurevalue::α IfcAreaMeasurevalue::α IfcBooleanvalue::α IfcContextDependentMeasurevalue::α IfcCountMeasurevalue::α IfcCurvatureMeasurevalue::α IfcDescriptiveMeasurevalue::α IfcDoseEquivalentMeasurevalue::α IfcDynamicViscosityMeasurevalue::α IfcElectricCapacitanceMeasurevalue::α IfcElectricChargeMeasurevalue::α IfcElectricConductanceMeasurevalue::α IfcElectricCurrentMeasurevalue::α IfcElectricResistanceMeasurevalue::α IfcElectricVoltageMeasurevalue::α IfcEnergyMeasurevalue::α IfcForceMeasurevalue::α IfcFrequencyMeasurevalue::α IfcHeatFluxDensityMeasurevalue::α IfcHeatingValueMeasurevalue::α IfcIdentifiervalue::α IfcIlluminanceMeasurevalue::α IfcInductanceMeasurevalue::α IfcIntegervalue::α IfcIntegerCountRateMeasurevalue::α IfcIonConcentrationMeasurevalue::α IfcIsothermalMoistureCapacityMeasurevalue::α IfcKinematicViscosityMeasurevalue::α IfcLabelvalue::α IfcPositiveLengthMeasurevalue::α IfcLengthMeasurevalue::α IfcLinearForceMeasurevalue::α IfcLinearMomentMeasurevalue::α IfcLinearStiffnessMeasurevalue::α IfcLinearVelocityMeasurevalue::α IfcLogicalvalue::α IfcLuminousFluxMeasurevalue::α IfcLuminousIntensityDistributionMeasurevalue::α IfcLuminousIntensityMeasurevalue::α IfcMagneticFluxDensityMeasurevalue::α IfcMagneticFluxMeasurevalue::α IfcMassDensityMeasurevalue::α IfcMassFlowRateMeasurevalue::α IfcMassMeasurevalue::α IfcMassPerLengthMeasurevalue::α IfcModulusOfElasticityMeasurevalue::α IfcModulusOfLinearSubgradeReactionMeasurevalue::α IfcModulusOfRotationalSubgradeReactionMeasurevalue::α IfcModulusOfSubgradeReactionMeasurevalue::α IfcMoistureDiffusivityMeasurevalue::α IfcMolecularWeightMeasurevalue::α IfcMomentOfInertiaMeasurevalue::α IfcMonetaryMeasurevalue::α IfcNormalisedRatioMeasurevalue::α IfcNumericMeasurevalue::α IfcPHMeasurevalue::α IfcParameterValuevalue::α IfcPlanarForceMeasurevalue::α IfcPositivePlaneAngleMeasurevalue::α IfcPlaneAngleMeasurevalue::α IfcPositiveRatioMeasurevalue::α IfcPowerMeasurevalue::α IfcPressureMeasurevalue::α IfcRadioActivityMeasurevalue::α IfcRatioMeasurevalue::α IfcRealvalue::α IfcRotationalFrequencyMeasurevalue::α IfcRotationalMassMeasurevalue::α IfcRotationalStiffnessMeasurevalue::α IfcSectionModulusMeasurevalue::α IfcSectionalAreaIntegralMeasurevalue::α IfcShearModulusMeasurevalue::α IfcSolidAngleMeasurevalue::α IfcSoundPowerMeasurevalue::α IfcSoundPressureMeasurevalue::α IfcSpecificHeatCapacityMeasurevalue::α IfcTemperatureGradientMeasurevalue::α IfcTextvalue::α IfcThermalAdmittanceMeasurevalue::α IfcThermalConductivityMeasurevalue::α IfcThermalExpansionCoefficientMeasurevalue::α IfcThermalResistanceMeasurevalue::α IfcThermalTransmittanceMeasurevalue::α IfcThermodynamicTemperatureMeasurevalue::α IfcTimeMeasurevalue::α IfcTimeStampvalue::α IfcTorqueMeasurevalue::α IfcVaporPermeabilityMeasurevalue::α IfcVolumeMeasurevalue::α IfcVolumetricFlowRateMeasurevalue::α IfcWarpingConstantMeasurevalue::α IfcWarpingMomentMeasurevalue::α ;
+IfcDocumentReference ::= ReferenceToDocument::α ;
+IfcOffsetCurve2D ::= Distance::α SelfIntersect::α BasisCurve::α ;
+IfcGeometricSet ::= (Elements::α)+ ;
+IfcLightIntensityDistribution ::= (DistributionData::α)+ LightDistributionCurve::α ;
+IfcDocumentInformationRelationship ::= RelatingDocument::α (RelatedDocuments::α)+ RelationshipType::α ;
+IfcFace ::= (Bounds::α)+ ;
+IfcIrregularTimeSeriesValue ::= (ListValues::α)+ TimeStamp::α ;
+IfcPresentationStyleAssignment ::= (Styles::α)+ ;
+IfcHalfSpaceSolid ::= BaseSurface::α AgreementFlag::α ;
+IfcConnectionPointGeometry ::= PointOnRelatingElement::α PointOnRelatedElement::α ;
+IfcWindowLiningProperties ::= LiningDepth::α LiningThickness::α TransomThickness::α MullionThickness::α FirstTransomOffset::α SecondTransomOffset::α FirstMullionOffset::α SecondMullionOffset::α ShapeAspectStyle::α ;
+IfcRegularTimeSeries ::= (Values::α)+ TimeStep::α ;
+IfcExtendedMaterialProperties ::= Description::α Name::α (ExtendedProperties::α)+ ;
+IfcFilterType ::= PredefinedType::α ;
+IfcEllipse ::= SemiAxis1::α SemiAxis2::α ;
+IfcSphere ::= Radius::α ;
+IfcRelAssociatesLibrary ::= RelatingLibrary::α ;
+IfcHygroscopicMaterialProperties ::= UpperVaporResistanceFactor::α LowerVaporResistanceFactor::α IsothermalMoistureCapacity::α VaporPermeability::α MoistureDiffusivity::α ;
+IfcPlanarBox ::= Placement::α ;
+IfcLightSource ::= Name::α AmbientIntensity::α Intensity::α LightColour::α ;
+IfcStructuralAnalysisModel ::= OrientationOf2DPlane::α (LoadedBy::α)+ (HasResults::α)+ PredefinedType::α ;
+IfcStructuralLoadSingleDisplacement ::= DisplacementX::α DisplacementY::α DisplacementZ::α RotationalDisplacementRX::α RotationalDisplacementRY::α RotationalDisplacementRZ::α ;
+IfcCurveBoundedPlane ::= BasisSurface::α OuterBoundary::α (InnerBoundaries::α)+ ;
+IfcStructuralSurfaceMember ::= PredefinedType::α Thickness::α ;
+IfcQuantityCount ::= CountValue::α ;
+IfcRelSpaceBoundary ::= PhysicalOrVirtualBoundary::α InternalOrExternalBoundary::α RelatingSpace::α RelatedBuildingElement::α ConnectionGeometry::α ;
+IfcLampType ::= PredefinedType::α ;
+IfcAnnotationFillAreaOccurrence ::= FillStyleTarget::α GlobalOrLocal::α ;
+IfcArbitraryClosedProfileDef ::= OuterCurve::α ;
+IfcScheduleTimeControl ::= ScheduleDuration::α ActualDuration::α RemainingTime::α FreeFloat::α TotalFloat::α IsCritical::α StartFloat::α FinishFloat::α Completion::α ScheduleTimeControlAssigned::α ActualStart::α EarlyStart::α LateStart::α ScheduleStart::α ActualFinish::α EarlyFinish::α LateFinish::α ScheduleFinish::α StatusTime::α ;
+IfcBoundaryNodeConditionWarping ::= WarpingStiffness::α ;
+IfcMaterial ::= HasRepresentation::α ClassifiedAs::α Name::α ;
+IfcJunctionBoxType ::= PredefinedType::α ;
+IfcRibPlateProfileProperties ::= Thickness::α RibHeight::α RibWidth::α RibSpacing::α Direction::α ;
+IfcOneDirectionRepeatFactor ::= RepeatFactor::α ;
+IfcBoundaryNodeCondition ::= LinearStiffnessX::α LinearStiffnessY::α LinearStiffnessZ::α RotationalStiffnessX::α RotationalStiffnessY::α RotationalStiffnessZ::α ;
+IfcRelConnectsStructuralActivity ::= RelatingElement::α RelatedStructuralActivity::α ;
+IfcCompressorType ::= PredefinedType::α ;
+IfcWaterProperties ::= IsPotable::α Hardness::α AlkalinityConcentration::α AcidityConcentration::α ImpuritiesContent::α PHLevel::α DissolvedSolidsContent::α ;
+IfcFlowInstrumentType ::= PredefinedType::α ;
+IfcRelContainedInSpatialStructure ::= (RelatedElements::α)+ RelatingStructure::α ;
+IfcEllipseProfileDef ::= SemiAxis1::α SemiAxis2::α ;
+IfcCalendarDate ::= DayComponent::α MonthComponent::α YearComponent::α ;
+IfcRelAssigns ::= (RelatedObjects::α)+ RelatedObjectsType::α ;
+IfcColourSpecification ::= Name::α ;
+IfcStyledItem ::= Item::α (Styles::α)+ Name::α ;
+IfcStructuralLoadTemperature ::= DeltaT_Constant::α DeltaT_Y::α DeltaT_Z::α ;
+IfcBoundaryCondition ::= Name::α ;
+IfcWasteTerminalType ::= PredefinedType::α ;
+IfcDistributionControlElement ::= AssignedToFlowElement::α ControlElementId::α ;
+IfcClassificationNotationFacet ::= NotationValue::α ;
+IfcProductsOfCombustionProperties ::= SpecificHeatCapacity::α N20Content::α COContent::α CO2Content::α ;
+IfcCartesianTransformationOperator3DnonUniform ::= Scale2::α Scale3::α ;
+IfcTwoDirectionRepeatFactor ::= SecondRepeatFactor::α ;
+IfcRampFlightType ::= PredefinedType::α ;
+IfcSpace ::= InteriorOrExteriorSpace::α ElevationWithFlooring::α HasCoverings::α BoundedBy::α ;
+IfcPresentationLayerAssignment ::= Name::α Description::α Identifier::α (AssignedItems::α)+ ;
+IfcPhysicalComplexQuantity ::= Discrimination::α Quality::α Usage::α (HasQuantities::α)+ ;
+IfcRectangularTrimmedSurface ::= U1::α V1::α U2::α V2::α Usense::α Vsense::α BasisSurface::α ;
+IfcElectricHeaterType ::= PredefinedType::α ;
+IfcServiceLifeFactor ::= UpperValue::α MostUsedValue::α LowerValue::α PredefinedType::α ;
+IfcSanitaryTerminalType ::= PredefinedType::α ;
+IfcCurveStyleFont ::= (PatternList::α)+ Name::α ;
+IfcVertexLoop ::= LoopVertex::α ;
+IfcUShapeProfileDef ::= Depth::α FlangeWidth::α WebThickness::α FlangeThickness::α FilletRadius::α EdgeRadius::α FlangeSlope::α CentreOfGravityInX::α ;
+IfcRelServicesBuildings ::= RelatingSystem::α (RelatedBuildings::α)+ ;
+IfcLightSourceSpot ::= ConcentrationExponent::α SpreadAngle::α BeamWidthAngle::α Orientation::α ;
+IfcProjectOrderRecord ::= (Records::α)+ PredefinedType::α ;
+IfcFaceBasedSurfaceModel ::= (FbsmFaces::α)+ ;
+IfcRelaxation ::= RelaxationValue::α InitialStress::α ;
+IfcUnitaryEquipmentType ::= PredefinedType::α ;
+IfcMaterialLayerSetUsage ::= LayerSetDirection::α DirectionSense::α OffsetFromReferenceLine::α ForLayerSet::α ;
+IfcPropertyDependencyRelationship ::= Name::α Description::α Expression::α DependingProperty::α DependantProperty::α ;
+IfcPerson ::= Id::α FamilyName::α GivenName::α (MiddleNames::α)+ (PrefixTitles::α)+ (SuffixTitles::α)+ EngagedIn::α (Roles::α)+ (Addresses::α)+ ;
+IfcFillAreaStyle ::= (FillStyles::α)+ ;
+IfcElectricFlowStorageDeviceType ::= PredefinedType::α ;
+IfcCurveStyleFontPattern ::= VisibleSegmentLength::α InvisibleSegmentLength::α ;
+IfcDraughtingCallout ::= IsRelatedFromCallout::α IsRelatedToCallout::α (Contents::α)+ ;
+IfcStructuralProfileProperties ::= TorsionalConstantX::α MomentOfInertiaYZ::α MomentOfInertiaY::α MomentOfInertiaZ::α WarpingConstant::α ShearCentreZ::α ShearCentreY::α ShearDeformationAreaZ::α ShearDeformationAreaY::α MaximumSectionModulusY::α MinimumSectionModulusY::α MaximumSectionModulusZ::α MinimumSectionModulusZ::α TorsionalSectionModulus::α CentreOfGravityInX::α CentreOfGravityInY::α ;
+IfcCableCarrierFittingType ::= PredefinedType::α ;
+IfcCooledBeamType ::= PredefinedType::α ;
+IfcReinforcingMesh ::= MeshLength::α MeshWidth::α LongitudinalBarNominalDiameter::α TransverseBarNominalDiameter::α LongitudinalBarCrossSectionArea::α TransverseBarCrossSectionArea::α LongitudinalBarSpacing::α TransverseBarSpacing::α ;
+IfcDocumentElectronicFormat ::= FileExtension::α MimeContentType::α MimeSubtype::α ;
+IfcLightSourceGoniometric ::= ColourTemperature::α LuminousFlux::α LightEmissionSource::α Position::α ColourAppearance::α LightDistributionDataSource::α ;
+IfcIrregularTimeSeries ::= (Values::α)+ ;
+IfcCraneRailAShapeProfileDef ::= OverallHeight::α BaseWidth2::α Radius::α HeadWidth::α HeadDepth2::α HeadDepth3::α WebThickness::α BaseWidth4::α BaseDepth1::α BaseDepth2::α BaseDepth3::α CentreOfGravityInY::α ;
+IfcCovering ::= CoversSpaces::α Covers::α PredefinedType::α ;
+IfcElementType ::= ElementType::α ;
+IfcTypeProduct ::= (RepresentationMaps::α)+ Tag::α ;
+IfcStructuralSurfaceMemberVarying ::= VaryingThicknessLocation::α SubsequentThickness::α ;
+IfcGasTerminalType ::= PredefinedType::α ;
+IfcElectricDistributionPoint ::= DistributionPointFunction::α UserDefinedFunction::α ;
+IfcSurfaceStyleWithTextures ::= (Textures::α)+ ;
+IfcTextureMap ::= (TextureMaps::α)+ ;
+IfcObject ::= IsDefinedBy::α ObjectType::α ;
+IfcRevolvedAreaSolid ::= Axis::α Angle::α ;
+IfcEdge ::= EdgeStart::α EdgeEnd::α ;
+IfcStructuralLinearAction ::= ProjectedOrTrue::α ;
+IfcQuantityArea ::= AreaValue::α ;
+IfcProjectOrder ::= ID::α PredefinedType::α Status::α ;
+IfcPixelTexture ::= Width::α Height::α ColourComponents::α (Pixel::α)+ ;
+IfcExternalReference ::= Location::α ItemReference::α Name::α ;
+IfcEvaporatorType ::= PredefinedType::α ;
+IfcProfileProperties ::= ProfileDefinition::α ProfileName::α ;
+IfcRelAssignsToGroup ::= RelatingGroup::α ;
+IfcReinforcementDefinitionProperties ::= (ReinforcementSectionDefinitions::α)+ DefinitionType::α ;
+IfcParameterizedProfileDef ::= Position::α ;
+IfcBuildingElementProxy ::= CompositionType::α ;
+IfcThermalMaterialProperties ::= SpecificHeatCapacity::α BoilingPoint::α FreezingPoint::α ThermalConductivity::α ;
+IfcAxis2Placement3D ::= Axis::α RefDirection::α ;
+IfcSpatialStructureElement ::= LongName::α CompositionType::α ReferencesElements::α ServicedBySystems::α ContainsElements::α ;
+IfcClassificationItem ::= IsClassifiedItemIn::α IsClassifyingItemIn::α Notation::α ItemOf::α Title::α ;
+IfcCostValue ::= CostType::α Condition::α ;
+IfcSensorType ::= PredefinedType::α ;
+IfcTextureVertex ::= Coordinates::α ;
+IfcSpaceHeaterType ::= PredefinedType::α ;
+IfcConstraintAggregationRelationship ::= Name::α Description::α LogicalAggregator::α RelatingConstraint::α (RelatedConstraints::α)+ ;
+IfcApprovalPropertyRelationship ::= (ApprovedProperties::α)+ Approval::α ;
+IfcPolyLoop ::= Polygon::α ;
+IfcRelCoversBldgElements ::= RelatingBuildingElement::α (RelatedCoverings::α)+ ;
+IfcProject ::= LongName::α Phase::α (RepresentationContexts::α)+ UnitsInContext::α ;
+IfcDerivedProfileDef ::= ParentProfile::α Operator::α Label::α ;
+IfcCircleProfileDef ::= Radius::α ;
+IfcPersonAndOrganization ::= ThePerson::α TheOrganization::α (Roles::α)+ ;
+IfcTextStyleForDefinedFont ::= Colour::α BackgroundColour::α ;
+IfcAxis2Placement2D ::= RefDirection::α ;
+IfcTask ::= TaskId::α Status::α WorkMethod::α IsMilestone::α Priority::α ;
+IfcRailing ::= PredefinedType::α ;
+IfcRelAssociates ::= (RelatedObjects::α)+ ;
+IfcPhysicalQuantity ::= Name::α Description::α PartOfComplex::α ;
+IfcCurveStyle ::= CurveFont::α CurveWidth::α CurveColour::α ;
+IfcBlock ::= XLength::α YLength::α ZLength::α ;
+IfcOrientedEdge ::= EdgeElement::α Orientation::α ;
+IfcRelAssociatesConstraint ::= RelatingConstraint::α Intent::α ;
+IfcSurfaceStyleShading ::= SurfaceColour::α ;
+IfcTextStyleFontModel ::= (FontFamily::α)+ FontStyle::α FontVariant::α FontWeight::α FontSize::α ;
+IfcElementAssembly ::= AssemblyPlace::α PredefinedType::α ;
+IfcControllerType ::= PredefinedType::α ;
+IfcReinforcementBarProperties ::= TotalCrossSectionArea::α SteelGrade::α BarSurface::α EffectiveDepth::α NominalBarDiameter::α BarCount::α ;
+IfcConnectionSurfaceGeometry ::= SurfaceOnRelatingElement::α SurfaceOnRelatedElement::α ;
+IfcExtrudedAreaSolid ::= ExtrudedDirection::α Depth::α ;
+IfcFailureConnectionCondition ::= TensionFailureX::α TensionFailureY::α TensionFailureZ::α CompressionFailureX::α CompressionFailureY::α CompressionFailureZ::α ;
+IfcRectangularPyramid ::= XLength::α YLength::α Height::α ;
+IfcClassificationItemRelationship ::= RelatingItem::α (RelatedItems::α)+ ;
+IfcElement ::= FillsVoids::α ConnectedTo::α HasCoverings::α HasProjections::α HasStructuralMember::α HasPorts::α HasOpenings::α IsConnectionRealization::α ProvidesBoundaries::α ConnectedFrom::α Tag::α ;
+IfcStructuralSteelProfileProperties ::= ShearAreaZ::α ShearAreaY::α PlasticShapeFactorY::α PlasticShapeFactorZ::α ;
+IfcTransportElementType ::= PredefinedType::α ;
+IfcPropertyConstraintRelationship ::= Name::α Description::α RelatingConstraint::α (RelatedProperties::α)+ ;
+IfcFeatureElementSubtraction ::= VoidsElements::α ;
+IfcConditionCriterionSelect ::= IfcLabelvalue::α IfcMeasureWithUnitvalue::α ;
+IfcCoordinatedUniversalTimeOffset ::= HourOffset::α MinuteOffset::α Sense::α ;
+IfcElectricApplianceType ::= PredefinedType::α ;
+IfcConstraint ::= Name::α Description::α ConstraintGrade::α ConstraintSource::α UserDefinedGrade::α ClassifiedAs::α RelatesConstraints::α IsRelatedWith::α PropertiesForConstraint::α Aggregates::α IsAggregatedIn::α CreatingActor::α CreationTime::α ;
+IfcBooleanResult ::= FirstOperand::α SecondOperand::α Operator::α ;
+IfcSpaceType ::= PredefinedType::α ;
+IfcInventory ::= Jurisdiction::α (ResponsiblePersons::α)+ LastUpdateDate::α CurrentValue::α OriginalValue::α InventoryType::α ;
+IfcRepresentation ::= RepresentationIdentifier::α RepresentationType::α RepresentationMap::α OfProductRepresentation::α ContextOfItems::α (Items::α)+ ;
+IfcCurtainWallType ::= PredefinedType::α ;
+IfcConditionCriterion ::= Criterion::α CriterionDateTime::α ;
+IfcMaterialClassificationRelationship ::= (MaterialClassifications::α)+ ClassifiedMaterial::α ;
+IfcSurfaceOfRevolution ::= AxisPosition::α ;
+IfcImageTexture ::= UrlReference::α ;
+IfcFurnitureType ::= AssemblyPlace::α ;
+IfcWindowPanelProperties ::= OperationType::α PanelPosition::α FrameDepth::α FrameThickness::α ShapeAspectStyle::α ;
+IfcRelFillsElement ::= RelatingOpeningElement::α RelatedBuildingElement::α ;
+IfcHatchLineDistanceSelect ::= IfcPositiveLengthMeasurevalue::α IfcOneDirectionRepeatFactorvalue::α ;
+IfcStructuralPlanarActionVarying ::= VaryingAppliedLoadLocation::α SubsequentAppliedLoads::α ;
+IfcGridPlacement ::= PlacementLocation::α PlacementRefDirection::α ;
+IfcPile ::= PredefinedType::α ConstructionType::α ;
+IfcObjective ::= ObjectiveQualifier::α UserDefinedQualifier::α BenchmarkValues::α ResultValues::α ;
+IfcMechanicalSteelMaterialProperties ::= YieldStress::α UltimateStress::α UltimateStrain::α HardeningModule::α ProportionalStress::α PlasticStrain::α (Relaxations::α)+ ;
+IfcCartesianTransformationOperator ::= Axis1::α Axis2::α LocalOrigin::α Scale::α ;
+IfcEdgeCurve ::= EdgeGeometry::α SameSense::α ;
+IfcWallType ::= PredefinedType::α ;
+IfcRelAssignsToActor ::= RelatingActor::α ActingRole::α ;
+IfcSoundValue ::= SoundLevelSingleValue::α SoundLevelTimeSeries::α Frequency::α ;
+IfcChillerType ::= PredefinedType::α ;
+IfcAlarmType ::= PredefinedType::α ;
+IfcProfileDef ::= ProfileType::α ProfileName::α ;
+IfcRepresentationContext ::= ContextIdentifier::α ContextType::α RepresentationsInContext::α ;
+IfcWindowStyle ::= ConstructionType::α OperationType::α ParameterTakesPrecedence::α Sizeable::α ;
+IfcFaceBound ::= Bound::α Orientation::α ;
+IfcSubContractResource ::= SubContractor::α JobDescription::α ;
+IfcLShapeProfileDef ::= Depth::α Width::α Thickness::α FilletRadius::α EdgeRadius::α LegSlope::α CentreOfGravityInX::α CentreOfGravityInY::α ;
+IfcRelDecomposes ::= RelatingObject::α (RelatedObjects::α)+ ;
+IfcResource ::= ResourceOf::α ;
+IfcStructuralLinearActionVarying ::= VaryingAppliedLoadLocation::α (SubsequentAppliedLoads::α)+ ;
+IfcGridAxis ::= AxisTag::α SameSense::α PartOfW::α PartOfV::α PartOfU::α HasIntersections::α AxisCurve::α ;
+IfcPresentationStyleSelect ::= IfcNullStylevalue::α IfcSurfaceStylevalue::α IfcTextStylevalue::α IfcFillAreaStylevalue::α IfcSymbolStylevalue::α IfcCurveStylevalue::α ;
+IfcVertexBasedTextureMap ::= TextureVertices::α TexturePoints::α ;
+IfcFaceSurface ::= FaceSurface::α SameSense::α ;
+IfcCondenserType ::= PredefinedType::α ;
+IfcSlippageConnectionCondition ::= SlippageX::α SlippageY::α SlippageZ::α ;
+IfcTubeBundleType ::= PredefinedType::α ;
+IfcStructuralLoadSingleDisplacementDistortion ::= Distortion::α ;
+IfcSectionedSpine ::= SpineCurve::α CrossSections::α CrossSectionPositions::α ;
+IfcRelConnectsStructuralElement ::= RelatingElement::α RelatedStructuralMember::α ;
+IfcConstraintClassificationRelationship ::= ClassifiedConstraint::α (RelatedClassifications::α)+ ;
+IfcAppliedValue ::= Name::α Description::α AppliedValue::α ValuesReferenced::α ValueOfComponents::α IsComponentIn::α UnitBasis::α ApplicableDate::α FixedUntilDate::α ;
+IfcSwitchingDeviceType ::= PredefinedType::α ;
+IfcObjectDefinition ::= HasAssignments::α IsDecomposedBy::α Decomposes::α ;
+IfcMonetaryUnit ::= Currency::α ;
+IfcRelSequence ::= TimeLag::α SequenceType::α RelatingProcess::α RelatedProcess::α ;
+IfcLightFixtureType ::= PredefinedType::α ;
+IfcCoolingTowerType ::= PredefinedType::α ;
+IfcCurrencyRelationship ::= RelatingMonetaryUnit::α RelatedMonetaryUnit::α RateDateTime::α RateSource::α ExchangeRate::α ;
+IfcTextLiteralWithExtent ::= Extent::α BoxAlignment::α ;
+IfcAnnotationCurveOccurrence ::= AnnotatedBySymbols::α ;
+IfcRelConnectsWithEccentricity ::= ConnectionConstraint::α ;
+IfcDerivedMeasureValue ::= IfcIonConcentrationMeasurevalue::α IfcPHMeasurevalue::α IfcHeatingValueMeasurevalue::α IfcSoundPressureMeasurevalue::α IfcSoundPowerMeasurevalue::α IfcWarpingMomentMeasurevalue::α IfcWarpingConstantMeasurevalue::α IfcThermalExpansionCoefficientMeasurevalue::α IfcTemperatureGradientMeasurevalue::α IfcSectionModulusMeasurevalue::α IfcSectionalAreaIntegralMeasurevalue::α IfcRotationalMassMeasurevalue::α IfcModulusOfRotationalSubgradeReactionMeasurevalue::α IfcModulusOfLinearSubgradeReactionMeasurevalue::α IfcMassPerLengthMeasurevalue::α IfcCurvatureMeasurevalue::α IfcLuminousIntensityDistributionMeasurevalue::α IfcLinearMomentMeasurevalue::α IfcShearModulusMeasurevalue::α IfcRotationalStiffnessMeasurevalue::α IfcPlanarForceMeasurevalue::α IfcMomentOfInertiaMeasurevalue::α IfcModulusOfElasticityMeasurevalue::α IfcModulusOfSubgradeReactionMeasurevalue::α IfcLinearStiffnessMeasurevalue::α IfcLinearForceMeasurevalue::α IfcAccelerationMeasurevalue::α IfcTorqueMeasurevalue::α IfcRotationalFrequencyMeasurevalue::α IfcRadioActivityMeasurevalue::α IfcAbsorbedDoseMeasurevalue::α IfcElectricCapacitanceMeasurevalue::α IfcDoseEquivalentMeasurevalue::α IfcElectricChargeMeasurevalue::α IfcElectricConductanceMeasurevalue::α IfcElectricResistanceMeasurevalue::α IfcIlluminanceMeasurevalue::α IfcInductanceMeasurevalue::α IfcForceMeasurevalue::α IfcLuminousFluxMeasurevalue::α IfcMagneticFluxMeasurevalue::α IfcMagneticFluxDensityMeasurevalue::α IfcMonetaryMeasurevalue::α IfcSpecificHeatCapacityMeasurevalue::α IfcIsothermalMoistureCapacityMeasurevalue::α IfcMoistureDiffusivityMeasurevalue::α IfcVaporPermeabilityMeasurevalue::α IfcMolecularWeightMeasurevalue::α IfcThermalConductivityMeasurevalue::α IfcAngularVelocityMeasurevalue::α IfcDynamicViscosityMeasurevalue::α IfcElectricVoltageMeasurevalue::α IfcEnergyMeasurevalue::α IfcFrequencyMeasurevalue::α IfcHeatFluxDensityMeasurevalue::α IfcIntegerCountRateMeasurevalue::α IfcKinematicViscosityMeasurevalue::α IfcLinearVelocityMeasurevalue::α IfcMassDensityMeasurevalue::α IfcMassFlowRateMeasurevalue::α IfcPowerMeasurevalue::α IfcPressureMeasurevalue::α IfcThermalAdmittanceMeasurevalue::α IfcThermalResistanceMeasurevalue::α IfcThermalTransmittanceMeasurevalue::α IfcTimeStampvalue::α IfcVolumetricFlowRateMeasurevalue::α ;
+IfcProcess ::= OperatesOn::α IsSuccessorFrom::α IsPredecessorTo::α ;
+IfcRoot ::= GlobalId::α Name::α Description::α OwnerHistory::α HasAssociations::α ;
+IfcOrientationSelect ::= IfcPlaneAngleMeasurevalue::α IfcDirectionvalue::α ;
+IfcFluidFlowProperties ::= PropertySource::α UserDefinedPropertySource::α TemperatureSingleValue::α WetBulbTemperatureSingleValue::α FlowConditionSingleValue::α VelocitySingleValue::α PressureSingleValue::α FlowrateSingleValue::α FlowConditionTimeSeries::α VelocityTimeSeries::α FlowrateTimeSeries::α Fluid::α PressureTimeSeries::α WetBulbTemperatureTimeSeries::α TemperatureTimeSeries::α ;
+IfcValveType ::= PredefinedType::α ;
+IfcEnergyProperties ::= EnergySequence::α UserDefinedEnergySequence::α ;
+IfcLightSourceDirectional ::= Orientation::α ;
+IfcStructuralMember ::= ReferencesElement::α ConnectedBy::α ;
+IfcRoof ::= ShapeType::α ;
+IfcShapeAspect ::= Name::α Description::α ProductDefinitional::α (ShapeRepresentations::α)+ PartOfProductDefinitionShape::α ;
+IfcLocalTime ::= HourComponent::α MinuteComponent::α SecondComponent::α DaylightSavingOffset::α Zone::α ;
+IfcRelProjectsElement ::= RelatingElement::α RelatedFeatureElement::α ;
+IfcSweptDiskSolid ::= Radius::α InnerRadius::α StartParam::α EndParam::α Directrix::α ;
+IfcMechanicalMaterialProperties ::= DynamicViscosity::α YoungModulus::α ShearModulus::α PoissonRatio::α ThermalExpansionCoefficient::α ;
+IfcBoundaryEdgeCondition ::= LinearStiffnessByLengthX::α LinearStiffnessByLengthY::α LinearStiffnessByLengthZ::α RotationalStiffnessByLengthX::α RotationalStiffnessByLengthY::α RotationalStiffnessByLengthZ::α ;
+IfcServiceLife ::= ServiceLifeType::α ServiceLifeDuration::α ;
+IfcTable ::= (Rows::α)+ Name::α ;
+IfcElectricTimeControlType ::= PredefinedType::α ;
+IfcApprovalActorRelationship ::= Actor::α Approval::α Role::α ;
+IfcGeneralMaterialProperties ::= MolecularWeight::α Porosity::α MassDensity::α ;
+IfcGeneralProfileProperties ::= PhysicalWeight::α Perimeter::α MinimumPlateThickness::α MaximumPlateThickness::α CrossSectionArea::α ;
+IfcMeasureValue ::= IfcNormalisedRatioMeasurevalue::α IfcLuminousIntensityMeasurevalue::α IfcAmountOfSubstanceMeasurevalue::α IfcAreaMeasurevalue::α IfcContextDependentMeasurevalue::α IfcCountMeasurevalue::α IfcDescriptiveMeasurevalue::α IfcElectricCurrentMeasurevalue::α IfcLengthMeasurevalue::α IfcPositiveLengthMeasurevalue::α IfcMassMeasurevalue::α IfcNumericMeasurevalue::α IfcParameterValuevalue::α IfcPlaneAngleMeasurevalue::α IfcPositivePlaneAngleMeasurevalue::α IfcRatioMeasurevalue::α IfcPositiveRatioMeasurevalue::α IfcSolidAngleMeasurevalue::α IfcThermodynamicTemperatureMeasurevalue::α IfcTimeMeasurevalue::α IfcVolumeMeasurevalue::α ;
+IfcSystem ::= ServicesBuildings::α ;
+IfcDuctFittingType ::= PredefinedType::α ;
+IfcPresentationStyle ::= Name::α ;
+IfcArbitraryProfileDefWithVoids ::= (InnerCurves::α)+ ;
+IfcPropertyEnumeration ::= (EnumerationValues::α)+ Unit::α Name::α ;
+IfcCoveringType ::= PredefinedType::α ;
+IfcCartesianTransformationOperator2DnonUniform ::= Scale2::α ;
+IfcTimeSeriesValue ::= (ListValues::α)+ ;
+IfcPointOnCurve ::= BasisCurve::α PointParameter::α ;
+IfcSpaceProgram ::= SpaceProgramIdentifier::α MaxRequiredArea::α MinRequiredArea::α StandardRequiredArea::α HasInteractionReqsFrom::α HasInteractionReqsTo::α RequestedLocation::α ;
+IfcRelAssignsToProcess ::= RelatingProcess::α QuantityInProcess::α ;
+IfcPropertyReferenceValue ::= PropertyReference::α UsageName::α ;
+IfcOrderAction ::= ActionID::α ;
+IfcRelAssociatesAppliedValue ::= RelatingAppliedValue::α ;
+IfcAxis1Placement ::= Axis::α ;
+IfcRelAssignsToResource ::= RelatingResource::α ;
+IfcRightCircularCone ::= Height::α BottomRadius::α ;
+IfcConnectionPortGeometry ::= LocationAtRelatingElement::α LocationAtRelatedElement::α ProfileOfPort::α ;
+IfcProductRepresentation ::= Name::α Description::α ShapeOfProduct::α (Representations::α)+ ;
+IfcVirtualGridIntersection ::= IntersectingAxes::α OffsetDistances::α ;
+IfcStructuralActivity ::= AssignedToStructuralItem::α AppliedLoad::α GlobalOrLocal::α ;
+IfcArbitraryOpenProfileDef ::= Curve::α ;
+IfcBoxedHalfSpace ::= Enclosure::α ;
+IfcBeamType ::= PredefinedType::α ;
+IfcFacetedBrepWithVoids ::= (Voids::α)+ ;
+IfcClassificationNotation ::= (NotationFacets::α)+ ;
+IfcCableCarrierSegmentType ::= PredefinedType::α ;
+IfcDocumentInformation ::= DocumentId::α Name::α Description::α Purpose::α IntendedUse::α Scope::α Revision::α Confidentiality::α Status::α IsPointedTo::α IsPointer::α (DocumentReferences::α)+ DocumentOwner::α (Editors::α)+ CreationTime::α LastRevisionTime::α ElectronicFormat::α ValidFrom::α ValidUntil::α ;
+IfcPort ::= ContainedIn::α ConnectedFrom::α ConnectedTo::α ;
+IfcConnectedFaceSet ::= (CfsFaces::α)+ ;
+IfcClassificationReference ::= ReferencedSource::α ;
+IfcTextStyle ::= TextCharacterAppearance::α TextStyle::α TextFontStyle::α ;
+IfcPropertySetDefinition ::= PropertyDefinitionOf::α DefinesType::α ;
+IfcMemberType ::= PredefinedType::α ;
+IfcStructuralAction ::= CausedBy::α DestabilizingLoad::α ;
+IfcStackTerminalType ::= PredefinedType::α ;
+IfcAnnotationSurface ::= Item::α TextureCoordinates::α ;
+IfcDimensionCurveTerminator ::= Role::α ;
+IfcEnvironmentalImpactValue ::= ImpactType::α Category::α UserDefinedCategory::α ;
+IfcHeatExchangerType ::= PredefinedType::α ;
+IfcSymbolStyle ::= StyleOfSymbol::α ;
+IfcPropertySingleValue ::= NominalValue::α Unit::α ;
+IfcTransformerType ::= PredefinedType::α ;
+IfcStairFlightType ::= PredefinedType::α ;
+IfcOutletType ::= PredefinedType::α ;
+IfcClassification ::= Source::α Edition::α Name::α Contains::α EditionDate::α ;
+IfcCenterLineProfileDef ::= Thickness::α ;
+IfcMaterialList ::= (Materials::α)+ ;
+IfcOwnerHistory ::= State::α ChangeAction::α LastModifiedDate::α CreationDate::α OwningUser::α OwningApplication::α LastModifyingUser::α LastModifyingApplication::α ;
+IfcCompositeCurveSegment ::= Transition::α SameSense::α UsingCurves::α ParentCurve::α ;
+IfcAirTerminalBoxType ::= PredefinedType::α ;
+IfcTimeSeriesReferenceRelationship ::= ReferencedTimeSeries::α (TimeSeriesReferences::α)+ ;
+IfcSimpleValue ::= IfcLogicalvalue::α IfcLabelvalue::α IfcTextvalue::α IfcIdentifiervalue::α IfcBooleanvalue::α IfcRealvalue::α IfcIntegervalue::α ;
+IfcRelConnectsPathElements ::= (RelatingPriorities::α)+ (RelatedPriorities::α)+ RelatedConnectionType::α RelatingConnectionType::α ;
+IfcNamedUnit ::= Dimensions::α UnitType::α ;
+IfcStructuralLoadGroup ::= PredefinedType::α ActionType::α ActionSource::α Coefficient::α Purpose::α SourceOfResultGroup::α LoadGroupFor::α ;
+IfcAppliedValueRelationship ::= ArithmeticOperator::α Name::α Description::α ComponentOfTotal::α (Components::α)+ ;
+IfcSpaceThermalLoadProperties ::= ApplicableValueRatio::α ThermalLoadSource::α PropertySource::α SourceDescription::α MaximumValue::α MinimumValue::α UserDefinedThermalLoadSource::α UserDefinedPropertySource::α ThermalLoadType::α ThermalLoadTimeSeriesValues::α ;
+IfcRelVoidsElement ::= RelatingBuildingElement::α RelatedOpeningElement::α ;
+IfcRelDefinesByProperties ::= RelatingPropertyDefinition::α ;
+IfcMaterialDefinitionRepresentation ::= RepresentedMaterial::α ;
+IfcTankType ::= PredefinedType::α ;
+IfcStructuralCurveMember ::= PredefinedType::α ;
+IfcPipeFittingType ::= PredefinedType::α ;
+IfcStair ::= ShapeType::α ;
+IfcDoorPanelProperties ::= PanelDepth::α PanelOperation::α PanelWidth::α PanelPosition::α ShapeAspectStyle::α ;
+IfcSlab ::= PredefinedType::α ;
+IfcLocalPlacement ::= PlacementRelTo::α RelativePlacement::α ;
+IfcCShapeProfileDef ::= Depth::α Width::α WallThickness::α Girth::α InternalFilletRadius::α CentreOfGravityInX::α ;
+IfcStructuralResultGroup ::= TheoryType::α IsLinear::α ResultGroupFor::α ResultForLoadGroup::α ;
+IfcHumidifierType ::= PredefinedType::α ;
+IfcRelAssignsTasks ::= TimeForTask::α ;
+IfcTextLiteral ::= Literal::α Path::α Placement::α ;
+IfcBlobTexture ::= RasterFormat::α RasterCode::α ;
+IfcMetric ::= Benchmark::α ValueSource::α DataValue::α ;
+IfcSurfaceOfLinearExtrusion ::= ExtrudedDirection::α Depth::α ;
+IfcSurfaceStyleLighting ::= DiffuseTransmissionColour::α DiffuseReflectionColour::α TransmissionColour::α ReflectanceColour::α ;
+IfcSurfaceTexture ::= RepeatS::α RepeatT::α TextureType::α TextureTransform::α ;
+IfcTableRow ::= (RowCells::α)+ OfTable::α IsHeading::α ;
+IfcBoundaryFaceCondition ::= LinearStiffnessByAreaX::α LinearStiffnessByAreaY::α LinearStiffnessByAreaZ::α ;
+IfcPath ::= (EdgeList::α)+ ;
+IfcDistributionPort ::= FlowDirection::α ;
+IfcRelConnectsPortToElement ::= RelatingPort::α RelatedElement::α ;
+IfcElementQuantity ::= (Quantities::α)+ MethodOfMeasurement::α ;
+IfcApprovalRelationship ::= Description::α Name::α RelatedApproval::α RelatingApproval::α ;
+IfcRelReferencedInSpatialStructure ::= (RelatedElements::α)+ RelatingStructure::α ;
+--------------------metamodels::mlhim2.bgf--------------------
+DvDecimal ::= dv::α ;
+DvCount ::= count::α ;
+DvIdentifier ::= issuer::α assigner::α name::α ;
+DvMediaMultipart ::= dv::α ;
+DvNormalizedString ::= uuid::α language::α dv::α ;
+DvMediaModel ::= dv::α ;
+DvNegativeInteger ::= dv::α ;
+DvCodedString ::= codeString::α terminologyName::α terminologyAbbrev::α ;
+DvUnsignedShort ::= dv::α ;
+ObjectRef ::= EntityRef ;
+ ObjectRef ::= uuid::α namespace::α objType::α ;
+DvPositiveInteger ::= dv::α ;
+DvRate ::= rateType::α ;
+DvUnsignedByte ::= dv::α ;
+DvMediaApp ::= dv::α ;
+DvDateTime ::= dv::α ;
+DvProportion ::= proportionType::α ;
+DvInteger ::= dv::α ;
+DvShort ::= dv::α ;
+DvLanguage ::= dv::α ;
+DvMediaImage ::= dv::α ;
+DvUnsignedInt ::= dv::α ;
+DvToken ::= dv::α ;
+DvDuration ::= dv::α ;
+DvMediaAudio ::= dv::α ;
+DvUnsignedLong ::= dv::α ;
+DvString ::= DvCodedString ;
+ DvString ::= DvIdentifier ;
+ DvString ::= uuid::α language::α dv::string() ;
+DvOrdinal ::= dv::α symbol::string() ;
+DvTime ::= dv::α ;
+DvParsable ::= dv::α formalism::α ;
+DvQuantity ::= units::α ;
+DvURI ::= dv::α ;
+DvByte ::= dv::α ;
+DvInterval ::= lower::DvOrdered upper::DvOrdered lowerIncluded::α upperIncluded::α lowerUnbounded::α upperUnbounded::α ;
+DvBoolean ::= dv::α ;
+EntityRef ::= uuid::α namespace::α objType::α ;
+DvMediaMsg ::= dv::α ;
+DvNonNegativeInteger ::= dv::α ;
+DvLong ::= dv::α ;
+DvNonPositiveInteger ::= dv::α ;
+DvMediaVideo ::= dv::α ;
+DvDate ::= dv::α ;
+--------------------slps::btf.bgf--------------------
+tree ::= (epsilon::ε) | (any::α) | (terminal::terminal) | (nonterminal::(production tree)) | (selectable::(selector::selector tree)) | (value::((int::integer()) | (string::string()))) | (sequence::(tree*)) | (choice::(expression tree)) | (optional::(tree?)) | (plus::(tree+)) | (star::(tree*)) ;
+--------------------slps::edd.bgf--------------------
+config ::= ((start-grammar-symbol::string()) | (end-grammar-symbol::string()) | (line-continuation-symbol::string()) | (tabulation-symbol::string()) | (start-label-symbol::string()) | (end-label-symbol::string()) | (defining-symbol::string()) | (multiple-defining-symbol::string()) | (terminator-symbol::string()) | (definition-separator-symbol::string()) | (concatenate-symbol::string()) | (start-comment-symbol::string()) | (end-comment-symbol::string()) | (start-group-symbol::string()) | (end-group-symbol::string()) | (start-option-symbol::string()) | (end-option-symbol::string()) | (start-terminal-symbol::string()) | (end-terminal-symbol::string()) | (start-nonterminal-symbol::string()) | (end-nonterminal-symbol::string()) | (start-seplist-star-symbol::string()) | (end-seplist-star-symbol::string()) | (start-seplist-plus-symbol::string()) | (end-seplist-plus-symbol::string()) | (start-repetition-star-symbol::string()) | (end-repetition-star-symbol::string()) | (start-repetition-plus-symbol::string()) | (end-repetition-plus-symbol::string()) | (postfix-option-symbol::string()) | (postfix-repetition-star-symbol::string()) | (postfix-repetition-plus-symbol::string()) | (nonterminals-may-start-with::string()) | (nonterminals-may-contain::string()) | (nonterminal-if-contains::string()) | (terminal-if-undefined::((except::string())*)) | (nonterminal-if-defined::((except::string())*)) | (decompose-symbols::((except::string())*)) | (terminal-if-uppercase::α) | (terminal-if-lowercase::α) | (terminal-if-mixedcase::α) | (terminal-if-camelcase::α) | (nonterminal-if-uppercase::α) | (nonterminal-if-lowercase::α) | (nonterminal-if-mixedcase::α) | (nonterminal-if-camelcase::α) | (glue-nonalphanumeric-terminals::α) | (break-tokens-at-whitespace::α) | (disregard-labels::α) | (consider-indentation::α) | (ignore::(((newline::α) | (space::α) | (same-indentation::α) | (lines-containing::string()))+)) | (mask::(token::string() (terminal::string()) | (epsilon::α))))* ;
+--------------------slps::ldf-Readable.bgf--------------------
+mixed ::= (α | string())* ;
+section-structure ::= (content::(content-content+)) | (placeholder::α) | (subsection+) ;
+--------------------slps::ldf-v1.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+contentType ::= ((text::mixedType) | (grammar::(α language::string() (version::string())?)) | (sample::sampleType) | (runnable::runnableType))* (section::sectionType)* ;
+--------------------slps::ldf-v10.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v11.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v11.1-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v11.2-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v12.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v13.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v13.1-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v14.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v15.0-xsd.bgf--------------------
+simpleTextElement ::= (empty::ε) | (text::mixedType) | (figure::simpleFigure) | (table::simpleTable) | (list::simpleList) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::string()) | production ;
+formula ::= α+ ;
+mixedType ::= (α | string())* ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v15.1-xsd.bgf--------------------
+simpleTextElement ::= (empty::ε) | (text::mixedType) | (figure::simpleFigure) | (table::simpleTable) | (list::simpleList) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* src::string())) | production ;
+formula ::= α+ ;
+mixedType ::= (α | string())* ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v16.0-xsd.bgf--------------------
+simpleTextElement ::= (empty::ε) | (text::mixedType) | (figure::simpleFigure) | (table::simpleTable) | (list::simpleList) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* src::string())) | production ;
+formula ::= α+ ;
+mixedType ::= (α | string())* ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v17.0-xsd.bgf--------------------
+simpleTextElement ::= (empty::ε) | (text::mixedType) | (figure::simpleFigure) | (table::simpleTable) | (list::simpleList) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* src::string())) | production ;
+formula ::= α+ ;
+mixedType ::= (α | string())* ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v18.0-xsd.bgf--------------------
+simpleTextElement ::= (empty::ε) | (text::mixedType) | (figure::simpleFigure) | (table::simpleTable) | (list::simpleList) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* src::string())) | production ;
+formula ::= α+ ;
+mixedType ::= (α | string())* ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v18.1-xsd.bgf--------------------
+simpleTextElement ::= (empty::ε) | (text::mixedType) | (figure::simpleFigure) | (table::simpleTable) | (list::simpleList) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* src::string())) | production ;
+formula ::= α+ ;
+mixedType ::= (α | string())* ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v19.0-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | (code::string()) | (text::mixed-type) | (figure::figure) | (table::table) | (list::list) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) | production ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v2.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+contentType ::= ((text::mixedType) | (grammar::(α language::string() (version::string())?)) | (sample::sampleType) | (runnable::runnableType))* (section::sectionType)* ;
+--------------------slps::ldf-v2.1-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+contentType ::= ((text::mixedType) | (grammar::(α language::string() (version::string())?)) | (sample::sampleType) | (runnable::runnableType))* (section::sectionType)* ;
+--------------------slps::ldf-v20.0-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | (code::string()) | (text::mixed-type) | figure | table | (list::list) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) | production ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v20.1-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | (code::string()) | (text::mixed-type) | figure | table | (list::list) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) | production ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v21.0-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | code | (text::mixed-type) | figure | table | (list::list) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) | production ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v21.1-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | code | (text::mixed-type) | figure | table | (list::list) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+--------------------slps::ldf-v22.0-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | code | (text::mixed-type) | figure | table | (list::list-type) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+subsection-type ::= metadata::((id::string())? role::((synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) | (rationale::ε) | (example::ε) | (update::ε) | (subtopic::ε) | (section::ε)) (type::((normative::ε) | (informative::ε)))? (title::string())? (author::person)*) (content::(content-content+)) | (placeholder::α) | ((subsection::subsection-type)+) ;
+section-type ::= metadata::((id::string())? role::((abstract::ε) | (conformance::ε) | (compatibility::ε) | (design-goals::ε) | (document-structure::ε) | (foreword::ε) | (references::ε) | (notation::ε) | (scope::ε) | (what-is-new::ε) | (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) | (top-section::ε) | (lexical-section::ε) | (description::ε) | (syntax::ε) | (example::ε) | (subsection::ε)) (type::((normative::ε) | (informative::ε)))? (title::string())? (author::person)*) (content::(content-content+)) | (placeholder::α) | ((subsection::subsection-type)+) ;
+--------------------slps::ldf-v23.0-xsd.bgf--------------------
+mixed-type ::= (α | string())* ;
+text-element ::= (empty::ε) | code | (text::mixed-type) | figure | table | (list::list-type) | (formula::(((math::anyMath) | (mfenced::anyMath) | (mtext::anyMath) | (msub::anyMath) | (msup::anyMath) | (mrow::anyMath) | (mi::anyMath) | (mo::anyMath) | (varepsilon::α))+)) | (sample::((α | string())* source::string())) ;
+formula ::= α+ ;
+anyMath ::= (α | string())* ;
+subsection-type ::= metadata::((id::string())? role::((synopsis::ε) | (description::ε) | (syntax::ε) | (constraints::ε) | (relationship::ε) | (semantics::ε) | (default::ε) | (rationale::ε) | (example::ε) | (update::ε) | (subtopic::ε) | (section::ε)) (type::((normative::ε) | (informative::ε)))? (title::string())? (author::person)*) (content::(content-content+)) | (placeholder::α) | ((subsection::subsection-type)+) ;
+section-type ::= metadata::((id::string())? role::((abstract::ε) | (conformance::ε) | (compatibility::ε) | (design-goals::ε) | (document-structure::ε) | (foreword::ε) | (references::ε) | (notation::ε) | (scope::ε) | (what-is-new::ε) | (index::ε) | (full-grammar::ε) | (list-of-tables::ε) | (list-of-authors::ε) | (list-of-contents::ε) | (list-of-references::ε) | (top-section::ε) | (lexical-section::ε)) (type::((normative::ε) | (informative::ε)))? (title::string())? (author::person)*) (content::(content-content+)) | (placeholder::α) | ((subsection::subsection-type)+) ;
+--------------------slps::ldf-v3.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v4.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v5.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v6.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v7.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::slps-btf.bgf--------------------
+tree ::= (epsilon::ε) | (any::α) | (terminal::terminal) | (nonterminal::(production tree)) | (selectable::(selector::selector tree)) | (value::((int::integer()) | (string::string()))) | (sequence::(tree*)) | (choice::(expression tree)) | (optional::(tree?)) | (plus::(tree+)) | (star::(tree*)) ;
+--------------------slps::ldf-v7.1-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v8.0-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v8.1-xsd.bgf--------------------
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v9.0-xsd.bgf--------------------
+insideSimpleText ::= (empty::α) | (text::mixedType) | (table::SimpleTable) | (list::SimpleList) | (formula::string()) | (sample::string()) | production ;
+mixedType ::= (α | string())* ;
+--------------------slps::ldf-v9.1-xsd.bgf--------------------
+insideSimpleText ::= (empty::α) | (text::mixedType) | (table::SimpleTable) | (list::SimpleList) | (formula::string()) | (sample::string()) | production ;
+mixedType ::= (α | string())* ;
+--------------------slps::slps-edd.bgf--------------------
+config ::= ((start-grammar-symbol::string()) | (end-grammar-symbol::string()) | (line-continuation-symbol::string()) | (tabulation-symbol::string()) | (start-label-symbol::string()) | (end-label-symbol::string()) | (defining-symbol::string()) | (multiple-defining-symbol::string()) | (terminator-symbol::string()) | (definition-separator-symbol::string()) | (concatenate-symbol::string()) | (start-comment-symbol::string()) | (end-comment-symbol::string()) | (start-group-symbol::string()) | (end-group-symbol::string()) | (start-option-symbol::string()) | (end-option-symbol::string()) | (start-terminal-symbol::string()) | (end-terminal-symbol::string()) | (start-nonterminal-symbol::string()) | (end-nonterminal-symbol::string()) | (start-seplist-star-symbol::string()) | (end-seplist-star-symbol::string()) | (start-seplist-plus-symbol::string()) | (end-seplist-plus-symbol::string()) | (start-repetition-star-symbol::string()) | (end-repetition-star-symbol::string()) | (start-repetition-plus-symbol::string()) | (end-repetition-plus-symbol::string()) | (postfix-option-symbol::string()) | (postfix-repetition-star-symbol::string()) | (postfix-repetition-plus-symbol::string()) | (nonterminals-may-start-with::string()) | (nonterminals-may-contain::string()) | (nonterminal-if-contains::string()) | (terminal-if-undefined::((except::string())*)) | (nonterminal-if-defined::((except::string())*)) | (decompose-symbols::((except::string())*)) | (terminal-if-uppercase::α) | (terminal-if-lowercase::α) | (terminal-if-mixedcase::α) | (terminal-if-camelcase::α) | (nonterminal-if-uppercase::α) | (nonterminal-if-lowercase::α) | (nonterminal-if-mixedcase::α) | (nonterminal-if-camelcase::α) | (glue-nonalphanumeric-terminals::α) | (break-tokens-at-whitespace::α) | (disregard-labels::α) | (consider-indentation::α) | (ignore::(((newline::α) | (space::α) | (same-indentation::α) | (lines-containing::string()))+)) | (mask::(token::string() (terminal::string()) | (epsilon::α))))* ;

@@ -1,0 +1,46 @@
+--------------------c::cordy-malton-dahn.bgf--------------------
+ps_argument_list ::= {ps_argument ","}* ;
+--------------------c::cordy-malton.bgf--------------------
+argument_declaration_list ::= {argument_declaration ","}* ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+argument-list ::= {argument ","}* ;
+--------------------cs::csharp-cordy.bgf--------------------
+attribute_argument_list ::= {attribute_argument ","}* ;
+type_parameter_constraints ::= {type_parameter_constraint ","}* ;
+argument_list ::= {argument ","}* ;
+--------------------eiffel::cordy.bgf--------------------
+Actual_list ::= {Actual ","}* ;
+Restricted_type_list ::= {Restricted_type ","}* ;
+Rename_list ::= {Rename_pair ","}* ;
+Debug_key_list ::= {Debug_key ","}* ;
+Index_terms ::= {Index_value ","}* ;
+Formal_generic_list ::= {Formal_generic ","}* ;
+Expression_list ::= {Expression ","}* ;
+Class_list ::= {Class_name ","}* ;
+Type_list ::= {Type ","}* ;
+Choices ::= {Choice ","}* ;
+Attribute_list ::= {Identifier ","}* ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+External_type_list ::= {External_type ","}* ;
+Feature_declaration_list ::= {Feature_declaration ";"}* ;
+Compound ::= {Instruction ";"}* ;
+Note_list ::= {Note_entry ";"}* ;
+Expression_list ::= {Expression ","}* ;
+Assertion ::= {Assertion_clause ";"}* ;
+--------------------fortran::waite-cordy.bgf--------------------
+ImplicitRanges ::= {ImplicitRange ","}* ;
+FunctionPars ::= {FunctionPar ","}* ;
+SubroutinePars ::= {SubroutinePar ","}* ;
+SubroutineArgList ::= {SubroutineArg ","}* ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+for_update ::= {expression ","}* ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+for_update ::= {expression ","}* ;
+--------------------modula::dagenais-cordy.bgf--------------------
+IdList ::= {id ","}* ;
+SetCons ::= {SetElt ","}* ;
+RecordCons ::= {RecordElt ","}* ;
+--------------------python::sorochan-cordy.bgf--------------------
+testlist1 ::= {test ","}* ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+Priorities ::= {Priority ","}* ;

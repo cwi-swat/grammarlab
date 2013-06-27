@@ -1,0 +1,63 @@
+--------------------ada::kellogg.bgf--------------------
+selector_names_opt ::= association_head | ε ;
+--------------------java::java-5-stahl.bgf--------------------
+argList ::= expressionList | ε ;
+--------------------java::java-5-studman.bgf--------------------
+argList ::= expressionList | ε ;
+--------------------java::java-5-landman.bgf--------------------
+LHS ::= ExprName ;
+ LHS ::= ε ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+AFun ::= [Quoted] StrCon ;
+ AFun ::= [Unquoted] ε ;
+Label ::= [IdCon] ε ;
+ Label ::= [Quoted] StrCon ;
+--------------------hats::abs.bgf--------------------
+LAYOUT ::= Comment ;
+ LAYOUT ::= ε ;
+--------------------metamodels::MICRO.owl.bgf--------------------
+Speaker ::= Author ;
+ Speaker ::= ε ;
+Extended_abstract ::= Abstract ;
+ Extended_abstract ::= ε ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLBasicDef.bgf--------------------
+TabElt ::= Tab ;
+ TabElt ::= ε ;
+PictureType ::= Picture ;
+ PictureType ::= ε ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLStyles.bgf--------------------
+TabElt ::= Tab ;
+ TabElt ::= ε ;
+PictureType ::= Picture ;
+ PictureType ::= ε ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLTableElts.bgf--------------------
+TabElt ::= Tab ;
+ TabElt ::= ε ;
+PictureType ::= Picture ;
+ PictureType ::= ε ;
+--------------------metamodels::QVT.bgf--------------------
+URIExtent ::= ModelType ;
+ URIExtent ::= ε ;
+--------------------metamodels::SysML.bgf--------------------
+ParameterSet ::= Probability ;
+ ParameterSet ::= ε ;
+--------------------metamodels::iasted.owl.bgf--------------------
+Speaker ::= Author ;
+ Speaker ::= ε ;
+Extended_abstract ::= Abstract ;
+ Extended_abstract ::= ε ;
+--------------------metamodels::sbvrEclipse.bgf--------------------
+StructuralRule ::= StructuralBusinessRule ;
+ StructuralRule ::= ε ;
+ClosedSemanticFormulation ::= ClosedLogicalFormulation ;
+ ClosedSemanticFormulation ::= ε ;
+--------------------metamodels::sbvrOMG.bgf--------------------
+StructuralRule ::= StructuralBusinessRule ;
+ StructuralRule ::= ε ;
+ClosedSemanticFormulation ::= ClosedLogicalFormulation ;
+ ClosedSemanticFormulation ::= ε ;
+--------------------metamodels::sigkdd.owl.bgf--------------------
+Invited_Speaker ::= ε ;
+ Invited_Speaker ::= presentation::Document ;
+Extended_abstract ::= Abstract ;
+ Extended_abstract ::= ε ;

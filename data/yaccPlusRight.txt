@@ -1,0 +1,15 @@
+--------------------c::cordy-malton-dahn.bgf--------------------
+assignment_expression ::= conditional_expression | (unary_expression_assign assignment_expression) ;
+--------------------cpp::iso-n2723.bgf--------------------
+declarator ::= direct-declarator | (ptr-operator declarator) ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+declarator ::= direct-declarator | (ptr-operator declarator) ;
+--------------------java::java-5-jls-read.bgf--------------------
+ConstantModifiers ::= ConstantModifier ;
+ ConstantModifiers ::= ConstantModifier ConstantModifiers ;
+AdditionalBoundList ::= AdditionalBound AdditionalBoundList ;
+ AdditionalBoundList ::= AdditionalBound ;
+--------------------tescol::00000.bgf--------------------
+negateexp ::= (SUB negateexp) | parexp ;
+--------------------tescol::01001.bgf--------------------
+minus ::= atom | (MINUS minus) ;

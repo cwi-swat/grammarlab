@@ -1,0 +1,59 @@
+--------------------ada::lncs-4348.bgf--------------------
+null_exclusion ::= "not" "null" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+explicit_dereference_component ::= "." "all" ;
+requeue_statement_with_abort ::= "with" "abort" ;
+null_exclusion ::= "not" "null" ;
+incomplete_type_declaration_modifier ::= "is" "tagged" ;
+--------------------fortran::derricks.bgf--------------------
+GoToKw ::= "go" "to" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+var_arg_specifier ::= "..." ;
+--------------------xpath::w3c-xpath1.bgf--------------------
+Digits ::= [NT-Digits] ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------occam::mu-mitchell.bgf--------------------
+class-key ::= "class" "struct" "union" ;
+function-specifier ::= "inline" "virtual" "explicit" ;
+storage-class-specifier ::= "auto" "register" "static" "extern" "mutable" ;
+access-specifier ::= "private" "protected" "public" ;
+cv-qualifier ::= "const" "volatile" ;
+--------------------pascal::delphi.bgf--------------------
+of_const ::= "of" "const" ;
+of_object ::= "of" "object" ;
+--------------------pascal::object.bgf--------------------
+of_object ::= "of" "object" ;
+--------------------markup::mathml-furubayashi.bgf--------------------
+mml.alignmentscope.datatype ::= ("true" | "false")+ ;
+mml.lines.datatype ::= ("none" | "solid" | "dashed")+ ;
+mml.columnalign.datatype ::= ("left" | "center" | "right")+ ;
+mml.rowalign.datatype ::= ("top" | "bottom" | "center" | "baseline" | "axis")+ ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+reducedDerivationControl ::= ("extension" | "restriction")* ;
+--------------------tescol::00100.bgf--------------------
+INT_NUMBER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::00101.bgf--------------------
+INT_VAL ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::00110.bgf--------------------
+INTEGER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::00111.bgf--------------------
+INT_NUMBER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01010.bgf--------------------
+INUM ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01100.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01101.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01110.bgf--------------------
+INT_NUMBER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01111.bgf--------------------
+INTVALUE ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::10101.bgf--------------------
+INTEGER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::10110.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::10111.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::11000.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::11001.bgf--------------------
+UINT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;

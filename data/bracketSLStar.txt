@@ -1,0 +1,44 @@
+--------------------ada::cordy-hyaric.bgf--------------------
+discriminant_constraint ::= "(" {discriminant_association ","}* ")" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+sub_member_declarators ::= "(" {member_declarator ","}* ")" ;
+macro_type_arguments ::= "(" {macro_type_argument ","}* ")" ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+method_argument ::= "(" {argument ","}* ")" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+method_argument ::= "(" {argument ","}* ")" ;
+generic_argument ::= "<" {type_argument ","}* ">" ;
+generic_parameter ::= "<" {type_parameter ","}* ">" ;
+--------------------java::java-5-landman.bgf--------------------
+EnumConstArgs ::= "(" {Expr ","}* ")" ;
+--------------------basic::vb6-cordy.bgf--------------------
+subscript ::= "(" {optional_subscript ","}* ")" ;
+property_argument_list ::= "(" {property_argument ","}* ")" ;
+subprogram_argument_description ::= "(" {subprogram_argument ","}* ")" ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_array_literal ::= "[" {js_array_element ","}* "]" ;
+js_arguments ::= "(" {js_assignment_expn ","}* ")" ;
+--------------------pascal::delphi.bgf--------------------
+array_constant ::= "(" {typed_const ","}* ")" ;
+program_file_list ::= "(" {id ","}* ")" ;
+array_index_list ::= "[" {array_index ","}* "]" ;
+--------------------pascal::object.bgf--------------------
+set_constructor ::= "[" {set_element ","}* "]" ;
+enumeratedType ::= "(" {decl_name ","}* ")" ;
+array_constant ::= "(" {typed_constant ","}* ")" ;
+square_ordinalType ::= "[" {ordinalType ","}* "]" ;
+arguments ::= "(" {expression ","}* ")" ;
+class_heritage ::= "(" {ref_name ","}* ")" ;
+program_file_list ::= "(" {id ","}* ")" ;
+array_subscript ::= "[" {expression ","}* "]" ;
+interface_heritage ::= "(" {ref_name ","}* ")" ;
+--------------------php::cordy.bgf--------------------
+CallParams ::= "(" {CallParam ","}* ")" ;
+--------------------markup::json-rascal-concrete.bgf--------------------
+Object ::= [Object] "{" members::({Member ","}*) "}" ;
+Array ::= [Array] "[" values::({Value ","}*) "]" ;
+--------------------markup::json-zaytsev-concrete.bgf--------------------
+JSONObject ::= "{" {JSONKeyValue ","}* "}" ;
+JSONArray ::= "[" {JSONBasicType ","}* "]" ;
+--------------------metasyntax::box-rascal.bgf--------------------
+AlignmentOptions ::= "(" {AlignmentOption ","}* ")" ;

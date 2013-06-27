@@ -1,0 +1,17 @@
+--------------------ada::cordy-hyaric.bgf--------------------
+indexed_component_component ::= "(" {index_expression ","}+ ")" ;
+generic_actual_part ::= "(" {generic_association ","}+ ")" ;
+actual_parameter_part ::= "(" {parameter_association ","}+ ")" ;
+index_constraint ::= "(" {discrete_range ","}+ ")" ;
+indexed_slice_type_conv_or_function_call_component ::= "(" {index_or_parameter_value ","}+ ")" ;
+named_array_aggregate ::= "(" {array_component_association ","}+ ")" ;
+pragma_arguments ::= "(" {pragma_argument_association ","}+ ")" ;
+enumeration_type_definition ::= "(" {enumeration_literal_specification ","}+ ")" ;
+--------------------java::java-5-landman.bgf--------------------
+TypeArgs ::= [typeArgs] "<" {ActualTypeArg ","}+ ">" ;
+TypeParams ::= [typeParams] "<" {TypeParam ","}+ ">" ;
+--------------------metasyntax::aterms-rascal.bgf--------------------
+Annotation ::= [Default] "{" {ATerm ","}+ "}" ;
+--------------------metasyntax::sdf-rascal.bgf--------------------
+Annotation ::= [Default] "{" {ATerm ","}+ "}" ;
+ArgumentIndicator ::= [Default] "<" {NatCon ","}+ ">" ;

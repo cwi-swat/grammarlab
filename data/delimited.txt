@@ -1,0 +1,167 @@
+--------------------ada::kempe.bgf--------------------
+delay_relative_statement ::= "delay" delay_expression ";" ;
+guard ::= "when" condition "=>" ;
+goto_statement ::= "goto" label_name ";" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+delay_relative_statement ::= "delay" delay_expression ";" ;
+guard ::= "when" condition "=>" ;
+goto_statement ::= "goto" label_name ";" ;
+--------------------ada::lncs-2219.bgf--------------------
+delay_relative_statement ::= "delay" delay_expression ";" ;
+guard ::= "when" condition "=>" ;
+goto_statement ::= "goto" label_name ";" ;
+--------------------ada::lncs-4348.bgf--------------------
+delay_relative_statement ::= "delay" delay_expression ";" ;
+guard ::= "when" condition "=>" ;
+goto_statement ::= "goto" label_name ";" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+protected_type_declaration_interface_list ::= "new" interface_list "with" ;
+single_task_declaration_definition_interface_list ::= "new" interface_list "with" ;
+single_protected_declaration_interface_list ::= "new" interface_list "with" ;
+task_type_declaration_definition_interface_list ::= "new" interface_list "with" ;
+--------------------c::lankamp.bgf--------------------
+Statement ::= "default" ":" Statement ;
+ Statement ::= "switch" "(" Expression ")" Statement ;
+ Statement ::= "return" ";" ;
+ Statement ::= "for" "(" Expression? ";" Expression? ";" Expression? ")" Statement ;
+ Statement ::= "case" Expression ":" Statement ;
+ Statement ::= "continue" ";" ;
+ Statement ::= ";" ;
+ Statement ::= "goto" Identifier ";" ;
+ Statement ::= "do" Statement "while" "(" Expression ")" ";" ;
+ Statement ::= "{" Declaration* Statement* "}" ;
+ Statement ::= "while" "(" Expression ")" Statement ;
+ Statement ::= "break" ";" ;
+ Statement ::= "if" "(" Expression ")" Statement ;
+ Statement ::= Identifier ":" Statement ;
+ Statement ::= Expression ";" ;
+ Statement ::= "if" "(" Expression ")" Statement "else" Statement ;
+ Statement ::= "return" Expression ";" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+using-namespace-directive ::= "using" namespace-name ";" ;
+--------------------eiffel::bezault.bgf--------------------
+Check ::= "check" Assertion "end" ;
+--------------------eiffel::cordy.bgf--------------------
+Check ::= "check" Assertion "end" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Constraint_creators ::= "create" Feature_list "end" ;
+Parenthesized_target ::= "(|" Expression "|)" ;
+--------------------fortran::derricks.bgf--------------------
+ArrayConstructor ::= "(/" AcValueList "/)" ;
+--------------------fortran::waite-cordy.bgf--------------------
+SavedCommonBlock ::= "/" CommonBlockName "/" ;
+ArrayConstructor ::= "(/" AcValueList "/)" ;
+--------------------java::java-1-jls-impl.bgf--------------------
+ThrowStatement ::= "throw" Expression ";" ;
+PackageDeclaration ::= "package" Name ";" ;
+SingleTypeImportDeclaration ::= "import" Name ";" ;
+SwitchLabel ::= "case" ConstantExpression ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-1-jls-read.bgf--------------------
+ThrowStatement ::= "throw" Expression ";" ;
+PackageDeclaration ::= "package" PackageName ";" ;
+SingleTypeImportDeclaration ::= "import" TypeName ";" ;
+SwitchLabel ::= "case" ConstantExpression ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-2-jls-impl.bgf--------------------
+Statement ::= Block ;
+ Statement ::= "if" ParExpression Statement ("else" Statement)? ;
+ Statement ::= "for" "(" ForInit? ";" Expression? ";" ForUpdate? ")" Statement ;
+ Statement ::= "while" ParExpression Statement ;
+ Statement ::= "do" Statement "while" ParExpression ";" ;
+ Statement ::= "try" Block Catches | (Catches? "finally" Block) ;
+ Statement ::= "switch" ParExpression "{" SwitchBlockStatementGroups "}" ;
+ Statement ::= "synchronized" ParExpression Block ;
+ Statement ::= "return" Expression? ";" ;
+ Statement ::= "throw" Expression ";" ;
+ Statement ::= "break" Identifier? ";" ;
+ Statement ::= "continue" Identifier? ";" ;
+ Statement ::= ";" ;
+ Statement ::= ExpressionStatement ;
+ Statement ::= Identifier ":" Statement ;
+SwitchLabel ::= "case" ConstantExpression ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-2-jls-read.bgf--------------------
+ThrowStatement ::= "throw" Expression ";" ;
+PackageDeclaration ::= "package" PackageName ";" ;
+SingleTypeImportDeclaration ::= "import" TypeName ";" ;
+SwitchLabel ::= "case" ConstantExpression ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+Statement ::= Block ;
+ Statement ::= "assert" Expression (":" Expression)? ";" ;
+ Statement ::= "if" ParExpression Statement ("else" Statement)? ;
+ Statement ::= "for" "(" ForControl ")" Statement ;
+ Statement ::= "while" ParExpression Statement ;
+ Statement ::= "do" Statement "while" ParExpression ";" ;
+ Statement ::= "try" Block Catches | (Catches? "finally" Block) ;
+ Statement ::= "switch" ParExpression "{" SwitchBlockStatementGroups "}" ;
+ Statement ::= "synchronized" ParExpression Block ;
+ Statement ::= "return" Expression? ";" ;
+ Statement ::= "throw" Expression ";" ;
+ Statement ::= "break" Identifier? ";" ;
+ Statement ::= "continue" Identifier? ";" ;
+ Statement ::= ";" ;
+ Statement ::= StatementExpression ";" ;
+ Statement ::= Identifier ":" Statement ;
+SwitchLabel ::= "case" ConstantExpression ":" ;
+ SwitchLabel ::= "case" EnumConstantName ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-5-jls-read.bgf--------------------
+AssertStatement ::= "assert" Expression ";" ;
+ AssertStatement ::= "assert" Expression ":" Expression ";" ;
+ThrowStatement ::= "throw" Expression ";" ;
+SingleTypeImportDeclaration ::= "import" TypeName ";" ;
+SwitchLabel ::= "case" ConstantExpression ":" ;
+ SwitchLabel ::= "case" EnumConstantName ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-5-parr.bgf--------------------
+packageDeclaration ::= "package" qualifiedName ";" ;
+--------------------java::java-4-sdf.bgf--------------------
+AssertStatement ::= "assert" Expression ";" ;
+ThrowStatement ::= "throw" Expression ";" ;
+PackageDeclaration ::= "package" Name ";" ;
+SingleTypeImportDeclaration ::= "import" Name ";" ;
+SwitchLabel ::= "case" Expression ":" ;
+ SwitchLabel ::= "default" ":" ;
+--------------------java::java-5-landman.bgf--------------------
+CondMid ::= "?" Expr ":" ;
+--------------------modula::sdf.bgf--------------------
+LoopStmt ::= "LOOP" Stmts "END" ;
+RecordType ::= "RECORD" Fields "END" ;
+--------------------modula::src-052.bgf--------------------
+LoopStmt ::= "LOOP" Stmts "END" ;
+RecordType ::= "RECORD" Fields "END" ;
+--------------------modula::dagenais-cordy.bgf--------------------
+LoopStmt ::= "LOOP" Stmts "END" ;
+--------------------html::cordy.bgf--------------------
+singleton_tag_end ::= "</" singleton_id ">" ;
+--------------------pascal::object.bgf--------------------
+recordType ::= "record" field_list "end" ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+italic_text ::= "''" text "''" ;
+header_link ::= "/*" text "*/" ;
+bold_text ::= "'''" text "'''" ;
+bold_italic_text ::= "'''''" text "'''''" ;
+nowiki ::= "<nowiki>" text "</nowiki>" ;
+--------------------metasyntax::ebnf-iso-3.bgf--------------------
+REPEATED_SEQUENCE ::= "(:" DEFINITIONS_LIST ":)" ;
+OPTIONAL_SEQUENCE ::= "(/" DEFINITIONS_LIST "/)" ;

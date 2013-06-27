@@ -1,0 +1,1472 @@
+--------------------ada::kellogg.bgf--------------------
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+WS_ ::= " " | "\t" | "\f" | "\r\n" | "\r" | "\n" ;
+--------------------ada::kempe.bgf--------------------
+highest_precedence_operator ::= "**" | "abs" | "not" ;
+relational_operator ::= "=" | "/=" | "<" | "<=" | ">" | ">=" ;
+allocator ::= ("new" subtype_indication) | ("new" qualified_expression) ;
+general_access_modifier ::= "all" | "constant" ;
+logical_operator ::= "and" | "or" | "xor" ;
+iteration_scheme ::= ("while" condition) | ("for" loop_parameter_specification) ;
+multiplying_operator ::= "*" | "/" | "mod" | "rem" ;
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+highest_precedence_operator ::= "**" | "abs" | "not" ;
+relational_operator ::= "=" | "/=" | "<" | "<=" | ">" | ">=" ;
+allocator ::= ("new" subtype_indication) | ("new" qualified_expression) ;
+general_access_modifier ::= "all" | "constant" ;
+logical_operator ::= "and" | "or" | "xor" ;
+iteration_scheme ::= ("while" condition) | ("for" loop_parameter_specification) ;
+multiplying_operator ::= "*" | "/" | "mod" | "rem" ;
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::lncs-2219.bgf--------------------
+highest_precedence_operator ::= "**" | "abs" | "not" ;
+relational_operator ::= "=" | "/=" | "<" | "<=" | ">" | ">=" ;
+allocator ::= ("new" subtype_indication) | ("new" qualified_expression) ;
+general_access_modifier ::= "all" | "constant" ;
+logical_operator ::= "and" | "or" | "xor" ;
+iteration_scheme ::= ("while" condition) | ("for" loop_parameter_specification) ;
+multiplying_operator ::= "*" | "/" | "mod" | "rem" ;
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::lncs-4348.bgf--------------------
+highest_precedence_operator ::= "**" | "abs" | "not" ;
+digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+relational_operator ::= "=" | "/=" | "<" | "<=" | ">" | ">=" ;
+allocator ::= ("new" subtype_indication) | ("new" qualified_expression) ;
+general_access_modifier ::= "all" | "constant" ;
+logical_operator ::= "and" | "or" | "xor" ;
+iteration_scheme ::= ("while" condition) | ("for" loop_parameter_specification) ;
+multiplying_operator ::= "*" | "/" | "mod" | "rem" ;
+binary_adding_operator ::= "+" | "-" | "&" ;
+unary_adding_operator ::= "+" | "-" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+highest_precedence_operator ::= "**" | "abs" | "not" ;
+relational_operator ::= "=" | "/=" | "<" | "<=" | ">" | ">=" ;
+allocator ::= ("new" subtype_indication) | ("new" qualified_expression) ;
+general_access_modifier ::= "all" | "constant" ;
+logical_operator ::= "and" | "or" | "xor" ;
+private_extension_declaration_modifier ::= "limited" | "synchronized" ;
+iteration_scheme ::= ("while" condition) | ("for" loop_parameter_specification) ;
+multiplying_operator ::= "*" | "/" | "mod" | "rem" ;
+interface_type_definition_modifier ::= "limited" | "task" | "protected" | "synchronized" ;
+unary_adding_operator ::= "+" | "-" ;
+formal_derived_type_definition_modifier ::= "limited" | "synchronized" ;
+orbar ::= "|" | "!" ;
+--------------------c::iso-9899-1999.bgf--------------------
+struct-or-union ::= "struct" | "union" ;
+type-qualifier ::= "const" | "restrict" | "volatile" ;
+storage-class-specifier ::= "typedef" | "extern" | "static" | "auto" | "register" ;
+assignment-operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | "<<=" | ">>=" | "&=" | "^=" | "|=" ;
+unary-operator ::= "&" | "*" | "+" | "-" | "~" | "!" ;
+--------------------c::iso-9899-tc2.bgf--------------------
+struct-or-union ::= "struct" | "union" ;
+type-qualifier ::= "const" | "restrict" | "volatile" ;
+storage-class-specifier ::= "typedef" | "extern" | "static" | "auto" | "register" ;
+assignment-operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | "<<=" | ">>=" | "&=" | "^=" | "|=" ;
+unary-operator ::= "&" | "*" | "+" | "-" | "~" | "!" ;
+--------------------c::iso-9899-tc3.bgf--------------------
+struct-or-union ::= "struct" | "union" ;
+type-qualifier ::= "const" | "restrict" | "volatile" ;
+storage-class-specifier ::= "typedef" | "extern" | "static" | "auto" | "register" ;
+assignment-operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | "<<=" | ">>=" | "&=" | "^=" | "|=" ;
+unary-operator ::= "&" | "*" | "+" | "-" | "~" | "!" ;
+--------------------c::malton-dahn.bgf--------------------
+slash ::= "/" | "\" | "." | ":" ;
+attribute_destructor ::= "destructor" | "__destructor__" | "__destructor" | "destructor__" ;
+attribute_packed ::= "__packed__" | "__packed" | "packed__" | "packed" ;
+attribute_format ::= "__format__" | "__format" | "format__" | "format" ;
+bit_qualifier ::= "long" | "short" | "signed" | "unsigned" | "__signed__" | "__signed" ;
+attribute_noreturn ::= "__noreturn__" | "__noreturn" | "noreturn__" | "noreturn" ;
+attribute_far ::= "__far__" | "__far" | "far__" | "far" ;
+attribute_sp_switch ::= "sp_switch" | "__sp_switch__" | "__sp_switch" | "sp_switch__" ;
+attribute_alias ::= "alias" | "__alias__" | "__alias" | "alias__" ;
+attribute_exception ::= "exception" | "__exception__" | "__exception" | "exception__" ;
+attribute_malloc ::= "malloc" | "__malloc__" | "__malloc" | "malloc__" ;
+attribute_near ::= "__near__" | "__near" | "near__" | "near" ;
+attribute_shared ::= "shared" | "__shared__" | "__shared" | "shared__" ;
+restrict_qualifier ::= "__restrict" | "restrict__" | "restrict" | "__restrict__" ;
+attribute_mode ::= "__mode__" | "__mode" | "mode__" | "mode" ;
+attribute_always_inline ::= "__always_inline__" | "__always_inline" | "always_inline__" | "always_inline" ;
+attribute_model_name ::= "small" | "__small__" | "__small" | "small__" | "medium" | "__medium__" | "__medium" | "medium__" | "large" | "__large__" | "__large" | "large__" ;
+attribute_no_check_mem ::= "no_check_memory_usage" | "__no_check_memory_usage__" | "__no_check_memory_usage" | "no_check_memory_usage__" ;
+attribute_eightbit ::= "eightbit_data" | "__eightbit_data__" | "__eightbit_data" | "eightbit_data__" ;
+attribute_long_call ::= "long_call" | "__long_call__" | "__long_call" | "long_call__" ;
+attribute_stdcall ::= "stdcall" | "__stdcall__" | "__stdcall" | "stdcall__" ;
+attribute_regparm ::= "regparm" | "__regparm__" | "__regparm" | "regparm__" ;
+attribute_noinline ::= "__noinline__" | "__noinline" | "noinline__" | "noinline" ;
+attribute_vector_size ::= "__vector_size__" | "__vector_size" | "vector_size__" | "vector_size" ;
+attribute_unused ::= "__unused__" | "__unused" | "unused__" | "unused" ;
+designator_assignment ::= ":" | "=" ;
+attribute_constructor ::= "constructor" | "__constructor__" | "__constructor" | "constructor__" ;
+assignment_operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+attribute_trans_union ::= "__transparent_union__" | "__transparent_union" | "transparent_union__" | "transparent_union" ;
+attribute_naked ::= "naked" | "__naked__" | "__naked" | "naked__" ;
+tls_model_type ::= "global-dynamic" | "local-dynamic" | "initial-exec" | "local-exec" ;
+visibility_type ::= "default" | "hidden" | "protected" | "internal" ;
+attribute_model ::= "model" | "__model__" | "__model" | "model__" ;
+attribute_short_call ::= "short_call" | "__short_call__" | "__short_call" | "short_call__" ;
+attribute_tiny ::= "tiny_data" | "__tiny_data__" | "__tiny_data" | "tiny_data__" ;
+attribute_no_instrument ::= "no_instrument_function" | "__no_instrument_function__" | "__no_instrument_function" | "no_instrument_function__" ;
+attribute_section ::= "section" | "__section__" | "__section" | "section__" ;
+attribute_aligned ::= "__aligned__" | "__aligned" | "aligned__" | "aligned" ;
+format_archetype ::= "printf" | "__printf__" | "__printf" | "printf__" | "scanf" | "__scanf__" | "__scanf" | "scanf__" | "strftime" | "__strftime__" | "__strftime" | "strftime__" | "strfmon" | "__strfmon__" | "__strfmon" | "strfmon__" ;
+attribute_pure ::= "__pure__" | "__pure" | "pure__" | "pure" ;
+attribute_weak ::= "weak" | "__weak__" | "__weak" | "weak__" ;
+attribute_deprecated ::= "__deprecated__" | "__deprecated" | "deprecated__" | "deprecated" ;
+attribute_dllexport ::= "__dllexport__" | "__dllexport" | "dllexport__" | "dllexport" ;
+attribute_nonnull ::= "__nonnull__" | "__nonnull" | "nonnull__" | "nonnull" ;
+attribute_nocommon ::= "nocommon" | "__nocommon__" | "nocommon__" | "__nocommon" ;
+attribute_signal ::= "signal" | "__signal__" | "__signal" | "signal__" ;
+attribute_cdecl ::= "cdecl" | "__cdecl__" | "__cdecl" | "cdecl__" ;
+attribute_dllimport ::= "dllimport" | "__dllimport__" | "__dllimport" | "dllimport__" ;
+attribute_nothrow ::= "__nothrow__" | "__nothrow" | "nothrow__" | "nothrow" ;
+binary_operator ::= "+" | "-" | "*" | "/" | "%" | "==" | "!=" | "<" | ">" | "<=" | ">=" | "||" | "&&" | "|" | "^" | "&" | "<<" | ">>" ;
+attribute_funvector ::= "function_vector" | "__function_vector__" | "__function_vector" | "function_vector__" ;
+attribute_longcall ::= "longcall" | "__longcall__" | "__longcall" | "longcall__" ;
+struct_or_union ::= "struct" | "union" ;
+attribute_visibility ::= "__visibility__" | "__visibility" | "visibility__" | "visibility" ;
+attribute_may_alias ::= "__may_alias__" | "__may_alias" | "may_alias__" | "may_alias" ;
+attribute_format_arg ::= "__format_arg__" | "__format_arg" | "format_arg__" | "format_arg" ;
+typeof_specifier ::= "__typeof" | "typeof" | "__typeof__" | "typeof__" ;
+sc_specifier ::= "auto" | "register" | "static" | "extern" | "typedef" ;
+attribute_trap_exit ::= "trap_exit" | "__trap_exit__" | "__trap_exit" | "trap_exit__" ;
+attribute_interrupt_handler ::= "interrupt_handler" | "__interrupt_handler__" | "__interrupt_handler" | "interrupt_handler__" ;
+inline_qualifier ::= "__inline" | "__inline__" | "inline__" | "inline" ;
+attribute_tls_model ::= "__tls_model__" | "__tls_model" | "tls_model__" | "tls_model" ;
+attribute_cleanup ::= "__cleanup__" | "__cleanup" | "cleanup__" | "cleanup" ;
+attribute_const ::= "__const__" | "__const" | "const__" | "const" ;
+attribute_interrupt ::= "interrupt" | "__interrupt__" | "__interrupt" | "interrupt__" ;
+attribute_used ::= "__used__" | "__used" | "used__" | "used" ;
+--------------------c::bruneliere.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+extension_specifier ::= "__extension__" | "__extension" ;
+relational_operator ::= "<" | ">" | "<=" | ">=" ;
+init_qualifier ::= "__init" | "init__" | "init" | "__init__" ;
+colon_equals_or_equals ::= ":" | "=" | "|=" ;
+asm ::= "__asm__" | "asm" | "asm__" | "__asm" ;
+device_attr ::= "DEVICE_ATTR" | "SYSDEV_ATTR" | "DEFINE_TIMER" | "DECLARE_TASKLET" ;
+initdata ::= "__initdata" | "__devinitdata" | "__cpuinitdata" | "__read_mostly" | "__initmv" | "__initdata_or_module" | "__pminitdata" | "__cpuinit" | "__devinit" | "BDATA" | "compat_init_data" | "in2000__INITDATA" ;
+bit_qualifier ::= "long" | "short" | "signed" | "unsigned" | "__signed__" | "__signed" ;
+additive_operator ::= "+" | "-" ;
+weak_specifier ::= "__weak__" | "__weak" ;
+user_qualifier ::= "__user" | "user__" | "user" | "__user__" ;
+unary_operator ::= "&" | "*" | "+" | "-" | "~" | "!" | "&&" | "NOT" | "not" ;
+complex ::= "__complex" | "__complex__" | "__Complex" ;
+acquires_releases ::= "__acquires" | "__releases" ;
+multiplicative_operator ::= "*" | "/" | "%" | "DIV" | "MOD" ;
+restrict_qualifier ::= "__restrict" | "restrict__" | "restrict" | "__restrict__" ;
+nf_qualifier ::= "near" | "far" | "NEAR" | "FAR" ;
+logical_AND_operator ::= "&&" | "AND" | "and" | "ANDP" ;
+bit_AND_operator ::= "&" | "BIT_AND" | "bit_and" ;
+struct_or_union ::= "struct" | "union" ;
+alignof_specifier ::= "__alignof__" | "__alignof" ;
+attribute_specifier ::= "__attribute__" | "__attribute" ;
+bit_XOR_operator ::= "^" | "BIT_XOR" | "bit_xor" ;
+force_qualifier ::= "__force" | "force__" | "force" | "__force__" ;
+assignment_operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+pre_increment_operator ::= ("++" SPOFF) | ("--" SPOFF) ;
+typeof_specifier ::= "__typeof" | "typeof" | "__typeof__" | "typeof__" ;
+sc_specifier ::= "auto" | "register" | "static" | "extern" | "far" | "near" | "typedef" | "local" | "vector" | "const_debug" | "INIT" | "STATIC" | "NEAR" | "FAR" ;
+bit_OR_operator ::= "|" | "BIT_OR" | "bit_or" ;
+logical_OR_operator ::= "||" | "OR" | "or" ;
+equality_operator ::= "==" | "!=" ;
+exit_qualifier ::= "__exit" | "exit__" | "exit" | "__exit__" ;
+inline_qualifier ::= "__inline" | "__inline__" | "inline__" | "inline" | "SBA_INLINE" ;
+shift_operator ::= "<<" | ">>" ;
+--------------------c::cordy-malton.bgf--------------------
+sc_specifier ::= "auto" | "register" | "static" | "extern" | "typedef" ;
+cv_qualifier ::= "const" | "volatile" ;
+slash ::= "/" | "\" | "." | ":" ;
+struct_or_union ::= "struct" | "union" ;
+assignment_operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+type_qualifier ::= "long" | "short" | "signed" | "unsigned" ;
+unary_operator ::= "*" | "&" | "+" | "-" | "!" | "~" | "++" | "--" ;
+binary_operator ::= "+" | "-" | "*" | "/" | "%" | "==" | "!=" | "<" | ">" | "<=" | ">=" | "||" | "&&" | "|" | "^" | "&" | "<<" | ">>" ;
+--------------------cpp::iso-n2723.bgf--------------------
+class-key ::= "class" | "struct" | "union" ;
+capture-default ::= "&" | "=" ;
+function-specifier ::= "inline" | "virtual" | "explicit" ;
+storage-class-specifier ::= "register" | "static" | "thread_local" | "extern" | "mutable" ;
+access-specifier ::= "private" | "protected" | "public" ;
+assignment-operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+unary-operator ::= "*" | "&" | "+" | "-" | "!" | "~" ;
+ref-qualifier ::= "&" | "&&" ;
+cv-qualifier ::= "const" | "volatile" ;
+--------------------cpp::bruneliere.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------cpp::elges-cordy.bgf--------------------
+class_key ::= "class" | "struct" | "union" ;
+function_specifier ::= "inline" | "virtual" ;
+assignment_operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+unary_operator ::= "**" | "*" | "&" | "+" | "-" | "!" | "~" ;
+const_volatile_qualifier ::= "const" | "volatile" ;
+access_specifier ::= "private" | "protected" | "public" ;
+storage_class_specifier ::= "auto" | "register" | "static" | "extern" ;
+binary_operator ::= "||" | "&&" | "|" | "^" | "&" | "==" | "!=" | "<" | ">" | "<=" | ">=" | "<<" | ">>" | "+" | "-" | "*" | "/" | "%" | ".*" | "->*" ;
+non_gt_binary_operator ::= "||" | "&&" | "|" | "^" | "&" | "==" | "!=" | "<" | "<=" | ">=" | "<<" | ">>" | "+" | "-" | "*" | "/" | "%" | ".*" | "->*" ;
+stars ::= "*" | "**" ;
+--------------------cpp::iso-14882-1998.bgf--------------------
+class-key ::= "class" | "struct" | "union" ;
+function-specifier ::= "inline" | "virtual" | "explicit" ;
+storage-class-specifier ::= "auto" | "register" | "static" | "extern" | "mutable" ;
+access-specifier ::= "private" | "protected" | "public" ;
+assignment-operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+unary-operator ::= "*" | "&" | "+" | "-" | "!" | "~" ;
+cv-qualifier ::= "const" | "volatile" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | ">>" | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+keyword ::= "abstract" | "as" | "base" | "bool" | "break" | "byte" | "case" | "catch" | "char" | "checked" | "class" | "const" | "continue" | "decimal" | "default" | "delegate" | "do" | "double" | "else" | "enum" | "event" | "explicit" | "extern" | "false" | "finally" | "fixed" | "float" | "for" | "foreach" | "goto" | "if" | "implicit" | "in" | "int" | "interface" | "internal" | "is" | "lock" | "long" | "namespace" | "new" | "null" | "object" | "operator" | "out" | "override" | "params" | "private" | "protected" | "public" | "readonly" | "ref" | "return" | "sbyte" | "sealed" | "short" | "sizeof" | "stackalloc" | "static" | "string" | "struct" | "switch" | "this" | "throw" | "true" | "try" | "typeof" | "uint" | "ulong" | "unchecked" | "unsafe" | "ushort" | "using" | "virtual" | "void" | "while" | "assembly" | "remove" | "get" | "set" | "field" | "method" | "module" | "param" | "property" | "add" | "volatile" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" | "static" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+keyword ::= "abstract" | "as" | "base" | "bool" | "break" | "byte" | "case" | "catch" | "char" | "checked" | "class" | "const" | "continue" | "decimal" | "default" | "delegate" | "do" | "double" | "else" | "enum" | "event" | "explicit" | "extern" | "false" | "finally" | "fixed" | "float" | "for" | "foreach" | "goto" | "if" | "implicit" | "in" | "int" | "interface" | "internal" | "is" | "lock" | "long" | "namespace" | "new" | "null" | "object" | "operator" | "out" | "override" | "params" | "private" | "protected" | "public" | "readonly" | "ref" | "return" | "sbyte" | "sealed" | "short" | "sizeof" | "stackalloc" | "static" | "string" | "struct" | "switch" | "this" | "throw" | "true" | "try" | "typeof" | "uint" | "ulong" | "unchecked" | "unsafe" | "ushort" | "using" | "virtual" | "void" | "volatile" | "while" | "get" | "set" | "yield" | "add" | "remove" | "alias" | "partial" | "where" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" | "static" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+keyword ::= "abstract" | "as" | "base" | "bool" | "break" | "byte" | "case" | "catch" | "char" | "checked" | "class" | "const" | "continue" | "decimal" | "default" | "delegate" | "do" | "double" | "else" | "enum" | "event" | "explicit" | "extern" | "false" | "finally" | "fixed" | "float" | "for" | "foreach" | "goto" | "if" | "implicit" | "in" | "int" | "interface" | "internal" | "is" | "lock" | "long" | "namespace" | "new" | "null" | "object" | "operator" | "out" | "override" | "params" | "private" | "protected" | "public" | "readonly" | "ref" | "return" | "sbyte" | "sealed" | "short" | "sizeof" | "stackalloc" | "static" | "string" | "struct" | "switch" | "this" | "throw" | "true" | "try" | "typeof" | "uint" | "ulong" | "unchecked" | "unsafe" | "ushort" | "using" | "virtual" | "void" | "volatile" | "while" | "get" | "set" | "yield" | "add" | "remove" | "alias" | "partial" | "where" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | ">>" | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+attribute-target ::= "field" | "event" | "method" | "module" | "param" | "property" | "return" | "type" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" | "static" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+keyword ::= "abstract" | "as" | "base" | "bool" | "break" | "byte" | "case" | "catch" | "char" | "checked" | "class" | "const" | "continue" | "decimal" | "default" | "delegate" | "do" | "double" | "else" | "enum" | "event" | "explicit" | "extern" | "false" | "finally" | "fixed" | "float" | "for" | "foreach" | "goto" | "if" | "implicit" | "in" | "int" | "interface" | "internal" | "is" | "lock" | "long" | "namespace" | "new" | "null" | "object" | "operator" | "out" | "override" | "params" | "private" | "protected" | "public" | "readonly" | "ref" | "return" | "sbyte" | "sealed" | "short" | "sizeof" | "stackalloc" | "static" | "string" | "struct" | "switch" | "this" | "throw" | "true" | "try" | "typeof" | "uint" | "ulong" | "unchecked" | "unsafe" | "ushort" | "using" | "virtual" | "void" | "volatile" | "while" | "yield" | "partial" | "add" | "remove" | "get" | "set" | "where" | "alias" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | ">>" | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" ;
+global-attribute-target ::= "assembly" | "module" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | ">>" | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" ;
+global-attribute-target ::= "assembly" | "module" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" | "this" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+anonymous-function-parameter-modifier ::= "ref" | "out" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" | "static" ;
+global-attribute-target ::= "assembly" | "module" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+ordering-direction ::= "ascending" | "descending" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" | "this" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+anonymous-function-parameter-modifier ::= "ref" | "out" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" | "static" ;
+global-attribute-target ::= "assembly" | "module" ;
+variance-annotation ::= "in" | "out" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+ordering-direction ::= "ascending" | "descending" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+ref-or-out ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+parameter-modifier ::= "ref" | "out" ;
+increment-decrement ::= "++" | "--" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+conversion-kind ::= "implicit" | "explicit" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+built-in-class-type ::= "object" | "string" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+expression-shift-operator ::= "<<" | ">>" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+attribute-target ::= "field" | "event" | "method" | "module" | "param" | "property" | "return" | "type" ;
+expression-equality-operator ::= "==" | "!=" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------cs::csharp-bruneliere.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------cs::csharp-cordy.bgf--------------------
+overloadable_unary_operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+ascending_descending ::= "ascending" | "descending" ;
+parameter_modifier ::= "ref" | "out" ;
+integral_type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+boolean_literal ::= "true" | "false" ;
+overloadable_binary_operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | ">>" | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+assignment_operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+enum_modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+predefined_type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+constant_modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating_point_type ::= "float" | "double" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+delegate-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+floating-point-type ::= "float" | "double" ;
+overloadable-unary-operator ::= "+" | "-" | "!" | "~" | "++" | "--" | "true" | "false" ;
+parameter-modifier ::= "ref" | "out" ;
+integral-type ::= "sbyte" | "byte" | "short" | "ushort" | "int" | "uint" | "long" | "ulong" | "char" ;
+overloadable-binary-operator ::= "+" | "-" | "*" | "/" | "%" | "&" | "|" | "^" | "<<" | ">>" | "==" | "!=" | ">" | "<" | ">=" | "<=" ;
+struct-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+property-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+class-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "abstract" | "sealed" ;
+interface-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+constructor-modifier ::= "public" | "protected" | "internal" | "private" | "extern" ;
+event-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+field-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "readonly" | "volatile" ;
+indexer-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+assignment-operator ::= "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" ;
+enum-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+method-modifier ::= "new" | "public" | "protected" | "internal" | "private" | "static" | "virtual" | "sealed" | "override" | "abstract" | "extern" ;
+predefined-type ::= "bool" | "byte" | "char" | "decimal" | "double" | "float" | "int" | "long" | "object" | "sbyte" | "short" | "string" | "uint" | "ulong" | "ushort" ;
+operator-modifier ::= "public" | "static" | "extern" ;
+constant-modifier ::= "new" | "public" | "protected" | "internal" | "private" ;
+--------------------dart::spec-0.01.bgf--------------------
+equalityOperator ::= "==" | "!=" | "===" | "!==" ;
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+relationalOperator ::= ">=" | ">" | "<=" | "<" ;
+multiplicativeOperator ::= "*" | "/" | "%" | "~/" ;
+getOrSet ::= "get" | "set" ;
+booleanLiteral ::= "true" | "false" ;
+LETTER ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+shiftOperator ::= "<<" | ">>>" | ">>" ;
+negateOperator ::= "!" | "~" ;
+bitwiseOperator ::= "&" | "^" | "|" ;
+NEWLINE ::= "\n" | "\r" ;
+incrementOperator ::= "++" | "--" ;
+BUILT_IN_IDENTIFIER ::= "abstract" | "assert" | "class" | "extends" | "factory" | "get" | "implements" | "import" | "interface" | "is" | "library" | "negate" | "operator" | "set" | "source" | "static" | "typedef" ;
+additiveOperator ::= "+" | "-" ;
+--------------------dart::google.bgf--------------------
+equalityOperator ::= "==" | "!=" | "===" | "!==" ;
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+relationalOperator ::= ">=" | ">" | "<=" | "<" ;
+multiplicativeOperator ::= "*" | "/" | "%" | "~/" ;
+shiftOperator ::= "<<" | ">>>" | ">>" ;
+negateOperator ::= "!" | "~" ;
+LETTER ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+bitwiseOperator ::= "&" | "^" | "|" ;
+NEWLINE ::= "\n" | "\r" ;
+incrementOperator ::= "++" | "--" ;
+assignmentOperator ::= "=" | "*=" | "/=" | "~/=" | "%=" | "+=" | "-=" | "<<=" | ">>>=" | ">>=" | "&=" | "^=" | "|=" ;
+additiveOperator ::= "+" | "-" ;
+--------------------dart::spec-0.05.bgf--------------------
+equalityOperator ::= "==" | "!=" | "===" | "!==" ;
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+compoundAssignmentOperator ::= "*=" | "/=" | "~/=" | "%=" | "+=" | "-=" | "<<=" | ">>>=" | ">>=" | "&=" | "^=" | "|=" ;
+relationalOperator ::= ">=" | ">" | "<=" | "<" ;
+multiplicativeOperator ::= "*" | "/" | "%" | "~/" ;
+getOrSet ::= "get" | "set" ;
+IDENTIFIER_START_NO_DOLLAR ::= "LETTER" | "_" ;
+booleanLiteral ::= "true" | "false" ;
+shiftOperator ::= "<<" | ">>>" | ">>" ;
+negateOperator ::= "!" | "~" ;
+bitwiseOperator ::= "&" | "^" | "|" ;
+NEWLINE ::= "\n" | "\r" ;
+incrementOperator ::= "++" | "--" ;
+additiveOperator ::= "+" | "-" ;
+--------------------eiffel::bezault.bgf--------------------
+Unary ::= "not" | "+" | "-" ;
+Header_mark ::= "deferred" | "expanded" | "separate" ;
+Sign ::= "+" | "-" ;
+Boolean_constant ::= "True" | "False" ;
+Comparison ::= "=" | "/=" ;
+Routine_mark ::= "do" | "once" ;
+--------------------eiffel::cordy.bgf--------------------
+Unary ::= "not" | "+" | "-" ;
+Header_mark ::= "deferred" | "expanded" ;
+Sign ::= "+" | "-" ;
+Boolean_constant ::= "true" | "false" ;
+Comparison ::= "=" | "/=" ;
+Routine_mark ::= "do" | "once" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Header_mark ::= "deferred" | "expanded" | "frozen" ;
+Digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" | "_" ;
+Sign ::= "+" | "-" ;
+Boolean_constant ::= "True" | "False" ;
+Comparison ::= "=" | "/=" | "~" | "/~" ;
+Attachment_mark ::= "?" | "!" ;
+Integer_base_letter ::= "b" | "c" | "x" | "B" | "C" | "X" ;
+Open_bracket ::= "[" | "{" ;
+Close_bracket ::= "]" | "}" ;
+--------------------fortran::derricks.bgf--------------------
+AccessSpec ::= "public" | "private" ;
+BlankInterpEditDescr ::= "BN" | "BZ" ;
+Sign ::= "+" | "-" ;
+SignEditDescr ::= "S" | "SP" | "SS" ;
+RelOp ::= "==" | "/=" | "<" | "<=" | ">" | ">=" | ".eq." | ".ne." | ".lt." | ".le." | ".gt." | ".ge." ;
+EquivOp ::= ".eqv." | ".neqv." ;
+AddOp ::= "+" | "-" ;
+MultOp ::= "*" | "/" ;
+--------------------fortran::waite-cordy.bgf--------------------
+AccessSpec ::= "public" | "private" ;
+Sign ::= "+" | "-" ;
+IntentSpec ::= "in" | "out" | "inout" ;
+Formatsep ::= "/" | ":" ;
+PlusMinus ::= "+" | "-" ;
+PositionSpec ::= ("unit=" UnitIdentifier) | ("err=" LblRef) | ("iostat=" ScalarVariable) ;
+CloseSpec ::= ("unit=" UnitIdentifier) | ("err=" LblRef) | ("status=" CExpr) | ("iostat=" ScalarVariable) ;
+AddOp ::= "+" | "-" ;
+MultOp ::= "*" | "/" ;
+--------------------java::jdt.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------java::java-5-habelitz.bgf--------------------
+JAVA_ID_START ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+HEX_DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" ;
+INTEGER_TYPE_SUFFIX ::= "l" | "L" ;
+FLOAT_TYPE_SUFFIX ::= "f" | "F" | "d" | "D" ;
+--------------------java::java-5-parr.bgf--------------------
+IntegerTypeSuffix ::= "l" | "L" ;
+booleanLiteral ::= "true" | "false" ;
+FloatTypeSuffix ::= "f" | "F" | "d" | "D" ;
+Letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+HexDigit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "A" | "B" | "C" | "D" | "E" | "F" ;
+primitiveType ::= "boolean" | "char" | "byte" | "short" | "int" | "long" | "float" | "double" ;
+JavaIDDigit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+--------------------java::java-5-stahl.bgf--------------------
+builtInType ::= "void" | "boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" ;
+HEX_DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" ;
+modifier ::= "private" | "public" | "protected" | "static" | "transient" | "final" | "abstract" | "native" | "threadsafe" | "synchronized" | "volatile" | "strictfp" ;
+FLOAT_SUFFIX ::= "f" | "F" | "d" | "D" ;
+--------------------java::java-5-studman.bgf--------------------
+builtInType ::= "void" | "boolean" | "byte" | "char" | "short" | "int" | "float" | "long" | "double" ;
+HEX_DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "A" | "B" | "C" | "D" | "E" | "F" | "a" | "b" | "c" | "d" | "e" | "f" ;
+modifier ::= "private" | "public" | "protected" | "static" | "transient" | "final" | "abstract" | "native" | "threadsafe" | "synchronized" | "volatile" | "strictfp" ;
+FLOAT_SUFFIX ::= "f" | "F" | "d" | "D" ;
+--------------------java::java-1-cordy-guo.bgf--------------------
+add_op ::= "+" | "-" ;
+shift_op ::= "<<" | ">>" | ">>>" ;
+relational_op ::= "<" | ">" | "<=" | ">=" ;
+boolean_literal ::= "true" | "false" ;
+modifier ::= "abstract" | "final" | "public" | "protected" | "private" | "static" | "transient" | "volatile" | "native" | "synchronized" | "strictfp" ;
+equality_op ::= "==" | "!=" ;
+assignment_operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | "<<=" | ">>=" | ">>>=" | "&=" | "^=" | "|=" ;
+pre_inc_dec ::= "++" | "--" ;
+post_inc_dec ::= "++" | "--" ;
+primitive_type ::= "boolean" | "char" | "byte" | "short" | "int" | "long" | "float" | "double" | "void" ;
+unary_op ::= "+" | "-" | "~" | "!" ;
+mult_op ::= "*" | "/" | "%" ;
+--------------------java::java-1-jouault.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------java::java-3-bruneliere.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+add_op ::= "+" | "-" ;
+wildcard_type_bound ::= ("extends" type_specifier) | ("super" type_specifier) ;
+relational_op ::= "<" | ">" | "<=" | ">=" ;
+boolean_literal ::= "true" | "false" ;
+equality_op ::= "==" | "!=" ;
+pre_inc_dec ::= "++" | "--" ;
+post_inc_dec ::= "++" | "--" ;
+primitive_type ::= "boolean" | "char" | "byte" | "short" | "int" | "long" | "float" | "double" | "void" ;
+unary_op ::= "+" | "-" | "~" | "!" ;
+annotation_default ::= ("default" expression) | ("default" array_initializer) ;
+mult_op ::= "*" | "/" | "%" ;
+--------------------java::java-5-giquel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------modula::sdf.bgf--------------------
+Id ::= "NOT" | "ROOT" ;
+Relop ::= "=" | "#" | "<" | "<=" | ">" | ">=" | "IN" ;
+Mulop ::= "*" | "/" | "DIV" | "MOD" ;
+Mode ::= "VALUE" | "VAR" | "READONLY" ;
+Addop ::= "+" | "-" | "&" ;
+--------------------modula::src-052.bgf--------------------
+ExtendedChar ::= " " | "¡" | "¢" | "£" | "¤" | "¥" | "¦" | "§" | "¨" | "©" | "ª" | "«" | "¬" | "­" | "®" | "¯" | "°" | "±" | "²" | "³" | "´" | "µ" | "¶" | "·" | "¸" | "¹" | "º" | "»" | "¼" | "½" | "¾" | "¿" | "À" | "Á" | "Â" | "Ã" | "Ä" | "Å" | "Æ" | "Ç" | "È" | "É" | "Ê" | "Ë" | "Ì" | "Í" | "Î" | "Ï" | "Ð" | "Ñ" | "Ò" | "Ó" | "Ô" | "Õ" | "Ö" | "×" | "Ø" | "Ù" | "Ú" | "Û" | "Ü" | "Ý" | "Þ" | "ß" | "à" | "á" | "â" | "ã" | "ä" | "å" | "æ" | "ç" | "è" | "é" | "ê" | "ë" | "ì" | "í" | "î" | "ï" | "ð" | "ñ" | "ò" | "ó" | "ô" | "õ" | "ö" | "÷" | "ø" | "ù" | "ú" | "û" | "ü" | "ý" | "þ" | "ÿ" ;
+Digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+Relop ::= "=" | "#" | "<" | "<=" | ">" | ">=" | "IN" ;
+Letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+Mulop ::= "*" | "/" | "DIV" | "MOD" ;
+OctalDigit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" ;
+Addop ::= "+" | "-" | "&" ;
+--------------------modula::dagenais-cordy.bgf--------------------
+SignOp ::= "+" | "-" ;
+RelOp ::= "=" | "#" | "<" | "<=" | ">" | ">=" | "IN" ;
+MulOp ::= "*" | "/" | "DIV" | "MOD" ;
+Mode ::= "VALUE" | "VAR" | "READONLY" ;
+AddOp ::= "+" | "-" | "&" ;
+--------------------xpath::w3c-xpath1.bgf--------------------
+OperatorName ::= [NT-OperatorName] "and" | "or" | "mod" | "div" ;
+NodeType ::= [NT-NodeType] "comment" | "text" | "processing-instruction" | "node" ;
+AxisName ::= [NT-AxisName] "ancestor" | "ancestor-or-self" | "attribute" | "child" | "descendant" | "descendant-or-self" | "following" | "following-sibling" | "namespace" | "parent" | "preceding" | "preceding-sibling" | "self" ;
+Digits ::= [NT-Digits] ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+AbbreviatedStep ::= [NT-AbbreviatedStep] "." | ".." ;
+--------------------assembly::delphi.bgf--------------------
+asm_infixop ::= "." | "+" | "-" | "*" | "/" | "ptr" | "mod" | "xor" | "and" | "or" | "shr" | "shl" ;
+asm_directive ::= "DB" | "DW" | "DD" | "DQ" ;
+asm_opcode ::= "adc" | "add" | "and" | "bswap" | "bt" | "btr" | "bts" | "call" | "cdq" | "cld" | "cmp" | "dec" | "div" | "f2xm1" | "fabs" | "fadd" | "faddp" | "fbstp" | "fchs" | "fclex" | "fcom" | "fcomp" | "fcos" | "fdiv" | "fdivp" | "fdivrp" | "ffree" | "fiadd" | "fidiv" | "fild" | "fimul" | "fistp" | "fld" | "fld1" | "fldcw" | "fldl2e" | "fldlg2" | "fldln2" | "fldz" | "fmul" | "fmulp" | "fnclex" | "fninit" | "fnstcw" | "fnstsw" | "fpatan" | "fprem" | "fptan" | "frndint" | "fscale" | "fsin" | "fsincos" | "fsqrt" | "fstcw" | "fstp" | "fstsw" | "fsub" | "fsubp" | "fsubr" | "fwait" | "fxch" | "fxtract" | "fyl2x" | "fyl2xp1" | "imul" | "inc" | "int" | "ja" | "jae" | "jb" | "jbe" | "jc" | "je" | "jecxz" | "jg" | "jge" | "jl" | "jle" | "jmp" | "jnc" | "jne" | "jnl" | "jns" | "jnz" | "jo" | "jp" | "js" | "jz" | "lea" | "leave" | "lodsb" | "lodsw" | "loop" | "mov" | "movsb" | "movsx" | "movzx" | "mul" | "neg" | "not" | "or" | "pop" | "popfd" | "push" | "pushfd" | "rcl" | "rcr" | "rep" | "repe" | "repne" | "ret" | "rol" | "ror" | "sahf" | "sar" | "sbb" | "seto" | "shl" | "shld" | "shr" | "shrd" | "std" | "stosb" | "stosd" | "stosw" | "sub" | "test" | "wait" | "xadd" | "xchg" | "xor" ;
+--------------------basic::vb6-cordy.bgf--------------------
+def_keyword ::= "defbool" | "defbyte" | "defcur" | "defdate" | "defdbl" | "defdec" | "defint" | "deflng" | "defobj" | "defsng" | "defstr" | "defvar" ;
+prefix_op ::= "+" | "-" | "not" | "typeof" | "addressof" ;
+compare_mode ::= "binary" | "text" | "database" ;
+slash_id ::= ("\" id) | ("/" id) ;
+get_let_set ::= "get" | "let" | "set" ;
+exit_what_indicator ::= "do" | "for" | "function" | "property" | "sub" ;
+to_or_downto ::= "to" | "downto" ;
+sub_or_function ::= "sub" | "function" ;
+mode ::= "append" | "binary" | "input" | "output" | "random" ;
+access_modifier ::= "public" | "private" | "friend" | "static" ;
+op ::= "^" | "*" | "/" | "\" | "mod" | "+" | "-" | "&" | "=" | "<>" | "<=" | ">=" | ":=" | ">" | "<" | "!" | "is" | "not" | "and" | "or" | "xor" | "eqv" | "imp" | "like" ;
+byref_or_byval ::= "byref" | "byval" ;
+--------------------basic::vb-glineur.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------bibtex::bibtex-1.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------bibtex::bql.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------dot::doux.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------dot::palies.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------html::allilaire.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------html::clark-basic.bgf--------------------
+InputType.class ::= "text" | "password" | "checkbox" | "radio" | "submit" | "reset" | "hidden" ;
+--------------------html::clark.bgf--------------------
+dir.attrib ::= dir::("ltr" | "rtl") ;
+--------------------html::guyard.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------html::clark-strict.bgf--------------------
+dir.attrib ::= dir::("ltr" | "rtl") ;
+--------------------javascript::synytskyy-cordy.bgf--------------------
+js_additive_op ::= "+" | "-" ;
+js_unary_op ::= "delete" | "void" | "typeof" | "++" | "--" | "+" | "-" | "~" | "!" ;
+js_multiplicative_op ::= "*" | "/" | "%" ;
+js_shift_op ::= "<<" | ">>" | ">>>" ;
+js_relational_op ::= "<" | ">" | "<=" | ">=" ;
+js_postfix_op ::= "++" | "--" ;
+js_equality_op ::= "==" | "!=" | "===" | "!==" | "in" | "instanceof" ;
+--------------------occam::mu-mitchell.bgf--------------------
+assignment-operator ::= "=" | "*=" | "/=" | "%=" | "+=" | "-=" | ">>=" | "<<=" | "&=" | "^=" | "|=" ;
+unary-operator ::= "*" | "&" | "+" | "-" | "!" | "~" ;
+--------------------occam::mu-srour.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------occam::srour.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+presentationEffectDirections ::= "none" | "from-left" | "from-top" | "from-right" | "from-bottom" | "from-center" | "from-upper-left" | "from-upper-right" | "from-lower-left" | "from-lower-right" | "to-left" | "to-top" | "to-right" | "to-bottom" | "to-upper-left" | "to-upper-right" | "to-lower-right" | "to-lower-left" | "path" | "spiral-inward-left" | "spiral-inward-right" | "spiral-outward-left" | "spiral-outward-right" | "vertical" | "horizontal" | "to-center" | "clockwise" | "counter-clockwise" ;
+lineStyle ::= "none" | "solid" | "dotted" | "dash" | "long-dash" | "dot-dash" | "dot-dot-dash" | "wave" ;
+text-note-class ::= text:note-class::("footnote" | "endnote") ;
+vertBackPos ::= "top" | "center" | "bottom" ;
+types ::= "submit" | "reset" | "push" | "url" ;
+lineMode ::= "continuous" | "skip-white-space" ;
+anim-animate-transform-attlist ::= svg:type::("translate" | "scale" | "rotate" | "skewX" | "skewY") ;
+fontVariant ::= "normal" | "small-caps" ;
+table-visibility-value ::= "visible" | "collapse" | "filter" ;
+navigation ::= "none" | "current" | "parent" ;
+gradient-style ::= "linear" | "axial" | "radial" | "ellipsoid" | "square" | "rectangular" ;
+presentation-classes ::= "title" | "outline" | "subtitle" | "text" | "graphic" | "object" | "chart" | "table" | "orgchart" | "page" | "notes" | "handout" | "header" | "footer" | "date-time" | "page-number" ;
+fontPitch ::= "fixed" | "variable" ;
+horiBackPos ::= "left" | "center" | "right" ;
+lineType ::= "none" | "single" | "double" ;
+text-bibliography-types ::= "article" | "book" | "booklet" | "conference" | "custom1" | "custom2" | "custom3" | "custom4" | "custom5" | "email" | "inbook" | "incollection" | "inproceedings" | "journal" | "manual" | "mastersthesis" | "misc" | "phdthesis" | "proceedings" | "techreport" | "unpublished" | "www" ;
+valueType ::= "float" | "time" | "date" | "percentage" | "currency" | "boolean" | "string" ;
+boolean ::= "true" | "false" ;
+horizontal-mirror ::= "horizontal" | "horizontal-on-odd" | "horizontal-on-even" ;
+presentationEffects ::= "none" | "fade" | "move" | "stripes" | "open" | "close" | "dissolve" | "wavyline" | "random" | "lines" | "laser" | "appear" | "hide" | "move-short" | "checkerboard" | "rotate" | "stretch" ;
+fontWeight ::= "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" ;
+presentationSpeeds ::= "slow" | "medium" | "fast" ;
+tab-cycles ::= "records" | "current" | "page" ;
+fontFamilyGeneric ::= "roman" | "swiss" | "modern" | "decorative" | "script" | "system" ;
+draw-glue-points-attlist ::= draw:escape-direction::("auto" | "left" | "right" | "up" | "down" | "horizontal" | "vertical") ;
+rowOrCol ::= "row" | "column" ;
+fontStyle ::= "normal" | "italic" | "oblique" ;
+states ::= "unchecked" | "checked" | "unknown" ;
+--------------------odf::opendoc-1.0.bgf--------------------
+presentationEffectDirections ::= "none" | "from-left" | "from-top" | "from-right" | "from-bottom" | "from-center" | "from-upper-left" | "from-upper-right" | "from-lower-left" | "from-lower-right" | "to-left" | "to-top" | "to-right" | "to-bottom" | "to-upper-left" | "to-upper-right" | "to-lower-right" | "to-lower-left" | "path" | "spiral-inward-left" | "spiral-inward-right" | "spiral-outward-left" | "spiral-outward-right" | "vertical" | "horizontal" | "to-center" | "clockwise" | "counter-clockwise" ;
+lineStyle ::= "none" | "solid" | "dotted" | "dash" | "long-dash" | "dot-dash" | "dot-dot-dash" | "wave" ;
+text-note-class ::= text:note-class::("footnote" | "endnote") ;
+vertBackPos ::= "top" | "center" | "bottom" ;
+types ::= "submit" | "reset" | "push" | "url" ;
+lineMode ::= "continuous" | "skip-white-space" ;
+anim-animate-transform-attlist ::= svg:type::("translate" | "scale" | "rotate" | "skewX" | "skewY") ;
+fontVariant ::= "normal" | "small-caps" ;
+table-visibility-value ::= "visible" | "collapse" | "filter" ;
+navigation ::= "none" | "current" | "parent" ;
+gradient-style ::= "linear" | "axial" | "radial" | "ellipsoid" | "square" | "rectangular" ;
+presentation-classes ::= "title" | "outline" | "subtitle" | "text" | "graphic" | "object" | "chart" | "table" | "orgchart" | "page" | "notes" | "handout" | "header" | "footer" | "date-time" | "page-number" ;
+fontPitch ::= "fixed" | "variable" ;
+horiBackPos ::= "left" | "center" | "right" ;
+lineType ::= "none" | "single" | "double" ;
+text-bibliography-types ::= "article" | "book" | "booklet" | "conference" | "custom1" | "custom2" | "custom3" | "custom4" | "custom5" | "email" | "inbook" | "incollection" | "inproceedings" | "journal" | "manual" | "mastersthesis" | "misc" | "phdthesis" | "proceedings" | "techreport" | "unpublished" | "www" ;
+valueType ::= "float" | "time" | "date" | "percentage" | "currency" | "boolean" | "string" ;
+boolean ::= "true" | "false" ;
+horizontal-mirror ::= "horizontal" | "horizontal-on-odd" | "horizontal-on-even" ;
+presentationEffects ::= "none" | "fade" | "move" | "stripes" | "open" | "close" | "dissolve" | "wavyline" | "random" | "lines" | "laser" | "appear" | "hide" | "move-short" | "checkerboard" | "rotate" | "stretch" ;
+fontWeight ::= "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" ;
+presentationSpeeds ::= "slow" | "medium" | "fast" ;
+tab-cycles ::= "records" | "current" | "page" ;
+fontFamilyGeneric ::= "roman" | "swiss" | "modern" | "decorative" | "script" | "system" ;
+draw-glue-points-attlist ::= draw:escape-direction::("auto" | "left" | "right" | "up" | "down" | "horizontal" | "vertical") ;
+rowOrCol ::= "row" | "column" ;
+fontStyle ::= "normal" | "italic" | "oblique" ;
+states ::= "unchecked" | "checked" | "unknown" ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+presentationEffectDirections ::= "none" | "from-left" | "from-top" | "from-right" | "from-bottom" | "from-center" | "from-upper-left" | "from-upper-right" | "from-lower-left" | "from-lower-right" | "to-left" | "to-top" | "to-right" | "to-bottom" | "to-upper-left" | "to-upper-right" | "to-lower-right" | "to-lower-left" | "path" | "spiral-inward-left" | "spiral-inward-right" | "spiral-outward-left" | "spiral-outward-right" | "vertical" | "horizontal" | "to-center" | "clockwise" | "counter-clockwise" ;
+lineStyle ::= "none" | "solid" | "dotted" | "dash" | "long-dash" | "dot-dash" | "dot-dot-dash" | "wave" ;
+text-note-class ::= text:note-class::("footnote" | "endnote") ;
+vertBackPos ::= "top" | "center" | "bottom" ;
+types ::= "submit" | "reset" | "push" | "url" ;
+lineMode ::= "continuous" | "skip-white-space" ;
+anim-animate-transform-attlist ::= svg:type::("translate" | "scale" | "rotate" | "skewX" | "skewY") ;
+fontVariant ::= "normal" | "small-caps" ;
+table-visibility-value ::= "visible" | "collapse" | "filter" ;
+navigation ::= "none" | "current" | "parent" ;
+gradient-style ::= "linear" | "axial" | "radial" | "ellipsoid" | "square" | "rectangular" ;
+presentation-classes ::= "title" | "outline" | "subtitle" | "text" | "graphic" | "object" | "chart" | "table" | "orgchart" | "page" | "notes" | "handout" | "header" | "footer" | "date-time" | "page-number" ;
+fontPitch ::= "fixed" | "variable" ;
+horiBackPos ::= "left" | "center" | "right" ;
+lineType ::= "none" | "single" | "double" ;
+text-bibliography-types ::= "article" | "book" | "booklet" | "conference" | "custom1" | "custom2" | "custom3" | "custom4" | "custom5" | "email" | "inbook" | "incollection" | "inproceedings" | "journal" | "manual" | "mastersthesis" | "misc" | "phdthesis" | "proceedings" | "techreport" | "unpublished" | "www" ;
+valueType ::= "float" | "time" | "date" | "percentage" | "currency" | "boolean" | "string" ;
+boolean ::= "true" | "false" ;
+horizontal-mirror ::= "horizontal" | "horizontal-on-odd" | "horizontal-on-even" ;
+presentationEffects ::= "none" | "fade" | "move" | "stripes" | "open" | "close" | "dissolve" | "wavyline" | "random" | "lines" | "laser" | "appear" | "hide" | "move-short" | "checkerboard" | "rotate" | "stretch" ;
+fontWeight ::= "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" ;
+presentationSpeeds ::= "slow" | "medium" | "fast" ;
+tab-cycles ::= "records" | "current" | "page" ;
+fontFamilyGeneric ::= "roman" | "swiss" | "modern" | "decorative" | "script" | "system" ;
+draw-glue-points-attlist ::= draw:escape-direction::("auto" | "left" | "right" | "up" | "down" | "horizontal" | "vertical") ;
+rowOrCol ::= "row" | "column" ;
+fontStyle ::= "normal" | "italic" | "oblique" ;
+states ::= "unchecked" | "checked" | "unknown" ;
+--------------------odf::opendoc-1.1.bgf--------------------
+presentationEffectDirections ::= "none" | "from-left" | "from-top" | "from-right" | "from-bottom" | "from-center" | "from-upper-left" | "from-upper-right" | "from-lower-left" | "from-lower-right" | "to-left" | "to-top" | "to-right" | "to-bottom" | "to-upper-left" | "to-upper-right" | "to-lower-right" | "to-lower-left" | "path" | "spiral-inward-left" | "spiral-inward-right" | "spiral-outward-left" | "spiral-outward-right" | "vertical" | "horizontal" | "to-center" | "clockwise" | "counter-clockwise" ;
+lineStyle ::= "none" | "solid" | "dotted" | "dash" | "long-dash" | "dot-dash" | "dot-dot-dash" | "wave" ;
+text-note-class ::= text:note-class::("footnote" | "endnote") ;
+vertBackPos ::= "top" | "center" | "bottom" ;
+types ::= "submit" | "reset" | "push" | "url" ;
+lineMode ::= "continuous" | "skip-white-space" ;
+anim-animate-transform-attlist ::= svg:type::("translate" | "scale" | "rotate" | "skewX" | "skewY") ;
+fontVariant ::= "normal" | "small-caps" ;
+table-visibility-value ::= "visible" | "collapse" | "filter" ;
+navigation ::= "none" | "current" | "parent" ;
+gradient-style ::= "linear" | "axial" | "radial" | "ellipsoid" | "square" | "rectangular" ;
+presentation-classes ::= "title" | "outline" | "subtitle" | "text" | "graphic" | "object" | "chart" | "table" | "orgchart" | "page" | "notes" | "handout" | "header" | "footer" | "date-time" | "page-number" ;
+fontPitch ::= "fixed" | "variable" ;
+horiBackPos ::= "left" | "center" | "right" ;
+lineType ::= "none" | "single" | "double" ;
+text-bibliography-types ::= "article" | "book" | "booklet" | "conference" | "custom1" | "custom2" | "custom3" | "custom4" | "custom5" | "email" | "inbook" | "incollection" | "inproceedings" | "journal" | "manual" | "mastersthesis" | "misc" | "phdthesis" | "proceedings" | "techreport" | "unpublished" | "www" ;
+valueType ::= "float" | "time" | "date" | "percentage" | "currency" | "boolean" | "string" ;
+boolean ::= "true" | "false" ;
+horizontal-mirror ::= "horizontal" | "horizontal-on-odd" | "horizontal-on-even" ;
+presentationEffects ::= "none" | "fade" | "move" | "stripes" | "open" | "close" | "dissolve" | "wavyline" | "random" | "lines" | "laser" | "appear" | "hide" | "move-short" | "checkerboard" | "rotate" | "stretch" ;
+fontWeight ::= "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" ;
+presentationSpeeds ::= "slow" | "medium" | "fast" ;
+tab-cycles ::= "records" | "current" | "page" ;
+fontFamilyGeneric ::= "roman" | "swiss" | "modern" | "decorative" | "script" | "system" ;
+draw-glue-points-attlist ::= draw:escape-direction::("auto" | "left" | "right" | "up" | "down" | "horizontal" | "vertical") ;
+rowOrCol ::= "row" | "column" ;
+fontStyle ::= "normal" | "italic" | "oblique" ;
+states ::= "unchecked" | "checked" | "unknown" ;
+--------------------odf::opendoc-1.2.bgf--------------------
+presentationEffectDirections ::= "none" | "from-left" | "from-top" | "from-right" | "from-bottom" | "from-center" | "from-upper-left" | "from-upper-right" | "from-lower-left" | "from-lower-right" | "to-left" | "to-top" | "to-right" | "to-bottom" | "to-upper-left" | "to-upper-right" | "to-lower-right" | "to-lower-left" | "path" | "spiral-inward-left" | "spiral-inward-right" | "spiral-outward-left" | "spiral-outward-right" | "vertical" | "horizontal" | "to-center" | "clockwise" | "counter-clockwise" ;
+db-data-source-setting-types ::= "boolean" | "short" | "int" | "long" | "double" | "string" ;
+lineStyle ::= "none" | "solid" | "dotted" | "dash" | "long-dash" | "dot-dash" | "dot-dot-dash" | "wave" ;
+text-note-class ::= text:note-class::("footnote" | "endnote") ;
+vertBackPos ::= "top" | "center" | "bottom" ;
+common-ref-format-values ::= "page" | "chapter" | "direction" | "text" ;
+types ::= "submit" | "reset" | "push" | "url" ;
+lineMode ::= "continuous" | "skip-white-space" ;
+chart-dimension ::= "x" | "y" | "z" ;
+labelPositions ::= "avoid-overlap" | "center" | "top" | "top-right" | "right" | "bottom-right" | "bottom" | "bottom-left" | "left" | "top-left" | "inside" | "outside" | "near-origin" ;
+fontVariant ::= "normal" | "small-caps" ;
+anim-animate-transform-attlist ::= svg:type::("translate" | "scale" | "rotate" | "skewX" | "skewY") ;
+table-visibility-value ::= "visible" | "collapse" | "filter" ;
+gradient-style ::= "linear" | "axial" | "radial" | "ellipsoid" | "square" | "rectangular" ;
+navigation ::= "none" | "current" | "parent" ;
+presentation-classes ::= "title" | "outline" | "subtitle" | "text" | "graphic" | "object" | "chart" | "table" | "orgchart" | "page" | "notes" | "handout" | "header" | "footer" | "date-time" | "page-number" ;
+fontPitch ::= "fixed" | "variable" ;
+horiBackPos ::= "left" | "center" | "right" ;
+lineType ::= "none" | "single" | "double" ;
+text-bibliography-types ::= "article" | "book" | "booklet" | "conference" | "custom1" | "custom2" | "custom3" | "custom4" | "custom5" | "email" | "inbook" | "incollection" | "inproceedings" | "journal" | "manual" | "mastersthesis" | "misc" | "phdthesis" | "proceedings" | "techreport" | "unpublished" | "www" ;
+valueType ::= "float" | "time" | "date" | "percentage" | "currency" | "boolean" | "string" ;
+boolean ::= "true" | "false" ;
+horizontal-mirror ::= "horizontal" | "horizontal-on-odd" | "horizontal-on-even" ;
+presentationEffects ::= "none" | "fade" | "move" | "stripes" | "open" | "close" | "dissolve" | "wavyline" | "random" | "lines" | "laser" | "appear" | "hide" | "move-short" | "checkerboard" | "rotate" | "stretch" ;
+fontWeight ::= "normal" | "bold" | "100" | "200" | "300" | "400" | "500" | "600" | "700" | "800" | "900" ;
+presentationSpeeds ::= "slow" | "medium" | "fast" ;
+db-data-types ::= "bit" | "boolean" | "tinyint" | "smallint" | "integer" | "bigint" | "float" | "real" | "double" | "numeric" | "decimal" | "char" | "varchar" | "longvarchar" | "date" | "time" | "timestmp" | "binary" | "varbinary" | "longvarbinary" | "sqlnull" | "other" | "object" | "distinct" | "struct" | "array" | "blob" | "clob" | "ref" ;
+tab-cycles ::= "records" | "current" | "page" ;
+fontFamilyGeneric ::= "roman" | "swiss" | "modern" | "decorative" | "script" | "system" ;
+rowOrCol ::= "row" | "column" ;
+fontStyle ::= "normal" | "italic" | "oblique" ;
+states ::= "unchecked" | "checked" | "unknown" ;
+--------------------pascal::delphi.bgf--------------------
+external_name ::= ("name" expr) | ("index" expr) ;
+builtinid ::= "string" | "file" | "set" ;
+sign ::= "+" | "-" ;
+procedure_keyword ::= "function" | "procedure" | "constructor" | "destructor" ;
+real_type ::= "real" | "real48" | "single" | "double" | "extended" | "comp" | "currency" ;
+integer_type ::= "shortint" | "smallint" | "longint" | "int64" | "word" | "byte" | "longword" | "integer" | "cardinal" ;
+accessor_verb ::= "read" | "write" ;
+hint_directive ::= "platform" | "deprecated" | "library" ;
+calling_spec ::= "pascal" | "safecall" | "stdcall" | "cdecl" | "register" | "local" ;
+to_or_downto ::= "to" | "downto" ;
+variant_type ::= "variant" | "olevariant" ;
+var_keyword ::= "var" | "threadvar" ;
+boolean_type ::= "boolean" | "bytebool" | "wordbool" | "longbool" ;
+initialization_kw ::= "initialization" | "begin" ;
+interface_keyword ::= "interface" | "dispinterface" ;
+char_type ::= "char" | "ansichar" | "widechar" ;
+infix_opr ::= ">" | "<" | "<=" | ">=" | "<>" | "=" | "in" | "is" | "as" | "+" | "-" | "or" | "xor" | "*" | "/" | "div" | "mod" | "and" | "shl" | "shr" | "^" ;
+class_keyword ::= "class" | "record" | "object" ;
+parm_qual ::= "var" | "const" | "out" ;
+ctrlchar ::= "^'A" | "^'B" | "^'C" | "^'D" | "^'E" | "^'F" | "^'G" | "^'H" | "^'I" | "^'J" | "^'K" | "^'L" | "^'M" | "^'N" | "^'O" | "^'P" | "^'Q" | "^'R" | "^'S" | "^'T" | "^'U" | "^'V" | "^'W" | "^'X" | "^'Y" | "^'Z" ;
+prop_index_modifier ::= "const" | "var" ;
+--------------------pascal::delphipp.bgf--------------------
+booleanlit ::= "FALSE" | "TRUE" ;
+boolfunc ::= "DEFINED" | "DECLARED" | "OPTION" ;
+pp_compareopr ::= ">" | "<" | "=" | ">=" | "<=" | "<>" ;
+pp_boolopr ::= "AND" | "OR" | "XOR" ;
+pp_align ::= "A1" | "A2" | "A4" | "A8" ;
+pp_minenumsize ::= "Z1" | "Z2" | "Z4" ;
+endif_alt ::= "ENDIF" | "IFEND" ;
+pp_switchopt ::= "+" | "-" | "ON" | "OFF" ;
+--------------------pascal::object.bgf--------------------
+add_op ::= "+" | "-" | "or" | "xor" ;
+variantType ::= "variant" | "olevariant" ;
+if ::= "if" | "If" ;
+mul_op ::= "*" | "/" | "div" | "mod" | "and" | "shl" | "shr" | "DIV" | "AND" ;
+bool_value ::= "true" | "false" | "True" | "False" ;
+except ::= "except" | "Except" ;
+class_visibility ::= "public" | "protected" | "Protected" | "private" | "published" ;
+realType ::= "real48" | "real" | "single" | "double" | "extended" | "currency" | "comp" ;
+ordinal_identifier ::= "shortint" | "smallint" | "integer" | "byte" | "longint" | "int64" | "word" | "boolean" | "char" | "widechar" | "longchar" | "pchar" ;
+not_word ::= "not" | "Not" | "NOT" ;
+to_or_downto ::= "to" | "downto" ;
+property_word ::= "property" | "Property" ;
+procedure ::= "procedure" | "Procedure" ;
+as ::= "As" | "as" ;
+function_word ::= "function" | "Function" ;
+array_word ::= "array" | "Array" ;
+directive ::= "cdecl" | "register" | "dynamic" | "virtual" | "export" | "external" | "far" | "forward" | ("message" ref_name?) | "override" | "overload" | "pascal" | "reintroduce" | "safecall" | "stdcall" | "Override" ;
+default_expression_OR_nodefault ::= ("default" expression) | "nodefault" ;
+do ::= "do" | "Do" | "DO" ;
+begin ::= "begin" | "Begin" ;
+for ::= "for" | "For" ;
+rel_op ::= ">" | "<" | "<=" | ">=" | "<>" | "=" | "in" | "is" ;
+var ::= "var" | "Var" ;
+op ::= ">" | "<" | "<=" | ">=" | "<>" | "=" | "in" | "is" | "+" | "-" | "or" | "xor" | "*" | "/" | "div" | "mod" | "and" | "shl" | "shr" | "DIV" | "AND" ;
+predefinedType ::= "integer" | "real" | "boolean" | "char" | "byte" ;
+--------------------uml::collab.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::extended.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::fragment.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::oocm.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::reuse.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::statecharts.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::stereo.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::uml-uc.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::uml2.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::umldi-2.0.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::umldi-ag.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::umldi-c.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::umldi-mm.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::umldi-sm.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::umldi-uc.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------uml::yuml.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------xml::rosendal.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------xml::zhang-cordy.bgf--------------------
+tokenizedtype ::= "ID" | "IDREF" | "IDREFS" | "ENTITY" | "ENTITIES" | "NMTOKEN" | "NMTOKENS" ;
+repetition ::= "?" | "*" | "+" ;
+--------------------xquery::rosendal.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------xslt::rosendal.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------logo::sdf.bgf--------------------
+Id ::= "xcor" | "ycor" | "heading" | "towards" | "pendown?" | "sum" | "difference" | "product" | "quotient" | "remainder" | "minus" | "less?" | "greater?" | "equal?" | "notequal?" | "to" | "if" | "ifelse" | "repeat" | "forward" | "back" | "left" | "right" | "setxy" | "setx" | "sety" | "home" | "showturtle" | "hideturtle" | "clean" | "clearscreen" | "pendown" | "penup" | "local" | "make" ;
+--------------------php::cordy.bgf--------------------
+VarModifier ::= "public" | "protected" | "private" | "static" | "final" ;
+BooleanConstant ::= "true" | "false" ;
+EqualityOp ::= "==" | "!=" | "===" | "!==" ;
+PHPCloseTag ::= ("?>" NL) | ("%>" NL) ;
+CastType ::= "int" | "integer" | "bool" | "boolean" | "real" | "double" | "float" | "string" | "array" | "object" | "unset" ;
+PHPOpenTag ::= ("<?php" NL) | ("<?" NL) | ("<%" NL) | ("<?=" NL) ;
+PlusMinus ::= "+" | "-" ;
+CaseSeparator ::= ";" | ":" ;
+IncDec ::= "++" | "--" ;
+ShiftOp ::= "<<" | ">>" ;
+AddOp ::= "+" | "-" ;
+MultOp ::= "*" | "/" | "%" ;
+InequalityOp ::= "<>" | "<" | "<=" | ">" | ">=" ;
+AssignOp ::= ".=" | "=" | "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" | "=&" ;
+bigtag_id ::= "html" | "body" | "head" | "form" | "table" | "tr" | "td" | "script" | "select" | "label" | "div" ;
+--------------------python::sorochan-cordy.bgf--------------------
+shift_op ::= "<<" | ">>" ;
+as_or_comma_test ::= ("as" test) | ("," test) ;
+term_op ::= "*" | "/" | "%" | "//" ;
+arith_op ::= "+" | "-" ;
+stringprefix ::= "r" | "u" | "ur" | "R" | "U" | "UR" | "Ur" | "uR" | "b" ;
+augassign ::= "+=" | "-=" | "*=" | "/=" | "%=" | "&=" | "|=" | "^=" | "<<=" | ">>=" | "**=" | "//=" ;
+unary_op ::= "+" | "-" | "~" ;
+--------------------markup::cml.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------markup::ebxml.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------markup::kml.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------markup::graphml-doux.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------markup::mathml-furubayashi.bgf--------------------
+mml.alignmentscope.datatype ::= ("true" | "false")+ ;
+mml.lines.datatype ::= ("none" | "solid" | "dashed")+ ;
+mml.columnalign.datatype ::= ("left" | "center" | "right")+ ;
+mml.rowalign.datatype ::= ("top" | "bottom" | "center" | "baseline" | "axis")+ ;
+--------------------markup::r2ml.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------markup::pnml-ext-inhibitor.bgf--------------------
+specialarc.value ::= "normal" | "inhibitor" | "read" | "reset" ;
+--------------------markup::pnml-ext-reset.bgf--------------------
+specialarc.value ::= "normal" | "inhibitor" | "read" | "reset" ;
+--------------------markup::pnml-ext-resetinhibitor.bgf--------------------
+specialarc.value ::= "normal" | "inhibitor" | "read" | "reset" ;
+--------------------markup::pnml-ext-specialarcs.bgf--------------------
+specialarc.value ::= "normal" | "inhibitor" | "read" | "reset" ;
+--------------------markup::svg-palies.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+image-valign-super ::= "super" | "sup" ;
+image-align-center ::= "center" | "centre" ;
+ucase-letter ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+image-extension ::= "jpg" | "jpeg" | "png" | "svg" | "gif" | "bmp" ;
+harmless-character ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" | "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+protocol ::= "http://" | "https://" | "ftp://" | "ftps://" | "mailto:" ;
+image-mode-manual-thumb ::= ("thumbnail=" image-name) | ("thumb=" image-name) ;
+bad-title-characters ::= "[" | "]" | "{" | "}" | "<" | ">" | "_" | "|" | "#" ;
+lcase-letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+media-extension ::= "ogg" | "wav" ;
+image-mode-frame ::= "framed" | "enframed" | "frame" ;
+wiki-markup-characters ::= "|" | "[" | "]" | "*" | "#" | ":" | ";" | "<" | ">" | "=" | "'" | "{" | "}" ;
+image-param-page ::= "page=$1" | "page $1" ;
+decimal-digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+image-mode-auto-thumb ::= "thumbnail" | "thumb" ;
+--------------------markup::wiki-mediawiki-ebnf.bgf--------------------
+digit ::= "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" | "0" ;
+ASCII_letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+--------------------markup::wiki-table.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------fl::antlr.bgf--------------------
+ops ::= "==" | "+" | "-" ;
+--------------------fl::python.bgf--------------------
+operators ::= "==" | "+" | "-" ;
+--------------------fl::txl.bgf--------------------
+op ::= "+" | "-" | "==" ;
+--------------------metasyntax::txl.bgf--------------------
+redefineOrDefine ::= "redefine" | "define" ;
+quotedLiteral ::= ("'" unquotedLiteral) | ("'" key) ;
+typeRepeater ::= "+" | "*" | "?" | "," | ",+" ;
+formatId ::= "NL" | ("IN" IN) | ("EX" EX) ;
+typeModifier ::= "opt" | "repeat" | "list" | "attr" | "see" | "not" | "push" | "pop" | ":" | "~" | ">" | "<" ;
+--------------------metasyntax::ebnf-bgf.bgf--------------------
+repetition-metasymbol ::= "+" | "*" ;
+value ::= "INT" | "STR" ;
+--------------------metasyntax::ebnf-iso-1.bgf--------------------
+start_repeat_symbol ::= "{" | "(:" ;
+decimal_digit ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+end_option_symbol ::= "]" | "/)" ;
+definition_separator_symbol ::= "|" | "/" | "!" ;
+other_character ::= " " | ":" | "+" | "_" | "%" | "@" | "&" | "#" | "$" | "<" | ">" | "\" | "^" | "‘" | "~" ;
+end_repeat_symbol ::= "}" | ":)" ;
+letter ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" | "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+start_option_symbol ::= "[" | "(/" ;
+terminator_symbol ::= ";" | "." ;
+--------------------metasyntax::lll-kort.bgf--------------------
+repetition ::= "+" | "*" | "?" ;
+--------------------metasyntax::lll-ldta.bgf--------------------
+repetition ::= "*" | "+" | "?" ;
+--------------------metasyntax::xsd-guyard.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metasyntax::yacc-txl.bgf--------------------
+plusOrStar ::= "+" | "*" ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+reducedDerivationControl ::= ("extension" | "restriction")* ;
+formChoice ::= "qualified" | "unqualified" ;
+--------------------tescol::00000.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::00001.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::00010.bgf--------------------
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+WS ::= (" " | "\t" | "\r" | "\n" | "\u000C")+ ;
+--------------------tescol::00011.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::00100.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n" | "\f")+ ;
+INT_NUMBER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::00101.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+INT_VAL ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::00110.bgf--------------------
+INTEGER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= " " | "\t" | "\f" | "\r\n" | "\r" | "\n" ;
+TYPE ::= "int" | "double" ;
+--------------------tescol::00111.bgf--------------------
+WS ::= " " | "\r" | "\t" | "\u000C" ;
+INT_NUMBER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01000.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::01001.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::01010.bgf--------------------
+INUM ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::01011.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::01100.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+DIFFERENTOREQUAL ::= "<=" | ">=" ;
+STRICTLYDIFFERENT ::= "<" | ">" ;
+--------------------tescol::01101.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+TYPE ::= "int" | "double" ;
+--------------------tescol::01110.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+INT_NUMBER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::01111.bgf--------------------
+WS ::= ("\t" | "|" | "\n" | "\r" | " " | "\f")+ ;
+INTVALUE ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::10000.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::10001.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::10010.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::10100.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::10101.bgf--------------------
+INTEGER ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::10110.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n" | "\f")+ ;
+type ::= "int" | "double" ;
+--------------------tescol::10111.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::11000.bgf--------------------
+INT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::11001.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+UINT ::= ("0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9")+ ;
+--------------------tescol::11010.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::11011.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::11100.bgf--------------------
+BOOLOPERATOR ::= "/\\" | "\\/" ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+COMPARISON ::= "==" | "!=" | "<=" | ">=" | "<" | ">" ;
+MULTIPLIER ::= "**" | "/" | "*" ;
+--------------------tescol::11101.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+ROP ::= "==" | "!=" | "<" | "<=" | ">=" | ">" ;
+--------------------tescol::11110.bgf--------------------
+WS ::= (" " | "\t" | "\n" | "\r")+ ;
+--------------------tescol::11111.bgf--------------------
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+--------------------tescol::reference.bgf--------------------
+DIGIT ::= "0" | "1" | "2" | "3" | "4" | "5" | "6" | "7" | "8" | "9" ;
+WS ::= (" " | "\t" | "\r" | "\n")+ ;
+UPPER ::= "A" | "B" | "C" | "D" | "E" | "F" | "G" | "H" | "I" | "J" | "K" | "L" | "M" | "N" | "O" | "P" | "Q" | "R" | "S" | "T" | "U" | "V" | "W" | "X" | "Y" | "Z" ;
+LOWER ::= "a" | "b" | "c" | "d" | "e" | "f" | "g" | "h" | "i" | "j" | "k" | "l" | "m" | "n" | "o" | "p" | "q" | "r" | "s" | "t" | "u" | "v" | "w" | "x" | "y" | "z" ;
+--------------------metamodels::ACG.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ACME.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ASM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ATL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::AWKPrograms.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Agate.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Amble.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::AnyLogic.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Architectural_Description.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::AsmL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::BMM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::BPMN.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Book.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Bossa.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::BusinessEntityModel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::BusinessProcessModel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CDE.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CFG.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::COBOL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CORBAComponent.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CPL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CPR.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CSM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CWMCore.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CWMRelationalData.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Class.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ChocoModel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Cocus.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DSL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::CompanyStructure.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ComponentUML.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Conference.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Contact.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ControllerUML.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Cristal.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DSLModel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DSLtools.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DTD.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DTMP.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DeploymentReport.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DiagramInterchange.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::DotNET_SystemReflection.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::EG.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::EQN.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::EXPRESS.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::EXPRESSb.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::EclipseLaunchConfigurations.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::FeatureDiagrams.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::GUI.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Gantt.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::GenericEditor.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::GenericOutline.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::GeoTrans.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Grafcet.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::HAL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::HPROF.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::HierarchicalStateMachine.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::HybridAutomata.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::IRL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::IMSTransactionMessage.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::M.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Jess.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::KDM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::KDMSimplified.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::KM3.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Klaper.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::LQN.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Marte.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::METAH.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MICRO.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLBasicDef.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLPrintingSetup.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLSimplified.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLStyles.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLWorkbookProp.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeExcel_SpreadsheetMLWorksheetOpt.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLBasicDef.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLSimplified.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLStyles.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSOfficeWord_WordprocessingMLTableElts.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MTRANS.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSVisio_DatadiagramMLBasicDef.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSVisio_DatadiagramMLSimplified.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSVisio_DatadiagramMLTextFormat.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MSVisio_DatadiagramMLXForm.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Mantis.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Measure.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Metrics.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MoMM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MiningMart_ViewCaseRepresentation.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MiningMart_ViewDataRepresentation.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MonitorProgram.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MySQL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::News.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::OWL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::OpenConf.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::PCS.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::PDG.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::PRR.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Perceptory.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Person.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::PluginEclipse.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ProMarte.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Program.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Promenade.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::PtolemyII.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Publication.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::QVT.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::QoS.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::QoS_Characteristic.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::RDFS.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::QoS_Profile.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::QoS_Statement.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Relational.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::RelationalDBContent.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::RelationalDBSchema.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Repository.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SBVRvoc.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SCADE.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SDM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SEE_Design.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SPEM.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SPL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SQLDDL.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SQLDML.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SecureUML.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SeminarSchedulingSystem.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SimpleAirlineDomain.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SysML.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SoftwareQualityControl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::SyncCharts.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::TextualPathExp.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::Trace.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::USECASE1.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::USECASE2.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::UnifiedOntologyLanguage.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::UsiXML-task.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::WSLink.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::WTIP_SimpleClass.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::WebApplications_AbstractModel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::WebApplications_ConceptualModel.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::WorkDefinitions.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::XAML-Perspective.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::XAML-ResourceDictionary.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::XMorphLanguage_abstractSyntax.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::XPDL-1.14.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::XUL-Interactorl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::cmt.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::confOf.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::confious.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::crs_dr.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::edas.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::ekaw.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::iasted.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::paperdyne.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::sbvrEclipse.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::sbvrOMG.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::sigkdd.owl.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------metamodels::MiningMart.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------ocl::expressions.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------ocl::operations.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------ocl::types.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------ocl::uml.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------ocl::values.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------develop::make.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------develop::bugzilla.bgf--------------------
+Boolean ::= "true" | "false" ;
+--------------------pico::sdf.bgf--------------------
+TYPE ::= "natural" | "string" | "nil-type" ;

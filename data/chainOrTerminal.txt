@@ -1,0 +1,234 @@
+--------------------ada::kempe.bgf--------------------
+discrete_subtype_definition ::= discrete_subtype_indication | "range" ;
+string_element ::= """" | non_quotation_mark_graphic_character ;
+subprogram_default ::= default_name | "<>" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::laemmel-verhoef.bgf--------------------
+discrete_subtype_definition ::= discrete_subtype_indication | "range" ;
+subprogram_default ::= default_name | "<>" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::lncs-2219.bgf--------------------
+string_element ::= """" | non_quotation_mark_graphic_character ;
+subprogram_default ::= default_name | "<>" ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::lncs-4348.bgf--------------------
+string_element ::= """" | non_quotation_mark_graphic_character ;
+exception_choice ::= exception_name | "others" ;
+--------------------ada::cordy-hyaric.bgf--------------------
+expression_or_null ::= expression | "<>" ;
+exception_choice ::= name | "others" ;
+--------------------c::cordy-malton-dahn.bgf--------------------
+statement_declaration_or_end ::= declaration_or_statement | "}" ;
+--------------------cs::csharp-ecma-334-2.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-ecma-334-3.bgf--------------------
+method-body ::= block | ";" ;
+finalizer-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-ecma-334-4.bgf--------------------
+method-body ::= block | ";" ;
+finalizer-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-iso-23270-2003.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-iso-23270-2006.bgf--------------------
+method-body ::= block | ";" ;
+finalizer-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-msft-ls-1.0.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-msft-ls-1.2.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-msft-ls-3.0.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+local-variable-type ::= type | "var" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-msft-ls-4.0.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+local-variable-type ::= type | "var" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------cs::csharp-zaytsev.bgf--------------------
+type-or-void ::= type | "void" ;
+--------------------cs::csharp-cordy.bgf--------------------
+return_type ::= type | "void" ;
+simple_type ::= numeric_type | "bool" ;
+argument_list_or_key ::= argument_list | "in" ;
+--------------------cs::csharp-ecma-334-1.bgf--------------------
+method-body ::= block | ";" ;
+operator-body ::= block | ";" ;
+accessor-body ::= block | ";" ;
+return-type ::= type | "void" ;
+destructor-body ::= block | ";" ;
+constructor-body ::= block | ";" ;
+simple-type ::= numeric-type | "bool" ;
+static-constructor-body ::= block | ";" ;
+--------------------dart::spec-0.01.bgf--------------------
+IDENTIFIER_START ::= IDENTIFIER_START_NO_DOLLAR | "$" ;
+returnType ::= "void" | type ;
+IDENTIFIER_START_NO_DOLLAR ::= LETTER | "_" ;
+assignmentOperator ::= "=" | compoundAssignmentOperator ;
+--------------------dart::google.bgf--------------------
+IDENTIFIER_START ::= IDENTIFIER_START_NO_DOLLAR | "$" ;
+IDENTIFIER_START_NO_DOLLAR ::= LETTER | "_" ;
+--------------------dart::spec-0.05.bgf--------------------
+IDENTIFIER_START ::= IDENTIFIER_START_NO_DOLLAR | "$" ;
+returnType ::= "void" | type ;
+prefixOperator ::= "-" | negateOperator ;
+assignmentOperator ::= "=" | compoundAssignmentOperator ;
+--------------------eiffel::bezault.bgf--------------------
+Feature_set ::= Feature_list | "all" ;
+Anchor ::= Identifier | "Current" ;
+Writable ::= Identifier | "Result" ;
+--------------------eiffel::cordy.bgf--------------------
+Local ::= Identifier | "Result" ;
+Feature_set ::= Feature_list | "all" ;
+Read_only ::= Formal | "Current" ;
+Anchor ::= Identifier | "Current" ;
+--------------------eiffel::iso-25436-2006.bgf--------------------
+Local ::= Identifier | "Result" ;
+Feature_set ::= Feature_list | "all" ;
+Routine_mark ::= "do" | Once ;
+Anchor ::= Feature_name | "Current" ;
+--------------------fortran::derricks.bgf--------------------
+TypeParamValue ::= SpecificationExpr | "*" ;
+UnitIdentifier ::= UFExpr | "*" ;
+SubroutinePar ::= DummyArgName | "*" ;
+--------------------fortran::waite-cordy.bgf--------------------
+TypeParamValue ::= Expr | "*" ;
+UnitIdentifier ::= UFExpr | "*" ;
+SubroutinePar ::= DummyArgName | "*" ;
+--------------------java::java-1-jls-impl.bgf--------------------
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+--------------------java::java-1-jls-read.bgf--------------------
+ResultType ::= Type ;
+ ResultType ::= "void" ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+--------------------java::java-2-jls-impl.bgf--------------------
+TypeDeclaration ::= ClassOrInterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-2-jls-read.bgf--------------------
+ResultType ::= Type ;
+ ResultType ::= "void" ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+--------------------java::java-5-jls-impl.bgf--------------------
+TypeDeclaration ::= ClassOrInterfaceDeclaration ;
+ TypeDeclaration ::= ";" ;
+--------------------java::java-5-jls-read.bgf--------------------
+ResultType ::= Type ;
+ ResultType ::= "void" ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+VariableModifier ::= "final" ;
+ VariableModifier ::= Annotation ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+--------------------java::java-5-parr.bgf--------------------
+variableModifier ::= "final" | annotation ;
+typeDeclaration ::= classOrInterfaceDeclaration | ";" ;
+--------------------java::java-4-sdf.bgf--------------------
+MethodRes ::= "void" ;
+ MethodRes ::= Type ;
+MethodBody ::= Block ;
+ MethodBody ::= ";" ;
+PrimitiveType ::= NumericType ;
+ PrimitiveType ::= "boolean" ;
+--------------------java::java-5-cordy-guo-dean.bgf--------------------
+class_instance_declaration ::= class_instance_creation_expression | "class" ;
+--------------------java::java-5-landman.bgf--------------------
+ResultType ::= Type ;
+ ResultType ::= [void] "void" ;
+MethodBody ::= [noMethodBody] ";" ;
+ MethodBody ::= Block ;
+PrimType ::= NumType ;
+ PrimType ::= [boolean] "boolean" ;
+--------------------basic::vb6-cordy.bgf--------------------
+charpos ::= expn | ";" ;
+--------------------odf::opendoc-1.0-strict.bgf--------------------
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.0.bgf--------------------
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.1-strict.bgf--------------------
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.1.bgf--------------------
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------odf::opendoc-1.2.bgf--------------------
+form-property-value-and-type-attlist ::= common-value-and-type-attlist | (office:value-type::"void") ;
+shadowType ::= "none" | string ;
+custom-shape-type ::= "non-primitive" | string ;
+--------------------pascal::delphi.bgf--------------------
+procedure_body ::= sequence_stm | "forward" ;
+call_stm ::= expr | "inherited" ;
+--------------------metasyntax::xsd-tennison.bgf--------------------
+derivationSet ::= "#all" | reducedDerivationControl ;

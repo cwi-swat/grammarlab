@@ -1,0 +1,4 @@
+--------------------markup::wiki-mediawiki-bnf.bgf--------------------
+unicode-character ::= <any-supported-unicode-character Whitespaces> ;
+title-character ::= <unicode-character bad-title-characters> ;
+unicode-wiki ::= <unicode-character wiki-markup-characters> ;
