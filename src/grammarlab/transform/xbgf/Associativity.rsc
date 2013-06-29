@@ -2,7 +2,7 @@
 @wiki{iterate,rassoc,lassoc}
 module transform::xbgf::Associativity
 
-import language::BGF;
+import language::Grammar;
 import language::XScope;
 import language::XOutcome;
 import transform::xbgf::Util;
@@ -13,17 +13,17 @@ bool admit(sequence([nonterminal(n),nonterminal(x),nonterminal(n)]),
 		   sequence([star(sequence([nonterminal(n),nonterminal(x)])),nonterminal(n)])) = true;
 bool admit(sequence([nonterminal(n),nonterminal(n)]),
 		   plus(nonterminal(n))) = true;
-default bool admit(BGFExpression e1, BGFExpression e2) = false;
+default bool admit(GExpr e1, GExpr e2) = false;
 
 // NB: rassoc and lassoc are the same when they work on the grammar level
 // the differences can only be observed on the instance level
-XBGFResult runRAssoc(BGFProduction p, BGFGrammar g) = runAssoc(p,g);
-XBGFResult runLAssoc(BGFProduction p, BGFGrammar g) = runAssoc(p,g);
+public XResult transform(rassoc(GProd p), GGrammar g) = runAssoc(p,g);
+public XResult transform(lassoc(GProd p), GGrammar g) = runAssoc(p,g);
 
-XBGFResult runAssoc(production(str l, str x, BGFExpression e1), BGFGrammar g)
+XResult runAssoc(production(str l, str x, GExpr e1), GGrammar g)
 {
 	<ps1,ps2,ps3> = splitPbyW(g.prods,comboscope(inlabel(l),innt(x)));
-	if ([production(l, x, BGFExpression e2)] := ps2)
+	if ([production(l, x, GExpr e2)] := ps2)
 		if (admit(e1,e2))
 			return <ok(),grammar(g.roots,ps1 + production(l, x, e1) + ps3)>;
 		else
@@ -32,10 +32,12 @@ XBGFResult runAssoc(production(str l, str x, BGFExpression e1), BGFGrammar g)
 		return <problemPinProds("Cannot find the right production rule to match",production(l,x,e1),ps2),g>;
 }
 
-XBGFResult runIterate(production(str l, str x, BGFExpression e1), BGFGrammar g)
+public XResult transform(iterate(GProd p), GGrammar g)
+// XResult runIterate(production(str l, str x, GExpr e1), GGrammar g)
+// TODO: x -> p.lhs, e1 -> p.rhs, how to treat label?
 {
 	<ps1,ps2,ps3> = splitPbyW(g.prods,comboscope(inlabel(l),innt(x)));
-	if ([production(l, x, BGFExpression e2)] := ps2)
+	if ([production(l, x, GExpr e2)] := ps2)
 		if (admit(e2,e1))
 			return <ok(),grammar(g.roots,ps1 + production(l, x, e1) + ps3)>;
 		else

@@ -87,10 +87,10 @@ public XResult transform(inline(str x), GGrammar g)
 	= runInline(x,g);
 public XResult transform(introduce(list[GProd] ps), GGrammar g)
 	= runIntroduce(ps,g);
-public XResult transform(iterate(GProd p), GGrammar g)
-	= runIterate(p,g);
-public XResult transform(lassoc(GProd p), GGrammar g)
-	= runLAssoc(p,g);
+// public XResult transform(iterate(GProd p), GGrammar g)
+// 	= runIterate(p,g);
+// public XResult transform(lassoc(GProd p), GGrammar g)
+// 	= runLAssoc(p,g);
 public XResult transform(massage(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
 	= runMassage(e1,e2,w,g);
 public XResult transform(narrow(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
@@ -99,8 +99,8 @@ public XResult transform(permute(GProd p), GGrammar g)
 	= runPermute(p,g);
 public XResult transform(project(GProd p), GGrammar g)
 	= runProject(p,g);
-public XResult transform(rassoc(GProd p), GGrammar g)
-	= runRAssoc(p,g);
+// public XResult transform(rassoc(GProd p), GGrammar g)
+// 	= runRAssoc(p,g);
 public XResult transform(redefine(list[GProd] ps), GGrammar g)
 	= runRedefine(ps,g);
 public XResult transform(removeH(GProd p), GGrammar g)
