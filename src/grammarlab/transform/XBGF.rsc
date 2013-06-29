@@ -2,12 +2,11 @@
 module transform::XBGF
 
 import language::BGF;
-import language::XBGF;
+import language::X;
 import language::XScope;
 import language::XOutcome;
-import transform::Library;
-import normal::BGF;
-import export::XBNF;
+import transform::Normal;
+import export::X;
 import IO;
 
 extend transform::xbgf::Associativity; // assoc, iterate
@@ -28,130 +27,130 @@ extend transform::xbgf::Yacc; // yaccify, deyaccify
 extend transform::xbgf::Util;
 
 
-public XBGFResult transform(abridge(BGFProduction p), BGFGrammar g)
+public XResult transform(abridge(GProd p), GGrammar g)
 	= runAbridge(p,g);
-public XBGFResult transform(abstractize(BGFProduction p), BGFGrammar g)
+public XResult transform(abstractize(GProd p), GGrammar g)
 	= runAbstractize(p,g);
-public XBGFResult transform(addC(BGFProduction p), BGFGrammar g)
+public XResult transform(addC(GProd p), GGrammar g)
 	= runAddC(p,g);
-public XBGFResult transform(addH(BGFProduction p), BGFGrammar g)
+public XResult transform(addH(GProd p), GGrammar g)
 	= runAddH(p,g);
-public XBGFResult transform(addV(BGFProduction p), BGFGrammar g)
+public XResult transform(addV(GProd p), GGrammar g)
 	= runAddV(p,g);
-public XBGFResult transform(anonymize(BGFProduction p), BGFGrammar g)
+public XResult transform(anonymize(GProd p), GGrammar g)
 	= runAnonymize(p,g);
-public XBGFResult transform(appear(BGFProduction p), BGFGrammar g)
+public XResult transform(appear(GProd p), GGrammar g)
 	= runAppear(p,g);
-public XBGFResult transform(bypass(), BGFGrammar g)
+public XResult transform(bypass(), GGrammar g)
 	= <ok(),g>;
-public XBGFResult transform(chain(BGFProduction p), BGFGrammar g)
+public XResult transform(chain(GProd p), GGrammar g)
 	= runChain(p,g);
-public XBGFResult transform(clone(str x, str y, XBGFScope w), BGFGrammar g)
+public XResult transform(clone(str x, str y, XScope w), GGrammar g)
 	= runClone(x,y,w,g);
-public XBGFResult transform(concatT(list[str] xs, str y, XBGFScope w), BGFGrammar g)
+public XResult transform(concatT(list[str] xs, str y, XScope w), GGrammar g)
 	= runConcatT(xs,y,w,g);
-public XBGFResult transform(concretize(BGFProduction p), BGFGrammar g)
+public XResult transform(concretize(GProd p), GGrammar g)
 	= runConcretize(p,g);
-public XBGFResult transform(deanonymize(BGFProduction p), BGFGrammar g)
+public XResult transform(deanonymize(GProd p), GGrammar g)
 	= runDeanonymize(p,g);
-public XBGFResult transform(define(list[BGFProduction] ps), BGFGrammar g)
+public XResult transform(define(list[GProd] ps), GGrammar g)
 	= runDefine(ps,g);
-public XBGFResult transform(designate(BGFProduction p), BGFGrammar g)
+public XResult transform(designate(GProd p), GGrammar g)
 	= runDesignate(p,g);
-public XBGFResult transform(detour(BGFProduction p), BGFGrammar g)
+public XResult transform(detour(GProd p), GGrammar g)
 	= runDetour(p,g);
-public XBGFResult transform(deyaccify(str x), BGFGrammar g)
+public XResult transform(deyaccify(str x), GGrammar g)
 	= runDeyaccify(x,g);
-public XBGFResult transform(disappear(BGFProduction p), BGFGrammar g)
+public XResult transform(disappear(GProd p), GGrammar g)
 	= runDisappear(p,g);
-public XBGFResult transform(distribute(XBGFScope w), BGFGrammar g)
+public XResult transform(distribute(XScope w), GGrammar g)
 	= runDistribute(w,g);
-public XBGFResult transform(downgrade(BGFProduction p1,BGFProduction p2), BGFGrammar g)
+public XResult transform(downgrade(GProd p1,GProd p2), GGrammar g)
 	= runDowngrade(p1,p2,g);
-public XBGFResult transform(eliminate(str x), BGFGrammar g)
+public XResult transform(eliminate(str x), GGrammar g)
 	= runEliminate(x,g);
-public XBGFResult transform(equate(str x, str y), BGFGrammar g)
+public XResult transform(equate(str x, str y), GGrammar g)
 	= runEquate(x,y,g);
-public XBGFResult transform(extract(BGFProduction p, XBGFScope w), BGFGrammar g)
+public XResult transform(extract(GProd p, XScope w), GGrammar g)
 	= runExtract(p,w,g);
-public XBGFResult transform(factor(BGFExpression e1, BGFExpression e2, XBGFScope w), BGFGrammar g)
+public XResult transform(factor(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
 	= runFactor(e1,e2,w,g);
-public XBGFResult transform(fold(str x, XBGFScope w), BGFGrammar g)
+public XResult transform(fold(str x, XScope w), GGrammar g)
 	= runFold(x,w,g);
-public XBGFResult transform(horizontal(XBGFScope w), BGFGrammar g)
+public XResult transform(horizontal(XScope w), GGrammar g)
 	= runHorizontal(w,g);
-public XBGFResult transform(importG(list[BGFProduction] ps), BGFGrammar g)
+public XResult transform(importG(list[GProd] ps), GGrammar g)
 	= runImportG(ps,g);
-public XBGFResult transform(inject(BGFProduction p), BGFGrammar g)
+public XResult transform(inject(GProd p), GGrammar g)
 	= runInject(p,g);
-public XBGFResult transform(inline(str x), BGFGrammar g)
+public XResult transform(inline(str x), GGrammar g)
 	= runInline(x,g);
-public XBGFResult transform(introduce(list[BGFProduction] ps), BGFGrammar g)
+public XResult transform(introduce(list[GProd] ps), GGrammar g)
 	= runIntroduce(ps,g);
-public XBGFResult transform(iterate(BGFProduction p), BGFGrammar g)
+public XResult transform(iterate(GProd p), GGrammar g)
 	= runIterate(p,g);
-public XBGFResult transform(lassoc(BGFProduction p), BGFGrammar g)
+public XResult transform(lassoc(GProd p), GGrammar g)
 	= runLAssoc(p,g);
-public XBGFResult transform(massage(BGFExpression e1, BGFExpression e2, XBGFScope w), BGFGrammar g)
+public XResult transform(massage(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
 	= runMassage(e1,e2,w,g);
-public XBGFResult transform(narrow(BGFExpression e1, BGFExpression e2, XBGFScope w), BGFGrammar g)
+public XResult transform(narrow(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
 	= runNarrow(e1,e2,w,g);
-public XBGFResult transform(permute(BGFProduction p), BGFGrammar g)
+public XResult transform(permute(GProd p), GGrammar g)
 	= runPermute(p,g);
-public XBGFResult transform(project(BGFProduction p), BGFGrammar g)
+public XResult transform(project(GProd p), GGrammar g)
 	= runProject(p,g);
-public XBGFResult transform(rassoc(BGFProduction p), BGFGrammar g)
+public XResult transform(rassoc(GProd p), GGrammar g)
 	= runRAssoc(p,g);
-public XBGFResult transform(redefine(list[BGFProduction] ps), BGFGrammar g)
+public XResult transform(redefine(list[GProd] ps), GGrammar g)
 	= runRedefine(ps,g);
-public XBGFResult transform(removeH(BGFProduction p), BGFGrammar g)
+public XResult transform(removeH(GProd p), GGrammar g)
 	= runRemoveH(p,g);
-public XBGFResult transform(removeV(BGFProduction p), BGFGrammar g)
+public XResult transform(removeV(GProd p), GGrammar g)
 	= runRemoveV(p,g);
-public XBGFResult transform(renameL(str x, str y), BGFGrammar g)
+public XResult transform(renameL(str x, str y), GGrammar g)
 	= runRenameL(x,y,g);
-public XBGFResult transform(renameN(str x, str y), BGFGrammar g)
+public XResult transform(renameN(str x, str y), GGrammar g)
 	= runRenameN(x,y,g);
-public XBGFResult transform(renameS(str x, str y, XBGFScope w), BGFGrammar g)
+public XResult transform(renameS(str x, str y, XScope w), GGrammar g)
 	= runRenameS(x,y,w,g);
-public XBGFResult transform(renameT(str x, str y), BGFGrammar g)
+public XResult transform(renameT(str x, str y), GGrammar g)
 	= runRenameT(x,y,g);
-public XBGFResult transform(XBGFCommand::replace(BGFExpression e1, BGFExpression e2, XBGFScope w), BGFGrammar g)
+public XResult transform(XCommand::replace(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
 	= runReplace(e1,e2,w,g);
-public XBGFResult transform(reroot(list[str] xs), BGFGrammar g)
+public XResult transform(reroot(list[str] xs), GGrammar g)
 	= runReroot(xs,g);
-public XBGFResult transform(splitN(str x, list[BGFProduction] ps, XBGFScope w), BGFGrammar g)
+public XResult transform(splitN(str x, list[GProd] ps, XScope w), GGrammar g)
 	= runSplitN(x,ps,w,g);
-public XBGFResult transform(splitT(str x, list[str] ys, XBGFScope w), BGFGrammar g)
+public XResult transform(splitT(str x, list[str] ys, XScope w), GGrammar g)
 	= runSplitT(x,ys,w,g);
-public XBGFResult transform(unchain(BGFProduction p), BGFGrammar g)
+public XResult transform(unchain(GProd p), GGrammar g)
 	= runUnchain(p,g);
-public XBGFResult transform(undefine(list[str] xs), BGFGrammar g)
+public XResult transform(undefine(list[str] xs), GGrammar g)
 	= runUndefine(xs,g);
-public XBGFResult transform(unfold(str x, XBGFScope w), BGFGrammar g)
+public XResult transform(unfold(str x, XScope w), GGrammar g)
 	= runUnfold(x,w,g);
-public XBGFResult transform(unite(str x, str y), BGFGrammar g)
+public XResult transform(unite(str x, str y), GGrammar g)
 	= runUnite(x,y,g);
-public XBGFResult transform(unlabel(str x), BGFGrammar g)
+public XResult transform(unlabel(str x), GGrammar g)
 	= runUnlabel(x,g);
-public XBGFResult transform(upgrade(BGFProduction p1, BGFProduction p2), BGFGrammar g)
+public XResult transform(upgrade(GProd p1, GProd p2), GGrammar g)
 	= runUpgrade(p1,p2,g);
-public XBGFResult transform(vertical(XBGFScope w), BGFGrammar g)
+public XResult transform(vertical(XScope w), GGrammar g)
 	= runVertical(w,g);
-public XBGFResult transform(widen(BGFExpression e1, BGFExpression e2, XBGFScope w), BGFGrammar g)
+public XResult transform(widen(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
 	= runWiden(e1,e2,w,g);
-public XBGFResult transform(yaccify(list[BGFProduction] ps), BGFGrammar g)
+public XResult transform(yaccify(list[GProd] ps), GGrammar g)
 	= runYaccify(ps,g);
-public XBGFResult transform(atomic(list[XBGFCommand] steps), BGFGrammar g)
+public XResult transform(atomic(list[XCommand] steps), GGrammar g)
 	= transform(steps,g); // NB: different from the rest
-public XBGFResult transform(strip(str a), BGFGrammar g)
+public XResult transform(strip(str a), GGrammar g)
 	= runStrip(a,g); // semi-deprecated
-public default XBGFResult transform(XBGFCommand x, BGFGrammar g) {throw "Unknown XBGF command <x>";}
+public default XResult transform(XCommand x, GGrammar g) {throw "Unknown XBGF command <x>";}
 
-public BGFGrammar transform(XBGFSequence xbgf, BGFGrammar g)
+public GGrammar transform(XBGFSequence xbgf, GGrammar g)
 {
-	XBGFResult out = <ok(),normalise(g)>;
-	for (XBGFCommand step <- xbgf)
+	XResult out = <ok(),normalise(g)>;
+	for (XCommand step <- xbgf)
 	{
 		out = transform(step,out.g);
 		thw(out.r);
@@ -161,16 +160,16 @@ public BGFGrammar transform(XBGFSequence xbgf, BGFGrammar g)
 }
 
 // TODO: later redo with keyword parameters?
-public XBGFResult vtransform(XBGFCommand x, BGFGrammar g)
+public XResult vtransform(XCommand x, GGrammar g)
 {
 	println("[XBGF] <ppx(x)>");
 	return transform(x,g);
 }
 
-public BGFGrammar vtransform(XBGFSequence xbgf, BGFGrammar g)
+public GGrammar vtransform(XBGFSequence xbgf, GGrammar g)
 {
-	XBGFResult out = <ok(),normalise(g)>;
-	for (XBGFCommand step <- xbgf)
+	XResult out = <ok(),normalise(g)>;
+	for (XCommand step <- xbgf)
 	{
 		out = vtransform(step,out.g);
 		thw(out.r);
@@ -182,10 +181,10 @@ public BGFGrammar vtransform(XBGFSequence xbgf, BGFGrammar g)
 
 
 // legacy code
-XBGFResult runStrip(str a, BGFGrammar g)
+XResult runStrip(str a, GGrammar g)
 {
 	// TODO: semi-deprecated
-	list[BGFProduction] ps2;
+	list[GProd] ps2;
 	if (a=="allLabels")
 		ps2 = visit(g.prods){case production(_,str x,BGFExpression e) => production("",x,e)}
 	elseif (a=="allSelectors")
