@@ -61,6 +61,7 @@ data Metasymbol
 	| break_tokens_at_whitespace()
 	| disregard_labels()
 	| consider_indentation()
+	| disjunction_symbol()
 	// Boolean grammars arsenal
 	| conjunction_symbol()
 	| prefix_negation_symbol()
@@ -80,6 +81,7 @@ public EBNF DefaultEBNF = (
 	defining_symbol(): " ::= ",
 	terminator_symbol(): " ;\n",
 	definition_separator_symbol(): " | ",
+	disjunction_symbol(): " | ",
 	concatenate_symbol(): " ",
 	start_comment_symbol(): "//",
 	end_comment_symbol(): "\n",
@@ -102,3 +104,16 @@ public EBNF DefaultEBNF = (
 
 public str getMeta(Metasymbol ms, EBNF ebnf) = ms in ebnf ? ebnf[ms] : "";
 public str getMetaE(Metasymbol ms, EBNF ebnf) = ms in ebnf ? ebnf[ms] : "ERROR<ms>!";
+
+
+public EBNF PicoEBNF = (
+	defining_symbol(): " ::= ",
+	start_option_symbol(): "[",
+	end_option_symbol(): "]",
+	definition_separator_symbol(): " | ",
+	disjunction_symbol(): " | ",
+	start_repetition_star_symbol(): "{",
+	end_repetition_star_symbol(): "}",
+	start_group_symbol(): "(",
+	end_group_symbol(): ")"
+);
