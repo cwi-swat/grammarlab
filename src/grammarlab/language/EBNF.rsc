@@ -66,6 +66,7 @@ data Metasymbol
 	| conjunction_symbol()
 	| prefix_negation_symbol()
 	| postfix_negation_symbol()
+	| ignore_tokens()
 ;
 
 public EBNF DefaultEBNF = (
@@ -115,5 +116,6 @@ public EBNF PicoEBNF = (
 	start_repetition_star_symbol(): "{",
 	end_repetition_star_symbol(): "}",
 	start_group_symbol(): "(",
-	end_group_symbol(): ")"
+	end_group_symbol(): ")",
+	ignore_tokens(): "`"
 );
