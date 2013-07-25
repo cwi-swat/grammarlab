@@ -74,7 +74,7 @@ GExpr mapexpr(Node n)
 		case element(none(),"terminal",[]): return terminal(" ");// lang::xml::DOM does not preserve whitespace, so this can mean something like a newline
 		case element(none(),"terminal",[charData(str s)]): return terminal(s);
 		case element(none(),"nonterminal",[charData(str s)]): return nonterminal(s);
-		case element(none(),"labelled",[element(none(),"labelled",[charData(str s)]),expr]): return labelled(s,mapexpr(expr));
+		case element(none(),"labelled",[element(none(),"label",[charData(str s)]),expr]): return labelled(s,mapexpr(expr));
 		case element(none(),"selectable",[element(none(),"selector",[charData(str s)]),expr]): return selectable(s,mapexpr(expr));
 		case element(none(),"sequence",kids): return sequence([mapexpr(k) | k <- kids]);
 		case element(none(),"choice",kids): return choice([mapexpr(k) | k <- kids]);
