@@ -29,7 +29,7 @@ public void main(list[str] args)
 		println(who);
 		cx += 1;
 		g = readBGF(zoo+"/<lang>/<s>");
-		appendToFile(log,"<who>\t<VAR(g)>\t<PROD(g)>\n");
+		appendToFile(log,"<who>\t<PROD(g)>\t<VAR(g)>\t<TERM(g)>\t<SEL(g)>\t<LAB(g)>\t<VOC(g)>\n");
 	}
 	println("Computed metrics over <cx> grammars.");
 }

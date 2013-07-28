@@ -29,11 +29,11 @@ default bool bracketpair(str x, str y) = false;
 @doc{Checks one nonterminal in a grammar for a micropattern}
 // by default, the micropattern is assumed to NOT be satisfied
 default bool check4mp(Micropattern mp, GGrammar g, str n)
- //= false;
-{
-	println("Default case of check4mp of <mp> of <n>!");
-	return false;
-}
+ = false;
+//{
+//	println("Default case of check4mp of <mp> of <n>!");
+//	return false;
+//}
 
 bool debug_check4mp(Micropattern mp, GGrammar g, str n)
 {

@@ -121,16 +121,16 @@ bool     check4mp(literalFirstRest(), GGrammar g, str n) = n in g.nts
 	&& areSimpleLiterals(L1)
 	&& areSimpleLiterals(L2);
 
-set[str] check4mp(emptyStatement(), GGrammar g) = {n | str n <- g.nts, isTStatement(normanon(g.prods[n]))};
-bool     check4mp(emptyStatement(), GGrammar g, str n) = n in g.nts && isTStatement(normanon(g.prods[n]));
+set[str] check4mp(simpleStatement(), GGrammar g) = {n | str n <- g.nts, isTStatement(normanon(g.prods[n]))};
+bool     check4mp(simpleStatement(), GGrammar g, str n) = n in g.nts && isTStatement(normanon(g.prods[n]));
 bool isTStatement([production(_,sequence([*L,terminal(";")]))]) = ( true | it && terminal(_) := e | e <- L );
 default bool isTStatement(GProdList _) = false;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 
-// bool isSpecial(str x) = /[\ \@\#\$\&\%\=\\\/\.\,\:\;\*\+\-\_\!\?\(\)\[\]\{\}\<\>\~\'\"\^\|“”‘’]+/ := x; //'
-// \‘\’
+// bool isSpecial(str x) = /[\ \@\#\$\&\%\=\\\/\.\,\:\;\*\+\-\_\!\?\(\)\[\]\{\}\<\>\~\'\"\^\|������������]+/ := x; //'
+// \���\���
 bool isSpecial(str x) = /[a-zA-Z]/ !:= x; // NB: no start/end constraints!
 bool isWord(str x) = /^[\w\.\-\#]+$/ := x;
 bool isTrivial(str x) = len(x)==1;

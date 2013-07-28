@@ -1,3 +1,3 @@
 #!/usr/bin/env sh
 
-find src -name "*.rsc" | xargs wc -l
+find src/grammarlab -name "*.rsc" | xargs wc -l

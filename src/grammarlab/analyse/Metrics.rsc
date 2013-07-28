@@ -14,4 +14,16 @@ int countProd(production (_,              choice(GExprList exprs)))  = len(exprs
 default int countProd(GProd p) = 1;
 
 // VAR
-public int VAR(GGrammar g) = len([n | str n <- g.nts, !isEmpty(g.prods[n])]);
+public int VAR(GGrammar g) = ulen(g.nts, {name | /nonterminal(str name) := g.prods});
+
+// TERM
+public int TERM(GGrammar g) = ulen({name | /terminal(str name) := g.prods});
+
+// SEL
+public int SEL(GGrammar g) = ulen({name | /selectable(str name, _) := g.prods});
+
+// LAB
+public int LAB(GGrammar g) = ulen({name | /labelled(str name, _) := g.prods});
+
+// VOC
+public int VOC(GGrammar g) = PROD(g) + VAR(g) + TERM(g) + SEL(g) + LAB(g);

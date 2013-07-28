@@ -20,3 +20,9 @@ public bool isEmpty(set[&T] x)      = Set::isEmpty(x);
 public bool isEmpty(map[&T1,&T2] x) = Map::isEmpty(x);
 public bool isEmpty(rel[&T1,&T2] x) = Relation::isEmpty(x);
 public bool isEmpty(str x)          = (x=="");
+
+// count the number of unique members
+public int ulen(list[&T] x)             = Set::size(List::toSet(x));
+public int ulen( set[&T] x)             = Set::size(x);
+public int ulen( set[&T] x, list[&T] y) = Set::size(x+List::toSet(y));
+public int ulen(list[&T] x,  set[&T] y) = Set::size(y+List::toSet(x));
