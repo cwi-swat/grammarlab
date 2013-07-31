@@ -8,7 +8,7 @@ import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
 import grammarlab::extract::RascalGrammar;
 
-//import grammarlab::export::BNF;
+import grammarlab::export::Grammar;
 import ParseTree;
 import String;
 
@@ -30,5 +30,5 @@ public void main(list[str] args) = writeBGF(extractG(|cwd:///|+args[0]),|cwd:///
 
 public void main() = main(|project://fl/src/Concrete.rsc|);
 
-public void main(loc z) = println(pp(extractG(z)));
+public void main(loc z) = println(ppx(extractG(z)));
 

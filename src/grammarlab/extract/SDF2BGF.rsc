@@ -8,7 +8,7 @@ import grammarlab::language::Grammar;
 import grammarlab::extract::RascalGrammar;
 import lang::rascal::grammar::definition::Modules;
 
-public grammarlab::language::Grammar::GGrammar extractG(loc bgf)
+public GGrammar extractG(loc bgf)
 {
 	println("Extracting <name>...");
 	GGrammar G =
@@ -20,3 +20,5 @@ public grammarlab::language::Grammar::GGrammar extractG(loc bgf)
 println("Extraction completed.");
 	return G;
 }
+
+public GGrammar extractGs(loc bgfs) = mergeGs([extractG(bgfs+bgf) | str bgf <- listEntries(bgfs)]);
