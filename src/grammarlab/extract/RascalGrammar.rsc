@@ -4,6 +4,7 @@ module grammarlab::extract::RascalGrammar
 import lang::rascal::\syntax::Rascal;
 import grammarlab::language::Grammar;
 import Grammar;
+import ParseTree;
 
 GGrammar grammar2grammar(Grammar::\grammar(set[Symbol] starts, map[Symbol sort, Production def] rules))
  = grammarlab::language::Grammar::grammar ([symbol2str(s) | s <- starts], [*rule2prods(rules[s]) | s <- rules, sort(_) := s]);

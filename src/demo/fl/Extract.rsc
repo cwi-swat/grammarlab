@@ -6,6 +6,7 @@ import grammarlab::language::Grammar;
 import grammarlab::extract::RascalSyntax2BGF;
 import grammarlab::extract::RascalADT2BGF;
 import grammarlab::extract::SDF2BGF;
+import grammarlab::transform::Merge;
 
 map[loc,GGrammar(loc)] LCI =
 	(
@@ -20,6 +21,15 @@ map[loc,GGrammar(loc)] LCI =
 
 void main()
 {
-	for(loc k <- LCI)
-		LCI[k](k);
+	//for(loc k <- LCI) LCI[k](k);
+	GGrammar G1 = mergeGs(
+		grammarlab::extract::SDF2BGF::extractG(|home:///projects/slps/topics/fl/asfsdf/FL.sdf|),
+		grammarlab::extract::SDF2BGF::extractG(|home:///projects/slps/topics/fl/asfsdf/Syntax.sdf|)
+	);
+	GGrammar G2 = 
+		grammarlab::extract::RascalSyntax2BGF::extractG(|home:///projects/slps/topics/fl/rascal/Concrete.rsc|)
+	;
+	GGrammar G3 = 
+		grammarlab::extract::RascalADT2BGF::extractG(|home:///projects/slps/topics/fl/rascal/Abstract.rsc|)
+	;
 }
