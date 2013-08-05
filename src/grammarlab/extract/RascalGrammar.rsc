@@ -5,16 +5,23 @@ import lang::rascal::\syntax::Rascal;
 import grammarlab::language::Grammar;
 import Grammar;
 import ParseTree;
+import Set; // toList
 
 GGrammar grammar2grammar(Grammar::\grammar(set[Symbol] starts, map[Symbol sort, Production def] rules))
- = grammarlab::language::Grammar::grammar ([symbol2str(s) | s <- starts], [*rule2prods(rules[s]) | s <- rules, sort(_) := s]);
+{
+	ps = [*rule2prods(rules[s]) | s <- rules, sort(_) := s];
+	//ns = definedNs(ps);
+	ns = toList({p.lhs | p <- ps});
+	rs = [symbol2str(s) | s <- starts];
+	return grammarlab::language::Grammar::grammar (ns, rs, (n:[p | p.lhs == n] | n <- ns)); 
+}
 
-str symbol2str(lex(str s)) = "<s>"; 
-str symbol2str(\start(sort(str s))) = "<s>";
-str symbol2str(sort(str s)) = "<s>";
-str symbol2str(layouts(str s)) = "";
-str symbol2str(keywords(str s)) = "";
-default str symbol2str(Symbol s) = "<s>";
+str symbol2str(ParseTree::\start(ParseTree::\sort(str name))) = "<name>";
+//str symbol2str(ParseTree::\lex(str s)) = "<s>"; 
+//str symbol2str(ParseTree::\sort(str s)) = "<s>";
+str symbol2str(ParseTree::\layouts(_)) = "";
+str symbol2str(ParseTree::\keywords(_)) = "";
+default str symbol2str(Symbol s) = "<s.name>";
 
 list[GProd] rule2prods(ParseTree::choice(lex(str s), _)) = [];
 list[GProd] rule2prods(ParseTree::choice(sort(str s), set[Production] ps))
@@ -37,7 +44,7 @@ GExpr rhs2expr([Symbol s]) = symbol2expr(s);
 GExpr rhs2expr(list[Symbol] ss) = grammarlab::language::Grammar::sequence([symbol2expr(s) | s <- ss, layouts(_) !:= s]);
 
 GExpr symbol2expr(label(str x, Symbol s)) = grammarlab::language::Grammar::selectable(x,symbol2expr(s));
-GExpr symbol2expr(\sort(str x)) = grammarlab::language::Grammar::nonterminal(x);
+GExpr symbol2expr(ParseTree::\sort(str name)) = grammarlab::language::Grammar::nonterminal(name);
 GExpr symbol2expr(conditional(\sort(str x),{except(_)})) = grammarlab::language::Grammar::nonterminal(x); // cannot represent better in BGF
 GExpr symbol2expr(\lex(str x)) = grammarlab::language::Grammar::nonterminal(x);
 GExpr symbol2expr(ParseTree::\lit("\n")) = grammarlab::language::Grammar::terminal("\\n"); //hack?
