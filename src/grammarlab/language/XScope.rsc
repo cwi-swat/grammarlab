@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module language::XScope
+module grammarlab::language::XScope
 
 data XScope =
 	globally()

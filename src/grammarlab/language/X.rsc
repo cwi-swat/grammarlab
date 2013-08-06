@@ -1,8 +1,8 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module language::X
+module grammarlab::language::X
 
-import language::Grammar;
-import language::XScope;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
 
 alias XSequence = list[XCommand];
 

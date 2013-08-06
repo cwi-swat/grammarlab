@@ -1,9 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module language::XOutcome
+module grammarlab::language::XOutcome
 
-import language::Grammar;
-import language::X;
-import language::XScope;
+import grammarlab::language::Grammar;
+import grammarlab::language::X;
+import grammarlab::language::XScope;
+
+import IO;
 
 data XOutcome
 	= ok()
