@@ -1,30 +1,30 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module transform::XBGF
+module grammarlab::transform::XBGF
 
-import language::BGF;
-import language::X;
-import language::XScope;
-import language::XOutcome;
-import transform::Normal;
-import export::X;
+import grammarlab::language::Grammar;
+import grammarlab::language::X;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::Normal;
+import grammarlab::export::X;
 import IO;
 
-extend transform::xbgf::Associativity; // assoc, iterate
-extend transform::xbgf::Brutal; // replace
-extend transform::xbgf::Chaining; // abridge, detour, chain, unchain
-extend transform::xbgf::Factoring; // factor, distribute
-extend transform::xbgf::Folding; // fold, unfold, extract, inline, downgrade, upgrade
-extend transform::xbgf::Conjunction; // addC
-extend transform::xbgf::Disjunction; // addH, removeH, vertical, horizontal
-extend transform::xbgf::Labels; // renameL, unlabel, designate; renameS, anonymize, deanonimize
-extend transform::xbgf::Massage; // massage
-extend transform::xbgf::Nonterminals; // renameN, equate, splitN, clone, reroot, unite
-extend transform::xbgf::Productions; // addV, removeV, define, undefine, redefine, eliminate, introduce, import
-extend transform::xbgf::Sequential; // appear, disappear, inject, permute, project
-extend transform::xbgf::Terminals; // renameT, splitT, concatT, abstractize, concretize
-extend transform::xbgf::Width; // narrow, widen
-extend transform::xbgf::Yacc; // yaccify, deyaccify
-extend transform::xbgf::Util;
+extend grammarlab::transform::xbgf::Associativity; // assoc, iterate
+extend grammarlab::transform::xbgf::Brutal; // replace
+extend grammarlab::transform::xbgf::Chaining; // abridge, detour, chain, unchain
+extend grammarlab::transform::xbgf::Factoring; // factor, distribute
+extend grammarlab::transform::xbgf::Folding; // fold, unfold, extract, inline, downgrade, upgrade
+extend grammarlab::transform::xbgf::Conjunction; // addC
+extend grammarlab::transform::xbgf::Disjunction; // addH, removeH, vertical, horizontal
+extend grammarlab::transform::xbgf::Labels; // renameL, unlabel, designate; renameS, anonymize, deanonimize
+extend grammarlab::transform::xbgf::Massage; // massage
+extend grammarlab::transform::xbgf::Nonterminals; // renameN, equate, splitN, clone, reroot, unite
+extend grammarlab::transform::xbgf::Productions; // addV, removeV, define, undefine, redefine, eliminate, introduce, import
+extend grammarlab::transform::xbgf::Sequential; // appear, disappear, inject, permute, project
+extend grammarlab::transform::xbgf::Terminals; // renameT, splitT, concatT, abstractize, concretize
+extend grammarlab::transform::xbgf::Width; // narrow, widen
+extend grammarlab::transform::xbgf::Yacc; // yaccify, deyaccify
+extend grammarlab::transform::xbgf::Util;
 
 
 public XResult transform(abridge(GProd p), GGrammar g)

@@ -1,8 +1,8 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module analyse::Differ
+module grammarlab::compare::Differ
 
-import language::Grammar;
-import transform::Normal;
+import grammarlab::language::Grammar;
+import grammarlab::transform::Normal;
 import List;
 import IO;
 

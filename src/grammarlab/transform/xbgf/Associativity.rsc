@@ -1,11 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 @wiki{iterate,rassoc,lassoc}
-module transform::xbgf::Associativity
+module grammarlab::transform::xbgf::Associativity
 
-import language::Grammar;
-import language::XScope;
-import language::XOutcome;
-import transform::xbgf::Util;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
 
 bool admit(sequence([nonterminal(n),nonterminal(x),nonterminal(n)]),
 		   sequence([nonterminal(n),star(sequence([nonterminal(x),nonterminal(n)]))])) = true;
