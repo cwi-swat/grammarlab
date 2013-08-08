@@ -1,12 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{designate,renameL,unlabel,anonymize,deanonymize,renameS}
-module transform::library::Labels
+module grammarlab::transform::xbgf::Labels
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
 
  // true labels
 XBGFResult runDesignate(production(str l,str n,BGFExpression e), BGFGrammar g)

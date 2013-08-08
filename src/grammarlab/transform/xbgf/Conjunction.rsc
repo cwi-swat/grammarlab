@@ -1,11 +1,10 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{addC}
-module transform::library::Conjunction
+module grammarlab::transform::xbgf::Conjunction
 
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
 
 XBGFResult runAddC(BGFProduction p, BGFGrammar g)
 {

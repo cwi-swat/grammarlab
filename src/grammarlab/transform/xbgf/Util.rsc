@@ -1,56 +1,56 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module transform::library::Util
+module grammarlab::transform::xbgf::Util
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import normal::BGF;
-import diff::GDT;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::Normal;
+import grammarlab::compare::Differ;
 import List; // tail
 
-public XBGFOutcome notFoundP(BGFProduction p) = problemProd("Production rule not found",p);
-public XBGFOutcome notFreshN(str n) = notFreshName("Nonterminal",n);
-public XBGFOutcome freshN(str n) = freshName("Nonterminal",n);
-public XBGFOutcome notFreshName(str name, str n) = problemStr("<name> must be fresh",n);
-public XBGFOutcome freshName(str name, str n) = problemStr("<name> must not be fresh",n);
+public XOutcome notFoundP(GProd p) = problemProd("Production rule not found",p);
+public XOutcome notFreshN(str n) = notFreshName("Nonterminal",n);
+public XOutcome freshN(str n) = freshName("Nonterminal",n);
+public XOutcome notFreshName(str name, str n) = problemStr("<name> must be fresh",n);
+public XOutcome freshName(str name, str n) = problemStr("<name> must not be fresh",n);
 
-public BGFProduction unmark (BGFProduction p1)
+public GProd unmark (GProd p1)
 {
 	if (/marked(_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case marked(BGFExpression e) => e
+		case marked(GExpr e) => e
 	};
 	//return normalise(p2);
 	return p2;
 }
 
-public BGFProduction demark (BGFProduction p1) 
+public GProd demark (GProd p1) 
 {
 	if (/marked(_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = visit(p1)
 	{
-		case sequence([*L1,marked(BGFExpression e),*L2]) => sequence(L1 + L2)
+		case sequence([*L1,marked(GExpr e),*L2]) => sequence(L1 + L2)
 		case marked(_) => epsilon()
 	}
 	return p2;
 }
 
-public BGFProduction demarkH (BGFProduction p1) 
+public GProd demarkH (GProd p1) 
 {
 	if (/marked(_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case choice([*L1,marked(BGFExpression e),*L2]) => choice(L1 + L2)
+		case choice([*L1,marked(GExpr e),*L2]) => choice(L1 + L2)
 	}
 	return p2;
 }
 
-public BGFProduction replaceMarker (BGFProduction p1, BGFExpression e) 
+public GProd replaceMarker (GProd p1, GExpr e) 
 {
 	p2 = visit(p1)
 	{
@@ -60,18 +60,18 @@ public BGFProduction replaceMarker (BGFProduction p1, BGFExpression e)
 }
 
 // remove selectors from marked subexpressions
-public BGFProduction demarkS (BGFProduction p1) 
+public GProd demarkS (GProd p1) 
 {
 	if (/marked(_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case marked(selectable(str selector, BGFExpression expr)) => expr
+		case marked(selectable(str selector, GExpr expr)) => expr
 	}
 	return normalise(p2);
 }
 
-public bool checkScope(BGFProduction p, XBGFScope w)
+public bool checkScope(GProd p, XScope w)
 {
 	switch(w)
 	{
@@ -88,7 +88,7 @@ public bool checkScope(BGFProduction p, XBGFScope w)
  
 // order-preserving splitting of production rules
 // returns <prods before context; prods in context; prods after context>
-public tuple[list[BGFProduction],list[BGFProduction],list[BGFProduction]] splitPbyW(list[BGFProduction] ps, XBGFScope w)
+public tuple[GProdList,GProdList,GProdList] splitPbyW(GProdList ps, XScope w)
 {
 	if (globally() := w)
 		return <[],ps,[]>;
@@ -97,7 +97,7 @@ public tuple[list[BGFProduction],list[BGFProduction],list[BGFProduction]] splitP
 	if (inlabel(str x) := w && isEmpty(x))
 		throw "Empty label is not a proper scope.";
 	bool hit = false;
-	list[BGFProduction] ps1 = [], ps2 = [], ps3 = [];
+	GProdList ps1 = [], ps2 = [], ps3 = [];
 	for (p <- ps)
 		if (checkScope(p,w))
 			{
@@ -113,15 +113,15 @@ public tuple[list[BGFProduction],list[BGFProduction],list[BGFProduction]] splitP
 	return <ps1,ps2,ps3>;
 }
 
-// TODO moved to analyse::Metrics
-public set[str] allNs(list[BGFProduction] ps) = definedNs(ps) + usedNs(ps);
-public set[str] allTs(list[BGFProduction] ps) = {s | /terminal(str s) := ps};
-public set[str] usedNs(list[BGFProduction] ps) = {s | /nonterminal(str s) := ps};
-public set[str] definedNs(list[BGFProduction] ps) = {s | production(_,str s,_) <- ps};
+// TODO move it to analyse::Metrics
+public set[str] allNs(GProdList ps) = definedNs(ps) + usedNs(ps);
+public set[str] allTs(GProdList ps) = {s | /terminal(str s) := ps};
+public set[str] usedNs(GProdList ps) = {s | /nonterminal(str s) := ps};
+public set[str] definedNs(GProdList ps) = {s | production(_,str s,_) <- ps};
 
-public list[BGFProduction] replaceP(list[BGFProduction] ps, BGFProduction p1, BGFProduction p2)
+public GProdList replaceP(GProdList ps, GProd p1, GProd p2)
 {
-	list[BGFProduction] ps2 = [];
+	GProdList ps2 = [];
 	for (p <- ps)
 		if (eqP(normalise(p),normalise(p1)))
 			ps2 += p2;
@@ -130,5 +130,5 @@ public list[BGFProduction] replaceP(list[BGFProduction] ps, BGFProduction p1, BG
 	return ps2;
 }
 
-public bool inProds(BGFProduction p, []) = false;
-public default bool inProds(BGFProduction p, list[BGFProduction] ps) = eqP(normalise(p),normalise(ps[0])) || inProds(p,tail(ps));
+public bool inProds(GProd p, []) = false;
+public default bool inProds(GProd p, GProdList ps) = eqP(normalise(p),normalise(ps[0])) || inProds(p,tail(ps));

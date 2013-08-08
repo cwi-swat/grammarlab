@@ -1,14 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{extract,fold,inline,unfold,downgrade,upgrade}
-module transform::library::Folding
+module grammarlab::transform::xbgf::Folding
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import normal::BGF;
-import transform::library::Util;
-import transform::library::Brutal;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::transform::Normal;
 
 XBGFResult runExtract(production(str l, str x, BGFExpression rhs), XBGFScope w, BGFGrammar g)
 {

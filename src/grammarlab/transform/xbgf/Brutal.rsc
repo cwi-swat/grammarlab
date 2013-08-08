@@ -1,14 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{replace}
-module transform::library::Brutal
+module grammarlab::transform::xbgf::Brutal
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
-import normal::BGF;
-import diff::GDT;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
+import grammarlab::transform::Normal;
+import grammarlab::compare::Differ;
 
 XBGFResult runReplace(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGrammar g)
 {

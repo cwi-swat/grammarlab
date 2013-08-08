@@ -1,5 +1,4 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{iterate,rassoc,lassoc}
 module grammarlab::transform::xbgf::Associativity
 
 import grammarlab::language::Grammar;

@@ -1,12 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{addH,horizontal,removeH,vertical}
-module transform::library::Disjunction
+module grammarlab::transform::xbgf::Disjunction
 
 //import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
 
 XBGFResult runAddH(BGFProduction p1, BGFGrammar g)
 {

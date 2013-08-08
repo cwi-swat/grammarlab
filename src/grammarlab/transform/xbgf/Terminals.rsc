@@ -1,15 +1,14 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{abstractize,concatT,concretize,renameT,splitT}
-module transform::library::Terminals
+module grammarlab::transform::xbgf::Terminals
 
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import normal::BGF;
-import transform::library::Util;
-import transform::library::Brutal;
-import transform::library::Sequential;
-import diff::GDT;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::transform::xbgf::Sequential;
+import grammarlab::transform::Normal;
+import grammarlab::compare::Differ;
 
 XBGFResult runAbstractize(BGFProduction p1, BGFGrammar g)
 {

@@ -1,14 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{clone,equate,renameN,reroot,splitN,unite}
-module transform::library::Nonterminals
+module grammarlab::transform::xbgf::Nonterminals
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
-import transform::library::Brutal;
-import diff::GDT;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::compare::Differ;
 
 XBGFResult runClone(str x, str y, XBGFScope w, BGFGrammar g)
 {

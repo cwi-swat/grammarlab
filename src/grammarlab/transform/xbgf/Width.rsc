@@ -1,11 +1,10 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{narrow,widen}
-module transform::library::Width
+module grammarlab::transform::xbgf::Width
 
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Brutal;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Brutal;
 
 // narrow-equivalence (the reverse, widen-equivalence, is hereby also implicitly defined)
 bool narrowing(anything(),_) = true;

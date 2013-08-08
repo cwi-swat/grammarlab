@@ -1,12 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{yaccify,deyaccify}
-module transform::library::Yacc
+module grammarlab::transform::xbgf::Yacc
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
 
 bool yaccification(production(_,n,sequence([y,star(x)])),
 				  {production(_,n,sequence([nonterminal(n),x])),

@@ -1,14 +1,14 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{addV,define,eliminate,importG,introduce,redefine,removeV,undefine}
-module transform::library::Productions
+module grammarlab::transform::xbgf::Productions
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
-import transform::library::Brutal;
-import diff::GDT;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::compare::Differ;
+
 
 XBGFResult runAddV(BGFProduction p1, BGFGrammar g)
 {

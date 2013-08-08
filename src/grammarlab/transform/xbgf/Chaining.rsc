@@ -1,14 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{abridge,chain,detour,unchain}
-module transform::library::Chaining
+module grammarlab::transform::xbgf::Chaining
 
-import lib::Rascalware;
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import transform::library::Util;
-import transform::library::Brutal;
-import diff::GDT;
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Util;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::compare::Differ;
 
 XBGFResult runAbridge(BGFProduction p, BGFGrammar g)
 {

@@ -1,13 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-@wiki{massage}
-module transform::library::Massage
+module grammarlab::transform::xbgf::Massage
 
-import language::BGF;
-import language::XScope;
-import language::XOutcome;
-import normal::BGF;
-import diff::GDT;
-import transform::library::Brutal;
+import grammarlab::language::Grammar;
+import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::transform::Normal;
+import grammarlab::compare::Differ;
+
 import List;
 
 bool massage_eq({selectable(_,x),x}) = true; // deprecated, please use anonymize/deanonymize instead!
