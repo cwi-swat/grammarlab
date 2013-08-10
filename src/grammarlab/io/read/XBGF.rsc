@@ -1,12 +1,12 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::io::read::XBGF
 
-import IO;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::XScope;
-import lang::xml::DOM;
 import grammarlab::io::read::BGF;
+import lang::xml::DOM;
+import IO;
 
 public XSequence readXBGF(loc f)
 {
