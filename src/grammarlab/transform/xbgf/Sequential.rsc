@@ -9,7 +9,7 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
-XBGFResult runAppear(BGFProduction p1, BGFGrammar g)
+XResult runAppear(GProd p1, GGrammar g)
 {
 	p2 = demark(p1);
 	if (!inProds(p2,g.prods))
@@ -20,7 +20,7 @@ XBGFResult runAppear(BGFProduction p1, BGFGrammar g)
 	return <ok(),grammar(g.roots, replaceP(g.prods,p2,unmark(p1)))>;
 }
 
-XBGFResult runDisappear(BGFProduction p1, BGFGrammar g)
+XResult runDisappear(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
 	if (!inProds(p2,g.prods))
@@ -31,7 +31,7 @@ XBGFResult runDisappear(BGFProduction p1, BGFGrammar g)
 	return <ok(),grammar(g.roots, replaceP(g.prods,p2,demark(p1)))>;
 }
 
-XBGFResult runInject(BGFProduction p1, BGFGrammar g)
+XResult runInject(GProd p1, GGrammar g)
 {
 	p2 = demark(p1);
 	if (!inProds(p2,g.prods))
@@ -39,12 +39,12 @@ XBGFResult runInject(BGFProduction p1, BGFGrammar g)
 	return <ok(),grammar(g.roots, replaceP(g.prods,p2,unmark(p1)))>;
 }
 
-XBGFResult runPermute(BGFProduction p, BGFGrammar g)
+XResult runPermute(GProd p, GGrammar g)
 {
-	if (production(str l, str n, sequence(L1)) := p)
+	if (production(str n, sequence(L1)) := p)
 	{
 		<ps1,ps2,ps3> = splitPbyW(g.prods,innt(n));
-		if ([production(_, n, sequence(L2))] := ps2)
+		if ([production(n, sequence(L2))] := ps2)
 		{
 			if (seteq(L1,L2))
 				return <ok(),grammar(g.roots, ps1 + p + ps3)>;
@@ -60,7 +60,7 @@ XBGFResult runPermute(BGFProduction p, BGFGrammar g)
 	return <ok(),g>;
 }
 
-XBGFResult runProject(BGFProduction p1, BGFGrammar g)
+XResult runProject(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
 	if (!inProds(p2,g.prods))

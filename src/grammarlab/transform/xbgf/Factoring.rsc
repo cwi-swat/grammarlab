@@ -9,17 +9,16 @@ import grammarlab::transform::xbgf::Brutal;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
 
-
-XBGFResult runFactor(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGrammar g)
+XResult runFactor(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
-	e3 = normalise(makeDistributed(e1));
-	e4 = normalise(makeDistributed(e2));
+	GExpr e3 = normalise(makeDistributed(e1));
+	GExpr e4 = normalise(makeDistributed(e2));
 	if (!eqE(e3, e4))
 		return <problemExpr2("Expressions must be related by distribution.",e1,e2),g>;
-	return transform::library::Brutal::runReplace(e1,e2,w,g);
+	return grammarlab::transform::xbgf::Brutal::runReplace(e1,e2,w,g);
 }
 
-XBGFResult runDistribute(XBGFScope w, BGFGrammar g)
+XResult runDistribute(XScope w, GGrammar g)
 {
 	<ps1,ps2,ps3> = splitPbyW(g.prods,w);
 	if (/choice(_) !:= ps2)
@@ -27,13 +26,13 @@ XBGFResult runDistribute(XBGFScope w, BGFGrammar g)
 	return <ok(),grammar(g.roots, ps1 + normalise([makeDistributed(p) | p <- ps2]) + ps3)>;
 }
 
-BGFProduction makeDistributed(BGFProduction p) = production(p.label, p.lhs, makeDistributed(p.rhs));
+GProd makeDistributed(GProd p) = production(p.lhs, makeDistributed(p.rhs));
 
-BGFExpression makeDistributed(BGFExpression e1)
+GExpr makeDistributed(GExpr e1)
 {
 	if (choice(L1) := e1) // excessive normalisation
 	{
-		list[BGFExpression] Ln = [];
+		GExprList Ln = [];
 		for (e2 <- L1)
 		{
 			e3 = makeDistributed(e2);
@@ -46,7 +45,7 @@ BGFExpression makeDistributed(BGFExpression e1)
 	}
 	elseif (sequence(L1) := e1)
 	{
-		list[list[BGFExpression]] Ln = [[]];
+		list[GExprList] Ln = [[]];
 		for (e2 <- L1)
 		{
 			e3 = makeDistributed(e2);

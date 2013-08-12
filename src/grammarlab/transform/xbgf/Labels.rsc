@@ -8,7 +8,7 @@ import grammarlab::language::XOutcome;
 import grammarlab::transform::xbgf::Util;
 
  // true labels
-XBGFResult runDesignate(production(str l,str n,BGFExpression e), BGFGrammar g)
+XResult runDesignate(production(str l,str n,GExpr e), GGrammar g)
 {
 	if (l == "")
 		return <problemProd("Production rule must me labelled, use unlabel instead",production(l,n,e)),g>;
@@ -18,7 +18,7 @@ XBGFResult runDesignate(production(str l,str n,BGFExpression e), BGFGrammar g)
 	return <ok(),grammar(g.roots,replaceP(g.prods,production("",n,e),production(l,n,e)))>;
 }
 
-XBGFResult runRenameL(str x, str y, BGFGrammar g)
+XResult runRenameL(str x, str y, GGrammar g)
 {
 	if (x == "")
 		return <problem("Source label must not be empty for renaming, use designate"),g>;
@@ -29,25 +29,25 @@ XBGFResult runRenameL(str x, str y, BGFGrammar g)
 	if (len([p | p <- g.prods, production(y, _, _) := p]) != 0)
 		return <problemStr("Target name for renaming must be fresh",y),g>;
 	<ps1,ps2,ps3> = splitPbyW(g.prods, inlabel(x));
-	if ([production(x, str n, BGFExpression e)] := ps2)
+	if ([production(x, str n, GExpr e)] := ps2)
 		return <ok(),grammar(g.roots, ps1 + production(y, n, e) + ps3)>;
 	else
 		return <problemStr("Label not found or not unique",x),g>; // the latter should never happen
 }
 
-XBGFResult runUnlabel(str x, BGFGrammar g)
+XResult runUnlabel(str x, GGrammar g)
 {
 	if (x == "")
 		return <problem("Please specify which label to unlabel"),g>;
 	<ps1,ps2,ps3> = splitPbyW(g.prods, inlabel(x));
-	if ([production(str l, str x, BGFExpression e)] := ps2)
+	if ([production(str x, GExpr e)] := ps2)
 		return <ok(),grammar(g.roots, ps1 + production("", x, e) + ps3)>;
 	else
 		return <problemStr("Label not found or not unique",x),g>; // the latter should never happen
 }
 
 // selectors for subexpressions
-XBGFResult runAnonymize(BGFProduction p1, BGFGrammar g)
+XResult runAnonymize(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
 	p3 = demarkS(p1);
@@ -56,7 +56,7 @@ XBGFResult runAnonymize(BGFProduction p1, BGFGrammar g)
 	return <ok(),grammar(g.roots, replaceP(g.prods,p2,p3))>;
 }
 
-XBGFResult runDeanonymize(BGFProduction p1, BGFGrammar g)
+XResult runDeanonymize(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
 	p3 = demarkS(p1);
@@ -65,13 +65,13 @@ XBGFResult runDeanonymize(BGFProduction p1, BGFGrammar g)
 	return <ok(),grammar(g.roots, replaceP(g.prods,p3,p2))>;
 }
 
-XBGFResult runRenameS(str x, str y, XBGFScope w, BGFGrammar g)
+XResult runRenameS(str x, str y, XScope w, GGrammar g)
 {
 	<ps1,ps2,ps3> = splitPbyW(g.prods, w);
 	if (/selectable(x,_) !:= ps2)
 		return <freshName("Source name",x),g>;
 	if (/selectable(y,_) := ps2)
 		return <notFreshName("Target name",y),g>;
-	ps4 = visit(ps2){case selectable(x,BGFExpression e) => selectable(y,e)}
+	ps4 = visit(ps2){case selectable(x,GExpr e) => selectable(y,e)}
 	return <ok(),grammar(g.roots, ps1 + ps4 + ps3)>;
 }

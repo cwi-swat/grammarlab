@@ -9,24 +9,20 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
-
-XBGFResult runAddV(BGFProduction p1, BGFGrammar g)
+XResult runAddV(GProd p1, GGrammar g)
 {
-	if (production(_,str x,_) := p1)
-	{
-		<ps1,ps2,ps3> = splitPbyW(g.prods,innt(x));
+		<ps1,ps2,ps3> = splitPbyW(g.prods,innt(p1.lhs));
 		if (isEmpty(ps2))
-			return <problemStr("Nonterminal must be defined",x),g>;
+			return <problemStr("Nonterminal must be defined",p1.lhs),g>;
 		if (p1 in ps2)
 			return <problemProd("Production rule is already present",p1),g>;
-		if (production(str l,_,_) := p1 && l != "")
-			if (production(str l,_,_) <- ps)
+		if (production(_,labelled(str l,_)) := p1)
+			if (production(_,labelled(str l,_)) <- ps)
 				return <problemStr("Another production rule with the same label is already present",l),g>;
 		return <ok(),grammar(g.roots, ps1 + ps2 + p1 + ps3)>;
-	}
 }
 
-XBGFResult runDefine(list[BGFProduction] ps1, BGFGrammar g)
+XResult runDefine(GProdList ps1, GGrammar g)
 {
 	if ({str n} := definedNs(ps1))
 	{
@@ -38,7 +34,7 @@ XBGFResult runDefine(list[BGFProduction] ps1, BGFGrammar g)
 		return <problem("Multiple defined nonterminals found"),g>;
 }
 
-XBGFResult runEliminate(str x, BGFGrammar g)
+XResult runEliminate(str x, GGrammar g)
 {
 	// TODO: can we eliminate root?
 	if (x in g.roots)
@@ -51,7 +47,7 @@ XBGFResult runEliminate(str x, BGFGrammar g)
 	return <ok(),grammar(g.roots, ps1 + ps3)>;
 }
 
-XBGFResult runImportG(list[BGFProduction] ps1, BGFGrammar g)
+XResult runImportG(GProdList ps1, GGrammar g)
 {
 	defs1 = definedNs(ps1);
 	defs12 = defs1 & definedNs(g.prods);
@@ -63,7 +59,7 @@ XBGFResult runImportG(list[BGFProduction] ps1, BGFGrammar g)
 	return <ok(),grammar(g.roots, ps1 + g.prods)>;
 }
 
-XBGFResult runIntroduce(list[BGFProduction] ps, BGFGrammar g)
+XResult runIntroduce(GProdList ps, GGrammar g)
 {
 	if ({str n} := definedNs(ps))
 	{
@@ -77,7 +73,7 @@ XBGFResult runIntroduce(list[BGFProduction] ps, BGFGrammar g)
 		return <problem("Multiple defined nonterminals found"),g>;
 }
 
-XBGFResult runRedefine(list[BGFProduction] ps1, BGFGrammar g)
+XResult runRedefine(GProdList ps1, GGrammar g)
 {
 	// inlined superposition of undefine and define, with two exceptional details:
 	// (1) if ps1.n is a root, undefine would have stripped it from this status
@@ -91,9 +87,11 @@ XBGFResult runRedefine(list[BGFProduction] ps1, BGFGrammar g)
 		<ps3,_,ps4> = splitPbyW(g.prods,innt(x));
 		return <ok(),grammar(g.roots, ps3 + ps1 + ps4)>; 
 	}
+	else
+		return <problem("Please redefine one nonterminal at a time"),g>;
 }
 
-XBGFResult runRemoveV(BGFProduction p, BGFGrammar g)
+XResult runRemoveV(GProd p, GGrammar g)
 {
 	<_,ps2,_> = splitPbyW(g.prods, innt(p.lhs));
 	if (isEmpty(ps2))
@@ -106,9 +104,9 @@ XBGFResult runRemoveV(BGFProduction p, BGFGrammar g)
 }
 
 //TODO: undefine only one nonterminal per transformation
-XBGFResult runUndefine(list[str] xs, BGFGrammar g)
+XResult runUndefine(list[str] xs, GGrammar g)
 {
-	list[BGFProduction] myps = g.prods;
+	GProdList myps = g.prods;
 	list[str] rs = g.roots;
 	for (str x <- xs)
 	{

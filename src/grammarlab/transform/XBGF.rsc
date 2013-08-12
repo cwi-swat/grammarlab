@@ -6,7 +6,7 @@ import grammarlab::language::X;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
 import grammarlab::transform::Normal;
-import grammarlab::export::X;
+import grammarlab::export::XBNF;
 import IO;
 
 extend grammarlab::transform::xbgf::Associativity; // assoc, iterate
@@ -53,7 +53,7 @@ public XResult transform(concretize(GProd p), GGrammar g)
 	= runConcretize(p,g);
 public XResult transform(deanonymize(GProd p), GGrammar g)
 	= runDeanonymize(p,g);
-public XResult transform(define(list[GProd] ps), GGrammar g)
+public XResult transform(define(GProdList ps), GGrammar g)
 	= runDefine(ps,g);
 public XResult transform(designate(GProd p), GGrammar g)
 	= runDesignate(p,g);
@@ -73,27 +73,27 @@ public XResult transform(equate(str x, str y), GGrammar g)
 	= runEquate(x,y,g);
 public XResult transform(extract(GProd p, XScope w), GGrammar g)
 	= runExtract(p,w,g);
-public XResult transform(factor(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
+public XResult transform(factor(GExpr e1, GExpr e2, XScope w), GGrammar g)
 	= runFactor(e1,e2,w,g);
 public XResult transform(fold(str x, XScope w), GGrammar g)
 	= runFold(x,w,g);
 public XResult transform(horizontal(XScope w), GGrammar g)
 	= runHorizontal(w,g);
-public XResult transform(importG(list[GProd] ps), GGrammar g)
+public XResult transform(importG(GProdList ps), GGrammar g)
 	= runImportG(ps,g);
 public XResult transform(inject(GProd p), GGrammar g)
 	= runInject(p,g);
 public XResult transform(inline(str x), GGrammar g)
 	= runInline(x,g);
-public XResult transform(introduce(list[GProd] ps), GGrammar g)
+public XResult transform(introduce(GProdList ps), GGrammar g)
 	= runIntroduce(ps,g);
 // public XResult transform(iterate(GProd p), GGrammar g)
 // 	= runIterate(p,g);
 // public XResult transform(lassoc(GProd p), GGrammar g)
 // 	= runLAssoc(p,g);
-public XResult transform(massage(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
+public XResult transform(massage(GExpr e1, GExpr e2, XScope w), GGrammar g)
 	= runMassage(e1,e2,w,g);
-public XResult transform(narrow(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
+public XResult transform(narrow(GExpr e1, GExpr e2, XScope w), GGrammar g)
 	= runNarrow(e1,e2,w,g);
 public XResult transform(permute(GProd p), GGrammar g)
 	= runPermute(p,g);
@@ -101,7 +101,7 @@ public XResult transform(project(GProd p), GGrammar g)
 	= runProject(p,g);
 // public XResult transform(rassoc(GProd p), GGrammar g)
 // 	= runRAssoc(p,g);
-public XResult transform(redefine(list[GProd] ps), GGrammar g)
+public XResult transform(redefine(GProdList ps), GGrammar g)
 	= runRedefine(ps,g);
 public XResult transform(removeH(GProd p), GGrammar g)
 	= runRemoveH(p,g);
@@ -115,11 +115,11 @@ public XResult transform(renameS(str x, str y, XScope w), GGrammar g)
 	= runRenameS(x,y,w,g);
 public XResult transform(renameT(str x, str y), GGrammar g)
 	= runRenameT(x,y,g);
-public XResult transform(XCommand::replace(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
+public XResult transform(XCommand::replace(GExpr e1, GExpr e2, XScope w), GGrammar g)
 	= runReplace(e1,e2,w,g);
 public XResult transform(reroot(list[str] xs), GGrammar g)
 	= runReroot(xs,g);
-public XResult transform(splitN(str x, list[GProd] ps, XScope w), GGrammar g)
+public XResult transform(splitN(str x, GProdList ps, XScope w), GGrammar g)
 	= runSplitN(x,ps,w,g);
 public XResult transform(splitT(str x, list[str] ys, XScope w), GGrammar g)
 	= runSplitT(x,ys,w,g);
@@ -137,15 +137,12 @@ public XResult transform(upgrade(GProd p1, GProd p2), GGrammar g)
 	= runUpgrade(p1,p2,g);
 public XResult transform(vertical(XScope w), GGrammar g)
 	= runVertical(w,g);
-public XResult transform(widen(BGFExpression e1, BGFExpression e2, XScope w), GGrammar g)
+public XResult transform(widen(GExpr e1, GExpr e2, XScope w), GGrammar g)
 	= runWiden(e1,e2,w,g);
-public XResult transform(yaccify(list[GProd] ps), GGrammar g)
+public XResult transform(yaccify(GProdList ps), GGrammar g)
 	= runYaccify(ps,g);
-public XResult transform(atomic(list[XCommand] steps), GGrammar g)
-	= transform(steps,g); // NB: different from the rest
-public XResult transform(strip(str a), GGrammar g)
-	= runStrip(a,g); // semi-deprecated
-public default XResult transform(XCommand x, GGrammar g) {throw "Unknown XBGF command <x>";}
+public default XResult transform(XCommand x, GGrammar g)
+	{throw "Unknown XBGF command <x>";}
 
 public GGrammar transform(XBGFSequence xbgf, GGrammar g)
 {
@@ -166,7 +163,7 @@ public XResult vtransform(XCommand x, GGrammar g)
 	return transform(x,g);
 }
 
-public GGrammar vtransform(XBGFSequence xbgf, GGrammar g)
+public GGrammar vtransform(XSequence xbgf, GGrammar g)
 {
 	XResult out = <ok(),normalise(g)>;
 	for (XCommand step <- xbgf)
@@ -176,25 +173,4 @@ public GGrammar vtransform(XBGFSequence xbgf, GGrammar g)
 		out.g = normalise(out.g);
 	}
 	return out.g;
-}
-
-
-
-// legacy code
-XResult runStrip(str a, GGrammar g)
-{
-	// TODO: semi-deprecated
-	list[GProd] ps2;
-	if (a=="allLabels")
-		ps2 = visit(g.prods){case production(_,str x,BGFExpression e) => production("",x,e)}
-	elseif (a=="allSelectors")
-		ps2 = visit(g.prods){case selectable(_,BGFExpression e) => e}
-	elseif (a=="allTerminals")
-		{ // deprecated, please use a mutation that generates abstractize commands
-			ps2 = visit(g.prods){case terminal(_) => epsilon()};
-			ps2 = normalise(ps2);
-		}
-	else
-		return <problemStr("Unknown strip parameter",a),g>;
-	return <ok(),grammar(g.roots,ps2)>;
 }

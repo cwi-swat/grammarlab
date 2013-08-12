@@ -97,8 +97,8 @@ XCommand mapxbgf(Node el)
 				case element(_,"widen",[e1,e2,w]): return widen(mapexpr(e1),mapexpr(e2),mapcontext(w));
 		 		case element(_,"yaccify",ps): return yaccify([mapprod(p) | p <- ps]);
 		 		// legacy
- 				case element(_,"atomic",L): return atomic([mapxbgf(x) | x <- L, element(namespace(_,"http://planet-sl.org/xbgf"),_,_) := x]);
- 				case element(_,"strip",[element(none(),str s,[])]): return strip(s);
+ 				//case element(_,"atomic",L): return atomic([mapxbgf(x) | x <- L, element(namespace(_,"http://planet-sl.org/xbgf"),_,_) := x]);
+ 				//case element(_,"strip",[element(none(),str s,[])]): return strip(s);
 		 		// default
 		 		default:
 		 			if(element(_,elname,elkids):=el)

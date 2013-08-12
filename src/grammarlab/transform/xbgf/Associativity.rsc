@@ -2,6 +2,7 @@
 module grammarlab::transform::xbgf::Associativity
 
 import grammarlab::language::Grammar;
+import grammarlab::language::X;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
 import grammarlab::transform::xbgf::Util;
@@ -16,8 +17,8 @@ default bool admit(GExpr e1, GExpr e2) = false;
 
 // NB: rassoc and lassoc are the same when they work on the grammar level
 // the differences can only be observed on the instance level
-public XResult transform(rassoc(GProd p), GGrammar g) = runAssoc(p,g);
-public XResult transform(lassoc(GProd p), GGrammar g) = runAssoc(p,g);
+public XResult transform(XCommand::rassoc(GProd p), GGrammar g) = runAssoc(p,g);
+public XResult transform(XCommand::lassoc(GProd p), GGrammar g) = runAssoc(p,g);
 
 XResult runAssoc(production(str l, str x, GExpr e1), GGrammar g)
 {

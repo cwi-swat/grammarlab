@@ -10,7 +10,7 @@ import grammarlab::transform::xbgf::Sequential;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
 
-XBGFResult runAbstractize(BGFProduction p1, BGFGrammar g)
+XResult runAbstractize(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
 	if (!inProds(p2,g.prods))
@@ -18,16 +18,16 @@ XBGFResult runAbstractize(BGFProduction p1, BGFGrammar g)
 	for (/marked(e) := p1)
 		if (terminal(_) !:= e)
 			return <problem("Abstractize only works with marked terminals, use project instead."),g>;
-	return transform::library::Sequential::runProject(p1,grammar(g.roots, g.prods));
+	return grammarlab::transform::xbgf::Sequential::runProject(p1,grammar(g.roots, g.prods));
 }
 
-XBGFResult runConcatT(list[str] xs, str y, XBGFScope w, BGFGrammar g)
+XResult runConcatT(list[str] xs, str y, XScope w, GGrammar g)
 {
 	// TODO
 	return <ok(),g>;
 }
 
-XBGFResult runConcretize(BGFProduction p1, BGFGrammar g)
+XResult runConcretize(GProd p1, GGrammar g)
 {
 	p2 = demark(p1);
 	if (!inProds(p2,g.prods))
@@ -35,23 +35,23 @@ XBGFResult runConcretize(BGFProduction p1, BGFGrammar g)
 	for (/marked(e) := p1)
 		if (terminal(_) !:= e)
 			return <problem("Concretize only works with marked terminals, use inject instead."),g>;
-	return transform::library::Sequential::runInject(p1,g);
+	return grammarlab::transform::xbgf::Sequential::runInject(p1,g);
 }
 
-XBGFResult runRenameT(str x, str y, BGFGrammar g)
+XResult runRenameT(str x, str y, GGrammar g)
 {
 	ts = allTs(g.prods);
 	if (x notin ts)
 		return <freshName("Source name",x),g>;
 	if (y in ts)
 		return <notFreshName("Target name",y),g>;
-	return transform::library::Brutal::runReplace(terminal(x),terminal(y),globally(),g);
+	return grammarlab::transform::xbgf::Brutal::runReplace(terminal(x),terminal(y),globally(),g);
 }
 
-XBGFResult runSplitT(str x, list[str] ys, XBGFScope w, BGFGrammar g)
+XResult runSplitT(str x, list[str] ys, XScope w, GGrammar g)
 {
 	// TODO: insert proper preconditions
 	//<ps1,ps2,ps3> = splitPbyW(g.prods, w);
-	//BGFGrammar g2 	= transform::library::Brutal::runReplace(terminal(x),sequence([terminal(y) | y <- ys]),w,grammar([],ps2));
-	return transform::library::Brutal::runReplace(terminal(x),sequence([terminal(y) | y <- ys]),w,g);
+	//GGrammar g2 	= transform::library::Brutal::runReplace(terminal(x),sequence([terminal(y) | y <- ys]),w,grammar([],ps2));
+	return grammarlab::transform::xbgf::Brutal::runReplace(terminal(x),sequence([terminal(y) | y <- ys]),w,g);
 }

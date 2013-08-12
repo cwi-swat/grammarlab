@@ -15,16 +15,16 @@ bool narrowing(plus(e),e) = true;
 bool narrowing(optional(e),e) = true;
 default bool narrowing(_,_) = false;
 
-XBGFResult runNarrow(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGrammar g)
+XResult runNarrow(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
 	if (!narrowing(e1,e2))
 		return <problemExpr2("Expressions are not in narrowing relation.",e1,e2),g>;
-	return transform::library::Brutal::runReplace(e1,e2,w,g);
+	return grammarlab::transform::xbgf::Brutal::runReplace(e1,e2,w,g);
 }
 
-XBGFResult runWiden(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGrammar g)
+XResult runWiden(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
 	if (!narrowing(e2,e1))
 		return <problemExpr2("Expressions are not in widening relation",e2,e1),g>;
-	return transform::library::Brutal::runReplace(e1,e2,w,g); 
+	return grammarlab::transform::xbgf::Brutal::runReplace(e1,e2,w,g); 
 }

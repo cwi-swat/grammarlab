@@ -9,16 +9,16 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
-XBGFResult runAbridge(BGFProduction p, BGFGrammar g)
+XResult runAbridge(GProd p, GGrammar g)
 {
-	if (production(_,x,nonterminal(x)) !:= p)
+	if (production(x,nonterminal(x)) !:= p)
 		return <problemProd("Production cannot be abridged.",p),g>;
 	if (!inProds(p,g.prods))
 		return <notFoundP(p),g>;
 	return <ok(),grammar(g.roots, g.prods - p)>;
 }
 
-XBGFResult runChain(BGFProduction p, BGFGrammar g)
+XResult runChain(GProd p, GGrammar g)
 {
 	if (production(str l,str n1,nonterminal(str n2)) := p)
 		{
@@ -26,7 +26,7 @@ XBGFResult runChain(BGFProduction p, BGFGrammar g)
 				return <problem("Do not introduce reflexive chain productions with chain, use detour instead"),g>;
 			if (n2 in allNs(g.prods))
 				return <notFreshName(n2),g>;
-			list[BGFProduction] ps1,ps2,ps3;
+			GProdList ps1,ps2,ps3;
 			if (l != "") <ps1,ps2,ps3> = splitPbyW(g.prods,inlabel(l));
 			else <ps1,ps2,ps3> = splitPbyW(g.prods,innt(n1));
 			if ([production(l,n1,e)] := ps2)
@@ -38,9 +38,9 @@ XBGFResult runChain(BGFProduction p, BGFGrammar g)
 		return <problemProd("Not a chain production rule.",p),g>;
 }
 
-XBGFResult runDetour(BGFProduction p, BGFGrammar g)
+XResult runDetour(GProd p, GGrammar g)
 {
-	if (production(_,x,nonterminal(x)) := p)
+	if (production(x,nonterminal(x)) := p)
 	{
 		// xbgf1.pro only aksed for x to be used, not necessarily defined; we're more strict here
 		if (x notin definedNs(g.prods))
@@ -52,9 +52,9 @@ XBGFResult runDetour(BGFProduction p, BGFGrammar g)
 		return <problemProd("Not a reflexive chain production rule",p),g>;
 }
 
-XBGFResult runUnchain(BGFProduction p, BGFGrammar g)
+XResult runUnchain(GProd p, GGrammar g)
 {
-	if (production(str l,str n1,nonterminal(str n2)) := p)
+	if (production(str n1, nonterminal(str n2)) := p)
 		{
 			if (n1 == n2)
 				return <problem("Do not remove reflexive chain productions with chain, use abridge instead"),g>;
@@ -63,14 +63,14 @@ XBGFResult runUnchain(BGFProduction p, BGFGrammar g)
 			if (!inProds(p,g.prods))
 				return <notFoundP(r,p),g>;
 			//if (n2 in allNs(ps)) r = notFreshN(r,n2);
-			list[BGFProduction] ps1,ps2,ps3;
+			GProdList ps1,ps2,ps3;
 			<ps1,ps2,ps3> = splitPbyW(g.prods - p,innt(n2));
 			if (len(ps2) != 1)
 				return <problemStr("Nonterminal must occur exactly once",n2),g>;
 			if (l == "")
 				l = n2;
-			if ([production(_,n2,e)] := ps2)
-				return <ok(),grammar(g.roots, ps1 + production(l,n1,e) + ps3)>;
+			if ([production(n2,e)] := ps2)
+				return <ok(),grammar(g.roots, ps1 + production(n1,e) + ps3)>;
 			else
 				return <problemProds("Production rules have unexpected form",ps2),g>;
 		}

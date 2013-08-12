@@ -3,15 +3,16 @@ module grammarlab::transform::xbgf::Brutal
 
 //import lib::Rascalware;
 import grammarlab::language::Grammar;
+import grammarlab::language::X;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
 import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
 
-XBGFResult runReplace(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGrammar g)
+XResult runReplace(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
-	list[BGFProduction] ps1,ps2,ps3,ps4;
+	GProdList ps1,ps2,ps3,ps4;
 	<ps1,ps2,ps3> = splitPbyW(g.prods, w);
 	ps4 = performReplace(e1,e2,ps2);
 	if (ps2 == ps4)
@@ -23,9 +24,9 @@ XBGFResult runReplace(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGramma
 	return <ok(),grammar(g.roots, ps1 + normalise(ps4) + ps3)>;
 }
 
-list[BGFProduction] performReplace(BGFExpression e1, BGFExpression e2, list[BGFProduction] ps)
+GProdList performReplace(GExpr e1, GExpr e2, GProdList ps)
 {
-	list[BGFExpression] L5;
+	GExprList L5;
 	switch(e1)
 	{
 		case sequence(L1):
@@ -43,7 +44,7 @@ list[BGFProduction] performReplace(BGFExpression e1, BGFExpression e2, list[BGFP
 	}
 }
 
-list[BGFExpression] replaceSubsequence(list[BGFExpression] where, list[BGFExpression] what, list[BGFExpression] with)
+GExprList replaceSubsequence(GExprList where, GExprList what, GExprList with)
 {
 	if (eqE(sequence(where),sequence(what))) return with;
 	int i = 0, sz = len(what);
@@ -56,11 +57,11 @@ list[BGFExpression] replaceSubsequence(list[BGFExpression] where, list[BGFExpres
 	return where;
 }
 
-list[BGFExpression] replaceChoice(list[BGFExpression] where, list[BGFExpression] what, list[BGFExpression] with)
+GExprList replaceChoice(GExprList where, GExprList what, GExprList with)
 {
 	if (eqE(choice(where),choice(what))) return with;
 	unmatched = where;
-	<res,es1,es2> = diff::GDT::tryMatchChoices(what,where);
+	<res,es1,es2> = grammarlab::compare::Differ::tryMatchChoices(what,where);
 	if (res)
 		return es1 + with + es2;
 	else

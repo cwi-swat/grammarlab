@@ -9,19 +9,19 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
-XBGFResult runClone(str x, str y, XBGFScope w, BGFGrammar g)
+XResult runClone(str x, str y, XScope w, GGrammar g)
 {
 	// TODO
 	return <ok(),g>;
 }
 
-XBGFResult runEquate(str x, str y, BGFGrammar g)
+XResult runEquate(str x, str y, GGrammar g)
 {
 	if (x == y)
 		return <problemStr("Nonterminal is already equated with itself.",x),g>;
 	<ps1x,ps2x,ps3x> = splitPbyW(g.prods,innt(x));
 	<_,ps2y,_> = splitPbyW(g.prods,innt(y));
-	XBGFResult rep = runRenameN(x,y,grammar([],ps2x));
+	XResult rep = runRenameN(x,y,grammar([],ps2x));
 	if (ok() !:= rep.r) return rep;
 	gxy = rep.g;
 	gyy = grammar([],ps2y);
@@ -33,7 +33,7 @@ XBGFResult runEquate(str x, str y, BGFGrammar g)
 		return <ok(),grammar(g.roots - x,ps1x + ps3x)>;
 }
 
-XBGFResult runRenameN(str x, str y, BGFGrammar g)
+XResult runRenameN(str x, str y, GGrammar g)
 {
 	ns = allNs(g.prods);
 	if (x notin ns)
@@ -44,16 +44,16 @@ XBGFResult runRenameN(str x, str y, BGFGrammar g)
 		<ok(),performRenameN(x,y,g)>;
 }
 
-BGFGrammar performRenameN(str x, str y, BGFGrammar g)
+GGrammar performRenameN(str x, str y, GGrammar g)
 {
-	list[BGFProduction] ps1,ps2,ps3,ps4;
+	GProdList ps1,ps2,ps3,ps4;
 	list[str] rs2;
 	if ([*L1, x, *L2] := g.roots) rs2 = L1 + y + L2;
 	else rs2 = g.roots;
 	if (x in definedNs(g.prods))
 	{
 		<ps1,ps2,ps3> = splitPbyW(g.prods,innt(x));
-		ps4 = ps1 + [production(l,y,e) | p <- ps2, production(str l,x,BGFExpression e) := p] + ps3;
+		ps4 = ps1 + [production(l,y,e) | p <- ps2, production(str l,x,GExpr e) := p] + ps3;
 	}
 	else
 		ps4 = g.prods;
@@ -63,7 +63,7 @@ BGFGrammar performRenameN(str x, str y, BGFGrammar g)
 		return grammar(rs2,ps4);
 }
 
-XBGFResult runReroot(list[str] xs, BGFGrammar g)
+XResult runReroot(list[str] xs, GGrammar g)
 {
 	if (seteq(xs, g.roots))
 		return <problemStrs("Vacuous reroot",xs),g>;
@@ -74,7 +74,7 @@ XBGFResult runReroot(list[str] xs, BGFGrammar g)
 		return <problemStrs("Not all nonterminals are defined",xs),g>;
 }
 
-XBGFResult runSplitN(str x, list[BGFProduction] ps0, XBGFScope w, BGFGrammar g)
+XResult runSplitN(str x, GProdList ps0, XScope w, GGrammar g)
 {
 	if ({str y} := definedNs(ps0))
 	{
@@ -83,7 +83,7 @@ XBGFResult runSplitN(str x, list[BGFProduction] ps0, XBGFScope w, BGFGrammar g)
 		if (y in allNs(g.prods))
 			return <notFreshN(y),g>;
 		<ps2,ps3,ps4> = splitPbyW(g.prods,innt(x));
-		list[BGFProduction] ps5 = [production(l,x,e) | p <- ps0, production(str l,y,BGFExpression e) := p];
+		GProdList ps5 = [production(l,x,e) | p <- ps0, production(str l,y,GExpr e) := p];
 		if (x in g.roots) rs2 = g.roots + y; else rs2 = g.roots;
 		g = grammar(rs2,ps2 + (ps3 - ps5) + ps0 + ps4);
 		if (nowhere() := w)
@@ -96,7 +96,7 @@ XBGFResult runSplitN(str x, list[BGFProduction] ps0, XBGFScope w, BGFGrammar g)
 		// TODO OR NOT TODO
 }
 
-XBGFResult runUnite(str x, str y, BGFGrammar g)
+XResult runUnite(str x, str y, GGrammar g)
 {
 	if (x == y)
 		return <problemStr("Nonterminal is already united with itself",x),g>;
@@ -106,7 +106,7 @@ XBGFResult runUnite(str x, str y, BGFGrammar g)
 	if (y notin used)
 		return <freshN(y),g>;
 	<ps1x,ps2x,ps3x> = splitPbyW(g.prods, innt(x));
-	list[BGFProduction] ps4x = ps1x + [production(l,y,e) | p <- ps2x, production(str l,x,BGFExpression e) := p] + ps3x;
+	GProdList ps4x = ps1x + [production(l,y,e) | p <- ps2x, production(str l,x,GExpr e) := p] + ps3x;
 	if (x in usedNs(ps4x))
 		return transform::library::Brutal::runReplace(nonterminal(x),nonterminal(y),globally(),grammar(g.roots,ps4x));
 	else

@@ -56,7 +56,7 @@ bool massage_eq({not(choice([x,y])),allof([not(y),not(x)])}) = true;
 bool massage_eq({not(choice([not(x),not(y)])),allof([x,y])}) = true;
 bool massage_eq({not(choice([not(x),not(y)])),allof([y,x])}) = true;
 
-default bool massage_eq(set[BGFExpression] s)
+default bool massage_eq(GExprSet s)
 {
 	// some of the following are not general enough
 	
@@ -77,16 +77,16 @@ default bool massage_eq(set[BGFExpression] s)
 			}
 			if (plus(x) := z, {plus(x),x} := toSet(L)) return true;
 			
-			L1 = visit(L){case selectable(_,BGFExpression e) => e};
+			L1 = visit(L){case selectable(_,GExpr e) => e};
 			if (eqE(normalise(choice(L1)),z)) return true;
 		}
 	return false;
 }
 
-XBGFResult runMassage(BGFExpression e1, BGFExpression e2, XBGFScope w, BGFGrammar g)
+XResult runMassage(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
 	if (massage_eq({e1,e2}))
-		return transform::library::Brutal::runReplace(e1,e2,w,g);
+		return grammarlab::transform::xbgf::Brutal::runReplace(e1,e2,w,g);
 	else
 		return <problemExpr2("Expressions are not massage-equivalent.",e1,e2),g>;
 }
