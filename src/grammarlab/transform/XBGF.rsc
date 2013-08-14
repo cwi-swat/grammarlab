@@ -144,7 +144,7 @@ public XResult transform(yaccify(GProdList ps), GGrammar g)
 public default XResult transform(XCommand x, GGrammar g)
 	{throw "Unknown XBGF command <x>";}
 
-public GGrammar transform(XBGFSequence xbgf, GGrammar g)
+public GGrammar transform(XSequence xbgf, GGrammar g)
 {
 	XResult out = <ok(),normalise(g)>;
 	for (XCommand step <- xbgf)

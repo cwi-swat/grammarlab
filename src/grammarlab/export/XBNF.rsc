@@ -1,0 +1,82 @@
+@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
+module grammarlab::export::XBNF
+
+//import lib::Rascalware;
+import grammarlab::language::Grammar;
+import grammarlab::language::X;
+import grammarlab::language::XScope;
+import grammarlab::export::Grammar;
+
+public str ppxs(XSequence xs) = mapjoin(ppx,xs,"\n");
+
+public str ppx(XCommand::abridge(GProd p)) = "abridge(<pp(p)>)";
+public str ppx(XCommand::abstractize(GProd p)) = "abstractize(<pp(p)>)";
+public str ppx(XCommand::addC(GProd p)) = "addC(<pp(p)>)";
+public str ppx(XCommand::addH(GProd p)) = "addH(<pp(p)>)";
+public str ppx(XCommand::addV(GProd p)) = "addV(<pp(p)>)";
+public str ppx(XCommand::anonymize(GProd p)) = "anonymize(<pp(p)>)";
+public str ppx(XCommand::appear(GProd p)) = "appear(<pp(p)>)";
+public str ppx(XCommand::bypass()) = "bypass()";
+public str ppx(XCommand::chain(GProd p)) = "chain(<pp(p)>)";
+public str ppx(XCommand::clone(str x, str y, XScope w)) = "clone(<x>,<y>,<pp(w)>)";
+public str ppx(XCommand::concatT(list[str] xs, str y, XScope w)) = "concatT(\"<joinStrings(xs,"\"+\"")>\",\"<y>\",<pp(w)>)";
+public str ppx(XCommand::concretize(GProd p)) = "concretize(<pp(p)>)";
+public str ppx(XCommand::deanonymize(GProd p)) = "deanonymize(<pp(p)>)";
+public str ppx(XCommand::define(GProdList ps)) = "define(<pp(ps)>)";
+public str ppx(XCommand::designate(GProd p)) = "designate(<pp(p)>)";
+public str ppx(XCommand::detour(GProd p)) = "detour(<pp(p)>)";
+public str ppx(XCommand::deyaccify(str x)) = "deyaccify(<x>)";
+public str ppx(XCommand::disappear(GProd p)) = "disappear(<pp(p)>)";
+public str ppx(XCommand::distribute(XScope w)) = "distribute(<pp(w)>)";
+public str ppx(XCommand::downgrade(GProd p1, GProd p2)) = "downgrade(<pp(p1)>,<pp(p2)>)";
+public str ppx(XCommand::eliminate(str x)) = "eliminate(<x>)";
+public str ppx(XCommand::equate(str x, str y)) = "equate(<x>,<y>)";
+public str ppx(XCommand::extract(GProd p, XScope w)) = "extract(<pp(p)>,<pp(w)>)";
+public str ppx(XCommand::factor(GExpr e1, GExpr e2, XScope w)) = "factor(<pp(e1)>,<pp(e2)>,<pp(w)>)";
+public str ppx(XCommand::fold(str x, XScope w)) = "fold(<x>,<pp(w)>)";
+public str ppx(XCommand::horizontal(XScope w)) = "horizontal(<pp(w)>)";
+public str ppx(XCommand::importG(GProdList ps)) = "importG(<pp(ps)>)";
+public str ppx(XCommand::inject(GProd p)) = "inject(<pp(p)>)";
+public str ppx(XCommand::inline(str x)) = "inline(<x>)";
+public str ppx(XCommand::introduce(GProdList ps)) = "introduce(<pp(ps)>)";
+public str ppx(XCommand::iterate(GProd p)) = "iterate(<pp(p)>)";
+public str ppx(XCommand::lassoc(GProd p)) = "lassoc(<pp(p)>)";
+public str ppx(XCommand::massage(GExpr e1, GExpr e2, XScope w)) = "massage(<pp(e1)>,<pp(e2)>,<pp(w)>)";
+public str ppx(XCommand::narrow(GExpr e1, GExpr e2, XScope w)) = "narrow(<pp(e1)>,<pp(e2)>,<pp(w)>)";
+public str ppx(XCommand::permute(GProd p)) = "permute(<pp(p)>)";
+public str ppx(XCommand::project(GProd p)) = "project(<pp(p)>)";
+public str ppx(XCommand::rassoc(GProd p)) = "rassoc(<pp(p)>)";
+public str ppx(XCommand::redefine(GProdList ps)) = "redefine(<pp(ps)>)";
+public str ppx(XCommand::removeH(GProd p)) = "removeH(<pp(p)>)";
+public str ppx(XCommand::removeV(GProd p)) = "removeV(<pp(p)>)";
+public str ppx(XCommand::renameL(str x, str y)) = "renameL(<x>,<y>)";
+public str ppx(XCommand::renameN(str x, str y)) = "renameN(<x>,<y>)";
+public str ppx(XCommand::renameS(str x, str y, XScope w)) = "renameS(<x>,<y>,<pp(w)>)";
+public str ppx(XCommand::renameT(str x, str y)) = "renameT(<x>,<y>)";
+public str ppx(XCommand::replace(GExpr e1, GExpr e2, XScope w)) = "replace(<pp(e1)>,<pp(e2)>,<pp(w)>)";
+public str ppx(XCommand::reroot(list[str] xs)) = "reroot(<joinStrings(xs,",")>)";
+public str ppx(XCommand::splitN(str x, GProdList ps, XScope w)) = "splitN(<x>,<pp(ps)>,<pp(w)>)";
+public str ppx(XCommand::splitT(str x, list[str] ys, XScope w)) = "splitT(\"<x>\",\"<joinStrings(ys,"\"+\"")>\",<pp(w)>)";
+public str ppx(XCommand::unchain(GProd p)) = "unchain(<pp(p)>)";
+public str ppx(XCommand::undefine(list[str] xs)) = "undefine(<joinStrings(xs,",")>)";
+public str ppx(XCommand::unfold(str x, XScope w)) = "unfold(<x>,<pp(w)>)";
+public str ppx(XCommand::unite(str x, str y)) = "unite(<x>,<y>)";
+public str ppx(XCommand::unlabel(str x)) = "unlabel(<x>)";
+public str ppx(XCommand::upgrade(GProd p1, GProd p2)) = "upgrade(<pp(p1)>,<pp(p2)>)";
+public str ppx(XCommand::vertical(XScope w)) = "vertical(<pp(w)>)";
+public str ppx(XCommand::widen(GExpr e1, GExpr e2, XScope w)) = "widen(<pp(e1)>,<pp(e2)>,<pp(w)>)";
+public str ppx(XCommand::yaccify(GProdList ps)) = "yaccify(<pp(ps)>)";
+//public str ppx(XCommand::atomic(list[XCommand] steps)) = "atomic(<pp(steps)>)";
+//public str ppx(XCommand::strip(str a)) = "strip(<a>)";
+public default str ppx(XCommand smth) = "??<smth>??";
+
+str pp(XScope::globally()) = "globally()";
+str pp(XScope::nowhere()) = "nowhere()";
+str pp(XScope::inlabel(str l)) = "inlabel(<l>)";
+str pp(XScope::notinlabel(str l)) = "notinlabel(<l>)";
+str pp(XScope::innt(str x)) = "innt(<x>)";
+str pp(XScope::notinnt(str x)) = "notinnt(<x>)";
+str pp(XScope::comboscope(XScope w1, XScope w2)) = "comboscope(<pp(w1)>,<pp(w2)>)";
+default str pp(XScope smth) = "??<smth>??";
+
+//str pp(list[str] ss) = joinStrings(ss,",");
