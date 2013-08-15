@@ -4,6 +4,7 @@ module grammarlab::transform::Normal
 import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
 import grammarlab::transform::SLEIR;
+import List; //toSet
 
 public GGrammar  normanon(GGrammar g)   =  RetireSs(RetireLs(g));
 public GProdList normanon(GProdList ps) = [RetireSs(RetireLs(p)) | p <- ps];
@@ -18,13 +19,13 @@ public GGrammar normalise(GGrammar g)
 	for (n <- toSet(g.roots) + {n | /nonterminal(n) := ps})
 		if (n notin nts)
 		{
-			g.nts += n;
+			nts += n;
 			ps[n] = [];
 		}
 	return grammar(nts, g.roots, ps);
 }
 
-public GProds normalise(GProds ps) = (key:normalise(ps[key]) | key <- domain(ps));
+public GProds normalise(GProds ps) =	(key:normalise(ps[key]) | key <- ps);
 
 // remove duplicate production rules
 public GProdList normalise([L1*,GProd X1,L2*,X1,L3*]) = normalise([*L1,X1,*L2,*L3]);

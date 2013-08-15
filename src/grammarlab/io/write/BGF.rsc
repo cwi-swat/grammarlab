@@ -19,9 +19,9 @@ Node prod2xml(GProd p)
 	list[Node] kids = [];
 	GExpr rhs;
 	// TODO: remove the backward-compatibility bit?
-	if (labelled(str label, GExpr e) := p.rhs)
+	if (label(str name, GExpr e) := p.rhs)
 	{
-		kids += element(none(),"label",[charData(label)]);
+		kids += element(none(),"label",[charData(name)]);
 		rhs = e;
 	}
 	else
@@ -31,6 +31,7 @@ Node prod2xml(GProd p)
 	return element(namespace("bgf","http://planet-sl.org/bgf"),"production",kids);
 }
 
+// TODO: does not process except(…)
 Node expr2xml(GExpr ex)
 {
 	Node e;
@@ -44,12 +45,14 @@ Node expr2xml(GExpr ex)
 		case anything(): e = element(none(),"any",[]);
 		case terminal(str s): e = element(none(),"terminal",[charData(s)]);
 		case nonterminal(str s): e = element(none(),"nonterminal",[charData(s)]);
-		case labelled(s,expr): e = element(none(),"labelled",[element(none(),"label",[charData(s)]),expr2xml(expr)]);
-		case selectable(s,expr): e = element(none(),"selectable",[element(none(),"selector",[charData(s)]),expr2xml(expr)]);
+		//case label(str n, GExpr expr): e = element(none(),"labelled",[element(none(),"label",[charData(s)]),expr2xml(expr)]);
+		case label(str n, GExpr expr): e = element(none(),"selectable",[element(none(),"selector",[charData(n)]),expr2xml(expr)]);
+		case mark("", GExpr expr): e = element(none(),"marked",[expr2xml(expr)]);
+		case mark(str n, GExpr expr): e = element(none(),"selectable",[element(none(),"selector",[charData(n)]),expr2xml(expr)]);
 		case sequence(L): e = element(none(),"sequence",[expr2xml(expr) | expr <- L]);
 		case choice(L): e = element(none(),"choice",[expr2xml(expr) | expr <- L]);
 		case allof(L): e = element(none(),"allof",[expr2xml(expr) | expr <- L]);
-		case marked(expr): e = element(none(),"marked",[expr2xml(expr)]);
+		case except(e1,e2): e = element(none(),"except",[expr2xml(e1),expr2xml(e2)]);
 		case optional(expr): e = element(none(),"optional",[expr2xml(expr)]);
 		case not(expr): e = element(none(),"not",[expr2xml(expr)]);
 		case plus(expr): e = element(none(),"plus",[expr2xml(expr)]);

@@ -9,15 +9,17 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
+@doc{Removes a reflexive chain production rule - http://github.com/grammarware/slps/wiki/Abridge}
 XResult runAbridge(GProd p, GGrammar g)
 {
-	if (production(x,nonterminal(x)) !:= p)
+	if (production(x,nonterminal(x)) !:= p && production(x,labelled(_,nonterminal(x))) !:= p)
 		return <problemProd("Production cannot be abridged.",p),g>;
 	if (!inProds(p,g.prods))
 		return <notFoundP(p),g>;
 	return <ok(),grammar(g.roots, g.prods - p)>;
 }
 
+@doc{Introduces a chain production rule - http://github.com/grammarware/slps/wiki/Chain}
 XResult runChain(GProd p, GGrammar g)
 {
 	if (production(str l,str n1,nonterminal(str n2)) := p)
@@ -38,6 +40,7 @@ XResult runChain(GProd p, GGrammar g)
 		return <problemProd("Not a chain production rule.",p),g>;
 }
 
+@doc{Adds a reflexive chain production rule - http://github.com/grammarware/slps/wiki/Detour}
 XResult runDetour(GProd p, GGrammar g)
 {
 	if (production(x,nonterminal(x)) := p)
@@ -52,6 +55,7 @@ XResult runDetour(GProd p, GGrammar g)
 		return <problemProd("Not a reflexive chain production rule",p),g>;
 }
 
+@doc{Removes a chain production rule - http://github.com/grammarware/slps/wiki/Unchain}
 XResult runUnchain(GProd p, GGrammar g)
 {
 	if (production(str n1, nonterminal(str n2)) := p)

@@ -37,7 +37,7 @@ GProds prodsByNT(GProdList ps)
 
 GProd mapprod(Node n)
 {
-	str label = "";
+	str lname = "";
 	str lhs = "";
 	GExpr rhs;
 	if (element(namespace(_,"http://planet-sl.org/bgf"),"production",kids) := n)
@@ -45,14 +45,14 @@ GProd mapprod(Node n)
 		for (k <- kids)
 			switch (k)
 			{
-				case element(none(),"label",[charData(str s)]) : label = s;
+				case element(none(),"label",[charData(str s)]) : lname = s;
 				case element(none(),"nonterminal",[charData(str s)]) : lhs = s;
 				case element(namespace(_,"http://planet-sl.org/bgf"),"expression",[expr]): rhs = mapexpr(expr);
 			}
-		if (isEmpty(label))
+		if (isEmpty(lname))
 			return production (lhs, rhs);
 		else
-			return production (lhs, labelled(label,rhs));
+			return production (lhs, label(lname,rhs));
 	}
 	else
 		throw "ERROR in mapprod:\n<n>";
@@ -74,12 +74,13 @@ GExpr mapexpr(Node n)
 		case element(none(),"terminal",[]): return terminal(" ");// lang::xml::DOM does not preserve whitespace, so this can mean something like a newline
 		case element(none(),"terminal",[charData(str s)]): return terminal(s);
 		case element(none(),"nonterminal",[charData(str s)]): return nonterminal(s);
-		case element(none(),"labelled",[element(none(),"label",[charData(str s)]),expr]): return labelled(s,mapexpr(expr));
-		case element(none(),"selectable",[element(none(),"selector",[charData(str s)]),expr]): return selectable(s,mapexpr(expr));
+		case element(none(),"labelled",[element(none(),"label",[charData(str s)]),expr]): return label(s,mapexpr(expr));
+		case element(none(),"selectable",[element(none(),"selector",[charData(str s)]),expr]): return mark(s,mapexpr(expr));
 		case element(none(),"sequence",kids): return sequence([mapexpr(k) | k <- kids]);
 		case element(none(),"choice",kids): return choice([mapexpr(k) | k <- kids]);
 		case element(none(),"allof",kids): return allof([mapexpr(k) | k <- kids]);
-		case element(none(),"marked",[expr]): return marked(mapexpr(expr));
+		case element(none(),"marked",[expr]): return mark("",mapexpr(expr));
+		case element(none(),"except",[e1,e2]): return except(mapexpr(e1),mapexpr(e2));
 		case element(none(),"optional",[expr]): return optional(mapexpr(expr));
 		case element(none(),"not",[expr]): return not(mapexpr(expr));
 		case element(none(),"plus",[expr]): return plus(mapexpr(expr));
