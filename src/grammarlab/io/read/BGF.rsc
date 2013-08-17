@@ -14,14 +14,15 @@ public GGrammar readBGF(loc f)
 		ps = [mapprod(p) | p:element(namespace(_,"http://planet-sl.org/bgf"),_,_) <- L];
 		return grammar(
 			squeeze([p.lhs | p <- ps]),
-			[s | element(none(),"root",[charData(str s)]) <- L],
-			prodsByNT(ps));
+			ps,
+			[s | element(none(),"root",[charData(str s)]) <- L]
+		);
 	}
 	else
 		throw "<f> is not a proper BGF file";
 }
 
-// TODO: possibly move to another module
+// TODO: figure out if this dead code is needed at all
 GProds prodsByNT(GProdList ps)
 {
 	GProds res = ();

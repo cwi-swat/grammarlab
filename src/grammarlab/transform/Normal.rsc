@@ -13,26 +13,23 @@ public GExpr     normanon(GExpr e)      =  RetireSs(RetireLs(e));
 
 public GGrammar normalise(GGrammar g)
 {
-	list[str] nts = g.nts;
-	GProds ps = normalise(g.prods);
-	
-	for (n <- toSet(g.roots) + {n | /nonterminal(n) := ps})
+	list[str] nts = g.N;
+	GProdList ps = normalise(g.P);
+	for (n <- toSet(g.S) + {n | /nonterminal(n) := ps})
 		if (n notin nts)
 		{
 			nts += n;
 			ps[n] = [];
 		}
-	return grammar(nts, g.roots, ps);
+	return grammar(g.N, ps, g.S);
 }
-
-public GProds normalise(GProds ps) =	(key:normalise(ps[key]) | key <- ps);
 
 // remove duplicate production rules
 public GProdList normalise([L1*,GProd X1,L2*,X1,L3*]) = normalise([*L1,X1,*L2,*L3]);
 
-public GProdList normalise(GProdList prods) = [normalise(p) | p <- prods]; 
+public GProdList normalise(GProdList prods) = [normalise(p) | GProd p <- prods]; 
 
-public GProdSet normalise(GProdSet prods) = {normalise(p) | p <- prods}; 
+public GProdSet normalise(GProdSet prods) = {normalise(p) | GProd p <- prods}; 
 
 public GProd normalise(GProd p) = production (p.lhs, normalise(p.rhs));
 
@@ -41,43 +38,84 @@ public GExpr normalise(GExpr e)
 	// Algebraic normalisations; TODO: others needed?
 	return innermost visit(e)
 	{
+		// an empty sequence is ε
 		case sequence([]) => epsilon()
+		// an trivial sequence is its only element
 		case sequence([GExpr e1]) => e1
+		// an empty choice is φ (“nothing to choose from”)
 		case choice([]) => empty()
+		// a trivial choice is its only element
 		case choice([GExpr e2]) => e2
+		// an optional ε is still ε
 		case optional(epsilon()) => epsilon()
-		case optional(empty()) => epsilon()                             // not present in Prolog
-		case selectable("",e4) => e4									// not present in Prolog
-		case labelled("",e5) => e5										// not present in Prolog
+		// an optional φ is ε (“there is an option to fail”)
+		case optional(empty()) => epsilon()
+		// an empty label is useless
+		case label("",e4) => e4
+		// a one or more ε is still ε
 		case plus(epsilon()) => epsilon()
+		// a zero or more ε is still ε
 		case star(epsilon()) => epsilon()
+		// an ε-separated star-list is a Kleene star
 		case sepliststar(X1,epsilon()) => star(X1)
+		// an ε-separated plus-list is a Kleene plus
 		case seplistplus(X2,epsilon()) => plus(X2)
+		// a separated star-list of empty elements is a Kleene star
 		case sepliststar(epsilon(),X3) => star(X3)
+		// a separated plus-list of empty elements is a Kleene star
 		case seplistplus(epsilon(),X4) => star(X4)
+		// inline nested sequences
 		case sequence([L1*,sequence(L0),L2*]) => sequence(L1+L0+L2)
+		// ε is skipped over in a sequence
 		case sequence([L3*,epsilon(),L4*]) => sequence(L3+L4)
+		// if φ is a part of a sequence, the whole sequence is φ
 		case sequence([_*,empty(),_*]) => empty()
+		// inline nested choices
 		case choice([L5*,choice(L),L6*]) => choice(L5+L+L6)
+		// φ is skipped over in a choice
 		case choice([L7*,empty(),L8*]) => choice(L7+L8)
+		// remove duplicate alternatives in a choice
 		case choice([*L9,X5,*L10,X5,*L11]) => choice([*L9,X5,*L10,*L11])
-		// normalisations on Boolean grammars!
+		// an empty conjunction is φ (“all of nothing”)
 		case allof([]) => empty()
+		// a trivial conjunction is its own only element
 		case allof([GExpr e3]) => e3
+		// inline nested conjunctions
 		case allof([K1*,allof(K0),K2*]) => allof(K1+K0+K2)
+		// α is skipped over in a conjunction
 		case allof([K3*,anything(),L2*]) => allof(K3+K4)
+		// remove duplicate alternatives in a conjunction
 		case allof([K5*,X6,K6*,X6,K7*]) => allof([*K5,X6,*K6,*K7])
+		// if φ is a part of a conjunction, the whole conjunction is φ
 		case allof([_*,empty(),_*]) => empty()
+		// having X and not X in the same conjunction will always fail
 		case allof([_*,X7,_*,not(X7),_*]) => empty()
+		// having X and not X in the same disjunction will always succeed
 		case choice([_*,X7,_*,not(X7),_*]) => anything()
+		// not nothing is everything
 		case not(empty()) => anything()
+		// not everything is nothing
 		case not(anything()) => empty()
+		// “except nothing” is useless
+		case except(X8,empty()) => X8
+		// “except everything” will fail
+		case except(_,anything()) => empty()
+		// “nothing except …” will fail
+		case except(empty(),_) => empty()
+		// “everything except …” is just negation
+		case except(anything(),X9) => not(X9)
+		// “except not” is a conjunction
+		case except(X10,not(X11)) => allof([X10,X11])
+		// binary conjunction with one negative branch is the “except” construct
+		case allof([X12,not(X13)]) => except(X12,X13)
+		// having X and not X in the except construct will always fail
+		case except(X14,not(X14)) => empty()
 	};
 }
 
 GGrammar tw(GExpr e)
 {
-	return grammar([foo],[],[production("foo",e)]);
+	return grammar(["foo"],[production("foo",e)],[]);
 }
 
 test bool n1() {return normalise(tw(sequence([])))==tw(epsilon());}

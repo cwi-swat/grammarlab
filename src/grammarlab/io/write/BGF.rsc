@@ -9,8 +9,8 @@ import grammarlab::lib::Sizes;
 
 public void writeBGF(GGrammar bgf, loc f)
 {
-	list[Node] xml1 = [element(none(),"root",[charData(s)]) | str s <- bgf.roots];
-	list[Node] xml2 = [prod2xml(p) | str n <- bgf.nts, GProd p <- bgf.prods[n]];
+	list[Node] xml1 = [element(none(),"root",[charData(s)]) | str s <- bgf.S];
+	list[Node] xml2 = [prod2xml(p) | GProd p <- bgf.P];
 	writeFile(f,xmlRaw(document(element(namespace("bgf","http://planet-sl.org/bgf"),"grammar",xml1+xml2))));
 }
 

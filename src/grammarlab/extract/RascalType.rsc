@@ -32,9 +32,9 @@ GExpr variants2expr({Variant "|"}+ variants)
  = grammarlab::language::Grammar::choice([variant2expr(v) | Variant v <- variants]);
 
 GExpr variant2expr((Variant)`<Name name> ()`)
-	= grammarlab::language::Grammar::selectable(name2string("<name>"),epsilon());
+	= grammarlab::language::Grammar::label(name2string("<name>"),epsilon());
 default GExpr variant2expr((Variant)`<Name name> ( <{TypeArg ","}+ arguments> )`)
-	= grammarlab::language::Grammar::selectable(name2string("<name>"),typeargs2seq(arguments));
+	= grammarlab::language::Grammar::label(name2string("<name>"),typeargs2seq(arguments));
 /*
 syntax Type
 	= bracket \bracket: "(" Type type ")" 
@@ -110,7 +110,7 @@ default GExpr type2expr(Type t)// = grammarlab::language::Grammar::empty();
 }
 
 GExpr typearg2expr((TypeArg)`<Type t>`) = type2expr(t);
-GExpr typearg2expr((TypeArg)`<Type t><Name n>`) = grammarlab::language::Grammar::selectable(name2string("<n>"),type2expr(t));
+GExpr typearg2expr((TypeArg)`<Type t><Name n>`) = grammarlab::language::Grammar::mark(name2string("<n>"),type2expr(t));
 default GExpr typearg2expr(TypeArg ta) //= empty();
 {
 	println("Failure or ambiguity in typearg2expr(<ta>).");

@@ -39,3 +39,6 @@ data GExpr
 ;
 
 data GValue = string() | integer() | boolean();
+
+public GProdList Pn(str n, GGrammar g) = [p | p <- g.P, p.lhs == n];
+public GProdList Pn(str n, GProdList ps) = [p | p <- ps, p.lhs == n];

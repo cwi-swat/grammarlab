@@ -54,9 +54,9 @@ data LCPhase
 	// TODO? make conditions more strict
 	;
 //phase:step::(perform-transformation::string | automated-transformation)+
+//automated-transformation: method::id result::string
 data LCStep
 	= perform(XSequence xbgf)
 	| automated(str method, str result)
 	// TODO: add mutations
 	;
-//automated-transformation: method::id result::string
