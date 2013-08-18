@@ -13,15 +13,9 @@ public GExpr     normanon(GExpr e)      =  RetireSs(RetireLs(e));
 
 public GGrammar normalise(GGrammar g)
 {
-	list[str] nts = g.N;
 	GProdList ps = normalise(g.P);
-	for (n <- toSet(g.S) + {n | /nonterminal(n) := ps})
-		if (n notin nts)
-		{
-			nts += n;
-			ps[n] = [];
-		}
-	return grammar(g.N, ps, g.S);
+	list[str] nts = squeeze([p.lhs | p <- ps]);
+	return grammar([n | n<-g.N, n in nts || n in g.S], ps, g.S);
 }
 
 // remove duplicate production rules

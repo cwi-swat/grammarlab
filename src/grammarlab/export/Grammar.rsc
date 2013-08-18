@@ -22,11 +22,11 @@ public str ppx(GExprList smth, EBNF meta) = mapjoin(str(GExpr e){return ppx(e,me
 // TODO roots?
 public str ppx(GGrammar g, EBNF meta) =
 	getMeta(start_grammar_symbol(), meta)
-	+ppx(g.nts,g.prods,meta)+
+	+ppx(g.N,g.P,meta)+
 	getMeta(end_grammar_symbol(), meta);
 
-public str ppx(list[str] nts, GProds prods, EBNF meta)
-	= joinStrings([ppx(p,meta) | str n <- nts, GProd p <- prods[n]], "");
+public str ppx(list[str] nts, GProdList prods, EBNF meta)
+	= joinStrings([ppx(p,meta) | GProd p <- prods], "");
 
 public str ppx(GProd p, EBNF meta) =
 	getMeta(start_nonterminal_symbol(), meta)
@@ -52,23 +52,18 @@ public str ppx(GExpr::terminal(str t), EBNF meta) =
 	+t+
 	getMeta(end_terminal_symbol(), meta);
 
-public str ppx(GExpr::labelled(str lab, GExpr expr), EBNF meta) =
+public str ppx(GExpr::label(str name, GExpr expr), EBNF meta) =
 	getMetaE(start_label_symbol(), meta)
-	+lab+
+	+name+
 	getMetaE(end_label_symbol(), meta)+
-	getMeta(concatenate_symbol(), meta)
-	+ppx(expr,meta);
+	//getMeta(concatenate_symbol(), meta)+
+	ppxpg(expr,meta);
 
-public str ppx(GExpr::selectable(str sel, GExpr expr), EBNF meta) =
-	getMetaE(start_selector_symbol(), meta)
-	+sel+
-	getMetaE(end_selector_symbol(), meta)
-	+ppxpg(expr,meta);
-
-public str ppx(GExpr::marked(GExpr expr), EBNF meta) =
+public str ppx(GExpr::mark(str name, GExpr expr), EBNF meta) =
 	getMetaE(start_mark_symbol(), meta)
-	+ppx(expr,meta)+
-	getMetaE(end_mark_symbol(), meta);
+	+name+
+	getMetaE(end_mark_symbol(), meta)+
+	ppxpg(expr,meta);
 
 public str ppx(GExpr::sequence(GExprList exprs), EBNF meta) =
 	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs, getMeta(concatenate_symbol(), meta));
@@ -124,6 +119,11 @@ public str ppx(GExpr::seplistplus(GExpr expr, GExpr sep), EBNF meta) =
 	getMeta(concatenate_symbol(), meta)
 	+ppxpg(sep,meta)+
 	getMeta(end_seplist_plus_symbol(), meta);
+
+public str ppx(except(GExpr e1, GExpr e2), EBNF meta) =
+	ppxpg(e1,meta)+
+	getMeta(exception_symbol(), meta)
+	+ppxpg(e2,meta);
 
 public default str ppx(GExpr smth, EBNF meta) = "??<smth>??";
 

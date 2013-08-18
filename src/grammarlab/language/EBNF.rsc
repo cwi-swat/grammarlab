@@ -13,8 +13,6 @@ data Metasymbol
 	| tabulation_symbol()
 	| start_label_symbol()
 	| end_label_symbol()
-	| start_selector_symbol()
-	| end_selector_symbol()
 	| start_mark_symbol()
 	| end_mark_symbol()
 	| defining_symbol()
@@ -64,6 +62,7 @@ data Metasymbol
 	| disjunction_symbol()
 	// Boolean grammars arsenal
 	| conjunction_symbol()
+	| exception_symbol()
 	| prefix_negation_symbol()
 	| postfix_negation_symbol()
 	| ignore_tokens()
@@ -74,11 +73,9 @@ public EBNF DefaultEBNF = (
 	empty_metasymbol(): "φ",
 	universal_metasymbol(): "α",
 	start_label_symbol(): "[",
-	end_label_symbol(): "]",
-	start_selector_symbol(): "",
-	end_selector_symbol(): "::",
+	end_label_symbol(): "]::",
 	start_mark_symbol(): "\<",
-	end_mark_symbol(): "\>",
+	end_mark_symbol(): "\>:",
 	defining_symbol(): " ::= ",
 	terminator_symbol(): " ;\n",
 	definition_separator_symbol(): " | ",
@@ -100,6 +97,7 @@ public EBNF DefaultEBNF = (
 	postfix_repetition_star_symbol(): "*",
 	postfix_repetition_plus_symbol(): "+",
 	conjunction_symbol(): " & ",
+	exception_symbol(): " &! ",
 	prefix_negation_symbol(): "¬"
 );
 

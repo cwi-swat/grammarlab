@@ -28,7 +28,6 @@ GGrammar extractG(str z)
 
 public void main(list[str] args) = writeBGF(extractG(|cwd:///|+args[0]),|cwd:///|+args[1]);
 
-public void main() = main(|project://fl/src/Concrete.rsc|);
-
 public void main(loc z) = println(ppx(extractG(z)));
 
+test bool flc() {main(|home:///projects/slps/topics/fl/rascal/src/Concrete.rsc|);return true;}
