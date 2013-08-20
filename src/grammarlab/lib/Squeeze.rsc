@@ -1,8 +1,6 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::lib::Squeeze
 
-// import IO;
-// 
 public list[&T] squeeze(list[&T] a)
 {
 	set[&T] visited = {};
@@ -17,8 +15,12 @@ public list[&T] squeeze(list[&T] a)
 	}
 	return res;
 }
-// 
-// public void main(list[str] args)
-// {
-// 	println(squeeze([1,2,3,2,3,4,2,5,4]));
-// }
+
+list[int] e = [];
+
+test bool sq0() = squeeze(e) == e;
+test bool sq1() = squeeze([1]) == [1];
+test bool sq2() = squeeze([1,2]) == [1,2];
+test bool sq3() = squeeze([1,2,2]) == [1,2];
+test bool sq4() = squeeze(["one","two","one"]) == ["one","two"];
+test bool sq5() = squeeze([1,2,2,3,1,2,3,3,2,1,3]) == [1,2,3];

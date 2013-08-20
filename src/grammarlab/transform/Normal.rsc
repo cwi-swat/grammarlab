@@ -14,8 +14,8 @@ public GExpr     normanon(GExpr e)      =  RetireSs(RetireLs(e));
 public GGrammar normalise(GGrammar g)
 {
 	GProdList ps = normalise(g.P);
-	list[str] nts = squeeze([p.lhs | p <- ps]);
-	return grammar([n | n<-g.N, n in nts || n in g.S], ps, g.S);
+	list[str] nts = [p.lhs | p <- ps];
+	return grammar(squeeze([n | n<-g.N, n in nts || n in g.S]), ps, g.S);
 }
 
 // remove duplicate production rules
