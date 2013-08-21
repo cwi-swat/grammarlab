@@ -1,10 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::compare::Differ
 
+import IO;
+import List;
 import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
-import List;
-import IO;
+import grammarlab::lib::Squeeze;
 
 tuple[bool,GExprList,GExprList] tryMatchChoices(GExprList L1, GExprList L2) = tryMatchChoices([],L1,[],L2,false);
 tuple[bool,GExprList,GExprList] tryMatchChoices(GExprList es1, [], GExprList es2, GExprList L2, false) = <false,[],[]>; 
@@ -26,7 +27,6 @@ tuple[bool,GExprList,GExprList] tryMatchChoices(GExprList es1, GExprList L1, GEx
 	return <false,[],[]>;
 }
 
-
 // expression equality
 public bool eqE(choice([GExpr e1]), choice([GExpr e2])) = eqE(e1,e2);
 public bool eqE(choice(L1), choice(L2))
@@ -45,6 +45,8 @@ public bool eqE(allof(L1), allof(L2))
 	return false;
 }
 
+public bool eqE(except(GExpr e1a, GExpr e1b), except(GExpr e2a, GExpr e2b)) = eqE(e1a,e2a) && eqE(e1b,e2b);
+
 public bool eqE(sequence(L1), sequence(L2))
 {
 	if (size(L1) != size(L2)) return false;
@@ -54,9 +56,8 @@ public bool eqE(sequence(L1), sequence(L2))
 	return true;
 }
 
-public bool eqE(labelled(str X1, GExpr E1), labelled(X1, GExpr E2)) = eqE(E1,E2);
-public bool eqE(selectable(str X1, GExpr E1), selectable(X1, GExpr E2)) = eqE(E1,E2);
-public bool eqE(marked(GExpr E1), marked(GExpr E2)) =  eqE(E1,E2);
+public bool eqE(label(str X1, GExpr E1), label(X1, GExpr E2)) = eqE(E1,E2);
+public bool eqE(mark(str X1, GExpr E1), mark(X1, GExpr E2)) = eqE(E1,E2);
 public bool eqE(not(GExpr E1), not(GExpr E2)) =  eqE(E1,E2);
 public bool eqE(optional(GExpr E1), optional(GExpr E2)) =  eqE(E1,E2);
 public bool eqE(star(GExpr E1), star(GExpr E2)) =  eqE(E1,E2);
@@ -64,8 +65,11 @@ public bool eqE(plus(GExpr E1), plus(GExpr E2)) =  eqE(E1,E2);
 public bool eqE(seplistplus(GExpr E11, GExpr E12), seplistplus(GExpr E21, GExpr E22)) =  eqE(E11,E21) && eqE(E12,E22);
 public bool eqE(sepliststar(GExpr E11, GExpr E12), sepliststar(GExpr E21, GExpr E22)) =  eqE(E11,E21) && eqE(E12,E22);
 
-public bool eqE(GExpr e1, GExpr e2) = e1 == e2; // default
+public bool eqE(nonterminal(str n1), nonterminal(n1)) = true;
+public bool eqE(terminal(str t1), terminal(t1)) = true;
+public bool eqE(val(GValue v1), val(v1)) = true;
 
+public default bool eqE(GExpr e1, GExpr e2) = e1 == e2;
 
 public bool eqP(production(str x, GExpr e1), production(x, GExpr e2)) = eqE(e1,e2);
 public bool eqP(GProd p1, GProd p2) = p1 == p2;
@@ -76,49 +80,50 @@ tuple[GProdList,GProdList] gdt(GProdList ps1, GProdList ps2)
 	ps3 = normalise(ps1);
 	ps4 = normalise(ps2);
 	if (toSet(ps3)==toSet(ps4)) return <[],[]>;
-	unmatched1 = ps3 - ps4;
-	unmatched2 = ps4 - ps3;
-	for (u <- unmatched1)
-		if (production(str l,str x,GExpr e1) := u)
-			for (production(l,x,GExpr e2) <- unmatched2)
-				if (eqE(e1,e2))
-					{
-						unmatched2 -= production(l,x,e2);
-						unmatched1 -= u;
-						break;
-					}
-	return <unmatched1,unmatched2>;
+	return <
+		[p | p <- ps3, isEmpty([q | q <- ps4, eqP(p,q)])],
+		[p | p <- ps4, isEmpty([q | q <- ps3, eqP(p,q)])]
+	>;
 }
 
 // silent
-public bool gdts(grammar(rs1,ps1), grammar(rs2,ps2))
+public bool gdts(GGrammar g1, GGrammar g2)
 {
-	if (toSet(rs1)!=toSet(rs2)) return false;
-	<unmatched1,unmatched2> = gdt(ps1,ps2);
+	if (toSet(g1.N)!=toSet(g2.N)) return false;
+	if (toSet(g2.S)!=toSet(g2.S)) return false;
+	<unmatched1,unmatched2> = gdt(g1.P,g2.P);
 	if (isEmpty(unmatched1) && isEmpty(unmatched2)) return true;
 	// TODO keep trying?
 	return false;
 }
 
 // verbose
-public bool gdtv(grammar(rs1,ps1), grammar(rs2,ps2))
+public bool gdtv(GGrammar g1, GGrammar g2)
 {
-	if (toSet(rs1)!=toSet(rs2))
+	bool res = true;
+	if (toSet(g1.S)!=toSet(g2.S))
 	{
 		println("Different roots: <rs1> vs <rs2>.");
-		return false;
+		res = false;
 	}
-	<unmatched1,unmatched2> = gdt(ps1,ps2);
-	if (isEmpty(unmatched1) && isEmpty(unmatched2)) return true;
+	if (toSet(g1.N)!=toSet(g2.N))
+	{
+		println("Unmatched nonterminal sets:\n - <toSet(g1.N)-toSet(g2.N)>\nvs\n - <toSet(g2.N)-toSet(g1.N)>");
+		res = false;
+	}
+	<unmatched1,unmatched2> = gdt(g1.P,g2.P);
+	if (isEmpty(unmatched1) && isEmpty(unmatched2))
+		return res;
+	else
+		res = false;
 	println("Grammars differ!");
-	//public set[str] definedNs(GProdList ps) = {s | production(_,str s,_) <- ps};
-	for (nt <- {n | production(_, str n, _) <- unmatched1 + unmatched2})
+	for (str nt <- squeeze(g1.N + g2.N))
 	{
 		println(" - Fail on <nt>:");
-		for (p <- unmatched1, production(_,nt,_) := p)
+		for (p:production(nt,_) <- unmatched1)
 			println("   - <p>");
 		println("   vs");
-		for (p <- unmatched2, production(_,nt,_) := p)
+		for (p:production(nt,_) <- unmatched2)
 			println("   - <p>");
 	}
 	//for (u <- unmatched1)
@@ -129,3 +134,24 @@ public bool gdtv(grammar(rs1,ps1), grammar(rs2,ps2))
 	// TODO keep trying?
 	return false;
 }
+
+test bool d1() = gdts(
+	grammar(["foo"],[production("foo",terminal("1"))],[]),
+	grammar(["foo"],[production("foo",terminal("1"))],[])
+);
+test bool d2() = gdts(
+	grammar(["foo"],[production("foo",choice([terminal("1")]))],[]),
+	grammar(["foo"],[production("foo",choice([terminal("1")]))],[])
+);
+test bool d3() = gdts(
+	grammar(["foo"],[production("foo",choice([terminal("1"),terminal("2")]))],[]),
+	grammar(["foo"],[production("foo",choice([terminal("2"),terminal("1")]))],[])
+);
+test bool d4() = gdts(
+	grammar(["foo"],[production("foo",sequence([terminal("1"),epsilon()]))],[]),
+	grammar(["foo"],[production("foo",terminal("1"))],[])
+);
+test bool d5() = !gdts(
+	grammar(["foo"],[production("foo",sequence([terminal("1"),terminal("2")]))],[]),
+	grammar(["foo"],[production("foo",sequence([terminal("2"),terminal("1")]))],[])
+);
