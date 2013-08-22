@@ -71,20 +71,16 @@ public GProd demarkS (GProd p1)
 	return normalise(p2);
 }
 
-public bool checkScope(GProd p, XScope w)
-{
-	switch(w)
-	{
-		case globally(): return true;
-		case nowhere(): return false;
-		case innt(x): return production(_,x,_) := p;
-		case notinnt(x): return production(_,x,_) !:= p;
-		case inlabel(x): return production(x,_,_) := p;
-		case notinlabel(x): return production(x,_,_) !:= p;
-		case comboscope(w1,w2): return checkScope(p,w1) && checkScope(p,w2);
-		default: throw "Unknown context <w>.";
-	}
-}
+public bool checkScope(GProd p, globally()) = true;
+public bool checkScope(GProd p, nowhere()) = false;
+public bool checkScope(GProd p, innt(str x)) = p.lhs == x;
+public bool checkScope(GProd p, notinnt(str x)) = p.lhs != x;
+public bool checkScope(GProd p, inlabel(str x)) = /label(x,_) := p;
+public bool checkScope(GProd p, notinlabel(str x)) = /label(x,_) !:= p;
+public bool checkScope(GProd p, inmark(str x)) = /mark(x,_) := p;
+public bool checkScope(GProd p, notinmark(str x)) = /mark(x,_) !:= p;
+public bool checkScope(GProd p, comboscope(w1,w2)) = checkScope(p,w1) && checkScope(p,w2);
+public default bool checkScope(GProd p, XScope w) {throw "Unknown context <w>.";}
  
 // order-preserving splitting of production rules
 // returns <prods before context; prods in context; prods after context>
@@ -117,7 +113,7 @@ public tuple[GProdList,GProdList,GProdList] splitPbyW(GProdList ps, XScope w)
 public set[str] allNs(GProdList ps) = definedNs(ps) + usedNs(ps);
 public set[str] allTs(GProdList ps) = {s | /terminal(str s) := ps};
 public set[str] usedNs(GProdList ps) = {s | /nonterminal(str s) := ps};
-public set[str] definedNs(GProdList ps) = {s | production(_,str s,_) <- ps};
+public set[str] definedNs(GProdList ps) = {s | production(str s,_) <- ps};
 
 public GProdList replaceP(GProdList ps, GProd p1, GProd p2)
 {

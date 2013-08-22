@@ -6,6 +6,7 @@ import List;
 import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
 import grammarlab::lib::Squeeze;
+import grammarlab::export::Grammar;
 
 tuple[bool,GExprList,GExprList] tryMatchChoices(GExprList L1, GExprList L2) = tryMatchChoices([],L1,[],L2,false);
 tuple[bool,GExprList,GExprList] tryMatchChoices(GExprList es1, [], GExprList es2, GExprList L2, false) = <false,[],[]>; 
@@ -121,10 +122,10 @@ public bool gdtv(GGrammar g1, GGrammar g2)
 	{
 		println(" - Fail on <nt>:");
 		for (p:production(nt,_) <- unmatched1)
-			println("   - <p>");
+			println("   - <ppx(p)>");
 		println("   vs");
 		for (p:production(nt,_) <- unmatched2)
-			println("   - <p>");
+			println("   - <ppx(p)>");
 	}
 	//for (u <- unmatched1)
 	//	println(u);
