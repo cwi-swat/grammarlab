@@ -11,15 +11,15 @@ XResult runAddH(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
 	p3 = demarkH(p1);
-	if (!inProds(p3,g.prods))
+	if (!inProds(p3,g.P))
 		return <notFoundP(p3),g>;
-	return <ok(),grammar(g.roots, replaceP(g.prods,p3,p2))>;
+	return <ok(),grammar(g.N, replaceP(g.P,p3,p2), g.S)>;
 }
 
 XResult runHorizontal(XScope w, GGrammar g)
 {
 	// For xbgf1.pro, the context must be strictly vertical. Here we are more relaxed. 
-	<ps1,ps2,ps3> = splitPbyW(g.prods,w);
+	<ps1,ps2,ps3> = splitPbyW(g.P,w);
 	GExprList es4 = [];
 	for (production(str x, GExpr e) <- ps2)
 		if (choice(L) := e)
@@ -27,7 +27,7 @@ XResult runHorizontal(XScope w, GGrammar g)
 		else
 			es4 += e;
 	if (innt(str x) := w)
-		return <ok(),grammar(g.roots, ps1 + production(x,choice(es4)) + ps3)>;
+		return <ok(),grammar(g.N, ps1 + production(x,choice(es4)) + ps3, g.S)>;
 	else
 		return <problemScope("Scope for horizontal must be a nonterminal",w),g>;
 }
@@ -35,27 +35,28 @@ XResult runHorizontal(XScope w, GGrammar g)
 XResult runRemoveH(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
-	if (!inProds(p2, g.prods))
+	if (!inProds(p2, g.P))
 		return <notFoundP(p2),g>;
-	return <ok(),grammar(g.roots, replaceP(g.prods,p2,demarkH(p1)))>;
+	return <ok(),grammar(g.N, replaceP(g.P,p2,demarkH(p1)), g.S)>;
 }
 
 XResult runVertical(XScope w, GGrammar g)
 {
-	<ps1,ps2,ps3> = splitPbyW(g.prods, w);
+	<ps1,ps2,ps3> = splitPbyW(g.P, w);
 	ps4 = [];
+	// TODO: rethink the model of working with labels and marks
 	for (production(str x, GExpr e) <- ps2)
 		if (choice(L) := e)
 			for (se <- L)
-				if (labelled(str s, GExpr e2) := se)
-					if (/labelled(s,_) := g.prods)
+				if (label(str s, GExpr e2) := se)
+					if (/label(s,_) := g.P)
 						return <problemStr("Label clashes with an existing label",s),g>;
-					elseif (/labelled(s,_) := ps4)
+					elseif (/label(s,_) := ps4)
 						return <problemStr("Labels ambiguous",s),g>;
 					else
-						ps4 += production(s,x,e2);
+						ps4 += production(x,e2);
 				else
-					ps4 += production("",x,se);
-		else ps4 += production(l,x,e);
-	return <ok(),grammar(g.roots, ps1 + ps4 + ps3)>;
+					ps4 += production(x,se);
+		else ps4 += production(x,e);
+	return <ok(),grammar(g.N, ps1 + ps4 + ps3, g.S)>;
 }

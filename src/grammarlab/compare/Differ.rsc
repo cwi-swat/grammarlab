@@ -75,6 +75,8 @@ public default bool eqE(GExpr e1, GExpr e2) = e1 == e2;
 public bool eqP(production(str x, GExpr e1), production(x, GExpr e2)) = eqE(e1,e2);
 public bool eqP(GProd p1, GProd p2) = p1 == p2;
 
+public bool eqPs(GProdList ps1, GProdList ps2) = gdt(ps1,ps2) == <[],[]>;
+
 // generic differ, returns unmatched production rules
 tuple[GProdList,GProdList] gdt(GProdList ps1, GProdList ps2)
 {

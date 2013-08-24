@@ -13,15 +13,15 @@ import grammarlab::compare::Differ;
 XResult runReplace(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
 	GProdList ps1,ps2,ps3,ps4;
-	<ps1,ps2,ps3> = splitPbyW(g.prods, w);
+	<ps1,ps2,ps3> = splitPbyW(g.P, w);
 	ps4 = performReplace(e1,e2,ps2);
-	if (ps2 == ps4)
+	if (eqPs(ps2,ps4))
 		{
 			ps4 = performReplace(normalise(e1),normalise(e2),ps2); // TODO check if needed
-			if (ps2 == ps4)
+			if (eqPs(ps2,ps4))
 				return <problemExpr2("Vacuous replace",e1,e2),g>;
 		}
-	return <ok(),grammar(g.roots, ps1 + normalise(ps4) + ps3)>;
+	return <ok(),grammar(g.N, ps1 + normalise(ps4) + ps3, g.S)>;
 }
 
 GProdList performReplace(GExpr e1, GExpr e2, GProdList ps)
@@ -29,6 +29,7 @@ GProdList performReplace(GExpr e1, GExpr e2, GProdList ps)
 	GExprList L5;
 	switch(e1)
 	{
+		// TODO: perhaps a different strategy for conjunctions?
 		case sequence(L1):
 		{
 			if (sequence(L4) := e2) L5 = L4; else L5 = [e2];
