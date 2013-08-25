@@ -11,24 +11,26 @@ import grammarlab::compare::Differ;
 
 XResult runAddV(GProd p1, GGrammar g)
 {
-		<ps1,ps2,ps3> = splitPbyW(g.prods,innt(p1.lhs));
-		if (isEmpty(ps2))
-			return <problemStr("Nonterminal must be defined",p1.lhs),g>;
-		if (p1 in ps2)
-			return <problemProd("Production rule is already present",p1),g>;
-		if (production(_,labelled(str l,_)) := p1)
-			if (production(_,labelled(str l,_)) <- ps)
-				return <problemStr("Another production rule with the same label is already present",l),g>;
-		return <ok(),grammar(g.roots, ps1 + ps2 + p1 + ps3)>;
+	GProdList ps1,ps2,ps3;
+	<ps1,ps2,ps3> = splitPbyW(g.P,innt(p1.lhs));
+	if (isEmpty(ps2))
+		return <problemStr("Nonterminal must be defined",p1.lhs),g>;
+	for (GProd p <- ps2, eqP(p,p1))
+		return <problemProd("Production rule is already present",p1),g>;
+	if (label(str name, _) := p1.rhs)
+		if (production(_,label(name,_)) <- ps1+ps3)
+			return <problemStr("Another production rule with the same label is already present",name),g>;
+	return <ok(), grammar(g.N, ps1 + ps2 + p1 + ps3, g.S)>;
 }
 
 XResult runDefine(GProdList ps1, GGrammar g)
 {
+	// TODO: reconsider relying on g.N
 	if ({str n} := definedNs(ps1))
 	{
-		if (n notin usedNs(g.prods))
+		if (n notin usedNs(g.P))
 			return <problemStr("Nonterminal must not be fresh, use introduce instead",n),g>;
-		return <ok(),grammar(g.roots, g.prods + ps1)>;
+		return <ok(), grammar(g.N + n, g.P + ps1, g.S)>;
 	}
 	else
 		return <problem("Multiple defined nonterminals found"),g>;
@@ -36,15 +38,14 @@ XResult runDefine(GProdList ps1, GGrammar g)
 
 XResult runEliminate(str x, GGrammar g)
 {
-	// TODO: can we eliminate root?
-	if (x in g.roots)
+	if (x in g.S)
 		return <problemStr("Cannot eliminate root nonterminal",x),g>;
-	if (x notin definedNs(g.prods))
+	if (x notin definedNs(g.P))
 		return <freshName(x),g>;
-	<ps1,_,ps3> = splitPbyW(g.prods,innt(x));
+	<ps1,_,ps3> = splitPbyW(g.P,innt(x));
 	if (x in usedNs(ps1+ps3))
 		return <notFreshName(x),g>;
-	return <ok(),grammar(g.roots, ps1 + ps3)>;
+	return <ok(), grammar(g.N - x, ps1 + ps3, g.S)>;
 }
 
 XResult runImportG(GProdList ps1, GGrammar g)
