@@ -56,7 +56,8 @@ data XCommand =
 	| splitN(str x, GProdList ps, XScope w)
 	| splitT(str x, list[str] ys, XScope w)
 	| unchain(GProd p)
-	| undefine(list[str] xs)
+	| undefine(list[str] xs) // TODO: make it legacy
+	| undefineNew(str x)
 	| unfold(str x, XScope w)
 	| unite(str x, str y)
 	| unlabel(str x) // ???
