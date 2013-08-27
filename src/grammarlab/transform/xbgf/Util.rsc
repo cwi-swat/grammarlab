@@ -15,13 +15,14 @@ public XOutcome freshN(str n) = freshName("Nonterminal",n);
 public XOutcome notFreshName(str name, str n) = problemStr("<name> must be fresh",n);
 public XOutcome freshName(str name, str n) = problemStr("<name> must not be fresh",n);
 
+// TODO: refocus these to work with named markers
 public GProd unmark (GProd p1)
 {
-	if (/marked(_) !:= p1)
+	if (/mark("",_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case marked(GExpr e) => e
+		case mark("",GExpr e) => e
 	};
 	//return normalise(p2);
 	return p2;
@@ -29,23 +30,23 @@ public GProd unmark (GProd p1)
 
 public GProd demark (GProd p1) 
 {
-	if (/marked(_) !:= p1)
+	if (/mark("",_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = visit(p1)
 	{
-		case sequence([*L1,marked(GExpr e),*L2]) => sequence(L1 + L2)
-		case marked(_) => epsilon()
+		case sequence([*L1,mark(_,GExpr e),*L2]) => sequence(L1 + L2)
+		case mark("",_) => epsilon()
 	}
 	return p2;
 }
 
 public GProd demarkH (GProd p1) 
 {
-	if (/marked(_) !:= p1)
+	if (/mark(_,_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case choice([*L1,marked(GExpr e),*L2]) => choice(L1 + L2)
+		case choice([*L1,mark(_,GExpr e),*L2]) => choice(L1 + L2)
 	}
 	return p2;
 }
@@ -54,19 +55,20 @@ public GProd replaceMarker (GProd p1, GExpr e)
 {
 	p2 = visit(p1)
 	{
-		case marked(_) => e
+		case mark(_,_) => e
 	}
 	return normalise(p2);
 }
 
+// TODO: make it conform to the new label-mark model
 // remove selectors from marked subexpressions
 public GProd demarkS (GProd p1) 
 {
-	if (/marked(_) !:= p1)
+	if (/mark(_,_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case marked(selectable(str selector, GExpr expr)) => expr
+		case mark("",label(_, GExpr expr)) => expr
 	}
 	return normalise(p2);
 }
