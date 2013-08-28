@@ -68,7 +68,7 @@ public GProd demarkS (GProd p1)
 		throw "<p1> must contain markers.";
 	p2 = innermost visit(p1)
 	{
-		case mark("",label(_, GExpr expr)) => expr
+		case mark("",mark(_, GExpr expr)) => expr
 	}
 	return normalise(p2);
 }
