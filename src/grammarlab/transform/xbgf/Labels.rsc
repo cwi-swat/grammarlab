@@ -30,7 +30,7 @@ XResult runRenameL(str x, str y, GGrammar g)
 		return <problem("Target label must not be empty for renaming, use unlabel"),g>;
 	if (len([e | /label(x,e) <- g.P]) != 1)
 		return <problemStr("Source name for renaming must be uniquely used",x),g>;
-	if (/label(y,_) !:= g.P)
+	if (/label(y,_) := g.P)
 		return <problemStr("Target name for renaming must be fresh",y),g>;
 	<ps1,ps2,ps3> = splitPbyW(g.P, inlabel(x));
 	if ([production(lhs, label(x, GExpr e))] := ps2)
