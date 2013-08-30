@@ -2,6 +2,7 @@
 module grammarlab::transform::xbgf::Util
 
 //import lib::Rascalware;
+import grammarlab::lib::Sizes;
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;

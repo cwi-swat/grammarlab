@@ -1,7 +1,8 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::lib::Squeeze
 
-public list[&T] squeeze(list[&T] a)
+public list[str] squeeze([]) = [];
+public default list[&T] squeeze(list[&T] a)
 {
 	set[&T] visited = {};
 	list[&T] res = [];
