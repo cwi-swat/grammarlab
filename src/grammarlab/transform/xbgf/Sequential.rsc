@@ -9,15 +9,16 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
+// TODO: reimplement for arbitrary markers
 XResult runAppear(GProd p1, GGrammar g)
 {
 	p2 = demark(p1);
-	if (!inProds(p2,g.prods))
+	if (!inProds(p2,g.P))
 		return <notFoundP(p2),g>;
-	for (/marked(e) := p1)
+	for (/mark("",e) := p1)
 		if (optional(_) !:= e && star(_) !:= e)
 			return <problemProd("Production rule does not have an optional part marked",p1),g>;
-	return <ok(),grammar(g.roots, replaceP(g.prods,p2,unmark(p1)))>;
+	return <ok(),grammar(g.N, replaceP(g.P,p2,unmark(p1)), g.S)>;
 }
 
 XResult runDisappear(GProd p1, GGrammar g)
@@ -25,10 +26,10 @@ XResult runDisappear(GProd p1, GGrammar g)
 	p2 = unmark(p1);
 	if (!inProds(p2,g.prods))
 		return <notFoundP(p2),g>;
-	for (/marked(e) := p1)
+	for (/mark("",e) := p1)
 		if (optional(_) !:= e && star(_) !:= e)
 			return <problemProd("Production rule does not have an optional part marked",p2),g>;
-	return <ok(),grammar(g.roots, replaceP(g.prods,p2,demark(p1)))>;
+	return <ok(),grammar(g.N, replaceP(g.P,p2,demark(p1)), g.S)>;
 }
 
 XResult runInject(GProd p1, GGrammar g)
@@ -36,18 +37,18 @@ XResult runInject(GProd p1, GGrammar g)
 	p2 = demark(p1);
 	if (!inProds(p2,g.prods))
 		return <notFoundP(p2),g>;
-	return <ok(),grammar(g.roots, replaceP(g.prods,p2,unmark(p1)))>;
+	return <ok(),grammar(g.N, replaceP(g.P,p2,unmark(p1)), g.S)>;
 }
 
 XResult runPermute(GProd p, GGrammar g)
 {
 	if (production(str n, sequence(L1)) := p)
 	{
-		<ps1,ps2,ps3> = splitPbyW(g.prods,innt(n));
+		<ps1,ps2,ps3> = splitPbyW(g.P,innt(n));
 		if ([production(n, sequence(L2))] := ps2)
 		{
 			if (seteq(L1,L2))
-				return <ok(),grammar(g.roots, ps1 + p + ps3)>;
+				return <ok(),grammar(g.N, ps1 + p + ps3, g.S)>;
 			else
 				return <problemExpr2("Phrases must be permutations of each other",sequence(L1),sequence(L2)),g>;
 		}
@@ -63,8 +64,8 @@ XResult runPermute(GProd p, GGrammar g)
 XResult runProject(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
-	if (!inProds(p2,g.prods))
+	if (!inProds(p2,g.P))
 		return <notFoundP(p2),g>;
-	return <ok(), grammar(g.roots, replaceP(g.prods, p2, demark(p1)))>;
+	return <ok(), grammar(g.N, replaceP(g.P, p2, demark(p1)), g.S)>;
 }
 
