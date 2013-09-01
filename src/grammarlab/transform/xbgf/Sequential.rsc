@@ -24,7 +24,7 @@ XResult runAppear(GProd p1, GGrammar g)
 XResult runDisappear(GProd p1, GGrammar g)
 {
 	p2 = unmark(p1);
-	if (!inProds(p2,g.prods))
+	if (!inProds(p2,g.P))
 		return <notFoundP(p2),g>;
 	for (/mark("",e) := p1)
 		if (optional(_) !:= e && star(_) !:= e)
@@ -35,7 +35,7 @@ XResult runDisappear(GProd p1, GGrammar g)
 XResult runInject(GProd p1, GGrammar g)
 {
 	p2 = demark(p1);
-	if (!inProds(p2,g.prods))
+	if (!inProds(p2,g.P))
 		return <notFoundP(p2),g>;
 	return <ok(),grammar(g.N, replaceP(g.P,p2,unmark(p1)), g.S)>;
 }

@@ -36,22 +36,22 @@ GProd performDeYacc(GProdSet pset)
 	{
 		case {production(n,sequence([nonterminal(n),x])),
 		      production(n,x)}:
-			return production("",n,plus(x));
+			return production(n,plus(x));
 		case {production(n,sequence([x,nonterminal(n)])),
 		      production(n,x)}:
-			return production("",n,plus(x));
+			return production(n,plus(x));
 		case {production(n,sequence([nonterminal(n),x])),
 		      production(n,y)}:
-			return production("",n,sequence([y,star(x)]));
+			return production(n,sequence([y,star(x)]));
 		case {production(n,sequence([x,nonterminal(n)])),
 		      production(n,y)}:
-			return production("",n,sequence([star(x),y]));
+			return production(n,sequence([star(x),y]));
 		case {production(n,sequence([x,nonterminal(n)])),
 		      production(n,epsilon())}:
-			return production("",n,star(x));
+			return production(n,star(x));
 		case {production(n,sequence([nonterminal(n),x])),
 		      production(n,epsilon())}:
-			return production("",n,star(x));
+			return production(n,star(x));
 		default:
 			throw "Nonterminal <x> is not deyaccifiable.";
 	};
@@ -59,23 +59,23 @@ GProd performDeYacc(GProdSet pset)
 
 XResult runDeyaccify(str n, GGrammar g)
 {
-	if (n notin definedNs(g.prods))
+	if (n notin g.N)
 		return <freshName(n),g>;
-	<ps1,ps2,ps3> = splitPbyW(g.prods,innt(n));
+	<ps1,ps2,ps3> = splitPbyW(g.P,innt(n));
 	if (len(ps2) < 2)
 		return <problemStr("Nonterminal must be defined vertically for deyaccification to work",n),g>;
 	if (len(ps2) > 2)
 		return <problemProds("No deyaccification patterns for <len(ps2)> production rules known",ps2),g>;
-	return <ok(),grammar(g.roots, ps1 + performDeYacc(toSet(ps2)) + ps3)>;
+	return <ok(),grammar(g.N, ps1 + performDeYacc(toSet(ps2)) + ps3, g.S)>;
 }
 
 XResult runYaccify(GProdList ps1, GGrammar g)
 {
 	if ({str x} := definedNs(ps1))
 	{
-		<ps3,ps4,ps5> = splitPbyW(g.prods,innt(x));
+		<ps3,ps4,ps5> = splitPbyW(g.P,innt(x));
 		if ([dyp1] := ps4 && [yp1,yp2] := ps1 && yaccification(dyp1,{yp1,yp2}))
-			return <ok(),grammar(g.roots, ps3 + ps1 + ps5)>;
+			return <ok(), grammar(g.N, ps3 + ps1 + ps5, g.S)>;
 		else
 			return <problemProds2("Unsuitable yaccification",ps1,ps4),g>;
 	}

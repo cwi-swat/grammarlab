@@ -20,10 +20,10 @@ XResult runFactor(GExpr e1, GExpr e2, XScope w, GGrammar g)
 
 XResult runDistribute(XScope w, GGrammar g)
 {
-	<ps1,ps2,ps3> = splitPbyW(g.prods,w);
+	<ps1,ps2,ps3> = splitPbyW(g.P,w);
 	if (/choice(_) !:= ps2)
 		return <problemScope("No choices found, nothing to distribute",w),g>;
-	return <ok(),grammar(g.roots, ps1 + normalise([makeDistributed(p) | p <- ps2]) + ps3)>;
+	return <ok(),grammar(g.N, ps1 + normalise([makeDistributed(p) | p <- ps2]) + ps3, g.S)>;
 }
 
 GProd makeDistributed(GProd p) = production(p.lhs, makeDistributed(p.rhs));
