@@ -49,14 +49,14 @@ XResult runEliminate(str x, GGrammar g)
 
 XResult runImportG(GProdList ps, GGrammar g)
 {
-	GProdSet defs1 = {p.lhs | GProd p <- ps};
-	GProdSet defs12 = defs1 & toSet(g.N);
-	GProdSet du12 = defs1 & {n | /nonterminal(str n) := g.P};
+	set[str] defs1 = {p.lhs | GProd p <- ps};
+	set[str] defs12 = defs1 & toSet(g.N);
+	set[str] du12 = defs1 & {n | /nonterminal(str n) := g.P};
 	if (!isEmpty(defs12))
 		return <problemStrs("Import clashes with existing definitions", toList(defs12)),g>;
 	if (!isEmpty(du12))
 		return <problemStrs("Import clashes with existing definitions", toList(du12)),g>;
-	return <ok(), grammar(g.N, ps + g.P, g.S)>;
+	return <ok(), normalise(grammar(g.N, ps + g.P, g.S))>;
 }
 
 XResult runIntroduce(GProdList ps, GGrammar g)

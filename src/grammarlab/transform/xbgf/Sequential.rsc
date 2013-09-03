@@ -47,7 +47,7 @@ XResult runPermute(GProd p, GGrammar g)
 		<ps1,ps2,ps3> = splitPbyW(g.P,innt(n));
 		if ([production(n, sequence(L2))] := ps2)
 		{
-			if (seteq(L1,L2))
+			if (eqEsN(L1,L2))
 				return <ok(),grammar(g.N, ps1 + p + ps3, g.S)>;
 			else
 				return <problemExpr2("Phrases must be permutations of each other",sequence(L1),sequence(L2)),g>;

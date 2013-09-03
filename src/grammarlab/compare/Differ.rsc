@@ -77,6 +77,18 @@ public bool eqP(GProd p1, GProd p2) = p1 == p2;
 
 public bool eqPs(GProdList ps1, GProdList ps2) = gdt(ps1,ps2) == <[],[]>;
 
+// order-preserving comparison
+public bool eqEsO(GExprList L1, GExprList L2) = len(L1)==len(L2) && (true | eqE(L1[i],L2[i]) | int i <- [0..len(L1)]);
+
+// not order-preserving comparison
+public bool eqEsN(GExprList L1, GExprList L2)
+{
+	for (GExpr e1 <- L1, GExpr e2 <- L2)
+		if (eqE(e1,e2))
+			return eqEsN(L1-e1, L2-e2);
+	return false;
+}
+
 // generic differ, returns unmatched production rules
 tuple[GProdList,GProdList] gdt(GProdList ps1, GProdList ps2)
 {

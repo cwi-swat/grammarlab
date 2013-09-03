@@ -71,14 +71,12 @@ GGrammar performRenameN(str x, str y, GGrammar g)
 
 XResult runReroot(list[str] xs, GGrammar g)
 {
-	// TODO: make sure this works
-	if (seteq(xs, g.S))
+	if (toSet(xs) == toSet(g.S))
 		return <problemStrs("Vacuous reroot",xs),g>;
 	// xbgf1.pro only asked for it to be a subset of allNs, not definedNs; we're more strict here
-	if (subset(xs, g.N))
-		return <ok(),grammar(g.M, xs, g.S)>;
-	else
-		return <problemStrs("Not all nonterminals are defined",xs),g>;
+	for (str x <- xs, x notin g.N)
+		return <problemStr("Cannot reroot to undefined nonterminal",x),g>;
+	return <ok(), grammar(g.N, g.P, xs)>;
 }
 
 XResult runSplitN(str x, GProdList ps0, XScope w, GGrammar g)
