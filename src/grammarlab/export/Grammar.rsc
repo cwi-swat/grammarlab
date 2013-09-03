@@ -66,7 +66,7 @@ public str ppx(GExpr::mark(str name, GExpr expr), EBNF meta) =
 	ppxpg(expr,meta);
 
 public str ppx(GExpr::sequence(GExprList exprs), EBNF meta) =
-	mapjoin(str(GExpr e){return ppx(e,meta);}, exprs, getMeta(concatenate_symbol(), meta));
+	mapjoin(str(GExpr e){return ppxpg(e,meta);}, exprs, getMeta(concatenate_symbol(), meta));
 
 public str ppx(GExpr::choice(GExprList exprs), EBNF meta) =
 	mapjoin(str(GExpr e){return ppxpg(e,meta);}, exprs, getMetaE(definition_separator_symbol(), meta));

@@ -2,6 +2,7 @@
 module grammarlab::transform::xbgf::Brutal
 
 //import lib::Rascalware;
+import grammarlab::lib::Sizes;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::XScope;
@@ -9,6 +10,7 @@ import grammarlab::language::XOutcome;
 import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
+import List; //slice
 
 XResult runReplace(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {

@@ -28,39 +28,43 @@ XResult runDistribute(XScope w, GGrammar g)
 
 GProd makeDistributed(GProd p) = production(p.lhs, makeDistributed(p.rhs));
 
-GExpr makeDistributed(GExpr e1)
+// propagating distribution - could possibly be rewritten as a visitor, but more understandable this way
+GExpr makeDistributed(label(str name, GExpr expr)) = label(name,makeDistributed(expr));
+GExpr makeDistributed(mark(str name, GExpr expr)) = mark(name,makeDistributed(expr));
+GExpr makeDistributed(not(GExpr expr)) = not(makeDistributed(expr));
+GExpr makeDistributed(except(GExpr expr1, GExpr expr2)) = except(makeDistributed(expr1),makeDistributed(expr2));
+GExpr makeDistributed(optional(GExpr expr)) = optional(makeDistributed(expr));
+GExpr makeDistributed(star(GExpr expr)) = star(makeDistributed(expr));
+GExpr makeDistributed(plus(GExpr expr)) = plus(makeDistributed(expr));
+GExpr makeDistributed(sepliststar(GExpr expr, GExpr sep)) = sepliststar(makeDistributed(expr),makeDistributed(sep));
+GExpr makeDistributed(seplistplus(GExpr expr, GExpr sep)) = seplistplus(makeDistributed(expr),makeDistributed(sep));
+GExpr makeDistributed(choice(GExprList L1))
 {
-	if (choice(L1) := e1) // excessive normalisation
+	GExprList Ln = [];
+	for (e2 <- L1)
 	{
-		GExprList Ln = [];
-		for (e2 <- L1)
-		{
-			e3 = makeDistributed(e2);
-			if (choice(L2) := e3)
-				Ln += L2;
-			else
-				Ln += e2; // TODO or e3?
-		}
-		return choice(Ln);
+		e3 = makeDistributed(e2);
+		if (choice(L2) := e3)
+			Ln += L2;
+		else
+			Ln += e2; // TODO or e3?
 	}
-	elseif (sequence(L1) := e1)
-	{
-		list[GExprList] Ln = [[]];
-		for (e2 <- L1)
-		{
-			e3 = makeDistributed(e2);
-			if (choice(L2) := e3)
-				{
-					Lm = [];
-					for (e4 <- L2)
-						Lm += [Li + e4 | Li <- Ln];
-					Ln = Lm;
-				}
-			else
-				Ln = [Li + e3 | Li <- Ln]; // TODO or e2?
-		}
-		return choice([sequence(Li) | Li <- Ln]);
-	}
-	else
-		return e1;
+	return choice(Ln);
 }
+
+// The real magic of distribution happens here
+GExpr makeDistributed(sequence(L1))
+{
+	list[GExprList] Ln = [[]];
+	for (e2 <- L1)
+	{
+		e3 = makeDistributed(e2);
+		if (choice(L2) := e3)
+			Ln = [Li + e4 | Li <- Ln, e4 <- L2];
+		else
+			Ln = [Li + e3 | Li <- Ln]; // TODO or e2?
+	}
+	return choice([sequence(Li) | Li <- Ln]);
+}
+
+default GExpr makeDistributed(GExpr e) = e;
