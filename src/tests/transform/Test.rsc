@@ -559,10 +559,10 @@ bool case_define(bool debug)
 				nonterminal("expr")]))],
 		[]);
 	XSequence xbgf =
-		[define(production("op",
+		[define([production("op",
 					terminal("+")),
 				production("op",
-					terminal("-")))];
+					terminal("-"))])];
 	GGrammar bl = grammar(["expr","op"],
 		[production("expr",
 			nonterminal("int")),
@@ -887,14 +887,15 @@ bool case_downgrade(bool debug)
 				nonterminal("g")]))],
 		[]);
 	XSequence xbgf =
-		[downgrade(production("a",
+		[downgrade(
+			production("a",
 				sequence([
 					mark("",nonterminal("b")),
 					nonterminal("c")])),
 			production("b",
-			sequence([
-				nonterminal("d"),
-				nonterminal("e")])))];
+				sequence([
+					nonterminal("d"),
+					nonterminal("e")])))];
 	GGrammar bl = grammar(["a","b"],
 		[production("a",
 			sequence([
@@ -1544,14 +1545,14 @@ bool case_import(bool debug)
 				terminal("b")]))],
 		[]);
 	XSequence xbgf =
-		[importG(production("A",
+		[importG([production("A",
 					sequence([
 						nonterminal("B"),
 						nonterminal("X")])),
 				production("B",
 					choice([
 						nonterminal("A"),
-						epsilon()])))];
+						epsilon()]))])];
 	GGrammar bl = grammar(["X","A","B"],
 		[production("X",
 			sequence([
@@ -1638,10 +1639,10 @@ bool case_introduce(bool debug)
 			epsilon())],
 		[]);
 	XSequence xbgf =
-		[introduce(production("c",
+		[introduce([production("c",
 					nonterminal("a")),
 				production("c",
-					nonterminal("b")))];
+					nonterminal("b"))])];
 	GGrammar bl = grammar(["a","b","c"],
 		[production("a",
 			nonterminal("b")),
@@ -1885,16 +1886,17 @@ bool case_massage_assoc_p(bool debug)
 				nonterminal("a")]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				plus(sequence([
 					nonterminal("a"),
 					nonterminal("b")])),
 				nonterminal("a")]),
 			sequence([
-			nonterminal("a"),
-			plus(sequence([
-				nonterminal("b"),
-				nonterminal("a")]))]),
+				nonterminal("a"),
+				plus(sequence([
+					nonterminal("b"),
+					nonterminal("a")]))]),
 			globally())];
 	GGrammar bl = grammar(["N"],
 		[production("N",
@@ -1921,16 +1923,17 @@ bool case_massage_assoc_q(bool debug)
 				nonterminal("a")]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				optional(sequence([
 					nonterminal("a"),
 					nonterminal("b")])),
 				nonterminal("a")]),
 			sequence([
-			nonterminal("a"),
-			optional(sequence([
-				nonterminal("b"),
-				nonterminal("a")]))]),
+				nonterminal("a"),
+				optional(sequence([
+					nonterminal("b"),
+					nonterminal("a")]))]),
 			globally())];
 	GGrammar bl = grammar(["N"],
 		[production("N",
@@ -1957,16 +1960,17 @@ bool case_massage_assoc_s(bool debug)
 				nonterminal("a")]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				star(sequence([
 					nonterminal("a"),
 					nonterminal("b")])),
 				nonterminal("a")]),
 			sequence([
-			nonterminal("a"),
-			star(sequence([
-				nonterminal("b"),
-				nonterminal("a")]))]),
+				nonterminal("a"),
+				star(sequence([
+					nonterminal("b"),
+					nonterminal("a")]))]),
 			globally())];
 	GGrammar bl = grammar(["N"],
 		[production("N",
@@ -1991,7 +1995,8 @@ bool case_massage_ch_ep(bool debug)
 				epsilon()]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				epsilon(),
 				plus(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2015,7 +2020,8 @@ bool case_massage_ch_eq(bool debug)
 				epsilon()]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				epsilon(),
 				optional(nonterminal("bar"))]),
 			optional(nonterminal("bar")),
@@ -2039,7 +2045,8 @@ bool case_massage_ch_es(bool debug)
 				epsilon()]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				epsilon(),
 				star(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2063,7 +2070,8 @@ bool case_massage_ch_ex(bool debug)
 				epsilon()]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				epsilon(),
 				nonterminal("bar")]),
 			optional(nonterminal("bar")),
@@ -2087,7 +2095,8 @@ bool case_massage_ch_ps(bool debug)
 				plus(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				plus(nonterminal("bar")),
 				star(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2111,7 +2120,8 @@ bool case_massage_ch_qp(bool debug)
 				optional(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				optional(nonterminal("bar")),
 				plus(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2135,7 +2145,8 @@ bool case_massage_ch_qs(bool debug)
 				optional(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				optional(nonterminal("bar")),
 				star(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2159,7 +2170,8 @@ bool case_massage_ch_xp(bool debug)
 				nonterminal("bar")]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				nonterminal("bar"),
 				plus(nonterminal("bar"))]),
 			plus(nonterminal("bar")),
@@ -2183,7 +2195,8 @@ bool case_massage_ch_xq(bool debug)
 				nonterminal("bar")]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				nonterminal("bar"),
 				optional(nonterminal("bar"))]),
 			optional(nonterminal("bar")),
@@ -2207,7 +2220,8 @@ bool case_massage_ch_xs(bool debug)
 				nonterminal("bar")]))],
 		[]);
 	XSequence xbgf =
-		[massage(choice([
+		[massage(
+			choice([
 				nonterminal("bar"),
 				star(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2231,17 +2245,19 @@ bool case_massage_ch_xx1(bool debug)
 				optional(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(optional(nonterminal("bar")),
+		[massage(
+			optional(nonterminal("bar")),
 			choice([
-			mark("one",optional(nonterminal("bar"))),
-			mark("two",optional(nonterminal("bar")))]),
+				mark("one",optional(nonterminal("bar"))),
+				mark("two",optional(nonterminal("bar")))]),
 			globally()),
 		anonymize(production("foo",
 				choice([
 					plus(nonterminal("bar")),
 					mark("",mark("one",optional(nonterminal("bar")))),
 					mark("two",optional(nonterminal("bar")))]))),
-		massage(choice([
+		massage(
+			choice([
 				optional(nonterminal("bar")),
 				plus(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2269,21 +2285,24 @@ bool case_massage_ch_xx2(bool debug)
 			star(nonterminal("bar")))],
 		[]);
 	XSequence xbgf =
-		[massage(star(nonterminal("bar")),
+		[massage(
+			star(nonterminal("bar")),
 			choice([
-			mark("one",star(nonterminal("bar"))),
-			mark("two",star(nonterminal("bar")))]),
+				mark("one",star(nonterminal("bar"))),
+				mark("two",star(nonterminal("bar")))]),
 			globally()),
 		vertical(innt("foo")),
-		massage(star(nonterminal("bar")),
+		massage(
+			star(nonterminal("bar")),
 			choice([
-			epsilon(),
-			plus(nonterminal("bar"))]),
+				epsilon(),
+				plus(nonterminal("bar"))]),
 			inlabel("one")),
-		massage(star(nonterminal("bar")),
+		massage(
+			star(nonterminal("bar")),
 			choice([
-			optional(nonterminal("bar")),
-			plus(nonterminal("bar"))]),
+				optional(nonterminal("bar")),
+				plus(nonterminal("bar"))]),
 			inlabel("two")),
 		extract(production("barplus",
 			plus(nonterminal("bar"))),
@@ -2314,11 +2333,12 @@ bool case_massage_ch_xx3(bool debug)
 			nonterminal("bar"))],
 		[]);
 	XSequence xbgf =
-		[massage(nonterminal("bar"),
+		[massage(
+			nonterminal("bar"),
 			choice([
-			mark("one",nonterminal("bar")),
-			mark("two",nonterminal("bar")),
-			mark("three",nonterminal("bar"))]),
+				mark("one",nonterminal("bar")),
+				mark("two",nonterminal("bar")),
+				mark("three",nonterminal("bar"))]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2340,7 +2360,8 @@ bool case_massage_comp_pp(bool debug)
 			plus(plus(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(plus(plus(nonterminal("bar"))),
+		[massage(
+			plus(plus(nonterminal("bar"))),
 			plus(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2360,7 +2381,8 @@ bool case_massage_comp_pq(bool debug)
 			optional(plus(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(optional(plus(nonterminal("bar"))),
+		[massage(
+			optional(plus(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2380,7 +2402,8 @@ bool case_massage_comp_ps(bool debug)
 			star(plus(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(star(plus(nonterminal("bar"))),
+		[massage(
+			star(plus(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2400,7 +2423,8 @@ bool case_massage_comp_qp(bool debug)
 			plus(optional(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(plus(optional(nonterminal("bar"))),
+		[massage(
+			plus(optional(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2420,7 +2444,8 @@ bool case_massage_comp_qq(bool debug)
 			optional(optional(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(optional(optional(nonterminal("bar"))),
+		[massage(
+			optional(optional(nonterminal("bar"))),
 			optional(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2440,7 +2465,8 @@ bool case_massage_comp_qs(bool debug)
 			star(optional(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(star(optional(nonterminal("bar"))),
+		[massage(
+			star(optional(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2460,7 +2486,8 @@ bool case_massage_comp_sp(bool debug)
 			plus(star(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(plus(star(nonterminal("bar"))),
+		[massage(
+			plus(star(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2480,7 +2507,8 @@ bool case_massage_comp_sq(bool debug)
 			optional(star(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(optional(star(nonterminal("bar"))),
+		[massage(
+			optional(star(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2500,7 +2528,8 @@ bool case_massage_comp_ss(bool debug)
 			star(star(nonterminal("bar"))))],
 		[]);
 	XSequence xbgf =
-		[massage(star(star(nonterminal("bar"))),
+		[massage(
+			star(star(nonterminal("bar"))),
 			star(nonterminal("bar")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2524,27 +2553,31 @@ bool case_massage_complex(bool debug)
 					optional(nonterminal("bar"))]))]))],
 		[]);
 	XSequence xbgf =
-		[massage(optional(sequence([
+		[massage(
+			optional(sequence([
 				star(nonterminal("foo")),
 				optional(nonterminal("bar"))])),
 			choice([
-			epsilon(),
-			sequence([
-				star(nonterminal("foo")),
-				optional(nonterminal("bar"))])]),
+				epsilon(),
+				sequence([
+					star(nonterminal("foo")),
+					optional(nonterminal("bar"))])]),
 			globally()),
-		massage(optional(nonterminal("bar")),
+		massage(
+			optional(nonterminal("bar")),
 			choice([
-			nonterminal("bar"),
-			epsilon()]),
+				nonterminal("bar"),
+				epsilon()]),
 			globally()),
 		distribute(innt("wez")),
-		massage(sequence([
+		massage(
+			sequence([
 				nonterminal("foo"),
 				star(nonterminal("foo"))]),
 			plus(nonterminal("foo")),
 			globally()),
-		massage(choice([
+		massage(
+			choice([
 				nonterminal("foo"),
 				plus(nonterminal("foo"))]),
 			plus(nonterminal("foo")),
@@ -2561,7 +2594,8 @@ bool case_massage_complex(bool debug)
 					nonterminal("bar"),
 					epsilon()])]),
 			globally()),
-		massage(choice([
+		massage(
+			choice([
 				nonterminal("bar"),
 				epsilon()]),
 			optional(nonterminal("bar")),
@@ -2587,19 +2621,21 @@ bool case_massage_distr_ch(bool debug)
 				nonterminal("qux")])))],
 		[]);
 	XSequence xbgf =
-		[massage(optional(choice([
+		[massage(
+			optional(choice([
 				nonterminal("bar"),
 				nonterminal("qux")])),
 			choice([
-			choice([
-				nonterminal("bar"),
-				nonterminal("qux")]),
-			epsilon()]),
+				choice([
+					nonterminal("bar"),
+					nonterminal("qux")]),
+				epsilon()]),
 			globally()),
-		massage(epsilon(),
+		massage(
+			epsilon(),
 			choice([
-			mark("bar",epsilon()),
-			mark("qux",epsilon())]),
+				mark("bar",epsilon()),
+				mark("qux",epsilon())]),
 			globally()),
 		factor(
 			choice([
@@ -2625,7 +2661,8 @@ bool case_massage_distr_ch(bool debug)
 					choice([
 						nonterminal("qux"),
 						mark("qux",epsilon())])]))),
-		massage(choice([
+		massage(
+			choice([
 				nonterminal("bar"),
 				epsilon()]),
 			optional(nonterminal("bar")),
@@ -2636,7 +2673,8 @@ bool case_massage_distr_ch(bool debug)
 					choice([
 						nonterminal("qux"),
 						mark("",mark("qux",epsilon()))])]))),
-		massage(choice([
+		massage(
+			choice([
 				nonterminal("qux"),
 				epsilon()]),
 			optional(nonterminal("qux")),
@@ -2662,12 +2700,13 @@ bool case_massage_morgan1(bool debug)
 				nonterminal("bar")])))],
 		[]);
 	XSequence xbgf =
-		[massage(not(allof([
+		[massage(
+			not(allof([
 				nonterminal("foo"),
 				nonterminal("bar")])),
 			choice([
-			not(nonterminal("bar")),
-			not(nonterminal("foo"))]),
+				not(nonterminal("bar")),
+				not(nonterminal("foo"))]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2690,12 +2729,13 @@ bool case_massage_morgan2(bool debug)
 				not(nonterminal("bar"))])))],
 		[]);
 	XSequence xbgf =
-		[massage(not(allof([
+		[massage(
+			not(allof([
 				not(nonterminal("foo")),
 				not(nonterminal("bar"))])),
 			choice([
-			nonterminal("foo"),
-			nonterminal("bar")]),
+				nonterminal("foo"),
+				nonterminal("bar")]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2718,12 +2758,13 @@ bool case_massage_morgan3(bool debug)
 				nonterminal("bar")])))],
 		[]);
 	XSequence xbgf =
-		[massage(not(choice([
+		[massage(
+			not(choice([
 				nonterminal("foo"),
 				nonterminal("bar")])),
 			allof([
-			not(nonterminal("bar")),
-			not(nonterminal("foo"))]),
+				not(nonterminal("bar")),
+				not(nonterminal("foo"))]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2746,12 +2787,13 @@ bool case_massage_morgan4(bool debug)
 				not(nonterminal("bar"))])))],
 		[]);
 	XSequence xbgf =
-		[massage(not(choice([
+		[massage(
+			not(choice([
 				not(nonterminal("foo")),
 				not(nonterminal("bar"))])),
 			allof([
-			nonterminal("foo"),
-			nonterminal("bar")]),
+				nonterminal("foo"),
+				nonterminal("bar")]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2774,7 +2816,8 @@ bool case_massage_nn(bool debug)
 				nonterminal("foo")]))],
 		[]);
 	XSequence xbgf =
-		[massage(nonterminal("foo"),
+		[massage(
+			nonterminal("foo"),
 			not(not(nonterminal("foo"))),
 			globally())];
 	GGrammar bl = grammar(["foo"],
@@ -2796,7 +2839,8 @@ bool case_massage_sel_s(bool debug)
 			star(mark("fun",nonterminal("function"))))],
 		[]);
 	XSequence xbgf =
-		[massage(star(mark("fun",nonterminal("function"))),
+		[massage(
+			star(mark("fun",nonterminal("function"))),
 			mark("fun",star(nonterminal("function"))),
 			globally())];
 	GGrammar bl = grammar(["program"],
@@ -2818,15 +2862,17 @@ bool case_massage_seq_pq(bool debug)
 				optional(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				plus(nonterminal("bar")),
 				optional(nonterminal("bar"))]),
 			plus(nonterminal("bar")),
 			globally()),
-		massage(plus(nonterminal("bar")),
+		massage(
+			plus(nonterminal("bar")),
 			sequence([
-			optional(nonterminal("bar")),
-			plus(nonterminal("bar"))]),
+				optional(nonterminal("bar")),
+				plus(nonterminal("bar"))]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2849,15 +2895,17 @@ bool case_massage_seq_ps(bool debug)
 				star(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				plus(nonterminal("bar")),
 				star(nonterminal("bar"))]),
 			plus(nonterminal("bar")),
 			globally()),
-		massage(plus(nonterminal("bar")),
+		massage(
+			plus(nonterminal("bar")),
 			sequence([
-			star(nonterminal("bar")),
-			plus(nonterminal("bar"))]),
+				star(nonterminal("bar")),
+				plus(nonterminal("bar"))]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2880,15 +2928,17 @@ bool case_massage_seq_sq(bool debug)
 				optional(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				star(nonterminal("bar")),
 				optional(nonterminal("bar"))]),
 			star(nonterminal("bar")),
 			globally()),
-		massage(star(nonterminal("bar")),
+		massage(
+			star(nonterminal("bar")),
 			sequence([
-			optional(nonterminal("bar")),
-			star(nonterminal("bar"))]),
+				optional(nonterminal("bar")),
+				star(nonterminal("bar"))]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2911,7 +2961,8 @@ bool case_massage_seq_ss(bool debug)
 				star(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				star(nonterminal("bar")),
 				star(nonterminal("bar"))]),
 			star(nonterminal("bar")),
@@ -2935,15 +2986,17 @@ bool case_massage_seq_xs(bool debug)
 				star(nonterminal("bar"))]))],
 		[]);
 	XSequence xbgf =
-		[massage(sequence([
+		[massage(
+			sequence([
 				nonterminal("bar"),
 				star(nonterminal("bar"))]),
 			plus(nonterminal("bar")),
 			globally()),
-		massage(plus(nonterminal("bar")),
+		massage(
+			plus(nonterminal("bar")),
 			sequence([
-			star(nonterminal("bar")),
-			nonterminal("bar")]),
+				star(nonterminal("bar")),
+				nonterminal("bar")]),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -2964,7 +3017,8 @@ bool case_narrow_global(bool debug)
 			mark("fun",star(nonterminal("function"))))],
 		[]);
 	XSequence xbgf =
-		[narrow(star(nonterminal("function")),
+		[narrow(
+			star(nonterminal("function")),
 			plus(nonterminal("function")),
 			globally())];
 	GGrammar bl = grammar(["program"],
@@ -2985,7 +3039,8 @@ bool case_narrow_l(bool debug)
 				mark("fun",plus(nonterminal("function")))))],
 		[]);
 	XSequence xbgf =
-		[narrow(plus(nonterminal("function")),
+		[narrow(
+			plus(nonterminal("function")),
 			nonterminal("function"),
 			inlabel("main"))];
 	GGrammar bl = grammar(["program"],
@@ -3006,7 +3061,8 @@ bool case_narrow_nt(bool debug)
 			mark("fun",plus(nonterminal("function"))))],
 		[]);
 	XSequence xbgf =
-		[narrow(plus(nonterminal("function")),
+		[narrow(
+			plus(nonterminal("function")),
 			nonterminal("function"),
 			innt("program"))];
 	GGrammar bl = grammar(["program"],
@@ -3156,8 +3212,8 @@ bool case_redefine(bool debug)
 			nonterminal("a"))],
 		[]);
 	XSequence xbgf =
-		[redefine(production("a",
-					star(nonterminal("b"))))];
+		[redefine([production("a",
+					star(nonterminal("b")))])];
 	GGrammar bl = grammar(["a","b"],
 		[production("a",
 			star(nonterminal("b"))),
@@ -3442,7 +3498,8 @@ bool case_replace_choice(bool debug)
 				nonterminal("c")]))],
 		[]);
 	XSequence xbgf =
-		[replace(choice([
+		[replace(
+			choice([
 				nonterminal("c"),
 				nonterminal("b")]),
 			nonterminal("d"),
@@ -3473,7 +3530,8 @@ bool case_replace_choice_part(bool debug)
 					nonterminal("e")])]))],
 		[]);
 	XSequence xbgf =
-		[replace(choice([
+		[replace(
+			choice([
 				sequence([
 					nonterminal("b"),
 					nonterminal("c")]),
@@ -3481,10 +3539,10 @@ bool case_replace_choice_part(bool debug)
 					nonterminal("b"),
 					nonterminal("e")])]),
 			sequence([
-			nonterminal("b"),
-			choice([
-				nonterminal("c"),
-				nonterminal("e")])]),
+				nonterminal("b"),
+				choice([
+					nonterminal("c"),
+					nonterminal("e")])]),
 			globally())];
 	GGrammar bl = grammar(["a"],
 		[production("a",
@@ -3521,7 +3579,8 @@ bool case_replace_global(bool debug)
 				nonterminal("x")))],
 		[]);
 	XSequence xbgf =
-		[replace(nonterminal("x"),
+		[replace(
+			nonterminal("x"),
 			nonterminal("y"),
 			globally())];
 	GGrammar bl = grammar(["a","b","c"],
@@ -3561,7 +3620,8 @@ bool case_replace_l(bool debug)
 				nonterminal("x")))],
 		[]);
 	XSequence xbgf =
-		[replace(nonterminal("x"),
+		[replace(
+			nonterminal("x"),
 			nonterminal("y"),
 			inlabel("l3"))];
 	GGrammar bl = grammar(["a","b","c"],
@@ -3601,7 +3661,8 @@ bool case_replace_nt(bool debug)
 				nonterminal("x")))],
 		[]);
 	XSequence xbgf =
-		[replace(nonterminal("x"),
+		[replace(
+			nonterminal("x"),
 			nonterminal("y"),
 			innt("b"))];
 	GGrammar bl = grammar(["a","b","c"],
@@ -3636,7 +3697,8 @@ bool case_replace_seq(bool debug)
 				nonterminal("wez")]))],
 		[]);
 	XSequence xbgf =
-		[replace(sequence([
+		[replace(
+			sequence([
 				nonterminal("bar"),
 				nonterminal("wez")]),
 			terminal("..."),
@@ -3711,9 +3773,11 @@ bool case_splitN1(bool debug)
 				terminal("d")))],
 		[]);
 	XSequence xbgf =
-		[splitN(foo,production("bar",
+		[splitN("foo",
+			[production("bar",
 					label("D",
-						terminal("d"))),nowhere())];
+						terminal("d")))],
+			nowhere())];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			label("A",
@@ -3745,9 +3809,11 @@ bool case_splitN2(bool debug)
 				nonterminal("foo")))],
 		[]);
 	XSequence xbgf =
-		[splitN(foo,production("bar",
+		[splitN("foo",
+			[production("bar",
 					label("D",
-						nonterminal("foo"))),nowhere())];
+						nonterminal("foo")))],
+			nowhere())];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			label("A",
@@ -3779,9 +3845,11 @@ bool case_splitN3(bool debug)
 				nonterminal("foo")))],
 		[]);
 	XSequence xbgf =
-		[splitN(foo,production("bar",
+		[splitN("foo",
+			[production("bar",
 					label("D",
-						nonterminal("foo"))),inlabel("B"))];
+						nonterminal("foo")))],
+			inlabel("B"))];
 	GGrammar bl = grammar(["foo","wez","bar"],
 		[production("foo",
 			label("A",
@@ -3813,9 +3881,11 @@ bool case_splitN4(bool debug)
 				nonterminal("foo")))],
 		[]);
 	XSequence xbgf =
-		[splitN(foo,production("bar",
+		[splitN("foo",
+			[production("bar",
 					label("D",
-						nonterminal("foo"))),inlabel("B"))];
+						nonterminal("foo")))],
+			inlabel("B"))];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			label("A",
@@ -3842,7 +3912,7 @@ bool case_splitT1(bool debug)
 			terminal("ab"))],
 		[]);
 	XSequence xbgf =
-		[splitT(ab,["a","b"],globally())];
+		[splitT("ab",["a","b"],globally())];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			sequence([
@@ -3868,7 +3938,7 @@ bool case_splitT2(bool debug)
 			terminal("ab"))],
 		[]);
 	XSequence xbgf =
-		[splitT(ab,["a","b"],innt("foo"))];
+		[splitT("ab",["a","b"],innt("foo"))];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			sequence([
@@ -3892,7 +3962,7 @@ bool case_splitT3(bool debug)
 			terminal("ab"))],
 		[]);
 	XSequence xbgf =
-		[splitT(abc,["a","bc"],innt("foo"))];
+		[splitT("abc",["a","bc"],innt("foo"))];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			sequence([
@@ -3918,7 +3988,7 @@ bool case_splitT4(bool debug)
 			terminal("bc"))],
 		[]);
 	XSequence xbgf =
-		[splitT(bc,["b","c"],innt("foo"))];
+		[splitT("bc",["b","c"],innt("foo"))];
 	GGrammar bl = grammar(["foo","bar"],
 		[production("foo",
 			sequence([
@@ -4079,7 +4149,7 @@ bool case_unfold(bool debug)
 			star(nonterminal("wez")))],
 		[]);
 	XSequence xbgf =
-		[unfold(bar,globally())];
+		[unfold("bar",globally())];
 	GGrammar bl = grammar(["foo","qux","bar"],
 		[production("foo",
 			label("l1",
@@ -4109,7 +4179,7 @@ bool case_unfold_l(bool debug)
 			star(nonterminal("wez")))],
 		[]);
 	XSequence xbgf =
-		[unfold(bar,inlabel("l1"))];
+		[unfold("bar",inlabel("l1"))];
 	GGrammar bl = grammar(["foo","qux","bar"],
 		[production("foo",
 			label("l1",
@@ -4137,7 +4207,7 @@ bool case_unfold_normalize(bool debug)
 			nonterminal("b"))],
 		[]);
 	XSequence xbgf =
-		[unfold(c,globally())];
+		[unfold("c",globally())];
 	GGrammar bl = grammar(["a","c"],
 		[production("a",
 			nonterminal("b")),
@@ -4163,7 +4233,7 @@ bool case_unfold_nt(bool debug)
 			star(nonterminal("wez")))],
 		[]);
 	XSequence xbgf =
-		[unfold(bar,innt("foo"))];
+		[unfold("bar",innt("foo"))];
 	GGrammar bl = grammar(["foo","qux","bar"],
 		[production("foo",
 			label("l1",
@@ -4263,14 +4333,15 @@ bool case_upgrade(bool debug)
 				nonterminal("g")]))],
 		[]);
 	XSequence xbgf =
-		[upgrade(production("a",
+		[upgrade(
+			production("a",
 				sequence([
 					mark("",nonterminal("b")),
 					nonterminal("c")])),
 			production("b",
-			sequence([
-				nonterminal("d"),
-				nonterminal("e")])))];
+				sequence([
+					nonterminal("d"),
+					nonterminal("e")])))];
 	GGrammar bl = grammar(["a","b"],
 		[production("a",
 			sequence([
@@ -4359,7 +4430,8 @@ bool case_widen_global(bool debug)
 			mark("fun",plus(nonterminal("function"))))],
 		[]);
 	XSequence xbgf =
-		[widen(plus(nonterminal("function")),
+		[widen(
+			plus(nonterminal("function")),
 			star(nonterminal("function")),
 			globally())];
 	GGrammar bl = grammar(["program"],
@@ -4380,7 +4452,8 @@ bool case_widen_l(bool debug)
 				mark("fun",nonterminal("function"))))],
 		[]);
 	XSequence xbgf =
-		[widen(nonterminal("function"),
+		[widen(
+			nonterminal("function"),
 			plus(nonterminal("function")),
 			inlabel("main"))];
 	GGrammar bl = grammar(["program"],
@@ -4401,7 +4474,8 @@ bool case_widen_nt(bool debug)
 			mark("fun",nonterminal("function")))],
 		[]);
 	XSequence xbgf =
-		[widen(nonterminal("function"),
+		[widen(
+			nonterminal("function"),
 			plus(nonterminal("function")),
 			innt("program"))];
 	GGrammar bl = grammar(["program"],
@@ -4424,12 +4498,13 @@ bool case_widen_sub(bool debug)
 				nonterminal("qux")]))],
 		[]);
 	XSequence xbgf =
-		[widen(sequence([
+		[widen(
+			sequence([
 				nonterminal("bar"),
 				nonterminal("wez")]),
 			star(sequence([
-			nonterminal("bar"),
-			nonterminal("wez")])),
+				nonterminal("bar"),
+				nonterminal("wez")])),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
@@ -4452,12 +4527,13 @@ bool case_yaccify_eps(bool debug)
 			star(nonterminal("bar")))],
 		[]);
 	XSequence xbgf =
-		[yaccify(production("foo",
+		[yaccify(
+			[production("foo",
 					epsilon()),
 				production("foo",
 					sequence([
 						nonterminal("foo"),
-						nonterminal("bar")])))];
+						nonterminal("bar")]))])];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
 			epsilon()),
@@ -4481,12 +4557,13 @@ bool case_yaccify_left(bool debug)
 				star(nonterminal("wez"))]))],
 		[]);
 	XSequence xbgf =
-		[yaccify(production("foo",
+		[yaccify(
+			[production("foo",
 					nonterminal("bar")),
 				production("foo",
 					sequence([
 						nonterminal("foo"),
-						nonterminal("wez")])))];
+						nonterminal("wez")]))])];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
 			nonterminal("bar")),
@@ -4508,12 +4585,13 @@ bool case_yaccify_left_plus(bool debug)
 			plus(nonterminal("bar")))],
 		[]);
 	XSequence xbgf =
-		[yaccify(production("foo",
+		[yaccify(
+			[production("foo",
 					nonterminal("bar")),
 				production("foo",
 					sequence([
 						nonterminal("foo"),
-						nonterminal("bar")])))];
+						nonterminal("bar")]))])];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
 			nonterminal("bar")),
@@ -4537,12 +4615,13 @@ bool case_yaccify_right(bool debug)
 				nonterminal("bar")]))],
 		[]);
 	XSequence xbgf =
-		[yaccify(production("foo",
+		[yaccify(
+			[production("foo",
 					nonterminal("bar")),
 				production("foo",
 					sequence([
 						nonterminal("wez"),
-						nonterminal("foo")])))];
+						nonterminal("foo")]))])];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
 			nonterminal("bar")),
@@ -4564,12 +4643,13 @@ bool case_yaccify_right_plus(bool debug)
 			plus(nonterminal("bar")))],
 		[]);
 	XSequence xbgf =
-		[yaccify(production("foo",
+		[yaccify(
+			[production("foo",
 					nonterminal("bar")),
 				production("foo",
 					sequence([
 						nonterminal("bar"),
-						nonterminal("foo")])))];
+						nonterminal("foo")]))])];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
 			nonterminal("bar")),
