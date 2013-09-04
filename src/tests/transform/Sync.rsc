@@ -6,6 +6,9 @@ import IO;
 import grammarlab::io::Grammar;
 import grammarlab::io::XBGF;
 
+import grammarlab::export::Grammar;
+import grammarlab::export::XBNF;
+
 public void main()
 {
 	loc base = |home:///projects/slps/topics/transformation/xbgf/tests|;
@@ -22,7 +25,16 @@ public void main()
 		'import grammarlab::export::Grammar;
 		'import grammarlab::export::XBNF;
 		'
-		'map[str,tuple[XSequence,GGrammar,GGrammar]] test_data = (
+		'bool run_case(GGrammar bgf, XSequence xbgf, GGrammar bl, bool debug)
+		'{
+		'	if (debug) println(\"Input grammar: \<ppx(bgf)\>\");
+		'	if (debug) println(\"Transformations: \<ppxs(xbgf)\>\");
+		'	if (debug) println(\"Expected output grammar: \<ppx(bl)\>\");
+		'	GGrammar res = transform(xbgf,bgf);
+		'	if (debug) println(\"Actual output grammar: \<ppx(res)\>\");
+		'	if (debug) return gdtv(res,bl);
+		'	else return gdts(res,bl);
+		'}
 		'",
 		buffer2 = "",
 		buffer3 = "";
@@ -31,10 +43,21 @@ public void main()
 		xbgf = readXBGF(base+f);
 		bgf = readBGF(base+replaceLast(f,".xbgf",".bgf"));
 		bl = readBGF(base+replaceLast(f,".xbgf",".baseline"));
-		buffer += "\"<replaceLast(f,".xbgf","")>\": \<<xbgf>,<bgf>,<bl>\>,\n";
-		buffer2 += "test bool test_<replaceLast(f,".xbgf","")>() { \<xbgf,bgf1,bgf2\> = test_data[\"<replaceLast(f,".xbgf","")>\"]; return gdts(transform(xbgf,bgf1),bgf2); }\n";
-		buffer3 += "void show_<replaceLast(f,".xbgf","")>() { \<xbgf,bgf1,bgf2\> = test_data[\"<replaceLast(f,".xbgf","")>\"]; println(\"Input grammar: \<ppx(bgf1)\>\");println(\"Transformations: \<ppxs(xbgf)\>\");println(\"Expected output grammar: \<ppx(bgf2)\>\");bgf3=transform(xbgf,bgf1);println(\"Actual output grammar: \<ppx(bgf3)\>\"); gdtv(bgf3,bgf2); }\n";
+		name = replaceLast(f,".xbgf","");
+		// TODO: turn <bgf> to <ppx(bgf)>, <ppxs(xbgf)>, etc
+		buffer += "
+		'// <base+f>
+		'bool case_<name>(bool debug)
+		'{
+		'	GGrammar bgf = <bgf>;
+		'	XSequence xbgf = <xbgf>;
+		'	GGrammar bl = <bl>;
+		'	return run_case(bgf,xbgf,bl,debug);
+		'}
+		'test bool test_<name>() = case_<name>(false);
+		'void show_<name>() {case_<name>(true);}
+		'";
 	}
-	writeFile(|project://grammarlab/src/tests/transform/Test.rsc|, "<replaceLast(buffer,",","")>);\n\n<buffer3>\n\n<buffer2>");
+	writeFile(|project://grammarlab/src/tests/transform/Test.rsc|, buffer);
 }
 

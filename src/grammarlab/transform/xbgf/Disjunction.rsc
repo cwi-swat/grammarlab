@@ -46,12 +46,14 @@ XResult runVertical(XScope w, GGrammar g)
 	ps4 = [];
 	// TODO: rethink the model of working with labels and marks
 	for (production(str x, GExpr e) <- ps2)
-		if (choice(L) := e)
+		// TODO: should we really discard a label?
+		if (choice(L) := e || label(_,choice(L)) := e)
 			for (se <- L)
 				if (label(str s, GExpr e2) := se)
-					if (/label(s,_) := g.P)
+					// TODO: this will always happen
+					if (/production(_,label(s,_)) := g.P)
 						return <problemStr("Label clashes with an existing label",s),g>;
-					elseif (/label(s,_) := ps4)
+					elseif (/production(_,label(s,_)) := ps4)
 						return <problemStr("Labels ambiguous",s),g>;
 					else
 						ps4 += production(x,e2);
