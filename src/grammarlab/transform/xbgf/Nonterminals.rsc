@@ -111,7 +111,7 @@ XResult runUnite(str x, str y, GGrammar g)
 	if (y notin used)
 		return <freshN(y),g>;
 	<ps1x,ps2x,ps3x> = splitPbyW(g.P, innt(x));
-	GProdList ps4x = ps1x + [production(y, p.rhs) | p <- ps2x, p.lhs == y] + ps3x;
+	GProdList ps4x = ps1x + [production(y, p.rhs) | p <- ps2x, p.lhs == x] + ps3x;
 	if (x in usedNs(ps4x))
 		return grammarlab::transform::xbgf::Brutal::runReplace(nonterminal(x),nonterminal(y),globally(),grammar(g.N,ps4x,g.S));
 	else

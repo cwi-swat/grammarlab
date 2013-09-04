@@ -97,7 +97,7 @@ XResult runRemoveV(GProd p, GGrammar g)
 	<ps1,ps2,ps3> = splitPbyW(g.P, innt(p.lhs));
 	if (isEmpty(ps2))
 		return <freshN(p.lhs),g>;
-	ps4 = [q | GProd q <- g.ps2, !eqP(normalise(p),normalise(q))];
+	ps4 = [q | GProd q <- ps2, !eqP(normalise(p),normalise(q))];
 	if (ps2 == ps4)
 		return <notFoundP(p),g>;
 	if (isEmpty(ps4))
