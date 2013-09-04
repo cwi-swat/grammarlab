@@ -16,7 +16,7 @@ bool run_case(GGrammar bgf, XSequence xbgf, GGrammar bl, bool debug)
 	if (debug) println("Input grammar: <ppx(bgf)>");
 	if (debug) println("Transformations: <ppxs(xbgf)>");
 	if (debug) println("Expected output grammar: <ppx(bl)>");
-	GGrammar res = transform(xbgf,bgf);
+	if (debug) res = vtransform(xbgf,bgf); else res = transform(xbgf,bgf);
 	if (debug) println("Actual output grammar: <ppx(res)>");
 	if (debug) return gdtv(res,bl);
 	else return gdts(res,bl);

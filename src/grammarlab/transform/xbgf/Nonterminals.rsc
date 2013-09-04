@@ -88,7 +88,7 @@ XResult runSplitN(str x, GProdList ps0, XScope w, GGrammar g)
 		if (y in allNs(g.P))
 			return <notFreshN(y),g>;
 		<ps2,ps3,ps4> = splitPbyW(g.P,innt(x));
-		GProdList ps5 = [production(l,x,e) | p <- ps0, production(str l,y,GExpr e) := p];
+		GProdList ps5 = [production(x,e) | p <- ps0, production(y,GExpr e) := p];
 		if (x in g.S) rs2 = g.S + y; else rs2 = g.S;
 		g = grammar(g.N, ps2 + (ps3 - ps5) + ps0 + ps4, rs2);
 		if (nowhere() := w)
