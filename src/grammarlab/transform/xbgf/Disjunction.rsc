@@ -50,13 +50,13 @@ XResult runVertical(XScope w, GGrammar g)
 		if (choice(L) := e || label(_,choice(L)) := e)
 			for (se <- L)
 				if (label(str s, GExpr e2) := se)
-					// TODO: this will always happen
+					// TODO: this will always happen and does not make sense with the new label paradigm
 					if (/production(_,label(s,_)) := g.P)
 						return <problemStr("Label clashes with an existing label",s),g>;
 					elseif (/production(_,label(s,_)) := ps4)
 						return <problemStr("Labels ambiguous",s),g>;
 					else
-						ps4 += production(x,e2);
+						ps4 += production(x,se);
 				else
 					ps4 += production(x,se);
 		else ps4 += production(x,e);

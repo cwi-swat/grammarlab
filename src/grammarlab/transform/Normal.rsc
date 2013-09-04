@@ -103,8 +103,6 @@ public GExpr normalise(GExpr e)
 		case except(anything(),X9) => not(X9)
 		// “except not” is a conjunction
 		case except(X10,not(X11)) => allof([X10,X11])
-		// binary conjunction with one negative branch is the “except” construct
-		case allof([X12,not(X13)]) => except(X12,X13)
 		// having X and not X in the except construct will always fail
 		case except(X14,not(X14)) => empty()
 	};

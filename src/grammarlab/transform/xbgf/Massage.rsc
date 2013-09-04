@@ -95,6 +95,7 @@ bool massage_eq({not(choice([x,y])),allof([not(x),not(y)])}) = true;
 bool massage_eq({not(choice([x,y])),allof([not(y),not(x)])}) = true;
 bool massage_eq({not(choice([not(x),not(y)])),allof([x,y])}) = true;
 bool massage_eq({not(choice([not(x),not(y)])),allof([y,x])}) = true;
+bool massage_eq({allof([x,not(y)]),except(x,y)}) = true;
 
 // otherwise, no
 default bool massage_eq(GExprSet s) = false;

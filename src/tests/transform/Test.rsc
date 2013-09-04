@@ -1499,8 +1499,8 @@ bool case_horizontal_l(bool debug)
 	GGrammar bl = grammar(["decs"],
 		[production("decs",
 			choice([
-				mark("onedec",nonterminal("dec")),
-				mark("moredecs",sequence([
+				label("onedec",nonterminal("dec")),
+				label("moredecs",sequence([
 					nonterminal("dec"),
 					nonterminal("decs")]))]))],
 		[]);
@@ -2210,6 +2210,62 @@ bool case_massage_ch_xq(bool debug)
 test bool test_massage_ch_xq() = case_massage_ch_xq(false);
 void show_massage_ch_xq() {case_massage_ch_xq(true);}
 
+// NEW
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_2l.xbgf|
+bool case_massage_2l(bool debug)
+{
+	GGrammar bgf = grammar(["foo"],
+		[production("foo",
+			nonterminal("bar"))],
+		[]);
+	XSequence xbgf =
+		[massage(
+			nonterminal("bar"),
+			choice([
+				label("one",
+					nonterminal("bar")),
+				label("two",
+					nonterminal("bar"))]),
+			globally())];
+	GGrammar bl = grammar(["foo"],
+		[production("foo",
+			choice([
+				label("one",
+					nonterminal("bar")),
+				label("two",
+					nonterminal("bar"))]))],
+		[]);
+	return run_case(bgf,xbgf,bl,debug);
+}
+test bool test_massage_2l() = case_massage_2l(false);
+void show_massage_2l() {case_massage_2l(true);}
+
+// NEW
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_2m.xbgf|
+bool case_massage_2m(bool debug)
+{
+	GGrammar bgf = grammar(["foo"],
+		[production("foo",
+			nonterminal("bar"))],
+		[]);
+	XSequence xbgf =
+		[massage(
+			nonterminal("bar"),
+			choice([
+				mark("one",nonterminal("bar")),
+				mark("two",nonterminal("bar"))]),
+			globally())];
+	GGrammar bl = grammar(["foo"],
+		[production("foo",
+			choice([
+				mark("one",nonterminal("bar")),
+				mark("two",nonterminal("bar"))]))],
+		[]);
+	return run_case(bgf,xbgf,bl,debug);
+}
+test bool test_massage_2m() = case_massage_2m(false);
+void show_massage_2m() {case_massage_2m(true);}
+
 // |home:///projects/slps/topics/transformation/xbgf/tests/massage_ch_xs.xbgf|
 bool case_massage_ch_xs(bool debug)
 {
@@ -2288,8 +2344,8 @@ bool case_massage_ch_xx2(bool debug)
 		[massage(
 			star(nonterminal("bar")),
 			choice([
-				mark("one",star(nonterminal("bar"))),
-				mark("two",star(nonterminal("bar")))]),
+				label("one",star(nonterminal("bar"))),
+				label("two",star(nonterminal("bar")))]),
 			globally()),
 		vertical(innt("foo")),
 		massage(
@@ -2806,30 +2862,38 @@ bool case_massage_morgan4(bool debug)
 test bool test_massage_morgan4() = case_massage_morgan4(false);
 void show_massage_morgan4() {case_massage_morgan4(true);}
 
-// |home:///projects/slps/topics/transformation/xbgf/tests/massage_nn.xbgf|
-bool case_massage_nn(bool debug)
+// NEW
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_morgan5.xbgf|
+bool case_massage_morgan5(bool debug)
 {
 	GGrammar bgf = grammar(["foo"],
 		[production("foo",
-			sequence([
-				plus(nonterminal("bar")),
-				nonterminal("foo")]))],
+			allof([
+				nonterminal("bar"),
+				not(nonterminal("wez"))]))],
 		[]);
 	XSequence xbgf =
 		[massage(
-			nonterminal("foo"),
-			not(not(nonterminal("foo"))),
+			allof([
+				nonterminal("bar"),
+				not(nonterminal("wez"))]),
+			except(
+				nonterminal("bar"),
+				nonterminal("wez")),
 			globally())];
 	GGrammar bl = grammar(["foo"],
 		[production("foo",
-			sequence([
-				plus(nonterminal("bar")),
-				not(not(nonterminal("foo")))]))],
+			except(
+				nonterminal("bar"),
+				nonterminal("wez")))],
 		[]);
 	return run_case(bgf,xbgf,bl,debug);
 }
-test bool test_massage_nn() = case_massage_nn(false);
-void show_massage_nn() {case_massage_nn(true);}
+test bool test_massage_morgan5() = case_massage_morgan5(false);
+void show_massage_morgan5() {case_massage_morgan5(true);}
+
+// REMOVED
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_nn.xbgf|
 
 // |home:///projects/slps/topics/transformation/xbgf/tests/massage_sel_s.xbgf|
 bool case_massage_sel_s(bool debug)
@@ -4400,10 +4464,12 @@ bool case_vertical_s(bool debug)
 	GGrammar bgf = grammar(["decs"],
 		[production("decs",
 			choice([
-				mark("onedec",nonterminal("dec")),
-				mark("moredecs",sequence([
-					nonterminal("dec"),
-					nonterminal("decs")]))]))],
+				label("onedec",
+					nonterminal("dec")),
+				label("moredecs",
+					sequence([
+						nonterminal("dec"),
+						nonterminal("decs")]))]))],
 		[]);
 	XSequence xbgf =
 		[vertical(innt("decs"))];
