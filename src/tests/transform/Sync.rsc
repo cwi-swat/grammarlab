@@ -8,6 +8,7 @@ import grammarlab::io::XBGF;
 
 import grammarlab::export::Grammar;
 import grammarlab::export::XBNF;
+import grammarlab::export::GrammarLab;
 
 public void main()
 {
@@ -45,18 +46,14 @@ public void main()
 		bl = readBGF(base+replaceLast(f,".xbgf",".baseline"));
 		name = replaceLast(f,".xbgf","");
 		// TODO: turn <bgf> to <ppx(bgf)>, <ppxs(xbgf)>, etc
-		buffer += "
-		'// <base+f>
-		'bool case_<name>(bool debug)
-		'{
-		'	GGrammar bgf = <bgf>;
-		'	XSequence xbgf = <xbgf>;
-		'	GGrammar bl = <bl>;
-		'	return run_case(bgf,xbgf,bl,debug);
-		'}
-		'test bool test_<name>() = case_<name>(false);
-		'void show_<name>() {case_<name>(true);}
-		'";
+		buffer += "\n// <base+f>\n"
+		+"bool case_<name>(bool debug)\n{\n"
+		+"	GGrammar bgf = <ppgl(0,1,bgf)>;\n"
+		+"	XSequence xbgf =\n<ppgl(2,3,xbgf)>;\n"
+		+"	GGrammar bl = <ppgl(0,1,bl)>;\n"
+		+"	return run_case(bgf,xbgf,bl,debug);\n"
+		+"}\ntest bool test_<name>() = case_<name>(false);\n"
+		+"void show_<name>() {case_<name>(true);}\n";
 	}
 	writeFile(|project://grammarlab/src/tests/transform/Test.rsc|, buffer);
 }
