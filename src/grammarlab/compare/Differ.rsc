@@ -81,7 +81,8 @@ public bool eqPs(GProdList ps1, GProdList ps2) = gdt(ps1,ps2) == <[],[]>;
 public bool eqEsO(GExprList L1, GExprList L2) = len(L1)==len(L2) && (true | eqE(L1[i],L2[i]) | int i <- [0..len(L1)]);
 
 // not order-preserving comparison
-public bool eqEsN(GExprList L1, GExprList L2)
+public bool eqEsN([], []) = true;
+public default bool eqEsN(GExprList L1, GExprList L2)
 {
 	for (GExpr e1 <- L1, GExpr e2 <- L2)
 		if (eqE(e1,e2))
