@@ -19,7 +19,17 @@ public bool isEmpty(list[&T] x)     = List::isEmpty(x);
 public bool isEmpty(set[&T] x)      = Set::isEmpty(x);
 public bool isEmpty(map[&T1,&T2] x) = Map::isEmpty(x);
 public bool isEmpty(rel[&T1,&T2] x) = Relation::isEmpty(x);
-public bool isEmpty(str x)          = (x=="");
+public bool isEmpty(str x)          = x=="";
+
+// one istrivial to rule them all
+// TODO: which way is better - readable/higherlevel or Rascal/lowerlevel?
+public bool isTrivial([&T x])             = true;
+public default bool isTrivial(list[&T] x) = false;
+public bool isTrivial({&T x})             = true;
+public default bool isTrivial(set[&T] x)  = false;
+public bool isTrivial(map[&T1,&T2] x)     = len(x) == 1;
+public bool isTrivial(rel[&T1,&T2] x)     = len(x) == 1;
+public bool isTrivial(str x)              = len(x)=="";
 
 // count the number of unique members
 public int ulen(list[&T] x)             = Set::size(List::toSet(x));
