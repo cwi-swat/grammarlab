@@ -119,7 +119,7 @@ public bool gdtv(GGrammar g1, GGrammar g2)
 	bool res = true;
 	if (toSet(g1.S)!=toSet(g2.S))
 	{
-		println("Different roots: <rs1> vs <rs2>.");
+		println("Different roots: <g1.S> vs <g2.S>.");
 		res = false;
 	}
 	if (toSet(g1.N)!=toSet(g2.N))

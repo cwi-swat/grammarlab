@@ -13,9 +13,12 @@ GGrammar extractG(loc f)
 	if (document(element(namespace(_,"http://relaxng.org/ns/structure/1.0"),"grammar",L)) := parseXMLDOMTrim(readFile(f)))
 	{
 		list[str] S = maproots(L);
-		println("Roots: <S>");
+		//println("Roots: <S>");
 		list[Node] defines = [d | d:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),"define",_) <- L];
-		list[Node] others = [e | e:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),str t,_) <- L, t != "start", t != "define"];
+		list[Node] includes = [d | d:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),"include",_) <- L];
+		list[Node] others = [e | e:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),str t,_) <- L, t notin ["start", "define", "include"]];
+		for (inc <- includes)
+			println("Warning: merge this grammar with the one extracted from <getAttr(inc.children,"href")>!");
 		if (!isEmpty(others))
 			println("Warning: unexpected nodes in RNG: <[n | element(_,str n,_) <- others]>");
 		GProdList ps
@@ -46,9 +49,9 @@ GProd mapprod(element(_,"define",attrs))
 	else
 		rhs = mapexprs([a | a <- attrs, a.name != "name"]);
 	
-	println("<name> ::= <ppx(rhs)>");
+	//println("<name> ::= <ppx(rhs)>");
 	//iprintln(n);
-	return production("a",empty());
+	return production("<name>",rhs);
 }
 
 default GProd mapprod(Node n)
@@ -82,6 +85,7 @@ GExpr mapexpr(element(_,"element",attrs))
 
 // NB: ignore all annotations
 GExpr mapexpr(element(namespace(_,"http://relaxng.org/ns/compatibility/annotations/1.0"),_,_)) = epsilon();
+GExpr mapexpr(attribute(namespace(_,"http://relaxng.org/ns/compatibility/annotations/1.0"),_,_)) = epsilon();
 
 // NB: ignore all assertion rules [kind of static semantics]
 GExpr mapexpr(element(namespace(_,"http://www.ascc.net/xml/schematron"),_,_)) = epsilon();
@@ -178,9 +182,15 @@ GExpr mapexpr(element(_,"attribute",attrs))
 	return mapexprs(attrs);
 }
 
+// NB: any @combine modifiers are ignored here
+GExpr mapexpr(attribute(_,"combine",_)) = epsilon();
+
 default GExpr mapexpr(Node n)
 {
-	println("Warning: unmapped <n.name>");
+	if (attribute(_,_,_) := n)
+		println("Warning: unmapped attribute <n.name>");
+	else
+		println("Warning: unmapped element <n.name>");
 	return epsilon();
 }
 

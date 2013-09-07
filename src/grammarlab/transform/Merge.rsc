@@ -4,10 +4,11 @@ module grammarlab::transform::Merge
 import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
 import grammarlab::lib::Squeeze;
+import List;
 
 public GGrammar mergeGs(GGrammar g1, GGrammar g2) = normalise(justMerge(g1,g2));
 
-public GGrammar mergeGs(list[GGrammar] gs) = normalise( ( head(gs) | justMerge(it,g) | GGrammar g <- tail(gs) ) );
+public GGrammar mergeGs(list[GGrammar] gs) = normalise( ( gs[0] | justMerge(it,g) | GGrammar g <- tail(gs) ) );
 
 GGrammar justMerge(GGrammar g1, GGrammar g2) =
 	grammar(
