@@ -6,6 +6,7 @@ import List;
 import String;
 import lang::xml::DOM;
 import grammarlab::Extractors;
+import grammarlab::io::Grammar;
 import grammarlab::compare::Differ;
 import grammarlab::transform::Merge;
 import grammarlab::language::Grammar;
@@ -36,6 +37,8 @@ void main()
 		}
 		println("Merging...");
 		g2 = mergeGs(gs2);
+		println("Writing...");
+		writeBGF(g2,base+"/<lang>/<gram>/ext.grammarlab.bgf");
 		println("Diffing...");
 		r = gdtv(g1,g2);
 		if (!r) break;

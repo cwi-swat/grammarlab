@@ -4,6 +4,7 @@ module grammarlab::extract::RelaxNG2BGF
 import IO;
 import lang::xml::DOM;
 import grammarlab::language::Grammar;
+import grammarlab::transform::Normal;
 import grammarlab::export::Grammar;
 import grammarlab::lib::Squeeze;
 import grammarlab::lib::Sizes;
@@ -24,41 +25,35 @@ GGrammar extractG(loc f)
 		GProdList ps
 			= [mapprod(p)  |  p <- defines]
 			+ [mapprod(ip) | op <- defines, element(_,"element",list[Node] ec) <- op.children, element(_,"grammar",list[Node] gc) <- ec, ip:element(_,"define",_) <- gc];
-		return grammar(
+		return normalise(grammar(
 			squeeze([p.lhs | p <- ps]),
 			ps,
 			S
-		);
+		));
 	}
 	else
 		throw "<f> is not a proper BGF file";
 }
 
-list[str] maproots(list[Node] L)
-	= [s | element(_,"start",L2) <- L, element(_,"ref",[attribute(none(),"name",str s)]) <- L2]
-	+ [s | element(_,"start",[element(_,"choice",L2)]) <- L, element(_,"ref",[attribute(none(),"name",str s)]) <- L2];
+list[str] maproots(list[Node] L) = [s | element(_,"start",L2) <- L, /element(_,"ref",[attribute(none(),"name",str s)]) <- L2];
 			
 GProd mapprod(element(_,"define",attrs))
 {
 	str name = getName(attrs);
 	GExpr rhs;
-	// case 1: subgrammar
 	list[Node] subgs = [g | element(_,"element",ie) <- attrs && g:element(_,"grammar",_) <- ie]; 
 	if (!isEmpty(subgs))
 		rhs = choice([nonterminal(x) | Node g <- subgs, str x <- maproots(g)]);
 	else
 		rhs = mapexprs([a | a <- attrs, a.name != "name"]);
-	
-	//println("<name> ::= <ppx(rhs)>");
-	//iprintln(n);
 	return production("<name>",rhs);
 }
 
 default GProd mapprod(Node n)
 {
-	println("Bad:");
+	println("Error: unmapped production rule");
 	iprintln(n);
-	//return production("a",empty());
+	return production("?",empty());
 }
 
 GExpr mapexprs(list[Node] ns)
@@ -73,14 +68,14 @@ GExpr mapexpr(element(_,"element",attrs))
 {
 	str name = getName(attrs);
 	if (!isEmpty(name))
-		return mark(name,mapexprs([e | e <- attrs, e.name != "name"]));
+		return mark(name,mapexprs([e | e:element(_,_,_) <- attrs, e.name != "name"]));
 	list[str] manynames = [n | element(_,"choice",L) <- attrs, element(_,"name",n) <- L];
 	if (!isEmpty(manynames))
 	{
-		GExpr e = mapexprs([e | e <- attrs, e.name != "name", e.name != "choice"]);
+		GExpr e = mapexprs([e | e:element(_,_,_) <- attrs, e.name != "name", e.name != "choice"]);
 		return choice([mark(name,e) | name <- manynames]);
 	}
-	return mapexprs([e | e <- attrs, e.name != "name"]);
+	return mapexprs([e | e:element(_,_,_) <- attrs, e.name != "name"]);
 }
 
 // NB: ignore all annotations
@@ -164,7 +159,8 @@ GExpr mapexpr(element(_,"attribute",attrs))
 	str name = getName(attrs);
 	if (!isEmpty(name))
 	{
-		es = [e | e <- attrs, e.name != "name"];
+		// with this we filter out all attributes
+		es = [e | e:element(_,_,_) <- attrs];
 		// NB: the logic is simple: if no type is given, the attribute is a string!
 		// TODO: does not work for elements
 		if (isEmpty(es))
@@ -185,12 +181,16 @@ GExpr mapexpr(element(_,"attribute",attrs))
 // NB: any @combine modifiers are ignored here
 GExpr mapexpr(attribute(_,"combine",_)) = epsilon();
 
+GExpr mapexpr(comment(_)) = epsilon();
+
 default GExpr mapexpr(Node n)
 {
 	if (attribute(_,_,_) := n)
 		println("Warning: unmapped attribute <n.name>");
-	else
+	elseif (element(_,_,_) := n)
 		println("Warning: unmapped element <n.name>");
+	else
+		println("Warning: unmapped node <n>");
 	return epsilon();
 }
 
@@ -209,10 +209,13 @@ void main()
 {
 	GGrammar g;
 	
-	g = extractG(|home:///projects/slps/topics/grammars/atom/dettrick/atom.rng.xml|);
+	//g = extractG(|home:///projects/slps/topics/grammars/atom/dettrick/atom.rng.xml|);
 	//println(ppx(g));
-	println("ATOM Ok!");
-	g = extractG(|home:///projects/slps/topics/grammars/svg/furubayashi/svg11/svg-basic-structure.rng|);
+	//println("ATOM Ok!");
+	//g = extractG(|home:///projects/slps/topics/grammars/svg/furubayashi/svg11/svg-basic-structure.rng|);
 	//println(ppx(g));
-	println("SVG Ok!");
+	//println("SVG Ok!");
+	g = extractG(|home:///projects/slps/topics/grammars/html/clark/modules/basic-table.rng|);
+	println(ppx(g));
+	println("HTML Ok!");
 }
