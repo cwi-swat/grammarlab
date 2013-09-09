@@ -36,6 +36,7 @@ data GExpr
 	| plus(GExpr expr)							// one-or-more (plus)
 	| sepliststar(GExpr expr, GExpr sep)			// zero-or-more separator list
 	| seplistplus(GExpr expr, GExpr sep)			// one-or-more separator list
+	| nothing()									// ε if in a sequence, φ if in a choice
 ;
 
 data GValue = string() | integer() | boolean();

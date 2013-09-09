@@ -127,9 +127,9 @@ public str ppx(except(GExpr e1, GExpr e2), EBNF meta) =
 
 public default str ppx(GExpr smth, EBNF meta) = "??<smth>??";
 
-public str ppx(GValue::string(), EBNF meta) = "string()";
-public str ppx(GValue::integer(), EBNF meta) = "integer()";
-public str ppx(GValue::boolean(), EBNF meta) = "boolean()";
+public str ppx(GValue::string(), EBNF meta) = "STR";
+public str ppx(GValue::integer(), EBNF meta) = "INT";
+public str ppx(GValue::boolean(), EBNF meta) = "BOOL";
 public default str ppx(GValue smth, EBNF meta) = "??<smth>??";
 
 // possibly grouped expression

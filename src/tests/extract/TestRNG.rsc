@@ -5,6 +5,7 @@ import IO;
 import List;
 import String;
 import lang::xml::DOM;
+import grammarlab::lib::Sizes;
 import grammarlab::Extractors;
 import grammarlab::io::Grammar;
 import grammarlab::compare::Differ;
@@ -19,6 +20,7 @@ void main()
 	(
 		str lang <- listEntries(base),
 		isDirectory(base+"/<lang>"),
+		//lang notin ["docbook","odf","pnml"],
 		str gram <- listEntries(base+"/<lang>"),
 		exists(base+"/<lang>/<gram>/zoo.xml"),
 		document(element(_,"grammar",L)) := parseXMLDOMTrim(readFile(base+"/<lang>/<gram>/zoo.xml")),
@@ -36,11 +38,11 @@ void main()
 			gs2 += rng2bgf(base+"/<lang>/<gram>/<src>");
 		}
 		println("Merging...");
-		g2 = mergeGs(gs2);
+		if (isTrivial(gs2)) g2 = gs2[0]; else g2 = mergeGs(gs2);
 		println("Writing...");
 		writeBGF(g2,base+"/<lang>/<gram>/ext.grammarlab.bgf");
 		println("Diffing...");
 		r = gdtv(g1,g2);
-		if (!r) break;
+		//if (!r) break;
 	}
 }

@@ -24,9 +24,9 @@ public GGrammar normalise(GGrammar g)
 // remove duplicate production rules
 public GProdList normalise([L1*,GProd X1,L2*,X1,L3*]) = normalise([*L1,X1,*L2,*L3]);
 
-public GProdList normalise(GProdList prods) = [normalise(p) | GProd p <- prods]; 
+public GProdList normalise(GProdList prods) = [normalise(p) | GProd p <- prods, p.rhs != nothing()]; 
 
-public GProdSet normalise(GProdSet prods) = {normalise(p) | GProd p <- prods}; 
+public GProdSet normalise(GProdSet prods) = {normalise(p) | GProd p <- prods, p.rhs != nothing()}; 
 
 public GProd normalise(GProd p) = production (p.lhs, normalise(p.rhs));
 
@@ -105,6 +105,11 @@ public GExpr normalise(GExpr e)
 		case except(X10,not(X11)) => allof([X10,X11])
 		// having X and not X in the except construct will always fail
 		case except(X14,not(X14)) => empty()
+		// disregarding special metasyntactical trick
+		case sequence([N1*,nothing(),N2*]) => sequence(N1+N2)
+		case choice([N3*,nothing(),N4*]) => choice(N3+N4)
+		case allof([N5*,nothing(),N6*]) => allof(N5+N6)
+		// TODO: make it safe by catching other places for nothing()? 
 	};
 }
 
