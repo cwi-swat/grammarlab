@@ -4,15 +4,15 @@ module grammarlab::io::write::BGF
 import IO;
 import lang::xml::DOM;
 import grammarlab::language::Grammar;
+import grammarlab::lib::Joining;
 import grammarlab::lib::Squeeze;
 import grammarlab::lib::Sizes;
 
 public void writeBGF(GGrammar bgf, loc f)
-{
-	list[Node] xml1 = [element(none(),"root",[charData(s)]) | str s <- bgf.S];
-	list[Node] xml2 = [prod2xml(p) | GProd p <- bgf.P];
-	writeFile(f,xmlRaw(document(element(namespace("bgf","http://planet-sl.org/bgf"),"grammar",xml1+xml2))));
-}
+	= writeFile(f,xmlRaw(document(element(namespace("bgf","http://planet-sl.org/bgf"),"grammar",
+		comment(joinStrings(f.N)) + charData("\n") +
+		[element(none(),"root",[charData(s)]) | str s <- bgf.S] + charData("\n") +
+		[prod2xml(p) | GProd p <- bgf.P]))));
 
 Node prod2xml(GProd p)
 {
@@ -28,6 +28,7 @@ Node prod2xml(GProd p)
 		rhs = p.rhs;
 	kids += element(none(),"nonterminal",[charData(p.lhs)]);
 	kids += expr2xml(rhs);
+	kids += charData("\n");
 	return element(namespace("bgf","http://planet-sl.org/bgf"),"production",kids);
 }
 
@@ -59,6 +60,7 @@ Node expr2xml(GExpr ex)
 		case star(expr): e = element(none(),"star",[expr2xml(expr)]);
 		case seplistplus(e1,e2): e = element(none(),"seplistplus",[expr2xml(e1),expr2xml(e2)]);
 		case sepliststar(e1,e2): e = element(none(),"sepliststar",[expr2xml(e1),expr2xml(e2)]);
+		case nothing(): e = comment("nothing");
 		default: throw "ERROR: expression expected in place of <ex>";
 	}
 	return element(namespace("bgf","http://planet-sl.org/bgf"),"expression",[e]);

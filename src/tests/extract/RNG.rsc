@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module tests::extract::TestRNG
+module tests::extract::RNG
 
 import IO;
 import List;
@@ -12,6 +12,7 @@ import grammarlab::compare::Differ;
 import grammarlab::transform::Merge;
 import grammarlab::language::Grammar;
 
+// NB: careful — runs for a whole hour! 
 void main()
 {
 	loc base = |home:///projects/slps/topics/grammars|;
@@ -20,7 +21,6 @@ void main()
 	(
 		str lang <- listEntries(base),
 		isDirectory(base+"/<lang>"),
-		//lang notin ["docbook","odf","pnml"],
 		str gram <- listEntries(base+"/<lang>"),
 		exists(base+"/<lang>/<gram>/zoo.xml"),
 		document(element(_,"grammar",L)) := parseXMLDOMTrim(readFile(base+"/<lang>/<gram>/zoo.xml")),

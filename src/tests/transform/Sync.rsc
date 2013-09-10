@@ -55,6 +55,6 @@ public void main()
 		+"}\ntest bool test_<name>() = case_<name>(false);\n"
 		+"void show_<name>() {case_<name>(true);}\n";
 	}
-	writeFile(|project://grammarlab/src/tests/transform/Test.rsc|, buffer);
+	writeFile(|project://grammarlab/src/tests/transform/XBGF.rsc|, buffer);
 }
 

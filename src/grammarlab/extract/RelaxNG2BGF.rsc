@@ -44,11 +44,11 @@ GProd mapprod(element(_,"define",attrs))
 {
 	str name = getName(attrs);
 	GExpr rhs;
-	list[Node] subgs = [g | element(_,"element",ie) <- attrs && g:element(_,"grammar",_) <- ie]; 
+	list[Node] subgs = [g | element(_,"element",ie) <- attrs, g:element(_,"grammar",_) <- ie]; 
 	if (!isEmpty(subgs))
-		rhs = choice([nonterminal(x) | str x <- maproots(subgs)]);
+		rhs = choice([nonterminal(x) | g <- subgs, str x <- maproots(g.children)]);
 	else
-		rhs = mapexprs([a | a:element(_,_,_) <- attrs, a.name != "name"]);
+		rhs = mapexprs(getTrimmedNameless(attrs));
 	return production("<name>",rhs);
 }
 
@@ -62,7 +62,7 @@ default GProd mapprod(Node n)
 GExpr mapexprs(list[Node] nodes)
 {
 	// Filter out attributes, comments and other stuff
-	ns = [n | n:element(_,_,_) <- nodes];
+	ns = getTrimmed(nodes);
 	if (isTrivial(ns))
 		return mapexpr(ns[0]);
 	else
@@ -73,14 +73,14 @@ GExpr mapexpr(element(_,"element",attrs))
 {
 	str name = getName(attrs);
 	if (!isEmpty(name))
-		return mark(name,mapexprs([e | e:element(_,_,_) <- attrs, e.name != "name"]));
+		return mark(name,mapexprs(getTrimmedNameless(attrs)));
 	list[str] manynames = getManyNames(attrs);
 	if (!isEmpty(manynames))
 	{
 		GExpr e = mapexprs([e | e:element(_,_,_) <- attrs, e.name != "name", e.name != "choice"]);
 		return choice([mark(eachname,e) | eachname <- manynames]);
 	}
-	return mapexprs([e | e:element(_,_,_) <- attrs, e.name != "name"]);
+	return mapexprs(getTrimmedNameless(attrs));
 }
 
 // NB: ignore all annotations
@@ -131,10 +131,11 @@ GExpr mapexpr(element(_,"text",_)) = val(string());
 GExpr mapexpr(element(_,"value",attrs)) = mapTorV(attrs);
 GExpr mapexpr(element(_,"data",attrs)) = mapTorV(attrs);
 
-GExpr mapTorV([charData(str txt)]) = terminal(txt);
-
 GExpr mapTorV(list[Node] attrs)
 {
+	list[Node] es = getTrimmed(attrs);
+	if ([charData(str txt)] := es)
+		return terminal(txt);
 	str tip = getAttr(attrs,"type");
 	if (tip in ["string", "ID", "IDREF", "IDREFS", "QName", "NCName", "normalizedString"])
 		return val(string());
@@ -162,7 +163,7 @@ GExpr mapTorV(list[Node] attrs)
 GExpr mapexpr(element(_,"oneOrMore",attrs)) = plus(mapexprs(attrs));
 GExpr mapexpr(element(_,"zeroOrMore",attrs)) = star(mapexprs(attrs));
 GExpr mapexpr(element(_,"optional",attrs)) = optional(mapexprs(attrs));
-GExpr mapexpr(element(_,"choice",attrs)) = choice([mapexpr(e) | e:element(_,_,_) <- attrs]);
+GExpr mapexpr(element(_,"choice",attrs)) = choice([mapexpr(e) | e <- getTrimmedNameless(attrs)]);
 
 GExpr mapexpr(element(_,"attribute",attrs))
 {
@@ -173,7 +174,7 @@ GExpr mapexpr(element(_,"attribute",attrs))
 	if (!isEmpty(name))
 	{
 		// with this we filter out all attributes
-		es = [e | e:element(_,_,_) <- attrs];
+		es = getTrimmedNameless(attrs);
 		// NB: the logic is simple: if no type is given, the attribute is a string!
 		// TODO: does not work for elements
 		if (isEmpty(es))
@@ -184,7 +185,7 @@ GExpr mapexpr(element(_,"attribute",attrs))
 	list[str] manynames = getManyNames(attrs);
 	if (!isEmpty(manynames))
 	{
-		GExpr e = mapexprs([e | e <- attrs, e.name != "name", e.name != "choice"]);
+		GExpr e = mapexprs([e | e <- getTrimmedNameless(attrs), e.name != "choice"]);
 		return choice([mark(name,e) | name <- manynames]);
 	}
 	// TODO: the default case possibly needs debugging
@@ -207,6 +208,10 @@ default GExpr mapexpr(Node n)
 	iprintln(n);
 	return nothing();
 }
+
+// NB: this nicely cleans up attributes and comments, but perhaps treats entities to harshly
+list[Node] getTrimmed(list[Node] ns) = [n | Node n <- ns, element(_,_,_) := n || charData(_) := n];
+list[Node] getTrimmedNameless(list[Node] ns) = [n | Node n <- ns, element(_,_,_) := n, n.name != "name"];
 
 str getName(list[Node] ns) = getAttr2([av | attribute(_,"name",str av) <- ns] + [ev | element(_,"name",[charData(str ev)]) <- ns]);
 list[str] getManyNames(list[Node] ns) = [n | element(_,"choice",L) <- ns, element(_,"name",[charData(str n)]) <- L];
