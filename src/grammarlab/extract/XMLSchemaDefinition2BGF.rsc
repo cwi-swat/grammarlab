@@ -2,6 +2,7 @@
 module grammarlab::extract::XMLSchemaDefinition2BGF
 
 import IO;
+import String;
 import lang::xml::DOM;
 import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
@@ -27,7 +28,8 @@ GGrammar extractG(loc f)
 		//	println("Warning: unexpected nodes in RNG: <[n | element(_,str n,_) <- others]>");
 		GProdList ps = [mapprod(p,L) | p <- L,
 			element(_,"element",_) := p ||
-			element(_,"complexType",_) := p];
+			element(_,"complexType",_) := p ||
+			element(_,"simpleType",_) := p];
 		//	= [mapprod(p)  |  p <- defines];
 		//	//+ [mapprod(ip) | op <- defines, element(_,"element",list[Node] ec) <- op.children, element(_,"grammar",list[Node] gc) <- ec, ip:element(_,"define",_) <- gc];
 		return normalise(grammar(
@@ -42,6 +44,7 @@ GGrammar extractG(loc f)
 
 GProd mapprod(e:element(_,"element",_),_) = production(getName(e),getContentType(e));
 GProd mapprod(e:element(_,"complexType",_),L) = production(getName(e),mapComplexType(e,L));
+GProd mapprod(e:element(_,"simpleType",_),_) = production(getName(e),mapSimpleType(e));
 
 default GProd mapprod(Node n)
 {
@@ -49,11 +52,18 @@ default GProd mapprod(Node n)
 	iprintln(n);
 }
 
+GExpr mapSimpleType(Node n)
+{
+	ns = getPure(n);
+	if ([element(_,"restriction",L)] := ns)
+		return choice([mark(v,epsilon()) | element(_,"enumeration",[attribute(_,"value",str v)]) <- L]);
+}
+
 GExpr getContentType(Node n)
 {
 	if ( attribute(none(),"type",str name) <- n.children)
 		return nonterminal(name);
-	elseif ( /e:element(_,"complexType",L) := n.children)
+	elseif ( e:element(_,"complexType",L) <- n.children)
 		return mapComplexType(e,[]);
 	else
 	{
@@ -63,19 +73,31 @@ GExpr getContentType(Node n)
 	}
 }
 
+list[Node] getPure(Node n) = [e | e <- n.children, element(_,_,_) := e];
+
 GExpr mapComplexType(Node n, list[Node] context)
 {
-	ns = [e | e <- n.children, element(_,_,_) := e];
+	str mino = getMin(n), maxo = getMax(n);
+	ns = getPure(n);
 	if (isEmpty(ns) && isAbstract(n))
-	{
 		return choice([type2nt(getName(t)) |
 			/t:element(_,"complexType",L) := context,
 			/x:element(_,"extension",L2) := L,
 			getBase(x) == getName(n)
 		]);
-	}
-	elseif ([element(_,"sequence",L)] := ns)
-		return sequence([mapElement(e) | e <- L]);
+	if (isEmpty(ns)) return epsilon();
+	if ([element(_,"complexContent",[element(_,"extension",L)])] := ns)
+		ns = [e | e <- L, element(_,_,_) := e];
+
+	if ([ge:element(_,"sequence",L)] := ns)
+		return wrap(sequence([mapElement(e) | e <- getPure(ge)]),mino,maxo);
+	elseif ([ge:element(_,"sequence",L),AS*] := ns, allattributes(AS))
+		return wrap(sequence([mapElement(e) | e <- getPure(ge)]+[mapElement(e) | e <- AS]),mino,maxo);
+		// TODO: double check what is minOccurs default for attributes
+	elseif ([ge:element(_,"choice",L)] := ns)
+		return wrap(choice([mapElement(e) | e <- getPure(ge)]),getMin(ge),getMax(ge));
+	elseif ([ge:element(_,"group",L)] := ns)
+		return wrap(type2nt(getRef(ge)),getMin(ge),getMax(ge));
 	else
 	{
 		println("Do not know what to do in <n.name> with:");
@@ -84,20 +106,33 @@ GExpr mapComplexType(Node n, list[Node] context)
 	}
 }
 
+bool allattributes([]) = true;
+bool allattributes([element(_,"attribute",_)]) = true;
+bool allattributes([element(_,"attribute",_),L*]) = allattributes(L);
+default bool allattributes(list[Node] nodes) = false;
+
 GExpr mapElement(Node n)
 {
-	str name = getName(n), tip = getType(n), mino = getMin(n), maxo = getMax(n);
+	str name = getName(n), tip = getType(n), ref = getRef(n);
+	str mino = getMin(n), maxo = getMax(n);
 	// TODO: if tip is "", we need to go deeper
-	if (mino == "1" && maxo == "1")
-		return label(name,type2nt(tip));
-	elseif (mino == "0" && maxo == "1")
-		return optional(label(name,type2nt(tip)));
-	elseif (mino == "0" && maxo == "unbounded")
-		return star(label(name,type2nt(tip)));
-	elseif (mino == "1" && maxo == "unbounded")
-		return plus(label(name,type2nt(tip)));
-	else
-		println("Name <name>, type <tip>, min <mino>, max <maxo>");
+	// TODO: mark should be label after testing!
+	if (!isEmpty(name))
+	{
+		if (!isEmpty(tip))
+			return wrap(mark(name,type2nt(tip)), mino,maxo);
+		elseif (isEmpty(tip) && isEmpty(n.children))
+			return wrap(mark(name,epsilon()), mino,maxo);
+		cts = [ct | ct:element(_,"complexType",_) <- n.children];
+		if (isTrivial(cts))
+			return wrap(mark(name,mapComplexType(cts[0],[])), mino,maxo);
+		//elseif (getRef(n
+		//else
+		//	println("WTF multiple complex types??");
+	}
+	if (!isEmpty(ref))
+		return wrap(type2nt(ref), mino,maxo);
+	println("Name <name>, type <tip>, min <mino>, max <maxo>");
 	return empty();
 }
 
@@ -105,6 +140,7 @@ bool isAbstract(Node n) = [_*,attribute(none(),"abstract","true"),_*] := n.child
 
 str getName(Node n)
 {
+	//println("Getting the name of <n.name>...");
 	if ( attribute(none(),"name",str name) <- n.children)
 		return name;
 	else
@@ -117,6 +153,7 @@ str getName(Node n)
 
 str getType(Node n) = getAttr(n,"type");
 str getBase(Node n) = getAttr(n,"base");
+str getRef(Node n) = getAttr(n,"ref");
 
 str getAttr(Node n, str aname)
 {
@@ -142,16 +179,35 @@ str getMax(Node n)
 		return "1";
 }
 
-GExpr type2nt("xs:int") = val(integer());
-GExpr type2nt("xsd:int") = val(integer());
-GExpr type2nt("xs:string") = val(string());
-GExpr type2nt("xsd:string") = val(string());
-default GExpr type2nt(str s) = nonterminal(s);
+GExpr type2nt(str nsn) = type2nt2(dropNs(nsn));
+
+str dropNs(str nsn)
+{
+	if (contains(nsn,":"))
+		return split(":",nsn)[1];
+	return nsn;
+}
+
+GExpr type2nt2("xs:int") = val(integer());
+GExpr type2nt2("xsd:int") = val(integer());
+GExpr type2nt2("xs:string") = val(string());
+GExpr type2nt2("xsd:string") = val(string());
+default GExpr type2nt2(str s) = nonterminal(s);
+
+GExpr wrap(GExpr e, "1", "1") = e;
+GExpr wrap(GExpr e, "0", "1") = optional(e);
+GExpr wrap(GExpr e, "0", "unbounded") = star(e);
+GExpr wrap(GExpr e, "1", "unbounded") = plus(e);
+default GExpr wrap(GExpr e, str mino, str maxo)
+{
+	println("Warning: cannot properly model repetition of <mino>..<maxo>");
+	return e;
+}
 
 void main()
 {
 	GGrammar g;
-	g = extractG(|home:///projects/slps/topics/fl/xsd/fl.xsd|);
+	g = extractG(|home:///projects/slps/shared/xsd/xbgf.xsd|);
 	println(ppx(g));
 	println("XSD Ok!");
 }
