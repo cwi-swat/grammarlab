@@ -25,9 +25,7 @@ GGrammar extractG(loc f)
 			println("Warning: merge this grammar with the one extracted from <getAttr(inc.children,"href")>!");
 		if (!isEmpty(others))
 			println("Warning: unexpected nodes in RNG: <[n | element(_,str n,_) <- others]>");
-		GProdList ps
-			= [mapprod(p)  |  p <- defines];
-			//+ [mapprod(ip) | op <- defines, element(_,"element",list[Node] ec) <- op.children, element(_,"grammar",list[Node] gc) <- ec, ip:element(_,"define",_) <- gc];
+		GProdList ps = [mapprod(p) | p <- defines];
 		return normalise(grammar(
 			squeeze([p.lhs | p <- ps]),
 			ps,
@@ -35,7 +33,7 @@ GGrammar extractG(loc f)
 		));
 	}
 	else
-		throw "<f> is not a proper BGF file";
+		throw "<f> is not a proper Relax NG file";
 }
 
 list[str] maproots(list[Node] L) = [s | element(_,"start",L2) <- L, /element(_,"ref",[attribute(none(),"name",str s)]) <- L2];
@@ -223,22 +221,4 @@ default str getAttr2(list[str] vs)
 {
 	println("Warning: multiple values of the attribute: <vs>");
 	return vs[0];
-}
-
-void main()
-{
-	GGrammar g;
-	
-	//g = extractG(|home:///projects/slps/topics/grammars/atom/dettrick/atom.rng.xml|);
-	//println(ppx(g));
-	//println("ATOM Ok!");
-	//g = extractG(|home:///projects/slps/topics/grammars/svg/furubayashi/svg11/svg-basic-structure.rng|);
-	//println(ppx(g));
-	//println("SVG Ok!");
-	g1 = extractG(|home:///projects/slps/topics/grammars/pnml/source/grammar/pnmlcoremodel.rng|);
-	//g2 = extractG(|home:///projects/slps/topics/grammars/html/clark/modules/table.rng|);
-	//g = mergeGs(g1,g2);
-	println("---------- Grammar:");
-	println(ppx(g1));
-	println("Ok!");
 }
