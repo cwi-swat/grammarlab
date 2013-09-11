@@ -28,6 +28,7 @@ GGrammar extractG(loc f)
 		//	println("Warning: unexpected nodes in RNG: <[n | element(_,str n,_) <- others]>");
 		GProdList ps = [mapprod(p,L) | p <- L,
 			element(_,"element",_) := p ||
+			element(_,"group",_) := p ||
 			element(_,"complexType",_) := p ||
 			element(_,"simpleType",_) := p];
 		//	= [mapprod(p)  |  p <- defines];
@@ -43,6 +44,7 @@ GGrammar extractG(loc f)
 }
 
 GProd mapprod(e:element(_,"element",_),_) = production(getName(e),getContentType(e));
+GProd mapprod(e:element(_,"group",_),L) = production(getName(e),mapComplexType(e,L));
 GProd mapprod(e:element(_,"complexType",_),L) = production(getName(e),mapComplexType(e,L));
 GProd mapprod(e:element(_,"simpleType",_),_) = production(getName(e),mapSimpleType(e));
 
@@ -62,7 +64,7 @@ GExpr mapSimpleType(Node n)
 GExpr getContentType(Node n)
 {
 	if ( attribute(none(),"type",str name) <- n.children)
-		return nonterminal(name);
+		return type2nt(name);
 	elseif ( e:element(_,"complexType",L) <- n.children)
 		return mapComplexType(e,[]);
 	else
@@ -73,7 +75,10 @@ GExpr getContentType(Node n)
 	}
 }
 
-list[Node] getPure(Node n) = [e | e <- n.children, element(_,_,_) := e];
+list[Node] getPure(Node n)
+	= [e | e <- n.children,
+	element(namespace(_,"http://www.w3.org/2001/XMLSchema"),str t,_) := e,
+	t notin ["documentation", "annotation"]];
 
 GExpr mapComplexType(Node n, list[Node] context)
 {
@@ -96,6 +101,9 @@ GExpr mapComplexType(Node n, list[Node] context)
 		// TODO: double check what is minOccurs default for attributes
 	elseif ([ge:element(_,"choice",L)] := ns)
 		return wrap(choice([mapElement(e) | e <- getPure(ge)]),getMin(ge),getMax(ge));
+	elseif ([ge:element(_,"choice",L),AS*] := ns, allattributes(AS))
+		return wrap(sequence([choice([mapElement(e) | e <- getPure(ge)])]+[mapElement(e) | e <- AS]),mino,maxo);
+		// TODO: double check what is minOccurs default for attributes
 	elseif ([ge:element(_,"group",L)] := ns)
 		return wrap(type2nt(getRef(ge)),getMin(ge),getMax(ge));
 	else
@@ -188,10 +196,15 @@ str dropNs(str nsn)
 	return nsn;
 }
 
-GExpr type2nt2("xs:int") = val(integer());
-GExpr type2nt2("xsd:int") = val(integer());
-GExpr type2nt2("xs:string") = val(string());
-GExpr type2nt2("xsd:string") = val(string());
+// TODO: could possibly make this more reliable, but the abstraction is reasonable as it is
+GExpr type2nt2("int") = val(integer());
+GExpr type2nt2("integer") = val(integer());
+GExpr type2nt2("decimal") = val(integer());
+GExpr type2nt2("nonNegativeInteger") = val(integer());
+GExpr type2nt2("positiveInteger") = val(integer());
+GExpr type2nt2("string") = val(string());
+GExpr type2nt2("normalizedString") = val(string());
+GExpr type2nt2("boolean") = val(boolean());
 default GExpr type2nt2(str s) = nonterminal(s);
 
 GExpr wrap(GExpr e, "1", "1") = e;

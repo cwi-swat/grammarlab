@@ -135,12 +135,14 @@ public bool gdtv(GGrammar g1, GGrammar g2)
 	println("Grammars differ!");
 	for (str nt <- squeeze(g1.N + g2.N))
 	{
-		if (isEmpty(unmatched1) && isEmpty(unmatched2)) continue;
+		rep1 = [p | p:production(nt,_) <- unmatched1];
+		rep2 = [p | p:production(nt,_) <- unmatched2];
+		if (isEmpty(rep1) && isEmpty(rep2)) continue;
 		println(" - Fail on <nt>:");
-		for (p:production(nt,_) <- unmatched1)
+		for (p <- rep1)
 			println("   - <ppx(p)>");
 		println("   vs");
-		for (p:production(nt,_) <- unmatched2)
+		for (p <- rep2)
 			println("   - <ppx(p)>");
 	}
 	//for (u <- unmatched1)
