@@ -67,18 +67,15 @@ GExpr mapSimpleType(Node n)
 	return empty();
 }
 
-GExpr getContentType(Node n)
+GExpr getContentType(element(_,_,[_*,attribute(none(),"type",str name),_*])) = type2nt(name);
+GExpr getContentType(element(_,_,[_*,e:element(_,"complexType",L),_*])) = mapComplexType(e,[]);
+GExpr getContentType(element(_,_,[_*,e:element(_,"simpleType",L),_*])) = mapSimpleType(e);
+GExpr getContentType(element(_,_,[_*,attribute(none(),"nillable","true"),_*])) = epsilon();
+default GExpr getContentType(Node n)
 {
-	if ( attribute(none(),"type",str name) <- n.children)
-		return type2nt(name);
-	elseif ( e:element(_,"complexType",L) <- n.children)
-		return mapComplexType(e,[]);
-	else
-	{
-		println("Unknown element type:");
-		iprintln(n);
-		return empty();
-	}
+	println("Unknown element type:");
+	iprintln(n);
+	return empty();
 }
 
 list[Node] getPure(Node n)
@@ -90,6 +87,8 @@ GExpr mapComplexType(Node n, list[Node] context)
 {
 	str mino = getMin(n), maxo = getMax(n);
 	ns = getPure(n);
+	if (getAttr(n,"mixed")=="true")
+		return star(choice([mapElement(e) | e <- getPure(n)] + [val(string())]));
 	if (isEmpty(ns) && isAbstract(n))
 		return choice([type2nt(getName(t)) |
 			/t:element(_,"complexType",L) := context,
@@ -99,9 +98,12 @@ GExpr mapComplexType(Node n, list[Node] context)
 	if (isEmpty(ns)) return epsilon();
 	if ([element(_,"complexContent",[element(_,"extension",L)])] := ns)
 		ns = [e | e <- L, element(_,_,_) := e];
+	if ([sc:element(_,"simpleContent",_)] := ns)
+		// TODO: check if named already
+		return mapSimpleContent(sc);
 
 	if ([ge:element(_,"sequence",L)] := ns)
-		return wrap(sequence([mapElement(e) | e <- getPure(ge)]),mino,maxo);
+		return wrap(sequence([mapElement(e) | e <- getPure(ge)]),getMin(ge),getMax(ge));
 	elseif ([ge:element(_,"sequence",L),AS*] := ns, allattributes(AS))
 		return wrap(sequence([mapElement(e) | e <- getPure(ge)]+[mapElement(e) | e <- AS]),mino,maxo);
 		// TODO: double check what is minOccurs default for attributes
@@ -120,13 +122,40 @@ GExpr mapComplexType(Node n, list[Node] context)
 	}
 }
 
+GExpr mapSimpleContent(Node n)
+{
+	if ([ext:element(_,"extension",_)] := getPure(n))
+	{
+		return sequence(
+			[type2nt(getBase(ext))] +
+			[mapElement(e) | e <- getPure(ext)]
+		);
+	}
+	else
+	{
+		println("Do not know what to do in <n.name> with:");
+		iprintln(n);
+		return empty();
+	}
+}
+
 bool allattributes([]) = true;
+bool allattributes([element(_,"anyAttribute",_)]) = true;
 bool allattributes([element(_,"attribute",_)]) = true;
 bool allattributes([element(_,"attribute",_),L*]) = allattributes(L);
+bool allattributes([element(_,"anyAttribute",_),L*]) = allattributes(L);
 default bool allattributes(list[Node] nodes) = false;
 
 GExpr mapElement(Node n)
 {
+	if (element(_,"choice",_) := n)
+		return wrap(choice([mapElement(e) | e <- getPure(n)]),getMin(n),getMax(n));
+	if (element(_,"sequence",_) := n)
+		return wrap(sequence([mapElement(e) | e <- getPure(n)]),getMin(n),getMax(n));
+	if (element(_,"any",_) := n)
+		return wrap(anything(),getMin(n),getMax(n));
+	if (element(_,"anyAttribute",_) := n)
+		return wrap(star(anything()),getMin(n),getMax(n));
 	str name = getName(n), tip = getType(n), ref = getRef(n);
 	str mino = getMin(n), maxo = getMax(n);
 	// TODO: if tip is "", we need to go deeper
@@ -140,13 +169,16 @@ GExpr mapElement(Node n)
 		cts = [ct | ct:element(_,"complexType",_) <- n.children];
 		if (isTrivial(cts))
 			return wrap(mark(name,mapComplexType(cts[0],[])), mino,maxo);
+		elseif(isEmpty(cts))
+			return epsilon();
 		//else
 		//	println("WTF multiple complex types??");
 	}
 	if (!isEmpty(ref))
 		return wrap(type2nt(ref), mino,maxo);
 	println("Name <name>, type <tip>, min <mino>, max <maxo>");
-	return empty();
+	iprintln(n);
+	//return empty();
 }
 
 bool isAbstract(Node n) = [_*,attribute(none(),"abstract","true"),_*] := n.children;
@@ -175,9 +207,16 @@ str getAttr(Node n, str aname)
 		return "";
 }
 
-str getMin(Node n) = [_*,attribute(none(),"minOccurs",str name),_*] := n.children ? name : "1";
+str getMin(element(_,_,[_*,attribute(none(),"minOccurs",str howmuch),_*])) = howmuch;
+str getMin(element(_,_,[_*,attribute(none(),"use","optional"),_*])) = "0";
+str getMin(element(_,_,[_*,attribute(none(),"use","prohibited"),_*])) = "0";
+str getMin(element(_,_,[_*,attribute(none(),"use","required"),_*])) = "1";
+str getMin(element(_,"attribute",_)) = "0";
+default str getMin(Node n) = "1";
 
-str getMax(Node n) = [_*,attribute(none(),"maxOccurs",str name),_*] := n.children ? name : "1";
+str getMax(element(_,_,[_*,attribute(none(),"maxOccurs",str howmuch),_*])) = howmuch;
+str getMax(element(_,_,[_*,attribute(none(),"use","prohibited"),_*])) = "0";
+default str getMax(Node n) = "1";
 
 GExpr type2nt(str nsn) = type2nt2(dropNs(nsn));
 
@@ -192,8 +231,13 @@ GExpr type2nt2("positiveInteger") = val(integer());
 GExpr type2nt2("string") = val(string());
 GExpr type2nt2("normalizedString") = val(string());
 GExpr type2nt2("boolean") = val(boolean());
+GExpr type2nt2("anyURI") = val(string());
+GExpr type2nt2("token") = val(string());
+GExpr type2nt2("ID") = val(string());
+GExpr type2nt2("IDREF") = val(string());
 default GExpr type2nt2(str s) = nonterminal(s);
 
+GExpr wrap(GExpr _, "0", "0") = epsilon();
 GExpr wrap(GExpr e, "1", "1") = e;
 GExpr wrap(GExpr e, "0", "1") = optional(e);
 GExpr wrap(GExpr e, "0", "unbounded") = star(e);
@@ -207,7 +251,8 @@ default GExpr wrap(GExpr e, str mino, str maxo)
 void main()
 {
 	GGrammar g;
-	g = extractG(|home:///projects/slps/shared/xsd/bgf.xsd|);
+	//g = extractG(|home:///projects/slps/shared/xsd/bgf.xsd|);
+	g = extractG(|home:///projects/slps/topics/grammars/ldf/v20.0-xsd/ldf.xsd|);
 	println(ppx(g));
 	println("XSD Ok!");
 }
