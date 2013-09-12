@@ -18,26 +18,22 @@ GGrammar extractG(loc f)
 	{
 		list[str] S = [getName(e) | e:element(namespace(_,"http://www.w3.org/2001/XMLSchema"),"element",_) <- L];
 		println("Roots: <S>");
-		//list[Node] defines = [d | /d:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),"define",_) := L];
-		//list[Node] includes = [d | d:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),"include",_) <- L];
-		//list[Node] others = [e | e:element(namespace(_,"http://relaxng.org/ns/structure/1.0"),str t,_) <- L, t notin ["start", "define", "include"]];
-		//// TODO: change the semantics of <include>!
-		//for (inc <- includes)
-		//	println("Warning: merge this grammar with the one extracted from <getAttr(inc.children,"href")>!");
-		//if (!isEmpty(others))
-		//	println("Warning: unexpected nodes in RNG: <[n | element(_,str n,_) <- others]>");
 		GProdList ps = [mapprod(p,L) | p <- L,
 			element(_,"element",_) := p ||
 			element(_,"group",_) := p ||
 			element(_,"complexType",_) := p ||
 			element(_,"simpleType",_) := p];
-		//	= [mapprod(p)  |  p <- defines];
-		//	//+ [mapprod(ip) | op <- defines, element(_,"element",list[Node] ec) <- op.children, element(_,"grammar",list[Node] gc) <- ec, ip:element(_,"define",_) <- gc];
-		return normalise(grammar(
-			squeeze([p.lhs | p <- ps]),
-			ps,
-			S
-		));
+		list[GGrammar] gs = [grammar(squeeze([p.lhs | p <- ps]), ps, S)];
+		for (xsd <- [getAttr(d,"schemaLocation") | d:element(namespace(_,"http://www.w3.org/2001/XMLSchema"),"import",_) <- L])
+		{
+			println("Warning: importing <xsd>...");
+			if (contains(xsd,"://"))
+				// TODO: this function does not exist!!!
+				gs += extractG(toLocation(xsd));
+			else
+				gs += extractG(f[file=xsd]);
+		}
+		return mergeGs(gs);
 	}
 	else
 		throw "<f> is not a proper XML Schema Definition file";
@@ -57,8 +53,17 @@ default GProd mapprod(Node n)
 GExpr mapSimpleType(Node n)
 {
 	ns = getPure(n);
-	if ([element(_,"restriction",L)] := ns)
-		return choice([mark(v,epsilon()) | element(_,"enumeration",[attribute(_,"value",str v)]) <- L]);
+	if ([r:element(_,"restriction",L)] := ns)
+	{
+		es = [v | element(_,"enumeration",[attribute(_,"value",str v)]) <- L];
+		if (isEmpty(es))
+			return type2nt(getBase(r));
+		else
+			return choice([mark(v,epsilon()) | v <- es]);
+	}
+	println("Error: unmapped simple type:");
+	iprintln(n);
+	return empty();
 }
 
 GExpr getContentType(Node n)
@@ -134,7 +139,6 @@ GExpr mapElement(Node n)
 		cts = [ct | ct:element(_,"complexType",_) <- n.children];
 		if (isTrivial(cts))
 			return wrap(mark(name,mapComplexType(cts[0],[])), mino,maxo);
-		//elseif (getRef(n
 		//else
 		//	println("WTF multiple complex types??");
 	}
@@ -148,14 +152,13 @@ bool isAbstract(Node n) = [_*,attribute(none(),"abstract","true"),_*] := n.child
 
 str getName(Node n)
 {
-	//println("Getting the name of <n.name>...");
 	if ( attribute(none(),"name",str name) <- n.children)
 		return name;
 	else
 	{
-		println("Cannot determine name of:");
-		iprintln(n);
-		return "?";
+		//println("Cannot determine name of:");
+		//iprintln(n);
+		return "";
 	}
 }
 
@@ -171,30 +174,13 @@ str getAttr(Node n, str aname)
 		return "";
 }
 
-str getMin(Node n)
-{
-	if ( attribute(none(),"minOccurs",str name) <- n.children)
-		return name;
-	else
-		return "1";
-}
+str getMin(Node n) = [_*,attribute(none(),"minOccurs",str name),_*] := n.children ? name : "1";
 
-str getMax(Node n)
-{
-	if ( attribute(none(),"maxOccurs",str name) <- n.children)
-		return name;
-	else
-		return "1";
-}
+str getMax(Node n) = [_*,attribute(none(),"maxOccurs",str name),_*] := n.children ? name : "1";
 
 GExpr type2nt(str nsn) = type2nt2(dropNs(nsn));
 
-str dropNs(str nsn)
-{
-	if (contains(nsn,":"))
-		return split(":",nsn)[1];
-	return nsn;
-}
+str dropNs(str nsn) = contains(nsn,":") ? split(":",nsn)[1] : nsn;
 
 // TODO: could possibly make this more reliable, but the abstraction is reasonable as it is
 GExpr type2nt2("int") = val(integer());
@@ -220,7 +206,7 @@ default GExpr wrap(GExpr e, str mino, str maxo)
 void main()
 {
 	GGrammar g;
-	g = extractG(|home:///projects/slps/shared/xsd/xbgf.xsd|);
+	g = extractG(|home:///projects/slps/shared/xsd/bgf.xsd|);
 	println(ppx(g));
 	println("XSD Ok!");
 }
