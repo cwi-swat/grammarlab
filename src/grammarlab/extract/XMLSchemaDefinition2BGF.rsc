@@ -9,6 +9,7 @@ import grammarlab::transform::Normal;
 import grammarlab::export::Grammar;
 import grammarlab::lib::Squeeze;
 import grammarlab::lib::Sizes;
+import grammarlab::lib::Location; // code moved to Rascal, remove this once the plugin updates
 
 import grammarlab::transform::Merge;
 
