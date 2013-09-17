@@ -1,8 +1,8 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::PGF
 
-import lang::std::Layout;
-import lang::std::Id;
+extend lang::std::Layout;
+extend lang::std::Id;
 
 start syntax PGFFile = PGFCat+ cs;
 syntax PGFCat = "category" "{" {PGFName ","}+ elems "}" "\<:" PGFName super ";";
