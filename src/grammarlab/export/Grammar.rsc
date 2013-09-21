@@ -4,7 +4,7 @@ module grammarlab::export::Grammar
 
 import grammarlab::language::Grammar;
 import grammarlab::language::EBNF;
-import grammarlab::lib::Joining;
+import grammarlab::lib::RascalPlus;
 
 public str ppx(GExpr smth) = ppx(smth,DefaultEBNF);
 public str ppx(GExprList smth) = ppx(smth,DefaultEBNF);

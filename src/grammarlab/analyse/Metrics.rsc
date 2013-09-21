@@ -3,7 +3,7 @@ module grammarlab::analyse::Metrics
 
 import grammarlab::language::Grammar;
 import grammarlab::lib::Sizes;
-import grammarlab::lib::Haskell;
+import grammarlab::lib::RascalPlus;
 
 // PROD
 public int PROD(GGrammar g) = summap(countProd, g.P);

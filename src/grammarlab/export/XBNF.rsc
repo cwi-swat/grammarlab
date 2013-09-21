@@ -1,7 +1,7 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::export::XBNF
 
-import grammarlab::lib::Joining;
+import grammarlab::lib::RascalPlus;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::XScope;

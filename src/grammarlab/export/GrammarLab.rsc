@@ -5,7 +5,7 @@ module grammarlab::export::GrammarLab
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::XScope;
-import grammarlab::lib::Joining;
+import grammarlab::lib::RascalPlus;
 
 public str ppgl(GGrammar g) = ppgl(0,0,g);
 public str ppgl(int i, int j, GGrammar g) = "<ind(i)>grammar(<g.N>,\n<ind(j+1)>[<ppgl(0,j+1,g.P)>],\n<ind(j+1)><g.S>)";

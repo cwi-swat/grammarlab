@@ -29,7 +29,7 @@ public bool isTrivial({&T x})             = true;
 public default bool isTrivial(set[&T] x)  = false;
 public bool isTrivial(map[&T1,&T2] x)     = len(x) == 1;
 public bool isTrivial(rel[&T1,&T2] x)     = len(x) == 1;
-public bool isTrivial(str x)              = len(x)=="";
+public bool isTrivial(str x)              = len(x) == 1;
 
 // count the number of unique members
 public int ulen(list[&T] x)             = Set::size(List::toSet(x));

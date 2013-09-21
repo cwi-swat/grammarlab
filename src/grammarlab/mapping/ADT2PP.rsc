@@ -4,7 +4,7 @@ pretty-printer for it, relying on pattern-driven dispatch and the presence of pp
 for all inner types}
 module grammarlab::mapping::ADT2PP
 
-import grammarlab::lib::Joining;
+import grammarlab::lib::RascalPlus;
 import IO;
 import grammarlab::language::Grammar;
 import grammarlab::extract::RascalADT2BGF;

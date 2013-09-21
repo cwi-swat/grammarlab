@@ -11,7 +11,7 @@ import grammarlab::transform::Merge;
 import grammarlab::transform::Normal;
 import IO; // listEntries
 import String; // endsWith
-import grammarlab::lib::Joining;
+import grammarlab::lib::RascalPlus;
 import ParseTree;
 import util::IDE; // DEBUG
 

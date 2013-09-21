@@ -4,13 +4,15 @@ module grammarlab::io::write::BGF
 import IO;
 import lang::xml::DOM;
 import grammarlab::language::Grammar;
-import grammarlab::lib::Joining;
+import grammarlab::lib::RascalPlus;
 import grammarlab::lib::Squeeze;
 import grammarlab::lib::Sizes;
 
 public void writeBGF(GGrammar bgf, loc f)
 	= writeFile(f,xmlRaw(document(element(namespace("bgf","http://planet-sl.org/bgf"),"grammar",
-		comment(joinStrings(f.N)) + charData("\n") +
+		comment(joinStrings(f.N)) +
+		// TODO: something wrong?
+		charData("\n") +
 		[element(none(),"root",[charData(s)]) | str s <- bgf.S] + charData("\n") +
 		[prod2xml(p) | GProd p <- bgf.P]))));
 

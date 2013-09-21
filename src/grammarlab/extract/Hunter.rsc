@@ -3,6 +3,6 @@ module grammarlab::extract::Hunter
 
 import grammarlab::language::Grammar;
 import grammarlab::language::EBNF;
-// import grammarlab::lib::Joining;
+// import grammarlab::lib::RascalPlus;
 
 // TODO
