@@ -24,9 +24,9 @@ public void main(list[str] args)
 	println(EDD2Rascal(PicoEBNF,"PicoBNF"));
 }
 
-str EDD2Rascal(EBNF edd, str name)
+public str EDD2Rascal(EBNF edd, str name, str lib="")
 {
-	str prep = "module <name>
+	str prep = "module <lib><name>
 	'// import util::IDE; // needed only for advanced IDE support
 	'import String; import IO;
 	'import grammarlab::language::Grammar;
@@ -109,7 +109,7 @@ str EDD2Rascal(EBNF edd, str name)
 	'	for(p \<- ps){p2 = mapP(p); if(p.lhs notin nts)nts+=p.lhs; ps2+=p2;}
 	'	return grammar(nts, [], ps2);
 	'}
-	'GProd mapP((<name>Production)`\<<name>Nonterminal lhs\><unquoted(edd,defining_symbol())>\<{<name>Definition <quoted(edd,definition_separator_symbol())>}+ rhds\><unquoted(edd,terminator_symbol())>`) = production(\"\<lhs\>\",mapDs(rhds));
+	'GProd mapP((<name>Production)`\<<name>Nonterminal lhs\><unquoted(edd,defining_symbol())>\<{<name>Definition <quoted(edd,definition_separator_symbol())>}+ rhds\><inbackticks(edd,terminator_symbol())>`) = production(\"\<lhs\>\",mapDs(rhds));
 	'GExpr mapDs({<name>Definition <quoted(edd,definition_separator_symbol())>}+ ds)
 	'{
 	'	GExprList es = [mapE(d) | <name>Definition d \<- ds];
@@ -173,6 +173,7 @@ map[str,str] makeCompleteEDDof(map[str,str] edd)
 	return r;
 }
 
+str inbackticks(EBNF ebnf, Metasymbol ms) = ms in ebnf? trim(ebnf[ms]) : "";
 str unquoted(EBNF ebnf, Metasymbol ms) = ms in ebnf? trim(escape(ebnf[ms],quotedEscapes)) : "";
 str quoted(EBNF ebnf, Metasymbol ms) = ms in ebnf? "\"" + trim(escape(ebnf[ms],quotedEscapes)) + "\"" : "";
 str inlex(EBNF ebnf, Metasymbol ms) = ms in ebnf? escape(ebnf[ms],charClassEscapes) : "";

@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module tests::transform::Sync
+module meta::TextXBGF
 
 import String;
 import IO;
