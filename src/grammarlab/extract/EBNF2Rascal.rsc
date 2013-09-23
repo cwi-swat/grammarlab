@@ -8,8 +8,8 @@ import String;
 // list[&T] slice(list[&T] lst, int start, int len)
 list[&T] sliceFromTo(list[&T] lst, int s, int e) = slice(lst,s,e-s);
 
-map[str,str] quotedEscapes = ("\"" : "\\\"", "\n": "\\n");
-map[str,str] charClassEscapes = ("\"" : "\\\"","-" : "\\-", "\\" : "\\\\");
+map[str,str] quotedEscapes = ("\"" : "\\\"", "\n": "\\n", "\>": "\\\>", "\<": "\\\<");
+map[str,str] charClassEscapes = ("\"" : "\\\"","-" : "\\-", "\\" : "\\\\", "]": "\\]", "[": "\\[", "\>": "\\\>", "\<": "\\\<");
 
 public void main(list[str] args)
 {
@@ -24,9 +24,11 @@ public void main(list[str] args)
 	println(EDD2Rascal(PicoEBNF,"PicoBNF"));
 }
 
-public str EDD2Rascal(EBNF edd, str name, str lib="")
+public str EDD2Rascal(EBNF edd, str name) = EDD2Rascal(edd,name,name); 
+
+public str EDD2Rascal(EBNF edd, str name, str libname)
 {
-	str prep = "module <lib><name>
+	str prep = "module <libname>
 	'// import util::IDE; // needed only for advanced IDE support
 	'import String; import IO;
 	'import grammarlab::language::Grammar;
@@ -41,8 +43,12 @@ public str EDD2Rascal(EBNF edd, str name, str lib="")
 		prep += "syntax <name>Definition = <name>Symbol+;";
 	prep +=	"
 	'syntax <name>Symbol
- 	' = @category=\"Identifier\" nonterminal: <name>Nonterminal
- 	' | @category=\"Constant\" terminal: <name>Terminal";
+ 	' = nonterminal: <name>Nonterminal
+ 	' | terminal: <name>Terminal";
+	if (start_label_symbol() in edd && end_label_symbol() in edd)
+ 		prep += "\n | labelled: <quoted(edd,start_label_symbol())> <name>Label <quoted(edd,end_label_symbol())> <name>Symbol";
+	if (start_mark_symbol() in edd && end_mark_symbol() in edd)
+		prep += "\n | marked: <quoted(edd,start_mark_symbol())> <name>Mark <quoted(edd,end_mark_symbol())> <name>Symbol";
 	if (start_group_symbol() in edd && end_group_symbol() in edd)
 		if (definition_separator_symbol() in edd)
 			prep += "\n | group: <quoted(edd,start_group_symbol())> {<name>Definition <quoted(edd,disjunction_symbol())>}+ <quoted(edd,end_group_symbol())>";
@@ -60,11 +66,13 @@ public str EDD2Rascal(EBNF edd, str name, str lib="")
  		prep += "\n | seplistplus: <quoted(edd,start_seplist_plus_symbol())> <name>Symbol <name>Symbol <quoted(edd,end_seplist_plus_symbol())>";
  	prep += ";"; // end of <name>Symbol
 	if (start_terminal_symbol() in edd && end_terminal_symbol() in edd)
- 		prep += "\nlexical <name>Terminal = <quoted(edd,start_terminal_symbol())> <name>TerminalSymbols name <quoted(edd,end_terminal_symbol())>;
- 		'lexical <name>TerminalSymbols = ![<inlex(edd,end_terminal_symbol())>]* !\>\> ![<inlex(edd,end_terminal_symbol())>];";
+ 		prep += "\nlexical <name>Terminal = @category=\"Constant\" <quoted(edd,start_terminal_symbol())> <name>TerminalSymbols name <quoted(edd,end_terminal_symbol())>;
+ 		'lexical <name>TerminalSymbols = ![<inlex1(edd,end_terminal_symbol())>]* !\>\> ![<inlex1(edd,end_terminal_symbol())>];";
  	else
- 		prep += "\nlexical <name>Terminal = ![ \\t-\\n]* name !\>\> ![ \\t-\\n];";
-	prep += "\nlexical <name>Nonterminal = <quoted(edd,start_nonterminal_symbol())> <name>NonterminalSymbols name <quoted(edd,end_nonterminal_symbol())>;";
+ 		prep += "\nlexical <name>Terminal = @category=\"Constant\" ![ \\t-\\n]* name !\>\> ![ \\t-\\n];";
+	prep += "\nlexical <name>Nonterminal = @category=\"Identifier\" <quoted(edd,start_nonterminal_symbol())> <name>NonterminalSymbols name <quoted(edd,end_nonterminal_symbol())>;";
+	prep += "\nlexical <name>Label = @category=\"NonterminalLabel\" ![<inlex1(edd,end_label_symbol())>]+ \>\> [<inlex1(edd,end_label_symbol())>];";
+	prep += "\nlexical <name>Mark = @category=\"NonterminalLabel\" ![<inlex1(edd,end_mark_symbol())>]* \>\> [<inlex1(edd,end_mark_symbol())>];";
 	if (start_nonterminal_symbol() in edd && end_nonterminal_symbol() in edd)
  		prep += "\nlexical <name>NonterminalSymbols = ![<inlex(edd,end_nonterminal_symbol())>]+ !\>\> ![<inlex(edd,end_nonterminal_symbol())>];";
  	else
@@ -177,9 +185,11 @@ str inbackticks(EBNF ebnf, Metasymbol ms) = ms in ebnf? trim(ebnf[ms]) : "";
 str unquoted(EBNF ebnf, Metasymbol ms) = ms in ebnf? trim(escape(ebnf[ms],quotedEscapes)) : "";
 str quoted(EBNF ebnf, Metasymbol ms) = ms in ebnf? "\"" + trim(escape(ebnf[ms],quotedEscapes)) + "\"" : "";
 str inlex(EBNF ebnf, Metasymbol ms) = ms in ebnf? escape(ebnf[ms],charClassEscapes) : "";
+str inlex1(EBNF ebnf, Metasymbol ms) = ms in ebnf? escape(ebnf[ms][0],charClassEscapes) : "";
 
 str quoted(map[str,str] m, str k) = k in m? "\"" + escape(m[k],quotedEscapes) + "\"" : "";
 str inlex(map[str,str] m, str k) = k in m? escape(m[k],charClassEscapes) : "";
+str inlex1(map[str,str] m, str k) = k in m? escape(m[k][0],charClassEscapes) : "";
 
 // str mayContain(EBNF enbf)
 // 	= /nonterminals_may_contain(str x) := ebnf
