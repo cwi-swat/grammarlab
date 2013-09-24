@@ -3,6 +3,7 @@ module grammarlab::language::GlueScript
 
 import grammarlab::language::glue::Colours;
 import grammarlab::language::glue::Productions;
+import grammarlab::language::glue::Keywords;
 import util::IDE;
 import String;
 import IO;
@@ -14,9 +15,9 @@ import vis::Render;
 
 start syntax GLUE = GlueCommand+;
 syntax GlueCommand
-	= @Category="GlueCommand" "import"
-	 GlueProduction+
-	"."
+	= GlueKwImport GlueProduction+ "."
+	| GlueKwAbridge GlueProduction "."
+	| GlueKwDiff GlueProduction+ "."
 	// WIP
 	;
 
@@ -30,6 +31,7 @@ public void register()
 public void go()
 {
 	clearLanguages();
+	clearNonRascalContributions();
 	Tree t = char(0);
 	try
 		t = getGlue("",|project://grammarlab/src/tests/transform/XBGF.glue|);
