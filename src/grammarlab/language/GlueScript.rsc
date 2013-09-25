@@ -1,9 +1,9 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::GlueScript
 
+extend grammarlab::language::glue::Commands;
+extend grammarlab::language::glue::Productions;
 import grammarlab::language::glue::Colours;
-import grammarlab::language::glue::Productions;
-import grammarlab::language::glue::Keywords;
 import util::IDE;
 import String;
 import IO;
@@ -13,13 +13,12 @@ import vis::Figure;
 import vis::ParseTree;
 import vis::Render;
 
+
 start syntax GLUE = GlueCommand+;
 syntax GlueCommand
-	= GlueKwImport GlueProduction+ "."
-	| GlueKwAbridge GlueProduction "."
-	| GlueKwDiff GlueProduction+ "."
-	// WIP
+	= GlueKdiff GlueProduction+ "."
 	;
+lexical GlueKdiff = @category="MetaKeyword" "diff";
 
 Tree getGlue(str s,loc z) = parse(#GLUE,trim(readFile(z)));
 public void register()
