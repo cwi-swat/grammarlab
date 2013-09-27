@@ -64,6 +64,12 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
  		prep += "\n | sepliststar: <quoted(edd,start_seplist_star_symbol())> <name>Symbol <name>Symbol <quoted(edd,end_seplist_star_symbol())>";
 	if (start_seplist_plus_symbol() in edd && end_seplist_plus_symbol() in edd)
  		prep += "\n | seplistplus: <quoted(edd,start_seplist_plus_symbol())> <name>Symbol <name>Symbol <quoted(edd,end_seplist_plus_symbol())>";
+ 	if (empty_metasymbol() in edd)
+ 		prep += "\n | @category=\"MetaSkipped\" nothing: <quoted(edd,empty_metasymbol())>";
+ 	if (epsilon_metasymbol() in edd)
+ 		prep += "\n | @category=\"MetaSkipped\" emptystring: <quoted(edd,epsilon_metasymbol())>";
+ 	if (universal_metasymbol() in edd)
+ 		prep += "\n | @category=\"MetaSkipped\" everything: <quoted(edd,universal_metasymbol())>";
  	prep += ";"; // end of <name>Symbol
 	if (start_terminal_symbol() in edd && end_terminal_symbol() in edd)
  		prep += "\nlexical <name>Terminal = @category=\"Constant\" <quoted(edd,start_terminal_symbol())> <name>TerminalSymbols name <quoted(edd,end_terminal_symbol())>;

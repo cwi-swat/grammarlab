@@ -18,7 +18,10 @@ syntax GlueSymbol
  | star: GlueSymbol "*"
  | plus: GlueSymbol "+"
  | sepliststar: "{" GlueSymbol GlueSymbol "}*"
- | seplistplus: "{" GlueSymbol GlueSymbol "}+";
+ | seplistplus: "{" GlueSymbol GlueSymbol "}+"
+ | @category="MetaSkipped" nothing: "φ"
+ | @category="MetaSkipped" emptystring: "ε"
+ | @category="MetaSkipped" everything: "α";
 lexical GlueTerminal = @category="Constant" "\"" GlueTerminalSymbols name "\"";
 lexical GlueTerminalSymbols = ![\"]* !>> ![\"];
 lexical GlueNonterminal = @category="Identifier"  GlueNonterminalSymbols name ;

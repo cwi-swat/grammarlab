@@ -1,7 +1,9 @@
 importG
-	expr ::= [constant]::int "2";
+	// what is this?
+	expr ::= [constant]::int "string"?;
 	expr ::= [neg]::expr;
 	expr ::= [bracket]::expr;
+	foo  ::= ε;
 .
 abridge
 	expr ::= [bracket]::expr;
