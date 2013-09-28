@@ -4,6 +4,7 @@ module grammarlab::language::GlueScript
 extend grammarlab::language::glue::Commands;
 extend grammarlab::language::glue::Productions;
 import grammarlab::language::glue::Colours;
+import grammarlab::language::X;
 import util::IDE;
 import String;
 import IO;
@@ -14,13 +15,19 @@ import vis::ParseTree;
 import vis::Render;
 
 
-start syntax GLUE = GlueCommand+;
+start syntax GLUEC = GlueCommand+;
 syntax GlueCommand
 	= GlueKdiff GlueProduction+ "."
 	;
 lexical GlueKdiff = @category="MetaKeyword" "diff";
 
-Tree getGlue(str s,loc z) = parse(#GLUE,trim(readFile(z)));
+data GLUEA
+	= xbgf(XCommand cmd)
+	| sleir() // WIP: mutations
+	| glaction() // WIP: GrammarLab actions
+	;
+
+Tree getGlue(str s,loc z) = parse(#GLUEC,trim(readFile(z)));
 public void register()
 {
 	registerLanguage("GLUE","glue",getGlue);

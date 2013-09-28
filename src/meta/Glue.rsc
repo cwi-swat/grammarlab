@@ -73,11 +73,15 @@ void main()
 	'import grammarlab::language::XScope;\n
 	'syntax GlueCommand
 	'	= "
-	+intercalate("\n\t| ",["GlueK<c> <g(cs[c])> \".\"" | c <- csd])
-	+"\n\t;"	);
+	+intercalate("\n\t| ",["GlueK<c> <concretenotation(cs[c])> \".\"" | c <- csd])
+	+"\n\t;\n"
+	+intercalate("\n",["GLUEA glimplode((GlueCommand)`\<GlueK<c> _\> <fishnotation(cs[c])> .`) = xbgf(<c>(<allmarks(cs[c])>));" | c <- csd])
+	);
 }
 
-str g(GExpr e) = intercalate(" ",[convertGType(s) | sequence(L) := e, mark(_,s) <- L]);
+str concretenotation(GExpr e) = intercalate(" ",[convertGType(s) | sequence(L) := e, mark(_,s) <- L]);
+str fishnotation(GExpr e) = intercalate(" ",["\<<convertGType(s)> <n>\>" | sequence(L) := e, mark(n,s) <- L]);
+str allmarks(GExpr e) = intercalate(",",[n | sequence(L) := e, mark(n,_) <- L]);
 
 str convertGType(val(string())) = "GlueString";
 str convertGType(val(integer())) = "GlueInteger";
@@ -88,3 +92,4 @@ str convertGType(nonterminal("GExpr")) = "GlueSymbol";
 str convertGType(nonterminal("XScope")) = "GlueScope";
 str convertGType(star(GExpr e)) = convertGType(e)+"+";
 default str convertGType(GExpr e) = "value";
+
