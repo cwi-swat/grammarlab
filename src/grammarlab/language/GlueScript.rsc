@@ -1,9 +1,12 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::GlueScript
 
-extend grammarlab::language::glue::Commands;
+extend grammarlab::language::glue::Transformations;
 extend grammarlab::language::glue::Productions;
+extend grammarlab::language::glue::Scope;
+extend grammarlab::language::glue::Abstract;
 import grammarlab::language::glue::Colours;
+import grammarlab::language::glue::MapC2A;
 import grammarlab::language::X;
 import util::IDE;
 import String;
@@ -20,12 +23,6 @@ syntax GlueCommand
 	= GlueKdiff GlueProduction+ "."
 	;
 lexical GlueKdiff = @category="MetaKeyword" "diff";
-
-data GLUEA
-	= xbgf(XCommand cmd)
-	| sleir() // WIP: mutations
-	| glaction() // WIP: GrammarLab actions
-	;
 
 Tree getGlue(str s,loc z) = parse(#GLUEC,trim(readFile(z)));
 public void register()

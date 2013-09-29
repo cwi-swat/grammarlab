@@ -7,7 +7,7 @@ import util::IDE;
 Color colSpecial     = rgb(0x78,0x8A,0xFC); // ε, φ, α
 Color colNonterminal = rgb(0x48,0x5A,0xCC); // nonterminals
 Color colTerminal    = rgb(0x00,0x99,0x00); // terminals
-Color colCommand     = rgb(0xCC,0x00,0x00); // xbgf commands
+Color colCommand     = rgb(0xBB,0x00,0x00); // xbgf commands
 Color colNonXBGF     = rgb(0xFF,0xFF,0xCC); // other commands (background)
 Color colComment     = gray(0xCC);          // comments
 Color colLabel       = gray(0x99);          // labels and marks

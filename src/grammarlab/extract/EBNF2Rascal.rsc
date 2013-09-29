@@ -123,6 +123,7 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 	'	for(p \<- ps){p2 = mapP(p); if(p.lhs notin nts)nts+=p.lhs; ps2+=p2;}
 	'	return grammar(nts, [], ps2);
 	'}
+	'GProdList mapPs(<name>Production+ ps) = [mapP(p) | p \<- ps];
 	'GProd mapP((<name>Production)`\<<name>Nonterminal lhs\><unquoted(edd,defining_symbol())>\<{<name>Definition <quoted(edd,definition_separator_symbol())>}+ rhds\><inbackticks(edd,terminator_symbol())>`) = production(\"\<lhs\>\",mapDs(rhds));
 	'GExpr mapDs({<name>Definition <quoted(edd,definition_separator_symbol())>}+ ds)
 	'{

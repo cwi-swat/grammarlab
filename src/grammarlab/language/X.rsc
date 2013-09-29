@@ -5,6 +5,10 @@ import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 
 alias XSequence = list[XCommand];
+alias GNonTerm = str;
+alias GTerm = str;
+alias GLabel = str;
+alias GMark = str;
 
 data XCommand =
 	  abridge(GProd p)
@@ -16,26 +20,26 @@ data XCommand =
 	| appear(GProd p) // marked
 	| bypass()
 	| chain(GProd p)
-	| clone(str x, str y, XScope w)
-	| concatT(list[str] xs, str y, XScope w)
+	| clone(GNonTerm x, GNonTerm y, XScope w)
+	| concatT(list[GTerm] xs, GTerm y, XScope w)
 	| concretize(GProd p) // marked
 	| deanonymize(GProd p)
 	| define(GProdList ps)
 	| designate(GProd p)
 	| detour(GProd p)
-	| deyaccify(str x)
+	| deyaccify(GNonTerm x)
 	| disappear(GProd p) // marked
 	| distribute(XScope w)
 	| downgrade(GProd p1,GProd p2) // p1 is marked
-	| eliminate(str x)
-	| equate(str x, str y)
+	| eliminate(GNonTerm x)
+	| equate(GNonTerm x, GNonTerm y)
 	| extract(GProd p, XScope w)
 	| factor(GExpr e1, GExpr e2, XScope w)
-	| fold(str x, XScope w)
+	| fold(GNonTerm x, XScope w)
 	| horizontal(XScope w)
 	| importG(GProdList ps)
 	| inject(GProd p) // marked
-	| inline(str x)
+	| inline(GNonTerm x)
 	| introduce(GProdList ps)
 	| iterate(GProd p)
 	| lassoc(GProd p)
@@ -47,20 +51,20 @@ data XCommand =
 	| redefine(GProdList ps)
 	| removeH(GProd p) // marked
 	| removeV(GProd p)
-	| renameL(str x, str y)
-	| renameN(str x, str y)
-	| renameS(str x, str y, XScope w) // only inlabel(z)
-	| renameT(str x, str y)
+	| renameL(GLabel x, GLabel y)
+	| renameN(GNonTerm x, GNonTerm y)
+	| renameS(GMark x, GMark y, XScope w) // only inlabel(z) TODO coevolve with marks
+	| renameT(GTerm x, GTerm y)
 	| replace(GExpr e1, GExpr e2, XScope w)
-	| reroot(list[str] xs)
-	| splitN(str x, GProdList ps, XScope w)
-	| splitT(str x, list[str] ys, XScope w)
+	| reroot(list[GNonTerm] xs)
+	| splitN(GNonTerm x, GProdList ps, XScope w)
+	| splitT(GTerm x, list[GTerm] ys, XScope w)
 	| unchain(GProd p)
-	| undefine(list[str] xs) // TODO: make it legacy
-	| undefineNew(str x)
-	| unfold(str x, XScope w)
-	| unite(str x, str y)
-	| unlabel(str x) // ???
+	| undefine(list[GNonTerm] xs) // TODO: make it legacy
+	| undefineNew(GNonTerm x)
+	| unfold(GNonTerm x, XScope w)
+	| unite(GNonTerm x, GNonTerm y)
+	| unlabel(GLabel x) // ???
 	| upgrade(GProd p1, GProd p2) // p1 is marked
 	| vertical(XScope w)
 	| widen(GExpr e1, GExpr e2, XScope w)
