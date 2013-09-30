@@ -8,7 +8,8 @@ Color colSpecial     = rgb(0x78,0x8A,0xFC); // ε, φ, α
 Color colNonterminal = rgb(0x48,0x5A,0xCC); // nonterminals
 Color colTerminal    = rgb(0x00,0x99,0x00); // terminals
 Color colCommand     = rgb(0xBB,0x00,0x00); // xbgf commands
-Color colNonXBGF     = rgb(0xFF,0xFF,0xCC); // other commands (background)
+Color colMutation    = rgb(0xCC,0xFF,0xCC); // mutations (background)
+Color colExtra       = rgb(0xFF,0xFF,0xCC); // other commands (background)
 Color colComment     = gray(0xCC);          // comments
 Color colLabel       = gray(0x99);          // labels and marks
 
@@ -17,7 +18,8 @@ public set[Contribution] getGLColours()
 	"NonterminalLabel":	{foregroundColor(colLabel),italic()},
 	"MetaSkipped":		{foregroundColor(colSpecial),bold()},
 	"MetaVariable":		{foregroundColor(colCommand),bold()},
-	"MetaKeyword":		{foregroundColor(colCommand),backgroundColor(colNonXBGF),bold()},
+	"MetaAmbiguity":		{foregroundColor(colCommand),backgroundColor(colMutation),bold()},
+	"MetaKeyword":		{foregroundColor(colCommand),backgroundColor(colExtra),bold()},
 	"Identifier":		{foregroundColor(colNonterminal)},
 	"Constant":			{foregroundColor(colTerminal)},
 	"Comment":			{foregroundColor(colComment),italic()}

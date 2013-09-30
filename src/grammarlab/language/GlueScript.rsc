@@ -1,14 +1,23 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::GlueScript
 
-extend grammarlab::language::glue::Transformations;
-extend grammarlab::language::glue::Productions;
-extend grammarlab::language::glue::Scope;
-extend grammarlab::language::glue::Abstract;
-import grammarlab::language::glue::Colours;
-import grammarlab::language::glue::MapC2A;
-import grammarlab::language::X;
+// These shoes are made for modularised parsing, that’s just what they’ll do
+import grammarlab::language::glue::Transformations;
+import grammarlab::language::glue::Mutations;
+import grammarlab::language::glue::Actions;
+import grammarlab::language::glue::Productions;
+import grammarlab::language::glue::Scope;
+// These shoes are made for implosion, that’s just what they’ll do
+import grammarlab::language::glue::Abstract;
+import grammarlab::language::glue::MapXBGF2A;
+import grammarlab::language::glue::MapSLEIR2A;
+import grammarlab::language::glue::MapGLA2A;
+// These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;
+import grammarlab::language::glue::Colours;
+// These shoes are made for execution, that’s just what they’ll do
+import grammarlab::language::X;
+
 import String;
 import IO;
 
@@ -17,12 +26,7 @@ import vis::Figure;
 import vis::ParseTree;
 import vis::Render;
 
-
 start syntax GLUEC = GlueCommand+;
-syntax GlueCommand
-	= GlueKdiff GlueProduction+ "."
-	;
-lexical GlueKdiff = @category="MetaKeyword" "diff";
 
 Tree getGlue(str s,loc z) = parse(#GLUEC,trim(readFile(z)));
 public void register()

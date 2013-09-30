@@ -12,3 +12,4 @@ diff
 	expr ::= [constant]::int;
 	expr ::= [neg]::expr;
 .
+DeYaccifyAll.
