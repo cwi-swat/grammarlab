@@ -3,6 +3,8 @@ module grammarlab::language::glue::Abstract
 
 import grammarlab::language::X;
 
+alias GLUE = list[GLUEA];
+
 data GLUEA
 	= xbgf(XCommand cmd)
 	| sleir() // WIP: mutations

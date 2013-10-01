@@ -134,7 +134,20 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 	'default GExpr mapE((<name>Definition)`\<<name>Symbol+ ss\>`) = sequence([mapS(s) | <name>Symbol s \<- ss]);
 	'GExpr mapS((<name>Symbol)`\<<name>Nonterminal n\>`) = nonterminal(\"\<n.name \>\");
 	'GExpr mapS((<name>Symbol)`\<<name>Terminal t\>`) = terminal(\"\<t.name\>\");
-	'GExpr mapS((<name>Symbol)`<unquoted(edd,start_group_symbol())>\<{<name>Definition <quoted(edd,disjunction_symbol())>}+ ds\><unquoted(edd,end_group_symbol())>`) = mapIDs(ds);
+	'GExpr mapS((<name>Symbol)`<unquoted(edd,start_group_symbol())>\<{<name>Definition <quoted(edd,disjunction_symbol())>}+ ds\><unquoted(edd,end_group_symbol())>`) = mapIDs(ds);";
+	if (postfix_option_symbol() in edd)
+ 		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\> <unquoted(edd,postfix_option_symbol())>`) = optional(mapS(smb));";
+	 if (empty_metasymbol() in edd)
+	 	prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,empty_metasymbol())>`) = empty();\n";
+ 	if (epsilon_metasymbol() in edd)
+	 	prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,epsilon_metasymbol())>`) = epsilon();\n";
+ 	if (universal_metasymbol() in edd)
+	 	prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,universal_metasymbol())>`) = anything();\n";
+	if (start_label_symbol() in edd && end_label_symbol() in edd)
+ 		prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,start_label_symbol())> \<<name>Label l\> <unquoted(edd,end_label_symbol())> \<<name>Symbol smb\>`) = label(\"\<l\>\",mapS(smb));\n";
+	if (start_mark_symbol() in edd && end_mark_symbol() in edd)
+ 		prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,start_mark_symbol())> \<<name>Mark m\> <unquoted(edd,end_mark_symbol())> \<<name>Symbol smb\>`) = mark(\"\<m\>\",mapS(smb));\n";
+	prep += "default GExpr mapS(<name>Symbol smb) {println(\"Cannot map symbol \<smb\>!\");return empty();}\n
 	'GExpr mapIDs({<name>Definition <quoted(edd,disjunction_symbol())>}+ ds)
 	'{
 	'	GExprList es = [mapE(d) | <name>Definition d \<- ds];
