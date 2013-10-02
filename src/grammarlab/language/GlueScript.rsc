@@ -17,8 +17,11 @@ import grammarlab::language::glue::Mapper;
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;
 import grammarlab::language::glue::Colours;
+import grammarlab::export::Grammar;
 // These shoes are made for execution, that’s just what they’ll do
-import grammarlab::language::X;
+// import grammarlab::language::X;
+import grammarlab::language::Grammar;
+import grammarlab::language::glue::Interpreter;
 
 import ParseTree;
 import String;
@@ -42,5 +45,10 @@ public void go()
 public void tr()
 {
 	t = getGlue(|project://grammarlab/src/tests/transform/XBGF.glue|);
-	iprintln(glimplode(t));
+	d = glimplode(t);
+	// iprintln(d);
+	GGrammar g = EmptyGrammar;
+	for (GLUEA step <- d)
+		g = execute(g,step);
+	println(ppx(g));
 }

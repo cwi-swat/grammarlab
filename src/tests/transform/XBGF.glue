@@ -1,9 +1,9 @@
+// this is not a test case
 importG
-	// what is this?
-	expr ::= [constant]::int "string"?;
+	⟙    ::= expr;
+	expr ::= [constant]::int;
 	expr ::= [neg]::expr;
 	expr ::= [bracket]::expr;
-	foo  ::= ε;
 .
 abridge
 	expr ::= [bracket]::expr;
@@ -12,4 +12,3 @@ diff
 	expr ::= [constant]::int;
 	expr ::= [neg]::expr;
 .
-DeYaccifyAll.
