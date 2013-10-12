@@ -41,7 +41,8 @@ public EBNF GlueEBNF = (
 	postfix_repetition_plus_symbol(): "+",
 	conjunction_symbol(): " & ",
 	exception_symbol(): " &! ",
-	prefix_negation_symbol(): "¬"
+	prefix_negation_symbol(): "¬",
+	nonterminals_may_contain(): "⟙"
 );
 
 void main()
