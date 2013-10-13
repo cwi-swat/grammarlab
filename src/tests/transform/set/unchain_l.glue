@@ -1,0 +1,13 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/unchain_l.xbgf|
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::binexpr ;
+	binexpr ::= expr op expr ;
+.
+unchain
+	expr ::= [binary]::binexpr ;
+.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+.

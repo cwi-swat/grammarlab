@@ -1,0 +1,18 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_ch_xx2.xbgf|
+importG
+	foo ::= bar* ;
+.
+massage
+	bar*,(<one>:(bar*)) | (<two>:(bar*)),in everywhere)
+vertical(in foo)
+massage(bar*,ε | (bar+),in [one])
+massage(bar*,(bar?) | (bar+),in [two])
+extract(barplus ::= bar+ ;
+,in [one])
+unlabel(one)
+unlabel(two)
+horizontal(in foo.
+diff
+	foo ::= ε | (bar?) | (bar+) | barplus ;
+	barplus ::= bar+ ;
+.

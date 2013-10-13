@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/eliminate.xbgf|
+importG
+	expr ::= int ;
+	intexpr ::= int ;
+.
+eliminate
+	intexpr.
+diff
+	expr ::= int ;
+.

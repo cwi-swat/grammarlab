@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/disappear_s.xbgf|
+importG
+	foo ::= bar (wez*) qux ;
+.
+disappear
+	foo ::= bar (<>:(wez*)) qux ;
+.
+diff
+	foo ::= bar qux ;
+.

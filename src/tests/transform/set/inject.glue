@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/inject.xbgf|
+importG
+	a ::= b d ;
+.
+inject
+	a ::= b (<>:c) d ;
+.
+diff
+	a ::= b c d ;
+.

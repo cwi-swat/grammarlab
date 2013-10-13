@@ -1,0 +1,17 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_distr_ch.xbgf|
+importG
+	foo ::= (bar | qux)? ;
+.
+massage
+	(bar | qux)?,(bar | qux) | ε,in everywhere)
+massage(ε,(<bar>:ε) | (<qux>:ε),in everywhere)
+factor((bar | qux) | ((<bar>:ε) | (<qux>:ε)),(bar | (<bar>:ε)) | (qux | (<qux>:ε)),in everywhere)
+anonymize(foo ::= (bar | (<>:(<bar>:ε))) | (qux | (<qux>:ε)) ;
+)
+massage(bar | ε,bar?,in everywhere)
+anonymize(foo ::= (bar?) | (qux | (<>:(<qux>:ε))) ;
+)
+massage(qux | ε,qux?,in everywhere.
+diff
+	foo ::= (bar?) | (qux?) ;
+.

@@ -1,0 +1,13 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/undefine1.xbgf|
+importG
+	expr ::= int ;
+	expr ::= expr op expr ;
+	op ::= "+" ;
+	op ::= "-" ;
+.
+undefine
+	op.
+diff
+	expr ::= int ;
+	expr ::= expr op expr ;
+.

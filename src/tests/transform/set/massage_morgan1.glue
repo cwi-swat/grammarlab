@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_morgan1.xbgf|
+importG
+	foo ::= ¬(foo & bar) ;
+.
+massage
+	¬(foo & bar),(¬bar) | (¬foo),in everywhere.
+diff
+	foo ::= (¬foo) | (¬bar) ;
+.

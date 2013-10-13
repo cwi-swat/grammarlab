@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/splitT4.xbgf|
+importG
+	foo ::= "a" "bc" ;
+	bar ::= "bc" ;
+.
+splitT
+	"bc","b"+"c",in foo.
+diff
+	foo ::= "a" "b" "c" ;
+	bar ::= "bc" ;
+.

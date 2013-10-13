@@ -1,0 +1,14 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/deanonymize_single.xbgf|
+importG
+	expr ::= [constant]::(<value>:int) ;
+	expr ::= [binary]::("(" expr (<op>:binary_op) expr ")") ;
+	expr ::= [unary]::(unary_op expr) ;
+.
+deanonymize
+	expr ::= [unary]::((<>:(<op>:unary_op)) expr) ;
+.
+diff
+	expr ::= [constant]::(<value>:int) ;
+	expr ::= [binary]::("(" expr (<op>:binary_op) expr ")") ;
+	expr ::= [unary]::((<op>:unary_op) expr) ;
+.

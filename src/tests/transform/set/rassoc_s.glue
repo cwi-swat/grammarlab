@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/rassoc_s.xbgf|
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr ((op expr)*)) ;
+.
+rassoc
+	expr ::= [binary]::(expr op expr) ;
+.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+.

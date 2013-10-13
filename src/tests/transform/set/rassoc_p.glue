@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/rassoc_p.xbgf|
+importG
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr+) ;
+.
+rassoc
+	expr ::= [sequence]::(expr expr) ;
+.
+diff
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr expr) ;
+.

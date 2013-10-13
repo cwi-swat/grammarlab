@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_ch_xx3.xbgf|
+importG
+	foo ::= bar ;
+.
+massage
+	bar,(<one>:bar) | (<two>:bar) | (<three>:bar),in everywhere.
+diff
+	foo ::= (<one>:bar) | (<two>:bar) | (<three>:bar) ;
+.

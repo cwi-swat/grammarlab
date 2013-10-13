@@ -1,0 +1,13 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/undefine2.xbgf|
+importG
+	foo ::= bar ;
+	bar ::= wez ;
+	wez ::= qux ;
+	qux ::= foo ;
+.
+undefine
+	bar,qux.
+diff
+	foo ::= bar ;
+	wez ::= qux ;
+.

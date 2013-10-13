@@ -1,0 +1,15 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/replace_l.xbgf|
+importG
+	a ::= [l1]::x ;
+	b ::= [l2]::x ;
+	b ::= [l3]::(x*) ;
+	c ::= [l4]::x ;
+.
+replace
+	x,y,in [l3].
+diff
+	a ::= [l1]::x ;
+	b ::= [l2]::x ;
+	b ::= [l3]::(y*) ;
+	c ::= [l4]::x ;
+.

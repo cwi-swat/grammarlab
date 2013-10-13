@@ -22,7 +22,8 @@ import vis::Render;
 
 start syntax GLUEC = GlueCommand+ cs;
 
-public Tree getGlue(loc z) = parse(#start[GLUEC],trim(readFile(z)));
+public Tree getGlue(loc z) = parse(#start[GLUEC],z);
+public Tree getGlue(str s) = parse(#start[GLUEC],s);
 
 Tree getGlue(str _, loc z) = getGlue(z);
 

@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/narrow_nt.xbgf|
+importG
+	program ::= <fun>:(function+) ;
+.
+narrow
+	function+,function,in program.
+diff
+	program ::= <fun>:function ;
+.

@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/remove_vertical.xbgf|
+importG
+	expr ::= int ;
+	expr ::= id ;
+.
+removeV
+	expr ::= id ;
+.
+diff
+	expr ::= int ;
+.

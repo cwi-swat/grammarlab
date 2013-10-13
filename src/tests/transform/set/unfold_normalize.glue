@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/unfold_normalize.xbgf|
+importG
+	a ::= b | c ;
+	c ::= b ;
+.
+unfold
+	c,in everywhere.
+diff
+	a ::= b ;
+	c ::= b ;
+.

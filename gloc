@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+find src/grammarlab src/demo src/tests -name "*.glue" | xargs wc -l

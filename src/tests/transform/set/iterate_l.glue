@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/iterate_l.xbgf|
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+.
+iterate
+	expr ::= [binary]::(((expr op)*) expr) ;
+.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(((expr op)*) expr) ;
+.

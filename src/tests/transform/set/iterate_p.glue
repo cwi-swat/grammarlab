@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/iterate_p.xbgf|
+importG
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr expr) ;
+.
+iterate
+	expr ::= [sequence]::(expr+) ;
+.
+diff
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr+) ;
+.

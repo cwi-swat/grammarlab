@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/distribute_l.xbgf|
+importG
+	a ::= [bcd]::(b (c | d)) ;
+	a ::= [efg]::(e (f | g)) ;
+.
+distribute
+	in [bcd].
+diff
+	a ::= [bcd]::((b c) | (b d)) ;
+	a ::= [efg]::(e (f | g)) ;
+.

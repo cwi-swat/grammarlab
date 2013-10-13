@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/anonymize_multiple.xbgf|
+importG
+	A ::= (<first>:"a") (<second>:"a") (<third>:"a") ;
+.
+anonymize
+	A ::= (<first>:"a") (<>:(<second>:"a")) (<>:(<third>:"a")) ;
+.
+diff
+	A ::= (<first>:"a") "a" "a" ;
+.

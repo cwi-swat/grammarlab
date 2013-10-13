@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/redefine.xbgf|
+importG
+	a ::= "{" b "}" ;
+	b ::= a ;
+.
+redefine
+	a ::= b* ;
+.
+diff
+	a ::= b* ;
+	b ::= a ;
+.

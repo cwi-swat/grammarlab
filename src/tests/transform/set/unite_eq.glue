@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/unite_eq.xbgf|
+importG
+	a ::= ε ;
+	b ::= ε ;
+.
+unite
+	b,a.
+diff
+	a ::= ε ;
+.

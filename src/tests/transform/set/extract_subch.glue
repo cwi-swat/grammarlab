@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/extract_subch.xbgf|
+importG
+	TypeDeclaration ::= ClassDeclaration | InterfaceDeclaration | ";" ;
+.
+extract
+	ClassOrInterfaceDeclaration ::= ClassDeclaration | InterfaceDeclaration ;
+,in everywhere.
+diff
+	TypeDeclaration ::= ClassOrInterfaceDeclaration | ";" ;
+	ClassOrInterfaceDeclaration ::= ClassDeclaration | InterfaceDeclaration ;
+.

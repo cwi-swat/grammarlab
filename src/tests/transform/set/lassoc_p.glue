@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/lassoc_p.xbgf|
+importG
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr+) ;
+.
+lassoc
+	expr ::= [sequence]::(expr expr) ;
+.
+diff
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr expr) ;
+.

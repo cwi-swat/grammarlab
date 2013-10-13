@@ -1,0 +1,17 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/reroot.xbgf|
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+	op ::= "==" ;
+	op ::= "+" ;
+	op ::= "-" ;
+.
+reroot
+	expr,op.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+	op ::= "==" ;
+	op ::= "+" ;
+	op ::= "-" ;
+.

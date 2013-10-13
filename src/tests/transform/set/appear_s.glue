@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/appear_s.xbgf|
+importG
+	foo ::= bar ;
+.
+appear
+	foo ::= bar (<>:(qux*)) ;
+.
+diff
+	foo ::= bar (qux*) ;
+.

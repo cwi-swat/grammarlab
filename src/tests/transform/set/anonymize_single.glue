@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/anonymize_single.xbgf|
+importG
+	expr ::= [binary]::("(" expr (<op>:binary_op) expr ")") ;
+	expr ::= [unary]::((<op>:unary_op) expr) ;
+.
+anonymize
+	expr ::= [unary]::((<>:(<op>:unary_op)) expr) ;
+.
+diff
+	expr ::= [binary]::("(" expr (<op>:binary_op) expr ")") ;
+	expr ::= [unary]::(unary_op expr) ;
+.

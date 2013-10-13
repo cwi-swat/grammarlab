@@ -1,0 +1,13 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/renameS.xbgf|
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr (<op>:binary_op) expr) ;
+	expr ::= [unary]::((<op>:unary_op) expr) ;
+.
+renameS
+	op,operator,in everywhere.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr (<operator>:binary_op) expr) ;
+	expr ::= [unary]::((<operator>:unary_op) expr) ;
+.

@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/widen_l.xbgf|
+importG
+	program ::= [main]::(<fun>:function) ;
+.
+widen
+	function,function+,in [main].
+diff
+	program ::= [main]::(<fun>:(function+)) ;
+.

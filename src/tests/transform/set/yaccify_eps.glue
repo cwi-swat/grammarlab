@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/yaccify_eps.xbgf|
+importG
+	foo ::= bar* ;
+.
+yaccify
+	foo ::= ε ;
+ foo ::= foo bar ;
+.
+diff
+	foo ::= ε ;
+	foo ::= foo bar ;
+.

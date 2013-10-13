@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_seq_pq.xbgf|
+importG
+	foo ::= (bar+) (bar?) ;
+.
+massage
+	(bar+) (bar?),bar+,in everywhere)
+massage(bar+,(bar?) (bar+),in everywhere.
+diff
+	foo ::= (bar?) (bar+) ;
+.

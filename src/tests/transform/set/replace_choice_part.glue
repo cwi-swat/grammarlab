@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/replace_choice_part.xbgf|
+importG
+	a ::= (b c) | (b d) | (b e) ;
+.
+replace
+	(b c) | (b e),b (c | e),in everywhere.
+diff
+	a ::= (b (c | e)) | (b d) ;
+.

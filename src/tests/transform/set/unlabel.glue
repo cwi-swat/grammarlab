@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/unlabel.xbgf|
+importG
+	expr ::= [intexpr]::int ;
+.
+unlabel
+	intexpr.
+diff
+	expr ::= int ;
+.

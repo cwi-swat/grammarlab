@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/abstractize.xbgf|
+importG
+	A ::= b "x" c "y" ;
+.
+abstractize
+	A ::= b (<>:"x") c "y" ;
+.
+diff
+	A ::= b c "y" ;
+.

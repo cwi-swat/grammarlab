@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/bypass.xbgf|
+importG
+	a ::= b (d*) c ;
+.
+bypass
+	.
+diff
+	a ::= b (d*) c ;
+.

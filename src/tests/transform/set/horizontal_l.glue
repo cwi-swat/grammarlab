@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/horizontal_l.xbgf|
+importG
+	decs ::= [onedec]::dec ;
+	decs ::= [moredecs]::(dec decs) ;
+.
+horizontal
+	in decs.
+diff
+	decs ::= (<onedec>:dec) | (<moredecs>:(dec decs)) ;
+.

@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/permute.xbgf|
+importG
+	a ::= b (d*) c ;
+.
+permute
+	a ::= b c (d*) ;
+.
+diff
+	a ::= b c (d*) ;
+.

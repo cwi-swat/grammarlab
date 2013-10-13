@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/deyaccify_right.xbgf|
+importG
+	foo ::= bar ;
+	foo ::= wez foo ;
+.
+deyaccify
+	foo.
+diff
+	foo ::= (wez*) bar ;
+.

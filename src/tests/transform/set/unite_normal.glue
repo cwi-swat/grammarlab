@@ -1,0 +1,13 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/unite_normal.xbgf|
+importG
+	foo ::= "a" ;
+	foo ::= "b" ;
+	bar ::= "d" ;
+.
+unite
+	bar,foo.
+diff
+	foo ::= "a" ;
+	foo ::= "b" ;
+	foo ::= "d" ;
+.

@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/add_vertical.xbgf|
+importG
+	expr ::= int ;
+.
+addV
+	expr ::= id ;
+.
+diff
+	expr ::= int ;
+	expr ::= id ;
+.

@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/replace_seq.xbgf|
+importG
+	foo ::= ((bar wez)*) bar wez ;
+.
+replace
+	bar wez,"...",in everywhere.
+diff
+	foo ::= ("..."*) "..." ;
+.

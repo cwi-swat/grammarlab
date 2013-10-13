@@ -1,0 +1,15 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/introduce.xbgf|
+importG
+	a ::= b ;
+	b ::= ε ;
+.
+introduce
+	c ::= a ;
+ c ::= b ;
+.
+diff
+	a ::= b ;
+	b ::= ε ;
+	c ::= a ;
+	c ::= b ;
+.

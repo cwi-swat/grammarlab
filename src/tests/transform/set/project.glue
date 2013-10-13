@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/project.xbgf|
+importG
+	a ::= b c d ;
+.
+project
+	a ::= b (<>:c) d ;
+.
+diff
+	a ::= b d ;
+.

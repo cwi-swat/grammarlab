@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/extract_subseq_multiple.xbgf|
+importG
+	foo ::= ((bar wez)*) bar wez ;
+.
+extract
+	qux ::= bar wez ;
+,in everywhere.
+diff
+	foo ::= (qux*) qux ;
+	qux ::= bar wez ;
+.

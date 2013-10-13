@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/vertical_s.xbgf|
+importG
+	decs ::= (<onedec>:dec) | (<moredecs>:(dec decs)) ;
+.
+vertical
+	in decs.
+diff
+	decs ::= [onedec]::dec ;
+	decs ::= [moredecs]::(dec decs) ;
+.

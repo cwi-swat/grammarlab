@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_sel_s.xbgf|
+importG
+	program ::= (<fun>:function)* ;
+.
+massage
+	(<fun>:function)*,<fun>:(function*),in everywhere.
+diff
+	program ::= <fun>:(function*) ;
+.

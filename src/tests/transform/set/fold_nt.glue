@@ -1,0 +1,13 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/fold_nt.xbgf|
+importG
+	foo ::= [l1]::(wez*) ;
+	qux ::= [l2]::(wez*) ;
+	bar ::= wez* ;
+.
+fold
+	bar,in foo.
+diff
+	foo ::= [l1]::bar ;
+	qux ::= [l2]::(wez*) ;
+	bar ::= wez* ;
+.

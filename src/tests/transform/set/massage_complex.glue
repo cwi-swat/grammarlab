@@ -1,0 +1,15 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_complex.xbgf|
+importG
+	wez ::= foo (((foo*) (bar?))?) ;
+.
+massage
+	((foo*) (bar?))?,ε | ((foo*) (bar?)),in everywhere)
+massage(bar?,bar | ε,in everywhere)
+distribute(in wez)
+massage(foo (foo*),foo+,in everywhere)
+massage(foo | (foo+),foo+,in everywhere)
+factor((foo+) | ((foo+) bar),(foo+) (bar | ε),in everywhere)
+massage(bar | ε,bar?,in everywhere.
+diff
+	wez ::= (foo+) (bar?) ;
+.

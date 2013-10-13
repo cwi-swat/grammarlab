@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/factor_eps.xbgf|
+importG
+	a ::= b | (b c) ;
+.
+factor
+	b | (b c),b (ε | c),in everywhere.
+diff
+	a ::= b (ε | c) ;
+.

@@ -1,0 +1,14 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/splitN1.xbgf|
+importG
+	foo ::= [A]::"a" ;
+	foo ::= [B]::"b" ;
+	foo ::= [D]::"d" ;
+.
+splitN
+	foo,bar ::= [D]::"d" ;
+,in nowhere.
+diff
+	foo ::= [A]::"a" ;
+	foo ::= [B]::"b" ;
+	bar ::= [D]::"d" ;
+.

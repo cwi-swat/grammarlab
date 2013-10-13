@@ -1,0 +1,11 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/extract_subseq_single.xbgf|
+importG
+	IfThenStatement ::= "if" "(" Expression ")" Statement ;
+.
+extract
+	ParExpression ::= "(" Expression ")" ;
+,in everywhere.
+diff
+	IfThenStatement ::= "if" ParExpression Statement ;
+	ParExpression ::= "(" Expression ")" ;
+.

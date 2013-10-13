@@ -1,0 +1,15 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/upgrade.xbgf|
+importG
+	a ::= d e c ;
+	b ::= d e ;
+	b ::= f g ;
+.
+upgrade
+	a ::= (<>:b) c ;
+,b ::= d e ;
+.
+diff
+	a ::= b c ;
+	b ::= d e ;
+	b ::= f g ;
+.

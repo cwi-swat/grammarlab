@@ -1,0 +1,9 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/massage_assoc_s.xbgf|
+importG
+	N ::= ((a b)*) a ;
+.
+massage
+	((a b)*) a,a ((b a)*),in everywhere.
+diff
+	N ::= a ((b a)*) ;
+.

@@ -1,0 +1,12 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/vertical_l.xbgf|
+importG
+	decs ::= [nodecs]::ε ;
+	decs ::= [somedecs]::(dec | (dec decs)) ;
+.
+vertical
+	in [somedecs].
+diff
+	decs ::= [nodecs]::ε ;
+	decs ::= dec ;
+	decs ::= dec decs ;
+.

@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/designate.xbgf|
+importG
+	expr ::= int ;
+.
+designate
+	expr ::= [intexpr]::int ;
+.
+diff
+	expr ::= [intexpr]::int ;
+.

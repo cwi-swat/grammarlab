@@ -1,0 +1,10 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/concretize.xbgf|
+importG
+	A ::= b c ;
+.
+concretize
+	A ::= b (<>:"x") c ;
+.
+diff
+	A ::= b "x" c ;
+.
