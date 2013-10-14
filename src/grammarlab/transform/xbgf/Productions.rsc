@@ -8,10 +8,12 @@ import grammarlab::language::XOutcome;
 import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
+import IO;
 
 XResult runAddV(GProd p1, GGrammar g)
 {
 	GProdList ps1,ps2,ps3;
+	iprintln(g.P);
 	<ps1,ps2,ps3> = splitPbyW(g.P,innt(p1.lhs));
 	if (isEmpty(ps2))
 		return <problemStr("Nonterminal must be defined",p1.lhs),g>;

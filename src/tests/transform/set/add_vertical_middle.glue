@@ -1,15 +1,15 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/add_vertical_middle.xbgf|
 importG
-	foo ::= bar ;
+	foo  ::= bar ;
 	expr ::= int ;
-	bar ::= foo ;
+	bar  ::= foo ;
 .
 addV
 	expr ::= id ;
 .
 diff
-	foo ::= bar ;
+	foo  ::= bar ;
 	expr ::= int ;
 	expr ::= id ;
-	bar ::= foo ;
+	bar  ::= foo ;
 .

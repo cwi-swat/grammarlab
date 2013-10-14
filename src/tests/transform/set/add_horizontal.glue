@@ -3,7 +3,7 @@ importG
 	N ::= a | b ;
 .
 addH
-	N ::= (<>:"x") | a | b ;
+	N ::= <>:("x") | a | b ;
 .
 diff
 	N ::= "x" | a | b ;

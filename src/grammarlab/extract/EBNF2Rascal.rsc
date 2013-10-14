@@ -137,7 +137,11 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 	'GExpr mapS((<name>Symbol)`<unquoted(edd,start_group_symbol())>\<{<name>Definition <quoted(edd,disjunction_symbol())>}+ ds\><unquoted(edd,end_group_symbol())>`) = mapIDs(ds);";
 	if (postfix_option_symbol() in edd)
  		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\> <unquoted(edd,postfix_option_symbol())>`) = optional(mapS(smb));";
-	 if (empty_metasymbol() in edd)
+	if (postfix_repetition_star_symbol() in edd)
+		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\> <unquoted(edd,postfix_repetition_star_symbol())>`) = star(mapS(smb));";
+	if (postfix_repetition_plus_symbol() in edd)
+		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\> <unquoted(edd,postfix_repetition_plus_symbol())>`) = plus(mapS(smb));";
+	if (empty_metasymbol() in edd)
 	 	prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,empty_metasymbol())>`) = empty();\n";
  	if (epsilon_metasymbol() in edd)
 	 	prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,epsilon_metasymbol())>`) = epsilon();\n";

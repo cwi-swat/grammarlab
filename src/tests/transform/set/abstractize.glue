@@ -3,7 +3,7 @@ importG
 	A ::= b "x" c "y" ;
 .
 abstractize
-	A ::= b (<>:"x") c "y" ;
+	A ::= b <>:("x") c "y" ;
 .
 diff
 	A ::= b c "y" ;

@@ -54,7 +54,7 @@ GExpr mapE((GlueDefinition)`<GlueSymbol s>`) = mapS(s);
 default GExpr mapE((GlueDefinition)`<GlueSymbol+ ss>`) = sequence([mapS(s) | GlueSymbol s <- ss]);
 GExpr mapS((GlueSymbol)`<GlueNonterminal n>`) = nonterminal("<n.name >");
 GExpr mapS((GlueSymbol)`<GlueTerminal t>`) = terminal("<t.name>");
-GExpr mapS((GlueSymbol)`(<{GlueDefinition "|"}+ ds>)`) = mapIDs(ds);GExpr mapS((GlueSymbol)`<GlueSymbol smb> ?`) = optional(mapS(smb));GExpr mapS((GlueSymbol)`φ`) = empty();
+GExpr mapS((GlueSymbol)`(<{GlueDefinition "|"}+ ds>)`) = mapIDs(ds);GExpr mapS((GlueSymbol)`<GlueSymbol smb> ?`) = optional(mapS(smb));GExpr mapS((GlueSymbol)`<GlueSymbol smb> *`) = star(mapS(smb));GExpr mapS((GlueSymbol)`<GlueSymbol smb> +`) = plus(mapS(smb));GExpr mapS((GlueSymbol)`φ`) = empty();
 GExpr mapS((GlueSymbol)`ε`) = epsilon();
 GExpr mapS((GlueSymbol)`α`) = anything();
 GExpr mapS((GlueSymbol)`[ <GlueLabel l> ]:: <GlueSymbol smb>`) = label("<l>",mapS(smb));
