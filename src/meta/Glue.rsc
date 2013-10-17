@@ -2,7 +2,7 @@
 module meta::Glue
 
 import grammarlab::extract::EBNF2Rascal;
-import grammarlab::language::EBNF;
+import grammarlab::lib::ebnf::Glue;
 import grammarlab::language::Grammar;
 import List;
 import Set;
@@ -10,40 +10,6 @@ import Map;
 import IO;
 
 import grammarlab::extract::RascalADT2BGF;
-
-public EBNF GlueEBNF = (
-	epsilon_metasymbol(): "ε",
-	empty_metasymbol(): "φ",
-	universal_metasymbol(): "α",
-	start_label_symbol(): "[",
-	end_label_symbol(): "]::",
-	start_mark_symbol(): "\<",
-	end_mark_symbol(): "\>:",
-	defining_symbol(): " ::= ",		// or '='?
-	terminator_symbol(): " ;",
-	definition_separator_symbol(): " | ",
-	disjunction_symbol(): " | ",
-	concatenate_symbol(): " ",
-	start_comment_symbol(): "//",
-	end_comment_symbol(): "\n",
-	start_group_symbol(): "(",
-	end_group_symbol(): ")",
-	start_terminal_symbol(): "\"",
-	end_terminal_symbol(): "\"",
-	//start_nonterminal_symbol(): "",
-	//end_nonterminal_symbol(): "",
-	start_seplist_star_symbol(): "{",
-	end_seplist_star_symbol(): "}*",
-	start_seplist_plus_symbol(): "{",
-	end_seplist_plus_symbol(): "}+",
-	postfix_option_symbol(): "?",
-	postfix_repetition_star_symbol(): "*",
-	postfix_repetition_plus_symbol(): "+",
-	conjunction_symbol(): " & ",
-	exception_symbol(): " &! ",
-	prefix_negation_symbol(): "¬",
-	nonterminals_may_contain(): "⟙"
-);
 
 void main()
 {

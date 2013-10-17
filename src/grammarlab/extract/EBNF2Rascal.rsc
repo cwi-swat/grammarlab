@@ -2,6 +2,7 @@
 module grammarlab::extract::EBNF2Rascal
 
 import grammarlab::language::EBNF;
+import grammarlab::lib::ebnf::Pico;
 import IO;
 import String;
 
