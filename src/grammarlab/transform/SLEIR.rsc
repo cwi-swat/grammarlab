@@ -22,3 +22,11 @@ public GGrammar RetireLs(GGrammar g)
 
 public GProd RetireLs(GProd p) {return visit(p) {case labelled(_,GExpr e) => e};}
 public GExpr RetireLs(GExpr x) {return visit(x) {case labelled(_,GExpr e) => e};}
+
+// TODO: turn into a proper mutation later!
+public GGrammar LiftTopLabels(GGrammar g) = normalise(grammar(g.N,mapper(LiftTopLabels,g.P),g.S));
+default GProd LiftTopLabels(production(str lhs, label(str name, GExpr e))) = production(lhs,sequence(nonterminal(name),e));
+default GProd LiftTopLabels(production(str lhs, choice(L))) = production(lhs,choice(mapper(LiftTopLabels,L)));
+default GProd LiftTopLabels(GProd p) = p;
+GExpr LiftTopLabels(label(str name, GExpr e)) = sequence(nonterminal(name),e);
+default GExpr LiftTopLabels(GExpr e) = e;

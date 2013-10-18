@@ -28,11 +28,6 @@ import ParseTree;
 import String;
 import IO;
 
-public GLUE loadGlue(loc z) = glimplode(getGlue(z));
-public GLUE loadGlue(str s) = glimplode(getGlue(s));
-
-public GGrammar execute(GGrammar g, GLUE sec) = (g | normalise(execute(it,step)) | step <- sec);
-
 public void go()
 {
 	clearLanguages();

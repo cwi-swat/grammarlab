@@ -1,0 +1,39 @@
+include |project://grammarlab/src/meta/GlueLanguage.glue| .
+vertical in GlueCommand .
+// "to"
+concretize
+	GlueCommand ::= GlueKclone GlueNonterminal <>:"to" GlueNonterminal GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKdowngrade GlueProduction <>:"to" GlueProduction "."; .
+concretize
+	GlueCommand ::= GlueKfactor GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKmassage GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKnarrow GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKupgrade GlueProduction <>:"to" GlueProduction "."; .
+concretize
+	GlueCommand ::= GlueKwiden GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+// possibly "from" ... "to"
+concretize
+	GlueCommand ::= GlueKrenameL GlueLabel <>:"to" GlueLabel "."; .
+concretize
+	GlueCommand ::= GlueKrenameN GlueNonterminal <>:"to" GlueNonterminal "."; .
+concretize
+	GlueCommand ::= GlueKrenameT GlueTerminal <>:"to" GlueTerminal "."; .
+// "into"
+concretize
+	GlueCommand ::= GlueKconcatT GlueTerminal+ <>:"into" GlueTerminal GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKsplitN GlueNonterminal <>:"into" GlueProduction+ GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKsplitT GlueTerminal <>:"into" GlueTerminal+ GlueScope "."; .
+// "with"
+concretize
+	GlueCommand ::= GlueKequate GlueNonterminal <>:"with" GlueNonterminal "."; .
+concretize
+	GlueCommand ::= GlueKreplace GlueSymbol <>:"with" GlueSymbol GlueScope "."; .
+concretize
+	GlueCommand ::= GlueKunite GlueNonterminal <>:"with" GlueNonterminal "."; .
+horizontal in GlueCommand .

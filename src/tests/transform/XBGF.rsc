@@ -7,7 +7,9 @@ import grammarlab::language::Grammar;
 import grammarlab::export::Grammar;
 import grammarlab::compare::Differ;
 import grammarlab::language::GlueScript;
-import meta::Glue;
+import grammarlab::language::glue::Interpreter;
+import grammarlab::io::GLUE;
+import grammarlab::lib::ebnf::Glue;
 
 bool run_case(str casen, bool debug)
 {

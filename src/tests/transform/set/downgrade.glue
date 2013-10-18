@@ -5,8 +5,8 @@ importG
 	b ::= f g ;
 .
 downgrade
-	a ::= (<>:b) c ;
-,b ::= d e ;
+	a ::= <>:b c ;
+	b ::= d e ;
 .
 diff
 	a ::= d e c ;

@@ -8,11 +8,18 @@ alias GLUE = list[GLUEA];
 
 data GLUEA
 	= xbgf(XCommand tcmd)
-	| sleir() // WIP: mutations
+	| sleir(LCommand mcmd)
 	| glaction(LCommand xcmd)
 	;
 
 // WIP: GrammarLab actions
 data LCommand
 	= diff(GGrammar g)
+	| include(loc z)
+	;
+
+// WIP: mutations
+data LCommand
+	= liftTopLabels()
+	| deyaccifyAll()
 	;

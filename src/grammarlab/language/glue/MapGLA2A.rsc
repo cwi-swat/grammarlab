@@ -9,5 +9,9 @@ import grammarlab::language::glue::Productions;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::transform::XBGF;
+//import String;
+
+public loc toLocation(str s) = (/\|<car:.*>\:\/\/<cdr:.*>\|/ := s) ? |<car>://<cdr>| : |cwd:///<s>|;
 
 GLUEA glimplode((GlueCommand)`<GlueKdiff _><GlueProduction+ ps>.`) = glaction(diff(transform(importG(mapPs(ps)),EmptyGrammar).g));
+GLUEA glimplode((GlueCommand)`<GlueKinclude _><GlueLoc z>.`) = glaction(include(toLocation("<z>")));

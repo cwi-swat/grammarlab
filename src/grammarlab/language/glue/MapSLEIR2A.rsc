@@ -6,5 +6,6 @@ import grammarlab::language::glue::Abstract;
 import grammarlab::language::glue::Mutations;
 import grammarlab::language::glue::Productions;
 
-GLUEA glimplode((GlueCommand)`<GlueKDeYaccifyAll _>.`) = sleir();
+GLUEA glimplode((GlueCommand)`<GlueKDeYaccifyAll _>.`) = sleir(deyaccifyAll());
+GLUEA glimplode((GlueCommand)`<GlueKLiftTopLabels _>.`) = sleir(liftTopLabels());
 
