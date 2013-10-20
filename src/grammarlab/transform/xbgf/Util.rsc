@@ -29,16 +29,18 @@ public GProd unmark (GProd p1)
 	return p2;
 }
 
+// CAUTION: removes only empty markers, use a different visitor if needed otherwise
 public GProd demark (GProd p1) 
 {
 	if (/mark("",_) !:= p1)
 		throw "<p1> must contain markers.";
 	p2 = visit(p1)
 	{
-		case sequence([*L1,mark(_,GExpr e),*L2]) => sequence(L1 + L2)
+		//case sequence([*L1,mark("",GExpr e),*L2]) => sequence(L1 + L2)
 		case mark("",_) => epsilon()
 	}
-	return p2;
+	//return p2;
+	return normalise(p2);
 }
 
 public GProd demarkH (GProd p1) 

@@ -1,0 +1,10 @@
+// New, variation of |home:///projects/slps/topics/transformation/xbgf/tests/concretize.xbgf|
+importG
+	A ::= <bar>:b c ;
+.
+concretize
+	A ::= <bar>:b <>:"x" c ;
+.
+diff
+	A ::= <bar>:b "x" c ;
+.

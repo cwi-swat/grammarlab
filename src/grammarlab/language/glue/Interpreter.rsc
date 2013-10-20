@@ -9,6 +9,7 @@ import grammarlab::transform::XBGF;
 import grammarlab::transform::SLEIR;
 import grammarlab::transform::Normal;
 import grammarlab::io::GLUE;
+import IO;
 
 public GGrammar execute(loc z) = execute(loadGlue(z));
 public GGrammar execute(GLUE sec) = execute(EmptyGrammar,sec);
@@ -17,12 +18,15 @@ public GGrammar execute(GGrammar g, GLUE sec) = (g | normalise(execute(it,step))
 
 public GGrammar execute(GGrammar g, xbgf(XCommand cmd))
 {
-	XResult r = transform(cmd, g);
+	XResult r = <ok(),vtransform([cmd], g)>;
 	if (ok() := r.r)
 		return r.g;
 	else
+	{
+		println("[GLUE] XBGF error in <cmd>, proceeding without changes.");
 		// TODO: annotate with red squigglies
 		return g;
+	}
 }
 
 public GGrammar execute(GGrammar g1, glaction(diff(GGrammar g2))) = grammar(g1.N-g2.N, g1.P-g2.P, g1.S-g2.S-g2.N);
