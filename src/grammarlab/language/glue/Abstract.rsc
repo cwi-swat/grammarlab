@@ -8,7 +8,7 @@ alias GLUE = list[GLUEA];
 
 data GLUEA
 	= xbgf(XCommand tcmd)
-	| sleir(LCommand mcmd)
+	| sleir(MCommand mcmd)
 	| glaction(LCommand xcmd)
 	;
 
@@ -19,7 +19,7 @@ data LCommand
 	;
 
 // WIP: mutations
-data LCommand
+data MCommand
 	= liftTopLabels()
 	| deyaccifyAll()
 	;

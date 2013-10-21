@@ -36,3 +36,7 @@ public EBNF GlueEBNF = (
 	prefix_negation_symbol(): "¬",
 	nonterminals_may_contain(): "⟙"
 );
+
+public EBNF GlueEBNFpp = GlueEBNF +(
+	definition_separator_symbol(): "\n\t| "
+);
