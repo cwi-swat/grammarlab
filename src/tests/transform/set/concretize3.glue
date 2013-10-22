@@ -1,0 +1,10 @@
+// from meta::Glue troubles
+importG
+	GlueCommand ::= GlueKclone <x>:GlueNonterminal <y>:GlueNonterminal <w>:GlueScope ".";
+.
+concretize
+	GlueCommand ::= GlueKclone <x>:GlueNonterminal <>:"to" <y>:GlueNonterminal <w>:GlueScope ".";
+.
+diff
+	GlueCommand ::= GlueKclone <x>:GlueNonterminal "to" <y>:GlueNonterminal <w>:GlueScope ".";
+.

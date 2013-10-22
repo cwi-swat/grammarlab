@@ -38,5 +38,6 @@ public EBNF GlueEBNF = (
 );
 
 public EBNF GlueEBNFpp = GlueEBNF +(
+	terminator_symbol(): ";\n\t",
 	definition_separator_symbol(): "\n\t| "
 );

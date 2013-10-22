@@ -2,38 +2,38 @@ include |project://grammarlab/src/meta/GlueLanguage.glue| .
 vertical in GlueCommand .
 // "to"
 concretize
-	GlueCommand ::= GlueKclone GlueNonterminal <>:"to" GlueNonterminal GlueScope "."; .
+	GlueCommand ::= GlueKclone <x>:GlueNonterminal <>:"to" <y>:GlueNonterminal <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKdowngrade GlueProduction <>:"to" GlueProduction "."; .
+	GlueCommand ::= GlueKdowngrade <p1>:GlueProduction <>:"to" <p2>:GlueProduction "."; .
 concretize
-	GlueCommand ::= GlueKfactor GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+	GlueCommand ::= GlueKfactor <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKmassage GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+	GlueCommand ::= GlueKmassage <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKnarrow GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+	GlueCommand ::= GlueKnarrow <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKupgrade GlueProduction <>:"to" GlueProduction "."; .
+	GlueCommand ::= GlueKupgrade <p1>:GlueProduction <>:"to" <p2>:GlueProduction "."; .
 concretize
-	GlueCommand ::= GlueKwiden GlueSymbol <>:"to" GlueSymbol GlueScope "."; .
+	GlueCommand ::= GlueKwiden <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
 // possibly "from" ... "to"
 concretize
-	GlueCommand ::= GlueKrenameL GlueLabel <>:"to" GlueLabel "."; .
+	GlueCommand ::= GlueKrenameL <x>:GlueLabel <>:"to" <y>:GlueLabel "."; .
 concretize
-	GlueCommand ::= GlueKrenameN GlueNonterminal <>:"to" GlueNonterminal "."; .
+	GlueCommand ::= GlueKrenameN <x>:GlueNonterminal <>:"to" <y>:GlueNonterminal "."; .
 concretize
-	GlueCommand ::= GlueKrenameT GlueTerminal <>:"to" GlueTerminal "."; .
+	GlueCommand ::= GlueKrenameT <x>:GlueTerminal <>:"to" <y>:GlueTerminal "."; .
 // "into"
 concretize
-	GlueCommand ::= GlueKconcatT GlueTerminal+ <>:"into" GlueTerminal GlueScope "."; .
+	GlueCommand ::= GlueKconcatT <xs>:(GlueTerminal+) <>:"into" <y>:GlueTerminal <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKsplitN GlueNonterminal <>:"into" GlueProduction+ GlueScope "."; .
+	GlueCommand ::= GlueKsplitN <x>:GlueNonterminal <>:"into" <ps>:(GlueProduction+) <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKsplitT GlueTerminal <>:"into" GlueTerminal+ GlueScope "."; .
+	GlueCommand ::= GlueKsplitT <x>:GlueTerminal <>:"into" <ys>:(GlueTerminal+) <w>:GlueScope "."; .
 // "with"
 concretize
-	GlueCommand ::= GlueKequate GlueNonterminal <>:"with" GlueNonterminal "."; .
+	GlueCommand ::= GlueKequate <x>:GlueNonterminal <>:"with" <y>:GlueNonterminal "."; .
 concretize
-	GlueCommand ::= GlueKreplace GlueSymbol <>:"with" GlueSymbol GlueScope "."; .
+	GlueCommand ::= GlueKreplace <e1>:GlueSymbol <>:"with" <e2>:GlueSymbol <w>:GlueScope "."; .
 concretize
-	GlueCommand ::= GlueKunite GlueNonterminal <>:"with" GlueNonterminal "."; .
+	GlueCommand ::= GlueKunite <x>:GlueNonterminal <>:"with" <y>:GlueNonterminal "."; .
 horizontal in GlueCommand .

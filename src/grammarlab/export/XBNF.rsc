@@ -7,6 +7,7 @@ import grammarlab::language::X;
 import grammarlab::language::XScope;
 import grammarlab::export::Grammar;
 import grammarlab::language::EBNF;
+import grammarlab::lib::ebnf::Default;
 
 public str ppxs(XSequence xs) = ppxs(xs, DefaultEBNF);
 public str ppxs(XSequence xs, EBNF ebnf) = joinStrings([ppx(x,ebnf) | XCommand x <- xs], "\n");

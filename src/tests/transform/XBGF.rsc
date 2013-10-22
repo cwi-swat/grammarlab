@@ -86,6 +86,10 @@ void show_concretize() {run_case("concretize.glue",true);}
 test bool test_concretize_m() = run_case("concretize_m.glue",false);
 void show_concretize_m() {run_case("concretize_m.glue",true);}
 
+// concretize3.glue
+test bool test_concretize3() = run_case("concretize3.glue",false);
+void show_concretize3() {run_case("concretize3.glue",true);}
+
 // deanonymize_multiple.glue
 test bool test_deanonymize_multiple() = run_case("deanonymize_multiple.glue",false);
 void show_deanonymize_multiple() {run_case("deanonymize_multiple.glue",true);}

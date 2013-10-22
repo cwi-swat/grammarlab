@@ -4,6 +4,7 @@ module grammarlab::io::GLUE
 extend grammarlab::io::read::GLUE;
 extend grammarlab::io::write::GLUE;
 
+// crappy test code, can be removed later in favour of proper testing
 public void t()
 {
 	writeGlue(loadGlue(

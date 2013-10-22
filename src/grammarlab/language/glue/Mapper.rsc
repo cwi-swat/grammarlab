@@ -14,4 +14,11 @@ import grammarlab::language::glue::Actions;
 import grammarlab::language::glue::Productions;
 import grammarlab::language::glue::Scope;
 
+import IO;
+
 public GLUE glimplode(start[GLUEC] raw) = [glimplode(c) | GlueCommand c <- raw.top.cs];
+
+public default GLUE glimplode(GlueCommand c)
+{
+	println("Uncovered command: <c>");
+}

@@ -37,8 +37,12 @@ str wpp(GExpr e)
 {
 	e2 = visit(e)
 	{
-		case mark(str name, nonterminal(str nt)) => nonterminal("<nt> <name>")
-	}
+		case mark(str name1, nonterminal(str nt1)) => nonterminal("<nt1> <name1>")
+		case mark(str name2, plus(nonterminal(str nt2))) => nonterminal("<nt2>+ <name2>")
+		case mark(str name3, star(nonterminal(str nt3))) => nonterminal("<nt3>* <name3>")
+		case m:mark(_,_): {iprintln(m);}
+	};
+	//iprintln(e2);
 	return ppx(e2,RascalEBNF);
 }
 
