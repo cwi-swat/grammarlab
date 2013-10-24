@@ -11,6 +11,6 @@ keyword GlueKw = GlueKDeYaccifyAll;
 
 syntax GlueCommand
 	= GlueKDeYaccifyAll "."
-	= GlueKLiftTopLabels "."
+	| GlueKLiftTopLabels "."
 	;
 

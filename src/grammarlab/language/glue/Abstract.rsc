@@ -16,6 +16,7 @@ data GLUEA
 data LCommand
 	= diff(GGrammar g)
 	| include(loc z)
+	| maybexbgf(XCommand tcmd)
 	;
 
 // WIP: mutations

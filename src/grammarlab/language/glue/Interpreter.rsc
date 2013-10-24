@@ -18,12 +18,13 @@ public GGrammar execute(GGrammar g, GLUE sec) = (g | normalise(execute(it,step))
 
 public GGrammar execute(GGrammar g, xbgf(XCommand cmd))
 {
-	XResult r = <ok(),vtransform([cmd], g)>;
+	XResult r = vtransform(cmd, g);
 	if (ok() := r.r)
 		return r.g;
 	else
 	{
-		println("[GLUE] XBGF error in <cmd>, proceeding without changes.");
+		println("[GLUE] XBGF error in <cmd>!");
+		thw(r.r);
 		// TODO: annotate with red squigglies
 		return g;
 	}
@@ -31,6 +32,23 @@ public GGrammar execute(GGrammar g, xbgf(XCommand cmd))
 
 public GGrammar execute(GGrammar g1, glaction(diff(GGrammar g2))) = grammar(g1.N-g2.N, g1.P-g2.P, g1.S-g2.S-g2.N);
 public GGrammar execute(GGrammar g1, glaction(include(loc z))) = execute(g1,loadGlue(z));
+public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
+// clone of execute(GGrammar g, xbgf(XCommand cmd))
+{
+	XResult r = vtransform(cmd, g);
+	if (ok() := r.r)
+	{
+		println("[GLUE] XBGF maybe <cmd> executed normally.");
+		return r.g;
+	}
+	else
+	{
+		println("[GLUE] XBGF error in maybe <cmd>, proceding without changes.");
+		report(r.r);
+		// TODO: annotate with red squigglies
+		return g;
+	}
+}
 
 public GGrammar execute(GGrammar g1, sleir(liftTopLabels())) = LiftTopLabels(g1);
 

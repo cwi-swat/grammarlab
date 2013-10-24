@@ -1,0 +1,9 @@
+// Based on |home:///projects/slps/topics/transformation/xbgf/tests/horizontal_n.xbgf|
+importG
+	decs ::= dec | (dec decs) ;
+.
+maybe horizontal
+	in decs.
+diff
+	decs ::= dec | (dec decs) ;
+.
