@@ -6,6 +6,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
 import grammarlab::transform::xbgf::Util;
+import grammarlab::compare::Differ;
 
 XResult runAddH(GProd p1, GGrammar g)
 {
@@ -20,6 +21,8 @@ XResult runHorizontal(XScope w, GGrammar g)
 {
 	// For xbgf1.pro, the context must be strictly vertical. Here we are more relaxed. 
 	<ps1,ps2,ps3> = splitPbyW(g.P,w);
+	if ([production(_,choice(_))] := ps2)
+		return <problemScope("Scope is already horizontal",w),g>;
 	GExprList es4 = [];
 	for (production(str x, GExpr e) <- ps2)
 		if (choice(L) := e)
@@ -60,5 +63,7 @@ XResult runVertical(XScope w, GGrammar g)
 				else
 					ps4 += production(x,se);
 		else ps4 += production(x,e);
+	if (eqPs(ps2,ps4))
+		return <problemScope("Scope is already vertical",w),g>;
 	return <ok(),grammar(g.N, ps1 + ps4 + ps3, g.S)>;
 }

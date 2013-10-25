@@ -234,6 +234,14 @@ void show_maybe_horizontal1() {run_case("maybe_horizontal1.glue",true);}
 test bool test_maybe_horizontal2() = run_case("maybe_horizontal2.glue",false);
 void show_maybe_horizontal2() {run_case("maybe_horizontal2.glue",true);}
 
+// maybe_vertical1.glue
+test bool test_maybe_vertical1() = run_case("maybe_vertical1.glue",false);
+void show_maybe_vertical1() {run_case("maybe_vertical1.glue",true);}
+
+// maybe_vertical2.glue
+test bool test_maybe_vertical2() = run_case("maybe_vertical2.glue",false);
+void show_maybe_vertical2() {run_case("maybe_vertical2.glue",true);}
+
 // import.glue
 test bool test_import() = run_case("import.glue",false);
 void show_import() {run_case("import.glue",true);}
