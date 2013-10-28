@@ -1,5 +1,9 @@
 include |project://grammarlab/src/meta/GlueLanguage.glue| .
 vertical in GlueCommand .
+// the only real fix so far
+concretize
+	GlueCommand ::= GlueKunlabel <>:"[" <x>:GlueLabel <>:"]" ".";
+.
 // "to"
 concretize
 	GlueCommand ::= GlueKclone <x>:GlueNonterminal <>:"to" <y>:GlueNonterminal <w>:GlueScope "."; .

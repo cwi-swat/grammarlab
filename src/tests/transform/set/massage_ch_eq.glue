@@ -2,8 +2,7 @@
 importG
 	foo ::= (bar?) | ε ;
 .
-massage
-	ε | (bar?),bar?,in everywhere.
+massage (ε | bar?) to bar? globally.
 diff
 	foo ::= bar? ;
 .

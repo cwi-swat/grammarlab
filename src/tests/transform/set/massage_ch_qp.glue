@@ -1,9 +1,8 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/massage_ch_qp.xbgf|
 importG
-	foo ::= (bar+) | (bar?) ;
+	foo ::= bar+ | bar? ;
 .
-massage
-	(bar?) | (bar+),bar*,in everywhere.
+massage (bar? | bar+) to bar* globally.
 diff
 	foo ::= bar* ;
 .

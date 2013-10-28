@@ -1,14 +1,15 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/massage_ch_xx1.xbgf|
 importG
-	foo ::= (bar+) | (bar?) ;
+	foo ::= bar+ | bar? ;
 .
-massage
-	bar?,(<one>:(bar?)) | (<two>:(bar?)),in everywhere)
-anonymize(foo ::= (bar+) | (<>:(<one>:(bar?))) | (<two>:(bar?)) ;
-)
-massage((bar?) | (bar+),bar*,in everywhere)
-anonymize(foo ::= (bar*) | (<>:(<two>:(bar?))) ;
+massage bar? to (<one>:(bar?) | <two>:(bar?)) globally.
+anonymize
+	foo ::= bar+ | <>:(<one>:(bar?)) | <two>:(bar?) ;
+.
+massage (bar? | bar+) to bar* globally.
+anonymize
+	foo ::= bar* | <>:(<two>:(bar?)) ;
 .
 diff
-	foo ::= (bar?) | (bar*) ;
+	foo ::= bar? | bar* ;
 .

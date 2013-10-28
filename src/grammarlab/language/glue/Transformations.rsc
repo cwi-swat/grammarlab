@@ -119,7 +119,7 @@ syntax GlueCommand
 	| GlueKundefineNew GlueNonterminal x "."
 	| GlueKunfold GlueNonterminal x GlueScope w "."
 	| GlueKunite GlueNonterminal x "with" GlueNonterminal y "."
-	| GlueKunlabel GlueLabel x "."
+	| GlueKunlabel "[" GlueLabel x "]" "."
 	| GlueKupgrade GlueProduction p1 "to" GlueProduction p2 "."
 	| GlueKvertical GlueScope w "."
 	| GlueKwiden GlueSymbol e1 "to" GlueSymbol e2 GlueScope w "."

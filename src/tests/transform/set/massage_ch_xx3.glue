@@ -2,8 +2,7 @@
 importG
 	foo ::= bar ;
 .
-massage
-	bar,(<one>:bar) | (<two>:bar) | (<three>:bar),in everywhere.
+massage bar to (<one>:bar | <two>:bar | <three>:bar) globally.
 diff
-	foo ::= (<one>:bar) | (<two>:bar) | (<three>:bar) ;
+	foo ::= <one>:bar | <two>:bar | <three>:bar ;
 .

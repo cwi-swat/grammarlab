@@ -3,8 +3,7 @@ importG
 	decs ::= dec ;
 	decs ::= dec decs ;
 .
-horizontal
-	in decs.
+horizontal in decs.
 diff
 	decs ::= dec | (dec decs) ;
 .

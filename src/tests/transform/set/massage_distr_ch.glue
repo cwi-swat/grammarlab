@@ -2,16 +2,19 @@
 importG
 	foo ::= (bar | qux)? ;
 .
-massage
-	(bar | qux)?,(bar | qux) | ε,in everywhere)
-massage(ε,(<bar>:ε) | (<qux>:ε),in everywhere)
-factor((bar | qux) | ((<bar>:ε) | (<qux>:ε)),(bar | (<bar>:ε)) | (qux | (<qux>:ε)),in everywhere)
-anonymize(foo ::= (bar | (<>:(<bar>:ε))) | (qux | (<qux>:ε)) ;
-)
-massage(bar | ε,bar?,in everywhere)
-anonymize(foo ::= (bar?) | (qux | (<>:(<qux>:ε))) ;
-)
-massage(qux | ε,qux?,in everywhere.
+massage (bar | qux)? to (bar | qux | ε) globally.
+massage ε to (<bar>:ε | <qux>:ε) globally.
+// factor ((bar | qux) | ((<bar>:ε) | (<qux>:ε))
+// to (bar | (<bar>:ε)) | (qux | (<qux>:ε))
+// globally.
+anonymize
+	foo ::= bar | <>:(<bar>:ε) | qux | <qux>:ε ;
+.
+massage (bar | ε) to bar? globally.
+anonymize
+	foo ::= bar? | qux | <>:(<qux>:ε) ;
+.
+massage (qux | ε) to qux? globally.
 diff
-	foo ::= (bar?) | (qux?) ;
+	foo ::= bar? | qux? ;
 .

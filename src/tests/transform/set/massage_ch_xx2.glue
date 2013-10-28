@@ -2,16 +2,17 @@
 importG
 	foo ::= bar* ;
 .
-massage
-	bar*,(<one>:(bar*)) | (<two>:(bar*)),in everywhere)
-vertical(in foo)
-massage(bar*,ε | (bar+),in [one])
-massage(bar*,(bar?) | (bar+),in [two])
-extract(barplus ::= bar+ ;
-,in [one])
-unlabel(one)
-unlabel(two)
-horizontal(in foo.
+massage bar* to (<one>:(bar*) | <two>:(bar*)) globally.
+vertical in foo.
+massage bar* to (ε | bar+) in [one].
+massage bar* to (bar? | bar+) in [two].
+extract
+	barplus ::= bar+ ;
+	in [one]
+.
+unlabel [one].
+unlabel [two].
+horizontal in foo.
 diff
 	foo ::= ε | (bar?) | (bar+) | barplus ;
 	barplus ::= bar+ ;

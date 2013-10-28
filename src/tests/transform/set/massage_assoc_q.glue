@@ -2,8 +2,7 @@
 importG
 	N ::= ((a b)?) a ;
 .
-massage
-	((a b)?) a,a ((b a)?),in everywhere.
+massage ((a b)? a) to (a (b a)?) globally.
 diff
 	N ::= a ((b a)?) ;
 .
