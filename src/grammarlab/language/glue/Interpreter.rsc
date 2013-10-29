@@ -9,6 +9,7 @@ import grammarlab::transform::XBGF;
 import grammarlab::transform::SLEIR;
 import grammarlab::transform::Normal;
 import grammarlab::io::GLUE;
+import grammarlab::compare::Differ;
 import IO;
 
 public GGrammar execute(loc z) = execute(loadGlue(z));
@@ -30,7 +31,8 @@ public GGrammar execute(GGrammar g, xbgf(XCommand cmd))
 	}
 }
 
-public GGrammar execute(GGrammar g1, glaction(diff(GGrammar g2))) = grammar(g1.N-g2.N, g1.P-g2.P, g1.S-g2.S-g2.N);
+public GGrammar execute(GGrammar g1, glaction(diff(GGrammar g2)))
+	= grammar(g1.N-g2.N, gdt(g1.P,g2.P)<0>, g1.S-g2.S-g2.N);
 public GGrammar execute(GGrammar g1, glaction(include(loc z))) = execute(g1,loadGlue(z));
 public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 // clone of execute(GGrammar g, xbgf(XCommand cmd))

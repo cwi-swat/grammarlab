@@ -2,7 +2,7 @@
 importG
 	foo ::= bar* ;
 .
-massage bar* to (<one>:(bar*) | <two>:(bar*)) globally.
+massage bar* to ([one]::(bar*) | [two]::(bar*)) globally.
 vertical in foo.
 massage bar* to (ε | bar+) in [one].
 massage bar* to (bar? | bar+) in [two].

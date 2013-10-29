@@ -61,9 +61,12 @@ lexical GlueKunlabel = @category="MetaVariable" "unlabel";
 lexical GlueKupgrade = @category="MetaVariable" "upgrade";
 lexical GlueKvertical = @category="MetaVariable" "vertical";
 lexical GlueKwiden = @category="MetaVariable" "widen";
-lexical GlueKyaccify = @category="MetaVariable" "yaccify";
+lexical GlueKyaccify = @category="MetaVariable" "yaccify";lexical GlueKwTo = @category="MetaVariable" "to";
+lexical GlueKwInto = @category="MetaVariable" "into";
+lexical GlueKwWith = @category="MetaVariable" "with";
+		
 
-keyword GlueKw = GlueKabridge | GlueKabstractize | GlueKaddC | GlueKaddH | GlueKaddV | GlueKanonymize | GlueKappear | GlueKbypass | GlueKchain | GlueKclone | GlueKconcatT | GlueKconcretize | GlueKdeanonymize | GlueKdefine | GlueKdesignate | GlueKdetour | GlueKdeyaccify | GlueKdisappear | GlueKdistribute | GlueKdowngrade | GlueKeliminate | GlueKequate | GlueKextract | GlueKfactor | GlueKfold | GlueKhorizontal | GlueKimportG | GlueKinject | GlueKinline | GlueKintroduce | GlueKiterate | GlueKlassoc | GlueKmassage | GlueKnarrow | GlueKpermute | GlueKproject | GlueKrassoc | GlueKredefine | GlueKremoveH | GlueKremoveV | GlueKrenameL | GlueKrenameN | GlueKrenameS | GlueKrenameT | GlueKreplace | GlueKreroot | GlueKsplitN | GlueKsplitT | GlueKunchain | GlueKundefine | GlueKundefineNew | GlueKunfold | GlueKunite | GlueKunlabel | GlueKupgrade | GlueKvertical | GlueKwiden | GlueKyaccify;
+keyword GlueKw = GlueKwTo | GlueKwInto | GlueKwWith | GlueKabridge | GlueKabstractize | GlueKaddC | GlueKaddH | GlueKaddV | GlueKanonymize | GlueKappear | GlueKbypass | GlueKchain | GlueKclone | GlueKconcatT | GlueKconcretize | GlueKdeanonymize | GlueKdefine | GlueKdesignate | GlueKdetour | GlueKdeyaccify | GlueKdisappear | GlueKdistribute | GlueKdowngrade | GlueKeliminate | GlueKequate | GlueKextract | GlueKfactor | GlueKfold | GlueKhorizontal | GlueKimportG | GlueKinject | GlueKinline | GlueKintroduce | GlueKiterate | GlueKlassoc | GlueKmassage | GlueKnarrow | GlueKpermute | GlueKproject | GlueKrassoc | GlueKredefine | GlueKremoveH | GlueKremoveV | GlueKrenameL | GlueKrenameN | GlueKrenameS | GlueKrenameT | GlueKreplace | GlueKreroot | GlueKsplitN | GlueKsplitT | GlueKunchain | GlueKundefine | GlueKundefineNew | GlueKunfold | GlueKunite | GlueKunlabel | GlueKupgrade | GlueKvertical | GlueKwiden | GlueKyaccify;
 
 syntax GlueCommand
 	= GlueKabridge GlueProduction p "."
@@ -75,8 +78,8 @@ syntax GlueCommand
 	| GlueKappear GlueProduction p "."
 	| GlueKbypass "."
 	| GlueKchain GlueProduction p "."
-	| GlueKclone GlueNonterminal x "to" GlueNonterminal y GlueScope w "."
-	| GlueKconcatT GlueTerminal+ xs "into" GlueTerminal y GlueScope w "."
+	| GlueKclone GlueNonterminal x GlueKwTo GlueNonterminal y GlueScope w "."
+	| GlueKconcatT GlueTerminal+ xs GlueKwInto GlueTerminal y GlueScope w "."
 	| GlueKconcretize GlueProduction p "."
 	| GlueKdeanonymize GlueProduction p "."
 	| GlueKdefine GlueProduction+ ps "."
@@ -85,11 +88,11 @@ syntax GlueCommand
 	| GlueKdeyaccify GlueNonterminal x "."
 	| GlueKdisappear GlueProduction p "."
 	| GlueKdistribute GlueScope w "."
-	| GlueKdowngrade GlueProduction p1 "to" GlueProduction p2 "."
+	| GlueKdowngrade GlueProduction p1 GlueKwTo GlueProduction p2 "."
 	| GlueKeliminate GlueNonterminal x "."
-	| GlueKequate GlueNonterminal x "with" GlueNonterminal y "."
+	| GlueKequate GlueNonterminal x GlueKwWith GlueNonterminal y "."
 	| GlueKextract GlueProduction p GlueScope w "."
-	| GlueKfactor GlueSymbol e1 "to" GlueSymbol e2 GlueScope w "."
+	| GlueKfactor GlueSymbol e1 GlueKwTo GlueSymbol e2 GlueScope w "."
 	| GlueKfold GlueNonterminal x GlueScope w "."
 	| GlueKhorizontal GlueScope w "."
 	| GlueKimportG GlueProduction+ ps "."
@@ -98,30 +101,30 @@ syntax GlueCommand
 	| GlueKintroduce GlueProduction+ ps "."
 	| GlueKiterate GlueProduction p "."
 	| GlueKlassoc GlueProduction p "."
-	| GlueKmassage GlueSymbol e1 "to" GlueSymbol e2 GlueScope w "."
-	| GlueKnarrow GlueSymbol e1 "to" GlueSymbol e2 GlueScope w "."
+	| GlueKmassage GlueSymbol e1 GlueKwTo GlueSymbol e2 GlueScope w "."
+	| GlueKnarrow GlueSymbol e1 GlueKwTo GlueSymbol e2 GlueScope w "."
 	| GlueKpermute GlueProduction p "."
 	| GlueKproject GlueProduction p "."
 	| GlueKrassoc GlueProduction p "."
 	| GlueKredefine GlueProduction+ ps "."
 	| GlueKremoveH GlueProduction p "."
 	| GlueKremoveV GlueProduction p "."
-	| GlueKrenameL GlueLabel x "to" GlueLabel y "."
-	| GlueKrenameN GlueNonterminal x "to" GlueNonterminal y "."
+	| GlueKrenameL GlueLabel x GlueKwTo GlueLabel y "."
+	| GlueKrenameN GlueNonterminal x GlueKwTo GlueNonterminal y "."
 	| GlueKrenameS GlueMark x GlueMark y GlueScope w "."
-	| GlueKrenameT GlueTerminal x "to" GlueTerminal y "."
-	| GlueKreplace GlueSymbol e1 "with" GlueSymbol e2 GlueScope w "."
+	| GlueKrenameT GlueTerminal x GlueKwTo GlueTerminal y "."
+	| GlueKreplace GlueSymbol e1 GlueKwWith GlueSymbol e2 GlueScope w "."
 	| GlueKreroot GlueNonterminal+ xs "."
-	| GlueKsplitN GlueNonterminal x "into" GlueProduction+ ps GlueScope w "."
-	| GlueKsplitT GlueTerminal x "into" GlueTerminal+ ys GlueScope w "."
+	| GlueKsplitN GlueNonterminal x GlueKwInto GlueProduction+ ps GlueScope w "."
+	| GlueKsplitT GlueTerminal x GlueKwInto GlueTerminal+ ys GlueScope w "."
 	| GlueKunchain GlueProduction p "."
 	| GlueKundefine GlueNonterminal+ xs "."
 	| GlueKundefineNew GlueNonterminal x "."
 	| GlueKunfold GlueNonterminal x GlueScope w "."
-	| GlueKunite GlueNonterminal x "with" GlueNonterminal y "."
+	| GlueKunite GlueNonterminal x GlueKwWith GlueNonterminal y "."
 	| GlueKunlabel "[" GlueLabel x "]" "."
-	| GlueKupgrade GlueProduction p1 "to" GlueProduction p2 "."
+	| GlueKupgrade GlueProduction p1 GlueKwTo GlueProduction p2 "."
 	| GlueKvertical GlueScope w "."
-	| GlueKwiden GlueSymbol e1 "to" GlueSymbol e2 GlueScope w "."
+	| GlueKwiden GlueSymbol e1 GlueKwTo GlueSymbol e2 GlueScope w "."
 	| GlueKyaccify GlueProduction+ ps "."
 	;

@@ -4,40 +4,41 @@ vertical in GlueCommand .
 concretize
 	GlueCommand ::= GlueKunlabel <>:"[" <x>:GlueLabel <>:"]" ".";
 .
+// NB: all injections below are actually concretisations, but since we want syntax highlighting, folding matters
 // "to"
-concretize
-	GlueCommand ::= GlueKclone <x>:GlueNonterminal <>:"to" <y>:GlueNonterminal <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKdowngrade <p1>:GlueProduction <>:"to" <p2>:GlueProduction "."; .
-concretize
-	GlueCommand ::= GlueKfactor <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKmassage <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKnarrow <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKupgrade <p1>:GlueProduction <>:"to" <p2>:GlueProduction "."; .
-concretize
-	GlueCommand ::= GlueKwiden <e1>:GlueSymbol <>:"to" <e2>:GlueSymbol <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKclone <x>:GlueNonterminal <>:GlueKwTo <y>:GlueNonterminal <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKdowngrade <p1>:GlueProduction <>:GlueKwTo <p2>:GlueProduction "."; .
+inject
+	GlueCommand ::= GlueKfactor <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKmassage <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKnarrow <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKupgrade <p1>:GlueProduction <>:GlueKwTo <p2>:GlueProduction "."; .
+inject
+	GlueCommand ::= GlueKwiden <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .
 // possibly "from" ... "to"
-concretize
-	GlueCommand ::= GlueKrenameL <x>:GlueLabel <>:"to" <y>:GlueLabel "."; .
-concretize
-	GlueCommand ::= GlueKrenameN <x>:GlueNonterminal <>:"to" <y>:GlueNonterminal "."; .
-concretize
-	GlueCommand ::= GlueKrenameT <x>:GlueTerminal <>:"to" <y>:GlueTerminal "."; .
+inject
+	GlueCommand ::= GlueKrenameL <x>:GlueLabel <>:GlueKwTo <y>:GlueLabel "."; .
+inject
+	GlueCommand ::= GlueKrenameN <x>:GlueNonterminal <>:GlueKwTo <y>:GlueNonterminal "."; .
+inject
+	GlueCommand ::= GlueKrenameT <x>:GlueTerminal <>:GlueKwTo <y>:GlueTerminal "."; .
 // "into"
-concretize
-	GlueCommand ::= GlueKconcatT <xs>:(GlueTerminal+) <>:"into" <y>:GlueTerminal <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKsplitN <x>:GlueNonterminal <>:"into" <ps>:(GlueProduction+) <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKsplitT <x>:GlueTerminal <>:"into" <ys>:(GlueTerminal+) <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKconcatT <xs>:(GlueTerminal+) <>:GlueKwInto <y>:GlueTerminal <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKsplitN <x>:GlueNonterminal <>:GlueKwInto <ps>:(GlueProduction+) <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKsplitT <x>:GlueTerminal <>:GlueKwInto <ys>:(GlueTerminal+) <w>:GlueScope "."; .
 // "with"
-concretize
-	GlueCommand ::= GlueKequate <x>:GlueNonterminal <>:"with" <y>:GlueNonterminal "."; .
-concretize
-	GlueCommand ::= GlueKreplace <e1>:GlueSymbol <>:"with" <e2>:GlueSymbol <w>:GlueScope "."; .
-concretize
-	GlueCommand ::= GlueKunite <x>:GlueNonterminal <>:"with" <y>:GlueNonterminal "."; .
+inject
+	GlueCommand ::= GlueKequate <x>:GlueNonterminal <>:GlueKwWith <y>:GlueNonterminal "."; .
+inject
+	GlueCommand ::= GlueKreplace <e1>:GlueSymbol <>:GlueKwWith <e2>:GlueSymbol <w>:GlueScope "."; .
+inject
+	GlueCommand ::= GlueKunite <x>:GlueNonterminal <>:GlueKwWith <y>:GlueNonterminal "."; .
 horizontal in GlueCommand .

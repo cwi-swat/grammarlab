@@ -5,8 +5,7 @@ importG
 	b ::= [l3]::(x*) ;
 	c ::= [l4]::x ;
 .
-replace
-	x,y,in b.
+replace x with y in b.
 diff
 	a ::= [l1]::x ;
 	b ::= [l2]::y ;
