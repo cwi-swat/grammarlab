@@ -1,0 +1,6 @@
+importG
+	foo ::= BOOL;
+.
+diff
+	foo ::= STR ;
+.

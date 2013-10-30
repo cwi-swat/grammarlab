@@ -39,10 +39,9 @@ void main()
 		 'module grammarlab::language::glue::Transformations\n
 		 'import grammarlab::language::glue::Productions;\n"
 		| "<it>\nlexical GlueK<s> = @category=\"MetaVariable\" \"<s>\";" | s <- csd)
-		+"lexical GlueKwTo = @category=\"MetaVariable\" \"to\";
+		+"\nlexical GlueKwTo = @category=\"MetaVariable\" \"to\";
 		'lexical GlueKwInto = @category=\"MetaVariable\" \"into\";
-		'lexical GlueKwWith = @category=\"MetaVariable\" \"with\";
-		"
+		'lexical GlueKwWith = @category=\"MetaVariable\" \"with\";"
 		+ "\n\nkeyword GlueKw = GlueKwTo | GlueKwInto | GlueKwWith | GlueK"
 		+ intercalate(" | GlueK", csd)
 		+ ";\n\n"

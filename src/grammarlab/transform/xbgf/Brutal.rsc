@@ -11,6 +11,7 @@ import grammarlab::transform::xbgf::Util;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
 import List; //slice
+import IO; // debug
 
 XResult runReplace(GExpr e1, GExpr e2, XScope w, GGrammar g)
 {
@@ -20,6 +21,9 @@ XResult runReplace(GExpr e1, GExpr e2, XScope w, GGrammar g)
 	if (eqPs(ps2,ps4))
 		{
 			ps4 = performReplace(normalise(e1),normalise(e2),ps2); // TODO check if needed
+			println("Replacing <e1> with <e2>...");
+			println("IN:  <ps2>");
+			println("OUT: <ps4>");
 			if (eqPs(ps2,ps4))
 				return <problemExpr2("Vacuous replace",e1,e2),g>;
 		}

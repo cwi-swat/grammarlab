@@ -5,8 +5,7 @@ importG
 	b ::= [l3]::(x*) ;
 	c ::= [l4]::x ;
 .
-replace
-	x,y,in everywhere.
+replace x with y globally.
 diff
 	a ::= [l1]::y ;
 	b ::= [l2]::y ;

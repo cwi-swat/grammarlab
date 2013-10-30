@@ -2,8 +2,7 @@
 importG
 	a ::= b | c ;
 .
-replace
-	c | b,d,in a.
+replace (c | b) with d in a.
 diff
 	a ::= d ;
 .

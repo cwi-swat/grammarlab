@@ -3,6 +3,7 @@
 module grammarlab::export::GLUE
 
 import grammarlab::language::glue::Abstract;
+import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::export::Grammar;
 import grammarlab::export::XBNF;

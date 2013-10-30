@@ -1,0 +1,6 @@
+importG
+	foo ::= [one]::foo;
+.
+diff
+	foo ::= <one>:foo ;
+.

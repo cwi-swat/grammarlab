@@ -522,6 +522,10 @@ void show_replace_nt() {run_case("replace_nt.glue",true);}
 test bool test_replace_seq() = run_case("replace_seq.glue",false);
 void show_replace_seq() {run_case("replace_seq.glue",true);}
 
+// replace_q.glue
+test bool test_replace_q() = run_case("replace_q.glue",false);
+void show_replace_q() {run_case("replace_q.glue",true);}
+
 // reroot.glue
 test bool test_reroot() = run_case("reroot.glue",false);
 void show_reroot() {run_case("reroot.glue",true);}

@@ -1,0 +1,8 @@
+// Debugging |home:///projects/slps/topics/transformation/xbgf/tests/massage_complex.xbgf|
+importG
+	wez ::= foo bar? ;
+.
+replace bar? with bar globally.
+diff
+	wez ::= foo bar ;
+.

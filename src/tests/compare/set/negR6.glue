@@ -1,0 +1,6 @@
+importG
+	foo ::= "1"?;
+.
+diff
+	foo ::= "2"? ;
+.
