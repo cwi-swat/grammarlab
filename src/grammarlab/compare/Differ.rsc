@@ -51,7 +51,7 @@ public bool eqE(except(GExpr e1a, GExpr e1b), except(GExpr e2a, GExpr e2b)) = eq
 public bool eqE(sequence(L1), sequence(L2))
 {
 	if (size(L1) != size(L2)) return false;
-	for (i <- [0..size(L1)-1])
+	for (i <- [0..size(L1)])
 		//if (choice(L3) := L1[i] && choice(L4) := L2[i])
 		if (!eqE(L1[i],L2[i])) return false;
 	return true;
