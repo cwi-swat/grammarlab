@@ -57,6 +57,8 @@ GExpr mapS((GlueSymbol)`<GlueTerminal t>`) = terminal("<t.name>");
 GExpr mapS((GlueSymbol)`(<{GlueDefinition "|"}+ ds>)`) = mapIDs(ds);GExpr mapS((GlueSymbol)`<GlueSymbol smb>?`) = optional(mapS(smb));
 GExpr mapS((GlueSymbol)`<GlueSymbol smb>*`) = star(mapS(smb));
 GExpr mapS((GlueSymbol)`<GlueSymbol smb>+`) = plus(mapS(smb));
+GExpr mapS((GlueSymbol)`{<GlueSymbol smb1><GlueSymbol smb2>}*`) = sepliststar(mapS(smb1),mapS(smb2));
+GExpr mapS((GlueSymbol)`{<GlueSymbol smb1><GlueSymbol smb2>}+`) = seplistplus(mapS(smb1),mapS(smb2));
 GExpr mapS((GlueSymbol)`φ`) = empty();
 GExpr mapS((GlueSymbol)`ε`) = epsilon();
 GExpr mapS((GlueSymbol)`α`) = anything();

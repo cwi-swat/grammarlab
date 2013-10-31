@@ -1,0 +1,7 @@
+// debugging XBGF::replace
+importG
+	wez ::= foo bar?;
+.
+diff
+	wez ::= foo bar;
+.

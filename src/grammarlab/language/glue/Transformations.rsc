@@ -61,10 +61,10 @@ lexical GlueKunlabel = @category="MetaVariable" "unlabel";
 lexical GlueKupgrade = @category="MetaVariable" "upgrade";
 lexical GlueKvertical = @category="MetaVariable" "vertical";
 lexical GlueKwiden = @category="MetaVariable" "widen";
-lexical GlueKyaccify = @category="MetaVariable" "yaccify";lexical GlueKwTo = @category="MetaVariable" "to";
+lexical GlueKyaccify = @category="MetaVariable" "yaccify";
+lexical GlueKwTo = @category="MetaVariable" "to";
 lexical GlueKwInto = @category="MetaVariable" "into";
 lexical GlueKwWith = @category="MetaVariable" "with";
-		
 
 keyword GlueKw = GlueKwTo | GlueKwInto | GlueKwWith | GlueKabridge | GlueKabstractize | GlueKaddC | GlueKaddH | GlueKaddV | GlueKanonymize | GlueKappear | GlueKbypass | GlueKchain | GlueKclone | GlueKconcatT | GlueKconcretize | GlueKdeanonymize | GlueKdefine | GlueKdesignate | GlueKdetour | GlueKdeyaccify | GlueKdisappear | GlueKdistribute | GlueKdowngrade | GlueKeliminate | GlueKequate | GlueKextract | GlueKfactor | GlueKfold | GlueKhorizontal | GlueKimportG | GlueKinject | GlueKinline | GlueKintroduce | GlueKiterate | GlueKlassoc | GlueKmassage | GlueKnarrow | GlueKpermute | GlueKproject | GlueKrassoc | GlueKredefine | GlueKremoveH | GlueKremoveV | GlueKrenameL | GlueKrenameN | GlueKrenameS | GlueKrenameT | GlueKreplace | GlueKreroot | GlueKsplitN | GlueKsplitT | GlueKunchain | GlueKundefine | GlueKundefineNew | GlueKunfold | GlueKunite | GlueKunlabel | GlueKupgrade | GlueKvertical | GlueKwiden | GlueKyaccify;
 

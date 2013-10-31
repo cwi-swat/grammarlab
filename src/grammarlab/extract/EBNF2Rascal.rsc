@@ -142,6 +142,10 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\><unquoted(edd,postfix_repetition_star_symbol())>`) = star(mapS(smb));\n";
 	if (postfix_repetition_plus_symbol() in edd)
 		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\><unquoted(edd,postfix_repetition_plus_symbol())>`) = plus(mapS(smb));\n";
+	if (start_seplist_star_symbol() in edd && end_seplist_star_symbol() in edd)
+		prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,start_seplist_star_symbol())>\<<name>Symbol smb1\>\<<name>Symbol smb2\><unquoted(edd,end_seplist_star_symbol())>`) = sepliststar(mapS(smb1),mapS(smb2));\n";
+	if (start_seplist_plus_symbol() in edd && end_seplist_plus_symbol() in edd)
+		prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,start_seplist_plus_symbol())>\<<name>Symbol smb1\>\<<name>Symbol smb2\><unquoted(edd,end_seplist_plus_symbol())>`) = seplistplus(mapS(smb1),mapS(smb2));\n";
 	if (empty_metasymbol() in edd)
 	 	prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,empty_metasymbol())>`) = empty();\n";
 	if (epsilon_metasymbol() in edd)

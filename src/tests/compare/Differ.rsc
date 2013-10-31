@@ -42,6 +42,10 @@ void show_negR5() {run_case("negR5.glue",true);}
 test bool test_negR6() = !run_case("negR6.glue",false);
 void show_negR6() {run_case("negR6.glue",true);}
 
+// negR7.glue
+test bool test_negR7() = !run_case("negR7.glue",false);
+void show_negR7() {run_case("negR7.glue",true);}
+
 // negS3.glue
 test bool test_negS3() = !run_case("negS3.glue",false);
 void show_negS3() {run_case("negS3.glue",true);}
