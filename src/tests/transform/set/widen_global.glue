@@ -2,8 +2,7 @@
 importG
 	program ::= <fun>:(function+) ;
 .
-widen
-	function+,function*,in everywhere.
+widen function+ to function* globally.
 diff
 	program ::= <fun>:(function*) ;
 .

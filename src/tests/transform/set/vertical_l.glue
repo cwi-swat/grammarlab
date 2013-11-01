@@ -3,8 +3,7 @@ importG
 	decs ::= [nodecs]::ε ;
 	decs ::= [somedecs]::(dec | (dec decs)) ;
 .
-vertical
-	in [somedecs].
+vertical in [somedecs].
 diff
 	decs ::= [nodecs]::ε ;
 	decs ::= dec ;

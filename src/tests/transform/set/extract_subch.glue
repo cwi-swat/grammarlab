@@ -4,7 +4,7 @@ importG
 .
 extract
 	ClassOrInterfaceDeclaration ::= ClassDeclaration | InterfaceDeclaration ;
-,in everywhere.
+	globally.
 diff
 	TypeDeclaration ::= ClassOrInterfaceDeclaration | ";" ;
 	ClassOrInterfaceDeclaration ::= ClassDeclaration | InterfaceDeclaration ;

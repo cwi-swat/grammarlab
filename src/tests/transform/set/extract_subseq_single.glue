@@ -4,7 +4,7 @@ importG
 .
 extract
 	ParExpression ::= "(" Expression ")" ;
-,in everywhere.
+	globally.
 diff
 	IfThenStatement ::= "if" ParExpression Statement ;
 	ParExpression ::= "(" Expression ")" ;

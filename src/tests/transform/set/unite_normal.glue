@@ -4,8 +4,7 @@ importG
 	foo ::= "b" ;
 	bar ::= "d" ;
 .
-unite
-	bar,foo.
+unite bar with foo.
 diff
 	foo ::= "a" ;
 	foo ::= "b" ;

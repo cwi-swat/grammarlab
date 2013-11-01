@@ -1,10 +1,10 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/yaccify_right.xbgf|
 importG
-	foo ::= (wez*) bar ;
+	foo ::= wez* bar ;
 .
 yaccify
+	foo ::= wez foo ;
 	foo ::= bar ;
- foo ::= wez foo ;
 .
 diff
 	foo ::= bar ;

@@ -5,8 +5,7 @@ importG
 	bar ::= "x" ;
 	bar ::= wez* ;
 .
-equate
-	foo,bar.
+equate foo with bar.
 diff
 	bar ::= wez* ;
 	bar ::= "x" ;

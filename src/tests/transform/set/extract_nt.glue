@@ -5,9 +5,9 @@ importG
 .
 extract
 	xs ::= x* ;
-,in a.
+	in a.
 diff
-	a ::= xs ;
+	a  ::= xs ;
 	xs ::= x* ;
-	b ::= x* ;
+	b  ::= x* ;
 .

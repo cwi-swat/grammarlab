@@ -5,7 +5,7 @@ importG
 .
 extract
 	xs ::= x* ;
-,in [l2].
+	in [l2].
 diff
 	a ::= [l1]::(x*) ;
 	b ::= [l2]::xs ;

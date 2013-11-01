@@ -3,8 +3,7 @@ importG
 	foo ::= wez ;
 	bar ::= wez ;
 .
-equate
-	foo,bar.
+equate foo with bar.
 diff
 	bar ::= wez ;
 .

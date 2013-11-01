@@ -1,9 +1,8 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/factor_local.xbgf|
 importG
-	a ::= a | b | (c d e) | (c f g) | h | i ;
+	a ::= a | b | c d e | c f g | h | i ;
 .
-factor
-	(c d e) | (c f g),c ((d e) | (f g)),in everywhere.
+factor (c d e | c f g) to (c (d e | f g)) globally.
 diff
-	a ::= a | b | (c ((d e) | (f g))) | h | i ;
+	a ::= a | b | (c (d e | f g)) | h | i ;
 .

@@ -2,8 +2,7 @@
 importG
 	a ::= b | (b c) ;
 .
-factor
-	b | (b c),b (ε | c),in everywhere.
+factor (b | (b c)) to (b (ε | c)) globally.
 diff
 	a ::= b (ε | c) ;
 .

@@ -2,8 +2,7 @@
 importG
 	foo ::= bar wez qux ;
 .
-widen
-	bar wez,(bar wez)*,in everywhere.
+widen (bar wez) to (bar wez)* globally.
 diff
 	foo ::= ((bar wez)*) qux ;
 .

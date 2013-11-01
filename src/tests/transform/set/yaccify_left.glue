@@ -4,7 +4,7 @@ importG
 .
 yaccify
 	foo ::= bar ;
- foo ::= foo wez ;
+	foo ::= foo wez ;
 .
 diff
 	foo ::= bar ;

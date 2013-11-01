@@ -3,8 +3,7 @@ importG
 	a ::= ε ;
 	b ::= ε ;
 .
-unite
-	b,a.
+unite b with a.
 diff
 	a ::= ε ;
 .

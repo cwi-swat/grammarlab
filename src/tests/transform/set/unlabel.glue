@@ -2,8 +2,7 @@
 importG
 	expr ::= [intexpr]::int ;
 .
-unlabel
-	intexpr.
+unlabel [intexpr].
 diff
 	expr ::= int ;
 .

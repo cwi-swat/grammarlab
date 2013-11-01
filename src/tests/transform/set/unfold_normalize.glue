@@ -3,8 +3,7 @@ importG
 	a ::= b | c ;
 	c ::= b ;
 .
-unfold
-	c,in everywhere.
+unfold c globally.
 diff
 	a ::= b ;
 	c ::= b ;

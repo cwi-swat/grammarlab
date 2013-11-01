@@ -4,8 +4,7 @@ importG
 	qux ::= [l2]::bar ;
 	bar ::= wez* ;
 .
-unfold
-	bar,in everywhere.
+unfold bar globally.
 diff
 	foo ::= [l1]::(wez*) ;
 	qux ::= [l2]::(wez*) ;

@@ -4,9 +4,8 @@ importG
 	b ::= d e ;
 	b ::= f g ;
 .
-upgrade
-	a ::= (<>:b) c ;
-,b ::= d e ;
+upgrade a ::= <>:b c ;
+to b ::= d e ;
 .
 diff
 	a ::= b c ;

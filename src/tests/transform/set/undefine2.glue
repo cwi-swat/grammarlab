@@ -5,8 +5,7 @@ importG
 	wez ::= qux ;
 	qux ::= foo ;
 .
-undefine
-	bar,qux.
+undefine bar qux.
 diff
 	foo ::= bar ;
 	wez ::= qux ;

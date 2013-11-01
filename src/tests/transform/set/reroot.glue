@@ -6,8 +6,7 @@ importG
 	op ::= "+" ;
 	op ::= "-" ;
 .
-reroot
-	expr,op.
+reroot expr to op.
 diff
 	expr ::= [constant]::int ;
 	expr ::= [binary]::(expr op expr) ;

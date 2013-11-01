@@ -1,14 +1,13 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/equate4.xbgf|
 importG
-	foo ::= (wez*) | "x" ;
-	bar ::= "x" | (wez*) ;
+	foo ::= wez* | "x" ;
+	bar ::= "x" | wez* ;
 	wez ::= [go]::(foo "!") ;
 	wez ::= [stay]::(bar wez) ;
 .
-equate
-	foo,bar.
+equate foo with bar.
 diff
-	bar ::= "x" | (wez*) ;
+	bar ::= "x" | wez* ;
 	wez ::= [go]::(bar "!") ;
 	wez ::= [stay]::(bar wez) ;
 .

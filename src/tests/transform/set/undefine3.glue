@@ -1,0 +1,6 @@
+// Undefining everything should give an empty grammar
+importG
+	foo ::= "1" ;
+	foo ::= ("2"+ | "#")* ;
+.
+undefine foo.

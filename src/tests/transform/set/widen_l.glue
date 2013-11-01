@@ -2,8 +2,7 @@
 importG
 	program ::= [main]::(<fun>:function) ;
 .
-widen
-	function,function+,in [main].
+widen function to function+ in [main].
 diff
 	program ::= [main]::(<fun>:(function+)) ;
 .

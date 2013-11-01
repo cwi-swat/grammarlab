@@ -1,10 +1,9 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/equate2.xbgf|
 importG
-	foo ::= (wez*) | "x" ;
-	bar ::= "x" | (wez*) ;
+	foo ::= wez* | "x" ;
+	bar ::= "x" | wez* ;
 .
-equate
-	foo,bar.
+equate foo with bar.
 diff
-	bar ::= "x" | (wez*) ;
+	bar ::= "x" | wez* ;
 .

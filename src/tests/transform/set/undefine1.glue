@@ -5,8 +5,7 @@ importG
 	op ::= "+" ;
 	op ::= "-" ;
 .
-undefine
-	op.
+undefine op.
 diff
 	expr ::= int ;
 	expr ::= expr op expr ;

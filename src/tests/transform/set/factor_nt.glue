@@ -2,8 +2,7 @@
 importG
 	a ::= (b c) | (b d) ;
 .
-factor
-	(b c) | (b d),b (c | d),in a.
+factor (b c | b d) to (b (c | d)) in a.
 diff
 	a ::= b (c | d) ;
 .
