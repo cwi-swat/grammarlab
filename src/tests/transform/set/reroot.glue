@@ -2,15 +2,16 @@
 importG
 	expr ::= [constant]::int ;
 	expr ::= [binary]::(expr op expr) ;
-	op ::= "==" ;
-	op ::= "+" ;
-	op ::= "-" ;
+	op   ::= "==" ;
+	op   ::= "+" ;
+	op   ::= "-" ;
 .
-reroot expr to op.
+reroot to expr op.
 diff
+	⟙    ::= expr | op; 
 	expr ::= [constant]::int ;
 	expr ::= [binary]::(expr op expr) ;
-	op ::= "==" ;
-	op ::= "+" ;
-	op ::= "-" ;
+	op   ::= "==" ;
+	op   ::= "+" ;
+	op   ::= "-" ;
 .

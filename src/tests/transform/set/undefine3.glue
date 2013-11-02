@@ -1,6 +1,13 @@
-// Undefining everything should give an empty grammar
+// |home:///projects/slps/topics/transformation/xbgf/tests/undefine1.xbgf|
 importG
-	foo ::= "1" ;
-	foo ::= ("2"+ | "#")* ;
+	⟙    ::= expr;
+	expr ::= int ;
+	expr ::= expr op expr ;
+	op   ::= "+" ;
+	op   ::= "-" ;
 .
-undefine foo.
+undefine expr.
+diff
+	op ::= "+" ;
+	op ::= "-" ;
+.

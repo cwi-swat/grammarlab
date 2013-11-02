@@ -130,5 +130,9 @@ str convertGType(nonterminal("GLabel")) = "GlueLabel";
 str convertGType(nonterminal("GMark")) = "GlueMark";
 str convertGType(nonterminal("XScope")) = "GlueScope";
 str convertGType(star(GExpr e)) = "(<convertGType(e)>+)";
-default str convertGType(GExpr e) = "value";
+default str convertGType(GExpr e)
+{
+	println("Could not convert type <e>");
+	return "value";
+}
 

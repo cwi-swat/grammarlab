@@ -82,13 +82,13 @@ void show_chain_n() {run_case("chain_n.glue",true);}
 test bool test_concretize() = run_case("concretize.glue",false);
 void show_concretize() {run_case("concretize.glue",true);}
 
-// concretize_m.glue
-test bool test_concretize_m() = run_case("concretize_m.glue",false);
-void show_concretize_m() {run_case("concretize_m.glue",true);}
-
 // concretize3.glue
 test bool test_concretize3() = run_case("concretize3.glue",false);
 void show_concretize3() {run_case("concretize3.glue",true);}
+
+// concretize_m.glue
+test bool test_concretize_m() = run_case("concretize_m.glue",false);
+void show_concretize_m() {run_case("concretize_m.glue",true);}
 
 // deanonymize_multiple.glue
 test bool test_deanonymize_multiple() = run_case("deanonymize_multiple.glue",false);
@@ -149,10 +149,6 @@ void show_distribute_nt() {run_case("distribute_nt.glue",true);}
 // downgrade.glue
 test bool test_downgrade() = run_case("downgrade.glue",false);
 void show_downgrade() {run_case("downgrade.glue",true);}
-
-// eliminate.glue
-test bool test_eliminate() = run_case("eliminate.glue",false);
-void show_eliminate() {run_case("eliminate.glue",true);}
 
 // equate1.glue
 test bool test_equate1() = run_case("equate1.glue",false);
@@ -225,22 +221,6 @@ void show_horizontal_l() {run_case("horizontal_l.glue",true);}
 // horizontal_n.glue
 test bool test_horizontal_n() = run_case("horizontal_n.glue",false);
 void show_horizontal_n() {run_case("horizontal_n.glue",true);}
-
-// maybe_horizontal1.glue
-test bool test_maybe_horizontal1() = run_case("maybe_horizontal1.glue",false);
-void show_maybe_horizontal1() {run_case("maybe_horizontal1.glue",true);}
-
-// maybe_horizontal2.glue
-test bool test_maybe_horizontal2() = run_case("maybe_horizontal2.glue",false);
-void show_maybe_horizontal2() {run_case("maybe_horizontal2.glue",true);}
-
-// maybe_vertical1.glue
-test bool test_maybe_vertical1() = run_case("maybe_vertical1.glue",false);
-void show_maybe_vertical1() {run_case("maybe_vertical1.glue",true);}
-
-// maybe_vertical2.glue
-test bool test_maybe_vertical2() = run_case("maybe_vertical2.glue",false);
-void show_maybe_vertical2() {run_case("maybe_vertical2.glue",true);}
 
 // import.glue
 test bool test_import() = run_case("import.glue",false);
@@ -434,6 +414,22 @@ void show_massage_seq_ss() {run_case("massage_seq_ss.glue",true);}
 test bool test_massage_seq_xs() = run_case("massage_seq_xs.glue",false);
 void show_massage_seq_xs() {run_case("massage_seq_xs.glue",true);}
 
+// maybe_horizontal1.glue
+test bool test_maybe_horizontal1() = run_case("maybe_horizontal1.glue",false);
+void show_maybe_horizontal1() {run_case("maybe_horizontal1.glue",true);}
+
+// maybe_horizontal2.glue
+test bool test_maybe_horizontal2() = run_case("maybe_horizontal2.glue",false);
+void show_maybe_horizontal2() {run_case("maybe_horizontal2.glue",true);}
+
+// maybe_vertical1.glue
+test bool test_maybe_vertical1() = run_case("maybe_vertical1.glue",false);
+void show_maybe_vertical1() {run_case("maybe_vertical1.glue",true);}
+
+// maybe_vertical2.glue
+test bool test_maybe_vertical2() = run_case("maybe_vertical2.glue",false);
+void show_maybe_vertical2() {run_case("maybe_vertical2.glue",true);}
+
 // narrow_global.glue
 test bool test_narrow_global() = run_case("narrow_global.glue",false);
 void show_narrow_global() {run_case("narrow_global.glue",true);}
@@ -518,13 +514,13 @@ void show_replace_l() {run_case("replace_l.glue",true);}
 test bool test_replace_nt() = run_case("replace_nt.glue",false);
 void show_replace_nt() {run_case("replace_nt.glue",true);}
 
-// replace_seq.glue
-test bool test_replace_seq() = run_case("replace_seq.glue",false);
-void show_replace_seq() {run_case("replace_seq.glue",true);}
-
 // replace_q.glue
 test bool test_replace_q() = run_case("replace_q.glue",false);
 void show_replace_q() {run_case("replace_q.glue",true);}
+
+// replace_seq.glue
+test bool test_replace_seq() = run_case("replace_seq.glue",false);
+void show_replace_seq() {run_case("replace_seq.glue",true);}
 
 // reroot.glue
 test bool test_reroot() = run_case("reroot.glue",false);
@@ -577,6 +573,10 @@ void show_undefine1() {run_case("undefine1.glue",true);}
 // undefine2.glue
 test bool test_undefine2() = run_case("undefine2.glue",false);
 void show_undefine2() {run_case("undefine2.glue",true);}
+
+// undefine3.glue
+test bool test_undefine3() = run_case("undefine3.glue",false);
+void show_undefine3() {run_case("undefine3.glue",true);}
 
 // unfold.glue
 test bool test_unfold() = run_case("unfold.glue",false);

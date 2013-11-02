@@ -58,6 +58,14 @@ XResult runImportG(GProdList ps, GGrammar g)
 		return <problemStrs("Import clashes with existing definitions", toList(defs12)),g>;
 	if (!isEmpty(du12))
 		return <problemStrs("Import clashes with existing definitions", toList(du12)),g>;
+	if ("⟙" in g.N)
+	{
+		<ps1,ps2,ps3> = splitPbyW(g.P,innt("⟙"));
+		if ([production("⟙",choice(RS))] := ps2)
+			return <ok(), normalise(grammar(g.N, ps+ps1+ps3, g.S+[r | nonterminal(str r) <- RS]))>;
+		if ([production("⟙",nonterminal(r))] := ps2)
+			return <ok(), normalise(grammar(g.N, ps+ps1+ps3, g.S+[r]))>;
+	}
 	return <ok(), normalise(grammar(g.N, ps + g.P, g.S))>;
 }
 
@@ -122,11 +130,9 @@ XResult runUndefine(list[str] xs, GGrammar g)
 
 XResult runUndefineTrue(str x, GGrammar g)
 {
-	if (x in g.S)
-		return <problemStr("Cannot eliminate root nonterminal",x),g>;
 	if (x notin g.N)
 		return <problemStr("Nonterminal must be defined.",x),g>;
 	if (/nonterminal(x) !:= g.P)
 		return <problemStr("Nonterminal must be used.",x),g>;
-	return <ok(), grammar(g.N - x, [p | GProd p <- g.P, p.lhs != x], g.S)>;
+	return <ok(), grammar(g.N - x, [p | GProd p <- g.P, p.lhs != x], g.S - x)>;
 }

@@ -57,7 +57,7 @@ GLUEA glimplode((GlueCommand)`<GlueKrenameN _> <GlueNonterminal x> <GlueKwTo _> 
 GLUEA glimplode((GlueCommand)`<GlueKrenameS _> <GlueMark x> <GlueMark y> <GlueScope w> .`) = xbgf(renameS("<x>","<y>",mapScope(w)));
 GLUEA glimplode((GlueCommand)`<GlueKrenameT _> <GlueTerminal x> <GlueKwTo _> <GlueTerminal y> .`) = xbgf(renameT("<x>","<y>"));
 GLUEA glimplode((GlueCommand)`<GlueKreplace _> <GlueSymbol e1> <GlueKwWith _> <GlueSymbol e2> <GlueScope w> .`) = xbgf(replace(mapS(e1),mapS(e2),mapScope(w)));
-GLUEA glimplode((GlueCommand)`<GlueKreroot _> <GlueNonterminal+ xs> .`) = xbgf(reroot(["<each>" | each <- xs]));
+GLUEA glimplode((GlueCommand)`<GlueKreroot _> <GlueKwTo _> <GlueNonterminal+ xs> .`) = xbgf(reroot(["<each>" | each <- xs]));
 GLUEA glimplode((GlueCommand)`<GlueKsplitN _> <GlueNonterminal x> <GlueKwInto _> <GlueProduction+ ps> <GlueScope w> .`) = xbgf(splitN("<x>",mapPs(ps),mapScope(w)));
 GLUEA glimplode((GlueCommand)`<GlueKsplitT _> <GlueTerminal x> <GlueKwInto _> <GlueTerminal+ ys> <GlueScope w> .`) = xbgf(splitT("<x>",["<each>" | each <- ys],mapScope(w)));
 GLUEA glimplode((GlueCommand)`<GlueKunchain _> <GlueProduction p> .`) = xbgf(unchain(mapP(p)));

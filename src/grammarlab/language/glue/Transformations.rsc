@@ -114,7 +114,7 @@ syntax GlueCommand
 	| GlueKrenameS GlueMark x GlueMark y GlueScope w "."
 	| GlueKrenameT GlueTerminal x GlueKwTo GlueTerminal y "."
 	| GlueKreplace GlueSymbol e1 GlueKwWith GlueSymbol e2 GlueScope w "."
-	| GlueKreroot GlueNonterminal+ xs "."
+	| GlueKreroot GlueKwTo GlueNonterminal+ xs "."
 	| GlueKsplitN GlueNonterminal x GlueKwInto GlueProduction+ ps GlueScope w "."
 	| GlueKsplitT GlueTerminal x GlueKwInto GlueTerminal+ ys GlueScope w "."
 	| GlueKunchain GlueProduction p "."

@@ -17,6 +17,8 @@ inject
 inject
 	GlueCommand ::= GlueKnarrow <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .
 inject
+	GlueCommand ::=	GlueKreroot <>:GlueKwTo <xs>:(GlueNonterminal+) "."; .
+inject
 	GlueCommand ::= GlueKupgrade <p1>:GlueProduction <>:GlueKwTo <p2>:GlueProduction "."; .
 inject
 	GlueCommand ::= GlueKwiden <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .

@@ -3,8 +3,7 @@ importG
 	expr ::= int ;
 	intexpr ::= int ;
 .
-eliminate
-	intexpr.
+eliminate intexpr.
 diff
 	expr ::= int ;
 .
