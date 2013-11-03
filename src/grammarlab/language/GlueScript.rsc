@@ -9,6 +9,7 @@ import grammarlab::language::glue::Actions;
 import grammarlab::language::glue::Productions;
 import grammarlab::language::glue::Scope;
 import grammarlab::language::glue::Concrete;
+import grammarlab::language::glue::Rename;
 // These shoes are made for implosion, that’s just what they’ll do
 import grammarlab::language::glue::Abstract;
 import grammarlab::language::glue::MapXBGF2A;
@@ -46,11 +47,11 @@ public void go()
 
 public void tr()
 {
-	t = getGlue(|project://grammarlab/src/tests/transform/XBGF.glue|);
+	t = getGlue(|project://grammarlab/src/tests/transform/set/renameL.glue|);
 	d = glimplode(t);
-	// iprintln(d);
-	GGrammar g = EmptyGrammar;
-	for (GLUEA step <- d)
-		g = execute(g,step);
-	println(ppx(g));
+	iprintln(d);
+	//GGrammar g = EmptyGrammar;
+	//for (GLUEA step <- d)
+	//	g = execute(g,step);
+	//println(ppx(g));
 }

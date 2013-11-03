@@ -2,8 +2,7 @@ include |project://grammarlab/src/meta/GlueLanguage.glue| .
 vertical in GlueCommand .
 // the only real fix so far
 concretize
-	GlueCommand ::= GlueKunlabel <>:"[" <x>:GlueLabel <>:"]" ".";
-.
+	GlueCommand ::= GlueKunlabel <>:"[" <x>:GlueLabel <>:"]" "."; .
 // NB: all injections below are actually concretisations, but since we want syntax highlighting, folding matters
 // "to"
 inject
@@ -22,13 +21,6 @@ inject
 	GlueCommand ::= GlueKupgrade <p1>:GlueProduction <>:GlueKwTo <p2>:GlueProduction "."; .
 inject
 	GlueCommand ::= GlueKwiden <e1>:GlueSymbol <>:GlueKwTo <e2>:GlueSymbol <w>:GlueScope "."; .
-// possibly "from" ... "to"
-inject
-	GlueCommand ::= GlueKrenameL <x>:GlueLabel <>:GlueKwTo <y>:GlueLabel "."; .
-inject
-	GlueCommand ::= GlueKrenameN <x>:GlueNonterminal <>:GlueKwTo <y>:GlueNonterminal "."; .
-inject
-	GlueCommand ::= GlueKrenameT <x>:GlueTerminal <>:GlueKwTo <y>:GlueTerminal "."; .
 // "into"
 inject
 	GlueCommand ::= GlueKconcatT <xs>:(GlueTerminal+) <>:GlueKwInto <y>:GlueTerminal <w>:GlueScope "."; .

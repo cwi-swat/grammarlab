@@ -7,6 +7,7 @@ import grammarlab::language::glue::Mutations;
 import grammarlab::language::glue::Actions;
 import grammarlab::language::glue::Productions;
 import grammarlab::language::glue::Scope;
+import grammarlab::language::glue::Rename;
 
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;

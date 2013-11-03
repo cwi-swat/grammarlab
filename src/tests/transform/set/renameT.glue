@@ -2,8 +2,7 @@
 importG
 	x ::= "x" ;
 .
-renameT
-	x,y.
+rename "x" to "y" globally.
 diff
 	x ::= "y" ;
 .

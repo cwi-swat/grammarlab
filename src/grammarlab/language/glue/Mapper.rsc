@@ -13,6 +13,7 @@ import grammarlab::language::glue::Mutations;
 import grammarlab::language::glue::Actions;
 import grammarlab::language::glue::Productions;
 import grammarlab::language::glue::Scope;
+import grammarlab::language::glue::Rename;
 
 import IO;
 

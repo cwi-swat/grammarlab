@@ -34,7 +34,7 @@ public EBNF GlueEBNF = (
 	conjunction_symbol(): " & ",
 	exception_symbol(): " &! ",
 	prefix_negation_symbol(): "¬",
-	nonterminals_may_contain(): "⟙"
+	nonterminals_may_contain(): "⟙_-/"
 );
 
 public EBNF GlueEBNFpp = GlueEBNF +(

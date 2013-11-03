@@ -4,8 +4,7 @@ importG
 	expr ::= [binary]::(expr (<op>:binary_op) expr) ;
 	expr ::= [unary]::((<op>:unary_op) expr) ;
 .
-renameN
-	expr,exp.
+rename expr to exp globally.
 diff
 	exp ::= [constant]::int ;
 	exp ::= [binary]::(exp (<op>:binary_op) exp) ;

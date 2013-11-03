@@ -58,15 +58,15 @@ XResult runImportG(GProdList ps, GGrammar g)
 		return <problemStrs("Import clashes with existing definitions", toList(defs12)),g>;
 	if (!isEmpty(du12))
 		return <problemStrs("Import clashes with existing definitions", toList(du12)),g>;
-	if ("⟙" in g.N)
+	if (/production("⟙",rhs) := ps)
 	{
-		<ps1,ps2,ps3> = splitPbyW(g.P,innt("⟙"));
-		if ([production("⟙",choice(RS))] := ps2)
-			return <ok(), normalise(grammar(g.N, ps+ps1+ps3, g.S+[r | nonterminal(str r) <- RS]))>;
-		if ([production("⟙",nonterminal(r))] := ps2)
-			return <ok(), normalise(grammar(g.N, ps+ps1+ps3, g.S+[r]))>;
+		<ps1,ps2,ps3> = splitPbyW(ps,innt("⟙"));
+		if (choice(RS) := rhs)
+			return <ok(), normalise(grammar(g.N, g.P+ps1+ps3, g.S+[r | nonterminal(str r) <- RS]))>;
+		if (nonterminal(str r) := rhs)
+			return <ok(), normalise(grammar(g.N, g.P+ps1+ps3, g.S+[r]))>;
 	}
-	return <ok(), normalise(grammar(g.N, ps + g.P, g.S))>;
+	return <ok(), normalise(grammar(g.N, g.P + ps, g.S))>;
 }
 
 XResult runIntroduce(GProdList ps, GGrammar g)

@@ -28,7 +28,7 @@ lexical GlueTerminalSymbols = ![\"]* !>> ![\"];
 lexical GlueNonterminal = @category="Identifier"  GlueNonterminalSymbols name ;
 lexical GlueLabel = @category="NonterminalLabel" ![\]]+ >> [\]];
 lexical GlueMark = @category="NonterminalLabel" ![\>]* >> [\>];
-lexical GlueNonterminalSymbols = [A-Za-z_01-9⟙]+ !>> [A-Za-z_01-9⟙];
+lexical GlueNonterminalSymbols = [A-Za-z_01-9⟙_\-/]+ !>> [A-Za-z_01-9⟙_\-/];
 layout GlueLayoutList = GlueLayout* !>> [\t-\n \r \  ] !>> "//";
 lexical GlueLayout = [\t-\n \r \  ] | GlueComment ;
 lexical GlueComment = @category="Comment" "//" ![\n]* [\n];
