@@ -8,13 +8,15 @@ import grammarlab::io::Grammar;
 import grammarlab::lib::Sizes;
 start syntax GlueGrammar = GlueProduction*;
 syntax GlueProduction = GlueNonterminal "::=" {GlueDefinition "|"}+ ";";
-syntax GlueDefinition = GlueSymbol+;
+syntax GlueDefinition = {GlueSequence "&"}+;
+syntax GlueSequence = GlueSymbol+;
 syntax GlueSymbol
  = nonterminal: GlueNonterminal
  | terminal: GlueTerminal
  | labelled: "[" GlueLabel "]::" GlueSymbol
  | marked: "\<" GlueMark "\>:" GlueSymbol
  | group: "(" {GlueDefinition "|"}+ ")"
+ | negation: "¬" GlueSymbol 
  | optional: GlueSymbol "?"
  | star: GlueSymbol "*"
  | plus: GlueSymbol "+"
@@ -47,14 +49,13 @@ GProdList mapPs(GlueProduction+ ps) = [mapP(p) | p <- ps];
 GProd mapP((GlueProduction)`<GlueNonterminal lhs>::=<{GlueDefinition "|"}+ rhds>;`) = production("<lhs>",mapDs(rhds));
 GExpr mapDs({GlueDefinition "|"}+ ds)
 {
-	GExprList es = [mapE(d) | GlueDefinition d <- ds];
+	GExprList es = [mapD(d) | GlueDefinition d <- ds];
 	return (len(es)==1) ? es[0] : choice(es);
 }
-GExpr mapE((GlueDefinition)`<GlueSymbol s>`) = mapS(s);
-default GExpr mapE((GlueDefinition)`<GlueSymbol+ ss>`) = sequence([mapS(s) | GlueSymbol s <- ss]);
 GExpr mapS((GlueSymbol)`<GlueNonterminal n>`) = nonterminal("<n.name >");
 GExpr mapS((GlueSymbol)`<GlueTerminal t>`) = terminal("<t.name>");
-GExpr mapS((GlueSymbol)`(<{GlueDefinition "|"}+ ds>)`) = mapIDs(ds);GExpr mapS((GlueSymbol)`<GlueSymbol smb>?`) = optional(mapS(smb));
+GExpr mapS((GlueSymbol)`(<{GlueDefinition "|"}+ ds>)`) = mapIDs(ds);GExpr mapS((GlueSymbol)`¬<GlueSymbol smb>`) = not(mapS(smb));
+GExpr mapS((GlueSymbol)`<GlueSymbol smb>?`) = optional(mapS(smb));
 GExpr mapS((GlueSymbol)`<GlueSymbol smb>*`) = star(mapS(smb));
 GExpr mapS((GlueSymbol)`<GlueSymbol smb>+`) = plus(mapS(smb));
 GExpr mapS((GlueSymbol)`{<GlueSymbol smb1><GlueSymbol smb2>}*`) = sepliststar(mapS(smb1),mapS(smb2));
@@ -68,9 +69,16 @@ default GExpr mapS(GlueSymbol smb) {println("Cannot map symbol <smb>!");return e
 
 GExpr mapIDs({GlueDefinition "|"}+ ds)
 {
-	GExprList es = [mapE(d) | GlueDefinition d <- ds];
+	GExprList es = [mapD(d) | GlueDefinition d <- ds];
 	return (len(es)==1) ? es[0] : choice(es);
 }
+GExpr mapD((GlueDefinition)`<{GlueSequence "&"}+ ds>`)
+{
+	GExprList es = [mapE(d) | GlueSequence d <- ds];
+	return (len(es)==1) ? es[0] : allof(es);
+}
+GExpr mapE((GlueSequence)`<GlueSymbol s>`) = mapS(s);
+default GExpr mapE((GlueSequence)`<GlueSymbol+ ss>`) = sequence([mapS(s) | GlueSymbol s <- ss]);
 public void main(list[str] args)
 	= (len(args)==2)
 	? writeBGF(mapG(parse(#GlueGrammar, trim(readFile(|cwd:///|+args[0])))), |cwd:///|+args[1])

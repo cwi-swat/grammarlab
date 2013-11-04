@@ -2,8 +2,7 @@
 importG
 	foo ::= ¬(foo | bar) ;
 .
-massage
-	¬(foo | bar),(¬bar) & (¬foo),in everywhere.
+massage ¬(foo | bar) to (¬bar & ¬foo) globally.
 diff
-	foo ::= (¬foo) & (¬bar) ;
+	foo ::= ¬foo & ¬bar ;
 .

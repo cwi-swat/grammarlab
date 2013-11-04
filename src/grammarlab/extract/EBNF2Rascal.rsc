@@ -38,10 +38,14 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 	'start syntax <name>Grammar = <name>Production*;
 	'syntax <name>Production = <name>Nonterminal <quoted(edd,defining_symbol())> {<name>Definition <quoted(edd,definition_separator_symbol())>}+ <quoted(edd,terminator_symbol())>;
 	'";
-	if (concatenate_symbol() in edd && trim(getMeta(concatenate_symbol(),edd))!="")
-		prep += "syntax <name>Definition = {<name>Symbol <quoted(edd,concatenate_symbol())>}+;";
+	if (conjunction_symbol() in edd)
+		prep += "syntax <name>Definition = {<name>Sequence <quoted(edd,conjunction_symbol())>}+;\n";
 	else
-		prep += "syntax <name>Definition = <name>Symbol+;";
+		prep += "syntax <name>Definition = <name>Sequence;\n";
+	if (concatenate_symbol() in edd && trim(getMeta(concatenate_symbol(),edd))!="")
+		prep += "syntax <name>Sequence = {<name>Symbol <quoted(edd,concatenate_symbol())>}+;";
+	else
+		prep += "syntax <name>Sequence = <name>Symbol+;";
 	prep +=	"
 	'syntax <name>Symbol
 	' = nonterminal: <name>Nonterminal
@@ -55,6 +59,8 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 			prep += "\n | group: <quoted(edd,start_group_symbol())> {<name>Definition <quoted(edd,disjunction_symbol())>}+ <quoted(edd,end_group_symbol())>";
 		else
 			prep += "\n | group: <quoted(edd,start_group_symbol())> <name>Definition <quoted(edd,end_group_symbol())>";
+	if (prefix_negation_symbol() in edd)
+		prep += "\n | negation: <quoted(edd,prefix_negation_symbol())> <name>Symbol ";
 	if (postfix_option_symbol() in edd)
 		prep += "\n | optional: <name>Symbol <quoted(edd,postfix_option_symbol())>";
 	if (postfix_repetition_star_symbol() in edd)
@@ -128,14 +134,14 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 	'GProd mapP((<name>Production)`\<<name>Nonterminal lhs\><unquoted(edd,defining_symbol())>\<{<name>Definition <quoted(edd,definition_separator_symbol())>}+ rhds\><inbackticks(edd,terminator_symbol())>`) = production(\"\<lhs\>\",mapDs(rhds));
 	'GExpr mapDs({<name>Definition <quoted(edd,definition_separator_symbol())>}+ ds)
 	'{
-	'	GExprList es = [mapE(d) | <name>Definition d \<- ds];
+	'	GExprList es = [mapD(d) | <name>Definition d \<- ds];
 	'	return (len(es)==1) ? es[0] : choice(es);
 	'}
-	'GExpr mapE((<name>Definition)`\<<name>Symbol s\>`) = mapS(s);
-	'default GExpr mapE((<name>Definition)`\<<name>Symbol+ ss\>`) = sequence([mapS(s) | <name>Symbol s \<- ss]);
 	'GExpr mapS((<name>Symbol)`\<<name>Nonterminal n\>`) = nonterminal(\"\<n.name \>\");
 	'GExpr mapS((<name>Symbol)`\<<name>Terminal t\>`) = terminal(\"\<t.name\>\");
 	'GExpr mapS((<name>Symbol)`<unquoted(edd,start_group_symbol())>\<{<name>Definition <quoted(edd,disjunction_symbol())>}+ ds\><unquoted(edd,end_group_symbol())>`) = mapIDs(ds);";
+	if (prefix_negation_symbol() in edd)
+		prep += "GExpr mapS((<name>Symbol)`<unquoted(edd,prefix_negation_symbol())>\<<name>Symbol smb\>`) = not(mapS(smb));\n";
 	if (postfix_option_symbol() in edd)
 		prep += "GExpr mapS((<name>Symbol)`\<<name>Symbol smb\><unquoted(edd,postfix_option_symbol())>`) = optional(mapS(smb));\n";
 	if (postfix_repetition_star_symbol() in edd)
@@ -159,10 +165,35 @@ public str EDD2Rascal(EBNF edd, str name, str libname)
 	prep += "default GExpr mapS(<name>Symbol smb) {println(\"Cannot map symbol \<smb\>!\");return empty();}\n
 	'GExpr mapIDs({<name>Definition <quoted(edd,disjunction_symbol())>}+ ds)
 	'{
-	'	GExprList es = [mapE(d) | <name>Definition d \<- ds];
+	'	GExprList es = [mapD(d) | <name>Definition d \<- ds];
 	'	return (len(es)==1) ? es[0] : choice(es);
 	'}
-	'public void main(list[str] args)
+	'";
+	// TODO: test the following 20 or so lines
+	if (conjunction_symbol() in edd)
+		prep +=
+	"GExpr mapD((<name>Definition)`\<{<name>Sequence <quoted(edd,conjunction_symbol())>}+ ds\>`)
+	'{
+	'	GExprList es = [mapE(d) | <name>Sequence d \<- ds];
+	'	return (len(es)==1) ? es[0] : allof(es);
+	'}
+	'";
+	else
+		prep += "GExpr mapD((<name>Definition)`\<<name>Sequence d\>`) = mapE(d);";
+	if (concatenate_symbol() in edd && trim(getMeta(concatenate_symbol(),edd))!="")
+		prep += 
+	"GExpr mapE((<name>Sequence)`\<{<name>Symbol <quoted(edd,concatenate_symbol())>}+ ds\>`)
+	'{
+	'	GExprList es = [mapE(d) | <name>Symbol d \<- ds];
+	'	return (len(es)==1) ? es[0] : allof(es);
+	'}
+	'";
+	else
+		prep +=
+	"GExpr mapE((<name>Sequence)`\<<name>Symbol s\>`) = mapS(s);
+	'default GExpr mapE((<name>Sequence)`\<<name>Symbol+ ss\>`) = sequence([mapS(s) | <name>Symbol s \<- ss]);
+	'";
+	prep += "public void main(list[str] args)
 	'	= (len(args)==2)
 	'	? writeBGF(mapG(parse(#<name>Grammar, trim(readFile(|cwd:///|+args[0])))), |cwd:///|+args[1])
 	'	: println(\"Please provide two arguments: input and output.\");
