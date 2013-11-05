@@ -3,8 +3,7 @@ importG
 	foo ::= "abc" ;
 	bar ::= "ab" ;
 .
-splitT
-	"abc","a"+"bc",in foo.
+splitT "abc" into "a" "bc" in foo.
 diff
 	foo ::= "a" "bc" ;
 	bar ::= "ab" ;

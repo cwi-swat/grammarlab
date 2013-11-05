@@ -1,0 +1,10 @@
+// Debugging concatT
+importG
+	foo ::= "a" "b" "c" ;
+	bar ::= "b" "c" ;
+.
+replace ("b" "c") with "bc" in foo.
+diff
+	foo ::= "a" "bc" ;
+	bar ::= "b" "c" ;
+.

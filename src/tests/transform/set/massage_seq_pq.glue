@@ -1,10 +1,9 @@
 // |home:///projects/slps/topics/transformation/xbgf/tests/massage_seq_pq.xbgf|
 importG
-	foo ::= (bar+) (bar?) ;
+	foo ::= bar+ bar? ;
 .
-massage
-	(bar+) (bar?),bar+,in everywhere)
-massage(bar+,(bar?) (bar+),in everywhere.
+massage (bar+ bar?) to bar+ globally.
+massage bar+ to (bar? bar+) globally.
 diff
-	foo ::= (bar?) (bar+) ;
+	foo ::= bar? bar+ ;
 .

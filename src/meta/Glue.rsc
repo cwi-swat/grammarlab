@@ -103,10 +103,10 @@ str fishnotation(GExpr e) = intercalate(" ",["\<<convertGType(s)> <n>\>" | seque
 str allmarks(GExpr e) = intercalate(",",[convertor(convertGType(s),n) | sequence(L) := e, mark(n,s) <- L]);
 
 str convertor("GlueString", str name) = "\"\<<name>\>\"";
-str convertor("GlueNonterminal", str name) = "\"\<<name>\>\"";
-str convertor("(GlueNonterminal+)", str name) = "[\"\<each\>\" | each \<- <name>]";
-str convertor("GlueTerminal", str name) = "\"\<<name>\>\"";
-str convertor("(GlueTerminal+)", str name) = "[\"\<each\>\" | each \<- <name>]";
+str convertor("GlueNonterminal", str name) = "\"\<<name>.name\>\"";
+str convertor("(GlueNonterminal+)", str name) = "[\"\<each.name\>\" | each \<- <name>]";
+str convertor("GlueTerminal", str name) = "\"\<<name>.name\>\"";
+str convertor("(GlueTerminal+)", str name) = "[\"\<each.name\>\" | each \<- <name>]";
 str convertor("GlueLabel", str name) = "\"\<<name>\>\"";
 str convertor("GlueMark", str name) = "\"\<<name>\>\"";
 str convertor("GlueString+", str name) = "[\"\<each\>\" | each \<- <name>]";

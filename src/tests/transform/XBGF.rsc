@@ -78,6 +78,22 @@ void show_chain_l() {run_case("chain_l.glue",true);}
 test bool test_chain_n() = run_case("chain_n.glue",false);
 void show_chain_n() {run_case("chain_n.glue",true);}
 
+// concatT1.glue
+test bool test_concatT1() = run_case("concatT1.glue",false);
+void show_concatT1() {run_case("concatT1.glue",true);}
+
+// concatT2.glue
+test bool test_concatT2() = run_case("concatT2.glue",false);
+void show_concatT2() {run_case("concatT2.glue",true);}
+
+// concatT3.glue
+test bool test_concatT3() = run_case("concatT3.glue",false);
+void show_concatT3() {run_case("concatT3.glue",true);}
+
+// concatT4.glue
+test bool test_concatT4() = run_case("concatT4.glue",false);
+void show_concatT4() {run_case("concatT4.glue",true);}
+
 // concretize.glue
 test bool test_concretize() = run_case("concretize.glue",false);
 void show_concretize() {run_case("concretize.glue",true);}
@@ -149,6 +165,14 @@ void show_distribute_nt() {run_case("distribute_nt.glue",true);}
 // downgrade.glue
 test bool test_downgrade() = run_case("downgrade.glue",false);
 void show_downgrade() {run_case("downgrade.glue",true);}
+
+// eliminate1.glue
+test bool test_eliminate1() = run_case("eliminate1.glue",false);
+void show_eliminate1() {run_case("eliminate1.glue",true);}
+
+// eliminate2.glue
+test bool test_eliminate2() = run_case("eliminate2.glue",false);
+void show_eliminate2() {run_case("eliminate2.glue",true);}
 
 // equate1.glue
 test bool test_equate1() = run_case("equate1.glue",false);
@@ -521,6 +545,14 @@ void show_replace_q() {run_case("replace_q.glue",true);}
 // replace_seq.glue
 test bool test_replace_seq() = run_case("replace_seq.glue",false);
 void show_replace_seq() {run_case("replace_seq.glue",true);}
+
+// replace_t1.glue
+test bool test_replace_t1() = run_case("replace_t1.glue",false);
+void show_replace_t1() {run_case("replace_t1.glue",true);}
+
+// replace_t2.glue
+test bool test_replace_t2() = run_case("replace_t2.glue",false);
+void show_replace_t2() {run_case("replace_t2.glue",true);}
 
 // reroot.glue
 test bool test_reroot() = run_case("reroot.glue",false);

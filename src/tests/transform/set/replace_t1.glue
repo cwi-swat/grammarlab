@@ -1,0 +1,10 @@
+// Debugging splitT
+importG
+	foo ::= "ab" ;
+	bar ::= "ab" ;
+.
+replace "ab" with ("a" "b") globally.
+diff
+	foo ::= "a" "b" ;
+	bar ::= "a" "b" ;
+.

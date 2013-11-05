@@ -2,8 +2,7 @@
 importG
 	program ::= (<fun>:function)* ;
 .
-massage
-	(<fun>:function)*,<fun>:(function*),in everywhere.
+massage (<fun>:function)* to <fun>:(function*) globally.
 diff
 	program ::= <fun>:(function*) ;
 .

@@ -1,0 +1,9 @@
+importG
+	foo ::= "a" "b" ;
+	bar ::= "a" "b" ;
+.
+concatT "a" "b" into "ab" in foo.
+diff
+	foo ::= "ab" ;
+	bar ::= "a" "b" ;
+.

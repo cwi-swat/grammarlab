@@ -9,6 +9,7 @@ import grammarlab::transform::xbgf::Brutal;
 import grammarlab::transform::xbgf::Sequential;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
+import List;
 
 // TODO: reimplement for arbitrary markers
 XResult runAbstractize(GProd p1, GGrammar g)
@@ -24,8 +25,10 @@ XResult runAbstractize(GProd p1, GGrammar g)
 
 XResult runConcatT(list[str] xs, str y, XScope w, GGrammar g)
 {
-	// TODO
-	return <ok(),g>;
+	if (y != intercalate("",xs))
+		return <problemStrs("Terminal \'<y>\' cannot be combined from",xs),g>;
+	// TODO: more preconditions?
+	return grammarlab::transform::xbgf::Brutal::runReplace(sequence([terminal(x) | x <- xs]),terminal(y),w,g);
 }
 
 XResult runConcretize(GProd p1, GGrammar g)
@@ -51,8 +54,8 @@ XResult runRenameT(str x, str y, GGrammar g)
 
 XResult runSplitT(str x, list[str] ys, XScope w, GGrammar g)
 {
-	// TODO: insert proper preconditions
-	//<ps1,ps2,ps3> = splitPbyW(g.prods, w);
-	//GGrammar g2 	= transform::library::Brutal::runReplace(terminal(x),sequence([terminal(y) | y <- ys]),w,grammar([],ps2));
+	if (x != intercalate("",ys))
+		return <problemStrs("Terminal \'<x>\' cannot be split into",ys),g>;
+	// TODO: more preconditions?
 	return grammarlab::transform::xbgf::Brutal::runReplace(terminal(x),sequence([terminal(y) | y <- ys]),w,g);
 }

@@ -86,7 +86,7 @@ bool massage_eq({optional(sequence([star(sequence([x,y])),x])),sepliststar(x,y)}
 bool massage_eq({optional(seplistplus(x,y)),sepliststar(x,y)}) = true;
 
 // Boolean grammars
-//bool massage_eq({not(not(x)),x}) = true;
+bool massage_eq({not(not(x)),x}) = true;
 bool massage_eq({not(allof([x,y])),choice([not(x),not(y)])}) = true;
 bool massage_eq({not(allof([x,y])),choice([not(y),not(x)])}) = true;
 bool massage_eq({not(allof([not(x),not(y)])),choice([x,y])}) = true;
