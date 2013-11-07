@@ -1,0 +1,15 @@
+importG
+	GlueCommand ::= GlueKAbridgeAll  "."
+		| GlueKDeyaccifyAll  "."
+		| GlueKDistributeAll  "."
+		| GlueKEliminateTop  "."
+		| GlueKEquateAll  "."
+		| GlueKFoldMax  "."
+		| GlueKHorizontalAll  "."
+		| GlueKInlineMax  "."
+		| GlueKLiftTopLabels  "."
+		| GlueKUnchainAll  "."
+		| GlueKUnfoldMax  "."
+		| GlueKVerticalAll  "."
+	;
+.

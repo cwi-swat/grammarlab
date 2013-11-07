@@ -10,8 +10,8 @@ alias GTerm = str;
 alias GLabel = str;
 alias GMark = str;
 
-data XCommand =
-	  abridge(GProd p)
+data XCommand
+	= abridge(GProd p)
 	| abstractize(GProd p) // marked
 	| addH(GProd p) // marked
 	| addV(GProd p)

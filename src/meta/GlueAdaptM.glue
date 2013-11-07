@@ -1,0 +1,3 @@
+include |project://grammarlab/src/meta/GlueLanguageM.glue| .
+vertical in GlueCommand .
+horizontal in GlueCommand .

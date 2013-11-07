@@ -1,4 +1,4 @@
-include |project://grammarlab/src/meta/GlueLanguage.glue| .
+include |project://grammarlab/src/meta/GlueLanguageT.glue| .
 vertical in GlueCommand .
 // the only real fix so far
 concretize
