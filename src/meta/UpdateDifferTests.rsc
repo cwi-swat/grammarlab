@@ -4,12 +4,13 @@ module meta::UpdateDifferTests
 import String;
 import IO;
 
+// meta::UpdateDifferTests::main()
 public void main()
 {
-	loc base = |project://grammarlab/src/tests/compare/set|;
+	loc base = |project://grammarlab/src/test/set/diff|;
 	str buffer = "@contributor{Super Awesome Automated GDT Test Suite Synchroniser}
 		'@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-		'module tests::compare::Differ
+		'module \\test::Differ
 		'
 		'import IO;
 		'import grammarlab::language::Grammar;
@@ -22,11 +23,11 @@ public void main()
 		'
 		'bool run_case(str casen, bool debug)
 		'{
-		'	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/tests/compare/set/\<casen\>|));
+		'	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/test/set/diff/\<casen\>|));
 		'	bool res = false;
 		'	if (debug) res = gdtv(uit,EmptyGrammar);
 		'	else res = gdts(uit,EmptyGrammar);
-		'	if (!res) println(\"[FAIL] |project://grammarlab/src/tests/compare/set/\<casen\>|\");		
+		'	if (!res) println(\"[FAIL] |project://grammarlab/src/test/set/diff/\<casen\>|\");		
 		'	if (!res && debug) println(\"Remaining grammar: \<ppx(uit,GlueEBNF)\>\");
 		'	return res;
 		'}
@@ -41,6 +42,5 @@ public void main()
 		'void show_<name>() {run_case(\"<f>\",true);}
 		'";
 	}
-	writeFile(|project://grammarlab/src/tests/compare/Differ.rsc|, buffer);
+	writeFile(|project://grammarlab/src/test/Differ.rsc|, buffer);
 }
-

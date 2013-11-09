@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated XBGF Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module tests::transform::XBGF
+module \test::XBGF
 
 import IO;
 import grammarlab::language::Grammar;
@@ -13,11 +13,11 @@ import grammarlab::lib::ebnf::Glue;
 
 bool run_case(str casen, bool debug)
 {
-	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/tests/transform/set/<casen>|));
+	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/test/set/xbgf/<casen>|));
 	bool res = false;
 	if (debug) res = gdtv(uit,EmptyGrammar);
 	else res = gdts(uit,EmptyGrammar);
-	if (!res) println("[FAIL] |project://grammarlab/src/tests/transform/set/<casen>|");		
+	if (!res) println("[FAIL] |project://grammarlab/src/test/set/xbgf/<casen>|");		
 	if (!res && debug) println("Remaining grammar: <ppx(uit,GlueEBNF)>");
 	return res;
 }

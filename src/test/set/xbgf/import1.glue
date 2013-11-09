@@ -1,0 +1,10 @@
+importG
+	foo ::= bar;
+.
+importG
+	bar ::= foo;
+.
+diff
+	foo ::= bar;
+	bar ::= foo;
+.

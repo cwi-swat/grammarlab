@@ -1,0 +1,7 @@
+importG
+	foo ::= bar; .
+merge
+	foo ::= bar; .
+diff
+	foo ::= bar;
+.

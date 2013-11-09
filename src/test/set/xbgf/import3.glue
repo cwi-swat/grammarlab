@@ -1,0 +1,13 @@
+importG
+	⟙   ::= foo;
+	foo ::= bar;
+.
+importG
+	⟙   ::= bar;
+	bar ::= foo;
+.
+diff
+	⟙   ::= foo | bar;
+	foo ::= bar;
+	bar ::= foo;
+.

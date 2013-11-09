@@ -4,7 +4,7 @@ importG
 .
 importG
 	A ::= B X ;
- B ::= A | ε ;
+	B ::= A | ε ;
 .
 diff
 	X ::= "a" "b" ;
