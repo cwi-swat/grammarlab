@@ -15,6 +15,7 @@ import IO;
 public loc toLocation(str s) = (/\|<car:.*>\:\/\/<cdr:.*>\|/ := s) ? |<car>://<cdr>| : |cwd:///<s>|;
 
 GLUEA glimplode((GlueCommand)`<GlueKdiff _><GlueProduction+ ps>.`) = glaction(diff(transform(importG(mapPs(ps)),EmptyGrammar).g));
+GLUEA glimplode((GlueCommand)`<GlueKmerge _><GlueProduction+ ps>.`) = glaction(merge(transform(importG(mapPs(ps)),EmptyGrammar).g));
 GLUEA glimplode((GlueCommand)`<GlueKinclude _><GlueLoc z>.`) = glaction(include(toLocation("<z>")));
 GLUEA glimplode((GlueCommand)`<GlueKmaybexbgf _><GlueCommand c>`)
 {

@@ -15,6 +15,7 @@ data GLUEA
 // WIP: GrammarLab actions
 data LCommand
 	= diff(GGrammar g)
+	| merge(GGrammar g)
 	| include(loc z)
 	| maybexbgf(XCommand tcmd)
 	;

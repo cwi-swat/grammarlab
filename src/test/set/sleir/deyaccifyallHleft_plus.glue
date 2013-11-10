@@ -1,0 +1,8 @@
+// Based on the corresponding XBGF test
+importG
+	foo ::= bar | foo bar ;
+.
+DeYaccifyAll.
+diff
+	foo ::= bar+ ;
+.

@@ -5,13 +5,15 @@ module grammarlab::language::glue::Actions
 import grammarlab::language::glue::Productions;
 
 lexical GlueKdiff = @category="MetaKeyword" "diff";
+lexical GlueKmerge = @category="MetaKeyword" "merge";
 lexical GlueKinclude = @category="MetaKeyword" "include";
 lexical GlueKmaybexbgf = @category="MetaKeyword" "maybe";
 
-keyword GlueKw = GlueKdiff;
+keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKmaybexbgf;
 
 syntax GlueCommand
 	= GlueKdiff GlueProduction+ "."
+	| GlueKmerge GlueProduction+ "."
 	| GlueKinclude GlueLoc "."
 	| GlueKmaybexbgf GlueCommand // plain recursion covers more than we want!
 	;
