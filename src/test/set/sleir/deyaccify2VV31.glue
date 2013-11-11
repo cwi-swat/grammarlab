@@ -1,0 +1,12 @@
+importG
+	f ::= g f;
+	 f ::= h;
+	 q ::= q r;
+	 q ::= ε;
+	
+.
+DeYaccifyAll.
+diff
+	f ::= (g*) h ;
+q ::= r* ;
+.

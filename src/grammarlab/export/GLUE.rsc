@@ -19,13 +19,13 @@ public str ppx(GLUEA::sleir(MCommand mcmd)) = ppx(mcmd);
 public str ppx(GLUEA::glaction(LCommand acmd)) = ppx(acmd);
 public default str ppx(GLUEA smth) = "??<smth>??";
 
-public str ppx(LCommand::diff(GGrammar g)) = "diff\n\t<ppx(g)>.)";
+public str ppx(LCommand::diff(GGrammar g)) = "diff\n\t<ppx(g)>.";
 public str ppx(LCommand::include(loc z)) = "include <z> .";
-public default str ppx(LCommand smth) = "??<smth>??";
+public default str ppx(LCommand smth) = "??L??<smth>??";
 
 public str ppx(MCommand::liftTopLabels()) = "LiftTopLabels.";
 public str ppx(MCommand::deyaccifyAll()) = "DeYaccifyAll.";
-public default str ppx(MCommand smth) = "??<smth>??";
+public default str ppx(MCommand smth) = "??M??<smth>??";
 
 str ppxbgf(renameL(GLabel x, GLabel y)) = "rename [<x>] to [<y>] globally.";
 str ppxbgf(renameN(GNonTerm x, GNonTerm y)) = "rename <x> to <y> globally.";

@@ -1,0 +1,11 @@
+importG
+	a ::= a b;
+	 a ::= b;
+	
+.
+deyaccify
+	a
+.
+diff
+	a ::= c (b*) ;
+.

@@ -1,0 +1,13 @@
+importG
+	d ::= e+;
+	
+.
+yaccify
+	d ::= d e;
+	 d ::= e;
+	
+.
+diff
+	d ::= d e ;
+d ::= e ;
+.
