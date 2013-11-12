@@ -126,25 +126,29 @@ void show_designate() {run_case("designate.glue",true);}
 test bool test_detour() = run_case("detour.glue",false);
 void show_detour() {run_case("detour.glue",true);}
 
-// deyaccify_eps.glue
-test bool test_deyaccify_eps() = run_case("deyaccify_eps.glue",false);
-void show_deyaccify_eps() {run_case("deyaccify_eps.glue",true);}
+// deyaccify1.glue
+test bool test_deyaccify1() = run_case("deyaccify1.glue",false);
+void show_deyaccify1() {run_case("deyaccify1.glue",true);}
 
-// deyaccify_left.glue
-test bool test_deyaccify_left() = run_case("deyaccify_left.glue",false);
-void show_deyaccify_left() {run_case("deyaccify_left.glue",true);}
+// deyaccify2.glue
+test bool test_deyaccify2() = run_case("deyaccify2.glue",false);
+void show_deyaccify2() {run_case("deyaccify2.glue",true);}
 
-// deyaccify_left_plus.glue
-test bool test_deyaccify_left_plus() = run_case("deyaccify_left_plus.glue",false);
-void show_deyaccify_left_plus() {run_case("deyaccify_left_plus.glue",true);}
+// deyaccify3.glue
+test bool test_deyaccify3() = run_case("deyaccify3.glue",false);
+void show_deyaccify3() {run_case("deyaccify3.glue",true);}
 
-// deyaccify_right.glue
-test bool test_deyaccify_right() = run_case("deyaccify_right.glue",false);
-void show_deyaccify_right() {run_case("deyaccify_right.glue",true);}
+// deyaccify4.glue
+test bool test_deyaccify4() = run_case("deyaccify4.glue",false);
+void show_deyaccify4() {run_case("deyaccify4.glue",true);}
 
-// deyaccify_right_plus.glue
-test bool test_deyaccify_right_plus() = run_case("deyaccify_right_plus.glue",false);
-void show_deyaccify_right_plus() {run_case("deyaccify_right_plus.glue",true);}
+// deyaccify5.glue
+test bool test_deyaccify5() = run_case("deyaccify5.glue",false);
+void show_deyaccify5() {run_case("deyaccify5.glue",true);}
+
+// deyaccify6.glue
+test bool test_deyaccify6() = run_case("deyaccify6.glue",false);
+void show_deyaccify6() {run_case("deyaccify6.glue",true);}
 
 // disappear_q.glue
 test bool test_disappear_q() = run_case("disappear_q.glue",false);
@@ -246,9 +250,21 @@ void show_horizontal_l() {run_case("horizontal_l.glue",true);}
 test bool test_horizontal_n() = run_case("horizontal_n.glue",false);
 void show_horizontal_n() {run_case("horizontal_n.glue",true);}
 
-// import.glue
-test bool test_import() = run_case("import.glue",false);
-void show_import() {run_case("import.glue",true);}
+// import0.glue
+test bool test_import0() = run_case("import0.glue",false);
+void show_import0() {run_case("import0.glue",true);}
+
+// import1.glue
+test bool test_import1() = run_case("import1.glue",false);
+void show_import1() {run_case("import1.glue",true);}
+
+// import2.glue
+test bool test_import2() = run_case("import2.glue",false);
+void show_import2() {run_case("import2.glue",true);}
+
+// import3.glue
+test bool test_import3() = run_case("import3.glue",false);
+void show_import3() {run_case("import3.glue",true);}
 
 // inject.glue
 test bool test_inject() = run_case("inject.glue",false);
@@ -666,22 +682,26 @@ void show_widen_nt() {run_case("widen_nt.glue",true);}
 test bool test_widen_sub() = run_case("widen_sub.glue",false);
 void show_widen_sub() {run_case("widen_sub.glue",true);}
 
-// yaccify_eps.glue
-test bool test_yaccify_eps() = run_case("yaccify_eps.glue",false);
-void show_yaccify_eps() {run_case("yaccify_eps.glue",true);}
+// yaccify1.glue
+test bool test_yaccify1() = run_case("yaccify1.glue",false);
+void show_yaccify1() {run_case("yaccify1.glue",true);}
 
-// yaccify_left.glue
-test bool test_yaccify_left() = run_case("yaccify_left.glue",false);
-void show_yaccify_left() {run_case("yaccify_left.glue",true);}
+// yaccify2.glue
+test bool test_yaccify2() = run_case("yaccify2.glue",false);
+void show_yaccify2() {run_case("yaccify2.glue",true);}
 
-// yaccify_left_plus.glue
-test bool test_yaccify_left_plus() = run_case("yaccify_left_plus.glue",false);
-void show_yaccify_left_plus() {run_case("yaccify_left_plus.glue",true);}
+// yaccify3.glue
+test bool test_yaccify3() = run_case("yaccify3.glue",false);
+void show_yaccify3() {run_case("yaccify3.glue",true);}
 
-// yaccify_right.glue
-test bool test_yaccify_right() = run_case("yaccify_right.glue",false);
-void show_yaccify_right() {run_case("yaccify_right.glue",true);}
+// yaccify4.glue
+test bool test_yaccify4() = run_case("yaccify4.glue",false);
+void show_yaccify4() {run_case("yaccify4.glue",true);}
 
-// yaccify_right_plus.glue
-test bool test_yaccify_right_plus() = run_case("yaccify_right_plus.glue",false);
-void show_yaccify_right_plus() {run_case("yaccify_right_plus.glue",true);}
+// yaccify5.glue
+test bool test_yaccify5() = run_case("yaccify5.glue",false);
+void show_yaccify5() {run_case("yaccify5.glue",true);}
+
+// yaccify6.glue
+test bool test_yaccify6() = run_case("yaccify6.glue",false);
+void show_yaccify6() {run_case("yaccify6.glue",true);}
