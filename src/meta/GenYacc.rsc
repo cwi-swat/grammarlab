@@ -16,7 +16,7 @@ rel[GProd,GProdList] yp =
 	{
 		<production("a",sequence([nonterminal("c"),star(nonterminal("b"))])),
 			[production("a",sequence([nonterminal("a"),nonterminal("b")])),
-			production("a",nonterminal("b"))]>,
+			production("a",nonterminal("c"))]>,
 		<production("d",plus(nonterminal("e"))),
 			[production("d",sequence([nonterminal("d"),nonterminal("e")])),
 			production("d",nonterminal("e"))]>,

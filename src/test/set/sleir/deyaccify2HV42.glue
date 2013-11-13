@@ -1,6 +1,6 @@
 importG
 	a ::= (a b)
-	| b;
+	| c;
 	 d ::= d e;
 	 d ::= e;
 	

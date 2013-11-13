@@ -1,9 +1,0 @@
-// Based on the corresponding XBGF test
-importG
-	foo ::= bar ;
-	foo ::= foo wez ;
-.
-DeYaccifyAll.
-diff
-	foo ::= bar (wez*) ;
-.

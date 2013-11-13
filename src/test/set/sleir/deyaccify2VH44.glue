@@ -1,8 +1,8 @@
 importG
 	a ::= a b;
-	 a ::= b;
+	 a ::= c;
 	 a ::= (a b)
-	| b;
+	| c;
 	
 .
 DeYaccifyAll.

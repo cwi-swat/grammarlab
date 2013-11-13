@@ -4,10 +4,10 @@ importG
 .
 yaccify
 	a ::= a b;
-	 a ::= b;
+	 a ::= c;
 	
 .
 diff
 	a ::= a b ;
-a ::= b ;
+a ::= c ;
 .

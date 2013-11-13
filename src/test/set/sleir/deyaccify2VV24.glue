@@ -2,7 +2,7 @@ importG
 	d ::= d e;
 	 d ::= e;
 	 a ::= a b;
-	 a ::= b;
+	 a ::= c;
 	
 .
 DeYaccifyAll.
