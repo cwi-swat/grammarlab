@@ -1,6 +1,6 @@
 importG
 	GlueCommand ::= GlueKAbridgeAll  "."
-		| GlueKDeYaccifyAll  "."
+		| GlueKDeyaccifyAll  "."
 		| GlueKDistributeAll  "."
 		| GlueKEliminateTop  "."
 		| GlueKEquateAll  "."

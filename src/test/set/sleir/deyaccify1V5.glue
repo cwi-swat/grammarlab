@@ -3,7 +3,7 @@ importG
 	 k ::= m;
 	
 .
-DeYaccifyAll.
+DeyaccifyAll.
 diff
 	k ::= m+ ;
 .

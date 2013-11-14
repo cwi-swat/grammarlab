@@ -8,7 +8,7 @@ alias MSequence = list[MCommand];
 data MCommand
 	// Type I first
 	= AbridgeAll()
-	| DeYaccifyAll()
+	| DeyaccifyAll()
 	| DistributeAll()
 	| EliminateTop()
 	| EquateAll()

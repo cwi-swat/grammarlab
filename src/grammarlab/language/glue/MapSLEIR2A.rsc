@@ -11,7 +11,7 @@ import util::Math;
 import Boolean;
 
 GLUEA glimplode((GlueCommand)`<GlueKAbridgeAll _> .`) = sleir(AbridgeAll());
-GLUEA glimplode((GlueCommand)`<GlueKDeYaccifyAll _> .`) = sleir(DeYaccifyAll());
+GLUEA glimplode((GlueCommand)`<GlueKDeyaccifyAll _> .`) = sleir(DeyaccifyAll());
 GLUEA glimplode((GlueCommand)`<GlueKDistributeAll _> .`) = sleir(DistributeAll());
 GLUEA glimplode((GlueCommand)`<GlueKEliminateTop _> .`) = sleir(EliminateTop());
 GLUEA glimplode((GlueCommand)`<GlueKEquateAll _> .`) = sleir(EquateAll());

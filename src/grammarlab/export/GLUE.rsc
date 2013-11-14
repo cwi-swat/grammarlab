@@ -4,6 +4,7 @@ module grammarlab::export::GLUE
 
 import grammarlab::language::glue::Abstract;
 // import grammarlab::language::glue::Scope;
+import grammarlab::language::SLEIR;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::export::Grammar;
@@ -23,8 +24,9 @@ public str ppx(LCommand::diff(GGrammar g)) = "diff\n\t<ppx(g)>.";
 public str ppx(LCommand::include(loc z)) = "include <z> .";
 public default str ppx(LCommand smth) = "??L??<smth>??";
 
-public str ppx(MCommand::liftTopLabels()) = "LiftTopLabels.";
-public str ppx(MCommand::deyaccifyAll()) = "DeYaccifyAll.";
+public str ppx(MCommand::AbridgeAll()) = "AbridgeAll.";
+public str ppx(MCommand::DeyaccifyAll()) = "DeyaccifyAll.";
+public str ppx(MCommand::LiftTopLabels()) = "LiftTopLabels.";
 public default str ppx(MCommand smth) = "??M??<smth>??";
 
 str ppxbgf(renameL(GLabel x, GLabel y)) = "rename [<x>] to [<y>] globally.";

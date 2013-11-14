@@ -1,0 +1,12 @@
+importG
+	g ::= [m3]::(<m4>:h);
+	 g ::= "leaf";
+	
+.
+abridge
+	g ::= [m3]::(<m4>:h);
+	
+.
+diff
+	g ::= "leaf" ;
+.

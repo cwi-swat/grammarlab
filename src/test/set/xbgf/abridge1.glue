@@ -1,0 +1,12 @@
+importG
+	a ::= b;
+	 a ::= "leaf";
+	
+.
+abridge
+	a ::= b;
+	
+.
+diff
+	a ::= "leaf" ;
+.

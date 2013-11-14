@@ -1,12 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 // Automatically generates test cases for yaccification and deyaccification.
 // Covers both transformations and mutations.
-module meta::GenYacc
+module meta::GenTests
 
+import grammarlab::language::Grammar;
+import grammarlab::language::SLEIR;
+import grammarlab::language::X;
 import grammarlab::io::GLUE;
 import grammarlab::language::glue::Abstract;
-import grammarlab::language::X;
-import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
 import Relation;
 import Set;
@@ -34,6 +35,14 @@ rel[GProd,GProdList] yp =
 			production("q",epsilon())]>
 	};
 
+GProdList abr =
+	[
+		production("a",nonterminal("b")),
+		production("c",mark("m1",nonterminal("d"))),
+		production("e",label("m2",nonterminal("f"))),
+		production("g",label("m3",mark("m4",nonterminal("h"))))
+	];
+
 GProd     yp2Lp(GProd p) = p;
 GProdList yp2Lps(GProd p) = [yp2Lp(p)];
 GProdList yp2Lps(GProd p1, GProd p2) = [yp2Lp(p1),yp2Lp(p2)];
@@ -53,7 +62,7 @@ GProdList yp2RpsHH(GProd p1, GProd p2) = yp2RpsH(p1)+yp2RpsH(p2);
 
 str yp2n(GProd p) = p.lhs;
 
-GLUE psg2gl(GProdList ps, GGrammar g) = [ xbgf(importG(ps)), sleir(deyaccifyAll()), glaction(diff(g)) ];
+GLUE psg2gl(GProdList ps, GLUEA cmd, GGrammar g) = [ xbgf(importG(ps)), cmd, glaction(diff(g)) ];
 
 void main()
 {
@@ -61,56 +70,50 @@ void main()
 	for (GProd p <- domain(yp))
 	{
 		str n = "<cx>";
+		// (de)yaccification test cases for transformations and mutations
 		writeGlue(
-			[
-				xbgf(importG(yp2Lps(p))),
-				xbgf(yaccify(yp2RpsV(p))),
-				glaction(diff(yp2RgV(p)))
-			],
-			|project://grammarlab/src/test/set/xbgf/yaccify<n>.glue|
-		);
+			psg2gl(yp2Lps(p), xbgf(yaccify(yp2RpsV(p))), yp2RgV(p)),
+			|project://grammarlab/src/test/set/xbgf/yaccify<n>.glue|);
 		writeGlue(
-			[
-				xbgf(importG(yp2RpsV(p))),
-				xbgf(deyaccify(yp2n(p))),
-				glaction(diff(yp2Lg(p)))
-			],
-			|project://grammarlab/src/test/set/xbgf/deyaccify<n>.glue|
-		);
+			psg2gl(yp2RpsV(p), xbgf(deyaccify(yp2n(p))), yp2Lg(p)),
+			|project://grammarlab/src/test/set/xbgf/deyaccify<n>.glue|);
 		writeGlue(
-			[
-				xbgf(importG(yp2RpsV(p))),
-				sleir(deyaccifyAll()),
-				glaction(diff(yp2Lg(p)))
-			],
-			|project://grammarlab/src/test/set/sleir/deyaccify1V<n>.glue|
-		);
+			psg2gl(yp2RpsV(p), sleir(DeyaccifyAll()), yp2Lg(p)),
+			|project://grammarlab/src/test/set/sleir/deyaccify1V<n>.glue|);
 		writeGlue(
-			[
-				xbgf(importG(yp2RpsH(p))),
-				sleir(deyaccifyAll()),
-				glaction(diff(yp2Lg(p)))
-			],
-			|project://grammarlab/src/test/set/sleir/deyaccify1H<n>.glue|
-		);
+			psg2gl(yp2RpsH(p), sleir(DeyaccifyAll()), yp2Lg(p)),
+			|project://grammarlab/src/test/set/sleir/deyaccify1H<n>.glue|);
 		int dx = 1;
 		for (GProd q <- domain(yp))
 		{
 			str m = "<dx>";
+			// (de)yaccification test cases with a broader scope for mutations
 			writeGlue(
-				psg2gl(yp2RpsVV(p,q),yp2Lg(p,q)),
+				psg2gl(yp2RpsVV(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
 				|project://grammarlab/src/test/set/sleir/deyaccify2VV<n><m>.glue|);
 			writeGlue(
-				psg2gl(yp2RpsVH(p,q),yp2Lg(p,q)),
+				psg2gl(yp2RpsVH(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
 				|project://grammarlab/src/test/set/sleir/deyaccify2VH<n><m>.glue|);
 			writeGlue(
-				psg2gl(yp2RpsHV(p,q),yp2Lg(p,q)),
+				psg2gl(yp2RpsHV(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
 				|project://grammarlab/src/test/set/sleir/deyaccify2HV<n><m>.glue|);
 			writeGlue(
-				psg2gl(yp2RpsHH(p,q),yp2Lg(p,q)),
+				psg2gl(yp2RpsHH(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
 				|project://grammarlab/src/test/set/sleir/deyaccify2HH<n><m>.glue|);
 			dx += 1;
 		}
+		cx += 1;
+	}
+	cx = 1;
+	for (GProd p <- abr)
+	{
+		str n = "<cx>";
+		writeGlue(
+			psg2gl([p,production(p.lhs,terminal("leaf"))], xbgf(abridge(p)), grammar([p.lhs],[production(p.lhs,terminal("leaf"))],[])),
+			|project://grammarlab/src/test/set/xbgf/abridge<n>.glue|);
+		writeGlue(
+			psg2gl([p,production(p.lhs,terminal("leaf"))], sleir(AbridgeAll()), grammar([p.lhs],[production(p.lhs,terminal("leaf"))],[])),
+			|project://grammarlab/src/test/set/sleir/abridge1<n>.glue|);
 		cx += 1;
 	}
 }

@@ -1,0 +1,9 @@
+importG
+	e ::= [m2]::f;
+	 e ::= "leaf";
+	
+.
+AbridgeAll.
+diff
+	e ::= "leaf" ;
+.

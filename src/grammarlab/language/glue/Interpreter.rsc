@@ -2,6 +2,7 @@
 module grammarlab::language::glue::Interpreter
 
 import grammarlab::language::glue::Abstract;
+import grammarlab::language::SLEIR;
 import grammarlab::language::Grammar;
 import grammarlab::language::XOutcome;
 import grammarlab::language::X;
@@ -55,7 +56,7 @@ public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 	}
 }
 
-public GGrammar execute(GGrammar g1, sleir(liftTopLabels())) = LiftTopLabels(g1);
+public GGrammar execute(GGrammar g1, sleir(MCommand mcmd)) = grammarlab::transform::SLEIR::mutate(mcmd,g1);
 
 // TODO
 public default GGrammar execute(GGrammar g, GLUEA _) = g;

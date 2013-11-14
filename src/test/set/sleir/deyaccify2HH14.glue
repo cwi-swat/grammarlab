@@ -5,7 +5,7 @@ importG
 	| c;
 	
 .
-DeYaccifyAll.
+DeyaccifyAll.
 diff
 	q ::= r* ;
 a ::= c (b*) ;

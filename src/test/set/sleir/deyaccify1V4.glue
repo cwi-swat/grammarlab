@@ -3,7 +3,7 @@ importG
 	 a ::= c;
 	
 .
-DeYaccifyAll.
+DeyaccifyAll.
 diff
 	a ::= c (b*) ;
 .

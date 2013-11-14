@@ -5,7 +5,7 @@ module grammarlab::language::glue::Mutations
 import grammarlab::language::glue::Productions;
 
 lexical GlueKAbridgeAll = @category="MetaAmbiguity" "AbridgeAll";
-lexical GlueKDeYaccifyAll = @category="MetaAmbiguity" "DeYaccifyAll";
+lexical GlueKDeyaccifyAll = @category="MetaAmbiguity" "DeyaccifyAll";
 lexical GlueKDistributeAll = @category="MetaAmbiguity" "DistributeAll";
 lexical GlueKEliminateTop = @category="MetaAmbiguity" "EliminateTop";
 lexical GlueKEquateAll = @category="MetaAmbiguity" "EquateAll";
@@ -18,11 +18,11 @@ lexical GlueKUnchainAll = @category="MetaAmbiguity" "UnchainAll";
 lexical GlueKUnfoldMax = @category="MetaAmbiguity" "UnfoldMax";
 lexical GlueKVerticalAll = @category="MetaAmbiguity" "VerticalAll";
 
-keyword GlueKw = GlueKAbridgeAll | GlueKDeYaccifyAll | GlueKDistributeAll | GlueKEliminateTop | GlueKEquateAll | GlueKFoldMax | GlueKHorizontalAll | GlueKInlineMax | GlueKInlinePlus | GlueKLiftTopLabels | GlueKUnchainAll | GlueKUnfoldMax | GlueKVerticalAll;
+keyword GlueKw = GlueKAbridgeAll | GlueKDeyaccifyAll | GlueKDistributeAll | GlueKEliminateTop | GlueKEquateAll | GlueKFoldMax | GlueKHorizontalAll | GlueKInlineMax | GlueKInlinePlus | GlueKLiftTopLabels | GlueKUnchainAll | GlueKUnfoldMax | GlueKVerticalAll;
 
 syntax GlueCommand
 	= GlueKAbridgeAll "."
-	| GlueKDeYaccifyAll "."
+	| GlueKDeyaccifyAll "."
 	| GlueKDistributeAll "."
 	| GlueKEliminateTop "."
 	| GlueKEquateAll "."

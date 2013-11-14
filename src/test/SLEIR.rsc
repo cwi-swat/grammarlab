@@ -22,6 +22,22 @@ bool run_case(str casen, bool debug)
 	return res;
 }
 
+// abridge11.glue
+test bool test_abridge11() = run_case("abridge11.glue",false);
+void show_abridge11() {run_case("abridge11.glue",true);}
+
+// abridge12.glue
+test bool test_abridge12() = run_case("abridge12.glue",false);
+void show_abridge12() {run_case("abridge12.glue",true);}
+
+// abridge13.glue
+test bool test_abridge13() = run_case("abridge13.glue",false);
+void show_abridge13() {run_case("abridge13.glue",true);}
+
+// abridge14.glue
+test bool test_abridge14() = run_case("abridge14.glue",false);
+void show_abridge14() {run_case("abridge14.glue",true);}
+
 // deyaccify1H1.glue
 test bool test_deyaccify1H1() = run_case("deyaccify1H1.glue",false);
 void show_deyaccify1H1() {run_case("deyaccify1H1.glue",true);}
@@ -645,43 +661,3 @@ void show_deyaccify2VV65() {run_case("deyaccify2VV65.glue",true);}
 // deyaccify2VV66.glue
 test bool test_deyaccify2VV66() = run_case("deyaccify2VV66.glue",false);
 void show_deyaccify2VV66() {run_case("deyaccify2VV66.glue",true);}
-
-// deyaccifyallHeps.glue
-test bool test_deyaccifyallHeps() = run_case("deyaccifyallHeps.glue",false);
-void show_deyaccifyallHeps() {run_case("deyaccifyallHeps.glue",true);}
-
-// deyaccifyallHleft.glue
-test bool test_deyaccifyallHleft() = run_case("deyaccifyallHleft.glue",false);
-void show_deyaccifyallHleft() {run_case("deyaccifyallHleft.glue",true);}
-
-// deyaccifyallHleft_plus.glue
-test bool test_deyaccifyallHleft_plus() = run_case("deyaccifyallHleft_plus.glue",false);
-void show_deyaccifyallHleft_plus() {run_case("deyaccifyallHleft_plus.glue",true);}
-
-// deyaccifyallHright.glue
-test bool test_deyaccifyallHright() = run_case("deyaccifyallHright.glue",false);
-void show_deyaccifyallHright() {run_case("deyaccifyallHright.glue",true);}
-
-// deyaccifyallHright_plus.glue
-test bool test_deyaccifyallHright_plus() = run_case("deyaccifyallHright_plus.glue",false);
-void show_deyaccifyallHright_plus() {run_case("deyaccifyallHright_plus.glue",true);}
-
-// deyaccifyallVeps.glue
-test bool test_deyaccifyallVeps() = run_case("deyaccifyallVeps.glue",false);
-void show_deyaccifyallVeps() {run_case("deyaccifyallVeps.glue",true);}
-
-// deyaccifyallVleft.glue
-test bool test_deyaccifyallVleft() = run_case("deyaccifyallVleft.glue",false);
-void show_deyaccifyallVleft() {run_case("deyaccifyallVleft.glue",true);}
-
-// deyaccifyallVleft_plus.glue
-test bool test_deyaccifyallVleft_plus() = run_case("deyaccifyallVleft_plus.glue",false);
-void show_deyaccifyallVleft_plus() {run_case("deyaccifyallVleft_plus.glue",true);}
-
-// deyaccifyallVright.glue
-test bool test_deyaccifyallVright() = run_case("deyaccifyallVright.glue",false);
-void show_deyaccifyallVright() {run_case("deyaccifyallVright.glue",true);}
-
-// deyaccifyallVright_plus.glue
-test bool test_deyaccifyallVright_plus() = run_case("deyaccifyallVright_plus.glue",false);
-void show_deyaccifyallVright_plus() {run_case("deyaccifyallVright_plus.glue",true);}

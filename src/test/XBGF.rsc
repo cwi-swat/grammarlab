@@ -26,6 +26,22 @@ bool run_case(str casen, bool debug)
 test bool test_abridge() = run_case("abridge.glue",false);
 void show_abridge() {run_case("abridge.glue",true);}
 
+// abridge1.glue
+test bool test_abridge1() = run_case("abridge1.glue",false);
+void show_abridge1() {run_case("abridge1.glue",true);}
+
+// abridge2.glue
+test bool test_abridge2() = run_case("abridge2.glue",false);
+void show_abridge2() {run_case("abridge2.glue",true);}
+
+// abridge3.glue
+test bool test_abridge3() = run_case("abridge3.glue",false);
+void show_abridge3() {run_case("abridge3.glue",true);}
+
+// abridge4.glue
+test bool test_abridge4() = run_case("abridge4.glue",false);
+void show_abridge4() {run_case("abridge4.glue",true);}
+
 // abstractize.glue
 test bool test_abstractize() = run_case("abstractize.glue",false);
 void show_abstractize() {run_case("abstractize.glue",true);}
