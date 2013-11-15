@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module tests::extract::RNG
+module \test::extract::RNG
 
 import IO;
 import List;

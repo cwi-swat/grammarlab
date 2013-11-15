@@ -1,16 +1,16 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module meta::UpdateXBGFTests
+module meta::sync::SLEIRTests
 
 import String;
 import IO;
 
-// meta::UpdateXBGFTests::main()
+// meta::sync::SLEIRTests::main()
 public void main()
 {
-	loc base = |project://grammarlab/src/test/set/xbgf|;
-	str buffer = "@contributor{Super Awesome Automated XBGF Test Suite Synchroniser}
+	loc base = |project://grammarlab/src/test/set/sleir|;
+	str buffer = "@contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 		'@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-		'module \\test::XBGF
+		'module \\test::SLEIR
 		'
 		'import IO;
 		'import grammarlab::language::Grammar;
@@ -23,11 +23,11 @@ public void main()
 		'
 		'bool run_case(str casen, bool debug)
 		'{
-		'	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/test/set/xbgf/\<casen\>|));
+		'	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/test/set/sleir/\<casen\>|));
 		'	bool res = false;
 		'	if (debug) res = gdtv(uit,EmptyGrammar);
 		'	else res = gdts(uit,EmptyGrammar);
-		'	if (!res) println(\"[FAIL] |project://grammarlab/src/test/set/xbgf/\<casen\>|\");		
+		'	if (!res) println(\"[FAIL] |project://grammarlab/src/test/set/sleir/\<casen\>|\");		
 		'	if (!res && debug) println(\"Remaining grammar: \<ppx(uit,GlueEBNF)\>\");
 		'	return res;
 		'}
@@ -41,5 +41,5 @@ public void main()
 		'void show_<name>() {run_case(\"<f>\",true);}
 		'";
 	}
-	writeFile(|project://grammarlab/src/test/XBGF.rsc|, buffer);
+	writeFile(|project://grammarlab/src/test/SLEIR.rsc|, buffer);
 }

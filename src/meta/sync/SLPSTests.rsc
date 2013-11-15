@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module meta::PullSLPSTests
+module meta::sync::SLPSTests
 
 import String;
 import List;

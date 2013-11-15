@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module tests::extract::XSD
+module \test::extract::XSD
 
 import IO;
 import List;
