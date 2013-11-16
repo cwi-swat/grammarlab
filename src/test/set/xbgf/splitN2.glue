@@ -4,9 +4,9 @@ importG
 	foo ::= [B]::"b" ;
 	foo ::= [D]::foo ;
 .
-splitN
-	foo,bar ::= [D]::foo ;
-,in nowhere.
+splitN foo into
+	bar ::= [D]::foo ;
+	globally.
 diff
 	foo ::= [A]::"a" ;
 	foo ::= [B]::"b" ;

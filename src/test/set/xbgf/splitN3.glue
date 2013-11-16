@@ -4,9 +4,9 @@ importG
 	wez ::= [B]::foo ;
 	foo ::= [D]::foo ;
 .
-splitN
-	foo,bar ::= [D]::foo ;
-,in [B].
+splitN foo into
+	bar ::= [D]::foo ;
+	in [B].
 diff
 	foo ::= [A]::"a" ;
 	wez ::= [B]::bar ;
