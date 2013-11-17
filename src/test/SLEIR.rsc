@@ -38,6 +38,86 @@ void show_abridge13() {run_case("abridge13.glue",true);}
 test bool test_abridge14() = run_case("abridge14.glue",false);
 void show_abridge14() {run_case("abridge14.glue",true);}
 
+// abridge1_1.glue
+test bool test_abridge1_1() = run_case("abridge1_1.glue",false);
+void show_abridge1_1() {run_case("abridge1_1.glue",true);}
+
+// abridge1_2.glue
+test bool test_abridge1_2() = run_case("abridge1_2.glue",false);
+void show_abridge1_2() {run_case("abridge1_2.glue",true);}
+
+// abridge1_3.glue
+test bool test_abridge1_3() = run_case("abridge1_3.glue",false);
+void show_abridge1_3() {run_case("abridge1_3.glue",true);}
+
+// abridge1_4.glue
+test bool test_abridge1_4() = run_case("abridge1_4.glue",false);
+void show_abridge1_4() {run_case("abridge1_4.glue",true);}
+
+// abridge2_11.glue
+test bool test_abridge2_11() = run_case("abridge2_11.glue",false);
+void show_abridge2_11() {run_case("abridge2_11.glue",true);}
+
+// abridge2_12.glue
+test bool test_abridge2_12() = run_case("abridge2_12.glue",false);
+void show_abridge2_12() {run_case("abridge2_12.glue",true);}
+
+// abridge2_13.glue
+test bool test_abridge2_13() = run_case("abridge2_13.glue",false);
+void show_abridge2_13() {run_case("abridge2_13.glue",true);}
+
+// abridge2_14.glue
+test bool test_abridge2_14() = run_case("abridge2_14.glue",false);
+void show_abridge2_14() {run_case("abridge2_14.glue",true);}
+
+// abridge2_21.glue
+test bool test_abridge2_21() = run_case("abridge2_21.glue",false);
+void show_abridge2_21() {run_case("abridge2_21.glue",true);}
+
+// abridge2_22.glue
+test bool test_abridge2_22() = run_case("abridge2_22.glue",false);
+void show_abridge2_22() {run_case("abridge2_22.glue",true);}
+
+// abridge2_23.glue
+test bool test_abridge2_23() = run_case("abridge2_23.glue",false);
+void show_abridge2_23() {run_case("abridge2_23.glue",true);}
+
+// abridge2_24.glue
+test bool test_abridge2_24() = run_case("abridge2_24.glue",false);
+void show_abridge2_24() {run_case("abridge2_24.glue",true);}
+
+// abridge2_31.glue
+test bool test_abridge2_31() = run_case("abridge2_31.glue",false);
+void show_abridge2_31() {run_case("abridge2_31.glue",true);}
+
+// abridge2_32.glue
+test bool test_abridge2_32() = run_case("abridge2_32.glue",false);
+void show_abridge2_32() {run_case("abridge2_32.glue",true);}
+
+// abridge2_33.glue
+test bool test_abridge2_33() = run_case("abridge2_33.glue",false);
+void show_abridge2_33() {run_case("abridge2_33.glue",true);}
+
+// abridge2_34.glue
+test bool test_abridge2_34() = run_case("abridge2_34.glue",false);
+void show_abridge2_34() {run_case("abridge2_34.glue",true);}
+
+// abridge2_41.glue
+test bool test_abridge2_41() = run_case("abridge2_41.glue",false);
+void show_abridge2_41() {run_case("abridge2_41.glue",true);}
+
+// abridge2_42.glue
+test bool test_abridge2_42() = run_case("abridge2_42.glue",false);
+void show_abridge2_42() {run_case("abridge2_42.glue",true);}
+
+// abridge2_43.glue
+test bool test_abridge2_43() = run_case("abridge2_43.glue",false);
+void show_abridge2_43() {run_case("abridge2_43.glue",true);}
+
+// abridge2_44.glue
+test bool test_abridge2_44() = run_case("abridge2_44.glue",false);
+void show_abridge2_44() {run_case("abridge2_44.glue",true);}
+
 // deyaccify1H1.glue
 test bool test_deyaccify1H1() = run_case("deyaccify1H1.glue",false);
 void show_deyaccify1H1() {run_case("deyaccify1H1.glue",true);}

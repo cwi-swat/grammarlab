@@ -1,0 +1,10 @@
+importG
+	a ::= b;
+	 c ::= <m1>:d;
+	 a ::= "leaf";
+	
+.
+AbridgeAll.
+diff
+	a ::= "leaf" ;
+.

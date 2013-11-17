@@ -113,7 +113,16 @@ void main()
 			|project://grammarlab/src/test/set/xbgf/abridge<n>.glue|);
 		writeGlue(
 			psg2gl([p,production(p.lhs,terminal("leaf"))], sleir(AbridgeAll()), grammar([p.lhs],[production(p.lhs,terminal("leaf"))],[])),
-			|project://grammarlab/src/test/set/sleir/abridge1<n>.glue|);
+			|project://grammarlab/src/test/set/sleir/abridge1_<n>.glue|);
+		int dx = 1;
+		for (GProd q <- abr)
+		{
+			str m = "<dx>";
+			writeGlue(
+				psg2gl([p,q,production(p.lhs,terminal("leaf"))], sleir(AbridgeAll()), grammar([p.lhs],[production(p.lhs,terminal("leaf"))],[])),
+				|project://grammarlab/src/test/set/sleir/abridge2_<n><m>.glue|);
+			dx += 1;
+		}
 		cx += 1;
 	}
 }
