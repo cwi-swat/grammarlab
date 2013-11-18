@@ -5,7 +5,7 @@ module grammarlab::transform::xbgf::Yacc
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 
 bool yaccification(production(n,sequence([y,star(x)])),
 				  {production(n,sequence([nonterminal(n),x])),

@@ -7,7 +7,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 import grammarlab::transform::Normal;
 import grammarlab::compare::Differ;
 import List; //slice

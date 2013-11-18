@@ -1,6 +1,6 @@
 importG
-	a ::= b;
-	 e ::= [m2]::f;
+	a ::= a;
+	 c ::= [m2]::c;
 	 a ::= "leaf";
 	
 .

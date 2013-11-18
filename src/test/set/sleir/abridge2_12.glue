@@ -1,6 +1,6 @@
 importG
-	a ::= b;
-	 c ::= <m1>:d;
+	a ::= a;
+	 b ::= <m1>:b;
 	 a ::= "leaf";
 	
 .

@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::transform::xbgf::Util
+module grammarlab::lib::Scoping
 
 //import lib::Rascalware;
 import grammarlab::lib::Sizes;

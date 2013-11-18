@@ -4,7 +4,7 @@ module grammarlab::transform::xbgf::Conjunction
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 
 XResult runAddC(GProd p, GGrammar g)
 {

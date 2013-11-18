@@ -24,7 +24,7 @@ extend grammarlab::transform::xbgf::Sequential; // appear, disappear, inject, pe
 extend grammarlab::transform::xbgf::Terminals; // renameT, splitT, concatT, abstractize, concretize
 extend grammarlab::transform::xbgf::Width; // narrow, widen
 extend grammarlab::transform::xbgf::Yacc; // yaccify, deyaccify
-extend grammarlab::transform::xbgf::Util;
+extend grammarlab::lib::Scoping;
 
 
 public XResult transform(abridge(GProd p), GGrammar g)

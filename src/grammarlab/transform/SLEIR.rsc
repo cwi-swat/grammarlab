@@ -12,8 +12,10 @@ import grammarlab::transform::sleir::TypeI;
 public GGrammar mutate(MSequence ms, GGrammar g)
 	= (g | normalise(mutate(m,it)) | MCommand m <- ms);
 
-public GGrammar mutate(AbridgeAll(), GGrammar g) = runAbridgeAll(g);
-public GGrammar mutate(DeyaccifyAll(), GGrammar g) = runDeyaccifyAll(g);
+public GGrammar mutate(AbridgeAll(), GGrammar g)
+	= grammarlab::transform::sleir::TypeI::runAbridgeAll(g);
+public GGrammar mutate(DeyaccifyAll(), GGrammar g)
+	= grammarlab::transform::sleir::TypeI::runDeyaccifyAll(g);
 public GGrammar mutate(DistributeAll(), GGrammar g) = runDistributeAll(g);
 public GGrammar mutate(EliminateTop(), GGrammar g) = runEliminateTop(g);
 public GGrammar mutate(EquateAll(), GGrammar g) = runEquateAll(g);
@@ -24,7 +26,7 @@ public GGrammar mutate(LiftTopLabels(), GGrammar g) = runLiftTopLabels(g);
 public GGrammar mutate(UnchainAll(), GGrammar g) = runUnchainAll(g);
 public GGrammar mutate(UnfoldMax(), GGrammar g) = runUnfoldMax(g);
 public GGrammar mutate(VerticalAll(), GGrammar g) = runVerticalAll(g);
-public default GGrammar mutate(MTransform m, GGrammar g)
+public default GGrammar mutate(MCommand m, GGrammar g)
 {
 	println("Don’t know how to mutate with <m>.");
 	return g;

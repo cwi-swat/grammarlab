@@ -5,7 +5,7 @@ module grammarlab::transform::xbgf::Labels
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 
  // true labels
 XResult runDesignate(GProd p, GGrammar g)

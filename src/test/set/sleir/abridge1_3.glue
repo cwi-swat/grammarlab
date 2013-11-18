@@ -1,9 +1,9 @@
 importG
-	e ::= [m2]::f;
-	 e ::= "leaf";
+	c ::= [m2]::c;
+	 c ::= "leaf";
 	
 .
 AbridgeAll.
 diff
-	e ::= "leaf" ;
+	c ::= "leaf" ;
 .

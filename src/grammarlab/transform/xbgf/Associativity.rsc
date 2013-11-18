@@ -5,7 +5,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 
 bool admit(sequence([nonterminal(n),nonterminal(x),nonterminal(n)]),
 		   sequence([nonterminal(n),star(sequence([nonterminal(x),nonterminal(n)]))])) = true;

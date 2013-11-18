@@ -1,12 +1,12 @@
 importG
-	e ::= [m2]::f;
-	 e ::= "leaf";
+	c ::= [m2]::c;
+	 c ::= "leaf";
 	
 .
 abridge
-	e ::= [m2]::f;
+	c ::= [m2]::c;
 	
 .
 diff
-	e ::= "leaf" ;
+	c ::= "leaf" ;
 .

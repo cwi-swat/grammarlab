@@ -5,7 +5,7 @@ module grammarlab::transform::xbgf::Disjunction
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 import grammarlab::compare::Differ;
 
 XResult runAddH(GProd p1, GGrammar g)

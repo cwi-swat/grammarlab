@@ -37,10 +37,10 @@ rel[GProd,GProdList] yp =
 
 GProdList abr =
 	[
-		production("a",nonterminal("b")),
-		production("c",mark("m1",nonterminal("d"))),
-		production("e",label("m2",nonterminal("f"))),
-		production("g",label("m3",mark("m4",nonterminal("h"))))
+		production("a",nonterminal("a")),
+		production("b",mark("m1",nonterminal("b"))),
+		production("c",label("m2",nonterminal("c"))),
+		production("d",label("m3",mark("m4",nonterminal("d"))))
 	];
 
 GProd     yp2Lp(GProd p) = p;

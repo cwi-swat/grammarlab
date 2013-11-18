@@ -1,10 +1,10 @@
 importG
-	a ::= b;
+	a ::= a;
 	 a ::= "leaf";
 	
 .
 abridge
-	a ::= b;
+	a ::= a;
 	
 .
 diff

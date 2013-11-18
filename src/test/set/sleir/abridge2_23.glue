@@ -1,10 +1,10 @@
 importG
-	c ::= <m1>:d;
-	 e ::= [m2]::f;
-	 c ::= "leaf";
+	b ::= <m1>:b;
+	 c ::= [m2]::c;
+	 b ::= "leaf";
 	
 .
 AbridgeAll.
 diff
-	c ::= "leaf" ;
+	b ::= "leaf" ;
 .

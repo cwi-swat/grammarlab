@@ -22,22 +22,6 @@ bool run_case(str casen, bool debug)
 	return res;
 }
 
-// abridge11.glue
-test bool test_abridge11() = run_case("abridge11.glue",false);
-void show_abridge11() {run_case("abridge11.glue",true);}
-
-// abridge12.glue
-test bool test_abridge12() = run_case("abridge12.glue",false);
-void show_abridge12() {run_case("abridge12.glue",true);}
-
-// abridge13.glue
-test bool test_abridge13() = run_case("abridge13.glue",false);
-void show_abridge13() {run_case("abridge13.glue",true);}
-
-// abridge14.glue
-test bool test_abridge14() = run_case("abridge14.glue",false);
-void show_abridge14() {run_case("abridge14.glue",true);}
-
 // abridge1_1.glue
 test bool test_abridge1_1() = run_case("abridge1_1.glue",false);
 void show_abridge1_1() {run_case("abridge1_1.glue",true);}

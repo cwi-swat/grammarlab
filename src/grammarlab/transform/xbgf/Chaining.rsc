@@ -6,7 +6,7 @@ import grammarlab::lib::Sizes;
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 
@@ -14,6 +14,7 @@ import grammarlab::compare::Differ;
 XResult runAbridge(GProd p, GGrammar g)
 {
 	if (production(str n,nonterminal(n)) !:= p &&
+		production(str n,mark(_,nonterminal(n))) !:= p &&
 		production(str n,label(_,nonterminal(n))) !:= p &&
 		production(str n,label(_,mark(_,nonterminal(n)))) !:= p)
 		return <problemProd("Production cannot be abridged.",p),g>;

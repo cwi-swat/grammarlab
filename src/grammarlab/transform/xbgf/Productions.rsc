@@ -5,7 +5,7 @@ module grammarlab::transform::xbgf::Productions
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::XOutcome;
-import grammarlab::transform::xbgf::Util;
+import grammarlab::lib::Scoping;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 import IO;
