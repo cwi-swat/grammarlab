@@ -1,0 +1,79 @@
+include |project://grammarlab/zoo/csharp/ecma-334-1.glue|.
+DeYaccifyAll.
+UnchainAll.
+InlinePlus.
+inline using-alias-directive.
+inline using-namespace-directive.
+factor ("using" identifier "=" namespace-or-type-name ";" | "using" namespace-name ";")
+	to ("using" (namespace-name | identifier "=" namespace-or-type-name) ";")
+	in using-directive.
+extract
+	using-directive-insides ::= namespace-name | (identifier "=" namespace-or-type-name);
+	globally.
+inline using-directive.
+splitT ",]" into "," "]" in global-attribute-section.
+factor
+	( "[" global-attribute-target-specifier attribute-list "]"
+	| "[" global-attribute-target-specifier attribute-list "," "]")
+  to ("[" global-attribute-target-specifier (attribute-list | attribute-list ",") "]")
+  in global-attribute-section.
+inline global-attribute-target-specifier.
+inline global-attribute-target.
+extract global-attribute-section-insides ::= attribute-list | attribute-list ","; globally.
+inline class-declaration.
+inline struct-declaration.
+inline interface-declaration.
+inline enum-declaration.
+inline delegate-declaration.
+rename class-modifier to modifier globally.
+unite struct-modifier with modifier.
+unite interface-modifier with modifier.
+unite enum-modifier with modifier.
+unite delegate-modifier with modifier.
+factor
+	(((attribute-section*) (modifier*) "class" identifier (class-base?) class-body (";"?))
+	| ((attribute-section*) (modifier*) "struct" identifier (struct-interfaces?) struct-body (";"?))
+	| ((attribute-section*) (modifier*) "interface" identifier (interface-base?) interface-body (";"?))
+	| ((attribute-section*) (modifier*) "enum" identifier (enum-base?) enum-body (";"?))
+	| ((attribute-section*) (modifier*) "delegate" type identifier "(" (formal-parameter-list?) ")" ";"))
+to ((attribute-section*) (modifier*) (("class" identifier (class-base?) class-body (";"?))
+	| ("struct" identifier (struct-interfaces?) struct-body (";"?))
+	| ("interface" identifier (interface-base?) interface-body (";"?))
+	| ("enum" identifier (enum-base?) enum-body (";"?))
+	| ("delegate" type identifier "(" (formal-parameter-list?) ")" ";")))
+in type-declaration.
+extract
+	type-declaration-insides ::= ("class" identifier (class-base?) class-body (";"?))
+	| ("struct" identifier (struct-interfaces?) struct-body (";"?))
+	| ("interface" identifier (interface-base?) interface-body (";"?))
+	| ("enum" identifier (enum-base?) enum-body (";"?))
+	| ("delegate" type identifier "(" (formal-parameter-list?) ")" ";");
+	globally.
+vertical in modifier.
+horizontal in modifier.
+splitT ",]" into "," "]" in attribute-section.
+factor
+	(("[" (attribute-target-specifier?) attribute-list "]")
+	| ("[" (attribute-target-specifier?) attribute-list "," "]"))
+to ("[" (((attribute-target-specifier?) attribute-list)
+	| ((attribute-target-specifier?) attribute-list ",")) "]")
+in attribute-section.
+extract
+	attribute-section-insides ::= ((attribute-target-specifier?) attribute-list)
+	| ((attribute-target-specifier?) attribute-list ",");
+	globally.
+vertical in namespace-member-declaration.
+appear
+	namespace-member-declaration ::= (<>:(attribute-section*)) (<>:(modifier*)) namespace-declaration;
+.
+inline type-declaration.
+horizontal in namespace-member-declaration.
+factor
+	(((attribute-section*) (modifier*) namespace-declaration)
+	| ((attribute-section*) (modifier*) type-declaration-insides))
+to ((attribute-section*) (modifier*) (namespace-declaration
+	| type-declaration-insides))
+in namespace-member-declaration.
+extract
+	namespace-member-declaration-insides ::= namespace-declaration | type-declaration-insides;
+	globally.

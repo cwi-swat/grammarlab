@@ -1,0 +1,16 @@
+importG
+	compilation-unit ::=
+		("using" using-directive-insides ";")*
+		("[" "assembly" ":" global-attribute-section-insides "]")*
+		namespace-member-declaration* ;
+	namespace-member-declaration ::=
+		("[" attribute-section-insides "]")*
+		modifier*
+		namespace-member-main;
+	using-directive-insides ::=
+		not-semicolon & identifier "=" namespace-or-type-name;
+	global-attribute-section-insides ::=
+		not-right-square-bracket & {attribute-list ","}+;
+	attribute-section-insides ::=
+		not-right-square-bracket & {(attribute-target-specifier? attribute-list) ","}+;
+.
