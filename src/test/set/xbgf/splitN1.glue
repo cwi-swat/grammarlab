@@ -6,7 +6,7 @@ importG
 .
 splitN foo into
 	bar ::= [D]::"d" ;
-	globally.
+	nowhere.
 diff
 	foo ::= [A]::"a" ;
 	foo ::= [B]::"b" ;

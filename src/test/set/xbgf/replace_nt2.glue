@@ -1,0 +1,9 @@
+importG
+	a ::= b c ;
+	x ::= z | y ;
+.
+replace a with z globally.
+diff
+	x ::= z | y ;
+	z ::= b c ;
+.

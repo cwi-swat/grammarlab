@@ -30,7 +30,17 @@ XResult runReplace(GExpr e1, GExpr e2, XScope w, GGrammar g)
 	return <ok(),grammar(g.N, ps1 + normalise(ps4) + ps3, g.S)>;
 }
 
-GProdList performReplace(GExpr e1, GExpr e2, GProdList ps)
+GProdList performReplace(GExpr e1, GExpr e2, GProdList psi)
+{
+	GProdList ps;
+	if (nonterminal(str a) := e1 && nonterminal(str b) := e2)
+		ps = [production((p.lhs==a)?b:p.lhs,p.rhs) | GProd p <- psi];
+	else
+		ps = psi;
+	return performReplaceRHS(e1,e2,ps);
+}
+
+GProdList performReplaceRHS(GExpr e1, GExpr e2, GProdList ps)
 {
 	GExprList L5;
 	switch(e1)

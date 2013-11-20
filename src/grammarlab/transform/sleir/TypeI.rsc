@@ -71,12 +71,12 @@ GGrammar runDeyaccifyAll(GGrammar g)
 	for (str n <- g.N)
 	{
 		<ps1,ps2,ps3> = splitPbyW(g.P,innt(n));
-		ps += ps1;
+		//ps += ps1;
 		if (len(ps2) != 2)
 			ps += ps2;
 		else
 			ps += performDeYaccAll(toSet(ps2));
-		ps += ps3;
+		//ps += ps3;
 	}
 	return grammar(g.N, ps, g.S);
 }

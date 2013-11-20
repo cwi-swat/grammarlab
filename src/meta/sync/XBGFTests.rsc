@@ -23,6 +23,7 @@ public void main()
 		'
 		'bool run_case(str casen, bool debug)
 		'{
+		'	if (debug) println(\"Processing |project://grammarlab/src/test/set/xbgf/\<casen\>|\");
 		'	GGrammar uit = execute(EmptyGrammar,loadGlue(|project://grammarlab/src/test/set/xbgf/\<casen\>|));
 		'	bool res = false;
 		'	if (debug) res = gdtv(uit,EmptyGrammar);
@@ -35,8 +36,7 @@ public void main()
 	for (f <- listEntries(base), endsWith(f,".glue"))
 	{
 		name = replaceLast(f,".glue","");
-		buffer += "
-		'// <f>
+		buffer += "// <f>
 		'test bool test_<name>() = run_case(\"<f>\",false);
 		'void show_<name>() {run_case(\"<f>\",true);}
 		'";

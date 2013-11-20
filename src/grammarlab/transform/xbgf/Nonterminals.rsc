@@ -88,13 +88,16 @@ XResult runSplitN(str x, GProdList ps0, XScope w, GGrammar g)
 		if (y in allNs(g.P))
 			return <notFreshN(y),g>;
 		<ps2,ps3,ps4> = splitPbyW(g.P,innt(x));
-		GProdList ps5 = [production(x,e) | p <- ps0, production(y,GExpr e) := p];
+		GProdList ps5 = [production(x,e) | production(y,GExpr e) <- ps0];
 		if (x in g.S) rs2 = g.S + y; else rs2 = g.S;
 		g = grammar(g.N, ps2 + (ps3 - ps5) + ps0 + ps4, rs2);
 		if (nowhere() := w)
 			return <ok(),g>;
 		else
-			return grammarlab::transform::xbgf::Brutal::runReplace(nonterminal(x),nonterminal(y),w,g);
+		{
+			<pz1,pz2,pz3> = splitPbyW(g.P,w);
+			return <ok(),grammar(g.N,pz1+grammarlab::transform::xbgf::Brutal::performReplaceRHS(nonterminal(x),nonterminal(y),pz2)+pz3,g.S)>;
+		}
 	}
 	else
 		return <problem("Splitting into more than two nonterminals not supported"),g>;

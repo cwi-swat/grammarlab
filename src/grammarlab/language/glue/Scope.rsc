@@ -7,6 +7,7 @@ import grammarlab::language::XScope;
 syntax GlueScope
 	= GlueKwIn GlueWhere
 	| @category="MetaVariable" "globally"
+	| @category="MetaVariable" "nowhere"
 	;
 lexical GlueKwIn
 	= @category="MetaVariable" "in"
@@ -21,6 +22,7 @@ syntax GlueWhere
  	;
 
 XScope mapScope((GlueScope)`globally`) = globally();
+XScope mapScope((GlueScope)`nowhere`) = nowhere();
 XScope mapScope((GlueScope)`in <GlueNonterminal name>`) = innt("<name>");
 XScope mapScope((GlueScope)`notin <GlueNonterminal name>`) = notinnt("<name>");
 XScope mapScope((GlueScope)`in [<GlueLabel name>]`) = inlabel("<name>");

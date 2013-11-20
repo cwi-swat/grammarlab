@@ -9,6 +9,7 @@ import grammarlab::lib::Scoping;
 import grammarlab::transform::xbgf::Brutal;
 import grammarlab::compare::Differ;
 import IO;
+import Set;
 
 XResult runAddV(GProd p1, GGrammar g)
 {

@@ -2,9 +2,9 @@ importG
 	foo ::= bar;
 .
 importG
-	foo ::= wez;
+	wez ::= qex;
 .
 diff
 	foo ::= bar;
-	foo ::= wez;
+	wez ::= qex;
 .

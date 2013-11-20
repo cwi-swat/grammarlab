@@ -1,13 +1,13 @@
 importG
 	⟙   ::= foo;
-	foo ::= bar;
+	foo ::= wez;
 .
 importG
 	⟙   ::= bar;
-	bar ::= foo;
+	bar ::= qex;
 .
 diff
 	⟙   ::= foo | bar;
-	foo ::= bar;
-	bar ::= foo;
+	foo ::= wez;
+	bar ::= qex;
 .
