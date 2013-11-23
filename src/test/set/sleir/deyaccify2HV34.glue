@@ -1,12 +1,12 @@
 importG
 	f ::= (g f)
 	| h;
-	 a ::= a b;
-	 a ::= c;
+	 k ::= m k;
+	 k ::= m;
 	
 .
 DeyaccifyAll.
 diff
 	f ::= (g*) h ;
-a ::= c (b*) ;
+k ::= m+ ;
 .

@@ -68,15 +68,15 @@ GProdList performDeYaccAll(GProdSet pset)
 GGrammar runDeyaccifyAll(GGrammar g)
 {
 	GProdList ps = [];
-	for (str n <- g.N)
+	if (str n <- g.N)
 	{
 		<ps1,ps2,ps3> = splitPbyW(g.P,innt(n));
-		//ps += ps1;
-		if (len(ps2) != 2)
+		if (len(ps2) > 2)
 			ps += ps2;
-		else
+		elseif (len(ps2) == 2)
 			ps += performDeYaccAll(toSet(ps2));
-		//ps += ps3;
+		elseif ([production(n,choice([e1,e2]))] := ps2)
+			ps += performDeYaccAll({production(n,e1),production(n,e2)});
 	}
 	return grammar(g.N, ps, g.S);
 }

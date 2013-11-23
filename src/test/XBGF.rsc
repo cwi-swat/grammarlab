@@ -112,24 +112,42 @@ void show_designate() {run_case("designate.glue",true);}
 // detour.glue
 test bool test_detour() = run_case("detour.glue",false);
 void show_detour() {run_case("detour.glue",true);}
-// deyaccify1.glue
-test bool test_deyaccify1() = run_case("deyaccify1.glue",false);
-void show_deyaccify1() {run_case("deyaccify1.glue",true);}
-// deyaccify2.glue
-test bool test_deyaccify2() = run_case("deyaccify2.glue",false);
-void show_deyaccify2() {run_case("deyaccify2.glue",true);}
-// deyaccify3.glue
-test bool test_deyaccify3() = run_case("deyaccify3.glue",false);
-void show_deyaccify3() {run_case("deyaccify3.glue",true);}
-// deyaccify4.glue
-test bool test_deyaccify4() = run_case("deyaccify4.glue",false);
-void show_deyaccify4() {run_case("deyaccify4.glue",true);}
-// deyaccify5.glue
-test bool test_deyaccify5() = run_case("deyaccify5.glue",false);
-void show_deyaccify5() {run_case("deyaccify5.glue",true);}
-// deyaccify6.glue
-test bool test_deyaccify6() = run_case("deyaccify6.glue",false);
-void show_deyaccify6() {run_case("deyaccify6.glue",true);}
+// deyaccifyH1.glue
+test bool test_deyaccifyH1() = run_case("deyaccifyH1.glue",false);
+void show_deyaccifyH1() {run_case("deyaccifyH1.glue",true);}
+// deyaccifyH2.glue
+test bool test_deyaccifyH2() = run_case("deyaccifyH2.glue",false);
+void show_deyaccifyH2() {run_case("deyaccifyH2.glue",true);}
+// deyaccifyH3.glue
+test bool test_deyaccifyH3() = run_case("deyaccifyH3.glue",false);
+void show_deyaccifyH3() {run_case("deyaccifyH3.glue",true);}
+// deyaccifyH4.glue
+test bool test_deyaccifyH4() = run_case("deyaccifyH4.glue",false);
+void show_deyaccifyH4() {run_case("deyaccifyH4.glue",true);}
+// deyaccifyH5.glue
+test bool test_deyaccifyH5() = run_case("deyaccifyH5.glue",false);
+void show_deyaccifyH5() {run_case("deyaccifyH5.glue",true);}
+// deyaccifyH6.glue
+test bool test_deyaccifyH6() = run_case("deyaccifyH6.glue",false);
+void show_deyaccifyH6() {run_case("deyaccifyH6.glue",true);}
+// deyaccifyV1.glue
+test bool test_deyaccifyV1() = run_case("deyaccifyV1.glue",false);
+void show_deyaccifyV1() {run_case("deyaccifyV1.glue",true);}
+// deyaccifyV2.glue
+test bool test_deyaccifyV2() = run_case("deyaccifyV2.glue",false);
+void show_deyaccifyV2() {run_case("deyaccifyV2.glue",true);}
+// deyaccifyV3.glue
+test bool test_deyaccifyV3() = run_case("deyaccifyV3.glue",false);
+void show_deyaccifyV3() {run_case("deyaccifyV3.glue",true);}
+// deyaccifyV4.glue
+test bool test_deyaccifyV4() = run_case("deyaccifyV4.glue",false);
+void show_deyaccifyV4() {run_case("deyaccifyV4.glue",true);}
+// deyaccifyV5.glue
+test bool test_deyaccifyV5() = run_case("deyaccifyV5.glue",false);
+void show_deyaccifyV5() {run_case("deyaccifyV5.glue",true);}
+// deyaccifyV6.glue
+test bool test_deyaccifyV6() = run_case("deyaccifyV6.glue",false);
+void show_deyaccifyV6() {run_case("deyaccifyV6.glue",true);}
 // disappear_q.glue
 test bool test_disappear_q() = run_case("disappear_q.glue",false);
 void show_disappear_q() {run_case("disappear_q.glue",true);}
@@ -529,21 +547,39 @@ void show_widen_nt() {run_case("widen_nt.glue",true);}
 // widen_sub.glue
 test bool test_widen_sub() = run_case("widen_sub.glue",false);
 void show_widen_sub() {run_case("widen_sub.glue",true);}
-// yaccify1.glue
-test bool test_yaccify1() = run_case("yaccify1.glue",false);
-void show_yaccify1() {run_case("yaccify1.glue",true);}
-// yaccify2.glue
-test bool test_yaccify2() = run_case("yaccify2.glue",false);
-void show_yaccify2() {run_case("yaccify2.glue",true);}
-// yaccify3.glue
-test bool test_yaccify3() = run_case("yaccify3.glue",false);
-void show_yaccify3() {run_case("yaccify3.glue",true);}
-// yaccify4.glue
-test bool test_yaccify4() = run_case("yaccify4.glue",false);
-void show_yaccify4() {run_case("yaccify4.glue",true);}
-// yaccify5.glue
-test bool test_yaccify5() = run_case("yaccify5.glue",false);
-void show_yaccify5() {run_case("yaccify5.glue",true);}
-// yaccify6.glue
-test bool test_yaccify6() = run_case("yaccify6.glue",false);
-void show_yaccify6() {run_case("yaccify6.glue",true);}
+// yaccifyH1.glue
+test bool test_yaccifyH1() = run_case("yaccifyH1.glue",false);
+void show_yaccifyH1() {run_case("yaccifyH1.glue",true);}
+// yaccifyH2.glue
+test bool test_yaccifyH2() = run_case("yaccifyH2.glue",false);
+void show_yaccifyH2() {run_case("yaccifyH2.glue",true);}
+// yaccifyH3.glue
+test bool test_yaccifyH3() = run_case("yaccifyH3.glue",false);
+void show_yaccifyH3() {run_case("yaccifyH3.glue",true);}
+// yaccifyH4.glue
+test bool test_yaccifyH4() = run_case("yaccifyH4.glue",false);
+void show_yaccifyH4() {run_case("yaccifyH4.glue",true);}
+// yaccifyH5.glue
+test bool test_yaccifyH5() = run_case("yaccifyH5.glue",false);
+void show_yaccifyH5() {run_case("yaccifyH5.glue",true);}
+// yaccifyH6.glue
+test bool test_yaccifyH6() = run_case("yaccifyH6.glue",false);
+void show_yaccifyH6() {run_case("yaccifyH6.glue",true);}
+// yaccifyV1.glue
+test bool test_yaccifyV1() = run_case("yaccifyV1.glue",false);
+void show_yaccifyV1() {run_case("yaccifyV1.glue",true);}
+// yaccifyV2.glue
+test bool test_yaccifyV2() = run_case("yaccifyV2.glue",false);
+void show_yaccifyV2() {run_case("yaccifyV2.glue",true);}
+// yaccifyV3.glue
+test bool test_yaccifyV3() = run_case("yaccifyV3.glue",false);
+void show_yaccifyV3() {run_case("yaccifyV3.glue",true);}
+// yaccifyV4.glue
+test bool test_yaccifyV4() = run_case("yaccifyV4.glue",false);
+void show_yaccifyV4() {run_case("yaccifyV4.glue",true);}
+// yaccifyV5.glue
+test bool test_yaccifyV5() = run_case("yaccifyV5.glue",false);
+void show_yaccifyV5() {run_case("yaccifyV5.glue",true);}
+// yaccifyV6.glue
+test bool test_yaccifyV6() = run_case("yaccifyV6.glue",false);
+void show_yaccifyV6() {run_case("yaccifyV6.glue",true);}

@@ -62,11 +62,13 @@ XResult runDeyaccify(str n, GGrammar g)
 	if (n notin g.N)
 		return <freshName(n),g>;
 	<ps1,ps2,ps3> = splitPbyW(g.P,innt(n));
-	if (len(ps2) < 2)
-		return <problemStr("Nonterminal must be defined vertically for deyaccification to work",n),g>;
 	if (len(ps2) > 2)
 		return <problemProds("No deyaccification patterns for <len(ps2)> production rules known",ps2),g>;
-	return <ok(),grammar(g.N, ps1 + performDeYacc(toSet(ps2)) + ps3, g.S)>;
+	elseif (len(ps2) == 2)
+		return <ok(),grammar(g.N, ps1 + performDeYacc(toSet(ps2)) + ps3, g.S)>;
+	elseif ([production(n,choice([e1,e2]))] := ps2)
+		return <ok(),grammar(g.N, ps1 + performDeYacc({production(n,e1),production(n,e2)}) + ps3, g.S)>;
+	return <problemStr("Nonterminal must be defined vertically for deyaccification to work",n),g>;
 }
 
 XResult runYaccify(GProdList ps1, GGrammar g)
@@ -75,6 +77,8 @@ XResult runYaccify(GProdList ps1, GGrammar g)
 	{
 		<ps3,ps4,ps5> = splitPbyW(g.P,innt(x));
 		if ([dyp1] := ps4 && [yp1,yp2] := ps1 && yaccification(dyp1,{yp1,yp2}))
+			return <ok(), grammar(g.N, ps3 + ps1 + ps5, g.S)>;
+		elseif ([dyp2] := ps4 && [production(x,choice([e1,e2]))] := ps1 && yaccification(dyp2,{production(x,e1),production(x,e2)}))
 			return <ok(), grammar(g.N, ps3 + ps1 + ps5, g.S)>;
 		else
 			return <problemProds2("Unsuitable yaccification",ps1,ps4),g>;

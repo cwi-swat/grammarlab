@@ -1,12 +1,12 @@
 importG
 	q ::= (q r)
 	| ε;
-	 d ::= (d e)
-	| e;
+	 f ::= (g f)
+	| h;
 	
 .
 DeyaccifyAll.
 diff
 	q ::= r* ;
-d ::= e+ ;
+f ::= (g*) h ;
 .

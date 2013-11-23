@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// Automatically generates test cases for yaccification and deyaccification.
+// Automatically generates test cases for yaccification, deyaccification and abridging.
 // Covers both transformations and mutations.
 module meta::GenTests
 
@@ -73,10 +73,16 @@ void main()
 		// (de)yaccification test cases for transformations and mutations
 		writeGlue(
 			psg2gl(yp2Lps(p), xbgf(yaccify(yp2RpsV(p))), yp2RgV(p)),
-			|project://grammarlab/src/test/set/xbgf/yaccify<n>.glue|);
+			|project://grammarlab/src/test/set/xbgf/yaccifyV<n>.glue|);
+		writeGlue(
+			psg2gl(yp2Lps(p), xbgf(yaccify(yp2RpsH(p))), yp2RgH(p)),
+			|project://grammarlab/src/test/set/xbgf/yaccifyH<n>.glue|);
 		writeGlue(
 			psg2gl(yp2RpsV(p), xbgf(deyaccify(yp2n(p))), yp2Lg(p)),
-			|project://grammarlab/src/test/set/xbgf/deyaccify<n>.glue|);
+			|project://grammarlab/src/test/set/xbgf/deyaccifyV<n>.glue|);
+		writeGlue(
+			psg2gl(yp2RpsH(p), xbgf(deyaccify(yp2n(p))), yp2Lg(p)),
+			|project://grammarlab/src/test/set/xbgf/deyaccifyH<n>.glue|);
 		writeGlue(
 			psg2gl(yp2RpsV(p), sleir(DeyaccifyAll()), yp2Lg(p)),
 			|project://grammarlab/src/test/set/sleir/deyaccify1V<n>.glue|);
@@ -86,6 +92,7 @@ void main()
 		int dx = 1;
 		for (GProd q <- domain(yp))
 		{
+			if(p==q)continue;
 			str m = "<dx>";
 			// (de)yaccification test cases with a broader scope for mutations
 			writeGlue(

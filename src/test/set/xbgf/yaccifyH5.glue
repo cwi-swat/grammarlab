@@ -1,0 +1,12 @@
+importG
+	k ::= m+;
+	
+.
+yaccify
+	k ::= (m k)
+	| m;
+	
+.
+diff
+	k ::= (m k) | m ;
+.

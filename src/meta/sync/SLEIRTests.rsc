@@ -35,8 +35,7 @@ public void main()
 	for (f <- listEntries(base), endsWith(f,".glue"))
 	{
 		name = replaceLast(f,".glue","");
-		buffer += "
-		'// <f>
+		buffer += "// <f>
 		'test bool test_<name>() = run_case(\"<f>\",false);
 		'void show_<name>() {run_case(\"<f>\",true);}
 		'";
