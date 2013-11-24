@@ -1,0 +1,7 @@
+importG
+	foo ::= bar qux | wez ;
+.
+DistributeAll.
+diff
+	foo ::= bar qux | wez ;
+.

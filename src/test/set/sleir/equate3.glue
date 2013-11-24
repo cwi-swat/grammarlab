@@ -1,0 +1,12 @@
+importG
+	x1  ::= a b* c;
+	x2  ::= d e? f;
+	x3  ::= a b* c;
+	x4  ::= d e? f;
+	x5  ::= a b* c;
+.
+EquateAll.
+diff
+	x1  ::= a b* c;
+	x2  ::= d e? f;
+.

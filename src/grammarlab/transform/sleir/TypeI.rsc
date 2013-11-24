@@ -1,10 +1,17 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::transform::sleir::TypeI
 
+import IO;
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
+import grammarlab::language::XOutcome;
 import grammarlab::lib::Scoping;
 import grammarlab::lib::Sizes;
+import grammarlab::transform::xbgf::Nonterminals;
+import grammarlab::transform::xbgf::Factoring;
+import grammarlab::transform::xbgf::Brutal;
+import grammarlab::transform::Normal;
+import grammarlab::compare::Differ;
 //extend mutate::type1::AbridgeAll;
 //extend mutate::type1::DeyaccifyAll;
 //extend mutate::type1::DistributeAll;
@@ -79,4 +86,41 @@ GGrammar runDeyaccifyAll(GGrammar g)
 			ps += performDeYaccAll({production(n,e1),production(n,e2)});
 	}
 	return grammar(g.N, ps, g.S);
+}
+
+// code cloned and refactored from grammarlab::transform::xbgf::Factoring
+GGrammar runDistributeAll(GGrammar g)
+	= grammar(g.N, [makeDistributed(p) | p <- g.P], g.S);
+
+// code cloned and refactored from grammarlab::transform::xbgf::Productions
+GGrammar runEliminateTop(GGrammar g)
+{
+	// NB: done not entirely according to the Type I generalisation method
+	tops = [n | str n <- g.N, /nonterminal(n) !:= g.P, n notin g.S];
+	println("TOPS: <tops>");
+	return grammar(g.N - tops, [p | p <- g.P, p.lhs notin tops], g.S);
+}
+
+// code cloned and refactored from grammarlab::transform::xbgf::Nonterminals
+GGrammar runEquateAll(GGrammar g)
+{
+	list[str] equated = [];
+	GProdList ps = g.P;
+	for(x <- g.N, x notin equated)
+	for(y <- g.N, x != y, y notin equated)
+	{
+		<ps1x,ps2x,ps3x> = splitPbyW(ps,innt(x));
+		<ps1y,ps2y,ps3y> = splitPbyW(ps,innt(y));
+		gxy = grammarlab::transform::xbgf::Nonterminals::runRenameN(x,y,normalise(grammar([],ps2x,[]))).g;
+		gyy = normalise(grammar([],ps2y,[]));
+		if (!gdts(gxy,gyy))
+			continue;
+		if (y in usedNs(ps1y + ps3y))
+			ps = grammarlab::transform::xbgf::Brutal::runReplace(nonterminal(y),nonterminal(x),globally(),grammar(g.N, ps1y + ps3y, g.S));
+		else
+			ps = ps1y + ps3y;
+		equated += y;
+		println("Nonterminal <y> has been equated!");
+	}
+	return grammar(g.N - equated, ps, g.S - equated);
 }

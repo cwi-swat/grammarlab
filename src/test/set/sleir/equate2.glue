@@ -1,0 +1,8 @@
+importG
+	foo  ::= a b* c;
+	bar  ::= a b* c;
+.
+EquateAll.
+diff
+	foo  ::= a b* c;
+.

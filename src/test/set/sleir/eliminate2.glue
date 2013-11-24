@@ -1,0 +1,11 @@
+importG
+	⟙    ::= foo | bar;
+	foo  ::= a b* c;
+	bar  ::= d e? f;
+.
+EliminateTop.
+diff
+	⟙    ::= foo | bar;
+	foo  ::= a b* c;
+	bar  ::= d e? f;
+.

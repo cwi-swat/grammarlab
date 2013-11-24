@@ -1,0 +1,9 @@
+importG
+	foo ::= bar (qux | wez) ;
+	bar ::= (x | y) (a | b | c);
+.
+DistributeAll.
+diff
+	foo ::= bar qux | bar wez ;
+	bar ::= x a | x b | x c | y a | y b | y c;
+.

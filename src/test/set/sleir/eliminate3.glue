@@ -1,0 +1,5 @@
+importG
+	foo  ::= a b* c;
+	bar  ::= d e? f;
+.
+EliminateTop.

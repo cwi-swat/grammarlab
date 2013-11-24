@@ -477,3 +477,36 @@ void show_deyaccify2VV64() {run_case("deyaccify2VV64.glue",true);}
 // deyaccify2VV65.glue
 test bool test_deyaccify2VV65() = run_case("deyaccify2VV65.glue",false);
 void show_deyaccify2VV65() {run_case("deyaccify2VV65.glue",true);}
+// distribute1.glue
+test bool test_distribute1() = run_case("distribute1.glue",false);
+void show_distribute1() {run_case("distribute1.glue",true);}
+// distribute2.glue
+test bool test_distribute2() = run_case("distribute2.glue",false);
+void show_distribute2() {run_case("distribute2.glue",true);}
+// distribute3.glue
+test bool test_distribute3() = run_case("distribute3.glue",false);
+void show_distribute3() {run_case("distribute3.glue",true);}
+// eliminate1.glue
+test bool test_eliminate1() = run_case("eliminate1.glue",false);
+void show_eliminate1() {run_case("eliminate1.glue",true);}
+// eliminate2.glue
+test bool test_eliminate2() = run_case("eliminate2.glue",false);
+void show_eliminate2() {run_case("eliminate2.glue",true);}
+// eliminate3.glue
+test bool test_eliminate3() = run_case("eliminate3.glue",false);
+void show_eliminate3() {run_case("eliminate3.glue",true);}
+// eliminate4.glue
+test bool test_eliminate4() = run_case("eliminate4.glue",false);
+void show_eliminate4() {run_case("eliminate4.glue",true);}
+// equate1.glue
+test bool test_equate1() = run_case("equate1.glue",false);
+void show_equate1() {run_case("equate1.glue",true);}
+// equate2.glue
+test bool test_equate2() = run_case("equate2.glue",false);
+void show_equate2() {run_case("equate2.glue",true);}
+// equate3.glue
+test bool test_equate3() = run_case("equate3.glue",false);
+void show_equate3() {run_case("equate3.glue",true);}
+// equate4.glue
+test bool test_equate4() = run_case("equate4.glue",false);
+void show_equate4() {run_case("equate4.glue",true);}
