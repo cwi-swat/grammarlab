@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::extract::RascalGrammar
+module grammarlab::extract::rascal::Grammar
 
 import lang::rascal::\syntax::Rascal;
 import Grammar;

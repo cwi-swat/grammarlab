@@ -6,7 +6,7 @@ import ParseTree;
 import String;
 import IO;
 
-import grammarlab::extract::RascalType;
+import grammarlab::extract::rascal::AbstractType;
 import grammarlab::io::Grammar;
 import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
@@ -26,7 +26,7 @@ GGrammar extractG(loc z)
 	try
 		m = parse(#Module,trim(readFile(z)));
 	catch:
-		m = parse(#Module,readFile(z));
+		m = parse(#Module,z);
 	GProdList ps = module2decls(m);
 	println("Extraction completed.");
 	return grammar(squeeze([p.lhs | p <- ps]), ps, []);

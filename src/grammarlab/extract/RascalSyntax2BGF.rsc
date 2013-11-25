@@ -6,7 +6,7 @@ import lang::rascal::grammar::definition::Modules;
 import grammarlab::io::Grammar;
 import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
-import grammarlab::extract::RascalGrammar;
+import grammarlab::extract::rascal::Grammar;
 
 import grammarlab::export::Grammar;
 import ParseTree;
@@ -21,7 +21,7 @@ GGrammar extractG(str z)
 	str gs = trim(z);
 	str name = replaceAll(split("\n",split("module ",gs)[1])[0],"\\","");
 	println("Extracting <name>...");
-	GGrammar G = normalise(grammarlab::extract::RascalGrammar::grammar2grammar(modules2grammar(name,{parse(#Module,gs)})));
+	GGrammar G = normalise(grammarlab::extract::rascal::Grammar::grammar2grammar(modules2grammar(name,{parse(#Module,gs)})));
 	println("Extraction completed.");
 	return G;
 }
