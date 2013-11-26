@@ -7,6 +7,7 @@ import grammarlab::language::Grammar;
 import grammarlab::transform::Normal;
 import grammarlab::extract::rascal::Function;
 import grammarlab::export::Grammar;
+import grammarlab::extract::rascal::Name;
 
 import ParseTree;
 import String;
@@ -16,10 +17,8 @@ GGrammar extractG(loc z) = extractG(readFile(z));
 
 GGrammar extractG(str s)
 {
-	str gs = trim(s);
-	str name = replaceAll(split("\n",split("module ",gs)[1])[0],"\\","");
-	println("Extracting <name>...");
-	GGrammar G = normalise(grammar([],module2functions(parse(#start[Module],gs).top),[]));
+	println("Extracting <grammarlab::extract::rascal::Name::module2name(s)>...");
+	GGrammar G = normalise(grammar([],module2functions(parse(#start[Module],s).top),[]));
 	println("Extraction completed.");
 	return G;
 }
