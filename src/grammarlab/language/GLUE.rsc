@@ -1,6 +1,6 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 // GLUE = Grammar Lab Unified Entity
-module grammarlab::language::GlueScript
+module grammarlab::language::GLUE
 
 // These shoes are made for modularised parsing, that’s just what they’ll do
 import grammarlab::language::glue::Transformations;

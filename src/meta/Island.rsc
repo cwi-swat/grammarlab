@@ -2,7 +2,7 @@ module meta::Island
 
 import grammarlab::io::GLUE;
 import grammarlab::language::glue::Abstract;
-import grammarlab::language::GlueScript;
+import grammarlab::language::GLUE;
 
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;

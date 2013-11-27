@@ -19,3 +19,9 @@ syntax GlueCommand
 	;
 
 lexical GlueLoc = [|] ![|]+ [|];
+lexical GlueWord = [a-zA-Z]+;
+
+lexical GlueKextract = @category="MetaKeyword" "extract";
+
+keyword GlueKw = GlueKextract;
+syntax GlueCommand = GlueKextract GlueWord GlueLoc;

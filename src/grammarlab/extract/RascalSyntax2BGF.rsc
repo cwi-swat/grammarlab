@@ -31,7 +31,7 @@ public void main(list[str] args) = writeBGF(extractG(|cwd:///|+args[0]),|cwd:///
 public void main(loc z) = println(ppx(extractG(z)));
 
 test bool flc() {main(|home:///projects/slps/topics/fl/rascal/src/Concrete.rsc|);return true;}
-test bool glue1() {main(|project://grammarlab/src/grammarlab/language/GlueScript.rsc|);return true;}
+test bool glue1() {main(|project://grammarlab/src/grammarlab/language/GLUE.rsc|);return true;}
 test bool glue2() {main(|project://grammarlab/src/grammarlab/language/glue/Productions.rsc|);return true;}
 test bool glue3() {main(|project://grammarlab/src/grammarlab/language/glue/Transformations.rsc|);return true;}
 test bool glue4() {main(|project://grammarlab/src/grammarlab/language/glue/Mutations.rsc|);return true;}

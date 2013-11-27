@@ -4,6 +4,7 @@ module grammarlab::language::glue::Abstract
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::SLEIR;
+import grammarlab::language::GET;
 
 alias GLUE = list[GLUEA];
 
@@ -19,4 +20,5 @@ data LCommand
 	| merge(GGrammar g)
 	| include(loc z)
 	| maybexbgf(XCommand tcmd)
+	| extract(GExternalType src, loc where)
 	;

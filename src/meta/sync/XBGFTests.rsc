@@ -16,7 +16,7 @@ public void main()
 		'import grammarlab::language::Grammar;
 		'import grammarlab::export::Grammar;
 		'import grammarlab::compare::Differ;
-		'import grammarlab::language::GlueScript;
+		'import grammarlab::language::GLUE;
 		'import grammarlab::language::glue::Interpreter;
 		'import grammarlab::io::GLUE;
 		'import grammarlab::lib::ebnf::Glue;
