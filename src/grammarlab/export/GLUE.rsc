@@ -2,7 +2,7 @@
 @contributor{ADT2PP}
 module grammarlab::export::GLUE
 
-import grammarlab::language::glue::Abstract;
+import grammarlab::language::glue::abstract::Top;
 // import grammarlab::language::glue::Scope;
 import grammarlab::language::SLEIR;
 import grammarlab::language::Grammar;

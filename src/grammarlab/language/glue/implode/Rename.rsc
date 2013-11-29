@@ -1,24 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::language::glue::Rename
+module grammarlab::language::glue::implode::Rename
 
-import grammarlab::language::glue::Productions;
-import grammarlab::language::glue::Transformations;
-import grammarlab::language::glue::Abstract;
-import grammarlab::language::glue::Scope;
+import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::XBGF;
+import grammarlab::language::glue::concrete::Scope;
+import grammarlab::language::glue::concrete::Rename;
+import grammarlab::language::glue::abstract::Top;
+import grammarlab::language::glue::implode::Scope;
 import grammarlab::language::X;
-
-lexical GlueKrename = @category="MetaVariable" "rename";
-
-keyword GlueKw = GlueKrename;
-
-syntax GlueCommand
-	= GlueKrename GlueNonterminal n1 GlueKwTo GlueNonterminal n2 GlueScope w "."
-	| GlueKrename GlueMarkR m1 GlueKwTo GlueMarkR m2 GlueScope w "."
-	| GlueKrename GlueLabelR l1 GlueKwTo GlueLabelR l2 GlueScope w "."
-	| GlueKrename GlueTerminal t1 GlueKwTo GlueTerminal GlueScope w "."
-	;
-lexical GlueMarkR = "\<" GlueMark name "\>";
-lexical GlueLabelR = "[" GlueLabel name "]";
 
 // TODO: implement scope for renameN
 GLUEA glimplode((GlueCommand)`<GlueKrename _> <GlueNonterminal n1> <GlueKwTo _> <GlueNonterminal n2> <GlueScope w> .`)

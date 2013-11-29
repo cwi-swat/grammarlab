@@ -7,7 +7,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
 import grammarlab::language::X;
 import grammarlab::io::GLUE;
-import grammarlab::language::glue::Abstract;
+import grammarlab::language::glue::abstract::Top;
 import grammarlab::transform::Normal;
 import Relation;
 import Set;

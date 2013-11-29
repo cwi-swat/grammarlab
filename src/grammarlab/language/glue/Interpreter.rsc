@@ -1,7 +1,7 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::glue::Interpreter
 
-import grammarlab::language::glue::Abstract;
+import grammarlab::language::glue::abstract::Top;
 import grammarlab::language::SLEIR;
 import grammarlab::language::Grammar;
 import grammarlab::language::XOutcome;

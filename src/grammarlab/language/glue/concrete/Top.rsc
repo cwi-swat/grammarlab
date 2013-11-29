@@ -1,17 +1,17 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::language::glue::Concrete
+module grammarlab::language::glue::concrete::Top
 
 // These shoes are made for modularised parsing, that’s just what they’ll do
-import grammarlab::language::glue::Transformations;
-import grammarlab::language::glue::Mutations;
-import grammarlab::language::glue::Actions;
-import grammarlab::language::glue::Productions;
-import grammarlab::language::glue::Scope;
-import grammarlab::language::glue::Rename;
+import grammarlab::language::glue::concrete::XBGF;
+import grammarlab::language::glue::concrete::SLEIR;
+import grammarlab::language::glue::concrete::Actions;
+import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::Scope;
+import grammarlab::language::glue::concrete::Rename;
 
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;
-import grammarlab::language::glue::Colours;
+import grammarlab::language::glue::concrete::Colours;
 
 import String;
 import IO;

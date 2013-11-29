@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::language::glue::Abstract
+module grammarlab::language::glue::abstract::Top
 
 import grammarlab::language::Grammar;
 import grammarlab::language::X;

@@ -1,11 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 // MOCKUP: SHOULD BE GENERATED? 
-module grammarlab::language::glue::MapGLA2A
+module grammarlab::language::glue::implode::Actions
 
-import grammarlab::language::glue::MapXBGF2A; // damn you, Rascal!
-import grammarlab::language::glue::Abstract;
-import grammarlab::language::glue::Actions;
-import grammarlab::language::glue::Productions;
+import grammarlab::language::glue::implode::XBGF; // damn you, Rascal!
+import grammarlab::language::glue::abstract::Top;
+import grammarlab::language::glue::concrete::Actions;
+import grammarlab::language::glue::concrete::BGF;
 // A lot of things are needed to transform grammars :~-(
 import grammarlab::language::Grammar;
 import grammarlab::language::X;

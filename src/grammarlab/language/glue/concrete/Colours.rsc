@@ -1,5 +1,5 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::language::glue::Colours
+module grammarlab::language::glue::concrete::Colours
 
 import vis::Figure;
 import util::IDE;

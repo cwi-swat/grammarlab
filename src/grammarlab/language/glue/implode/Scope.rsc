@@ -1,26 +1,11 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-module grammarlab::language::glue::Scope
+module grammarlab::language::glue::implode::Scope
 
-import grammarlab::language::glue::Productions;
+import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::Scope;
 import grammarlab::language::XScope;
 
-syntax GlueScope
-	= GlueKwIn GlueWhere
-	| @category="MetaVariable" "globally"
-	| @category="MetaVariable" "nowhere"
-	;
-lexical GlueKwIn
-	= @category="MetaVariable" "in"
-	| @category="MetaVariable" "notin"
-	;
-keyword GlueKw = GlueKwIn;
-
-syntax GlueWhere
-	= GlueNonterminal
-	| "[" GlueLabel "]"
-	| "\<" GlueMark "\>"
- 	;
-
+XScope mapScope((GlueScope)`everywhere`) = globally();
 XScope mapScope((GlueScope)`globally`) = globally();
 XScope mapScope((GlueScope)`nowhere`) = nowhere();
 XScope mapScope((GlueScope)`in <GlueNonterminal name>`) = innt("<name>");

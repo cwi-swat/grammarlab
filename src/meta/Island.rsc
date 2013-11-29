@@ -1,7 +1,7 @@
 module meta::Island
 
 import grammarlab::io::GLUE;
-import grammarlab::language::glue::Abstract;
+import grammarlab::language::glue::abstract::Top;
 import grammarlab::language::GLUE;
 
 import grammarlab::language::Grammar;
