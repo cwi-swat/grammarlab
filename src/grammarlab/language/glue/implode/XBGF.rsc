@@ -3,9 +3,10 @@
 module grammarlab::language::glue::implode::XBGF
 
 import grammarlab::language::glue::abstract::Top;
-import grammarlab::language::glue::concrete::XBGF;
 import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::XBGF;
 import grammarlab::language::glue::concrete::Scope;
+import grammarlab::language::glue::implode::Scope;
 import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 import grammarlab::language::X;

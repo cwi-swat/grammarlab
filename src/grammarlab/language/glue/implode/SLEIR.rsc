@@ -3,8 +3,8 @@
 module grammarlab::language::glue::implode::SLEIR
 
 import grammarlab::language::glue::abstract::Top;
-import grammarlab::language::glue::concrete::SLEIR;
 import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::SLEIR;
 import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
 
