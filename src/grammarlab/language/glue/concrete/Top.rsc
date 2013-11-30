@@ -8,6 +8,7 @@ import grammarlab::language::glue::concrete::Actions;
 import grammarlab::language::glue::concrete::BGF;
 import grammarlab::language::glue::concrete::Scope;
 import grammarlab::language::glue::concrete::Rename;
+import grammarlab::language::glue::concrete::GET;
 
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;
