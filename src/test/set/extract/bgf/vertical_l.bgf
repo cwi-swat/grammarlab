@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bgf:grammar xmlns:bgf="http://planet-sl.org/bgf">
+	<bgf:production>
+		<label>nodecs</label>
+		<nonterminal>decs</nonterminal>
+		<bgf:expression>
+			<epsilon/>
+		</bgf:expression>
+	</bgf:production>
+	<bgf:production>
+		<label>somedecs</label>
+		<nonterminal>decs</nonterminal>
+		<bgf:expression>
+			<choice>
+				<bgf:expression>
+					<nonterminal>dec</nonterminal>
+				</bgf:expression>
+				<bgf:expression>
+					<sequence>
+						<bgf:expression>
+							<nonterminal>dec</nonterminal>
+						</bgf:expression>
+						<bgf:expression>
+							<nonterminal>decs</nonterminal>
+						</bgf:expression>
+					</sequence>
+				</bgf:expression>
+			</choice>
+		</bgf:expression>
+	</bgf:production>
+</bgf:grammar>
