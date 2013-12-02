@@ -1,6 +1,6 @@
 // TODO: generate automatically
 // TOTHINK: now does not rely on GLUE
-@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
+@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI; UvA}
 module \test::Extractors
 
 import IO;
