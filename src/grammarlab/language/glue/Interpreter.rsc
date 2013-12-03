@@ -12,6 +12,8 @@ import grammarlab::transform::Merge;
 import grammarlab::transform::Normal;
 import grammarlab::io::GLUE;
 import grammarlab::compare::Differ;
+import grammarlab::language::GET;
+import grammarlab::Extractors;
 import IO;
 
 public GGrammar execute(loc z) = execute(loadGlue(z));
@@ -58,5 +60,26 @@ public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 
 public GGrammar execute(GGrammar g1, sleir(MCommand mcmd)) = grammarlab::transform::SLEIR::mutate(mcmd,g1);
 
+//TODO: deal with extractors in a separate file
+public default GGrammar execute(GGrammar g, glaction(extract(GExternalType t, loc z))) = getG(t,z);
+
+// TODO: generate?
+public GGrammar getG(GETrscd(), loc z) = rscd2bgf(z);
+public GGrammar getG(GETrscs(), loc z) = rscs2bgf(z);
+public GGrammar getG(GETrscf(), loc z) = rscf2bgf(z);
+public GGrammar getG(GETsdf(), loc z) = sdf2bgf(z);
+public GGrammar getG(GETbgf(), loc z) = bgf2bgf(z);
+public GGrammar getG(GETrng(), loc z) = rng2bgf(z);
+public GGrammar getG(GETxsd(), loc z) = xsd2bgf(z);
+public GGrammar getG(GETpgf(), loc z) = pgf2bgf(z);
+public default GGrammar getG(GExternalType t, loc z)
+{
+	println("Unknown external type: <t>");
+}
+
 // TODO
-public default GGrammar execute(GGrammar g, GLUEA _) = g;
+public default GGrammar execute(GGrammar g, GLUEA c)
+{
+	println("[GLUE] Command not executed: <c>");
+	return g;
+}
