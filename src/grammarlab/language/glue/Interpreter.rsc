@@ -11,6 +11,7 @@ import grammarlab::transform::SLEIR;
 import grammarlab::transform::Merge;
 import grammarlab::transform::Normal;
 import grammarlab::io::GLUE;
+import grammarlab::io::Grammar;
 import grammarlab::compare::Differ;
 import grammarlab::language::GET;
 import grammarlab::Extractors;
@@ -76,6 +77,14 @@ public default GGrammar getG(GExternalType t, loc z)
 {
 	println("Unknown external type: <t>");
 }
+
+// TODO: deal with exporters similarly; only BGF supported for now
+public default GGrammar execute(GGrammar g, glaction(export(GExternalType t, loc z)))
+{
+	writeBGF(g,z);
+	return g;
+}
+
 
 // TODO
 public default GGrammar execute(GGrammar g, GLUEA c)

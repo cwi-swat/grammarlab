@@ -165,7 +165,9 @@ void main()
 	'loc toLocation(str s) = (/\\|\<car:.*\>\\:\\/\\/\<cdr:.*\>\\|/ := s) ? |\<car\>://\<cdr\>| : |cwd:///\<s\>|;
 	'
 	'GLUEA glimplode((GlueCommand)`\<GlueKextract _\>\<GlueKSource t\>\<GlueLoc s\>.`)
-	'	= glaction(extract(mapSrc(t),toLocation(\"\<s\>\")));\n\n"+
+	'	= glaction(extract(mapSrc(t),toLocation(\"\<s\>\")));
+	'GLUEA glimplode((GlueCommand)`\<GlueKexport _\>\<GlueKSource t\>\<GlueLoc s\>.`)
+	'	= glaction(export(mapSrc(t),toLocation(\"\<s\>\")));\n\n"+
 	intercalate("\n",["GExternalType mapSrc((GlueKSource)`\<GlueKT<ext> _\>`) = GET<ext>();" | ext <- domain(m)])+
 	"\ndefault GExternalType mapSrc(GlueKSource src)
 	'{

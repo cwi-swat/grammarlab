@@ -13,6 +13,8 @@ loc toLocation(str s) = (/\|<car:.*>\:\/\/<cdr:.*>\|/ := s) ? |<car>://<cdr>| : 
 
 GLUEA glimplode((GlueCommand)`<GlueKextract _><GlueKSource t><GlueLoc s>.`)
 	= glaction(extract(mapSrc(t),toLocation("<s>")));
+GLUEA glimplode((GlueCommand)`<GlueKexport _><GlueKSource t><GlueLoc s>.`)
+	= glaction(export(mapSrc(t),toLocation("<s>")));
 
 GExternalType mapSrc((GlueKSource)`<GlueKTpgf _>`) = GETpgf();
 GExternalType mapSrc((GlueKSource)`<GlueKTrng _>`) = GETrng();

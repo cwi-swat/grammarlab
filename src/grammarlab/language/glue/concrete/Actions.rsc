@@ -9,15 +9,17 @@ lexical GlueKdiff = @category="MetaKeyword" "diff";
 lexical GlueKmerge = @category="MetaKeyword" "merge";
 lexical GlueKinclude = @category="MetaKeyword" "include";
 lexical GlueKextract = @category="MetaKeyword" "extract";
+lexical GlueKexport = @category="MetaKeyword" "export";
 lexical GlueKmaybexbgf = @category="MetaKeyword" "maybe";
 
-keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKmaybexbgf;
+keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKextract | GlueKexport | GlueKmaybexbgf;
 
 syntax GlueCommand
 	= GlueKdiff GlueProduction+ "."
 	| GlueKmerge GlueProduction+ "."
 	| GlueKinclude GlueLoc "."
 	| GlueKextract GlueKSource GlueLoc "."
+	| GlueKexport GlueKSource GlueLoc "."
 	| GlueKmaybexbgf GlueCommand // plain recursion covers more than we want!
 	;
 
