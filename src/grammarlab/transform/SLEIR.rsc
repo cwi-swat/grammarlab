@@ -1,4 +1,4 @@
-@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
+@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI; UvA}
 module grammarlab::transform::SLEIR
 
 // TODO: not imported from SLPS yet, the file included for the sake of integrity
@@ -8,6 +8,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
 import grammarlab::transform::Normal;
 import grammarlab::transform::sleir::TypeI;
+import grammarlab::transform::sleir::TypeIV;
 
 public GGrammar mutate(MSequence ms, GGrammar g)
 	= (g | normalise(mutate(m,it)) | MCommand m <- ms);
@@ -26,6 +27,11 @@ public GGrammar mutate(LiftTopLabels(), GGrammar g) = runLiftTopLabels(g);
 public GGrammar mutate(UnchainAll(), GGrammar g) = runUnchainAll(g);
 public GGrammar mutate(UnfoldMax(), GGrammar g) = runUnfoldMax(g);
 public GGrammar mutate(VerticalAll(), GGrammar g) = runVerticalAll(g);
+
+public GGrammar mutate(DropPrefixN(str p), GGrammar g) = runDropPrefixN(p,g);
+public GGrammar mutate(DropPostfixN(str p), GGrammar g) = runDropPostfixN(p,g);
+public GGrammar mutate(RenameAllN(str n1, str n2), GGrammar g) = runRenameAllN(n1,n2,g);
+
 public default GGrammar mutate(MCommand m, GGrammar g)
 {
 	println("Don’t know how to mutate with <m>.");

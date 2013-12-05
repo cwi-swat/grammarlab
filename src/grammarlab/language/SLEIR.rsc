@@ -18,6 +18,10 @@ data MCommand
 	| UnchainAll()
 	| UnfoldMax()
 	| VerticalAll()
+	// Type IV
+	| DropPrefixN(str p)
+	| DropPostfixN(str p)
+	| RenameAllN(str n1, str n2) // TODO: perhaps better to define a proper ADT to make naming conventions first class entities
 	// the rest
 	| InlinePlus()
 	| LiftTopLabels()
