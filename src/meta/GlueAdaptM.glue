@@ -1,3 +1,5 @@
 include |project://grammarlab/src/meta/GlueLanguageM.glue| .
 vertical in GlueCommand .
+inject
+  GlueCommand ::= GlueKRenameAllN <>:GlueKwFrom <n1>:GlueNonterminal <>:GlueKwTo <n2>:GlueNonterminal "."	; .
 horizontal in GlueCommand .

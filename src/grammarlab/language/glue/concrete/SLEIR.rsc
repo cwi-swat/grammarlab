@@ -3,6 +3,7 @@
 module grammarlab::language::glue::concrete::SLEIR
 
 import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::XBGF;
 
 lexical GlueKAbridgeAll = @category="MetaAmbiguity" "AbridgeAll";
 lexical GlueKDeyaccifyAll = @category="MetaAmbiguity" "DeyaccifyAll";
@@ -27,8 +28,8 @@ syntax GlueCommand
 	= GlueKAbridgeAll "."
 	| GlueKDeyaccifyAll "."
 	| GlueKDistributeAll "."
-	| GlueKDropPostfixN GlueString p "."
-	| GlueKDropPrefixN GlueString p "."
+	| GlueKDropPostfixN GlueTerminal p "."
+	| GlueKDropPrefixN GlueTerminal p "."
 	| GlueKEliminateTop "."
 	| GlueKEquateAll "."
 	| GlueKFoldMax "."
@@ -36,7 +37,7 @@ syntax GlueCommand
 	| GlueKInlineMax "."
 	| GlueKInlinePlus "."
 	| GlueKLiftTopLabels "."
-	| GlueKRenameAllN GlueString n1 GlueString n2 "."
+	| GlueKRenameAllN GlueKwFrom GlueNonterminal n1 GlueKwTo GlueNonterminal n2 "."
 	| GlueKUnchainAll "."
 	| GlueKUnfoldMax "."
 	| GlueKVerticalAll "."

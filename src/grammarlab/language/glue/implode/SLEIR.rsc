@@ -4,6 +4,7 @@ module grammarlab::language::glue::implode::SLEIR
 
 import grammarlab::language::glue::abstract::Top;
 import grammarlab::language::glue::concrete::BGF;
+import grammarlab::language::glue::concrete::XBGF;
 import grammarlab::language::glue::concrete::SLEIR;
 import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
@@ -11,8 +12,8 @@ import grammarlab::language::SLEIR;
 GLUEA glimplode((GlueCommand)`<GlueKAbridgeAll _> .`) = sleir(AbridgeAll());
 GLUEA glimplode((GlueCommand)`<GlueKDeyaccifyAll _> .`) = sleir(DeyaccifyAll());
 GLUEA glimplode((GlueCommand)`<GlueKDistributeAll _> .`) = sleir(DistributeAll());
-GLUEA glimplode((GlueCommand)`<GlueKDropPostfixN _> <GlueString p> .`) = sleir(DropPostfixN("<p>"));
-GLUEA glimplode((GlueCommand)`<GlueKDropPrefixN _> <GlueString p> .`) = sleir(DropPrefixN("<p>"));
+GLUEA glimplode((GlueCommand)`<GlueKDropPostfixN _> <GlueTerminal p> .`) = sleir(DropPostfixN("<p.name>"));
+GLUEA glimplode((GlueCommand)`<GlueKDropPrefixN _> <GlueTerminal p> .`) = sleir(DropPrefixN("<p.name>"));
 GLUEA glimplode((GlueCommand)`<GlueKEliminateTop _> .`) = sleir(EliminateTop());
 GLUEA glimplode((GlueCommand)`<GlueKEquateAll _> .`) = sleir(EquateAll());
 GLUEA glimplode((GlueCommand)`<GlueKFoldMax _> .`) = sleir(FoldMax());
@@ -20,7 +21,7 @@ GLUEA glimplode((GlueCommand)`<GlueKHorizontalAll _> .`) = sleir(HorizontalAll()
 GLUEA glimplode((GlueCommand)`<GlueKInlineMax _> .`) = sleir(InlineMax());
 GLUEA glimplode((GlueCommand)`<GlueKInlinePlus _> .`) = sleir(InlinePlus());
 GLUEA glimplode((GlueCommand)`<GlueKLiftTopLabels _> .`) = sleir(LiftTopLabels());
-GLUEA glimplode((GlueCommand)`<GlueKRenameAllN _> <GlueString n1> <GlueString n2> .`) = sleir(RenameAllN("<n1>","<n2>"));
+GLUEA glimplode((GlueCommand)`<GlueKRenameAllN _> <GlueKwFrom _> <GlueNonterminal n1> <GlueKwTo _> <GlueNonterminal n2> .`) = sleir(RenameAllN("<n1.name>","<n2.name>"));
 GLUEA glimplode((GlueCommand)`<GlueKUnchainAll _> .`) = sleir(UnchainAll());
 GLUEA glimplode((GlueCommand)`<GlueKUnfoldMax _> .`) = sleir(UnfoldMax());
 GLUEA glimplode((GlueCommand)`<GlueKVerticalAll _> .`) = sleir(VerticalAll());
