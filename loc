@@ -1,4 +1,4 @@
 #!/usr/bin/env sh
 
-find src/grammarlab src/demo src/test -name "*.rsc" | xargs wc -l | grep total
-find src/grammarlab src/demo src/test -name "*.glue" | xargs wc -l | grep total
+find src -name "*.rsc" | xargs wc -l | grep total
+find src -name "*.glue" | xargs wc -l | grep total

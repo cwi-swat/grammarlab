@@ -170,7 +170,8 @@ void main()
 	'GLUEA glimplode((GlueCommand)`\<GlueKextract _\>\<GlueKSource t\>\<GlueLoc s\>.`)
 	'	= glaction(extract(mapSrc(t),toLocation(\"\<s\>\")));
 	'GLUEA glimplode((GlueCommand)`\<GlueKexport _\>\<GlueKSource t\>\<GlueLoc s\>.`)
-	'	= glaction(export(mapSrc(t),toLocation(\"\<s\>\")));\n\n"+
+	'	= glaction(export(mapSrc(t),toLocation(\"\<s\>\"),\"Unknown\"));\n\n"+
+	// TODO: put the grammar name to exporters
 	intercalate("\n",["GExternalType mapSrc((GlueKSource)`\<GlueKT<ext> _\>`) = GET<ext>();" | ext <- domain(m)])+
 	"\ndefault GExternalType mapSrc(GlueKSource src)
 	'{

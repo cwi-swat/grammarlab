@@ -15,6 +15,7 @@ import grammarlab::io::Grammar;
 import grammarlab::compare::Differ;
 import grammarlab::language::GET;
 import grammarlab::Extractors;
+import grammarlab::Exporters;
 import IO;
 
 public GGrammar execute(loc z) = execute(loadGlue(z));
@@ -78,13 +79,21 @@ public default GGrammar getG(GExternalType t, loc z)
 	println("Unknown external type: <t>");
 }
 
-// TODO: deal with exporters similarly; only BGF supported for now
-public default GGrammar execute(GGrammar g, glaction(export(GExternalType t, loc z)))
+public default GGrammar execute(GGrammar g, glaction(export(GExternalType t, loc z, str n)))
 {
-	writeBGF(g,z);
+	putG(t,z,n,g);
 	return g;
 }
 
+// TODO: generate
+//public void putG(GETbnf(), loc z, str n, GGrammar g) = bgf2bnf(z,n,g);
+public void putG(GETbgf(), loc z, str n, GGrammar g) = bgf2bgf(z,n,g);
+public void putG(GETrscd(), loc z, str n, GGrammar g) = bgf2rscd(z,n,g);
+public void putG(GETrscs(), loc z, str n, GGrammar g) = bgf2rscs(z,n,g);
+public default void putG(GExternalType t, loc z, str n, GGrammar g)
+{
+	println("Unknown external type: <t>");
+}
 
 // TODO
 public default GGrammar execute(GGrammar g, GLUEA c)

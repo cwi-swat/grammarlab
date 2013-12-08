@@ -1,7 +1,6 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - UvA}
 module grammarlab::transform::sleir::Naming
 
-import IO;
 import List;
 import String;
 import grammarlab::lib::Sizes;
@@ -23,12 +22,14 @@ NCCap whichFirst(UPPERCASE()) = UPPERCASE();
 NCCap whichFirst(Capitalcase()) = Capitalcase();
 NCCap whichFirst(CamelCase()) = Capitalcase();
 NCCap whichFirst(mixedCase()) = lowercase();
+default NCCap whichFirst(NCCap _) = noconvention();
 // how to format the next words of an identifier?
 NCCap whichNext(lowercase()) = lowercase();
 NCCap whichNext(UPPERCASE()) = UPPERCASE();
 NCCap whichNext(Capitalcase()) = lowercase();
 NCCap whichNext(CamelCase()) = Capitalcase();
 NCCap whichNext(mixedCase()) = Capitalcase();
+default NCCap whichNext(NCCap _) = noconvention();
 
 bool isLower(int c) = c >= 97 && c <= 122;
 bool isUpper(int c) = c >= 65 && c <= 90;
@@ -76,7 +77,6 @@ NamingConvention inferConvention(str s)
 	}
 	// no convention unless we see come clear commitment
 	NCCap nc = noconvention();
-	println(words);
 	if (len(words)>1)
 	{
 		if (words[0]=="L" && eqAll(words[1..],"L")) nc = lowercase();

@@ -20,3 +20,4 @@ public GGrammar bgf2bgf(loc z) = grammarlab::io::read::BGF::readBGF(z);
 public GGrammar rng2bgf(loc z) = grammarlab::extract::RelaxNG2BGF::extractG(z);
 public GGrammar xsd2bgf(loc z) = grammarlab::extract::XMLSchemaDefinition2BGF::extractG(z);
 public GGrammar pgf2bgf(loc z) = grammarlab::extract::PGF2BGF::extractG(z);
+//public GGrammar bnf2bgf(loc z); // TODO: connect Grammar Hunter!

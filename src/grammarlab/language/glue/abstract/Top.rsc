@@ -21,5 +21,5 @@ data LCommand
 	| include(loc z)
 	| maybexbgf(XCommand tcmd)
 	| extract(GExternalType src, loc where)
-	| export(GExternalType src, loc where)
+	| export(GExternalType src, loc where, str name)
 	;
