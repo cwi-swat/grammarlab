@@ -4,6 +4,7 @@ module grammarlab::language::glue::concrete::Actions
 
 import grammarlab::language::glue::concrete::BGF;
 import grammarlab::language::glue::concrete::GET;
+extend lang::json::\syntax::JSON;
 
 lexical GlueKdiff = @category="MetaKeyword" "diff";
 lexical GlueKmerge = @category="MetaKeyword" "merge";
@@ -11,8 +12,9 @@ lexical GlueKinclude = @category="MetaKeyword" "include";
 lexical GlueKextract = @category="MetaKeyword" "extract";
 lexical GlueKexport = @category="MetaKeyword" "export";
 lexical GlueKmaybexbgf = @category="MetaKeyword" "maybe";
+lexical GlueKannotate = @category="MetaKeyword" "annotate";
 
-keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKextract | GlueKexport | GlueKmaybexbgf;
+keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKextract | GlueKexport | GlueKmaybexbgf | GlueKannotate;
 
 syntax GlueCommand
 	= GlueKdiff GlueProduction+ "."
@@ -21,7 +23,9 @@ syntax GlueCommand
 	| GlueKextract GlueKSource GlueLoc "."
 	| GlueKexport GlueKSource GlueLoc "."
 	| GlueKmaybexbgf GlueCommand // plain recursion covers more than we want!
+	| GlueKannotate JSONText "."
 	;
 
+//syntax JSONObject = Object top;
 lexical GlueLoc = [|] ![|]+ [|];
 lexical GlueWord = [a-zA-Z]+;

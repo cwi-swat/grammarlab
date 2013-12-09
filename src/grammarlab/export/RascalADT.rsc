@@ -30,9 +30,10 @@ str mapProd(production(str lhs, sepliststar(GExpr e, terminal(_)))) = "alias <lh
 str mapProd(production(str lhs, seplistplus(GExpr e, terminal(_)))) = "alias <lhs> = list[<mapExpr(e)>]";
 default str mapProd(production(str lhs, sepliststar(GExpr e1, GExpr e2))) = "alias <lhs> = rel[<mapExpr(e1)>,<mapExpr(e2)>]";
 default str mapProd(production(str lhs, seplistplus(GExpr e1, GExpr e2))) = "alias <lhs> = rel[<mapExpr(e1)>,<mapExpr(e2)>]";
+default str mapProd(production(str lhs, GExpr rhs)) = "// ERROR <lhs> ::= <mapExpr(rhs)>"; 
 
 str mapExprTop(label(str name, GExpr e)) = "<name>(<mapExpr(e)>)";
-str mapExprTop(GExpr _) = "NOT_ALLOWED_IN_ADT()";
+str mapExprTop(GExpr e) = "NOT_ALLOWED_IN_ADT() // <mapExpr(e)>";
 
 str mapExpr(mark(str name, GExpr e)) = "<mapExpr(e)> <name>";
 str mapExpr(label(str name, GExpr e)) = "<mapExpr(e)> <name>"; // should not happen, but let’s be tolerant

@@ -22,6 +22,7 @@ import grammarlab::language::glue::concrete::Rename;
 import IO;
 
 public GLUE glimplode(start[GLUEC] raw) = [glimplode(c) | GlueCommand c <- raw.top.cs];
+public GLUE glimplode(GLUEC raw) = [glimplode(c) | GlueCommand c <- raw.cs];
 
 public default GLUE glimplode(GlueCommand c)
 {

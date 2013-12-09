@@ -19,7 +19,7 @@ GGrammar extractG(loc z) = extractG(readFile(z));
 
 GGrammar extractG(str s)
 {
-	str name = grammarlab::extract::rascal::Name::module2name(s);
+	str name = trim(grammarlab::extract::rascal::Name::module2name(s));
 	println("Extracting <name>...");
 	GGrammar G = normalise(grammarlab::extract::rascal::Grammar::grammar2grammar(modules2grammar(name,{parse(#start[Module],s).top})));
 	println("Extraction completed.");

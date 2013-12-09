@@ -5,9 +5,11 @@ import lang::rascal::\syntax::Rascal;
 import Grammar;
 import ParseTree;
 import IO;
+import String;
 
 import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
+import grammarlab::lib::Sizes;
 
 GGrammar grammar2grammar(Grammar::\grammar(set[Symbol] starts, map[Symbol sort, Production def] rules))
 {
@@ -54,6 +56,20 @@ GExpr symbol2expr(\opt(Symbol s)) = grammarlab::language::Grammar::optional(symb
 GExpr symbol2expr(\iter-seps(Symbol item, list[Symbol] seps)) = iterplusseps2expr(item,[s | s <- seps, layouts(_) !:= s]);
 GExpr symbol2expr(\iter-star-seps(Symbol item, list[Symbol] seps)) = iterstarseps2expr(item,[s | s <- seps, layouts(_) !:= s]);
 GExpr symbol2expr(\seq(list[Symbol] ss)) = rhs2expr(ss);
+GExpr symbol2expr(\conditional(Symbol s, set[Condition] cs)) //= symbol2expr(s);
+{
+	println("Ignoring conditions on <s>: <cs>");
+	return symbol2expr(s);
+}
+GExpr symbol2expr(Symbol::\empty()) = grammarlab::language::Grammar::epsilon();
+GExpr symbol2expr(\char-class(list[CharRange] ranges))
+{
+	list[str] ss = [stringChar(c) | CharRange r <- ranges, int c <- [r.begin..r.end+1] ];
+	if (len(ss)==1)
+		return grammarlab::language::Grammar::terminal(ss[0]);
+	else
+		return grammarlab::language::Grammar::choice([grammarlab::language::Grammar::terminal(s) | s <- ss]);
+}
 default GExpr symbol2expr(Symbol s)
 {
 	// TODO: Rascal bug/feature? This did not work as a dispatch case

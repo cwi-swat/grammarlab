@@ -1,8 +1,8 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - UvA}
 module grammarlab::Exporters
 
+import IO;
 import grammarlab::language::Grammar;
-
 import grammarlab::io::write::BGF;
 import grammarlab::export::Grammar;
 import grammarlab::export::RascalADT;

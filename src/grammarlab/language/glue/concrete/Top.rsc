@@ -2,13 +2,13 @@
 module grammarlab::language::glue::concrete::Top
 
 // These shoes are made for modularised parsing, that’s just what they’ll do
-import grammarlab::language::glue::concrete::XBGF;
-import grammarlab::language::glue::concrete::SLEIR;
-import grammarlab::language::glue::concrete::Actions;
-import grammarlab::language::glue::concrete::BGF;
-import grammarlab::language::glue::concrete::Scope;
-import grammarlab::language::glue::concrete::Rename;
-import grammarlab::language::glue::concrete::GET;
+extend grammarlab::language::glue::concrete::XBGF;
+extend grammarlab::language::glue::concrete::SLEIR;
+extend grammarlab::language::glue::concrete::Actions;
+extend grammarlab::language::glue::concrete::BGF;
+extend grammarlab::language::glue::concrete::Scope;
+extend grammarlab::language::glue::concrete::Rename;
+extend grammarlab::language::glue::concrete::GET;
 
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;

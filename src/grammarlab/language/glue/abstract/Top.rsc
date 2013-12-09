@@ -5,6 +5,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::language::SLEIR;
 import grammarlab::language::GET;
+import lang::json::ast::JSON;
 
 alias GLUE = list[GLUEA];
 
@@ -12,6 +13,7 @@ data GLUEA
 	= xbgf(XCommand tcmd)
 	| sleir(MCommand mcmd)
 	| glaction(LCommand xcmd)
+	| metadata(Value meta)
 	;
 
 // WIP: GrammarLab actions

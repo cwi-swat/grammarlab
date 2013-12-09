@@ -30,6 +30,20 @@ import ParseTree;
 import String;
 import IO;
 
+public void startGlue()
+{
+	//regGlue();
+	registerLanguage("GLUE","glue",grammarlab::language::glue::concrete::Top::getGlue);
+	registerContributions("GLUE",
+		grammarlab::language::glue::concrete::Colours::getGLColours()+
+		{popup(menu("GrammarLab",[edit("execute!", execcmd)]))}
+	);
+}
+
+public str execcmd(GLUEC g, loc z)
+{execute(glimplode(g));return "";}
+
+
 public void go()
 {
 	clearLanguages();

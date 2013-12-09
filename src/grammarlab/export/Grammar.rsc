@@ -140,6 +140,14 @@ public str ppxpg(e:anything(), EBNF meta) = ppx(e, meta);
 public str ppxpg(e:val(_), EBNF meta) = ppx(e, meta);
 public str ppxpg(e:nonterminal(_), EBNF meta) = ppx(e, meta);
 public str ppxpg(e:terminal(_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:label(_,_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:mark(_,_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:not(_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:optional(_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:star(_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:plus(_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:sepliststar(_,_), EBNF meta) = ppx(e, meta);
+public str ppxpg(e:seplistplus(_,_), EBNF meta) = ppx(e, meta);
 default str ppxpg(GExpr e, EBNF meta)
 	= getMeta(start_group_symbol(), meta)
 	+ ppx(e, meta)

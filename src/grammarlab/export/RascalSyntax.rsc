@@ -22,14 +22,24 @@ public str exportRascalSyntax(str name, GGrammar g) =
 	'<mapProds(g.P,g.S)>
 	'";
 
+str escape2rascal(str s)
+{
+	map[str,str] rscescps = (
+		"\<": "\\\<",
+		"\>": "\\\>"
+	);
+	for (r <- rscescps)
+		s = replaceAll(s,r,rscescps[r]);
+	return s;
+}
 
-str mapProds(GProdList ps, list[str] rs) = wpp(ps,rs);
+str mapProds(GProdList ps, list[str] rs) = escape2rascal(wpp(ps,rs));
 
 // wrapper! almost mapjoin, but Rascal ain’t Haskell
 str wpp(GProdList ps, list[str] rs) = mapjoin(str(GProd p){return wpp(p,rs);},ps,"\n");
 
 str wpp(GProd p, list[str] rs)
-	= (p.lhs in rs)?"start ":""
+	= ((p.lhs in rs)?"start ":"")
 	+ "syntax <p.lhs>\n\t= <wpp(p.rhs)>\n\t;"
 	;
 
