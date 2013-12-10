@@ -5,7 +5,7 @@ import lang::sdf2::\syntax::Sdf2;
 import lang::sdf2::util::SDF2Grammar;
 //import ParseTree;
 import grammarlab::language::Grammar;
-import grammarlab::extract::RascalGrammar;
+import grammarlab::extract::rascal::Grammar;
 import lang::rascal::grammar::definition::Modules;
 import grammarlab::transform::Merge;
 import grammarlab::transform::Normal;
@@ -22,7 +22,7 @@ public GGrammar extractG(loc sdf)
 	println("Extracting <name>...");
 	GGrammar G =
 		normalise(
-		grammarlab::extract::RascalGrammar::grammar2grammar(
+		grammarlab::extract::rascal::Grammar::grammar2grammar(
 		lang::rascal::grammar::definition::Modules::fuse(
 		lang::sdf2::util::SDF2Grammar::sdf2grammar(name, parse(#SDF, input))
 		)));

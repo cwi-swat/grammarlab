@@ -36,12 +36,12 @@ public void startGlue()
 	registerLanguage("GLUE","glue",grammarlab::language::glue::concrete::Top::getGlue);
 	registerContributions("GLUE",
 		grammarlab::language::glue::concrete::Colours::getGLColours()+
-		{popup(menu("GrammarLab",[edit("execute!", execcmd)]))}
+		{popup(menu("GrammarLab",[edit("Run", execcmd),edit("Visualise", viscmd)]))}
 	);
 }
 
-public str execcmd(GLUEC g, loc z)
-{execute(glimplode(g));return "";}
+public str execcmd(GLUEC g, loc z){execute(glimplode(g));return "";}
+public str viscmd(GLUEC g, loc z){visGlue(z);return "";}
 
 
 public void go()

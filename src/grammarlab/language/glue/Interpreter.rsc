@@ -63,7 +63,7 @@ public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 public GGrammar execute(GGrammar g1, sleir(MCommand mcmd)) = grammarlab::transform::SLEIR::mutate(mcmd,g1);
 
 //TODO: deal with extractors in a separate file
-public default GGrammar execute(GGrammar g, glaction(extract(GExternalType t, loc z))) = getG(t,z);
+public GGrammar execute(GGrammar g, glaction(extract(GExternalType t, loc z))) = getG(t,z);
 
 // TODO: generate?
 public GGrammar getG(GETrscd(), loc z) = rscd2bgf(z);
@@ -79,7 +79,7 @@ public default GGrammar getG(GExternalType t, loc z)
 	println("Unknown external type: <t>");
 }
 
-public default GGrammar execute(GGrammar g, glaction(export(GExternalType t, loc z, str n)))
+public GGrammar execute(GGrammar g, glaction(export(GExternalType t, loc z, str n)))
 {
 	putG(t,z,n,g);
 	return g;

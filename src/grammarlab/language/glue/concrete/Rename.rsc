@@ -2,7 +2,7 @@
 module grammarlab::language::glue::concrete::Rename
 
 import grammarlab::language::glue::concrete::BGF;
-import grammarlab::language::glue::Scope;
+import grammarlab::language::glue::concrete::Scope;
 
 lexical GlueKrename = @category="MetaVariable" "rename";
 
