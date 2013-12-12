@@ -124,7 +124,7 @@ public XResult transform(chain(GProd p), GGrammar g)
 			if ([production(n1,GExpr e)] := ps2)
 				return <ok(),grammar(g.N + n2, ps1 + p + production(n2,e) + ps3, g.S)>;
 			else
-				return <problemProds("Production rule has unexpected form",ps2),g>;
+				return <problemProds("Too many production rules qualify",ps2),g>;
 		}
 	elseif (production(str n1, label(str l,nonterminal(str n2))) := p)
 		{
@@ -893,7 +893,7 @@ GExprList replaceChoice(GExprList where, GExprList what, GExprList with)
 }
 
 // XBGF:replace
-public XResult transform(XCommand::replace(GExpr e1, GExpr e2, XScope w), GGrammar g)
+public XResult transform(replace(GExpr e1, GExpr e2, XScope w), GGrammar g)
 {
 	GProdList ps1,ps2,ps3,ps4;
 	<ps1,ps2,ps3> = splitPbyW(g.P, w);
