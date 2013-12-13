@@ -559,90 +559,90 @@ public XResult transform(lassoc(GProd p), GGrammar g)
 
 // Needed for: massage
 // lifting and sinking marks and labels
-bool massage_eq({optional(mark(s,x)),mark(s,optional(x))}) = true;
-bool massage_eq({optional(label(s,x)),label(s,optional(x))}) = true;
-bool massage_eq({star(mark(s,x)),mark(s,star(x))}) = true;
-bool massage_eq({star(label(s,x)),label(s,star(x))}) = true;
-bool massage_eq({plus(mark(s,x)),mark(s,plus(x))}) = true;
-bool massage_eq({plus(label(s,x)),label(s,plus(x))}) = true;
-bool massage_eq({not(label(s,x)),label(s,not(x))}) = true;
-bool massage_eq({not(mark(s,x)),mark(s,not(x))}) = true;
+bool massage_eq({optional(mark(s,x)), mark(s,optional(x))}) = true; //@OptMark-MarkOpt
+bool massage_eq({optional(label(s,x)), label(s,optional(x))}) = true; //@OptLabel-LabelOpt
+bool massage_eq({star(mark(s,x)), mark(s,star(x))}) = true; //@StarMark-MarkStar
+bool massage_eq({star(label(s,x)), label(s,star(x))}) = true; //@StarLabel-LabelStar
+bool massage_eq({plus(mark(s,x)), mark(s,plus(x))}) = true; //@PlusMark-MarkPlus
+bool massage_eq({plus(label(s,x)), label(s,plus(x))}) = true; //@PlusLabel-LabelPlus
+bool massage_eq({not(label(s,x)), label(s,not(x))}) = true; //@NotLabel-LabelNot
+bool massage_eq({not(mark(s,x)), mark(s,not(x))}) = true; //@NotMark-MarkNot
 
 // combinations of optionality and closures
-bool massage_eq({optional(optional(x)),optional(x)}) = true;
-bool massage_eq({optional(star(x)),star(x)}) = true;
-bool massage_eq({optional(plus(x)),star(x)}) = true;
-bool massage_eq({star(optional(x)),star(x)}) = true;
-bool massage_eq({star(star(x)),star(x)}) = true;
-bool massage_eq({star(plus(x)),star(x)}) = true;
-bool massage_eq({plus(optional(x)),star(x)}) = true;
-bool massage_eq({plus(star(x)),star(x)}) = true;
-bool massage_eq({plus(plus(x)),plus(x)}) = true;
+bool massage_eq({optional(optional(x)), optional(x)}) = true; //@OptOpt-Opt
+bool massage_eq({optional(star(x)), star(x)}) = true; //@OptStar-Star
+bool massage_eq({optional(plus(x)), star(x)}) = true; //@OptPlus-Star
+bool massage_eq({star(optional(x)), star(x)}) = true; //@StarOpt-Star
+bool massage_eq({star(star(x)), star(x)}) = true; //@StarStar-Star
+bool massage_eq({star(plus(x)), star(x)}) = true; //@StarPlus-Star
+bool massage_eq({plus(optional(x)), star(x)}) = true; //@PlusOpt-Star
+bool massage_eq({plus(star(x)), star(x)}) = true; //@PlusStar-Star
+bool massage_eq({plus(plus(x)), plus(x)}) = true; //@PlusPlus-Plus
 
 // sequential variants of closures
-bool massage_eq({sequence([star(x),star(x)]),star(x)}) = true;
-bool massage_eq({sequence([optional(x),star(x)]),star(x)}) = true;
-bool massage_eq({sequence([star(x),optional(x)]),star(x)}) = true;
-bool massage_eq({sequence([optional(x),plus(x)]),plus(x)}) = true;
-bool massage_eq({sequence([plus(x),optional(x)]),plus(x)}) = true;
-bool massage_eq({sequence([plus(x),star(x)]),plus(x)}) = true;
-bool massage_eq({sequence([star(x),plus(x)]),plus(x)}) = true;
-bool massage_eq({sequence([x,star(x)]),plus(x)}) = true;
-bool massage_eq({sequence([star(x),x]),plus(x)}) = true;
+bool massage_eq({sequence([star(x),star(x)]), star(x)}) = true; //@SeqStarStar-Star
+bool massage_eq({sequence([optional(x),star(x)]), star(x)}) = true; //@SeqOptStar-Star
+bool massage_eq({sequence([star(x),optional(x)]), star(x)}) = true; //@SeqStarOpt-Star
+bool massage_eq({sequence([optional(x),plus(x)]), plus(x)}) = true; //@SeqOptPlus-Plus
+bool massage_eq({sequence([plus(x),optional(x)]), plus(x)}) = true; //@SeqPlusOpt-Plus
+bool massage_eq({sequence([plus(x),star(x)]), plus(x)}) = true; //@SeqPlusStar-Plus
+bool massage_eq({sequence([star(x),plus(x)]), plus(x)}) = true; //@SeqStarPlus-Plus
+bool massage_eq({sequence([x,star(x)]), plus(x)}) = true; //@SeqXStar-Plus
+bool massage_eq({sequence([star(x),x]), plus(x)}) = true; //@SeqStarX-Plus
 
 // disjunctions of optionality and closures, equivalent to x?
-bool massage_eq({choice([x,epsilon()]),optional(x)}) = true;
-bool massage_eq({choice([epsilon(),x]),optional(x)}) = true;
-bool massage_eq({choice([optional(x),epsilon()]),optional(x)}) = true;
-bool massage_eq({choice([epsilon(),optional(x)]),optional(x)}) = true;
-bool massage_eq({choice([optional(x),x]),optional(x)}) = true;
-bool massage_eq({choice([x,optional(x)]),optional(x)}) = true;
+bool massage_eq({choice([x,epsilon()]), optional(x)}) = true; //@OrXEps-Opt
+bool massage_eq({choice([epsilon(),x]), optional(x)}) = true; //@OrEpsX-Opt
+bool massage_eq({choice([optional(x),epsilon()]), optional(x)}) = true; //@OrOptEps-Opt
+bool massage_eq({choice([epsilon(),optional(x)]), optional(x)}) = true; //@OrEpsOpt-Opt
+bool massage_eq({choice([optional(x),x]), optional(x)}) = true; //@OrOptX-Opt
+bool massage_eq({choice([x,optional(x)]), optional(x)}) = true; //@OrXOpt-Opt
 
 // disjunctions of optionality and closures, equivalent to x*
-bool massage_eq({choice([star(x),x]),star(x)}) = true;
-bool massage_eq({choice([x,star(x)]),star(x)}) = true;
-bool massage_eq({choice([star(x),plus(x)]),star(x)}) = true;
-bool massage_eq({choice([plus(x),star(x)]),star(x)}) = true;
-bool massage_eq({choice([star(x),optional(x)]),star(x)}) = true;
-bool massage_eq({choice([optional(x),star(x)]),star(x)}) = true;
-bool massage_eq({choice([star(x),epsilon()]),star(x)}) = true;
-bool massage_eq({choice([epsilon(),star(x)]),star(x)}) = true;
-bool massage_eq({choice([plus(x),epsilon()]),star(x)}) = true;
-bool massage_eq({choice([epsilon(),plus(x)]),star(x)}) = true;
-bool massage_eq({choice([plus(x),optional(x)]),star(x)}) = true;
-bool massage_eq({choice([optional(x),plus(x)]),star(x)}) = true;
+bool massage_eq({choice([star(x),x]), star(x)}) = true; //@OrStar1-Star
+bool massage_eq({choice([x,star(x)]), star(x)}) = true; //@Or1Star-Star
+bool massage_eq({choice([star(x),plus(x)]), star(x)}) = true; //@OrStarPlus-Star
+bool massage_eq({choice([plus(x),star(x)]), star(x)}) = true; //@OrPlusStar-Star
+bool massage_eq({choice([star(x),optional(x)]), star(x)}) = true; //@OrStarOpt-Star
+bool massage_eq({choice([optional(x),star(x)]), star(x)}) = true; //@OrOptStar-Star
+bool massage_eq({choice([star(x),epsilon()]), star(x)}) = true; //@OrStarEps-Star
+bool massage_eq({choice([epsilon(),star(x)]), star(x)}) = true; //@OrEpsStar-Star
+bool massage_eq({choice([plus(x),epsilon()]), star(x)}) = true; //@OrPlusEps-Star
+bool massage_eq({choice([epsilon(),plus(x)]), star(x)}) = true; //@OrEpsPlus-Star
+bool massage_eq({choice([plus(x),optional(x)]), star(x)}) = true; //@OrPlusOpt-Star
+bool massage_eq({choice([optional(x),plus(x)]), star(x)}) = true; //@OrOptPlus-Star
 
 // disjunctions of optionality and closures, equivalent to x+
-bool massage_eq({choice([plus(x),x]),plus(x)}) = true;
-bool massage_eq({choice([x,plus(x)]),plus(x)}) = true;
+bool massage_eq({choice([plus(x),x]), plus(x)}) = true; //@OrPlusX-Plus
+bool massage_eq({choice([x,plus(x)]), plus(x)}) = true; //@OrXPlus-Plus
 
 // introducing multiple labels and marks
-bool massage_eq({x,choice([label(_,x),label(_,x)])}) = true;
-bool massage_eq({x,choice([label(_,x),label(_,x),label(_,x)])}) = true;
-bool massage_eq({x,choice([mark(_,x),mark(_,x)])}) = true;
-bool massage_eq({x,choice([mark(_,x),mark(_,x),mark(_,x)])}) = true;
+bool massage_eq({x, choice([label(_,x),label(_,x)])}) = true; //@OrLabels2-
+bool massage_eq({x, choice([label(_,x),label(_,x),label(_,x)])}) = true; //@OrLabels3-
+bool massage_eq({x, choice([mark(_,x),mark(_,x)])}) = true; //@OrMarks2-
+bool massage_eq({x, choice([mark(_,x),mark(_,x),mark(_,x)])}) = true; //@OrMarks3-
 
 // separator lists
-bool massage_eq({sequence([x,optional(sequence([y,x]))]),sequence([optional(sequence([x,y])),x])}) = true;
-bool massage_eq({sequence([x,plus(sequence([y,x]))]),sequence([plus(sequence([x,y])),x])}) = true;
-bool massage_eq({sequence([x,star(sequence([y,x]))]),sequence([star(sequence([x,y])),x])}) = true;
-bool massage_eq({sequence([x,star(sequence([y,x]))]),seplistplus(x,y)}) = true;
-bool massage_eq({sequence([star(sequence([x,y])),x]),seplistplus(x,y)}) = true;
-bool massage_eq({optional(sequence([x,star(sequence([y,x]))])),sepliststar(x,y)}) = true;
-bool massage_eq({optional(sequence([star(sequence([x,y])),x])),sepliststar(x,y)}) = true;
-bool massage_eq({optional(seplistplus(x,y)),sepliststar(x,y)}) = true;
+bool massage_eq({sequence([x,optional(sequence([y,x]))]), sequence([optional(sequence([x,y])),x])}) = true; //@SeqXOpt-SeqOptX
+bool massage_eq({sequence([x,plus(sequence([y,x]))]), sequence([plus(sequence([x,y])),x])}) = true; //@SeqXPlus-SeqPlusX
+bool massage_eq({sequence([x,star(sequence([y,x]))]), sequence([star(sequence([x,y])),x])}) = true; //@SeqXStar-SeqStarX
+bool massage_eq({sequence([x,star(sequence([y,x]))]), seplistplus(x,y)}) = true; //@SeqXStar-SLPlus
+bool massage_eq({sequence([star(sequence([x,y])),x]), seplistplus(x,y)}) = true; //@SeqStarX-SLPlus
+bool massage_eq({optional(sequence([x,star(sequence([y,x]))])), sepliststar(x,y)}) = true; //@OptSeqXStar-SLStar
+bool massage_eq({optional(sequence([star(sequence([x,y])),x])), sepliststar(x,y)}) = true; //@OptSeqStarX-SLStar
+bool massage_eq({optional(seplistplus(x,y)), sepliststar(x,y)}) = true; //@OptSLPlus-SLStar
 
 // Boolean grammars
-bool massage_eq({not(not(x)),x}) = true;
-bool massage_eq({not(allof([x,y])),choice([not(x),not(y)])}) = true;
-bool massage_eq({not(allof([x,y])),choice([not(y),not(x)])}) = true;
-bool massage_eq({not(allof([not(x),not(y)])),choice([x,y])}) = true;
-bool massage_eq({not(allof([not(x),not(y)])),choice([y,x])}) = true;
-bool massage_eq({not(choice([x,y])),allof([not(x),not(y)])}) = true;
-bool massage_eq({not(choice([x,y])),allof([not(y),not(x)])}) = true;
-bool massage_eq({not(choice([not(x),not(y)])),allof([x,y])}) = true;
-bool massage_eq({not(choice([not(x),not(y)])),allof([y,x])}) = true;
-bool massage_eq({allof([x,not(y)]),except(x,y)}) = true;
+bool massage_eq({not(not(x)), x}) = true; //@NotNot-X
+bool massage_eq({not(allof([x,y])), choice([not(x),not(y)])}) = true; //@NotAndXY-OrNotXY
+bool massage_eq({not(allof([x,y])), choice([not(y),not(x)])}) = true; //@NotAndXY-OrNotYX
+bool massage_eq({not(allof([not(x),not(y)])), choice([x,y])}) = true; //@NotAndNotXY-OrXY
+bool massage_eq({not(allof([not(x),not(y)])), choice([y,x])}) = true; //@NotAndNotXY-OrYX
+bool massage_eq({not(choice([x,y])), allof([not(x),not(y)])}) = true; //@NotOrXY-AndNotXY
+bool massage_eq({not(choice([x,y])), allof([not(y),not(x)])}) = true; //@NotOrXY-AndNotYX
+bool massage_eq({not(choice([not(x),not(y)])), allof([x,y])}) = true; //@NotOrNotXY-AndXY
+bool massage_eq({not(choice([not(x),not(y)])), allof([y,x])}) = true; //@NotOrNotXY-AndYX
+bool massage_eq({allof([x,not(y)]), except(x,y)}) = true; //@AndNot-Except
 
 // otherwise, no
 default bool massage_eq(GExprSet s) = false;
