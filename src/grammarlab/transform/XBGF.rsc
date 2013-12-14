@@ -659,11 +659,11 @@ public XResult transform(massage(GExpr e1, GExpr e2, XScope w), GGrammar g)
 // Needed for: narrow, widen
 // narrow-equivalence (the reverse, widen-equivalence, is hereby also implicitly defined)
 bool narrowing(anything(),_) = true;
-bool narrowing(star(e),plus(e)) = true;
-bool narrowing(star(e),optional(e)) = true;
-bool narrowing(star(e),e) = true;
-bool narrowing(plus(e),e) = true;
-bool narrowing(optional(e),e) = true;
+bool narrowing( star(e), plus(e) ) = true; //#Star-Plus
+bool narrowing( star(e), optional(e) ) = true; //#Star-Opt
+bool narrowing( star(e), e ) = true; //#Star-X
+bool narrowing( plus(e), e ) = true; //#Plus-X
+bool narrowing( optional(e), e ) = true; //#Opt-X
 default bool narrowing(_,_) = false;
 
 // XBGF:narrow
