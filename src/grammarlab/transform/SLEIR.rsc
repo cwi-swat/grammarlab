@@ -1,77 +1,35 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI; UvA}
 module grammarlab::transform::SLEIR
 
-// TODO: not imported from SLPS yet, the file included for the sake of integrity
-// UPDATE: in the process of being imported/reengineered
-
-import Set;
 import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
+extend grammarlab::transform::sleir::Massage;
+import grammarlab::transform::sleir::Naming;
+extend grammarlab::transform::sleir::Width;
 import grammarlab::transform::Normal;
-import grammarlab::transform::sleir::TypeI;
-import grammarlab::transform::sleir::TypeIV;
+import grammarlab::transform::XBGF;
+import grammarlab::lib::Sizes;
+import Set;
+import String;
+import List;
 
 public GGrammar mutate(MSequence ms, GGrammar g)
 	= (g | normalise(mutate(m,it)) | MCommand m <- ms);
 
-public GGrammar legacyMutate(AbridgeAll(), GGrammar g)
-	= grammarlab::transform::sleir::TypeI::runAbridgeAll(g);
-public GGrammar legacyMutate(DeyaccifyAll(), GGrammar g)
-	= grammarlab::transform::sleir::TypeI::runDeyaccifyAll(g);
-public GGrammar legacyMutate(DistributeAll(), GGrammar g) = runDistributeAll(g);
-public GGrammar legacyMutate(EliminateTop(), GGrammar g) = runEliminateTop(g);
-public GGrammar legacyMutate(EquateAll(), GGrammar g) = runEquateAll(g);
-public GGrammar legacyMutate(FoldMax(), GGrammar g) = runFoldMax(g);
-public GGrammar legacyMutate(HorizontalAll(), GGrammar g) = runHorizontalAll(g);
-public GGrammar legacyMutate(InlineMax(), GGrammar g) = runInlineMax(g);
-public GGrammar legacyMutate(LiftTopLabels(), GGrammar g) = runLiftTopLabels(g);
-public GGrammar legacyMutate(UnchainAll(), GGrammar g) = runUnchainAll(g);
-public GGrammar legacyMutate(UnfoldMax(), GGrammar g) = runUnfoldMax(g);
-public GGrammar legacyMutate(VerticalAll(), GGrammar g) = runVerticalAll(g);
-
-public GGrammar legacyMutate(DropPrefixN(str p), GGrammar g) = runDropPrefixN(p,g);
-public GGrammar legacyMutate(DropPostfixN(str p), GGrammar g) = runDropPostfixN(p,g);
-public GGrammar legacyMutate(RenameAllN(str n1, str n2), GGrammar g) = runRenameAllN(n1,n2,g);
-
-public default GGrammar legacyMutate(MCommand m, GGrammar g)
-{
-	println("Don’t know how to legacyMutate with <m>.");
-	return g;
-}
+// SLEIR:LiftTopLabels
+@doc{NEW: invented after the paper got published; does not fit in the paradigm!}
+// Apparently I needed it for something. Looks weird. Legacy?
+public GGrammar mutate(LiftTopLabels(), GGrammar g)
+	= grammar(g.N, [labelsLifted(p) | p <- g.P], g.S);
+GProd labelsLifted(production(str lhs, choice(GExprList L)))
+	= production(lhs,choice([labelsLifted(e) | e <- L]));
+default GProd labelsLifted(GProd p)
+	= production(p.lhs, labelsLifted(p.rhs));
+GExpr labelsLifted(label(str name, GExpr e))
+	= sequence(nonterminal(name),e);
+default GExpr labelsLifted(GExpr e) = e;
 
 ///////////////////////////////////////////////////////////////////////////
-// TODO: get rid of the rest of the file
-public GGrammar RetireSs(GGrammar g)
-{
-	ps = visit(g.prods) {case selectable(_,GExpr e) => e};
-	return grammar(g.nts, g.roots, normalise(ps));
-}
-public GProd RetireSs(GProd p) {return visit(p) {case selectable(_,GExpr e) => e};}
-public GExpr RetireSs(GExpr x) {return visit(x) {case selectable(_,GExpr e) => e};}
-
-public GGrammar RetireLs(GGrammar g)
-{
-	ps = visit(g.prods) {case labelled(_,GExpr e) => e};
-	return grammar(g.nts, g.roots, normalise(ps));
-}
-
-public GProd RetireLs(GProd p) {return visit(p) {case labelled(_,GExpr e) => e};}
-public GExpr RetireLs(GExpr x) {return visit(x) {case labelled(_,GExpr e) => e};}
-
-// TODO: turn into a proper mutation later!
-public GGrammar runLiftTopLabels(GGrammar g) = normalise(grammar(g.N,mapper(LiftTopLabels,g.P),g.S));
-default GProd runLiftTopLabels(production(str lhs, label(str name, GExpr e))) =
-	production(lhs,sequence(nonterminal(name),e));
-default GProd runLiftTopLabels(production(str lhs, choice(L))) = production(lhs,choice(mapper(LiftTopLabels,L)));
-default GProd runLiftTopLabels(GProd p) = p;
-GExpr runLiftTopLabels(label(str name, GExpr e)) = sequence(nonterminal(name),e);
-default GExpr runLiftTopLabels(GExpr e) = e;
-
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
-/////////////////////////////////////////////////////////////////////
 // SLEIR:AbridgeAll
 @doc{abridge ⊢ AbridgeAll, Type I, page 4}
 public GGrammar mutate(AbridgeAll(), GGrammar g)
@@ -245,9 +203,9 @@ public GGrammar mutate(DistributeAll(), GGrammar g)
 
 // NOT done: downgrade - page 12
 
-// SLEIR:EliminateTop
-@doc{eliminate ⊢ EliminateTop, Type I, page 5}
-public GGrammar mutate(EliminateTop(), GGrammar g)
+// Needed for: EliminateTop, Reroot2top
+// TODO: extract to another module (grammar metrics?)
+list[str] NONTOP(GGrammar g)
 {
 	before = [];
 	reached = g.S;
@@ -261,7 +219,16 @@ public GGrammar mutate(EliminateTop(), GGrammar g)
 				if (rn notin before+reached && rn in g.N)
 					reached += rn;
 	}
-	return grammar(before, [p <- g.P, p.lhs in before], g.S);
+	return before;
+}
+list[str] TOP(GGrammar g) = g.N - NONTOP(g);
+
+// SLEIR:EliminateTop
+@doc{eliminate ⊢ EliminateTop, Type I, page 5}
+public GGrammar mutate(EliminateTop(), GGrammar g)
+{
+	ns = TOP(g);
+	return grammar(ns, [p <- g.P, p.lhs in ns], g.S);
 }
 
 // SLEIR:EquateAll
@@ -324,7 +291,7 @@ public GGrammar mutate(HorizontalAll(), GGrammar g)
 }
 
 // NOT done: importG - page 11
-// NOT done: inject - page 12
+// NOT done: inject - page 12 "Further generalisation of injection/projection is possible, but seems too idiosyncratic to include here."
 
 // SLEIR:InlineMax
 @doc{inline ⊢ InlineMax, Type I, page 5}
@@ -402,11 +369,322 @@ public GGrammar mutate(LAssocAll(), GGrammar g)
 	return g;
 }
 
+//SLEIR:Massage* -> see grammarlab::transform::SLEIR_Massage
+//SLEIR:Narrow* -> see grammarlab::transform::SLEIR_Width
+
+// SLEIR:PermutePostfix2Prefix
+@doc{permute ⊢ PermutePostfix2Prefix, Type III, page 9}
+public GGrammar mutate(PermutePostfix2Prefix(), GGrammar g)
+{
+	g.P = visit (g.P)
+	{
+		case production(str n1, sequence([nonterminal(n1), terminal(t1)])) =>
+			production(n1, sequence([terminal(t1), nonterminal(n1)]))
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n2)])) =>
+			production(n1, sequence([nonterminal(n2), nonterminal(n1)]))
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n1), terminal(t1)])) =>
+			production(n1, sequence([terminal(t1), nonterminal(n1), nonterminal(n1)]))
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n1), nonterminal(n2)])) =>
+			production(n1, sequence([nonterminal(n2), nonterminal(n1), nonterminal(n1)]))
+	};
+	return g;
+}
+// SLEIR:PermutePostfix2Infix
+@doc{permute ⊢ PermutePostfix2Infix, Type III, page 9}
+public GGrammar mutate(PermutePostfix2Infix(), GGrammar g)
+{
+	g.P = visit (g.P)
+	{
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n1), terminal(t1)])) =>
+			production(n1, sequence([nonterminal(n1), terminal(t1), nonterminal(n1)]))
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n1), nonterminal(n2)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n2), nonterminal(n1)]))
+	};
+	return g;
+}
+// SLEIR:PermutePrefix2Infix
+@doc{permute ⊢ PermutePrefix2Infix, Type III, page 9}
+public GGrammar mutate(PermutePrefix2Infix(), GGrammar g)
+{
+	g.P = visit (g.P)
+	{
+		case production(str n1, sequence([terminal(t1), nonterminal(n1), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), terminal(t1), nonterminal(n1)]))
+		case production(str n1, sequence([nonterminal(n2), nonterminal(n1), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n2), nonterminal(n1)]))
+	};
+	return g;
+}
+// SLEIR:PermutePrefix2Postfix
+@doc{permute ⊢ PermutePrefix2Postfix, Type III, page 9}
+public GGrammar mutate(PermutePrefix2Postfix(), GGrammar g)
+{
+	g.P = visit (g.P)
+	{
+		case production(str n1, sequence([terminal(t1), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), terminal(t1)]))
+		case production(str n1, sequence([nonterminal(n2), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n2)]))
+		case production(str n1, sequence([terminal(t1), nonterminal(n1), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n1), terminal(t1)]))
+		case production(str n1, sequence([nonterminal(n2), nonterminal(n1), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n1), nonterminal(n2)]))
+	};
+	return g;
+}
+// SLEIR:PermuteInfix2Prefix
+@doc{permute ⊢ PermuteInfix2Prefix, Type III, page 9}
+public GGrammar mutate(PermuteInfix2Prefix(), GGrammar g)
+{
+	g.P = visit (g.P)
+	{
+		case production(str n1, sequence([nonterminal(n1), terminal(t1), nonterminal(n1)])) =>
+			production(n1, sequence([terminal(t1), nonterminal(n1), nonterminal(n1)]))
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n2), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n2), nonterminal(n1), nonterminal(n1)]))
+	};
+	return g;
+}
+// SLEIR:PermuteInfix2Postfix
+@doc{permute ⊢ PermuteInfix2Postfix, Type III, page 9}
+public GGrammar mutate(PermuteInfix2Postfix(), GGrammar g)
+{
+	g.P = visit (g.P)
+	{
+		case production(str n1, sequence([nonterminal(n1), terminal(t1), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n1), terminal(t1)]))
+		case production(str n1, sequence([nonterminal(n1), nonterminal(n2), nonterminal(n1)])) =>
+			production(n1, sequence([nonterminal(n1), nonterminal(n1), nonterminal(n2)]))
+	};
+	return g;
+}
+
+// NOT done: project - page 12 "Further generalisation of injection/projection is possible, but seems too idiosyncratic to include here."
+
 // SLEIR:RAssocAll
 @doc{iterate ⊢ RAssocAll, Type II, page 7}
 public GGrammar mutate(RAssocAll(), GGrammar g) = mutate(LAssocAll(), g);
 
+// SLEIR:RedefineAll
+@doc{redefine ⊢ RedefineAll, Type IV, page 11}
+public GGrammar mutate(RedefineAll(GProdList ps), GGrammar g)
+{
+	// Generalised code is way too slow, replaced with an incredibly fast native Rascal alternative
+	for (str n <- {p.lhs | p <- ps})
+	{
+		<ops1,ops2,ops3> = splitPbyW(g.P,n);
+		<nps1,nps2,nps3> = splitPbyW(ps,n);
+		g.P = ops1 + nps2 + ops3;
+		ps = nps1 + nps3;
+	}
+	// TODO: "Even though redefining a nonterminal has been studied in various frameworks before [DCMS02, KLV02, LZ11],
+	// the kind of grammar composition that RedefineAll offers, has never been explicitly considered."
+	return g;
+}
 
 // NOT done: removeH, removeV - page 12
 
+// SLEIR:DropSuffixN
+@doc{renameN ⊢ DropSuffixN, Type IV, NEW: invented after the paper got published}
+public GGrammar mutate(DropSuffixN(str pre, str post), GGrammar g)
+{
+	for (str n <- g.N, startsWith(n,pre), endsWith(n,post))
+		g = grammarlab::transform::XBGF::performRenameN(n,replaceLast(replaceFirst(n,pre,""),post,""),g); 
+	return g;
+}
 
+// TODO: RenameAllL [right now the implementation treats only top level labels!]
+
+// SLEIR:RenameAllN
+@doc{renameN ⊢ RenameAllN, Type IV, page 9}
+public GGrammar mutate(RenameAllN(str x, str y), GGrammar g)
+{
+	nc1 = inferConvention(x);
+	nc2 = inferConvention(y);
+	for (str n <- g.N, confirmConvention(n,nc1), m := changeConvention(n,nc1,nc2), m notin g.N)
+		g = grammarlab::transform::XBGF::performRenameN(n,m,g); 
+	return g;
+}
+
+// SLEIR:RenameAllT
+@doc{renameT ⊢ RenameAllT, Type IV, page 9}
+public GGrammar mutate(RenameAllT(str x, str y), GGrammar g)
+{
+	nc1 = inferConvention(x);
+	nc2 = inferConvention(y);
+	for (str n <- g.N, confirmConvention(n,nc1), m := changeConvention(n,nc1,nc2), m notin g.N)
+		g = grammarlab::transform::XBGF::performRenameT(n,m,g); 
+	return g;
+}
+
+// TODO: RenameAllS [performRenameS is not defined, marks could be terribly local, the mutation should not destroy that!]
+
+// NOT done: replace - page 11 "in a sense, replace ⊢ replace"
+
+// SLEIR:Reroot2top
+@doc{reroot ⊢ Reroot2top, Type II, page 8}
+public GGrammar mutate(Reroot2top(), GGrammar g)
+	= grammar(g.N, g.P, TOP(g));
+
+// NOT done: splitN - page 12
+
+// SLEIR:SplitAllT
+@doc{splitT ⊢ SplitAllT, Type II, page 8}
+public GGrammar mutate(SplitAllT(), GGrammar g)
+{
+	g.P = visit(g.P){
+		case terminal(t):
+			if (splittable(t)) insert sequence([terminal(st) | st <- splintered(t)]);
+	};
+	return g;
+}
+
+// Needed for: SplitAllT
+bool splittable(str t) = !isAlpha(t) & len(t)>1;
+list[str] splintered(str t)
+{
+	list[list[int]] ts = [];
+	for (int c <- chars(t))
+	{
+		if(isAlpha(c) && isAlpha(ts[-1][-1]))
+				ts[-1] += c;
+		else
+				ts += [c];
+	}
+	return [stringChars(cs) | cs <- ts];
+}
+
+// SLEIR:UnchainAll
+@doc{unchain ⊢ UnchainAll, Type I, page 6}
+public GGrammar mutate(UnchainAll(), GGrammar g)
+{
+	// Generalised code was too slow, replaced with a faster and shorter native Rascal alternative
+	for (p <- g.P)
+	{
+		if ((
+				production(n1,nonterminal(n2)) := p
+			||	production(n1,label(_,nonterminal(n2))) := p
+			||	production(n1,mark(_,nonterminal(n2))) := p
+			||	production(n1,label(_,mark(_,nonterminal(n2)))) := p
+			)
+			&& n1 != n2
+			&& n2 in g.N)
+		g.P -= p;
+	}
+	return g;
+}
+
+// SLEIR:UndefineTrivial
+@doc{undefine ⊢ UndefineTrivial, Type II, page 8}
+public GGrammar mutate(UndefineTrivial(), GGrammar g)
+{
+	// Generalisation is based on undefineTrue
+	for (x <- g.N, /nonterminal(x) := g.P)
+	{
+		<ps1,ps2,ps3> = splitPbyW(g.P,innt(x));
+		if ([production(x,empty())] := ps2
+		|| [production(x,epsilon())] := ps2
+		|| [production(x,anything())] := ps2
+		|| [production(x,nothing())] := ps2 // not really needed
+		) g.P = ps1 + ps3;
+	}
+	return g;
+}
+
+// SLEIR:UnfoldMax
+@doc{unfold ⊢ UnfoldMax, Type I, page 5}
+public GGrammar mutate(UnfoldMax(), GGrammar g)
+{
+	for (n <- g.N - g.S)
+	{
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
+		if (len(ps2)!=1) continue; // not horizontal!
+		if (/nonterminal(n) := ps2) continue; // recursive!
+		g.P = performReplace(normalise(ps2[0].rhs),nonterminal(n), g.P);
+		// A code clone of InlineMax                               ^^^ difference
+	}
+	return g;
+}
+
+// SLEIR:UniteBySuffix
+@doc{unite ⊢ UniteBySuffix, Type IV, page 11}
+public GGrammar mutate(UniteBySuffix(str pre, str post), GGrammar g)
+{
+	if (pre+post in g.N) return g; //TODO: should be an error "united nonterminal name is not fresh"
+	united = [n | n <- g.N, startsWith(n,pre), endsWith(n,post)];
+	if (len(united)<2) return g; //TODO: should be an error "not enough nonterminals to unite"
+	return transform([renameN(united[0],pre+post)] + [unite(pre+post,nt) | nt <- tail(united)], g);
+}
+
+// SLEIR:RetireLs
+@doc{unlabel ⊢ RetireLs, Type II, stripped from the paper}
+public GGrammar mutate(RetireLs(), GGrammar g)
+{
+	// the generalised code is too slow, replaced with a faster native Rascal alternative
+	g.P = visit(g.P){case label(_,GExpr e) => e};
+	return g;
+}
+
+// NOT done: upgrade - page 12
+
+// SLEIR:VerticalAll
+@doc{vertical ⊢ VerticalAll, Type I, page 6}
+public GGrammar mutate(VerticalAll(), GGrammar g)
+{
+	for (n <- g.N)
+	{
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
+		if (len(ps2)==1 && choice(L) := ps2[0].rhs && label(_,choice(L)) := ps2[0].rhs)
+			g.P = ps1 + [production(ps2[0].lhs,e) | e <- L] + ps3;
+	}
+	return g;
+}
+
+//SLEIR:Widen* -> see grammarlab::transform::SLEIR_Width
+
+// WIP
+
+// SLEIR:YaccifyAllL
+@doc{yaccify ⊢ YaccifyAllL, Type III, page 10}
+public GGrammar mutate(YaccifyAllL(), GGrammar g)
+{
+	GProdList ps = [];
+	for (GProd p <- g.P)
+	{
+		if (production(n,sequence([y,star(x)])):=p)
+			ps += [production(n,sequence([nonterminal(n),x])),
+				   production(n,y)];
+		if (production(n,plus(x)):=p)
+			ps += [production(n,sequence([nonterminal(n),x])),
+				   production(n,x)];
+		if (production(n,star(x)):=p)
+			ps += [production(n,sequence([nonterminal(n),x])),
+				   production(n,epsilon())];
+	};
+	return grammar(g.N, ps, g.S);
+}
+// SLEIR:YaccifyAllR
+@doc{yaccify ⊢ YaccifyAllR, Type III, page 10}
+public GGrammar mutate(YaccifyAllR(), GGrammar g)
+{
+	GProdList ps = [];
+	for (GProd p <- g.P)
+	{
+		if (production(n,sequence([star(x),y])):=p)
+			ps += [production(n,sequence([x,nonterminal(n)])),
+				   production(n,y)];
+		if (production(n,plus(x)):=p)
+			ps += [production(n,sequence([x,nonterminal(n)])),
+				   production(n,x)];
+		if (production(n,star(x)):=p)
+			ps += [production(n,sequence([x,nonterminal(n)])),
+				   production(n,epsilon())];
+	};
+	return grammar(g.N, ps, g.S);
+}
+
+public default GGrammar mutate(MCommand m, GGrammar g)
+{
+	println("Don’t know how to mutate with <m>.");
+	return g;
+}

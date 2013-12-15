@@ -31,13 +31,15 @@ NCCap whichNext(CamelCase()) = Capitalcase();
 NCCap whichNext(mixedCase()) = Capitalcase();
 default NCCap whichNext(NCCap _) = noconvention();
 
+public bool isAlpha(str s) = (true | it && isAlpha(c) | int c <- chars(s));
+public bool isAlpha(int c) = isLower(c) || isUpper(c);
 bool isLower(int c) = c >= 97 && c <= 122;
 bool isUpper(int c) = c >= 65 && c <= 90;
 bool isDigit(int c) = c >= 48 && c <= 57;
 
 bool eqAll(list[str] xs, str y) = (true | it && x==y | x <- xs);
 
-NamingConvention inferConvention(str s)
+public NamingConvention inferConvention(str s)
 {
 	// a tiny parsing automaton
 	int state = 0; // 0 - first char; 1 - second char; 2 - anything else
@@ -91,13 +93,13 @@ NamingConvention inferConvention(str s)
 	return <nc,sep>;
 }
 
-bool confirmConvention(str s, NamingConvention nc)
+public bool confirmConvention(str s, NamingConvention nc)
 	= nc.cap != noconvention()
 	&& (inferConvention(s) == nc
 	|| changeConvention(s,inferConvention(s),nc) == s)
 	;
 
-str changeConvention(str s, NamingConvention nc1, NamingConvention nc2)
+public str changeConvention(str s, NamingConvention nc1, NamingConvention nc2)
 {
 	if (inferConvention(s)!=nc1) return s;
 	if (nc1.cap == nc2.cap) return replaceAll(s, nc1.sep, nc2.sep);

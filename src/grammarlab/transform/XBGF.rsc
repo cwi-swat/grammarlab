@@ -810,6 +810,9 @@ public XResult transform(renameN(str x, str y), GGrammar g)
 		<ok(),performRenameN(x,y,g)>;
 }
 
+// TODO: renameS => renameM
+// TODO: scope-wise performRenameS
+
 // XBGF:renameS
 public XResult transform(renameS(str x, str y, XScope w), GGrammar g)
 {
@@ -822,6 +825,13 @@ public XResult transform(renameS(str x, str y, XScope w), GGrammar g)
 	return <ok(),grammar(g.N, ps1 + ps4 + ps3, g.S)>;
 }
 
+GGrammar performRenameT(str x, str y, GGrammar g)
+{
+	//return transform(replace(terminal(x),terminal(y),globally()), g);
+	g.P = visit(g.P){case terminal(x) => terminal(y)};
+	return g;
+}
+
 // XBGF:renameT
 public XResult transform(renameT(str x, str y), GGrammar g)
 {
@@ -830,7 +840,7 @@ public XResult transform(renameT(str x, str y), GGrammar g)
 		return <freshName("Source name",x),g>;
 	if (y in ts)
 		return <notFreshName("Target name",y),g>;
-	return transform(replace(terminal(x),terminal(y),globally()), g);
+	return performRenameT(x,y,g);
 }
 
 // Low level operation, needed for: replace, performRenameN
