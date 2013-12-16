@@ -303,7 +303,20 @@ public GGrammar mutate(InlineMax(), GGrammar g)
 		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
 		if (len(ps2)!=1) continue; // not horizontal!
 		if (/nonterminal(n) := ps2) continue; // recursive!
-		g.P = performReplace(normalise(ps2[0].rhs),nonterminal(n), ps1+ps3);
+		g.P = performReplace(nonterminal(n), normalise(ps2[0].rhs), ps1+ps3);
+	}
+	return g;
+}
+
+// SLEIR:InlinePlus
+@doc{inline ⊢ InlinePlus, Type II, NEW: never made it to the paper}
+public GGrammar mutate(InlinePlus(), GGrammar g)
+{
+	for (n <- g.N - g.S)
+	{
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
+		if ([production(str lhs, plus(nonterminal(m)))] := ps2)
+			g.P = grammarlab::transform::XBGF::performReplace(nonterminal(lhs), ps2[0].rhs, ps1+ps3);
 	}
 	return g;
 }
@@ -463,7 +476,8 @@ public GGrammar mutate(PermuteInfix2Postfix(), GGrammar g)
 
 // SLEIR:RAssocAll
 @doc{iterate ⊢ RAssocAll, Type II, page 7}
-public GGrammar mutate(RAssocAll(), GGrammar g) = mutate(LAssocAll(), g);
+public GGrammar mutate(RAssocAll(), GGrammar g)
+	= mutate(LAssocAll(), g);
 
 // SLEIR:RedefineAll
 @doc{redefine ⊢ RedefineAll, Type IV, page 11}
