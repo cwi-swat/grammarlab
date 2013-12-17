@@ -69,7 +69,6 @@ void main()
 	
 	// Finally, let’s update the ADT
 	sleir = |project://grammarlab/src/grammarlab/transform/|;
-	println([sleir+"sleir/"+f | f <- listEntries(sleir+"sleir"), endsWith(f,".rsc")]+(sleir+"SLEIR.rsc"));
 	lst = {"<name>(<args>)" |
 		g <- [sleir+"sleir/"+f | f <- listEntries(sleir+"sleir"), endsWith(f,".rsc")]+(sleir+"SLEIR.rsc"),
 		//g <- [|project://grammarlab/src/grammarlab/transform/sleir/Massage.rsc|],		

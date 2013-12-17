@@ -5,10 +5,6 @@ import grammarlab::language::Grammar;
 import grammarlab::language::XScope;
 
 alias XSequence = list[XCommand];
-alias GNonTerm = str;
-alias GTerm = str;
-alias GLabel = str;
-alias GMark = str;
 
 data XCommand
 	= abridge(GProd p)

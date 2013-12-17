@@ -500,7 +500,7 @@ public GGrammar mutate(RedefineAll(GProdList ps), GGrammar g)
 
 // SLEIR:DropSuffixN
 @doc{renameN ⊢ DropSuffixN, Type IV, NEW: invented after the paper got published}
-public GGrammar mutate(DropSuffixN(str pre, str post), GGrammar g)
+public GGrammar mutate(DropSuffixN(GNonTerm pre, GNonTerm post), GGrammar g)
 {
 	for (str n <- g.N, startsWith(n,pre), endsWith(n,post))
 		g = grammarlab::transform::XBGF::performRenameN(n,replaceLast(replaceFirst(n,pre,""),post,""),g); 
@@ -511,7 +511,7 @@ public GGrammar mutate(DropSuffixN(str pre, str post), GGrammar g)
 
 // SLEIR:RenameAllN
 @doc{renameN ⊢ RenameAllN, Type IV, page 9}
-public GGrammar mutate(RenameAllN(str x, str y), GGrammar g)
+public GGrammar mutate(RenameAllN(GNonTerm x, GNonTerm y), GGrammar g)
 {
 	nc1 = inferConvention(x);
 	nc2 = inferConvention(y);
@@ -522,7 +522,7 @@ public GGrammar mutate(RenameAllN(str x, str y), GGrammar g)
 
 // SLEIR:RenameAllT
 @doc{renameT ⊢ RenameAllT, Type IV, page 9}
-public GGrammar mutate(RenameAllT(str x, str y), GGrammar g)
+public GGrammar mutate(RenameAllT(GTerm x, GTerm y), GGrammar g)
 {
 	nc1 = inferConvention(x);
 	nc2 = inferConvention(y);
@@ -622,7 +622,7 @@ public GGrammar mutate(UnfoldMax(), GGrammar g)
 
 // SLEIR:UniteBySuffix
 @doc{unite ⊢ UniteBySuffix, Type IV, page 11}
-public GGrammar mutate(UniteBySuffix(str pre, str post), GGrammar g)
+public GGrammar mutate(UniteBySuffix(GNonTerm pre, GNonTerm post), GGrammar g)
 {
 	if (pre+post in g.N) return g; //TODO: should be an error "united nonterminal name is not fresh"
 	united = [n | n <- g.N, startsWith(n,pre), endsWith(n,post)];

@@ -6,6 +6,11 @@ alias GProdSet  =  set[GProd];
 alias GExprList = list[GExpr];
 alias GExprSet  =  set[GExpr];
 
+alias GNonTerm = str;
+alias GTerm = str;
+alias GLabel = str;
+alias GMark = str;
+
 //deprecated
 alias GProds = map[str,GProdList];
 
