@@ -1,7 +1,6 @@
 importG
-	d ::= [m3]::(<m4>:d);
+	d ::= [m3]::<m4>:d;
 	 d ::= "leaf";
-	
 .
 AbridgeAll.
 diff

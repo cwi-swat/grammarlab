@@ -1,11 +1,9 @@
 importG
-	a ::= c (b*);
-	
+	a ::= c b*;
 .
 yaccify
 	a ::= (a b)
 	| c;
-	
 .
 diff
 	a ::= (a b) | c ;

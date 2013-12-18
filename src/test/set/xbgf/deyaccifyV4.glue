@@ -1,11 +1,10 @@
 importG
 	a ::= a b;
 	 a ::= c;
-	
 .
 deyaccify
 	a
 .
 diff
-	a ::= c (b*) ;
+	a ::= c b* ;
 .

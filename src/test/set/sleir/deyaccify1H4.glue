@@ -1,9 +1,8 @@
 importG
 	a ::= (a b)
 	| c;
-	
 .
 DeyaccifyAll.
 diff
-	a ::= c (b*) ;
+	a ::= c b* ;
 .

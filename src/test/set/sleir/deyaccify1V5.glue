@@ -1,7 +1,6 @@
 importG
 	k ::= m k;
 	 k ::= m;
-	
 .
 DeyaccifyAll.
 diff

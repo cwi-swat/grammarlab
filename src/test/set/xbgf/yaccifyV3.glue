@@ -1,11 +1,9 @@
 importG
-	f ::= (g*) h;
-	
+	f ::= g* h;
 .
 yaccify
 	f ::= g f;
 	 f ::= h;
-	
 .
 diff
 	f ::= g f ;

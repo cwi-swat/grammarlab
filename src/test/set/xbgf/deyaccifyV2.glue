@@ -1,7 +1,6 @@
 importG
 	d ::= d e;
 	 d ::= e;
-	
 .
 deyaccify
 	d

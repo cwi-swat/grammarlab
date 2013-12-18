@@ -1,7 +1,6 @@
 importG
 	q ::= (q r)
 	| ε;
-	
 .
 DeyaccifyAll.
 diff

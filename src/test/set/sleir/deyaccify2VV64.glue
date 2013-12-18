@@ -3,10 +3,9 @@ importG
 	 n ::= ε;
 	 a ::= a b;
 	 a ::= c;
-	
 .
 DeyaccifyAll.
 diff
 	n ::= p* ;
-a ::= c (b*) ;
+a ::= c b* ;
 .

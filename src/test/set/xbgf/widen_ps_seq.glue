@@ -1,0 +1,8 @@
+// |home:///projects/slps/topics/transformation/xbgf/tests/widen_sub.xbgf|
+importG
+	foo ::= (bar wez)+ qux ;
+.
+widen (bar wez)+ to (bar wez)* globally.
+diff
+	foo ::= (bar wez)* qux ;
+.

@@ -57,9 +57,11 @@ void main()
 	for(
 		str line <- readFileLines(|project://grammarlab/src/grammarlab/transform/XBGF.rsc|),
 		//contains(" //#",line),
-		/bool narrowing\( <from:[^ ]+>, <to:[^ ]+> \) = true; \/\/#<left:[^-]+>-<right:.*>$/ := line
+		/bool narrowing\( <from:[^ ]+>, <to:[^ ]+> \) = eqE\(e1,e2\); \/\/#<left:[^-]+>-<right:.*>$/ := line
 	)
 	{
+		from = replaceFirst(from,"1","");
+		to = replaceFirst(from,"2","");
 		if (from != "e")
 			{buf += function("narrow","Narrow<left>2<right>",from,to);cx+=1;}
 		if (to != "e")

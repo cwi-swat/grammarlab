@@ -2,7 +2,6 @@ importG
 	a ::= a;
 	 a ::= a;
 	 a ::= "leaf";
-	
 .
 AbridgeAll.
 diff

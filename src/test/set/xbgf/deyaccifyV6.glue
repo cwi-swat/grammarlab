@@ -1,7 +1,6 @@
 importG
 	n ::= p n;
 	 n ::= ε;
-	
 .
 deyaccify
 	n

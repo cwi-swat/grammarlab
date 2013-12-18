@@ -179,6 +179,9 @@ importG
 		| GlueKVerticalAll  "."
 		| GlueKWidenOpt2Star  "."
 		| GlueKWidenPlus2Star  "."
+		| GlueKWidenX2Opt  "."
+		| GlueKWidenX2Plus  "."
+		| GlueKWidenX2Star  "."
 		| GlueKYaccifyAllL  "."
 		| GlueKYaccifyAllR  "."
 	;

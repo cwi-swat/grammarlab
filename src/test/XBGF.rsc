@@ -535,18 +535,36 @@ void show_vertical_l() {run_case("vertical_l.glue",true);}
 // vertical_s.glue
 test bool test_vertical_s() = run_case("vertical_s.glue",false);
 void show_vertical_s() {run_case("vertical_s.glue",true);}
-// widen_global.glue
-test bool test_widen_global() = run_case("widen_global.glue",false);
-void show_widen_global() {run_case("widen_global.glue",true);}
-// widen_l.glue
-test bool test_widen_l() = run_case("widen_l.glue",false);
-void show_widen_l() {run_case("widen_l.glue",true);}
-// widen_nt.glue
-test bool test_widen_nt() = run_case("widen_nt.glue",false);
-void show_widen_nt() {run_case("widen_nt.glue",true);}
-// widen_sub.glue
-test bool test_widen_sub() = run_case("widen_sub.glue",false);
-void show_widen_sub() {run_case("widen_sub.glue",true);}
+// widen_1p.glue
+test bool test_widen_1p() = run_case("widen_1p.glue",false);
+void show_widen_1p() {run_case("widen_1p.glue",true);}
+// widen_1p_nt.glue
+test bool test_widen_1p_nt() = run_case("widen_1p_nt.glue",false);
+void show_widen_1p_nt() {run_case("widen_1p_nt.glue",true);}
+// widen_1s.glue
+test bool test_widen_1s() = run_case("widen_1s.glue",false);
+void show_widen_1s() {run_case("widen_1s.glue",true);}
+// widen_1s_seq.glue
+test bool test_widen_1s_seq() = run_case("widen_1s_seq.glue",false);
+void show_widen_1s_seq() {run_case("widen_1s_seq.glue",true);}
+// widen_os.glue
+test bool test_widen_os() = run_case("widen_os.glue",false);
+void show_widen_os() {run_case("widen_os.glue",true);}
+// widen_ps.glue
+test bool test_widen_ps() = run_case("widen_ps.glue",false);
+void show_widen_ps() {run_case("widen_ps.glue",true);}
+// widen_ps_l.glue
+test bool test_widen_ps_l() = run_case("widen_ps_l.glue",false);
+void show_widen_ps_l() {run_case("widen_ps_l.glue",true);}
+// widen_ps_m1.glue
+test bool test_widen_ps_m1() = run_case("widen_ps_m1.glue",false);
+void show_widen_ps_m1() {run_case("widen_ps_m1.glue",true);}
+// widen_ps_m2.glue
+test bool test_widen_ps_m2() = run_case("widen_ps_m2.glue",false);
+void show_widen_ps_m2() {run_case("widen_ps_m2.glue",true);}
+// widen_ps_seq.glue
+test bool test_widen_ps_seq() = run_case("widen_ps_seq.glue",false);
+void show_widen_ps_seq() {run_case("widen_ps_seq.glue",true);}
 // yaccifyH1.glue
 test bool test_yaccifyH1() = run_case("yaccifyH1.glue",false);
 void show_yaccifyH1() {run_case("yaccifyH1.glue",true);}

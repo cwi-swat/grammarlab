@@ -659,11 +659,11 @@ public XResult transform(massage(GExpr e1, GExpr e2, XScope w), GGrammar g)
 // Needed for: narrow, widen
 // narrow-equivalence (the reverse, widen-equivalence, is hereby also implicitly defined)
 bool narrowing(anything(),_) = true;
-bool narrowing( star(e), plus(e) ) = true; //#Star-Plus
-bool narrowing( star(e), optional(e) ) = true; //#Star-Opt
-bool narrowing( star(e), e ) = true; //#Star-X
-bool narrowing( plus(e), e ) = true; //#Plus-X
-bool narrowing( optional(e), e ) = true; //#Opt-X
+bool narrowing( star(e1), plus(e2) ) = eqE(e1,e2); //#Star-Plus
+bool narrowing( star(e1), optional(e2) ) = eqE(e1,e2); //#Star-Opt
+bool narrowing( star(e1), e2 ) = eqE(e1,e2); //#Star-X
+bool narrowing( plus(e1), e2 ) = eqE(e1,e2); //#Plus-X
+bool narrowing( optional(e1), e2 ) = eqE(e1,e2); //#Opt-X
 default bool narrowing(_,_) = false;
 
 // XBGF:narrow
@@ -840,7 +840,7 @@ public XResult transform(renameT(str x, str y), GGrammar g)
 		return <freshName("Source name",x),g>;
 	if (y in ts)
 		return <notFreshName("Target name",y),g>;
-	return performRenameT(x,y,g);
+	return <ok(),performRenameT(x,y,g)>;
 }
 
 // Low level operation, needed for: replace, performRenameN

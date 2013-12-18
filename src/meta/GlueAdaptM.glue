@@ -1,5 +1,11 @@
 include |project://grammarlab/src/meta/GlueLanguageM.glue| .
 vertical in GlueCommand .
 inject
-  GlueCommand ::= GlueKRenameAllN <>:GlueKwFrom <n1>:GlueNonterminal <>:GlueKwTo <n2>:GlueNonterminal "."	; .
+	GlueCommand ::= GlueKRenameAllN <>:GlueKwFrom <x>:GlueNonterminal <>:GlueKwTo <y>:GlueNonterminal "."	; .
+inject
+	GlueCommand ::= GlueKRenameAllT <>:GlueKwFrom <x>:GlueTerminal <>:GlueKwTo <y>:GlueTerminal "."	; .
+concretize
+	GlueCommand ::= GlueKDropSuffixN <pre>:GlueNonterminal <>:"..." <post>:GlueNonterminal "." ; .
+widen <pre>:GlueNonterminal to (<pre>:GlueNonterminal)? in GlueCommand.
+widen <pre>:GlueNonterminal to (<post>:GlueNonterminal)? in GlueCommand. 
 horizontal in GlueCommand .

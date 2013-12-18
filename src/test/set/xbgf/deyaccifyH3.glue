@@ -1,11 +1,10 @@
 importG
 	f ::= (g f)
 	| h;
-	
 .
 deyaccify
 	f
 .
 diff
-	f ::= (g*) h ;
+	f ::= g* h ;
 .

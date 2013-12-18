@@ -2,7 +2,6 @@ importG
 	c ::= [m2]::c;
 	 b ::= <m1>:b;
 	 c ::= "leaf";
-	
 .
 AbridgeAll.
 diff

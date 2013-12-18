@@ -1,7 +1,6 @@
 importG
 	k ::= (m k)
 	| m;
-	
 .
 deyaccify
 	k

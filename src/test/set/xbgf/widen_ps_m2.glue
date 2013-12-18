@@ -1,0 +1,7 @@
+importG
+	foo ::= bar ([a]::wez)+ qux ;
+.
+widen ([a]::wez)+ to ([a]::wez)* globally.
+diff
+	foo ::= bar ([a]::wez)* qux ;
+.

@@ -3,10 +3,9 @@ importG
 	| m;
 	 a ::= (a b)
 	| c;
-	
 .
 DeyaccifyAll.
 diff
 	k ::= m+ ;
-a ::= c (b*) ;
+a ::= c b* ;
 .

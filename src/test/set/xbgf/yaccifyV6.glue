@@ -1,11 +1,9 @@
 importG
 	n ::= p*;
-	
 .
 yaccify
 	n ::= p n;
 	 n ::= ε;
-	
 .
 diff
 	n ::= p n ;

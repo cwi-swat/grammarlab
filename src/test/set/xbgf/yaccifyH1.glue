@@ -1,11 +1,9 @@
 importG
 	q ::= r*;
-	
 .
 yaccify
 	q ::= (q r)
 	| ε;
-	
 .
 diff
 	q ::= (q r) | ε ;

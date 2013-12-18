@@ -3,7 +3,6 @@ importG
 	 d ::= e;
 	 n ::= (p n)
 	| ε;
-	
 .
 DeyaccifyAll.
 diff
