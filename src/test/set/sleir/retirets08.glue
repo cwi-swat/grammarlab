@@ -1,0 +1,10 @@
+// retiring two modified terminals in sentences
+importG
+	foo  ::= a "B"* c;
+	bar  ::= d e? "F"+;
+.
+RetireTs.
+diff
+	foo  ::= a c;
+	bar  ::= d e?;
+.

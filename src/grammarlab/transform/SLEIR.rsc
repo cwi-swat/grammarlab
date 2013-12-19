@@ -35,7 +35,7 @@ default GExpr labelsLifted(GExpr e) = e;
 public GGrammar mutate(AbridgeAll(), GGrammar g)
 {
 	GProdList ps = [];
-	for (GProd p <- p.P,
+	for (GProd p <- g.P,
 		production(str n, nonterminal(n)) !:= p &&
 		production(str n, mark(_,nonterminal(n))) !:= p &&
 		production(str n, label(_,nonterminal(n))) !:= p &&

@@ -1,0 +1,8 @@
+// retiring one labelled terminal in the middle of a sentence
+importG
+	foo  ::= a [b]::"B" c;
+.
+RetireTs.
+diff
+	foo  ::= a [b]::ε c;
+.

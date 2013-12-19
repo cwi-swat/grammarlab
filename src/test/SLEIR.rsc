@@ -510,3 +510,30 @@ void show_equate3() {run_case("equate3.glue",true);}
 // equate4.glue
 test bool test_equate4() = run_case("equate4.glue",false);
 void show_equate4() {run_case("equate4.glue",true);}
+// retirets01.glue
+test bool test_retirets01() = run_case("retirets01.glue",false);
+void show_retirets01() {run_case("retirets01.glue",true);}
+// retirets02.glue
+test bool test_retirets02() = run_case("retirets02.glue",false);
+void show_retirets02() {run_case("retirets02.glue",true);}
+// retirets03.glue
+test bool test_retirets03() = run_case("retirets03.glue",false);
+void show_retirets03() {run_case("retirets03.glue",true);}
+// retirets04.glue
+test bool test_retirets04() = run_case("retirets04.glue",false);
+void show_retirets04() {run_case("retirets04.glue",true);}
+// retirets05.glue
+test bool test_retirets05() = run_case("retirets05.glue",false);
+void show_retirets05() {run_case("retirets05.glue",true);}
+// retirets06.glue
+test bool test_retirets06() = run_case("retirets06.glue",false);
+void show_retirets06() {run_case("retirets06.glue",true);}
+// retirets07.glue
+test bool test_retirets07() = run_case("retirets07.glue",false);
+void show_retirets07() {run_case("retirets07.glue",true);}
+// retirets08.glue
+test bool test_retirets08() = run_case("retirets08.glue",false);
+void show_retirets08() {run_case("retirets08.glue",true);}
+// retirets09.glue
+test bool test_retirets09() = run_case("retirets09.glue",false);
+void show_retirets09() {run_case("retirets09.glue",true);}

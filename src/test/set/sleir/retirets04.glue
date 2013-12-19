@@ -1,0 +1,8 @@
+// retiring one plussed terminal in the middle of a sentence
+importG
+	foo  ::= a "B"+ c;
+.
+RetireTs.
+diff
+	foo  ::= a c;
+.
