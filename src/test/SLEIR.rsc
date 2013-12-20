@@ -21,495 +21,823 @@ bool run_case(str casen, bool debug)
 	if (!res && debug) println("Remaining grammar: <ppx(uit,GlueEBNF)>");
 	return res;
 }
-// abridge1_1.glue
-test bool test_abridge1_1() = run_case("abridge1_1.glue",false);
-void show_abridge1_1() {run_case("abridge1_1.glue",true);}
-// abridge1_2.glue
-test bool test_abridge1_2() = run_case("abridge1_2.glue",false);
-void show_abridge1_2() {run_case("abridge1_2.glue",true);}
-// abridge1_3.glue
-test bool test_abridge1_3() = run_case("abridge1_3.glue",false);
-void show_abridge1_3() {run_case("abridge1_3.glue",true);}
-// abridge1_4.glue
-test bool test_abridge1_4() = run_case("abridge1_4.glue",false);
-void show_abridge1_4() {run_case("abridge1_4.glue",true);}
-// abridge2_11.glue
-test bool test_abridge2_11() = run_case("abridge2_11.glue",false);
-void show_abridge2_11() {run_case("abridge2_11.glue",true);}
-// abridge2_12.glue
-test bool test_abridge2_12() = run_case("abridge2_12.glue",false);
-void show_abridge2_12() {run_case("abridge2_12.glue",true);}
-// abridge2_13.glue
-test bool test_abridge2_13() = run_case("abridge2_13.glue",false);
-void show_abridge2_13() {run_case("abridge2_13.glue",true);}
-// abridge2_14.glue
-test bool test_abridge2_14() = run_case("abridge2_14.glue",false);
-void show_abridge2_14() {run_case("abridge2_14.glue",true);}
-// abridge2_21.glue
-test bool test_abridge2_21() = run_case("abridge2_21.glue",false);
-void show_abridge2_21() {run_case("abridge2_21.glue",true);}
-// abridge2_22.glue
-test bool test_abridge2_22() = run_case("abridge2_22.glue",false);
-void show_abridge2_22() {run_case("abridge2_22.glue",true);}
-// abridge2_23.glue
-test bool test_abridge2_23() = run_case("abridge2_23.glue",false);
-void show_abridge2_23() {run_case("abridge2_23.glue",true);}
-// abridge2_24.glue
-test bool test_abridge2_24() = run_case("abridge2_24.glue",false);
-void show_abridge2_24() {run_case("abridge2_24.glue",true);}
-// abridge2_31.glue
-test bool test_abridge2_31() = run_case("abridge2_31.glue",false);
-void show_abridge2_31() {run_case("abridge2_31.glue",true);}
-// abridge2_32.glue
-test bool test_abridge2_32() = run_case("abridge2_32.glue",false);
-void show_abridge2_32() {run_case("abridge2_32.glue",true);}
-// abridge2_33.glue
-test bool test_abridge2_33() = run_case("abridge2_33.glue",false);
-void show_abridge2_33() {run_case("abridge2_33.glue",true);}
-// abridge2_34.glue
-test bool test_abridge2_34() = run_case("abridge2_34.glue",false);
-void show_abridge2_34() {run_case("abridge2_34.glue",true);}
-// abridge2_41.glue
-test bool test_abridge2_41() = run_case("abridge2_41.glue",false);
-void show_abridge2_41() {run_case("abridge2_41.glue",true);}
-// abridge2_42.glue
-test bool test_abridge2_42() = run_case("abridge2_42.glue",false);
-void show_abridge2_42() {run_case("abridge2_42.glue",true);}
-// abridge2_43.glue
-test bool test_abridge2_43() = run_case("abridge2_43.glue",false);
-void show_abridge2_43() {run_case("abridge2_43.glue",true);}
-// abridge2_44.glue
-test bool test_abridge2_44() = run_case("abridge2_44.glue",false);
-void show_abridge2_44() {run_case("abridge2_44.glue",true);}
-// deyaccify1H1.glue
-test bool test_deyaccify1H1() = run_case("deyaccify1H1.glue",false);
-void show_deyaccify1H1() {run_case("deyaccify1H1.glue",true);}
-// deyaccify1H2.glue
-test bool test_deyaccify1H2() = run_case("deyaccify1H2.glue",false);
-void show_deyaccify1H2() {run_case("deyaccify1H2.glue",true);}
-// deyaccify1H3.glue
-test bool test_deyaccify1H3() = run_case("deyaccify1H3.glue",false);
-void show_deyaccify1H3() {run_case("deyaccify1H3.glue",true);}
-// deyaccify1H4.glue
-test bool test_deyaccify1H4() = run_case("deyaccify1H4.glue",false);
-void show_deyaccify1H4() {run_case("deyaccify1H4.glue",true);}
-// deyaccify1H5.glue
-test bool test_deyaccify1H5() = run_case("deyaccify1H5.glue",false);
-void show_deyaccify1H5() {run_case("deyaccify1H5.glue",true);}
-// deyaccify1H6.glue
-test bool test_deyaccify1H6() = run_case("deyaccify1H6.glue",false);
-void show_deyaccify1H6() {run_case("deyaccify1H6.glue",true);}
-// deyaccify1V1.glue
-test bool test_deyaccify1V1() = run_case("deyaccify1V1.glue",false);
-void show_deyaccify1V1() {run_case("deyaccify1V1.glue",true);}
-// deyaccify1V2.glue
-test bool test_deyaccify1V2() = run_case("deyaccify1V2.glue",false);
-void show_deyaccify1V2() {run_case("deyaccify1V2.glue",true);}
-// deyaccify1V3.glue
-test bool test_deyaccify1V3() = run_case("deyaccify1V3.glue",false);
-void show_deyaccify1V3() {run_case("deyaccify1V3.glue",true);}
-// deyaccify1V4.glue
-test bool test_deyaccify1V4() = run_case("deyaccify1V4.glue",false);
-void show_deyaccify1V4() {run_case("deyaccify1V4.glue",true);}
-// deyaccify1V5.glue
-test bool test_deyaccify1V5() = run_case("deyaccify1V5.glue",false);
-void show_deyaccify1V5() {run_case("deyaccify1V5.glue",true);}
-// deyaccify1V6.glue
-test bool test_deyaccify1V6() = run_case("deyaccify1V6.glue",false);
-void show_deyaccify1V6() {run_case("deyaccify1V6.glue",true);}
-// deyaccify2HH11.glue
-test bool test_deyaccify2HH11() = run_case("deyaccify2HH11.glue",false);
-void show_deyaccify2HH11() {run_case("deyaccify2HH11.glue",true);}
-// deyaccify2HH12.glue
-test bool test_deyaccify2HH12() = run_case("deyaccify2HH12.glue",false);
-void show_deyaccify2HH12() {run_case("deyaccify2HH12.glue",true);}
-// deyaccify2HH13.glue
-test bool test_deyaccify2HH13() = run_case("deyaccify2HH13.glue",false);
-void show_deyaccify2HH13() {run_case("deyaccify2HH13.glue",true);}
-// deyaccify2HH14.glue
-test bool test_deyaccify2HH14() = run_case("deyaccify2HH14.glue",false);
-void show_deyaccify2HH14() {run_case("deyaccify2HH14.glue",true);}
-// deyaccify2HH15.glue
-test bool test_deyaccify2HH15() = run_case("deyaccify2HH15.glue",false);
-void show_deyaccify2HH15() {run_case("deyaccify2HH15.glue",true);}
-// deyaccify2HH21.glue
-test bool test_deyaccify2HH21() = run_case("deyaccify2HH21.glue",false);
-void show_deyaccify2HH21() {run_case("deyaccify2HH21.glue",true);}
-// deyaccify2HH22.glue
-test bool test_deyaccify2HH22() = run_case("deyaccify2HH22.glue",false);
-void show_deyaccify2HH22() {run_case("deyaccify2HH22.glue",true);}
-// deyaccify2HH23.glue
-test bool test_deyaccify2HH23() = run_case("deyaccify2HH23.glue",false);
-void show_deyaccify2HH23() {run_case("deyaccify2HH23.glue",true);}
-// deyaccify2HH24.glue
-test bool test_deyaccify2HH24() = run_case("deyaccify2HH24.glue",false);
-void show_deyaccify2HH24() {run_case("deyaccify2HH24.glue",true);}
-// deyaccify2HH25.glue
-test bool test_deyaccify2HH25() = run_case("deyaccify2HH25.glue",false);
-void show_deyaccify2HH25() {run_case("deyaccify2HH25.glue",true);}
-// deyaccify2HH31.glue
-test bool test_deyaccify2HH31() = run_case("deyaccify2HH31.glue",false);
-void show_deyaccify2HH31() {run_case("deyaccify2HH31.glue",true);}
-// deyaccify2HH32.glue
-test bool test_deyaccify2HH32() = run_case("deyaccify2HH32.glue",false);
-void show_deyaccify2HH32() {run_case("deyaccify2HH32.glue",true);}
-// deyaccify2HH33.glue
-test bool test_deyaccify2HH33() = run_case("deyaccify2HH33.glue",false);
-void show_deyaccify2HH33() {run_case("deyaccify2HH33.glue",true);}
-// deyaccify2HH34.glue
-test bool test_deyaccify2HH34() = run_case("deyaccify2HH34.glue",false);
-void show_deyaccify2HH34() {run_case("deyaccify2HH34.glue",true);}
-// deyaccify2HH35.glue
-test bool test_deyaccify2HH35() = run_case("deyaccify2HH35.glue",false);
-void show_deyaccify2HH35() {run_case("deyaccify2HH35.glue",true);}
-// deyaccify2HH41.glue
-test bool test_deyaccify2HH41() = run_case("deyaccify2HH41.glue",false);
-void show_deyaccify2HH41() {run_case("deyaccify2HH41.glue",true);}
-// deyaccify2HH42.glue
-test bool test_deyaccify2HH42() = run_case("deyaccify2HH42.glue",false);
-void show_deyaccify2HH42() {run_case("deyaccify2HH42.glue",true);}
-// deyaccify2HH43.glue
-test bool test_deyaccify2HH43() = run_case("deyaccify2HH43.glue",false);
-void show_deyaccify2HH43() {run_case("deyaccify2HH43.glue",true);}
-// deyaccify2HH44.glue
-test bool test_deyaccify2HH44() = run_case("deyaccify2HH44.glue",false);
-void show_deyaccify2HH44() {run_case("deyaccify2HH44.glue",true);}
-// deyaccify2HH45.glue
-test bool test_deyaccify2HH45() = run_case("deyaccify2HH45.glue",false);
-void show_deyaccify2HH45() {run_case("deyaccify2HH45.glue",true);}
-// deyaccify2HH51.glue
-test bool test_deyaccify2HH51() = run_case("deyaccify2HH51.glue",false);
-void show_deyaccify2HH51() {run_case("deyaccify2HH51.glue",true);}
-// deyaccify2HH52.glue
-test bool test_deyaccify2HH52() = run_case("deyaccify2HH52.glue",false);
-void show_deyaccify2HH52() {run_case("deyaccify2HH52.glue",true);}
-// deyaccify2HH53.glue
-test bool test_deyaccify2HH53() = run_case("deyaccify2HH53.glue",false);
-void show_deyaccify2HH53() {run_case("deyaccify2HH53.glue",true);}
-// deyaccify2HH54.glue
-test bool test_deyaccify2HH54() = run_case("deyaccify2HH54.glue",false);
-void show_deyaccify2HH54() {run_case("deyaccify2HH54.glue",true);}
-// deyaccify2HH55.glue
-test bool test_deyaccify2HH55() = run_case("deyaccify2HH55.glue",false);
-void show_deyaccify2HH55() {run_case("deyaccify2HH55.glue",true);}
-// deyaccify2HH61.glue
-test bool test_deyaccify2HH61() = run_case("deyaccify2HH61.glue",false);
-void show_deyaccify2HH61() {run_case("deyaccify2HH61.glue",true);}
-// deyaccify2HH62.glue
-test bool test_deyaccify2HH62() = run_case("deyaccify2HH62.glue",false);
-void show_deyaccify2HH62() {run_case("deyaccify2HH62.glue",true);}
-// deyaccify2HH63.glue
-test bool test_deyaccify2HH63() = run_case("deyaccify2HH63.glue",false);
-void show_deyaccify2HH63() {run_case("deyaccify2HH63.glue",true);}
-// deyaccify2HH64.glue
-test bool test_deyaccify2HH64() = run_case("deyaccify2HH64.glue",false);
-void show_deyaccify2HH64() {run_case("deyaccify2HH64.glue",true);}
-// deyaccify2HH65.glue
-test bool test_deyaccify2HH65() = run_case("deyaccify2HH65.glue",false);
-void show_deyaccify2HH65() {run_case("deyaccify2HH65.glue",true);}
-// deyaccify2HV11.glue
-test bool test_deyaccify2HV11() = run_case("deyaccify2HV11.glue",false);
-void show_deyaccify2HV11() {run_case("deyaccify2HV11.glue",true);}
-// deyaccify2HV12.glue
-test bool test_deyaccify2HV12() = run_case("deyaccify2HV12.glue",false);
-void show_deyaccify2HV12() {run_case("deyaccify2HV12.glue",true);}
-// deyaccify2HV13.glue
-test bool test_deyaccify2HV13() = run_case("deyaccify2HV13.glue",false);
-void show_deyaccify2HV13() {run_case("deyaccify2HV13.glue",true);}
-// deyaccify2HV14.glue
-test bool test_deyaccify2HV14() = run_case("deyaccify2HV14.glue",false);
-void show_deyaccify2HV14() {run_case("deyaccify2HV14.glue",true);}
-// deyaccify2HV15.glue
-test bool test_deyaccify2HV15() = run_case("deyaccify2HV15.glue",false);
-void show_deyaccify2HV15() {run_case("deyaccify2HV15.glue",true);}
-// deyaccify2HV21.glue
-test bool test_deyaccify2HV21() = run_case("deyaccify2HV21.glue",false);
-void show_deyaccify2HV21() {run_case("deyaccify2HV21.glue",true);}
-// deyaccify2HV22.glue
-test bool test_deyaccify2HV22() = run_case("deyaccify2HV22.glue",false);
-void show_deyaccify2HV22() {run_case("deyaccify2HV22.glue",true);}
-// deyaccify2HV23.glue
-test bool test_deyaccify2HV23() = run_case("deyaccify2HV23.glue",false);
-void show_deyaccify2HV23() {run_case("deyaccify2HV23.glue",true);}
-// deyaccify2HV24.glue
-test bool test_deyaccify2HV24() = run_case("deyaccify2HV24.glue",false);
-void show_deyaccify2HV24() {run_case("deyaccify2HV24.glue",true);}
-// deyaccify2HV25.glue
-test bool test_deyaccify2HV25() = run_case("deyaccify2HV25.glue",false);
-void show_deyaccify2HV25() {run_case("deyaccify2HV25.glue",true);}
-// deyaccify2HV31.glue
-test bool test_deyaccify2HV31() = run_case("deyaccify2HV31.glue",false);
-void show_deyaccify2HV31() {run_case("deyaccify2HV31.glue",true);}
-// deyaccify2HV32.glue
-test bool test_deyaccify2HV32() = run_case("deyaccify2HV32.glue",false);
-void show_deyaccify2HV32() {run_case("deyaccify2HV32.glue",true);}
-// deyaccify2HV33.glue
-test bool test_deyaccify2HV33() = run_case("deyaccify2HV33.glue",false);
-void show_deyaccify2HV33() {run_case("deyaccify2HV33.glue",true);}
-// deyaccify2HV34.glue
-test bool test_deyaccify2HV34() = run_case("deyaccify2HV34.glue",false);
-void show_deyaccify2HV34() {run_case("deyaccify2HV34.glue",true);}
-// deyaccify2HV35.glue
-test bool test_deyaccify2HV35() = run_case("deyaccify2HV35.glue",false);
-void show_deyaccify2HV35() {run_case("deyaccify2HV35.glue",true);}
-// deyaccify2HV41.glue
-test bool test_deyaccify2HV41() = run_case("deyaccify2HV41.glue",false);
-void show_deyaccify2HV41() {run_case("deyaccify2HV41.glue",true);}
-// deyaccify2HV42.glue
-test bool test_deyaccify2HV42() = run_case("deyaccify2HV42.glue",false);
-void show_deyaccify2HV42() {run_case("deyaccify2HV42.glue",true);}
-// deyaccify2HV43.glue
-test bool test_deyaccify2HV43() = run_case("deyaccify2HV43.glue",false);
-void show_deyaccify2HV43() {run_case("deyaccify2HV43.glue",true);}
-// deyaccify2HV44.glue
-test bool test_deyaccify2HV44() = run_case("deyaccify2HV44.glue",false);
-void show_deyaccify2HV44() {run_case("deyaccify2HV44.glue",true);}
-// deyaccify2HV45.glue
-test bool test_deyaccify2HV45() = run_case("deyaccify2HV45.glue",false);
-void show_deyaccify2HV45() {run_case("deyaccify2HV45.glue",true);}
-// deyaccify2HV51.glue
-test bool test_deyaccify2HV51() = run_case("deyaccify2HV51.glue",false);
-void show_deyaccify2HV51() {run_case("deyaccify2HV51.glue",true);}
-// deyaccify2HV52.glue
-test bool test_deyaccify2HV52() = run_case("deyaccify2HV52.glue",false);
-void show_deyaccify2HV52() {run_case("deyaccify2HV52.glue",true);}
-// deyaccify2HV53.glue
-test bool test_deyaccify2HV53() = run_case("deyaccify2HV53.glue",false);
-void show_deyaccify2HV53() {run_case("deyaccify2HV53.glue",true);}
-// deyaccify2HV54.glue
-test bool test_deyaccify2HV54() = run_case("deyaccify2HV54.glue",false);
-void show_deyaccify2HV54() {run_case("deyaccify2HV54.glue",true);}
-// deyaccify2HV55.glue
-test bool test_deyaccify2HV55() = run_case("deyaccify2HV55.glue",false);
-void show_deyaccify2HV55() {run_case("deyaccify2HV55.glue",true);}
-// deyaccify2HV61.glue
-test bool test_deyaccify2HV61() = run_case("deyaccify2HV61.glue",false);
-void show_deyaccify2HV61() {run_case("deyaccify2HV61.glue",true);}
-// deyaccify2HV62.glue
-test bool test_deyaccify2HV62() = run_case("deyaccify2HV62.glue",false);
-void show_deyaccify2HV62() {run_case("deyaccify2HV62.glue",true);}
-// deyaccify2HV63.glue
-test bool test_deyaccify2HV63() = run_case("deyaccify2HV63.glue",false);
-void show_deyaccify2HV63() {run_case("deyaccify2HV63.glue",true);}
-// deyaccify2HV64.glue
-test bool test_deyaccify2HV64() = run_case("deyaccify2HV64.glue",false);
-void show_deyaccify2HV64() {run_case("deyaccify2HV64.glue",true);}
-// deyaccify2HV65.glue
-test bool test_deyaccify2HV65() = run_case("deyaccify2HV65.glue",false);
-void show_deyaccify2HV65() {run_case("deyaccify2HV65.glue",true);}
-// deyaccify2VH11.glue
-test bool test_deyaccify2VH11() = run_case("deyaccify2VH11.glue",false);
-void show_deyaccify2VH11() {run_case("deyaccify2VH11.glue",true);}
-// deyaccify2VH12.glue
-test bool test_deyaccify2VH12() = run_case("deyaccify2VH12.glue",false);
-void show_deyaccify2VH12() {run_case("deyaccify2VH12.glue",true);}
-// deyaccify2VH13.glue
-test bool test_deyaccify2VH13() = run_case("deyaccify2VH13.glue",false);
-void show_deyaccify2VH13() {run_case("deyaccify2VH13.glue",true);}
-// deyaccify2VH14.glue
-test bool test_deyaccify2VH14() = run_case("deyaccify2VH14.glue",false);
-void show_deyaccify2VH14() {run_case("deyaccify2VH14.glue",true);}
-// deyaccify2VH15.glue
-test bool test_deyaccify2VH15() = run_case("deyaccify2VH15.glue",false);
-void show_deyaccify2VH15() {run_case("deyaccify2VH15.glue",true);}
-// deyaccify2VH21.glue
-test bool test_deyaccify2VH21() = run_case("deyaccify2VH21.glue",false);
-void show_deyaccify2VH21() {run_case("deyaccify2VH21.glue",true);}
-// deyaccify2VH22.glue
-test bool test_deyaccify2VH22() = run_case("deyaccify2VH22.glue",false);
-void show_deyaccify2VH22() {run_case("deyaccify2VH22.glue",true);}
-// deyaccify2VH23.glue
-test bool test_deyaccify2VH23() = run_case("deyaccify2VH23.glue",false);
-void show_deyaccify2VH23() {run_case("deyaccify2VH23.glue",true);}
-// deyaccify2VH24.glue
-test bool test_deyaccify2VH24() = run_case("deyaccify2VH24.glue",false);
-void show_deyaccify2VH24() {run_case("deyaccify2VH24.glue",true);}
-// deyaccify2VH25.glue
-test bool test_deyaccify2VH25() = run_case("deyaccify2VH25.glue",false);
-void show_deyaccify2VH25() {run_case("deyaccify2VH25.glue",true);}
-// deyaccify2VH31.glue
-test bool test_deyaccify2VH31() = run_case("deyaccify2VH31.glue",false);
-void show_deyaccify2VH31() {run_case("deyaccify2VH31.glue",true);}
-// deyaccify2VH32.glue
-test bool test_deyaccify2VH32() = run_case("deyaccify2VH32.glue",false);
-void show_deyaccify2VH32() {run_case("deyaccify2VH32.glue",true);}
-// deyaccify2VH33.glue
-test bool test_deyaccify2VH33() = run_case("deyaccify2VH33.glue",false);
-void show_deyaccify2VH33() {run_case("deyaccify2VH33.glue",true);}
-// deyaccify2VH34.glue
-test bool test_deyaccify2VH34() = run_case("deyaccify2VH34.glue",false);
-void show_deyaccify2VH34() {run_case("deyaccify2VH34.glue",true);}
-// deyaccify2VH35.glue
-test bool test_deyaccify2VH35() = run_case("deyaccify2VH35.glue",false);
-void show_deyaccify2VH35() {run_case("deyaccify2VH35.glue",true);}
-// deyaccify2VH41.glue
-test bool test_deyaccify2VH41() = run_case("deyaccify2VH41.glue",false);
-void show_deyaccify2VH41() {run_case("deyaccify2VH41.glue",true);}
-// deyaccify2VH42.glue
-test bool test_deyaccify2VH42() = run_case("deyaccify2VH42.glue",false);
-void show_deyaccify2VH42() {run_case("deyaccify2VH42.glue",true);}
-// deyaccify2VH43.glue
-test bool test_deyaccify2VH43() = run_case("deyaccify2VH43.glue",false);
-void show_deyaccify2VH43() {run_case("deyaccify2VH43.glue",true);}
-// deyaccify2VH44.glue
-test bool test_deyaccify2VH44() = run_case("deyaccify2VH44.glue",false);
-void show_deyaccify2VH44() {run_case("deyaccify2VH44.glue",true);}
-// deyaccify2VH45.glue
-test bool test_deyaccify2VH45() = run_case("deyaccify2VH45.glue",false);
-void show_deyaccify2VH45() {run_case("deyaccify2VH45.glue",true);}
-// deyaccify2VH51.glue
-test bool test_deyaccify2VH51() = run_case("deyaccify2VH51.glue",false);
-void show_deyaccify2VH51() {run_case("deyaccify2VH51.glue",true);}
-// deyaccify2VH52.glue
-test bool test_deyaccify2VH52() = run_case("deyaccify2VH52.glue",false);
-void show_deyaccify2VH52() {run_case("deyaccify2VH52.glue",true);}
-// deyaccify2VH53.glue
-test bool test_deyaccify2VH53() = run_case("deyaccify2VH53.glue",false);
-void show_deyaccify2VH53() {run_case("deyaccify2VH53.glue",true);}
-// deyaccify2VH54.glue
-test bool test_deyaccify2VH54() = run_case("deyaccify2VH54.glue",false);
-void show_deyaccify2VH54() {run_case("deyaccify2VH54.glue",true);}
-// deyaccify2VH55.glue
-test bool test_deyaccify2VH55() = run_case("deyaccify2VH55.glue",false);
-void show_deyaccify2VH55() {run_case("deyaccify2VH55.glue",true);}
-// deyaccify2VH61.glue
-test bool test_deyaccify2VH61() = run_case("deyaccify2VH61.glue",false);
-void show_deyaccify2VH61() {run_case("deyaccify2VH61.glue",true);}
-// deyaccify2VH62.glue
-test bool test_deyaccify2VH62() = run_case("deyaccify2VH62.glue",false);
-void show_deyaccify2VH62() {run_case("deyaccify2VH62.glue",true);}
-// deyaccify2VH63.glue
-test bool test_deyaccify2VH63() = run_case("deyaccify2VH63.glue",false);
-void show_deyaccify2VH63() {run_case("deyaccify2VH63.glue",true);}
-// deyaccify2VH64.glue
-test bool test_deyaccify2VH64() = run_case("deyaccify2VH64.glue",false);
-void show_deyaccify2VH64() {run_case("deyaccify2VH64.glue",true);}
-// deyaccify2VH65.glue
-test bool test_deyaccify2VH65() = run_case("deyaccify2VH65.glue",false);
-void show_deyaccify2VH65() {run_case("deyaccify2VH65.glue",true);}
-// deyaccify2VV11.glue
-test bool test_deyaccify2VV11() = run_case("deyaccify2VV11.glue",false);
-void show_deyaccify2VV11() {run_case("deyaccify2VV11.glue",true);}
-// deyaccify2VV12.glue
-test bool test_deyaccify2VV12() = run_case("deyaccify2VV12.glue",false);
-void show_deyaccify2VV12() {run_case("deyaccify2VV12.glue",true);}
-// deyaccify2VV13.glue
-test bool test_deyaccify2VV13() = run_case("deyaccify2VV13.glue",false);
-void show_deyaccify2VV13() {run_case("deyaccify2VV13.glue",true);}
-// deyaccify2VV14.glue
-test bool test_deyaccify2VV14() = run_case("deyaccify2VV14.glue",false);
-void show_deyaccify2VV14() {run_case("deyaccify2VV14.glue",true);}
-// deyaccify2VV15.glue
-test bool test_deyaccify2VV15() = run_case("deyaccify2VV15.glue",false);
-void show_deyaccify2VV15() {run_case("deyaccify2VV15.glue",true);}
-// deyaccify2VV21.glue
-test bool test_deyaccify2VV21() = run_case("deyaccify2VV21.glue",false);
-void show_deyaccify2VV21() {run_case("deyaccify2VV21.glue",true);}
-// deyaccify2VV22.glue
-test bool test_deyaccify2VV22() = run_case("deyaccify2VV22.glue",false);
-void show_deyaccify2VV22() {run_case("deyaccify2VV22.glue",true);}
-// deyaccify2VV23.glue
-test bool test_deyaccify2VV23() = run_case("deyaccify2VV23.glue",false);
-void show_deyaccify2VV23() {run_case("deyaccify2VV23.glue",true);}
-// deyaccify2VV24.glue
-test bool test_deyaccify2VV24() = run_case("deyaccify2VV24.glue",false);
-void show_deyaccify2VV24() {run_case("deyaccify2VV24.glue",true);}
-// deyaccify2VV25.glue
-test bool test_deyaccify2VV25() = run_case("deyaccify2VV25.glue",false);
-void show_deyaccify2VV25() {run_case("deyaccify2VV25.glue",true);}
-// deyaccify2VV31.glue
-test bool test_deyaccify2VV31() = run_case("deyaccify2VV31.glue",false);
-void show_deyaccify2VV31() {run_case("deyaccify2VV31.glue",true);}
-// deyaccify2VV32.glue
-test bool test_deyaccify2VV32() = run_case("deyaccify2VV32.glue",false);
-void show_deyaccify2VV32() {run_case("deyaccify2VV32.glue",true);}
-// deyaccify2VV33.glue
-test bool test_deyaccify2VV33() = run_case("deyaccify2VV33.glue",false);
-void show_deyaccify2VV33() {run_case("deyaccify2VV33.glue",true);}
-// deyaccify2VV34.glue
-test bool test_deyaccify2VV34() = run_case("deyaccify2VV34.glue",false);
-void show_deyaccify2VV34() {run_case("deyaccify2VV34.glue",true);}
-// deyaccify2VV35.glue
-test bool test_deyaccify2VV35() = run_case("deyaccify2VV35.glue",false);
-void show_deyaccify2VV35() {run_case("deyaccify2VV35.glue",true);}
-// deyaccify2VV41.glue
-test bool test_deyaccify2VV41() = run_case("deyaccify2VV41.glue",false);
-void show_deyaccify2VV41() {run_case("deyaccify2VV41.glue",true);}
-// deyaccify2VV42.glue
-test bool test_deyaccify2VV42() = run_case("deyaccify2VV42.glue",false);
-void show_deyaccify2VV42() {run_case("deyaccify2VV42.glue",true);}
-// deyaccify2VV43.glue
-test bool test_deyaccify2VV43() = run_case("deyaccify2VV43.glue",false);
-void show_deyaccify2VV43() {run_case("deyaccify2VV43.glue",true);}
-// deyaccify2VV44.glue
-test bool test_deyaccify2VV44() = run_case("deyaccify2VV44.glue",false);
-void show_deyaccify2VV44() {run_case("deyaccify2VV44.glue",true);}
-// deyaccify2VV45.glue
-test bool test_deyaccify2VV45() = run_case("deyaccify2VV45.glue",false);
-void show_deyaccify2VV45() {run_case("deyaccify2VV45.glue",true);}
-// deyaccify2VV51.glue
-test bool test_deyaccify2VV51() = run_case("deyaccify2VV51.glue",false);
-void show_deyaccify2VV51() {run_case("deyaccify2VV51.glue",true);}
-// deyaccify2VV52.glue
-test bool test_deyaccify2VV52() = run_case("deyaccify2VV52.glue",false);
-void show_deyaccify2VV52() {run_case("deyaccify2VV52.glue",true);}
-// deyaccify2VV53.glue
-test bool test_deyaccify2VV53() = run_case("deyaccify2VV53.glue",false);
-void show_deyaccify2VV53() {run_case("deyaccify2VV53.glue",true);}
-// deyaccify2VV54.glue
-test bool test_deyaccify2VV54() = run_case("deyaccify2VV54.glue",false);
-void show_deyaccify2VV54() {run_case("deyaccify2VV54.glue",true);}
-// deyaccify2VV55.glue
-test bool test_deyaccify2VV55() = run_case("deyaccify2VV55.glue",false);
-void show_deyaccify2VV55() {run_case("deyaccify2VV55.glue",true);}
-// deyaccify2VV61.glue
-test bool test_deyaccify2VV61() = run_case("deyaccify2VV61.glue",false);
-void show_deyaccify2VV61() {run_case("deyaccify2VV61.glue",true);}
-// deyaccify2VV62.glue
-test bool test_deyaccify2VV62() = run_case("deyaccify2VV62.glue",false);
-void show_deyaccify2VV62() {run_case("deyaccify2VV62.glue",true);}
-// deyaccify2VV63.glue
-test bool test_deyaccify2VV63() = run_case("deyaccify2VV63.glue",false);
-void show_deyaccify2VV63() {run_case("deyaccify2VV63.glue",true);}
-// deyaccify2VV64.glue
-test bool test_deyaccify2VV64() = run_case("deyaccify2VV64.glue",false);
-void show_deyaccify2VV64() {run_case("deyaccify2VV64.glue",true);}
-// deyaccify2VV65.glue
-test bool test_deyaccify2VV65() = run_case("deyaccify2VV65.glue",false);
-void show_deyaccify2VV65() {run_case("deyaccify2VV65.glue",true);}
-// distribute1.glue
-test bool test_distribute1() = run_case("distribute1.glue",false);
-void show_distribute1() {run_case("distribute1.glue",true);}
-// distribute2.glue
-test bool test_distribute2() = run_case("distribute2.glue",false);
-void show_distribute2() {run_case("distribute2.glue",true);}
-// distribute3.glue
-test bool test_distribute3() = run_case("distribute3.glue",false);
-void show_distribute3() {run_case("distribute3.glue",true);}
-// eliminate1.glue
-test bool test_eliminate1() = run_case("eliminate1.glue",false);
-void show_eliminate1() {run_case("eliminate1.glue",true);}
-// eliminate2.glue
-test bool test_eliminate2() = run_case("eliminate2.glue",false);
-void show_eliminate2() {run_case("eliminate2.glue",true);}
-// eliminate3.glue
-test bool test_eliminate3() = run_case("eliminate3.glue",false);
-void show_eliminate3() {run_case("eliminate3.glue",true);}
-// eliminate4.glue
-test bool test_eliminate4() = run_case("eliminate4.glue",false);
-void show_eliminate4() {run_case("eliminate4.glue",true);}
-// equate1.glue
-test bool test_equate1() = run_case("equate1.glue",false);
-void show_equate1() {run_case("equate1.glue",true);}
-// equate2.glue
-test bool test_equate2() = run_case("equate2.glue",false);
-void show_equate2() {run_case("equate2.glue",true);}
-// equate3.glue
-test bool test_equate3() = run_case("equate3.glue",false);
-void show_equate3() {run_case("equate3.glue",true);}
-// equate4.glue
-test bool test_equate4() = run_case("equate4.glue",false);
-void show_equate4() {run_case("equate4.glue",true);}
+// SLEIR:AbridgeAll: 20 tests
+// abridgeall1_1.glue
+test bool test_abridgeall1_1() = run_case("abridgeall1_1.glue",false);
+void show_abridgeall1_1() {run_case("abridgeall1_1.glue",true);}
+// abridgeall1_2.glue
+test bool test_abridgeall1_2() = run_case("abridgeall1_2.glue",false);
+void show_abridgeall1_2() {run_case("abridgeall1_2.glue",true);}
+// abridgeall1_3.glue
+test bool test_abridgeall1_3() = run_case("abridgeall1_3.glue",false);
+void show_abridgeall1_3() {run_case("abridgeall1_3.glue",true);}
+// abridgeall1_4.glue
+test bool test_abridgeall1_4() = run_case("abridgeall1_4.glue",false);
+void show_abridgeall1_4() {run_case("abridgeall1_4.glue",true);}
+// abridgeall2_11.glue
+test bool test_abridgeall2_11() = run_case("abridgeall2_11.glue",false);
+void show_abridgeall2_11() {run_case("abridgeall2_11.glue",true);}
+// abridgeall2_12.glue
+test bool test_abridgeall2_12() = run_case("abridgeall2_12.glue",false);
+void show_abridgeall2_12() {run_case("abridgeall2_12.glue",true);}
+// abridgeall2_13.glue
+test bool test_abridgeall2_13() = run_case("abridgeall2_13.glue",false);
+void show_abridgeall2_13() {run_case("abridgeall2_13.glue",true);}
+// abridgeall2_14.glue
+test bool test_abridgeall2_14() = run_case("abridgeall2_14.glue",false);
+void show_abridgeall2_14() {run_case("abridgeall2_14.glue",true);}
+// abridgeall2_21.glue
+test bool test_abridgeall2_21() = run_case("abridgeall2_21.glue",false);
+void show_abridgeall2_21() {run_case("abridgeall2_21.glue",true);}
+// abridgeall2_22.glue
+test bool test_abridgeall2_22() = run_case("abridgeall2_22.glue",false);
+void show_abridgeall2_22() {run_case("abridgeall2_22.glue",true);}
+// abridgeall2_23.glue
+test bool test_abridgeall2_23() = run_case("abridgeall2_23.glue",false);
+void show_abridgeall2_23() {run_case("abridgeall2_23.glue",true);}
+// abridgeall2_24.glue
+test bool test_abridgeall2_24() = run_case("abridgeall2_24.glue",false);
+void show_abridgeall2_24() {run_case("abridgeall2_24.glue",true);}
+// abridgeall2_31.glue
+test bool test_abridgeall2_31() = run_case("abridgeall2_31.glue",false);
+void show_abridgeall2_31() {run_case("abridgeall2_31.glue",true);}
+// abridgeall2_32.glue
+test bool test_abridgeall2_32() = run_case("abridgeall2_32.glue",false);
+void show_abridgeall2_32() {run_case("abridgeall2_32.glue",true);}
+// abridgeall2_33.glue
+test bool test_abridgeall2_33() = run_case("abridgeall2_33.glue",false);
+void show_abridgeall2_33() {run_case("abridgeall2_33.glue",true);}
+// abridgeall2_34.glue
+test bool test_abridgeall2_34() = run_case("abridgeall2_34.glue",false);
+void show_abridgeall2_34() {run_case("abridgeall2_34.glue",true);}
+// abridgeall2_41.glue
+test bool test_abridgeall2_41() = run_case("abridgeall2_41.glue",false);
+void show_abridgeall2_41() {run_case("abridgeall2_41.glue",true);}
+// abridgeall2_42.glue
+test bool test_abridgeall2_42() = run_case("abridgeall2_42.glue",false);
+void show_abridgeall2_42() {run_case("abridgeall2_42.glue",true);}
+// abridgeall2_43.glue
+test bool test_abridgeall2_43() = run_case("abridgeall2_43.glue",false);
+void show_abridgeall2_43() {run_case("abridgeall2_43.glue",true);}
+// abridgeall2_44.glue
+test bool test_abridgeall2_44() = run_case("abridgeall2_44.glue",false);
+void show_abridgeall2_44() {run_case("abridgeall2_44.glue",true);}
+// SLEIR:ChainMixed: 0 tests
+
+// SLEIR:ConcatAllT: 0 tests
+
+// SLEIR:DefineMin: 0 tests
+
+// SLEIR:DeyaccifyAll: 132 tests
+// deyaccifyall1H1.glue
+test bool test_deyaccifyall1H1() = run_case("deyaccifyall1H1.glue",false);
+void show_deyaccifyall1H1() {run_case("deyaccifyall1H1.glue",true);}
+// deyaccifyall1H2.glue
+test bool test_deyaccifyall1H2() = run_case("deyaccifyall1H2.glue",false);
+void show_deyaccifyall1H2() {run_case("deyaccifyall1H2.glue",true);}
+// deyaccifyall1H3.glue
+test bool test_deyaccifyall1H3() = run_case("deyaccifyall1H3.glue",false);
+void show_deyaccifyall1H3() {run_case("deyaccifyall1H3.glue",true);}
+// deyaccifyall1H4.glue
+test bool test_deyaccifyall1H4() = run_case("deyaccifyall1H4.glue",false);
+void show_deyaccifyall1H4() {run_case("deyaccifyall1H4.glue",true);}
+// deyaccifyall1H5.glue
+test bool test_deyaccifyall1H5() = run_case("deyaccifyall1H5.glue",false);
+void show_deyaccifyall1H5() {run_case("deyaccifyall1H5.glue",true);}
+// deyaccifyall1H6.glue
+test bool test_deyaccifyall1H6() = run_case("deyaccifyall1H6.glue",false);
+void show_deyaccifyall1H6() {run_case("deyaccifyall1H6.glue",true);}
+// deyaccifyall1V1.glue
+test bool test_deyaccifyall1V1() = run_case("deyaccifyall1V1.glue",false);
+void show_deyaccifyall1V1() {run_case("deyaccifyall1V1.glue",true);}
+// deyaccifyall1V2.glue
+test bool test_deyaccifyall1V2() = run_case("deyaccifyall1V2.glue",false);
+void show_deyaccifyall1V2() {run_case("deyaccifyall1V2.glue",true);}
+// deyaccifyall1V3.glue
+test bool test_deyaccifyall1V3() = run_case("deyaccifyall1V3.glue",false);
+void show_deyaccifyall1V3() {run_case("deyaccifyall1V3.glue",true);}
+// deyaccifyall1V4.glue
+test bool test_deyaccifyall1V4() = run_case("deyaccifyall1V4.glue",false);
+void show_deyaccifyall1V4() {run_case("deyaccifyall1V4.glue",true);}
+// deyaccifyall1V5.glue
+test bool test_deyaccifyall1V5() = run_case("deyaccifyall1V5.glue",false);
+void show_deyaccifyall1V5() {run_case("deyaccifyall1V5.glue",true);}
+// deyaccifyall1V6.glue
+test bool test_deyaccifyall1V6() = run_case("deyaccifyall1V6.glue",false);
+void show_deyaccifyall1V6() {run_case("deyaccifyall1V6.glue",true);}
+// deyaccifyall2HH11.glue
+test bool test_deyaccifyall2HH11() = run_case("deyaccifyall2HH11.glue",false);
+void show_deyaccifyall2HH11() {run_case("deyaccifyall2HH11.glue",true);}
+// deyaccifyall2HH12.glue
+test bool test_deyaccifyall2HH12() = run_case("deyaccifyall2HH12.glue",false);
+void show_deyaccifyall2HH12() {run_case("deyaccifyall2HH12.glue",true);}
+// deyaccifyall2HH13.glue
+test bool test_deyaccifyall2HH13() = run_case("deyaccifyall2HH13.glue",false);
+void show_deyaccifyall2HH13() {run_case("deyaccifyall2HH13.glue",true);}
+// deyaccifyall2HH14.glue
+test bool test_deyaccifyall2HH14() = run_case("deyaccifyall2HH14.glue",false);
+void show_deyaccifyall2HH14() {run_case("deyaccifyall2HH14.glue",true);}
+// deyaccifyall2HH15.glue
+test bool test_deyaccifyall2HH15() = run_case("deyaccifyall2HH15.glue",false);
+void show_deyaccifyall2HH15() {run_case("deyaccifyall2HH15.glue",true);}
+// deyaccifyall2HH21.glue
+test bool test_deyaccifyall2HH21() = run_case("deyaccifyall2HH21.glue",false);
+void show_deyaccifyall2HH21() {run_case("deyaccifyall2HH21.glue",true);}
+// deyaccifyall2HH22.glue
+test bool test_deyaccifyall2HH22() = run_case("deyaccifyall2HH22.glue",false);
+void show_deyaccifyall2HH22() {run_case("deyaccifyall2HH22.glue",true);}
+// deyaccifyall2HH23.glue
+test bool test_deyaccifyall2HH23() = run_case("deyaccifyall2HH23.glue",false);
+void show_deyaccifyall2HH23() {run_case("deyaccifyall2HH23.glue",true);}
+// deyaccifyall2HH24.glue
+test bool test_deyaccifyall2HH24() = run_case("deyaccifyall2HH24.glue",false);
+void show_deyaccifyall2HH24() {run_case("deyaccifyall2HH24.glue",true);}
+// deyaccifyall2HH25.glue
+test bool test_deyaccifyall2HH25() = run_case("deyaccifyall2HH25.glue",false);
+void show_deyaccifyall2HH25() {run_case("deyaccifyall2HH25.glue",true);}
+// deyaccifyall2HH31.glue
+test bool test_deyaccifyall2HH31() = run_case("deyaccifyall2HH31.glue",false);
+void show_deyaccifyall2HH31() {run_case("deyaccifyall2HH31.glue",true);}
+// deyaccifyall2HH32.glue
+test bool test_deyaccifyall2HH32() = run_case("deyaccifyall2HH32.glue",false);
+void show_deyaccifyall2HH32() {run_case("deyaccifyall2HH32.glue",true);}
+// deyaccifyall2HH33.glue
+test bool test_deyaccifyall2HH33() = run_case("deyaccifyall2HH33.glue",false);
+void show_deyaccifyall2HH33() {run_case("deyaccifyall2HH33.glue",true);}
+// deyaccifyall2HH34.glue
+test bool test_deyaccifyall2HH34() = run_case("deyaccifyall2HH34.glue",false);
+void show_deyaccifyall2HH34() {run_case("deyaccifyall2HH34.glue",true);}
+// deyaccifyall2HH35.glue
+test bool test_deyaccifyall2HH35() = run_case("deyaccifyall2HH35.glue",false);
+void show_deyaccifyall2HH35() {run_case("deyaccifyall2HH35.glue",true);}
+// deyaccifyall2HH41.glue
+test bool test_deyaccifyall2HH41() = run_case("deyaccifyall2HH41.glue",false);
+void show_deyaccifyall2HH41() {run_case("deyaccifyall2HH41.glue",true);}
+// deyaccifyall2HH42.glue
+test bool test_deyaccifyall2HH42() = run_case("deyaccifyall2HH42.glue",false);
+void show_deyaccifyall2HH42() {run_case("deyaccifyall2HH42.glue",true);}
+// deyaccifyall2HH43.glue
+test bool test_deyaccifyall2HH43() = run_case("deyaccifyall2HH43.glue",false);
+void show_deyaccifyall2HH43() {run_case("deyaccifyall2HH43.glue",true);}
+// deyaccifyall2HH44.glue
+test bool test_deyaccifyall2HH44() = run_case("deyaccifyall2HH44.glue",false);
+void show_deyaccifyall2HH44() {run_case("deyaccifyall2HH44.glue",true);}
+// deyaccifyall2HH45.glue
+test bool test_deyaccifyall2HH45() = run_case("deyaccifyall2HH45.glue",false);
+void show_deyaccifyall2HH45() {run_case("deyaccifyall2HH45.glue",true);}
+// deyaccifyall2HH51.glue
+test bool test_deyaccifyall2HH51() = run_case("deyaccifyall2HH51.glue",false);
+void show_deyaccifyall2HH51() {run_case("deyaccifyall2HH51.glue",true);}
+// deyaccifyall2HH52.glue
+test bool test_deyaccifyall2HH52() = run_case("deyaccifyall2HH52.glue",false);
+void show_deyaccifyall2HH52() {run_case("deyaccifyall2HH52.glue",true);}
+// deyaccifyall2HH53.glue
+test bool test_deyaccifyall2HH53() = run_case("deyaccifyall2HH53.glue",false);
+void show_deyaccifyall2HH53() {run_case("deyaccifyall2HH53.glue",true);}
+// deyaccifyall2HH54.glue
+test bool test_deyaccifyall2HH54() = run_case("deyaccifyall2HH54.glue",false);
+void show_deyaccifyall2HH54() {run_case("deyaccifyall2HH54.glue",true);}
+// deyaccifyall2HH55.glue
+test bool test_deyaccifyall2HH55() = run_case("deyaccifyall2HH55.glue",false);
+void show_deyaccifyall2HH55() {run_case("deyaccifyall2HH55.glue",true);}
+// deyaccifyall2HH61.glue
+test bool test_deyaccifyall2HH61() = run_case("deyaccifyall2HH61.glue",false);
+void show_deyaccifyall2HH61() {run_case("deyaccifyall2HH61.glue",true);}
+// deyaccifyall2HH62.glue
+test bool test_deyaccifyall2HH62() = run_case("deyaccifyall2HH62.glue",false);
+void show_deyaccifyall2HH62() {run_case("deyaccifyall2HH62.glue",true);}
+// deyaccifyall2HH63.glue
+test bool test_deyaccifyall2HH63() = run_case("deyaccifyall2HH63.glue",false);
+void show_deyaccifyall2HH63() {run_case("deyaccifyall2HH63.glue",true);}
+// deyaccifyall2HH64.glue
+test bool test_deyaccifyall2HH64() = run_case("deyaccifyall2HH64.glue",false);
+void show_deyaccifyall2HH64() {run_case("deyaccifyall2HH64.glue",true);}
+// deyaccifyall2HH65.glue
+test bool test_deyaccifyall2HH65() = run_case("deyaccifyall2HH65.glue",false);
+void show_deyaccifyall2HH65() {run_case("deyaccifyall2HH65.glue",true);}
+// deyaccifyall2HV11.glue
+test bool test_deyaccifyall2HV11() = run_case("deyaccifyall2HV11.glue",false);
+void show_deyaccifyall2HV11() {run_case("deyaccifyall2HV11.glue",true);}
+// deyaccifyall2HV12.glue
+test bool test_deyaccifyall2HV12() = run_case("deyaccifyall2HV12.glue",false);
+void show_deyaccifyall2HV12() {run_case("deyaccifyall2HV12.glue",true);}
+// deyaccifyall2HV13.glue
+test bool test_deyaccifyall2HV13() = run_case("deyaccifyall2HV13.glue",false);
+void show_deyaccifyall2HV13() {run_case("deyaccifyall2HV13.glue",true);}
+// deyaccifyall2HV14.glue
+test bool test_deyaccifyall2HV14() = run_case("deyaccifyall2HV14.glue",false);
+void show_deyaccifyall2HV14() {run_case("deyaccifyall2HV14.glue",true);}
+// deyaccifyall2HV15.glue
+test bool test_deyaccifyall2HV15() = run_case("deyaccifyall2HV15.glue",false);
+void show_deyaccifyall2HV15() {run_case("deyaccifyall2HV15.glue",true);}
+// deyaccifyall2HV21.glue
+test bool test_deyaccifyall2HV21() = run_case("deyaccifyall2HV21.glue",false);
+void show_deyaccifyall2HV21() {run_case("deyaccifyall2HV21.glue",true);}
+// deyaccifyall2HV22.glue
+test bool test_deyaccifyall2HV22() = run_case("deyaccifyall2HV22.glue",false);
+void show_deyaccifyall2HV22() {run_case("deyaccifyall2HV22.glue",true);}
+// deyaccifyall2HV23.glue
+test bool test_deyaccifyall2HV23() = run_case("deyaccifyall2HV23.glue",false);
+void show_deyaccifyall2HV23() {run_case("deyaccifyall2HV23.glue",true);}
+// deyaccifyall2HV24.glue
+test bool test_deyaccifyall2HV24() = run_case("deyaccifyall2HV24.glue",false);
+void show_deyaccifyall2HV24() {run_case("deyaccifyall2HV24.glue",true);}
+// deyaccifyall2HV25.glue
+test bool test_deyaccifyall2HV25() = run_case("deyaccifyall2HV25.glue",false);
+void show_deyaccifyall2HV25() {run_case("deyaccifyall2HV25.glue",true);}
+// deyaccifyall2HV31.glue
+test bool test_deyaccifyall2HV31() = run_case("deyaccifyall2HV31.glue",false);
+void show_deyaccifyall2HV31() {run_case("deyaccifyall2HV31.glue",true);}
+// deyaccifyall2HV32.glue
+test bool test_deyaccifyall2HV32() = run_case("deyaccifyall2HV32.glue",false);
+void show_deyaccifyall2HV32() {run_case("deyaccifyall2HV32.glue",true);}
+// deyaccifyall2HV33.glue
+test bool test_deyaccifyall2HV33() = run_case("deyaccifyall2HV33.glue",false);
+void show_deyaccifyall2HV33() {run_case("deyaccifyall2HV33.glue",true);}
+// deyaccifyall2HV34.glue
+test bool test_deyaccifyall2HV34() = run_case("deyaccifyall2HV34.glue",false);
+void show_deyaccifyall2HV34() {run_case("deyaccifyall2HV34.glue",true);}
+// deyaccifyall2HV35.glue
+test bool test_deyaccifyall2HV35() = run_case("deyaccifyall2HV35.glue",false);
+void show_deyaccifyall2HV35() {run_case("deyaccifyall2HV35.glue",true);}
+// deyaccifyall2HV41.glue
+test bool test_deyaccifyall2HV41() = run_case("deyaccifyall2HV41.glue",false);
+void show_deyaccifyall2HV41() {run_case("deyaccifyall2HV41.glue",true);}
+// deyaccifyall2HV42.glue
+test bool test_deyaccifyall2HV42() = run_case("deyaccifyall2HV42.glue",false);
+void show_deyaccifyall2HV42() {run_case("deyaccifyall2HV42.glue",true);}
+// deyaccifyall2HV43.glue
+test bool test_deyaccifyall2HV43() = run_case("deyaccifyall2HV43.glue",false);
+void show_deyaccifyall2HV43() {run_case("deyaccifyall2HV43.glue",true);}
+// deyaccifyall2HV44.glue
+test bool test_deyaccifyall2HV44() = run_case("deyaccifyall2HV44.glue",false);
+void show_deyaccifyall2HV44() {run_case("deyaccifyall2HV44.glue",true);}
+// deyaccifyall2HV45.glue
+test bool test_deyaccifyall2HV45() = run_case("deyaccifyall2HV45.glue",false);
+void show_deyaccifyall2HV45() {run_case("deyaccifyall2HV45.glue",true);}
+// deyaccifyall2HV51.glue
+test bool test_deyaccifyall2HV51() = run_case("deyaccifyall2HV51.glue",false);
+void show_deyaccifyall2HV51() {run_case("deyaccifyall2HV51.glue",true);}
+// deyaccifyall2HV52.glue
+test bool test_deyaccifyall2HV52() = run_case("deyaccifyall2HV52.glue",false);
+void show_deyaccifyall2HV52() {run_case("deyaccifyall2HV52.glue",true);}
+// deyaccifyall2HV53.glue
+test bool test_deyaccifyall2HV53() = run_case("deyaccifyall2HV53.glue",false);
+void show_deyaccifyall2HV53() {run_case("deyaccifyall2HV53.glue",true);}
+// deyaccifyall2HV54.glue
+test bool test_deyaccifyall2HV54() = run_case("deyaccifyall2HV54.glue",false);
+void show_deyaccifyall2HV54() {run_case("deyaccifyall2HV54.glue",true);}
+// deyaccifyall2HV55.glue
+test bool test_deyaccifyall2HV55() = run_case("deyaccifyall2HV55.glue",false);
+void show_deyaccifyall2HV55() {run_case("deyaccifyall2HV55.glue",true);}
+// deyaccifyall2HV61.glue
+test bool test_deyaccifyall2HV61() = run_case("deyaccifyall2HV61.glue",false);
+void show_deyaccifyall2HV61() {run_case("deyaccifyall2HV61.glue",true);}
+// deyaccifyall2HV62.glue
+test bool test_deyaccifyall2HV62() = run_case("deyaccifyall2HV62.glue",false);
+void show_deyaccifyall2HV62() {run_case("deyaccifyall2HV62.glue",true);}
+// deyaccifyall2HV63.glue
+test bool test_deyaccifyall2HV63() = run_case("deyaccifyall2HV63.glue",false);
+void show_deyaccifyall2HV63() {run_case("deyaccifyall2HV63.glue",true);}
+// deyaccifyall2HV64.glue
+test bool test_deyaccifyall2HV64() = run_case("deyaccifyall2HV64.glue",false);
+void show_deyaccifyall2HV64() {run_case("deyaccifyall2HV64.glue",true);}
+// deyaccifyall2HV65.glue
+test bool test_deyaccifyall2HV65() = run_case("deyaccifyall2HV65.glue",false);
+void show_deyaccifyall2HV65() {run_case("deyaccifyall2HV65.glue",true);}
+// deyaccifyall2VH11.glue
+test bool test_deyaccifyall2VH11() = run_case("deyaccifyall2VH11.glue",false);
+void show_deyaccifyall2VH11() {run_case("deyaccifyall2VH11.glue",true);}
+// deyaccifyall2VH12.glue
+test bool test_deyaccifyall2VH12() = run_case("deyaccifyall2VH12.glue",false);
+void show_deyaccifyall2VH12() {run_case("deyaccifyall2VH12.glue",true);}
+// deyaccifyall2VH13.glue
+test bool test_deyaccifyall2VH13() = run_case("deyaccifyall2VH13.glue",false);
+void show_deyaccifyall2VH13() {run_case("deyaccifyall2VH13.glue",true);}
+// deyaccifyall2VH14.glue
+test bool test_deyaccifyall2VH14() = run_case("deyaccifyall2VH14.glue",false);
+void show_deyaccifyall2VH14() {run_case("deyaccifyall2VH14.glue",true);}
+// deyaccifyall2VH15.glue
+test bool test_deyaccifyall2VH15() = run_case("deyaccifyall2VH15.glue",false);
+void show_deyaccifyall2VH15() {run_case("deyaccifyall2VH15.glue",true);}
+// deyaccifyall2VH21.glue
+test bool test_deyaccifyall2VH21() = run_case("deyaccifyall2VH21.glue",false);
+void show_deyaccifyall2VH21() {run_case("deyaccifyall2VH21.glue",true);}
+// deyaccifyall2VH22.glue
+test bool test_deyaccifyall2VH22() = run_case("deyaccifyall2VH22.glue",false);
+void show_deyaccifyall2VH22() {run_case("deyaccifyall2VH22.glue",true);}
+// deyaccifyall2VH23.glue
+test bool test_deyaccifyall2VH23() = run_case("deyaccifyall2VH23.glue",false);
+void show_deyaccifyall2VH23() {run_case("deyaccifyall2VH23.glue",true);}
+// deyaccifyall2VH24.glue
+test bool test_deyaccifyall2VH24() = run_case("deyaccifyall2VH24.glue",false);
+void show_deyaccifyall2VH24() {run_case("deyaccifyall2VH24.glue",true);}
+// deyaccifyall2VH25.glue
+test bool test_deyaccifyall2VH25() = run_case("deyaccifyall2VH25.glue",false);
+void show_deyaccifyall2VH25() {run_case("deyaccifyall2VH25.glue",true);}
+// deyaccifyall2VH31.glue
+test bool test_deyaccifyall2VH31() = run_case("deyaccifyall2VH31.glue",false);
+void show_deyaccifyall2VH31() {run_case("deyaccifyall2VH31.glue",true);}
+// deyaccifyall2VH32.glue
+test bool test_deyaccifyall2VH32() = run_case("deyaccifyall2VH32.glue",false);
+void show_deyaccifyall2VH32() {run_case("deyaccifyall2VH32.glue",true);}
+// deyaccifyall2VH33.glue
+test bool test_deyaccifyall2VH33() = run_case("deyaccifyall2VH33.glue",false);
+void show_deyaccifyall2VH33() {run_case("deyaccifyall2VH33.glue",true);}
+// deyaccifyall2VH34.glue
+test bool test_deyaccifyall2VH34() = run_case("deyaccifyall2VH34.glue",false);
+void show_deyaccifyall2VH34() {run_case("deyaccifyall2VH34.glue",true);}
+// deyaccifyall2VH35.glue
+test bool test_deyaccifyall2VH35() = run_case("deyaccifyall2VH35.glue",false);
+void show_deyaccifyall2VH35() {run_case("deyaccifyall2VH35.glue",true);}
+// deyaccifyall2VH41.glue
+test bool test_deyaccifyall2VH41() = run_case("deyaccifyall2VH41.glue",false);
+void show_deyaccifyall2VH41() {run_case("deyaccifyall2VH41.glue",true);}
+// deyaccifyall2VH42.glue
+test bool test_deyaccifyall2VH42() = run_case("deyaccifyall2VH42.glue",false);
+void show_deyaccifyall2VH42() {run_case("deyaccifyall2VH42.glue",true);}
+// deyaccifyall2VH43.glue
+test bool test_deyaccifyall2VH43() = run_case("deyaccifyall2VH43.glue",false);
+void show_deyaccifyall2VH43() {run_case("deyaccifyall2VH43.glue",true);}
+// deyaccifyall2VH44.glue
+test bool test_deyaccifyall2VH44() = run_case("deyaccifyall2VH44.glue",false);
+void show_deyaccifyall2VH44() {run_case("deyaccifyall2VH44.glue",true);}
+// deyaccifyall2VH45.glue
+test bool test_deyaccifyall2VH45() = run_case("deyaccifyall2VH45.glue",false);
+void show_deyaccifyall2VH45() {run_case("deyaccifyall2VH45.glue",true);}
+// deyaccifyall2VH51.glue
+test bool test_deyaccifyall2VH51() = run_case("deyaccifyall2VH51.glue",false);
+void show_deyaccifyall2VH51() {run_case("deyaccifyall2VH51.glue",true);}
+// deyaccifyall2VH52.glue
+test bool test_deyaccifyall2VH52() = run_case("deyaccifyall2VH52.glue",false);
+void show_deyaccifyall2VH52() {run_case("deyaccifyall2VH52.glue",true);}
+// deyaccifyall2VH53.glue
+test bool test_deyaccifyall2VH53() = run_case("deyaccifyall2VH53.glue",false);
+void show_deyaccifyall2VH53() {run_case("deyaccifyall2VH53.glue",true);}
+// deyaccifyall2VH54.glue
+test bool test_deyaccifyall2VH54() = run_case("deyaccifyall2VH54.glue",false);
+void show_deyaccifyall2VH54() {run_case("deyaccifyall2VH54.glue",true);}
+// deyaccifyall2VH55.glue
+test bool test_deyaccifyall2VH55() = run_case("deyaccifyall2VH55.glue",false);
+void show_deyaccifyall2VH55() {run_case("deyaccifyall2VH55.glue",true);}
+// deyaccifyall2VH61.glue
+test bool test_deyaccifyall2VH61() = run_case("deyaccifyall2VH61.glue",false);
+void show_deyaccifyall2VH61() {run_case("deyaccifyall2VH61.glue",true);}
+// deyaccifyall2VH62.glue
+test bool test_deyaccifyall2VH62() = run_case("deyaccifyall2VH62.glue",false);
+void show_deyaccifyall2VH62() {run_case("deyaccifyall2VH62.glue",true);}
+// deyaccifyall2VH63.glue
+test bool test_deyaccifyall2VH63() = run_case("deyaccifyall2VH63.glue",false);
+void show_deyaccifyall2VH63() {run_case("deyaccifyall2VH63.glue",true);}
+// deyaccifyall2VH64.glue
+test bool test_deyaccifyall2VH64() = run_case("deyaccifyall2VH64.glue",false);
+void show_deyaccifyall2VH64() {run_case("deyaccifyall2VH64.glue",true);}
+// deyaccifyall2VH65.glue
+test bool test_deyaccifyall2VH65() = run_case("deyaccifyall2VH65.glue",false);
+void show_deyaccifyall2VH65() {run_case("deyaccifyall2VH65.glue",true);}
+// deyaccifyall2VV11.glue
+test bool test_deyaccifyall2VV11() = run_case("deyaccifyall2VV11.glue",false);
+void show_deyaccifyall2VV11() {run_case("deyaccifyall2VV11.glue",true);}
+// deyaccifyall2VV12.glue
+test bool test_deyaccifyall2VV12() = run_case("deyaccifyall2VV12.glue",false);
+void show_deyaccifyall2VV12() {run_case("deyaccifyall2VV12.glue",true);}
+// deyaccifyall2VV13.glue
+test bool test_deyaccifyall2VV13() = run_case("deyaccifyall2VV13.glue",false);
+void show_deyaccifyall2VV13() {run_case("deyaccifyall2VV13.glue",true);}
+// deyaccifyall2VV14.glue
+test bool test_deyaccifyall2VV14() = run_case("deyaccifyall2VV14.glue",false);
+void show_deyaccifyall2VV14() {run_case("deyaccifyall2VV14.glue",true);}
+// deyaccifyall2VV15.glue
+test bool test_deyaccifyall2VV15() = run_case("deyaccifyall2VV15.glue",false);
+void show_deyaccifyall2VV15() {run_case("deyaccifyall2VV15.glue",true);}
+// deyaccifyall2VV21.glue
+test bool test_deyaccifyall2VV21() = run_case("deyaccifyall2VV21.glue",false);
+void show_deyaccifyall2VV21() {run_case("deyaccifyall2VV21.glue",true);}
+// deyaccifyall2VV22.glue
+test bool test_deyaccifyall2VV22() = run_case("deyaccifyall2VV22.glue",false);
+void show_deyaccifyall2VV22() {run_case("deyaccifyall2VV22.glue",true);}
+// deyaccifyall2VV23.glue
+test bool test_deyaccifyall2VV23() = run_case("deyaccifyall2VV23.glue",false);
+void show_deyaccifyall2VV23() {run_case("deyaccifyall2VV23.glue",true);}
+// deyaccifyall2VV24.glue
+test bool test_deyaccifyall2VV24() = run_case("deyaccifyall2VV24.glue",false);
+void show_deyaccifyall2VV24() {run_case("deyaccifyall2VV24.glue",true);}
+// deyaccifyall2VV25.glue
+test bool test_deyaccifyall2VV25() = run_case("deyaccifyall2VV25.glue",false);
+void show_deyaccifyall2VV25() {run_case("deyaccifyall2VV25.glue",true);}
+// deyaccifyall2VV31.glue
+test bool test_deyaccifyall2VV31() = run_case("deyaccifyall2VV31.glue",false);
+void show_deyaccifyall2VV31() {run_case("deyaccifyall2VV31.glue",true);}
+// deyaccifyall2VV32.glue
+test bool test_deyaccifyall2VV32() = run_case("deyaccifyall2VV32.glue",false);
+void show_deyaccifyall2VV32() {run_case("deyaccifyall2VV32.glue",true);}
+// deyaccifyall2VV33.glue
+test bool test_deyaccifyall2VV33() = run_case("deyaccifyall2VV33.glue",false);
+void show_deyaccifyall2VV33() {run_case("deyaccifyall2VV33.glue",true);}
+// deyaccifyall2VV34.glue
+test bool test_deyaccifyall2VV34() = run_case("deyaccifyall2VV34.glue",false);
+void show_deyaccifyall2VV34() {run_case("deyaccifyall2VV34.glue",true);}
+// deyaccifyall2VV35.glue
+test bool test_deyaccifyall2VV35() = run_case("deyaccifyall2VV35.glue",false);
+void show_deyaccifyall2VV35() {run_case("deyaccifyall2VV35.glue",true);}
+// deyaccifyall2VV41.glue
+test bool test_deyaccifyall2VV41() = run_case("deyaccifyall2VV41.glue",false);
+void show_deyaccifyall2VV41() {run_case("deyaccifyall2VV41.glue",true);}
+// deyaccifyall2VV42.glue
+test bool test_deyaccifyall2VV42() = run_case("deyaccifyall2VV42.glue",false);
+void show_deyaccifyall2VV42() {run_case("deyaccifyall2VV42.glue",true);}
+// deyaccifyall2VV43.glue
+test bool test_deyaccifyall2VV43() = run_case("deyaccifyall2VV43.glue",false);
+void show_deyaccifyall2VV43() {run_case("deyaccifyall2VV43.glue",true);}
+// deyaccifyall2VV44.glue
+test bool test_deyaccifyall2VV44() = run_case("deyaccifyall2VV44.glue",false);
+void show_deyaccifyall2VV44() {run_case("deyaccifyall2VV44.glue",true);}
+// deyaccifyall2VV45.glue
+test bool test_deyaccifyall2VV45() = run_case("deyaccifyall2VV45.glue",false);
+void show_deyaccifyall2VV45() {run_case("deyaccifyall2VV45.glue",true);}
+// deyaccifyall2VV51.glue
+test bool test_deyaccifyall2VV51() = run_case("deyaccifyall2VV51.glue",false);
+void show_deyaccifyall2VV51() {run_case("deyaccifyall2VV51.glue",true);}
+// deyaccifyall2VV52.glue
+test bool test_deyaccifyall2VV52() = run_case("deyaccifyall2VV52.glue",false);
+void show_deyaccifyall2VV52() {run_case("deyaccifyall2VV52.glue",true);}
+// deyaccifyall2VV53.glue
+test bool test_deyaccifyall2VV53() = run_case("deyaccifyall2VV53.glue",false);
+void show_deyaccifyall2VV53() {run_case("deyaccifyall2VV53.glue",true);}
+// deyaccifyall2VV54.glue
+test bool test_deyaccifyall2VV54() = run_case("deyaccifyall2VV54.glue",false);
+void show_deyaccifyall2VV54() {run_case("deyaccifyall2VV54.glue",true);}
+// deyaccifyall2VV55.glue
+test bool test_deyaccifyall2VV55() = run_case("deyaccifyall2VV55.glue",false);
+void show_deyaccifyall2VV55() {run_case("deyaccifyall2VV55.glue",true);}
+// deyaccifyall2VV61.glue
+test bool test_deyaccifyall2VV61() = run_case("deyaccifyall2VV61.glue",false);
+void show_deyaccifyall2VV61() {run_case("deyaccifyall2VV61.glue",true);}
+// deyaccifyall2VV62.glue
+test bool test_deyaccifyall2VV62() = run_case("deyaccifyall2VV62.glue",false);
+void show_deyaccifyall2VV62() {run_case("deyaccifyall2VV62.glue",true);}
+// deyaccifyall2VV63.glue
+test bool test_deyaccifyall2VV63() = run_case("deyaccifyall2VV63.glue",false);
+void show_deyaccifyall2VV63() {run_case("deyaccifyall2VV63.glue",true);}
+// deyaccifyall2VV64.glue
+test bool test_deyaccifyall2VV64() = run_case("deyaccifyall2VV64.glue",false);
+void show_deyaccifyall2VV64() {run_case("deyaccifyall2VV64.glue",true);}
+// deyaccifyall2VV65.glue
+test bool test_deyaccifyall2VV65() = run_case("deyaccifyall2VV65.glue",false);
+void show_deyaccifyall2VV65() {run_case("deyaccifyall2VV65.glue",true);}
+// SLEIR:DistributeAll: 3 tests
+// distributeall1.glue
+test bool test_distributeall1() = run_case("distributeall1.glue",false);
+void show_distributeall1() {run_case("distributeall1.glue",true);}
+// distributeall2.glue
+test bool test_distributeall2() = run_case("distributeall2.glue",false);
+void show_distributeall2() {run_case("distributeall2.glue",true);}
+// distributeall3.glue
+test bool test_distributeall3() = run_case("distributeall3.glue",false);
+void show_distributeall3() {run_case("distributeall3.glue",true);}
+// SLEIR:EliminateTop: 4 tests
+// eliminatetop1.glue
+test bool test_eliminatetop1() = run_case("eliminatetop1.glue",false);
+void show_eliminatetop1() {run_case("eliminatetop1.glue",true);}
+// eliminatetop2.glue
+test bool test_eliminatetop2() = run_case("eliminatetop2.glue",false);
+void show_eliminatetop2() {run_case("eliminatetop2.glue",true);}
+// eliminatetop3.glue
+test bool test_eliminatetop3() = run_case("eliminatetop3.glue",false);
+void show_eliminatetop3() {run_case("eliminatetop3.glue",true);}
+// eliminatetop4.glue
+test bool test_eliminatetop4() = run_case("eliminatetop4.glue",false);
+void show_eliminatetop4() {run_case("eliminatetop4.glue",true);}
+// SLEIR:EquateAll: 4 tests
+// equateall1.glue
+test bool test_equateall1() = run_case("equateall1.glue",false);
+void show_equateall1() {run_case("equateall1.glue",true);}
+// equateall2.glue
+test bool test_equateall2() = run_case("equateall2.glue",false);
+void show_equateall2() {run_case("equateall2.glue",true);}
+// equateall3.glue
+test bool test_equateall3() = run_case("equateall3.glue",false);
+void show_equateall3() {run_case("equateall3.glue",true);}
+// equateall4.glue
+test bool test_equateall4() = run_case("equateall4.glue",false);
+void show_equateall4() {run_case("equateall4.glue",true);}
+// SLEIR:FoldMax: 0 tests
+
+// SLEIR:HorizontalAll: 0 tests
+
+// SLEIR:InlineMax: 0 tests
+
+// SLEIR:InlinePlus: 0 tests
+
+// SLEIR:InsertLayout: 0 tests
+
+// SLEIR:IterateXX: 0 tests
+
+// SLEIR:IterateXYXLeft: 0 tests
+
+// SLEIR:IterateXYXRight: 0 tests
+
+// SLEIR:LAssocAll: 0 tests
+
+// SLEIR:LiftTopLabels: 0 tests
+
+// SLEIR:MassageAndNot2Except: 0 tests
+
+// SLEIR:MassageAndNotXY2NotOrXY: 0 tests
+
+// SLEIR:MassageAndNotYX2NotOrXY: 0 tests
+
+// SLEIR:MassageAndXY2NotOrNotXY: 0 tests
+
+// SLEIR:MassageAndYX2NotOrNotXY: 0 tests
+
+// SLEIR:MassageExcept2AndNot: 0 tests
+
+// SLEIR:MassageLabelNot2NotLabel: 0 tests
+
+// SLEIR:MassageLabelOpt2OptLabel: 0 tests
+
+// SLEIR:MassageLabelPlus2PlusLabel: 0 tests
+
+// SLEIR:MassageLabelStar2StarLabel: 0 tests
+
+// SLEIR:MassageMarkNot2NotMark: 0 tests
+
+// SLEIR:MassageMarkOpt2OptMark: 0 tests
+
+// SLEIR:MassageMarkPlus2PlusMark: 0 tests
+
+// SLEIR:MassageMarkStar2StarMark: 0 tests
+
+// SLEIR:MassageNotAndNotXY2OrXY: 0 tests
+
+// SLEIR:MassageNotAndNotXY2OrYX: 0 tests
+
+// SLEIR:MassageNotAndXY2OrNotXY: 0 tests
+
+// SLEIR:MassageNotAndXY2OrNotYX: 0 tests
+
+// SLEIR:MassageNotLabel2LabelNot: 0 tests
+
+// SLEIR:MassageNotMark2MarkNot: 0 tests
+
+// SLEIR:MassageNotNot2X: 0 tests
+
+// SLEIR:MassageNotOrNotXY2AndXY: 0 tests
+
+// SLEIR:MassageNotOrNotXY2AndYX: 0 tests
+
+// SLEIR:MassageNotOrXY2AndNotXY: 0 tests
+
+// SLEIR:MassageNotOrXY2AndNotYX: 0 tests
+
+// SLEIR:MassageOpt2OptOpt: 0 tests
+
+// SLEIR:MassageOpt2OrEpsOpt: 0 tests
+
+// SLEIR:MassageOpt2OrEpsX: 0 tests
+
+// SLEIR:MassageOpt2OrOptEps: 0 tests
+
+// SLEIR:MassageOpt2OrOptX: 0 tests
+
+// SLEIR:MassageOpt2OrXEps: 0 tests
+
+// SLEIR:MassageOpt2OrXOpt: 0 tests
+
+// SLEIR:MassageOptLabel2LabelOpt: 0 tests
+
+// SLEIR:MassageOptMark2MarkOpt: 0 tests
+
+// SLEIR:MassageOptOpt2Opt: 0 tests
+
+// SLEIR:MassageOptPlus2Star: 0 tests
+
+// SLEIR:MassageOptSLPlus2SLStar: 0 tests
+
+// SLEIR:MassageOptSeqStarX2SLStar: 0 tests
+
+// SLEIR:MassageOptSeqXStar2SLStar: 0 tests
+
+// SLEIR:MassageOptStar2Star: 0 tests
+
+// SLEIR:MassageOr1Star2Star: 0 tests
+
+// SLEIR:MassageOrEpsOpt2Opt: 0 tests
+
+// SLEIR:MassageOrEpsPlus2Star: 0 tests
+
+// SLEIR:MassageOrEpsStar2Star: 0 tests
+
+// SLEIR:MassageOrEpsX2Opt: 0 tests
+
+// SLEIR:MassageOrLabels2: 0 tests
+
+// SLEIR:MassageOrLabels3: 0 tests
+
+// SLEIR:MassageOrMarks2: 0 tests
+
+// SLEIR:MassageOrMarks3: 0 tests
+
+// SLEIR:MassageOrNotXY2NotAndXY: 0 tests
+
+// SLEIR:MassageOrNotYX2NotAndXY: 0 tests
+
+// SLEIR:MassageOrOptEps2Opt: 0 tests
+
+// SLEIR:MassageOrOptPlus2Star: 0 tests
+
+// SLEIR:MassageOrOptStar2Star: 0 tests
+
+// SLEIR:MassageOrOptX2Opt: 0 tests
+
+// SLEIR:MassageOrPlusEps2Star: 0 tests
+
+// SLEIR:MassageOrPlusOpt2Star: 0 tests
+
+// SLEIR:MassageOrPlusStar2Star: 0 tests
+
+// SLEIR:MassageOrPlusX2Plus: 0 tests
+
+// SLEIR:MassageOrStar12Star: 0 tests
+
+// SLEIR:MassageOrStarEps2Star: 0 tests
+
+// SLEIR:MassageOrStarOpt2Star: 0 tests
+
+// SLEIR:MassageOrStarPlus2Star: 0 tests
+
+// SLEIR:MassageOrXEps2Opt: 0 tests
+
+// SLEIR:MassageOrXOpt2Opt: 0 tests
+
+// SLEIR:MassageOrXPlus2Plus: 0 tests
+
+// SLEIR:MassageOrXY2NotAndNotXY: 0 tests
+
+// SLEIR:MassageOrYX2NotAndNotXY: 0 tests
+
+// SLEIR:MassagePlus2OrPlusX: 0 tests
+
+// SLEIR:MassagePlus2OrXPlus: 0 tests
+
+// SLEIR:MassagePlus2PlusPlus: 0 tests
+
+// SLEIR:MassagePlus2SeqOptPlus: 0 tests
+
+// SLEIR:MassagePlus2SeqPlusOpt: 0 tests
+
+// SLEIR:MassagePlus2SeqPlusStar: 0 tests
+
+// SLEIR:MassagePlus2SeqStarPlus: 0 tests
+
+// SLEIR:MassagePlus2SeqStarX: 0 tests
+
+// SLEIR:MassagePlus2SeqXStar: 0 tests
+
+// SLEIR:MassagePlusLabel2LabelPlus: 0 tests
+
+// SLEIR:MassagePlusMark2MarkPlus: 0 tests
+
+// SLEIR:MassagePlusOpt2Star: 0 tests
+
+// SLEIR:MassagePlusPlus2Plus: 0 tests
+
+// SLEIR:MassagePlusStar2Star: 0 tests
+
+// SLEIR:MassageSLPlus2SeqStarX: 0 tests
+
+// SLEIR:MassageSLPlus2SeqXStar: 0 tests
+
+// SLEIR:MassageSLStar2OptSLPlus: 0 tests
+
+// SLEIR:MassageSLStar2OptSeqStarX: 0 tests
+
+// SLEIR:MassageSLStar2OptSeqXStar: 0 tests
+
+// SLEIR:MassageSeqOptPlus2Plus: 0 tests
+
+// SLEIR:MassageSeqOptStar2Star: 0 tests
+
+// SLEIR:MassageSeqOptX2SeqXOpt: 0 tests
+
+// SLEIR:MassageSeqPlusOpt2Plus: 0 tests
+
+// SLEIR:MassageSeqPlusStar2Plus: 0 tests
+
+// SLEIR:MassageSeqPlusX2SeqXPlus: 0 tests
+
+// SLEIR:MassageSeqStarOpt2Star: 0 tests
+
+// SLEIR:MassageSeqStarPlus2Plus: 0 tests
+
+// SLEIR:MassageSeqStarStar2Star: 0 tests
+
+// SLEIR:MassageSeqStarX2Plus: 0 tests
+
+// SLEIR:MassageSeqStarX2SLPlus: 0 tests
+
+// SLEIR:MassageSeqStarX2SeqXStar: 0 tests
+
+// SLEIR:MassageSeqXOpt2SeqOptX: 0 tests
+
+// SLEIR:MassageSeqXPlus2SeqPlusX: 0 tests
+
+// SLEIR:MassageSeqXStar2Plus: 0 tests
+
+// SLEIR:MassageSeqXStar2SLPlus: 0 tests
+
+// SLEIR:MassageSeqXStar2SeqStarX: 0 tests
+
+// SLEIR:MassageStar2OptPlus: 0 tests
+
+// SLEIR:MassageStar2OptStar: 0 tests
+
+// SLEIR:MassageStar2Or1Star: 0 tests
+
+// SLEIR:MassageStar2OrEpsPlus: 0 tests
+
+// SLEIR:MassageStar2OrEpsStar: 0 tests
+
+// SLEIR:MassageStar2OrOptPlus: 0 tests
+
+// SLEIR:MassageStar2OrOptStar: 0 tests
+
+// SLEIR:MassageStar2OrPlusEps: 0 tests
+
+// SLEIR:MassageStar2OrPlusOpt: 0 tests
+
+// SLEIR:MassageStar2OrPlusStar: 0 tests
+
+// SLEIR:MassageStar2OrStar1: 0 tests
+
+// SLEIR:MassageStar2OrStarEps: 0 tests
+
+// SLEIR:MassageStar2OrStarOpt: 0 tests
+
+// SLEIR:MassageStar2OrStarPlus: 0 tests
+
+// SLEIR:MassageStar2PlusOpt: 0 tests
+
+// SLEIR:MassageStar2PlusStar: 0 tests
+
+// SLEIR:MassageStar2SeqOptStar: 0 tests
+
+// SLEIR:MassageStar2SeqStarOpt: 0 tests
+
+// SLEIR:MassageStar2SeqStarStar: 0 tests
+
+// SLEIR:MassageStar2StarOpt: 0 tests
+
+// SLEIR:MassageStar2StarPlus: 0 tests
+
+// SLEIR:MassageStar2StarStar: 0 tests
+
+// SLEIR:MassageStarLabel2LabelStar: 0 tests
+
+// SLEIR:MassageStarMark2MarkStar: 0 tests
+
+// SLEIR:MassageStarOpt2Star: 0 tests
+
+// SLEIR:MassageStarPlus2Star: 0 tests
+
+// SLEIR:MassageStarStar2Star: 0 tests
+
+// SLEIR:MassageX2NotNot: 0 tests
+
+// SLEIR:NarrowOpt2X: 0 tests
+
+// SLEIR:NarrowPlus2X: 0 tests
+
+// SLEIR:NarrowStar2Opt: 0 tests
+
+// SLEIR:NarrowStar2Plus: 0 tests
+
+// SLEIR:NarrowStar2X: 0 tests
+
+// SLEIR:ParenthesizeAll: 0 tests
+
+// SLEIR:PermuteInfix2Postfix: 0 tests
+
+// SLEIR:PermuteInfix2Prefix: 0 tests
+
+// SLEIR:PermutePostfix2Infix: 0 tests
+
+// SLEIR:PermutePostfix2Prefix: 0 tests
+
+// SLEIR:PermutePrefix2Infix: 0 tests
+
+// SLEIR:PermutePrefix2Postfix: 0 tests
+
+// SLEIR:RAssocAll: 0 tests
+
+// SLEIR:Reroot2top: 0 tests
+
+// SLEIR:RetireLs: 0 tests
+
+// SLEIR:RetireMs: 0 tests
+
+// SLEIR:RetireTs: 9 tests
 // retirets01.glue
 test bool test_retirets01() = run_case("retirets01.glue",false);
 void show_retirets01() {run_case("retirets01.glue",true);}
@@ -537,3 +865,27 @@ void show_retirets08() {run_case("retirets08.glue",true);}
 // retirets09.glue
 test bool test_retirets09() = run_case("retirets09.glue",false);
 void show_retirets09() {run_case("retirets09.glue",true);}
+// SLEIR:SplitAllT: 0 tests
+
+// SLEIR:UnchainAll: 0 tests
+
+// SLEIR:UndefineTrivial: 0 tests
+
+// SLEIR:UnfoldMax: 0 tests
+
+// SLEIR:VerticalAll: 0 tests
+
+// SLEIR:WidenOpt2Star: 0 tests
+
+// SLEIR:WidenPlus2Star: 0 tests
+
+// SLEIR:WidenX2Opt: 0 tests
+
+// SLEIR:WidenX2Plus: 0 tests
+
+// SLEIR:WidenX2Star: 0 tests
+
+// SLEIR:YaccifyAllL: 0 tests
+
+// SLEIR:YaccifyAllR: 0 tests
+
