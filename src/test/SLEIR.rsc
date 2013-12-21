@@ -82,8 +82,22 @@ void show_abridgeall2_43() {run_case("abridgeall2_43.glue",true);}
 // abridgeall2_44.glue
 test bool test_abridgeall2_44() = run_case("abridgeall2_44.glue",false);
 void show_abridgeall2_44() {run_case("abridgeall2_44.glue",true);}
-// SLEIR:ChainMixed: 0 tests
-
+// SLEIR:ChainMixed: 5 tests
+// chainmixed1.glue
+test bool test_chainmixed1() = run_case("chainmixed1.glue",false);
+void show_chainmixed1() {run_case("chainmixed1.glue",true);}
+// chainmixed2.glue
+test bool test_chainmixed2() = run_case("chainmixed2.glue",false);
+void show_chainmixed2() {run_case("chainmixed2.glue",true);}
+// chainmixed3.glue
+test bool test_chainmixed3() = run_case("chainmixed3.glue",false);
+void show_chainmixed3() {run_case("chainmixed3.glue",true);}
+// chainmixed4.glue
+test bool test_chainmixed4() = run_case("chainmixed4.glue",false);
+void show_chainmixed4() {run_case("chainmixed4.glue",true);}
+// chainmixed5.glue
+test bool test_chainmixed5() = run_case("chainmixed5.glue",false);
+void show_chainmixed5() {run_case("chainmixed5.glue",true);}
 // SLEIR:ConcatAllT: 0 tests
 
 // SLEIR:DefineMin: 0 tests

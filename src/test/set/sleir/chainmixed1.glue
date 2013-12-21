@@ -1,0 +1,10 @@
+// all chained => nothing to do
+importG
+	foo ::= a ;
+	bar ::= b ;
+.
+ChainMixed.
+diff
+	foo ::= a ;
+	bar ::= b ;
+.

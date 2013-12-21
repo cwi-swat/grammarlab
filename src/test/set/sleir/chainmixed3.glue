@@ -1,0 +1,11 @@
+// one chained, one not
+importG
+	foo ::= a;
+	foo ::= d e f;
+.
+ChainMixed.
+diff
+	foo ::= a;
+	foo ::= foo1;
+	foo1::= d e f;
+.

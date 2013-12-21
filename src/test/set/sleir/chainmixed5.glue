@@ -1,0 +1,20 @@
+// multiple nonterminals affected
+importG
+	foo ::= a b c;
+	foo ::= d e f;
+	bar ::= g h k;
+	wez ::= m n p;
+	wez ::= q r s;
+.
+ChainMixed.
+diff
+	foo ::= foo1;
+	foo1::= a b c;
+	foo ::= foo2;
+	foo2::= d e f;
+	bar ::= g h k;
+	wez ::= wez1;
+	wez1::= m n p;
+	wez ::= wez2;
+	wez2::= q r s;
+.
