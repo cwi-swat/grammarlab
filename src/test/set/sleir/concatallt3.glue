@@ -1,0 +1,10 @@
+// two consecutive terminals all by themselves
+importG
+	foo ::= "B" "C" ;
+	bar ::= "E" f ;
+.
+ConcatAllT.
+diff
+	foo ::= "BC" ;
+	bar ::= "E" f ;
+.

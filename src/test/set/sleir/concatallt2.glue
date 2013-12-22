@@ -1,0 +1,10 @@
+// no consecutive terminals => nothing to do
+importG
+	foo ::= a "B" ;
+	bar ::= "C" d ;
+.
+ConcatAllT.
+diff
+	foo ::= a "B" ;
+	bar ::= "C" d ;
+.

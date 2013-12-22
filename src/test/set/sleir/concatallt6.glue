@@ -1,0 +1,10 @@
+// two consecutive terminals, in the middle of a sequence
+importG
+	foo ::= a? "B" "C" d+;
+	bar ::= "E" f ;
+.
+ConcatAllT.
+diff
+	foo ::= a? "BC" d+;
+	bar ::= "E" f ;
+.

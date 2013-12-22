@@ -98,8 +98,28 @@ void show_chainmixed4() {run_case("chainmixed4.glue",true);}
 // chainmixed5.glue
 test bool test_chainmixed5() = run_case("chainmixed5.glue",false);
 void show_chainmixed5() {run_case("chainmixed5.glue",true);}
-// SLEIR:ConcatAllT: 0 tests
-
+// SLEIR:ConcatAllT: 7 tests
+// concatallt1.glue
+test bool test_concatallt1() = run_case("concatallt1.glue",false);
+void show_concatallt1() {run_case("concatallt1.glue",true);}
+// concatallt2.glue
+test bool test_concatallt2() = run_case("concatallt2.glue",false);
+void show_concatallt2() {run_case("concatallt2.glue",true);}
+// concatallt3.glue
+test bool test_concatallt3() = run_case("concatallt3.glue",false);
+void show_concatallt3() {run_case("concatallt3.glue",true);}
+// concatallt4.glue
+test bool test_concatallt4() = run_case("concatallt4.glue",false);
+void show_concatallt4() {run_case("concatallt4.glue",true);}
+// concatallt5.glue
+test bool test_concatallt5() = run_case("concatallt5.glue",false);
+void show_concatallt5() {run_case("concatallt5.glue",true);}
+// concatallt6.glue
+test bool test_concatallt6() = run_case("concatallt6.glue",false);
+void show_concatallt6() {run_case("concatallt6.glue",true);}
+// concatallt7.glue
+test bool test_concatallt7() = run_case("concatallt7.glue",false);
+void show_concatallt7() {run_case("concatallt7.glue",true);}
 // SLEIR:DefineMin: 0 tests
 
 // SLEIR:DeyaccifyAll: 132 tests
