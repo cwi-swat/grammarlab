@@ -1,0 +1,16 @@
+// several bottom nonterminals
+importG
+	foo ::= a b c;
+	bar ::= d e f;
+.
+DefineMin.
+diff
+	foo ::= bar;
+	bar ::= foo;
+	a   ::= φ;
+	b   ::= φ;
+	c   ::= φ;
+	d   ::= φ;
+	e   ::= φ;
+	f   ::= φ;
+.

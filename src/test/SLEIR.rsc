@@ -120,8 +120,16 @@ void show_concatallt6() {run_case("concatallt6.glue",true);}
 // concatallt7.glue
 test bool test_concatallt7() = run_case("concatallt7.glue",false);
 void show_concatallt7() {run_case("concatallt7.glue",true);}
-// SLEIR:DefineMin: 0 tests
-
+// SLEIR:DefineMin: 3 tests
+// definemin1.glue
+test bool test_definemin1() = run_case("definemin1.glue",false);
+void show_definemin1() {run_case("definemin1.glue",true);}
+// definemin2.glue
+test bool test_definemin2() = run_case("definemin2.glue",false);
+void show_definemin2() {run_case("definemin2.glue",true);}
+// definemin3.glue
+test bool test_definemin3() = run_case("definemin3.glue",false);
+void show_definemin3() {run_case("definemin3.glue",true);}
 // SLEIR:DeyaccifyAll: 132 tests
 // deyaccifyall1H1.glue
 test bool test_deyaccifyall1H1() = run_case("deyaccifyall1H1.glue",false);

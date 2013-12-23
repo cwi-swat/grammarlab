@@ -1,0 +1,10 @@
+// no bottom nonterminals => nothing to do
+importG
+	foo ::= bar;
+	bar ::= foo;
+.
+DefineMin.
+diff
+	foo ::= bar;
+	bar ::= foo;
+.

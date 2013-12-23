@@ -1,0 +1,11 @@
+// one bottom nonterminal
+importG
+	foo ::= bar wez;
+	bar ::= foo;
+.
+DefineMin.
+diff
+	foo ::= bar;
+	bar ::= foo;
+	wez ::= φ;
+.
