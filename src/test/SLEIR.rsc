@@ -563,12 +563,34 @@ void show_equateall3() {run_case("equateall3.glue",true);}
 // equateall4.glue
 test bool test_equateall4() = run_case("equateall4.glue",false);
 void show_equateall4() {run_case("equateall4.glue",true);}
-// SLEIR:FoldMax: 0 tests
-
+// SLEIR:FoldMax: 4 tests
+// foldmax1.glue
+test bool test_foldmax1() = run_case("foldmax1.glue",false);
+void show_foldmax1() {run_case("foldmax1.glue",true);}
+// foldmax2.glue
+test bool test_foldmax2() = run_case("foldmax2.glue",false);
+void show_foldmax2() {run_case("foldmax2.glue",true);}
+// foldmax3.glue
+test bool test_foldmax3() = run_case("foldmax3.glue",false);
+void show_foldmax3() {run_case("foldmax3.glue",true);}
+// foldmax4.glue
+test bool test_foldmax4() = run_case("foldmax4.glue",false);
+void show_foldmax4() {run_case("foldmax4.glue",true);}
 // SLEIR:HorizontalAll: 0 tests
 
-// SLEIR:InlineMax: 0 tests
-
+// SLEIR:InlineMax: 4 tests
+// inlinemax1.glue
+test bool test_inlinemax1() = run_case("inlinemax1.glue",false);
+void show_inlinemax1() {run_case("inlinemax1.glue",true);}
+// inlinemax2.glue
+test bool test_inlinemax2() = run_case("inlinemax2.glue",false);
+void show_inlinemax2() {run_case("inlinemax2.glue",true);}
+// inlinemax3.glue
+test bool test_inlinemax3() = run_case("inlinemax3.glue",false);
+void show_inlinemax3() {run_case("inlinemax3.glue",true);}
+// inlinemax4.glue
+test bool test_inlinemax4() = run_case("inlinemax4.glue",false);
+void show_inlinemax4() {run_case("inlinemax4.glue",true);}
 // SLEIR:InlinePlus: 0 tests
 
 // SLEIR:InsertLayout: 0 tests
@@ -913,8 +935,19 @@ void show_retirets09() {run_case("retirets09.glue",true);}
 
 // SLEIR:UndefineTrivial: 0 tests
 
-// SLEIR:UnfoldMax: 0 tests
-
+// SLEIR:UnfoldMax: 4 tests
+// unfoldmax1.glue
+test bool test_unfoldmax1() = run_case("unfoldmax1.glue",false);
+void show_unfoldmax1() {run_case("unfoldmax1.glue",true);}
+// unfoldmax2.glue
+test bool test_unfoldmax2() = run_case("unfoldmax2.glue",false);
+void show_unfoldmax2() {run_case("unfoldmax2.glue",true);}
+// unfoldmax3.glue
+test bool test_unfoldmax3() = run_case("unfoldmax3.glue",false);
+void show_unfoldmax3() {run_case("unfoldmax3.glue",true);}
+// unfoldmax4.glue
+test bool test_unfoldmax4() = run_case("unfoldmax4.glue",false);
+void show_unfoldmax4() {run_case("unfoldmax4.glue",true);}
 // SLEIR:VerticalAll: 0 tests
 
 // SLEIR:WidenOpt2Star: 0 tests

@@ -1,0 +1,9 @@
+// several competing unfoldings! - deterministic because the grammar is processed sequentially
+importG
+	foo ::= bar;
+	bar ::= foo wez;
+.
+UnfoldMax.
+diff
+	bar ::= bar wez;
+.

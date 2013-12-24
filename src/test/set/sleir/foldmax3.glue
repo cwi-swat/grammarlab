@@ -1,0 +1,12 @@
+// several foldings
+importG
+	foo ::= a b;
+	bar ::= a b c d;
+	wez ::= c d;
+.
+FoldMax.
+diff
+	foo ::= a b;
+	bar ::= foo wez;
+	wez ::= c d;
+.

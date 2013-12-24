@@ -1,0 +1,12 @@
+// several competing foldings! - deterministic because the grammar is processed sequentially
+importG
+	foo ::= a b;
+	bar ::= a b c;
+	wez ::= b c;
+.
+FoldMax.
+diff
+	foo ::= a b;
+	bar ::= foo c;
+	wez ::= b c;
+.

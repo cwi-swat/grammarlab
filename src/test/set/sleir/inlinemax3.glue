@@ -1,0 +1,10 @@
+// several unfoldings
+importG
+	foo ::= a b;
+	bar ::= foo wez;
+	wez ::= c d;
+.
+InlineMax.
+	bar ::= a b c d;
+diff
+.

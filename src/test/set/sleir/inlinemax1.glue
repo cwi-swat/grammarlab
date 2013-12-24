@@ -1,0 +1,10 @@
+// nothing to do
+importG
+	foo ::= bar;
+	bar ::= foo;
+.
+InlineMax.
+diff
+	foo ::= bar;
+	bar ::= foo;
+.

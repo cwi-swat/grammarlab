@@ -1,0 +1,10 @@
+// one folding
+importG
+	foo ::= a b;
+	bar ::= a b c;
+.
+FoldMax.
+diff
+	foo ::= a b;
+	bar ::= foo c;
+.

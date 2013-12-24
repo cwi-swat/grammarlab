@@ -1,0 +1,9 @@
+// one unfolding
+importG
+	foo ::= a b;
+	bar ::= foo c;
+.
+UnfoldMax.
+diff
+	bar ::= a b c;
+.
