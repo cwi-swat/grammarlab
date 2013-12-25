@@ -5,6 +5,8 @@ importG
 	wez ::= c d;
 .
 UnfoldMax.
-	bar ::= a b c d;
 diff
+	foo ::= a b;
+	bar ::= a b c d;
+	wez ::= c d;
 .

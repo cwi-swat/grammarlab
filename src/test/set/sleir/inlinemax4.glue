@@ -1,7 +1,7 @@
 // several competing unfoldings! - deterministic because the grammar is processed sequentially
 importG
-	foo ::= bar;
 	bar ::= foo wez;
+	foo ::= bar;
 .
 InlineMax.
 diff

@@ -5,6 +5,6 @@ importG
 	wez ::= c d;
 .
 InlineMax.
-	bar ::= a b c d;
 diff
+	bar ::= a b c d;
 .
