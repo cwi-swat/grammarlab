@@ -1,0 +1,9 @@
+// one epsilon
+importG
+	foo ::= bar;
+	bar ::= ε;
+.
+UndefineTrivial.
+diff
+	foo ::= bar;
+.

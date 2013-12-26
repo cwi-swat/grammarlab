@@ -1,0 +1,10 @@
+// nothing to do
+importG
+	foo ::= bar;
+	bar ::= foo;
+.
+UndefineTrivial.
+diff
+	foo ::= bar;
+	bar ::= foo;
+.

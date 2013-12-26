@@ -1,0 +1,11 @@
+// several affected nonterminals
+importG
+	bar ::= ε;
+	foo ::= bar;
+	wez ::= φ;
+	qux ::= α;
+.
+UndefineTrivial.
+diff
+	foo ::= bar;
+.

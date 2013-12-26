@@ -933,8 +933,22 @@ void show_retirets09() {run_case("retirets09.glue",true);}
 
 // SLEIR:UnchainAll: 0 tests
 
-// SLEIR:UndefineTrivial: 0 tests
-
+// SLEIR:UndefineTrivial: 5 tests
+// undefinetrivial1.glue
+test bool test_undefinetrivial1() = run_case("undefinetrivial1.glue",false);
+void show_undefinetrivial1() {run_case("undefinetrivial1.glue",true);}
+// undefinetrivial2.glue
+test bool test_undefinetrivial2() = run_case("undefinetrivial2.glue",false);
+void show_undefinetrivial2() {run_case("undefinetrivial2.glue",true);}
+// undefinetrivial3.glue
+test bool test_undefinetrivial3() = run_case("undefinetrivial3.glue",false);
+void show_undefinetrivial3() {run_case("undefinetrivial3.glue",true);}
+// undefinetrivial4.glue
+test bool test_undefinetrivial4() = run_case("undefinetrivial4.glue",false);
+void show_undefinetrivial4() {run_case("undefinetrivial4.glue",true);}
+// undefinetrivial5.glue
+test bool test_undefinetrivial5() = run_case("undefinetrivial5.glue",false);
+void show_undefinetrivial5() {run_case("undefinetrivial5.glue",true);}
 // SLEIR:UnfoldMax: 4 tests
 // unfoldmax1.glue
 test bool test_unfoldmax1() = run_case("unfoldmax1.glue",false);

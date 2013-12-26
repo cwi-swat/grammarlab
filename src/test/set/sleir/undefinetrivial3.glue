@@ -1,0 +1,9 @@
+// one failure
+importG
+	foo ::= bar;
+	bar ::= φ;
+.
+UndefineTrivial.
+diff
+	foo ::= bar;
+.
