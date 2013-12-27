@@ -1,0 +1,10 @@
+// two consecutive terminals, in the middle of a sequence
+importG
+	foo ::= a? "+=" d+;
+	bar ::= "E" f ;
+.
+SplitAllT.
+diff
+	foo ::= a? "+" "=" d+;
+	bar ::= "E" f ;
+.

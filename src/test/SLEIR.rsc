@@ -929,8 +929,31 @@ void show_retirets08() {run_case("retirets08.glue",true);}
 // retirets09.glue
 test bool test_retirets09() = run_case("retirets09.glue",false);
 void show_retirets09() {run_case("retirets09.glue",true);}
-// SLEIR:SplitAllT: 0 tests
-
+// SLEIR:SplitAllT: 8 tests
+// splitallt1.glue
+test bool test_splitallt1() = run_case("splitallt1.glue",false);
+void show_splitallt1() {run_case("splitallt1.glue",true);}
+// splitallt2.glue
+test bool test_splitallt2() = run_case("splitallt2.glue",false);
+void show_splitallt2() {run_case("splitallt2.glue",true);}
+// splitallt3.glue
+test bool test_splitallt3() = run_case("splitallt3.glue",false);
+void show_splitallt3() {run_case("splitallt3.glue",true);}
+// splitallt4.glue
+test bool test_splitallt4() = run_case("splitallt4.glue",false);
+void show_splitallt4() {run_case("splitallt4.glue",true);}
+// splitallt5.glue
+test bool test_splitallt5() = run_case("splitallt5.glue",false);
+void show_splitallt5() {run_case("splitallt5.glue",true);}
+// splitallt6.glue
+test bool test_splitallt6() = run_case("splitallt6.glue",false);
+void show_splitallt6() {run_case("splitallt6.glue",true);}
+// splitallt7.glue
+test bool test_splitallt7() = run_case("splitallt7.glue",false);
+void show_splitallt7() {run_case("splitallt7.glue",true);}
+// splitallt8.glue
+test bool test_splitallt8() = run_case("splitallt8.glue",false);
+void show_splitallt8() {run_case("splitallt8.glue",true);}
 // SLEIR:UnchainAll: 0 tests
 
 // SLEIR:UndefineTrivial: 5 tests

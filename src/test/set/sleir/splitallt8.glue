@@ -1,0 +1,10 @@
+// one mixed terminal, one alphabetic
+importG
+	foo ::= "a=b" ;
+	bar ::= "EFG" ;
+.
+SplitAllT.
+diff
+	foo ::= "a" "=" "b";
+	bar ::= "EFG";
+.

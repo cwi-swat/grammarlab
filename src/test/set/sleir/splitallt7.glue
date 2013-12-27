@@ -1,0 +1,10 @@
+// several affected nonterminals
+importG
+	foo ::= a "+=";
+	bar ::= "D" "E" f;
+.
+SplitAllT.
+diff
+	foo ::= a "+" "=";
+	bar ::= "DE" f;
+.

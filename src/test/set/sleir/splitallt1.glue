@@ -1,0 +1,10 @@
+// no terminals => nothing to do
+importG
+	foo ::= a ;
+	bar ::= b ;
+.
+SplitAllT.
+diff
+	foo ::= a ;
+	bar ::= b ;
+.

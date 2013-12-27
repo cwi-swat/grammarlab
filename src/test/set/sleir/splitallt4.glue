@@ -1,0 +1,10 @@
+// two consecutive terminals, followed by a nonterminal
+importG
+	foo ::= "+=" d ;
+	bar ::= "E" f ;
+.
+SplitAllT.
+diff
+	foo ::= "+" "=" d ;
+	bar ::= "E" f ;
+.
