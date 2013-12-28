@@ -1,0 +1,10 @@
+// two labels on the top level (old style)
+importG
+	foo ::= [name]::a ;
+	bar ::= [also]::b ;
+.
+RetireLs.
+diff
+	foo ::= a ;
+	bar ::= b ;
+.

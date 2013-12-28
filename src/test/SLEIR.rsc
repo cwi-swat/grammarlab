@@ -897,8 +897,22 @@ void show_inlinemax4() {run_case("inlinemax4.glue",true);}
 
 // SLEIR:Reroot2top: 0 tests
 
-// SLEIR:RetireLs: 0 tests
-
+// SLEIR:RetireLs: 5 tests
+// retirels1.glue
+test bool test_retirels1() = run_case("retirels1.glue",false);
+void show_retirels1() {run_case("retirels1.glue",true);}
+// retirels2.glue
+test bool test_retirels2() = run_case("retirels2.glue",false);
+void show_retirels2() {run_case("retirels2.glue",true);}
+// retirels3.glue
+test bool test_retirels3() = run_case("retirels3.glue",false);
+void show_retirels3() {run_case("retirels3.glue",true);}
+// retirels4.glue
+test bool test_retirels4() = run_case("retirels4.glue",false);
+void show_retirels4() {run_case("retirels4.glue",true);}
+// retirels5.glue
+test bool test_retirels5() = run_case("retirels5.glue",false);
+void show_retirels5() {run_case("retirels5.glue",true);}
 // SLEIR:RetireMs: 0 tests
 
 // SLEIR:RetireTs: 9 tests

@@ -1,0 +1,10 @@
+// inner deep label (new style)
+importG
+	foo ::= ([name]::a)+ ;
+	bar ::= b;
+.
+RetireLs.
+diff
+	foo ::= a+;
+	bar ::= b ;
+.

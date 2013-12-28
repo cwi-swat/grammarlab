@@ -1,0 +1,10 @@
+// no labels => nothing to do
+importG
+	foo ::= a ;
+	bar ::= b ;
+.
+RetireLs.
+diff
+	foo ::= a ;
+	bar ::= b ;
+.
