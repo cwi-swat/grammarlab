@@ -1,0 +1,10 @@
+// two inner deep marks
+importG
+	foo ::= a <namedb>:b <namedc>:c d;
+	bar ::= e;
+.
+RetireMs.
+diff
+	foo ::= a b c d;
+	bar ::= e ;
+.

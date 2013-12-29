@@ -1,10 +1,10 @@
-// inner deep label (new style)
+// two inner deep labels (new style)
 importG
-	foo ::= a [name]::b c ;
-	bar ::= b;
+	foo ::= a [namedb]::b [namedc]::c d;
+	bar ::= e;
 .
 RetireLs.
 diff
-	foo ::= a b c;
-	bar ::= b ;
+	foo ::= a b c d;
+	bar ::= e ;
 .

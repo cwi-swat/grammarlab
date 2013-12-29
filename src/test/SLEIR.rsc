@@ -897,7 +897,7 @@ void show_inlinemax4() {run_case("inlinemax4.glue",true);}
 
 // SLEIR:Reroot2top: 0 tests
 
-// SLEIR:RetireLs: 5 tests
+// SLEIR:RetireLs: 6 tests
 // retirels1.glue
 test bool test_retirels1() = run_case("retirels1.glue",false);
 void show_retirels1() {run_case("retirels1.glue",true);}
@@ -913,8 +913,31 @@ void show_retirels4() {run_case("retirels4.glue",true);}
 // retirels5.glue
 test bool test_retirels5() = run_case("retirels5.glue",false);
 void show_retirels5() {run_case("retirels5.glue",true);}
-// SLEIR:RetireMs: 0 tests
-
+// retirels6.glue
+test bool test_retirels6() = run_case("retirels6.glue",false);
+void show_retirels6() {run_case("retirels6.glue",true);}
+// SLEIR:RetireMs: 7 tests
+// retirems1.glue
+test bool test_retirems1() = run_case("retirems1.glue",false);
+void show_retirems1() {run_case("retirems1.glue",true);}
+// retirems2.glue
+test bool test_retirems2() = run_case("retirems2.glue",false);
+void show_retirems2() {run_case("retirems2.glue",true);}
+// retirems3.glue
+test bool test_retirems3() = run_case("retirems3.glue",false);
+void show_retirems3() {run_case("retirems3.glue",true);}
+// retirems4.glue
+test bool test_retirems4() = run_case("retirems4.glue",false);
+void show_retirems4() {run_case("retirems4.glue",true);}
+// retirems5.glue
+test bool test_retirems5() = run_case("retirems5.glue",false);
+void show_retirems5() {run_case("retirems5.glue",true);}
+// retirems6.glue
+test bool test_retirems6() = run_case("retirems6.glue",false);
+void show_retirems6() {run_case("retirems6.glue",true);}
+// retirems7.glue
+test bool test_retirems7() = run_case("retirems7.glue",false);
+void show_retirems7() {run_case("retirems7.glue",true);}
 // SLEIR:RetireTs: 9 tests
 // retirets01.glue
 test bool test_retirets01() = run_case("retirets01.glue",false);

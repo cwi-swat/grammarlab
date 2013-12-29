@@ -1,0 +1,10 @@
+// two inner empty marks
+importG
+	foo ::= a <>:b <>:c d;
+	bar ::= e;
+.
+RetireMs.
+diff
+	foo ::= a b c d;
+	bar ::= e ;
+.

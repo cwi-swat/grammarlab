@@ -1,0 +1,10 @@
+// two marks on the top level
+importG
+	foo ::= <name>:a ;
+	bar ::= <also>:b ;
+.
+RetireMs.
+diff
+	foo ::= a ;
+	bar ::= b ;
+.

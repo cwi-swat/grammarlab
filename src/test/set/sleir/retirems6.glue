@@ -1,0 +1,10 @@
+// inner deep mark
+importG
+	foo ::= a <name>:b c ;
+	bar ::= b;
+.
+RetireMs.
+diff
+	foo ::= a b c;
+	bar ::= b ;
+.

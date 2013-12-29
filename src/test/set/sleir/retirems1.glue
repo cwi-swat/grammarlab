@@ -1,0 +1,10 @@
+// no marks => nothing to do
+importG
+	foo ::= a ;
+	bar ::= b ;
+.
+RetireMs.
+diff
+	foo ::= a ;
+	bar ::= b ;
+.
