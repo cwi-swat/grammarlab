@@ -3,6 +3,8 @@ module grammarlab::transform::SLEIR
 
 import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
+import grammarlab::language::XScope;
+import grammarlab::lib::Scoping;
 extend grammarlab::transform::sleir::Massage;
 import grammarlab::transform::sleir::Naming;
 extend grammarlab::transform::sleir::Width;
@@ -554,7 +556,7 @@ public GGrammar mutate(SplitAllT(), GGrammar g)
 }
 
 // Needed for: SplitAllT
-bool splittable(str t) = !isAlpha(t) & len(t)>1;
+bool splittable(str t) = !isAlpha(t) && len(t)>1;
 list[str] splintered(str t)
 {
 	list[list[int]] ts = [];

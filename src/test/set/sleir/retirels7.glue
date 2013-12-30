@@ -1,9 +1,9 @@
 // a named epsilon
 importG
-	foo ::= a <name>:ε b;
+	foo ::= a [name]::ε b;
 	bar ::= c;
 .
-RetireMs.
+RetireLs.
 diff
 	foo ::= a b;
 	bar ::= c;
