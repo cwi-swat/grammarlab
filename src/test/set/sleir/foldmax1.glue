@@ -1,10 +1,10 @@
 // nothing to do
 importG
-	foo ::= bar;
-	bar ::= foo;
+	foo ::= foo bar;
+	bar ::= bar foo;
 .
 FoldMax.
 diff
-	foo ::= bar;
-	bar ::= foo;
+	foo ::= foo bar;
+	bar ::= bar foo;
 .

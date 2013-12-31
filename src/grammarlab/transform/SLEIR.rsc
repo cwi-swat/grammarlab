@@ -264,13 +264,14 @@ public GGrammar mutate(EquateAll(), GGrammar g)
 @doc{fold ⊢ FoldMax, Type I, page 5}
 public GGrammar mutate(FoldMax(), GGrammar g)
 {
+	GProdList ps;
 	// Slightly improved over the straightforward generalisation
-	for (n <- g.N)
-	{
-		<_,ps,_> := splitPbyW(g.P,innt(n));
-		if (len(ps)!=1) continue;
-		g.P = performReplace(normalise(ps[0].rhs),nonterminal(n), g.P);
-	}
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)), len(ps2)==1)
+		g.P
+			= performReplace(normalise(ps2[0].rhs), nonterminal(n), ps1)
+			+ ps2
+			+ performReplace(normalise(ps2[0].rhs), nonterminal(n), ps3)
+			;
 	return g;
 }
 
@@ -300,13 +301,12 @@ public GGrammar mutate(HorizontalAll(), GGrammar g)
 public GGrammar mutate(InlineMax(), GGrammar g)
 {
 	// Slightly improved over the straightforward generalisation
-	for (n <- g.N - g.S)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)!=1) continue; // not horizontal!
-		if (/nonterminal(n) := ps2) continue; // recursive!
-		g.P = performReplace(nonterminal(n), normalise(ps2[0].rhs), ps1+ps3);
-	}
+	for (
+		n <- g.N - g.S,
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
+		len(ps2)==1,  // horizontal!
+		/nonterminal(n) !:= ps2) // non-recursive!
+	g.P = performReplace(nonterminal(n), normalise(ps2[0].rhs), ps1+ps3);
 	return g;
 }
 
@@ -611,14 +611,16 @@ public GGrammar mutate(UndefineTrivial(), GGrammar g)
 @doc{unfold ⊢ UnfoldMax, Type I, page 5}
 public GGrammar mutate(UnfoldMax(), GGrammar g)
 {
-	for (n <- g.N - g.S)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)!=1) continue; // not horizontal!
-		if (/nonterminal(n) := ps2) continue; // recursive!
-		g.P = performReplace(normalise(ps2[0].rhs),nonterminal(n), g.P);
-		// A code clone of InlineMax                               ^^^ difference
-	}
+	// A code clone of InlineMax
+	for (
+		n <- g.N - g.S,
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
+		len(ps2)==1,  // horizontal!
+		/nonterminal(n) !:= ps2) // non-recursive!
+	g.P
+		= performReplace(nonterminal(n), normalise(ps2[0].rhs), ps1)
+		+ ps2
+		+ performReplace(nonterminal(n), normalise(ps2[0].rhs), ps3);
 	return g;
 }
 
