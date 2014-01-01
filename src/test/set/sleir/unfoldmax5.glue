@@ -1,10 +1,10 @@
 // several competing unfoldings! - deterministic because the grammar is processed sequentially
 importG
-	bar ::= foo wez;
 	foo ::= bar;
+	bar ::= foo wez;
 .
 UnfoldMax.
 diff
-	bar ::= foo wez;
-	foo ::= foo wez;
+	foo ::= bar;
+	bar ::= bar wez;
 .

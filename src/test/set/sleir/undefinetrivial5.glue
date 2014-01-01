@@ -1,11 +1,11 @@
 // several affected nonterminals
 importG
 	bar ::= ε;
-	foo ::= bar;
+	foo ::= bar wez qux;
 	wez ::= φ;
 	qux ::= α;
 .
 UndefineTrivial.
 diff
-	foo ::= bar;
+	foo ::= bar wez qux;
 .

@@ -5,7 +5,7 @@ importG
 .
 DefineMin.
 diff
-	foo ::= bar;
+	foo ::= bar wez;
 	bar ::= foo;
 	wez ::= φ;
 .

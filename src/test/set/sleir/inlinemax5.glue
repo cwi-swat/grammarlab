@@ -3,8 +3,7 @@ importG
 	bar ::= foo wez;
 	foo ::= bar;
 .
-UnfoldMax.
+InlineMax.
 diff
-	bar ::= foo wez;
 	foo ::= foo wez;
 .

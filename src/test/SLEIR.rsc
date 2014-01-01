@@ -578,7 +578,7 @@ test bool test_foldmax4() = run_case("foldmax4.glue",false);
 void show_foldmax4() {run_case("foldmax4.glue",true);}
 // SLEIR:HorizontalAll: 0 tests
 
-// SLEIR:InlineMax: 4 tests
+// SLEIR:InlineMax: 5 tests
 // inlinemax1.glue
 test bool test_inlinemax1() = run_case("inlinemax1.glue",false);
 void show_inlinemax1() {run_case("inlinemax1.glue",true);}
@@ -591,6 +591,9 @@ void show_inlinemax3() {run_case("inlinemax3.glue",true);}
 // inlinemax4.glue
 test bool test_inlinemax4() = run_case("inlinemax4.glue",false);
 void show_inlinemax4() {run_case("inlinemax4.glue",true);}
+// inlinemax5.glue
+test bool test_inlinemax5() = run_case("inlinemax5.glue",false);
+void show_inlinemax5() {run_case("inlinemax5.glue",true);}
 // SLEIR:InlinePlus: 0 tests
 
 // SLEIR:InsertLayout: 0 tests
@@ -897,7 +900,7 @@ void show_inlinemax4() {run_case("inlinemax4.glue",true);}
 
 // SLEIR:Reroot2top: 0 tests
 
-// SLEIR:RetireLs: 6 tests
+// SLEIR:RetireLs: 7 tests
 // retirels1.glue
 test bool test_retirels1() = run_case("retirels1.glue",false);
 void show_retirels1() {run_case("retirels1.glue",true);}
@@ -916,7 +919,10 @@ void show_retirels5() {run_case("retirels5.glue",true);}
 // retirels6.glue
 test bool test_retirels6() = run_case("retirels6.glue",false);
 void show_retirels6() {run_case("retirels6.glue",true);}
-// SLEIR:RetireMs: 7 tests
+// retirels7.glue
+test bool test_retirels7() = run_case("retirels7.glue",false);
+void show_retirels7() {run_case("retirels7.glue",true);}
+// SLEIR:RetireMs: 8 tests
 // retirems1.glue
 test bool test_retirems1() = run_case("retirems1.glue",false);
 void show_retirems1() {run_case("retirems1.glue",true);}
@@ -938,6 +944,9 @@ void show_retirems6() {run_case("retirems6.glue",true);}
 // retirems7.glue
 test bool test_retirems7() = run_case("retirems7.glue",false);
 void show_retirems7() {run_case("retirems7.glue",true);}
+// retirems8.glue
+test bool test_retirems8() = run_case("retirems8.glue",false);
+void show_retirems8() {run_case("retirems8.glue",true);}
 // SLEIR:RetireTs: 9 tests
 // retirets01.glue
 test bool test_retirets01() = run_case("retirets01.glue",false);
@@ -1009,7 +1018,7 @@ void show_undefinetrivial4() {run_case("undefinetrivial4.glue",true);}
 // undefinetrivial5.glue
 test bool test_undefinetrivial5() = run_case("undefinetrivial5.glue",false);
 void show_undefinetrivial5() {run_case("undefinetrivial5.glue",true);}
-// SLEIR:UnfoldMax: 4 tests
+// SLEIR:UnfoldMax: 5 tests
 // unfoldmax1.glue
 test bool test_unfoldmax1() = run_case("unfoldmax1.glue",false);
 void show_unfoldmax1() {run_case("unfoldmax1.glue",true);}
@@ -1022,6 +1031,9 @@ void show_unfoldmax3() {run_case("unfoldmax3.glue",true);}
 // unfoldmax4.glue
 test bool test_unfoldmax4() = run_case("unfoldmax4.glue",false);
 void show_unfoldmax4() {run_case("unfoldmax4.glue",true);}
+// unfoldmax5.glue
+test bool test_unfoldmax5() = run_case("unfoldmax5.glue",false);
+void show_unfoldmax5() {run_case("unfoldmax5.glue",true);}
 // SLEIR:VerticalAll: 0 tests
 
 // SLEIR:WidenOpt2Star: 0 tests

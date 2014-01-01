@@ -5,6 +5,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::SLEIR;
 import grammarlab::language::XScope;
 import grammarlab::lib::Scoping;
+import grammarlab::compare::Differ;
 extend grammarlab::transform::sleir::Massage;
 import grammarlab::transform::sleir::Naming;
 extend grammarlab::transform::sleir::Width;
@@ -229,8 +230,8 @@ list[str] TOP(GGrammar g) = g.N - NONTOP(g);
 @doc{eliminate ⊢ EliminateTop, Type I, page 5}
 public GGrammar mutate(EliminateTop(), GGrammar g)
 {
-	ns = TOP(g);
-	return grammar(ns, [p <- g.P, p.lhs in ns], g.S);
+	ns = NONTOP(g);
+	return grammar(ns, [p | p <- g.P, p.lhs in ns], g.S);
 }
 
 // SLEIR:EquateAll
@@ -242,16 +243,16 @@ public GGrammar mutate(EquateAll(), GGrammar g)
 		if (x == y) continue;
 		<ps1x,ps2x,ps3x> = splitPbyW(g.P,innt(x));
 		<_,ps2y,_> = splitPbyW(g.P,innt(y));
-		XResult rep = transform(renameN(x,y), normalise(grammar([],ps2x,[])));
-		if (ok() !:= rep.r) continue;
-		gxy = rep.g;
+		gxy = performRenameN(x,y,normalise(grammar([],ps2x,[])));
 		gyy = normalise(grammar([],ps2y,[]));
 		if (!gdts(gxy,gyy)) continue;
 		if (x in usedNs(ps1x + ps3x))
-			g = transform(replace(nonterminal(x),nonterminal(y),globally()), grammar(g.N, ps1x + ps3x, g.S - x)).g;
+			g = grammar(g.N, performReplace(nonterminal(x), nonterminal(y), ps1x+ps3x), g.S - x);
+			//g = transform(replace(nonterminal(x),nonterminal(y),globally()), grammar(g.N, ps1x + ps3x, g.S - x)).g;
 		else
 			g = grammar(g.N, ps1x + ps3x, g.S - x);
 	}
+	return g;
 }
 
 // NOT done: extract
@@ -264,7 +265,6 @@ public GGrammar mutate(EquateAll(), GGrammar g)
 @doc{fold ⊢ FoldMax, Type I, page 5}
 public GGrammar mutate(FoldMax(), GGrammar g)
 {
-	GProdList ps;
 	// Slightly improved over the straightforward generalisation
 	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)), len(ps2)==1)
 		g.P
@@ -595,15 +595,18 @@ public GGrammar mutate(UnchainAll(), GGrammar g)
 public GGrammar mutate(UndefineTrivial(), GGrammar g)
 {
 	// Generalisation is based on undefineTrue
-	for (x <- g.N, /nonterminal(x) := g.P)
-	{
-		<ps1,ps2,ps3> = splitPbyW(g.P,innt(x));
-		if ([production(x,empty())] := ps2
-		|| [production(x,epsilon())] := ps2
-		|| [production(x,anything())] := ps2
-		|| [production(x,nothing())] := ps2 // not really needed
-		) g.P = ps1 + ps3;
-	}
+	for (
+		x <- g.N, // for all nonterminals
+		/nonterminal(x) := g.P, // which are used in the grammar
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(x)),
+		[production(x,rhs)] := ps2,
+		(
+			empty() := rhs // if it’s a failure
+		||  epsilon() := rhs // or an empty string language
+		||  anything() := rhs // or a universal symbol
+		||  nothing() := rhs // (not really needed, just a safety net)
+		))
+	g.P = ps1 + ps3;
 	return g;
 }
 
