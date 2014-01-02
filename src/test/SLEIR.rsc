@@ -594,8 +594,19 @@ void show_inlinemax4() {run_case("inlinemax4.glue",true);}
 // inlinemax5.glue
 test bool test_inlinemax5() = run_case("inlinemax5.glue",false);
 void show_inlinemax5() {run_case("inlinemax5.glue",true);}
-// SLEIR:InlinePlus: 0 tests
-
+// SLEIR:InlinePlus: 4 tests
+// inlineplus1.glue
+test bool test_inlineplus1() = run_case("inlineplus1.glue",false);
+void show_inlineplus1() {run_case("inlineplus1.glue",true);}
+// inlineplus2.glue
+test bool test_inlineplus2() = run_case("inlineplus2.glue",false);
+void show_inlineplus2() {run_case("inlineplus2.glue",true);}
+// inlineplus3.glue
+test bool test_inlineplus3() = run_case("inlineplus3.glue",false);
+void show_inlineplus3() {run_case("inlineplus3.glue",true);}
+// inlineplus4.glue
+test bool test_inlineplus4() = run_case("inlineplus4.glue",false);
+void show_inlineplus4() {run_case("inlineplus4.glue",true);}
 // SLEIR:InsertLayout: 0 tests
 
 // SLEIR:IterateXX: 0 tests

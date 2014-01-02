@@ -1,0 +1,9 @@
+// one plus-nonterminal
+importG
+	bar ::= foo+;
+	foo ::= bar wez;
+.
+InlinePlus.
+diff
+	foo ::= foo+ wez;
+.

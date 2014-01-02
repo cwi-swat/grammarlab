@@ -1,0 +1,10 @@
+// several plus-nonterminals
+importG
+	foo ::= bar wez;
+	bar ::= qux+;
+	wez ::= foo+;
+.
+InlinePlus.
+diff
+	foo ::= qux+ foo+;
+.

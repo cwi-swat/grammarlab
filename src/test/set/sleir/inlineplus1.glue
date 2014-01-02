@@ -1,0 +1,10 @@
+// nothing to do
+importG
+	foo ::= foo bar;
+	bar ::= bar foo;
+.
+InlinePlus.
+diff
+	foo ::= foo bar;
+	bar ::= bar foo;
+.
