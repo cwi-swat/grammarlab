@@ -1,0 +1,12 @@
+// the second root should be added
+importG
+	⟙    ::= foo;
+	foo  ::= a b* c;
+	bar  ::= d e? f;
+.
+Reroot2top.
+diff
+	⟙    ::= foo | bar;
+	foo  ::= a b* c;
+	bar  ::= d e? f;
+.

@@ -1,0 +1,9 @@
+// the root should be the only top nonterminal
+importG
+	foo  ::= a b* c;
+.
+Reroot2top.
+diff
+	⟙    ::= foo;
+	foo  ::= a b* c;
+.

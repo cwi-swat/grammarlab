@@ -1,0 +1,12 @@
+// a wrong root should be replaced by the top nonterminal
+importG
+	⟙    ::= bar;
+	foo  ::= a bar* c;
+	bar  ::= d e? f;
+.
+Reroot2top.
+diff
+	⟙    ::= foo;
+	foo  ::= a bar* c;
+	bar  ::= d e? f;
+.

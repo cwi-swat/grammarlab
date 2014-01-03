@@ -909,8 +909,22 @@ void show_inlineplus4() {run_case("inlineplus4.glue",true);}
 
 // SLEIR:RAssocAll: 0 tests
 
-// SLEIR:Reroot2top: 0 tests
-
+// SLEIR:Reroot2top: 5 tests
+// reroot2top1.glue
+test bool test_reroot2top1() = run_case("reroot2top1.glue",false);
+void show_reroot2top1() {run_case("reroot2top1.glue",true);}
+// reroot2top2.glue
+test bool test_reroot2top2() = run_case("reroot2top2.glue",false);
+void show_reroot2top2() {run_case("reroot2top2.glue",true);}
+// reroot2top3.glue
+test bool test_reroot2top3() = run_case("reroot2top3.glue",false);
+void show_reroot2top3() {run_case("reroot2top3.glue",true);}
+// reroot2top4.glue
+test bool test_reroot2top4() = run_case("reroot2top4.glue",false);
+void show_reroot2top4() {run_case("reroot2top4.glue",true);}
+// reroot2top5.glue
+test bool test_reroot2top5() = run_case("reroot2top5.glue",false);
+void show_reroot2top5() {run_case("reroot2top5.glue",true);}
 // SLEIR:RetireLs: 7 tests
 // retirels1.glue
 test bool test_retirels1() = run_case("retirels1.glue",false);
