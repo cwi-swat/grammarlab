@@ -1,0 +1,9 @@
+importG
+	decs ::= dec ;
+	decs ::= dec decs ;
+.
+VerticalAll.
+diff
+	decs ::= dec ;
+	decs ::= dec decs ;
+.

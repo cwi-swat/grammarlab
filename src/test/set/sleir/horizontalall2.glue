@@ -1,0 +1,9 @@
+// based on the XBGF test case called horizontal_n
+importG
+	decs ::= dec ;
+	decs ::= dec decs ;
+.
+HorizontalAll.
+diff
+	decs ::= dec | (dec decs) ;
+.

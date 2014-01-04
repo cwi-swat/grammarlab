@@ -1,0 +1,9 @@
+importG
+	nums ::= one ;
+	nums ::= two two ;
+	nums ::= three | four ;
+.
+HorizontalAll.
+diff
+	nums ::= one | two two | three | four ;
+.

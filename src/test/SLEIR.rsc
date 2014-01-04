@@ -576,8 +576,22 @@ void show_foldmax3() {run_case("foldmax3.glue",true);}
 // foldmax4.glue
 test bool test_foldmax4() = run_case("foldmax4.glue",false);
 void show_foldmax4() {run_case("foldmax4.glue",true);}
-// SLEIR:HorizontalAll: 0 tests
-
+// SLEIR:HorizontalAll: 5 tests
+// horizontalall1.glue
+test bool test_horizontalall1() = run_case("horizontalall1.glue",false);
+void show_horizontalall1() {run_case("horizontalall1.glue",true);}
+// horizontalall2.glue
+test bool test_horizontalall2() = run_case("horizontalall2.glue",false);
+void show_horizontalall2() {run_case("horizontalall2.glue",true);}
+// horizontalall3.glue
+test bool test_horizontalall3() = run_case("horizontalall3.glue",false);
+void show_horizontalall3() {run_case("horizontalall3.glue",true);}
+// horizontalall4.glue
+test bool test_horizontalall4() = run_case("horizontalall4.glue",false);
+void show_horizontalall4() {run_case("horizontalall4.glue",true);}
+// horizontalall5.glue
+test bool test_horizontalall5() = run_case("horizontalall5.glue",false);
+void show_horizontalall5() {run_case("horizontalall5.glue",true);}
 // SLEIR:InlineMax: 5 tests
 // inlinemax1.glue
 test bool test_inlinemax1() = run_case("inlinemax1.glue",false);
@@ -1059,8 +1073,22 @@ void show_unfoldmax4() {run_case("unfoldmax4.glue",true);}
 // unfoldmax5.glue
 test bool test_unfoldmax5() = run_case("unfoldmax5.glue",false);
 void show_unfoldmax5() {run_case("unfoldmax5.glue",true);}
-// SLEIR:VerticalAll: 0 tests
-
+// SLEIR:VerticalAll: 5 tests
+// verticalall1.glue
+test bool test_verticalall1() = run_case("verticalall1.glue",false);
+void show_verticalall1() {run_case("verticalall1.glue",true);}
+// verticalall2.glue
+test bool test_verticalall2() = run_case("verticalall2.glue",false);
+void show_verticalall2() {run_case("verticalall2.glue",true);}
+// verticalall3.glue
+test bool test_verticalall3() = run_case("verticalall3.glue",false);
+void show_verticalall3() {run_case("verticalall3.glue",true);}
+// verticalall4.glue
+test bool test_verticalall4() = run_case("verticalall4.glue",false);
+void show_verticalall4() {run_case("verticalall4.glue",true);}
+// verticalall5.glue
+test bool test_verticalall5() = run_case("verticalall5.glue",false);
+void show_verticalall5() {run_case("verticalall5.glue",true);}
 // SLEIR:WidenOpt2Star: 0 tests
 
 // SLEIR:WidenPlus2Star: 0 tests

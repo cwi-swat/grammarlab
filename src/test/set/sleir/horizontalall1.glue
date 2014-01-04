@@ -1,0 +1,7 @@
+importG
+	decs ::= dec | (dec decs) ;
+.
+HorizontalAll.
+diff
+	decs ::= dec | (dec decs) ;
+.

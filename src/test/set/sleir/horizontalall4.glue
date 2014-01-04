@@ -1,0 +1,10 @@
+importG
+	decs ::= dec | (dec decs) ;
+	funs ::= fun ;
+	funs ::= fun funs ;
+.
+HorizontalAll.
+diff
+	decs ::= dec | (dec decs) ;
+	funs ::= fun | (fun funs) ;
+.
