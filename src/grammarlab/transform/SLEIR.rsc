@@ -279,18 +279,9 @@ public GGrammar mutate(FoldMax(), GGrammar g)
 @doc{horizontal ⊢ HorizontalAll, Type I, page 5}
 public GGrammar mutate(HorizontalAll(), GGrammar g)
 {
-	for (n <- g.N)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)==1) continue;
-		GExprList es4 = [];
-		for (production(str x, GExpr e) <- ps2)
-			if (choice(L) := e)
-				es4 += L;
-			else
-				es4 += e;
-		g.P = ps1 + production(x,choice(es4)) + ps3;
-	}
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)))
+		g.P = ps1 + production(n,choice([*y | y <- [(choice(L) := p.rhs || label(_,choice(L)) := p.rhs)?L:[p.rhs] | p <- ps2]])) + ps3;
+	return g;
 }
 
 // NOT done: importG - page 11
@@ -652,12 +643,8 @@ public GGrammar mutate(RetireLs(), GGrammar g)
 @doc{vertical ⊢ VerticalAll, Type I, page 6}
 public GGrammar mutate(VerticalAll(), GGrammar g)
 {
-	for (n <- g.N)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)==1 && choice(L) := ps2[0].rhs && label(_,choice(L)) := ps2[0].rhs)
-			g.P = ps1 + [production(ps2[0].lhs,e) | e <- L] + ps3;
-	}
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)))
+		g.P = ps1 + [production(n,e) | y <- [(choice(L) := p.rhs || label(_,choice(L)) := p.rhs)?L:[p.rhs] | p <- ps2], e <- y] + ps3;
 	return g;
 }
 
