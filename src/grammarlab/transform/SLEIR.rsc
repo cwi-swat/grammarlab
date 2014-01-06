@@ -305,12 +305,10 @@ public GGrammar mutate(InlineMax(), GGrammar g)
 @doc{inline ⊢ InlinePlus, Type II, NEW: never made it to the paper}
 public GGrammar mutate(InlinePlus(), GGrammar g)
 {
-	for (n <- g.N - g.S)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if ([production(str lhs, plus(nonterminal(m)))] := ps2)
-			g.P = grammarlab::transform::XBGF::performReplace(nonterminal(lhs), ps2[0].rhs, ps1+ps3);
-	}
+	for (n <- g.N - g.S,
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
+		[production(str lhs, plus(nonterminal(m)))] := ps2)
+	g.P = grammarlab::transform::XBGF::performReplace(nonterminal(lhs), ps2[0].rhs, ps1+ps3);
 	return g;
 }
 
@@ -553,10 +551,10 @@ list[str] splintered(str t)
 	list[list[int]] ts = [];
 	for (int c <- chars(t))
 	{
-		if(isAlpha(c) && isAlpha(ts[-1][-1]))
+		if(isAlpha(c) && !isEmpty(ts) && !isEmpty(ts[-1]) && isAlpha(ts[-1][-1]))
 				ts[-1] += c;
 		else
-				ts += [c];
+				ts += [[c]];
 	}
 	return [stringChars(cs) | cs <- ts];
 }
@@ -566,18 +564,15 @@ list[str] splintered(str t)
 public GGrammar mutate(UnchainAll(), GGrammar g)
 {
 	// Generalised code was too slow, replaced with a faster and shorter native Rascal alternative
-	for (p <- g.P)
-	{
-		if ((
-				production(n1,nonterminal(n2)) := p
+	for (p <- g.P,
+			(	production(n1,nonterminal(n2)) := p
 			||	production(n1,label(_,nonterminal(n2))) := p
 			||	production(n1,mark(_,nonterminal(n2))) := p
 			||	production(n1,label(_,mark(_,nonterminal(n2)))) := p
-			)
-			&& n1 != n2
-			&& n2 in g.N)
+			),
+			n1 != n2,
+			n2 in g.N)
 		g.P -= p;
-	}
 	return g;
 }
 

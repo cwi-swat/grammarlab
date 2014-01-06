@@ -1,7 +1,7 @@
 // several affected nonterminals
 importG
 	foo ::= a "+=";
-	bar ::= "D" "E" f;
+	bar ::= "DE" f;
 .
 SplitAllT.
 diff
