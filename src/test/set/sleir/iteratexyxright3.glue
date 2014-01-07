@@ -1,0 +1,12 @@
+// two nonterminals in one step
+importG
+	aexpr ::= [constant]::int ;
+	aexpr ::= [binary]::(aexpr aop aexpr) ;
+	bexpr ::= [boolean]::(bexpr bop bexpr) ;
+.
+IterateXYXRight.
+diff
+	aexpr ::= [constant]::int ;
+	aexpr ::= [binary]::(aexpr ((aop aexpr)*)) ;
+	bexpr ::= [boolean]::(bexpr ((bop bexpr)*)) ;
+.

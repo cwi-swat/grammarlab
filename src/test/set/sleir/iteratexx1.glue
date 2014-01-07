@@ -1,0 +1,9 @@
+importG
+	expr ::= STR ;
+	expr ::= expr expr ;
+.
+IterateXX.
+diff
+	expr ::= STR ;
+	expr ::= expr+ ;
+.

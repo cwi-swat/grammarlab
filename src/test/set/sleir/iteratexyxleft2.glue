@@ -1,0 +1,10 @@
+// based on the XBGF test case called iterate_l
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+.
+IterateXYXLeft.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(((expr op)*) expr) ;
+.

@@ -1,0 +1,10 @@
+// based on the XBGF test case called iterate_p
+importG
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr expr) ;
+.
+IterateXX.
+diff
+	expr ::= [terminal]::STR ;
+	expr ::= [sequence]::(expr+) ;
+.

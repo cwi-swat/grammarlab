@@ -1,0 +1,12 @@
+// two nonterminals in one step
+importG
+	aexpr ::= [terminal]::STR ;
+	aexpr ::= [sequence]::(aexpr aexpr) ;
+	bexpr ::= [boolean]::(bexpr bexpr) ;
+.
+IterateXX.
+diff
+	aexpr ::= [terminal]::STR ;
+	aexpr ::= [sequence]::(aexpr+);
+	bexpr ::= [boolean]::(bexpr+);
+.

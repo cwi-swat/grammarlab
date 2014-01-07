@@ -1,0 +1,9 @@
+// labels over choices should disappear
+importG
+	decs ::= [all]::(dec | (dec decs)) ;
+.
+VerticalAll.
+diff
+	decs ::= dec ;
+	decs ::= dec decs ;
+.

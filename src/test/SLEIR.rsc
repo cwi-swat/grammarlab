@@ -623,12 +623,36 @@ test bool test_inlineplus4() = run_case("inlineplus4.glue",false);
 void show_inlineplus4() {run_case("inlineplus4.glue",true);}
 // SLEIR:InsertLayout: 0 tests
 
-// SLEIR:IterateXX: 0 tests
-
-// SLEIR:IterateXYXLeft: 0 tests
-
-// SLEIR:IterateXYXRight: 0 tests
-
+// SLEIR:IterateXX: 3 tests
+// iteratexx1.glue
+test bool test_iteratexx1() = run_case("iteratexx1.glue",false);
+void show_iteratexx1() {run_case("iteratexx1.glue",true);}
+// iteratexx2.glue
+test bool test_iteratexx2() = run_case("iteratexx2.glue",false);
+void show_iteratexx2() {run_case("iteratexx2.glue",true);}
+// iteratexx3.glue
+test bool test_iteratexx3() = run_case("iteratexx3.glue",false);
+void show_iteratexx3() {run_case("iteratexx3.glue",true);}
+// SLEIR:IterateXYXLeft: 3 tests
+// iteratexyxleft1.glue
+test bool test_iteratexyxleft1() = run_case("iteratexyxleft1.glue",false);
+void show_iteratexyxleft1() {run_case("iteratexyxleft1.glue",true);}
+// iteratexyxleft2.glue
+test bool test_iteratexyxleft2() = run_case("iteratexyxleft2.glue",false);
+void show_iteratexyxleft2() {run_case("iteratexyxleft2.glue",true);}
+// iteratexyxleft3.glue
+test bool test_iteratexyxleft3() = run_case("iteratexyxleft3.glue",false);
+void show_iteratexyxleft3() {run_case("iteratexyxleft3.glue",true);}
+// SLEIR:IterateXYXRight: 3 tests
+// iteratexyxright1.glue
+test bool test_iteratexyxright1() = run_case("iteratexyxright1.glue",false);
+void show_iteratexyxright1() {run_case("iteratexyxright1.glue",true);}
+// iteratexyxright2.glue
+test bool test_iteratexyxright2() = run_case("iteratexyxright2.glue",false);
+void show_iteratexyxright2() {run_case("iteratexyxright2.glue",true);}
+// iteratexyxright3.glue
+test bool test_iteratexyxright3() = run_case("iteratexyxright3.glue",false);
+void show_iteratexyxright3() {run_case("iteratexyxright3.glue",true);}
 // SLEIR:LAssocAll: 0 tests
 
 // SLEIR:LiftTopLabels: 0 tests
@@ -1073,7 +1097,7 @@ void show_unfoldmax4() {run_case("unfoldmax4.glue",true);}
 // unfoldmax5.glue
 test bool test_unfoldmax5() = run_case("unfoldmax5.glue",false);
 void show_unfoldmax5() {run_case("unfoldmax5.glue",true);}
-// SLEIR:VerticalAll: 5 tests
+// SLEIR:VerticalAll: 6 tests
 // verticalall1.glue
 test bool test_verticalall1() = run_case("verticalall1.glue",false);
 void show_verticalall1() {run_case("verticalall1.glue",true);}
@@ -1089,6 +1113,9 @@ void show_verticalall4() {run_case("verticalall4.glue",true);}
 // verticalall5.glue
 test bool test_verticalall5() = run_case("verticalall5.glue",false);
 void show_verticalall5() {run_case("verticalall5.glue",true);}
+// verticalall6.glue
+test bool test_verticalall6() = run_case("verticalall6.glue",false);
+void show_verticalall6() {run_case("verticalall6.glue",true);}
 // SLEIR:WidenOpt2Star: 0 tests
 
 // SLEIR:WidenPlus2Star: 0 tests
