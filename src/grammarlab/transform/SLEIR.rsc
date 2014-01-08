@@ -318,13 +318,11 @@ public GGrammar mutate(InlinePlus(), GGrammar g)
 @doc{iterate ⊢ IterateXYXLeft, Type III, page 8}
 public GGrammar mutate(IterateXYXLeft(), GGrammar g)
 {
-	for (n <- g.N)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)!=1) continue; // not horizontal!
-		if ([production(str lhs, sequence([GExpr x,GExpr y,x]))] := ps2)
-			g.P = ps1 + [production(lhs, sequence([star(sequence([x,y])),x]))] + ps3;
-	}
+	for (n <- g.N,
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
+		p:production(n, sequence([GExpr x,GExpr y,x])) <- ps2
+	)
+		g.P = ps1 + (ps2 - p + production(n, sequence([star(sequence([x,y])),x]))) + ps3; 
 	return g;
 }
 
@@ -332,13 +330,11 @@ public GGrammar mutate(IterateXYXLeft(), GGrammar g)
 @doc{iterate ⊢ IterateXYXRight, Type III, page 8}
 public GGrammar mutate(IterateXYXRight(), GGrammar g)
 {
-	for (n <- g.N)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)!=1) continue; // not horizontal!
-		if ([production(str lhs, sequence([GExpr x,GExpr y,x]))] := ps2)
-			g.P = ps1 + [production(lhs, sequence([x,star(sequence([y,x]))]))] + ps3;
-	}
+	for (n <- g.N,
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
+		p:production(n, sequence([GExpr x,GExpr y,x])) <- ps2
+	)
+		g.P = ps1 + (ps2 - p + production(n, sequence([x,star(sequence([y,x]))]))) + ps3; 
 	return g;
 }
 
@@ -346,13 +342,11 @@ public GGrammar mutate(IterateXYXRight(), GGrammar g)
 @doc{iterate ⊢ IterateXX, Type III, page 8}
 public GGrammar mutate(IterateXX(), GGrammar g)
 {
-	for (n <- g.N)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)!=1) continue; // not horizontal!
-		if ([production(str lhs, sequence([GExpr x,x]))] := ps2)
-			g.P = ps1 + [production(lhs, plus(x))] + ps3;
-	}
+	for (n <- g.N,
+		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
+		p:production(n, sequence([GExpr x,x])) <- ps2
+	)
+		g.P = ps1 + (ps2 - p + production(n, plus(x))) + ps3; 
 	return g;
 }
 
