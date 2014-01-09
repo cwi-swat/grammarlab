@@ -318,11 +318,12 @@ public GGrammar mutate(InlinePlus(), GGrammar g)
 @doc{iterate ⊢ IterateXYXLeft, Type III, page 8}
 public GGrammar mutate(IterateXYXLeft(), GGrammar g)
 {
-	for (n <- g.N,
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
-		p:production(n, sequence([GExpr x,GExpr y,x])) <- ps2
-	)
-		g.P = ps1 + (ps2 - p + production(n, sequence([star(sequence([x,y])),x]))) + ps3; 
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)))
+		g.P = ps1 + [
+		production(n,
+			(sequence([GExpr x,GExpr y,x]) := p.rhs) ? sequence([star(sequence([x,y])),x]) :
+			(label(str name,sequence([GExpr x,GExpr y,x])) := p.rhs) ? label(name,sequence([star(sequence([x,y])),x])) :
+			p.rhs) | p <- ps2] + ps3;
 	return g;
 }
 
@@ -330,11 +331,12 @@ public GGrammar mutate(IterateXYXLeft(), GGrammar g)
 @doc{iterate ⊢ IterateXYXRight, Type III, page 8}
 public GGrammar mutate(IterateXYXRight(), GGrammar g)
 {
-	for (n <- g.N,
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
-		p:production(n, sequence([GExpr x,GExpr y,x])) <- ps2
-	)
-		g.P = ps1 + (ps2 - p + production(n, sequence([x,star(sequence([y,x]))]))) + ps3; 
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)))
+		g.P = ps1 + [
+		production(n,
+			(sequence([GExpr x,GExpr y,x]) := p.rhs) ? sequence([x,star(sequence([y,x]))]) :
+			(label(str name,sequence([GExpr x,GExpr y,x])) := p.rhs) ? label(name,sequence([x,star(sequence([y,x]))])) :
+			p.rhs) | p <- ps2] + ps3;
 	return g;
 }
 
@@ -342,11 +344,12 @@ public GGrammar mutate(IterateXYXRight(), GGrammar g)
 @doc{iterate ⊢ IterateXX, Type III, page 8}
 public GGrammar mutate(IterateXX(), GGrammar g)
 {
-	for (n <- g.N,
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n)),
-		p:production(n, sequence([GExpr x,x])) <- ps2
-	)
-		g.P = ps1 + (ps2 - p + production(n, plus(x))) + ps3; 
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)))
+		g.P = ps1 + [
+		production(n,
+			(sequence([GExpr x,x]) := p.rhs) ? plus(x) :
+			(label(str name,sequence([GExpr x,x])) := p.rhs) ? label(name,plus(x)) :
+			p.rhs) | p <- ps2] + ps3;
 	return g;
 }
 
@@ -354,16 +357,16 @@ public GGrammar mutate(IterateXX(), GGrammar g)
 @doc{iterate ⊢ LAssocAll, Type II, page 7}
 public GGrammar mutate(LAssocAll(), GGrammar g)
 {
-	for (n <- g.N)
-	{
-		<ps1,ps2,ps3> := splitPbyW(g.P,innt(n));
-		if (len(ps2)!=1) continue; // not horizontal!
-		if ([production(str lhs, plus(GExpr x))] := ps2)
-			g.P = ps1 + [production(lhs, sequence([x,x]))] + ps3;
-		elseif ([production(lhs, sequence([GExpr x,star(sequence([GExpr y,x]))]))] := ps2
-			|| [production(lhs, sequence([star(sequence([GExpr x,GExpr y])),x]))] := ps2)
-			g.P = ps1 + [production(lhs, sequence([x,y,x]))] + ps3;
-	}
+	for (n <- g.N, <ps1,ps2,ps3> := splitPbyW(g.P,innt(n)))
+		g.P = ps1 + [
+		production(n,
+			(plus(GExpr x) := p.rhs) ? sequence([x,x]) :
+			(label(str name, plus(GExpr x)) := p.rhs) ? label(name,sequence([x,x])) :
+			(sequence([GExpr x,star(sequence([GExpr y,x]))]) := p.rhs) ? sequence([x,y,x]) :
+			(label(str name, sequence([GExpr x,star(sequence([GExpr y,x]))])) := p.rhs) ? label(name,sequence([x,y,x])) :
+			(sequence([star(sequence([GExpr x, GExpr y])),x]) := p.rhs) ? sequence([x,y,x]) :
+			(label(str name, sequence([star(sequence([GExpr x, GExpr y])),x])) := p.rhs) ? label(name,sequence([x,y,x])):
+			p.rhs) | p <- ps2] + ps3;
 	return g;
 }
 
