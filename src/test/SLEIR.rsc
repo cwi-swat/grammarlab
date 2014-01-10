@@ -653,8 +653,28 @@ void show_iteratexyxright2() {run_case("iteratexyxright2.glue",true);}
 // iteratexyxright3.glue
 test bool test_iteratexyxright3() = run_case("iteratexyxright3.glue",false);
 void show_iteratexyxright3() {run_case("iteratexyxright3.glue",true);}
-// SLEIR:LAssocAll: 0 tests
-
+// SLEIR:LAssocAll: 7 tests
+// lassocall1.glue
+test bool test_lassocall1() = run_case("lassocall1.glue",false);
+void show_lassocall1() {run_case("lassocall1.glue",true);}
+// lassocall2.glue
+test bool test_lassocall2() = run_case("lassocall2.glue",false);
+void show_lassocall2() {run_case("lassocall2.glue",true);}
+// lassocall3.glue
+test bool test_lassocall3() = run_case("lassocall3.glue",false);
+void show_lassocall3() {run_case("lassocall3.glue",true);}
+// lassocall4.glue
+test bool test_lassocall4() = run_case("lassocall4.glue",false);
+void show_lassocall4() {run_case("lassocall4.glue",true);}
+// lassocall5.glue
+test bool test_lassocall5() = run_case("lassocall5.glue",false);
+void show_lassocall5() {run_case("lassocall5.glue",true);}
+// lassocall6.glue
+test bool test_lassocall6() = run_case("lassocall6.glue",false);
+void show_lassocall6() {run_case("lassocall6.glue",true);}
+// lassocall7.glue
+test bool test_lassocall7() = run_case("lassocall7.glue",false);
+void show_lassocall7() {run_case("lassocall7.glue",true);}
 // SLEIR:LiftTopLabels: 0 tests
 
 // SLEIR:MassageAndNot2Except: 0 tests

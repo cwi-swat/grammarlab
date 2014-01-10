@@ -1,0 +1,9 @@
+importG
+	expr ::= STR ;
+	expr ::= expr+ ;
+.
+LAssocAll.
+diff
+	expr ::= STR ;
+	expr ::= expr expr ;
+.

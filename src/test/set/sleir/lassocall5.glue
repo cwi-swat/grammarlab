@@ -1,0 +1,9 @@
+importG
+	expr ::= int;
+	expr ::= expr (op expr)*;
+.
+LAssocAll.
+diff
+	expr ::= int;
+	expr ::= expr op expr;
+.

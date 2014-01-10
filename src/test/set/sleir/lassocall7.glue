@@ -1,0 +1,18 @@
+// three nonterminals in one step
+importG
+	aexpr ::= str ;
+	aexpr ::= aexpr+ ;
+	bexpr ::= bool;
+	bexpr ::= (bexpr op)* bexpr ;
+	cexpr ::= int;
+	cexpr ::= cexpr (op cexpr)* ;
+.
+LAssocAll.
+diff
+	aexpr ::= str ;
+	aexpr ::= aexpr aexpr ;
+	bexpr ::= bool;
+	bexpr ::= bexpr op bexpr;
+	cexpr ::= int;
+	cexpr ::= cexpr op cexpr;
+.

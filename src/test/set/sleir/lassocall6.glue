@@ -1,0 +1,10 @@
+// based on the XBGF test case called iterate_r
+importG
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr ((op expr)*)) ;
+.
+LAssocAll.
+diff
+	expr ::= [constant]::int ;
+	expr ::= [binary]::(expr op expr) ;
+.
