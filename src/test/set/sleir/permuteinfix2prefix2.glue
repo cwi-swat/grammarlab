@@ -1,0 +1,10 @@
+// with nonterminals
+importG
+	bar ::= bar addop bar;
+	bar ::= bar mulop bar;
+.
+PermuteInfix2Postfix.
+diff
+	bar ::= addop bar bar;
+	bar ::= mulop bar bar;
+.

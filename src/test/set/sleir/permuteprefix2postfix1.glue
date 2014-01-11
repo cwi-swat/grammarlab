@@ -1,0 +1,12 @@
+// with terminals
+importG
+	foo ::= foo "!" ;
+	bar ::= "+" bar bar ;
+	bar ::= "*" bar bar ;
+.
+PermutePostfix2Prefix.
+diff
+	foo ::= "!" foo ;
+	bar ::= bar bar "+" ;
+	bar ::= bar bar "*" ;
+.

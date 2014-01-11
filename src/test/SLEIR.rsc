@@ -953,18 +953,48 @@ void show_lassocall7() {run_case("lassocall7.glue",true);}
 
 // SLEIR:ParenthesizeAll: 0 tests
 
-// SLEIR:PermuteInfix2Postfix: 0 tests
-
-// SLEIR:PermuteInfix2Prefix: 0 tests
-
-// SLEIR:PermutePostfix2Infix: 0 tests
-
-// SLEIR:PermutePostfix2Prefix: 0 tests
-
-// SLEIR:PermutePrefix2Infix: 0 tests
-
-// SLEIR:PermutePrefix2Postfix: 0 tests
-
+// SLEIR:PermuteInfix2Postfix: 2 tests
+// permuteinfix2postfix1.glue
+test bool test_permuteinfix2postfix1() = run_case("permuteinfix2postfix1.glue",false);
+void show_permuteinfix2postfix1() {run_case("permuteinfix2postfix1.glue",true);}
+// permuteinfix2postfix2.glue
+test bool test_permuteinfix2postfix2() = run_case("permuteinfix2postfix2.glue",false);
+void show_permuteinfix2postfix2() {run_case("permuteinfix2postfix2.glue",true);}
+// SLEIR:PermuteInfix2Prefix: 2 tests
+// permuteinfix2prefix1.glue
+test bool test_permuteinfix2prefix1() = run_case("permuteinfix2prefix1.glue",false);
+void show_permuteinfix2prefix1() {run_case("permuteinfix2prefix1.glue",true);}
+// permuteinfix2prefix2.glue
+test bool test_permuteinfix2prefix2() = run_case("permuteinfix2prefix2.glue",false);
+void show_permuteinfix2prefix2() {run_case("permuteinfix2prefix2.glue",true);}
+// SLEIR:PermutePostfix2Infix: 2 tests
+// permutepostfix2infix1.glue
+test bool test_permutepostfix2infix1() = run_case("permutepostfix2infix1.glue",false);
+void show_permutepostfix2infix1() {run_case("permutepostfix2infix1.glue",true);}
+// permutepostfix2infix2.glue
+test bool test_permutepostfix2infix2() = run_case("permutepostfix2infix2.glue",false);
+void show_permutepostfix2infix2() {run_case("permutepostfix2infix2.glue",true);}
+// SLEIR:PermutePostfix2Prefix: 2 tests
+// permutepostfix2prefix1.glue
+test bool test_permutepostfix2prefix1() = run_case("permutepostfix2prefix1.glue",false);
+void show_permutepostfix2prefix1() {run_case("permutepostfix2prefix1.glue",true);}
+// permutepostfix2prefix2.glue
+test bool test_permutepostfix2prefix2() = run_case("permutepostfix2prefix2.glue",false);
+void show_permutepostfix2prefix2() {run_case("permutepostfix2prefix2.glue",true);}
+// SLEIR:PermutePrefix2Infix: 2 tests
+// permuteprefix2infix1.glue
+test bool test_permuteprefix2infix1() = run_case("permuteprefix2infix1.glue",false);
+void show_permuteprefix2infix1() {run_case("permuteprefix2infix1.glue",true);}
+// permuteprefix2infix2.glue
+test bool test_permuteprefix2infix2() = run_case("permuteprefix2infix2.glue",false);
+void show_permuteprefix2infix2() {run_case("permuteprefix2infix2.glue",true);}
+// SLEIR:PermutePrefix2Postfix: 2 tests
+// permuteprefix2postfix1.glue
+test bool test_permuteprefix2postfix1() = run_case("permuteprefix2postfix1.glue",false);
+void show_permuteprefix2postfix1() {run_case("permuteprefix2postfix1.glue",true);}
+// permuteprefix2postfix2.glue
+test bool test_permuteprefix2postfix2() = run_case("permuteprefix2postfix2.glue",false);
+void show_permuteprefix2postfix2() {run_case("permuteprefix2postfix2.glue",true);}
 // SLEIR:RAssocAll: 0 tests
 
 // SLEIR:Reroot2top: 5 tests

@@ -1,0 +1,10 @@
+// with terminals
+importG
+	bar ::= bar "+" bar ;
+	bar ::= bar "*" bar ;
+.
+PermuteInfix2Postfix.
+diff
+	bar ::= bar bar "+" ;
+	bar ::= bar bar "*" ;
+.
