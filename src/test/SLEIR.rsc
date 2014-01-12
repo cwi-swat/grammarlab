@@ -677,8 +677,13 @@ test bool test_lassocall7() = run_case("lassocall7.glue",false);
 void show_lassocall7() {run_case("lassocall7.glue",true);}
 // SLEIR:LiftTopLabels: 0 tests
 
-// SLEIR:MassageAndNot2Except: 0 tests
-
+// SLEIR:MassageAndNot2Except: 2 tests
+// massageandnot2except1.glue
+test bool test_massageandnot2except1() = run_case("massageandnot2except1.glue",false);
+void show_massageandnot2except1() {run_case("massageandnot2except1.glue",true);}
+// massageandnot2except2.glue
+test bool test_massageandnot2except2() = run_case("massageandnot2except2.glue",false);
+void show_massageandnot2except2() {run_case("massageandnot2except2.glue",true);}
 // SLEIR:MassageAndNotXY2NotOrXY: 0 tests
 
 // SLEIR:MassageAndNotYX2NotOrXY: 0 tests
@@ -687,8 +692,13 @@ void show_lassocall7() {run_case("lassocall7.glue",true);}
 
 // SLEIR:MassageAndYX2NotOrNotXY: 0 tests
 
-// SLEIR:MassageExcept2AndNot: 0 tests
-
+// SLEIR:MassageExcept2AndNot: 2 tests
+// massageexcept2andnot1.glue
+test bool test_massageexcept2andnot1() = run_case("massageexcept2andnot1.glue",false);
+void show_massageexcept2andnot1() {run_case("massageexcept2andnot1.glue",true);}
+// massageexcept2andnot2.glue
+test bool test_massageexcept2andnot2() = run_case("massageexcept2andnot2.glue",false);
+void show_massageexcept2andnot2() {run_case("massageexcept2andnot2.glue",true);}
 // SLEIR:MassageLabelNot2NotLabel: 0 tests
 
 // SLEIR:MassageLabelOpt2OptLabel: 0 tests

@@ -1,0 +1,12 @@
+// two nonterminals
+importG
+	foo ::= bar & (¬ keyword) ;
+	bar ::= barchar+
+	barchar ::= char & (¬ stop) ;
+.
+MassageAndNot2Except.
+diff
+	foo ::= bar &! keyword ;
+	bar ::= barchar+
+	barchar ::= char &! stop ;
+.
