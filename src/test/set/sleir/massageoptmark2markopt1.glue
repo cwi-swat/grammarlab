@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= (<name>:nt)? <name>:nt;
+.
+MassageOptMark2MarkOpt.
+diff
+	foo ::= <name>:(nt?) <name>:nt;
+.

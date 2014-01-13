@@ -709,8 +709,13 @@ void show_massageexcept2andnot2() {run_case("massageexcept2andnot2.glue",true);}
 
 // SLEIR:MassageMarkNot2NotMark: 0 tests
 
-// SLEIR:MassageMarkOpt2OptMark: 0 tests
-
+// SLEIR:MassageMarkOpt2OptMark: 2 tests
+// massagemarkopt2optmark1.glue
+test bool test_massagemarkopt2optmark1() = run_case("massagemarkopt2optmark1.glue",false);
+void show_massagemarkopt2optmark1() {run_case("massagemarkopt2optmark1.glue",true);}
+// massagemarkopt2optmark2.glue
+test bool test_massagemarkopt2optmark2() = run_case("massagemarkopt2optmark2.glue",false);
+void show_massagemarkopt2optmark2() {run_case("massagemarkopt2optmark2.glue",true);}
 // SLEIR:MassageMarkPlus2PlusMark: 0 tests
 
 // SLEIR:MassageMarkStar2StarMark: 0 tests
@@ -753,8 +758,13 @@ void show_massageexcept2andnot2() {run_case("massageexcept2andnot2.glue",true);}
 
 // SLEIR:MassageOptLabel2LabelOpt: 0 tests
 
-// SLEIR:MassageOptMark2MarkOpt: 0 tests
-
+// SLEIR:MassageOptMark2MarkOpt: 2 tests
+// massageoptmark2markopt1.glue
+test bool test_massageoptmark2markopt1() = run_case("massageoptmark2markopt1.glue",false);
+void show_massageoptmark2markopt1() {run_case("massageoptmark2markopt1.glue",true);}
+// massageoptmark2markopt2.glue
+test bool test_massageoptmark2markopt2() = run_case("massageoptmark2markopt2.glue",false);
+void show_massageoptmark2markopt2() {run_case("massageoptmark2markopt2.glue",true);}
 // SLEIR:MassageOptOpt2Opt: 0 tests
 
 // SLEIR:MassageOptPlus2Star: 0 tests
