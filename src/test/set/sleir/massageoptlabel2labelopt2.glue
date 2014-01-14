@@ -1,0 +1,12 @@
+// three nonterminals
+importG
+	foo ::= ([BAR]::bar)?;
+	bar ::= ([name]::nt)? [also]::nt;
+	wez ::= (([foo]::foo)?)+;
+.
+MassageOptLabel2LabelOpt.
+diff
+	foo ::= [BAR]::(bar?);
+	bar ::= [name]::(nt?) [also]::nt;
+	wez ::= ([foo]::(foo?))+;
+.
