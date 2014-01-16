@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= (<name>:nt)* <name>:nt;
+.
+MassageStarMark2MarkStar.
+diff
+	foo ::= <name>:(nt*) <name>:nt;
+.
