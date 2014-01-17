@@ -710,8 +710,13 @@ test bool test_massagelabelopt2optlabel2() = run_case("massagelabelopt2optlabel2
 void show_massagelabelopt2optlabel2() {run_case("massagelabelopt2optlabel2.glue",true);}
 // SLEIR:MassageLabelPlus2PlusLabel: 0 tests
 
-// SLEIR:MassageLabelStar2StarLabel: 0 tests
-
+// SLEIR:MassageLabelStar2StarLabel: 2 tests
+// massagelabelstar2starlabel1.glue
+test bool test_massagelabelstar2starlabel1() = run_case("massagelabelstar2starlabel1.glue",false);
+void show_massagelabelstar2starlabel1() {run_case("massagelabelstar2starlabel1.glue",true);}
+// massagelabelstar2starlabel2.glue
+test bool test_massagelabelstar2starlabel2() = run_case("massagelabelstar2starlabel2.glue",false);
+void show_massagelabelstar2starlabel2() {run_case("massagelabelstar2starlabel2.glue",true);}
 // SLEIR:MassageMarkNot2NotMark: 0 tests
 
 // SLEIR:MassageMarkOpt2OptMark: 2 tests
@@ -964,8 +969,13 @@ void show_massageoptmark2markopt2() {run_case("massageoptmark2markopt2.glue",tru
 
 // SLEIR:MassageStar2StarStar: 0 tests
 
-// SLEIR:MassageStarLabel2LabelStar: 0 tests
-
+// SLEIR:MassageStarLabel2LabelStar: 2 tests
+// massagestarlabel2labelstar1.glue
+test bool test_massagestarlabel2labelstar1() = run_case("massagestarlabel2labelstar1.glue",false);
+void show_massagestarlabel2labelstar1() {run_case("massagestarlabel2labelstar1.glue",true);}
+// massagestarlabel2labelstar2.glue
+test bool test_massagestarlabel2labelstar2() = run_case("massagestarlabel2labelstar2.glue",false);
+void show_massagestarlabel2labelstar2() {run_case("massagestarlabel2labelstar2.glue",true);}
 // SLEIR:MassageStarMark2MarkStar: 2 tests
 // massagestarmark2markstar1.glue
 test bool test_massagestarmark2markstar1() = run_case("massagestarmark2markstar1.glue",false);
