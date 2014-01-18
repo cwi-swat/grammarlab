@@ -1,0 +1,12 @@
+// three nonterminals
+importG
+	foo ::= <BAR>:(bar+);
+	bar ::= <name>:(nt+) <name>:nt;
+	wez ::= (<foo>:(foo+))?;
+.
+MassageMarkPlus2PlusMark.
+diff
+	foo ::= (<BAR>:bar)+;
+	bar ::= (<name>:nt)+ <name>:nt;
+	wez ::= ((<foo>:foo)+)?;
+.

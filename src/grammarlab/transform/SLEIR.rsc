@@ -370,8 +370,8 @@ public GGrammar mutate(LAssocAll(), GGrammar g)
 	return g;
 }
 
-//SLEIR:Massage* -> see grammarlab::transform::SLEIR_Massage
-//SLEIR:Narrow* -> see grammarlab::transform::SLEIR_Width
+//SLEIR:Massage* -> see grammarlab::transform::sleir::Massage
+//SLEIR:Narrow* -> see grammarlab::transform::sleir::Width
 
 // SLEIR:PermutePostfix2Prefix
 @doc{permute ⊢ PermutePostfix2Prefix, Type III, page 9}
@@ -640,7 +640,7 @@ public GGrammar mutate(VerticalAll(), GGrammar g)
 	return g;
 }
 
-//SLEIR:Widen* -> see grammarlab::transform::SLEIR_Width
+//SLEIR:Widen* -> see grammarlab::transform::sleir::Width
 
 // WIP
 
