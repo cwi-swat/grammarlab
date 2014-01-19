@@ -2,11 +2,11 @@
 importG
 	foo ::= (<BAR>:bar)+;
 	bar ::= (<name>:nt)+ <name>:nt;
-	wez ::= ((<foo>:foo)+)+;
+	wez ::= ((<foo>:foo)+)?;
 .
 MassagePlusMark2MarkPlus.
 diff
 	foo ::= <BAR>:(bar+);
 	bar ::= <name>:(nt+) <name>:nt;
-	wez ::= (<foo>:(foo+))+;
+	wez ::= (<foo>:(foo+))?;
 .

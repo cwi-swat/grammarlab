@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= [name]::(nt+);
+.
+MassageLabelPlus2PlusLabel.
+diff
+	foo ::= ([name]::nt)+;
+.
