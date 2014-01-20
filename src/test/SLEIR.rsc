@@ -699,8 +699,13 @@ void show_massageexcept2andnot1() {run_case("massageexcept2andnot1.glue",true);}
 // massageexcept2andnot2.glue
 test bool test_massageexcept2andnot2() = run_case("massageexcept2andnot2.glue",false);
 void show_massageexcept2andnot2() {run_case("massageexcept2andnot2.glue",true);}
-// SLEIR:MassageLabelNot2NotLabel: 0 tests
-
+// SLEIR:MassageLabelNot2NotLabel: 2 tests
+// massagelabelnot2notlabel1.glue
+test bool test_massagelabelnot2notlabel1() = run_case("massagelabelnot2notlabel1.glue",false);
+void show_massagelabelnot2notlabel1() {run_case("massagelabelnot2notlabel1.glue",true);}
+// massagelabelnot2notlabel2.glue
+test bool test_massagelabelnot2notlabel2() = run_case("massagelabelnot2notlabel2.glue",false);
+void show_massagelabelnot2notlabel2() {run_case("massagelabelnot2notlabel2.glue",true);}
 // SLEIR:MassageLabelOpt2OptLabel: 2 tests
 // massagelabelopt2optlabel1.glue
 test bool test_massagelabelopt2optlabel1() = run_case("massagelabelopt2optlabel1.glue",false);
@@ -753,8 +758,13 @@ void show_massagemarkstar2starmark2() {run_case("massagemarkstar2starmark2.glue"
 
 // SLEIR:MassageNotAndXY2OrNotYX: 0 tests
 
-// SLEIR:MassageNotLabel2LabelNot: 0 tests
-
+// SLEIR:MassageNotLabel2LabelNot: 2 tests
+// massagenotlabel2labelnot1.glue
+test bool test_massagenotlabel2labelnot1() = run_case("massagenotlabel2labelnot1.glue",false);
+void show_massagenotlabel2labelnot1() {run_case("massagenotlabel2labelnot1.glue",true);}
+// massagenotlabel2labelnot2.glue
+test bool test_massagenotlabel2labelnot2() = run_case("massagenotlabel2labelnot2.glue",false);
+void show_massagenotlabel2labelnot2() {run_case("massagenotlabel2labelnot2.glue",true);}
 // SLEIR:MassageNotMark2MarkNot: 0 tests
 
 // SLEIR:MassageNotNot2X: 0 tests
