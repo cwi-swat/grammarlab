@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	notfoo ::= <label>:(¬foo) ;
+.
+MassageMarkNot2NotMark.
+diff
+	notfoo ::= ¬(<label>:foo) ;
+.
