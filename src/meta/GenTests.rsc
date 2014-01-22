@@ -85,10 +85,10 @@ void main()
 			|project://grammarlab/src/test/set/xbgf/deyaccifyH<n>.glue|);
 		writeGlue(
 			psg2gl(yp2RpsV(p), sleir(DeyaccifyAll()), yp2Lg(p)),
-			|project://grammarlab/src/test/set/sleir/deyaccifyall1V<n>.glue|);
+			|project://grammarlab/src/test/set/sleir/DeyaccifyAll1V<n>.glue|);
 		writeGlue(
 			psg2gl(yp2RpsH(p), sleir(DeyaccifyAll()), yp2Lg(p)),
-			|project://grammarlab/src/test/set/sleir/deyaccifyall1H<n>.glue|);
+			|project://grammarlab/src/test/set/sleir/DeyaccifyAll1H<n>.glue|);
 		int dx = 1;
 		for (GProd q <- domain(yp))
 		{
@@ -97,16 +97,16 @@ void main()
 			// (de)yaccification test cases with a broader scope for mutations
 			writeGlue(
 				psg2gl(yp2RpsVV(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
-				|project://grammarlab/src/test/set/sleir/deyaccifyall2VV<n><m>.glue|);
+				|project://grammarlab/src/test/set/sleir/DeyaccifyAll2VV<n><m>.glue|);
 			writeGlue(
 				psg2gl(yp2RpsVH(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
-				|project://grammarlab/src/test/set/sleir/deyaccifyall2VH<n><m>.glue|);
+				|project://grammarlab/src/test/set/sleir/DeyaccifyAll2VH<n><m>.glue|);
 			writeGlue(
 				psg2gl(yp2RpsHV(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
-				|project://grammarlab/src/test/set/sleir/deyaccifyall2HV<n><m>.glue|);
+				|project://grammarlab/src/test/set/sleir/DeyaccifyAll2HV<n><m>.glue|);
 			writeGlue(
 				psg2gl(yp2RpsHH(p,q), sleir(DeyaccifyAll()), yp2Lg(p,q)),
-				|project://grammarlab/src/test/set/sleir/deyaccifyall2HH<n><m>.glue|);
+				|project://grammarlab/src/test/set/sleir/DeyaccifyAll2HH<n><m>.glue|);
 			dx += 1;
 		}
 		cx += 1;
@@ -120,14 +120,14 @@ void main()
 			|project://grammarlab/src/test/set/xbgf/abridge<n>.glue|);
 		writeGlue(
 			psg2gl([p,production(p.lhs,terminal("leaf"))], sleir(AbridgeAll()), grammar([p.lhs],[production(p.lhs,terminal("leaf"))],[])),
-			|project://grammarlab/src/test/set/sleir/abridgeall1_<n>.glue|);
+			|project://grammarlab/src/test/set/sleir/AbridgeAll1_<n>.glue|);
 		int dx = 1;
 		for (GProd q <- abr)
 		{
 			str m = "<dx>";
 			writeGlue(
 				psg2gl([p,q,production(p.lhs,terminal("leaf"))], sleir(AbridgeAll()), grammar([p.lhs],[production(p.lhs,terminal("leaf"))],[])),
-				|project://grammarlab/src/test/set/sleir/abridgeall2_<n><m>.glue|);
+				|project://grammarlab/src/test/set/sleir/AbridgeAll2_<n><m>.glue|);
 			dx += 1;
 		}
 		cx += 1;

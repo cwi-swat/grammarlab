@@ -10,7 +10,7 @@ import IO;
 str whichOne(str tname, list[str] onames)
 {
 	for (str oname <- onames)
-		if (startsWith(tname,toLowerCase(oname)))
+		if (startsWith(tname,oname))
 			return oname;
 	return "Unknown";
 }
