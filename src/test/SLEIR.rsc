@@ -82,12 +82,54 @@ void show_AbridgeAll2_43() {run_case("AbridgeAll2_43.glue",true);}
 // AbridgeAll2_44.glue
 test bool test_AbridgeAll2_44() = run_case("AbridgeAll2_44.glue",false);
 void show_AbridgeAll2_44() {run_case("AbridgeAll2_44.glue",true);}
-// SLEIR:ChainMixed: 0 tests
-
-// SLEIR:ConcatAllT: 0 tests
-
-// SLEIR:DefineMin: 0 tests
-
+// SLEIR:ChainMixed: 5 tests
+// ChainMixed1.glue
+test bool test_ChainMixed1() = run_case("ChainMixed1.glue",false);
+void show_ChainMixed1() {run_case("ChainMixed1.glue",true);}
+// ChainMixed2.glue
+test bool test_ChainMixed2() = run_case("ChainMixed2.glue",false);
+void show_ChainMixed2() {run_case("ChainMixed2.glue",true);}
+// ChainMixed3.glue
+test bool test_ChainMixed3() = run_case("ChainMixed3.glue",false);
+void show_ChainMixed3() {run_case("ChainMixed3.glue",true);}
+// ChainMixed4.glue
+test bool test_ChainMixed4() = run_case("ChainMixed4.glue",false);
+void show_ChainMixed4() {run_case("ChainMixed4.glue",true);}
+// ChainMixed5.glue
+test bool test_ChainMixed5() = run_case("ChainMixed5.glue",false);
+void show_ChainMixed5() {run_case("ChainMixed5.glue",true);}
+// SLEIR:ConcatAllT: 7 tests
+// ConcatAllT1.glue
+test bool test_ConcatAllT1() = run_case("ConcatAllT1.glue",false);
+void show_ConcatAllT1() {run_case("ConcatAllT1.glue",true);}
+// ConcatAllT2.glue
+test bool test_ConcatAllT2() = run_case("ConcatAllT2.glue",false);
+void show_ConcatAllT2() {run_case("ConcatAllT2.glue",true);}
+// ConcatAllT3.glue
+test bool test_ConcatAllT3() = run_case("ConcatAllT3.glue",false);
+void show_ConcatAllT3() {run_case("ConcatAllT3.glue",true);}
+// ConcatAllT4.glue
+test bool test_ConcatAllT4() = run_case("ConcatAllT4.glue",false);
+void show_ConcatAllT4() {run_case("ConcatAllT4.glue",true);}
+// ConcatAllT5.glue
+test bool test_ConcatAllT5() = run_case("ConcatAllT5.glue",false);
+void show_ConcatAllT5() {run_case("ConcatAllT5.glue",true);}
+// ConcatAllT6.glue
+test bool test_ConcatAllT6() = run_case("ConcatAllT6.glue",false);
+void show_ConcatAllT6() {run_case("ConcatAllT6.glue",true);}
+// ConcatAllT7.glue
+test bool test_ConcatAllT7() = run_case("ConcatAllT7.glue",false);
+void show_ConcatAllT7() {run_case("ConcatAllT7.glue",true);}
+// SLEIR:DefineMin: 3 tests
+// DefineMin1.glue
+test bool test_DefineMin1() = run_case("DefineMin1.glue",false);
+void show_DefineMin1() {run_case("DefineMin1.glue",true);}
+// DefineMin2.glue
+test bool test_DefineMin2() = run_case("DefineMin2.glue",false);
+void show_DefineMin2() {run_case("DefineMin2.glue",true);}
+// DefineMin3.glue
+test bool test_DefineMin3() = run_case("DefineMin3.glue",false);
+void show_DefineMin3() {run_case("DefineMin3.glue",true);}
 // SLEIR:DeyaccifyAll: 132 tests
 // DeyaccifyAll1H1.glue
 test bool test_DeyaccifyAll1H1() = run_case("DeyaccifyAll1H1.glue",false);
@@ -485,60 +527,239 @@ void show_DeyaccifyAll2VV64() {run_case("DeyaccifyAll2VV64.glue",true);}
 // DeyaccifyAll2VV65.glue
 test bool test_DeyaccifyAll2VV65() = run_case("DeyaccifyAll2VV65.glue",false);
 void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
-// SLEIR:DistributeAll: 0 tests
-
-// SLEIR:EliminateTop: 0 tests
-
-// SLEIR:EquateAll: 0 tests
-
-// SLEIR:FoldMax: 0 tests
-
-// SLEIR:HorizontalAll: 0 tests
-
-// SLEIR:InlineMax: 0 tests
-
-// SLEIR:InlinePlus: 0 tests
-
+// SLEIR:DistributeAll: 3 tests
+// DistributeAll1.glue
+test bool test_DistributeAll1() = run_case("DistributeAll1.glue",false);
+void show_DistributeAll1() {run_case("DistributeAll1.glue",true);}
+// DistributeAll2.glue
+test bool test_DistributeAll2() = run_case("DistributeAll2.glue",false);
+void show_DistributeAll2() {run_case("DistributeAll2.glue",true);}
+// DistributeAll3.glue
+test bool test_DistributeAll3() = run_case("DistributeAll3.glue",false);
+void show_DistributeAll3() {run_case("DistributeAll3.glue",true);}
+// SLEIR:EliminateTop: 4 tests
+// EliminateTop1.glue
+test bool test_EliminateTop1() = run_case("EliminateTop1.glue",false);
+void show_EliminateTop1() {run_case("EliminateTop1.glue",true);}
+// EliminateTop2.glue
+test bool test_EliminateTop2() = run_case("EliminateTop2.glue",false);
+void show_EliminateTop2() {run_case("EliminateTop2.glue",true);}
+// EliminateTop3.glue
+test bool test_EliminateTop3() = run_case("EliminateTop3.glue",false);
+void show_EliminateTop3() {run_case("EliminateTop3.glue",true);}
+// EliminateTop4.glue
+test bool test_EliminateTop4() = run_case("EliminateTop4.glue",false);
+void show_EliminateTop4() {run_case("EliminateTop4.glue",true);}
+// SLEIR:EquateAll: 4 tests
+// EquateAll1.glue
+test bool test_EquateAll1() = run_case("EquateAll1.glue",false);
+void show_EquateAll1() {run_case("EquateAll1.glue",true);}
+// EquateAll2.glue
+test bool test_EquateAll2() = run_case("EquateAll2.glue",false);
+void show_EquateAll2() {run_case("EquateAll2.glue",true);}
+// EquateAll3.glue
+test bool test_EquateAll3() = run_case("EquateAll3.glue",false);
+void show_EquateAll3() {run_case("EquateAll3.glue",true);}
+// EquateAll4.glue
+test bool test_EquateAll4() = run_case("EquateAll4.glue",false);
+void show_EquateAll4() {run_case("EquateAll4.glue",true);}
+// SLEIR:FoldMax: 4 tests
+// FoldMax1.glue
+test bool test_FoldMax1() = run_case("FoldMax1.glue",false);
+void show_FoldMax1() {run_case("FoldMax1.glue",true);}
+// FoldMax2.glue
+test bool test_FoldMax2() = run_case("FoldMax2.glue",false);
+void show_FoldMax2() {run_case("FoldMax2.glue",true);}
+// FoldMax3.glue
+test bool test_FoldMax3() = run_case("FoldMax3.glue",false);
+void show_FoldMax3() {run_case("FoldMax3.glue",true);}
+// FoldMax4.glue
+test bool test_FoldMax4() = run_case("FoldMax4.glue",false);
+void show_FoldMax4() {run_case("FoldMax4.glue",true);}
+// SLEIR:HorizontalAll: 5 tests
+// HorizontalAll1.glue
+test bool test_HorizontalAll1() = run_case("HorizontalAll1.glue",false);
+void show_HorizontalAll1() {run_case("HorizontalAll1.glue",true);}
+// HorizontalAll2.glue
+test bool test_HorizontalAll2() = run_case("HorizontalAll2.glue",false);
+void show_HorizontalAll2() {run_case("HorizontalAll2.glue",true);}
+// HorizontalAll3.glue
+test bool test_HorizontalAll3() = run_case("HorizontalAll3.glue",false);
+void show_HorizontalAll3() {run_case("HorizontalAll3.glue",true);}
+// HorizontalAll4.glue
+test bool test_HorizontalAll4() = run_case("HorizontalAll4.glue",false);
+void show_HorizontalAll4() {run_case("HorizontalAll4.glue",true);}
+// HorizontalAll5.glue
+test bool test_HorizontalAll5() = run_case("HorizontalAll5.glue",false);
+void show_HorizontalAll5() {run_case("HorizontalAll5.glue",true);}
+// SLEIR:InlineMax: 5 tests
+// InlineMax1.glue
+test bool test_InlineMax1() = run_case("InlineMax1.glue",false);
+void show_InlineMax1() {run_case("InlineMax1.glue",true);}
+// InlineMax2.glue
+test bool test_InlineMax2() = run_case("InlineMax2.glue",false);
+void show_InlineMax2() {run_case("InlineMax2.glue",true);}
+// InlineMax3.glue
+test bool test_InlineMax3() = run_case("InlineMax3.glue",false);
+void show_InlineMax3() {run_case("InlineMax3.glue",true);}
+// InlineMax4.glue
+test bool test_InlineMax4() = run_case("InlineMax4.glue",false);
+void show_InlineMax4() {run_case("InlineMax4.glue",true);}
+// InlineMax5.glue
+test bool test_InlineMax5() = run_case("InlineMax5.glue",false);
+void show_InlineMax5() {run_case("InlineMax5.glue",true);}
+// SLEIR:InlinePlus: 4 tests
+// InlinePlus1.glue
+test bool test_InlinePlus1() = run_case("InlinePlus1.glue",false);
+void show_InlinePlus1() {run_case("InlinePlus1.glue",true);}
+// InlinePlus2.glue
+test bool test_InlinePlus2() = run_case("InlinePlus2.glue",false);
+void show_InlinePlus2() {run_case("InlinePlus2.glue",true);}
+// InlinePlus3.glue
+test bool test_InlinePlus3() = run_case("InlinePlus3.glue",false);
+void show_InlinePlus3() {run_case("InlinePlus3.glue",true);}
+// InlinePlus4.glue
+test bool test_InlinePlus4() = run_case("InlinePlus4.glue",false);
+void show_InlinePlus4() {run_case("InlinePlus4.glue",true);}
 // SLEIR:InsertLayout: 0 tests
 
-// SLEIR:IterateXX: 0 tests
-
-// SLEIR:IterateXYXLeft: 0 tests
-
-// SLEIR:IterateXYXRight: 0 tests
-
-// SLEIR:LAssocAll: 0 tests
-
+// SLEIR:IterateXX: 3 tests
+// IterateXX1.glue
+test bool test_IterateXX1() = run_case("IterateXX1.glue",false);
+void show_IterateXX1() {run_case("IterateXX1.glue",true);}
+// IterateXX2.glue
+test bool test_IterateXX2() = run_case("IterateXX2.glue",false);
+void show_IterateXX2() {run_case("IterateXX2.glue",true);}
+// IterateXX3.glue
+test bool test_IterateXX3() = run_case("IterateXX3.glue",false);
+void show_IterateXX3() {run_case("IterateXX3.glue",true);}
+// SLEIR:IterateXYXLeft: 3 tests
+// IterateXYXLeft1.glue
+test bool test_IterateXYXLeft1() = run_case("IterateXYXLeft1.glue",false);
+void show_IterateXYXLeft1() {run_case("IterateXYXLeft1.glue",true);}
+// IterateXYXLeft2.glue
+test bool test_IterateXYXLeft2() = run_case("IterateXYXLeft2.glue",false);
+void show_IterateXYXLeft2() {run_case("IterateXYXLeft2.glue",true);}
+// IterateXYXLeft3.glue
+test bool test_IterateXYXLeft3() = run_case("IterateXYXLeft3.glue",false);
+void show_IterateXYXLeft3() {run_case("IterateXYXLeft3.glue",true);}
+// SLEIR:IterateXYXRight: 3 tests
+// IterateXYXRight1.glue
+test bool test_IterateXYXRight1() = run_case("IterateXYXRight1.glue",false);
+void show_IterateXYXRight1() {run_case("IterateXYXRight1.glue",true);}
+// IterateXYXRight2.glue
+test bool test_IterateXYXRight2() = run_case("IterateXYXRight2.glue",false);
+void show_IterateXYXRight2() {run_case("IterateXYXRight2.glue",true);}
+// IterateXYXRight3.glue
+test bool test_IterateXYXRight3() = run_case("IterateXYXRight3.glue",false);
+void show_IterateXYXRight3() {run_case("IterateXYXRight3.glue",true);}
+// SLEIR:LAssocAll: 7 tests
+// LAssocAll1.glue
+test bool test_LAssocAll1() = run_case("LAssocAll1.glue",false);
+void show_LAssocAll1() {run_case("LAssocAll1.glue",true);}
+// LAssocAll2.glue
+test bool test_LAssocAll2() = run_case("LAssocAll2.glue",false);
+void show_LAssocAll2() {run_case("LAssocAll2.glue",true);}
+// LAssocAll3.glue
+test bool test_LAssocAll3() = run_case("LAssocAll3.glue",false);
+void show_LAssocAll3() {run_case("LAssocAll3.glue",true);}
+// LAssocAll4.glue
+test bool test_LAssocAll4() = run_case("LAssocAll4.glue",false);
+void show_LAssocAll4() {run_case("LAssocAll4.glue",true);}
+// LAssocAll5.glue
+test bool test_LAssocAll5() = run_case("LAssocAll5.glue",false);
+void show_LAssocAll5() {run_case("LAssocAll5.glue",true);}
+// LAssocAll6.glue
+test bool test_LAssocAll6() = run_case("LAssocAll6.glue",false);
+void show_LAssocAll6() {run_case("LAssocAll6.glue",true);}
+// LAssocAll7.glue
+test bool test_LAssocAll7() = run_case("LAssocAll7.glue",false);
+void show_LAssocAll7() {run_case("LAssocAll7.glue",true);}
 // SLEIR:LiftTopLabels: 0 tests
 
-// SLEIR:MassageAndNot2Except: 0 tests
-
-// SLEIR:MassageAndNotXY2NotOrXY: 0 tests
-
+// SLEIR:MassageAndNot2Except: 2 tests
+// MassageAndNot2Except1.glue
+test bool test_MassageAndNot2Except1() = run_case("MassageAndNot2Except1.glue",false);
+void show_MassageAndNot2Except1() {run_case("MassageAndNot2Except1.glue",true);}
+// MassageAndNot2Except2.glue
+test bool test_MassageAndNot2Except2() = run_case("MassageAndNot2Except2.glue",false);
+void show_MassageAndNot2Except2() {run_case("MassageAndNot2Except2.glue",true);}
+// SLEIR:MassageAndNotXY2NotOrXY: 2 tests
+// MassageAndNotXY2NotOrXY1.glue
+test bool test_MassageAndNotXY2NotOrXY1() = run_case("MassageAndNotXY2NotOrXY1.glue",false);
+void show_MassageAndNotXY2NotOrXY1() {run_case("MassageAndNotXY2NotOrXY1.glue",true);}
+// MassageAndNotXY2NotOrXY2.glue
+test bool test_MassageAndNotXY2NotOrXY2() = run_case("MassageAndNotXY2NotOrXY2.glue",false);
+void show_MassageAndNotXY2NotOrXY2() {run_case("MassageAndNotXY2NotOrXY2.glue",true);}
 // SLEIR:MassageAndNotYX2NotOrXY: 0 tests
 
 // SLEIR:MassageAndXY2NotOrNotXY: 0 tests
 
 // SLEIR:MassageAndYX2NotOrNotXY: 0 tests
 
-// SLEIR:MassageExcept2AndNot: 0 tests
-
-// SLEIR:MassageLabelNot2NotLabel: 0 tests
-
-// SLEIR:MassageLabelOpt2OptLabel: 0 tests
-
-// SLEIR:MassageLabelPlus2PlusLabel: 0 tests
-
-// SLEIR:MassageLabelStar2StarLabel: 0 tests
-
-// SLEIR:MassageMarkNot2NotMark: 0 tests
-
-// SLEIR:MassageMarkOpt2OptMark: 0 tests
-
-// SLEIR:MassageMarkPlus2PlusMark: 0 tests
-
-// SLEIR:MassageMarkStar2StarMark: 0 tests
-
+// SLEIR:MassageExcept2AndNot: 2 tests
+// MassageExcept2AndNot1.glue
+test bool test_MassageExcept2AndNot1() = run_case("MassageExcept2AndNot1.glue",false);
+void show_MassageExcept2AndNot1() {run_case("MassageExcept2AndNot1.glue",true);}
+// MassageExcept2AndNot2.glue
+test bool test_MassageExcept2AndNot2() = run_case("MassageExcept2AndNot2.glue",false);
+void show_MassageExcept2AndNot2() {run_case("MassageExcept2AndNot2.glue",true);}
+// SLEIR:MassageLabelNot2NotLabel: 2 tests
+// MassageLabelNot2NotLabel1.glue
+test bool test_MassageLabelNot2NotLabel1() = run_case("MassageLabelNot2NotLabel1.glue",false);
+void show_MassageLabelNot2NotLabel1() {run_case("MassageLabelNot2NotLabel1.glue",true);}
+// MassageLabelNot2NotLabel2.glue
+test bool test_MassageLabelNot2NotLabel2() = run_case("MassageLabelNot2NotLabel2.glue",false);
+void show_MassageLabelNot2NotLabel2() {run_case("MassageLabelNot2NotLabel2.glue",true);}
+// SLEIR:MassageLabelOpt2OptLabel: 2 tests
+// MassageLabelOpt2OptLabel1.glue
+test bool test_MassageLabelOpt2OptLabel1() = run_case("MassageLabelOpt2OptLabel1.glue",false);
+void show_MassageLabelOpt2OptLabel1() {run_case("MassageLabelOpt2OptLabel1.glue",true);}
+// MassageLabelOpt2OptLabel2.glue
+test bool test_MassageLabelOpt2OptLabel2() = run_case("MassageLabelOpt2OptLabel2.glue",false);
+void show_MassageLabelOpt2OptLabel2() {run_case("MassageLabelOpt2OptLabel2.glue",true);}
+// SLEIR:MassageLabelPlus2PlusLabel: 2 tests
+// MassageLabelPlus2PlusLabel1.glue
+test bool test_MassageLabelPlus2PlusLabel1() = run_case("MassageLabelPlus2PlusLabel1.glue",false);
+void show_MassageLabelPlus2PlusLabel1() {run_case("MassageLabelPlus2PlusLabel1.glue",true);}
+// MassageLabelPlus2PlusLabel2.glue
+test bool test_MassageLabelPlus2PlusLabel2() = run_case("MassageLabelPlus2PlusLabel2.glue",false);
+void show_MassageLabelPlus2PlusLabel2() {run_case("MassageLabelPlus2PlusLabel2.glue",true);}
+// SLEIR:MassageLabelStar2StarLabel: 2 tests
+// MassageLabelStar2StarLabel1.glue
+test bool test_MassageLabelStar2StarLabel1() = run_case("MassageLabelStar2StarLabel1.glue",false);
+void show_MassageLabelStar2StarLabel1() {run_case("MassageLabelStar2StarLabel1.glue",true);}
+// MassageLabelStar2StarLabel2.glue
+test bool test_MassageLabelStar2StarLabel2() = run_case("MassageLabelStar2StarLabel2.glue",false);
+void show_MassageLabelStar2StarLabel2() {run_case("MassageLabelStar2StarLabel2.glue",true);}
+// SLEIR:MassageMarkNot2NotMark: 2 tests
+// MassageMarkNot2NotMark1.glue
+test bool test_MassageMarkNot2NotMark1() = run_case("MassageMarkNot2NotMark1.glue",false);
+void show_MassageMarkNot2NotMark1() {run_case("MassageMarkNot2NotMark1.glue",true);}
+// MassageMarkNot2NotMark2.glue
+test bool test_MassageMarkNot2NotMark2() = run_case("MassageMarkNot2NotMark2.glue",false);
+void show_MassageMarkNot2NotMark2() {run_case("MassageMarkNot2NotMark2.glue",true);}
+// SLEIR:MassageMarkOpt2OptMark: 2 tests
+// MassageMarkOpt2OptMark1.glue
+test bool test_MassageMarkOpt2OptMark1() = run_case("MassageMarkOpt2OptMark1.glue",false);
+void show_MassageMarkOpt2OptMark1() {run_case("MassageMarkOpt2OptMark1.glue",true);}
+// MassageMarkOpt2OptMark2.glue
+test bool test_MassageMarkOpt2OptMark2() = run_case("MassageMarkOpt2OptMark2.glue",false);
+void show_MassageMarkOpt2OptMark2() {run_case("MassageMarkOpt2OptMark2.glue",true);}
+// SLEIR:MassageMarkPlus2PlusMark: 2 tests
+// MassageMarkPlus2PlusMark1.glue
+test bool test_MassageMarkPlus2PlusMark1() = run_case("MassageMarkPlus2PlusMark1.glue",false);
+void show_MassageMarkPlus2PlusMark1() {run_case("MassageMarkPlus2PlusMark1.glue",true);}
+// MassageMarkPlus2PlusMark2.glue
+test bool test_MassageMarkPlus2PlusMark2() = run_case("MassageMarkPlus2PlusMark2.glue",false);
+void show_MassageMarkPlus2PlusMark2() {run_case("MassageMarkPlus2PlusMark2.glue",true);}
+// SLEIR:MassageMarkStar2StarMark: 2 tests
+// MassageMarkStar2StarMark1.glue
+test bool test_MassageMarkStar2StarMark1() = run_case("MassageMarkStar2StarMark1.glue",false);
+void show_MassageMarkStar2StarMark1() {run_case("MassageMarkStar2StarMark1.glue",true);}
+// MassageMarkStar2StarMark2.glue
+test bool test_MassageMarkStar2StarMark2() = run_case("MassageMarkStar2StarMark2.glue",false);
+void show_MassageMarkStar2StarMark2() {run_case("MassageMarkStar2StarMark2.glue",true);}
 // SLEIR:MassageNotAndNotXY2OrXY: 0 tests
 
 // SLEIR:MassageNotAndNotXY2OrYX: 0 tests
@@ -547,10 +768,20 @@ void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
 
 // SLEIR:MassageNotAndXY2OrNotYX: 0 tests
 
-// SLEIR:MassageNotLabel2LabelNot: 0 tests
-
-// SLEIR:MassageNotMark2MarkNot: 0 tests
-
+// SLEIR:MassageNotLabel2LabelNot: 2 tests
+// MassageNotLabel2LabelNot1.glue
+test bool test_MassageNotLabel2LabelNot1() = run_case("MassageNotLabel2LabelNot1.glue",false);
+void show_MassageNotLabel2LabelNot1() {run_case("MassageNotLabel2LabelNot1.glue",true);}
+// MassageNotLabel2LabelNot2.glue
+test bool test_MassageNotLabel2LabelNot2() = run_case("MassageNotLabel2LabelNot2.glue",false);
+void show_MassageNotLabel2LabelNot2() {run_case("MassageNotLabel2LabelNot2.glue",true);}
+// SLEIR:MassageNotMark2MarkNot: 2 tests
+// MassageNotMark2MarkNot1.glue
+test bool test_MassageNotMark2MarkNot1() = run_case("MassageNotMark2MarkNot1.glue",false);
+void show_MassageNotMark2MarkNot1() {run_case("MassageNotMark2MarkNot1.glue",true);}
+// MassageNotMark2MarkNot2.glue
+test bool test_MassageNotMark2MarkNot2() = run_case("MassageNotMark2MarkNot2.glue",false);
+void show_MassageNotMark2MarkNot2() {run_case("MassageNotMark2MarkNot2.glue",true);}
 // SLEIR:MassageNotNot2X: 0 tests
 
 // SLEIR:MassageNotOrNotXY2AndXY: 0 tests
@@ -575,10 +806,20 @@ void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
 
 // SLEIR:MassageOpt2OrXOpt: 0 tests
 
-// SLEIR:MassageOptLabel2LabelOpt: 0 tests
-
-// SLEIR:MassageOptMark2MarkOpt: 0 tests
-
+// SLEIR:MassageOptLabel2LabelOpt: 2 tests
+// MassageOptLabel2LabelOpt1.glue
+test bool test_MassageOptLabel2LabelOpt1() = run_case("MassageOptLabel2LabelOpt1.glue",false);
+void show_MassageOptLabel2LabelOpt1() {run_case("MassageOptLabel2LabelOpt1.glue",true);}
+// MassageOptLabel2LabelOpt2.glue
+test bool test_MassageOptLabel2LabelOpt2() = run_case("MassageOptLabel2LabelOpt2.glue",false);
+void show_MassageOptLabel2LabelOpt2() {run_case("MassageOptLabel2LabelOpt2.glue",true);}
+// SLEIR:MassageOptMark2MarkOpt: 2 tests
+// MassageOptMark2MarkOpt1.glue
+test bool test_MassageOptMark2MarkOpt1() = run_case("MassageOptMark2MarkOpt1.glue",false);
+void show_MassageOptMark2MarkOpt1() {run_case("MassageOptMark2MarkOpt1.glue",true);}
+// MassageOptMark2MarkOpt2.glue
+test bool test_MassageOptMark2MarkOpt2() = run_case("MassageOptMark2MarkOpt2.glue",false);
+void show_MassageOptMark2MarkOpt2() {run_case("MassageOptMark2MarkOpt2.glue",true);}
 // SLEIR:MassageOptOpt2Opt: 0 tests
 
 // SLEIR:MassageOptPlus2Star: 0 tests
@@ -609,8 +850,13 @@ void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
 
 // SLEIR:MassageOrMarks3: 0 tests
 
-// SLEIR:MassageOrNotXY2NotAndXY: 0 tests
-
+// SLEIR:MassageOrNotXY2NotAndXY: 2 tests
+// MassageOrNotXY2NotAndXY1.glue
+test bool test_MassageOrNotXY2NotAndXY1() = run_case("MassageOrNotXY2NotAndXY1.glue",false);
+void show_MassageOrNotXY2NotAndXY1() {run_case("MassageOrNotXY2NotAndXY1.glue",true);}
+// MassageOrNotXY2NotAndXY2.glue
+test bool test_MassageOrNotXY2NotAndXY2() = run_case("MassageOrNotXY2NotAndXY2.glue",false);
+void show_MassageOrNotXY2NotAndXY2() {run_case("MassageOrNotXY2NotAndXY2.glue",true);}
 // SLEIR:MassageOrNotYX2NotAndXY: 0 tests
 
 // SLEIR:MassageOrOptEps2Opt: 0 tests
@@ -665,10 +911,20 @@ void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
 
 // SLEIR:MassagePlus2SeqXStar: 0 tests
 
-// SLEIR:MassagePlusLabel2LabelPlus: 0 tests
-
-// SLEIR:MassagePlusMark2MarkPlus: 0 tests
-
+// SLEIR:MassagePlusLabel2LabelPlus: 2 tests
+// MassagePlusLabel2LabelPlus1.glue
+test bool test_MassagePlusLabel2LabelPlus1() = run_case("MassagePlusLabel2LabelPlus1.glue",false);
+void show_MassagePlusLabel2LabelPlus1() {run_case("MassagePlusLabel2LabelPlus1.glue",true);}
+// MassagePlusLabel2LabelPlus2.glue
+test bool test_MassagePlusLabel2LabelPlus2() = run_case("MassagePlusLabel2LabelPlus2.glue",false);
+void show_MassagePlusLabel2LabelPlus2() {run_case("MassagePlusLabel2LabelPlus2.glue",true);}
+// SLEIR:MassagePlusMark2MarkPlus: 2 tests
+// MassagePlusMark2MarkPlus1.glue
+test bool test_MassagePlusMark2MarkPlus1() = run_case("MassagePlusMark2MarkPlus1.glue",false);
+void show_MassagePlusMark2MarkPlus1() {run_case("MassagePlusMark2MarkPlus1.glue",true);}
+// MassagePlusMark2MarkPlus2.glue
+test bool test_MassagePlusMark2MarkPlus2() = run_case("MassagePlusMark2MarkPlus2.glue",false);
+void show_MassagePlusMark2MarkPlus2() {run_case("MassagePlusMark2MarkPlus2.glue",true);}
 // SLEIR:MassagePlusOpt2Star: 0 tests
 
 // SLEIR:MassagePlusPlus2Plus: 0 tests
@@ -763,10 +1019,20 @@ void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
 
 // SLEIR:MassageStar2StarStar: 0 tests
 
-// SLEIR:MassageStarLabel2LabelStar: 0 tests
-
-// SLEIR:MassageStarMark2MarkStar: 0 tests
-
+// SLEIR:MassageStarLabel2LabelStar: 2 tests
+// MassageStarLabel2LabelStar1.glue
+test bool test_MassageStarLabel2LabelStar1() = run_case("MassageStarLabel2LabelStar1.glue",false);
+void show_MassageStarLabel2LabelStar1() {run_case("MassageStarLabel2LabelStar1.glue",true);}
+// MassageStarLabel2LabelStar2.glue
+test bool test_MassageStarLabel2LabelStar2() = run_case("MassageStarLabel2LabelStar2.glue",false);
+void show_MassageStarLabel2LabelStar2() {run_case("MassageStarLabel2LabelStar2.glue",true);}
+// SLEIR:MassageStarMark2MarkStar: 2 tests
+// MassageStarMark2MarkStar1.glue
+test bool test_MassageStarMark2MarkStar1() = run_case("MassageStarMark2MarkStar1.glue",false);
+void show_MassageStarMark2MarkStar1() {run_case("MassageStarMark2MarkStar1.glue",true);}
+// MassageStarMark2MarkStar2.glue
+test bool test_MassageStarMark2MarkStar2() = run_case("MassageStarMark2MarkStar2.glue",false);
+void show_MassageStarMark2MarkStar2() {run_case("MassageStarMark2MarkStar2.glue",true);}
 // SLEIR:MassageStarOpt2Star: 0 tests
 
 // SLEIR:MassageStarPlus2Star: 0 tests
@@ -787,38 +1053,219 @@ void show_DeyaccifyAll2VV65() {run_case("DeyaccifyAll2VV65.glue",true);}
 
 // SLEIR:ParenthesizeAll: 0 tests
 
-// SLEIR:PermuteInfix2Postfix: 0 tests
-
-// SLEIR:PermuteInfix2Prefix: 0 tests
-
-// SLEIR:PermutePostfix2Infix: 0 tests
-
-// SLEIR:PermutePostfix2Prefix: 0 tests
-
-// SLEIR:PermutePrefix2Infix: 0 tests
-
-// SLEIR:PermutePrefix2Postfix: 0 tests
-
+// SLEIR:PermuteInfix2Postfix: 2 tests
+// PermuteInfix2Postfix1.glue
+test bool test_PermuteInfix2Postfix1() = run_case("PermuteInfix2Postfix1.glue",false);
+void show_PermuteInfix2Postfix1() {run_case("PermuteInfix2Postfix1.glue",true);}
+// PermuteInfix2Postfix2.glue
+test bool test_PermuteInfix2Postfix2() = run_case("PermuteInfix2Postfix2.glue",false);
+void show_PermuteInfix2Postfix2() {run_case("PermuteInfix2Postfix2.glue",true);}
+// SLEIR:PermuteInfix2Prefix: 2 tests
+// PermuteInfix2Prefix1.glue
+test bool test_PermuteInfix2Prefix1() = run_case("PermuteInfix2Prefix1.glue",false);
+void show_PermuteInfix2Prefix1() {run_case("PermuteInfix2Prefix1.glue",true);}
+// PermuteInfix2Prefix2.glue
+test bool test_PermuteInfix2Prefix2() = run_case("PermuteInfix2Prefix2.glue",false);
+void show_PermuteInfix2Prefix2() {run_case("PermuteInfix2Prefix2.glue",true);}
+// SLEIR:PermutePostfix2Infix: 2 tests
+// PermutePostfix2Infix1.glue
+test bool test_PermutePostfix2Infix1() = run_case("PermutePostfix2Infix1.glue",false);
+void show_PermutePostfix2Infix1() {run_case("PermutePostfix2Infix1.glue",true);}
+// PermutePostfix2Infix2.glue
+test bool test_PermutePostfix2Infix2() = run_case("PermutePostfix2Infix2.glue",false);
+void show_PermutePostfix2Infix2() {run_case("PermutePostfix2Infix2.glue",true);}
+// SLEIR:PermutePostfix2Prefix: 2 tests
+// PermutePostfix2Prefix1.glue
+test bool test_PermutePostfix2Prefix1() = run_case("PermutePostfix2Prefix1.glue",false);
+void show_PermutePostfix2Prefix1() {run_case("PermutePostfix2Prefix1.glue",true);}
+// PermutePostfix2Prefix2.glue
+test bool test_PermutePostfix2Prefix2() = run_case("PermutePostfix2Prefix2.glue",false);
+void show_PermutePostfix2Prefix2() {run_case("PermutePostfix2Prefix2.glue",true);}
+// SLEIR:PermutePrefix2Infix: 2 tests
+// PermutePrefix2Infix1.glue
+test bool test_PermutePrefix2Infix1() = run_case("PermutePrefix2Infix1.glue",false);
+void show_PermutePrefix2Infix1() {run_case("PermutePrefix2Infix1.glue",true);}
+// PermutePrefix2Infix2.glue
+test bool test_PermutePrefix2Infix2() = run_case("PermutePrefix2Infix2.glue",false);
+void show_PermutePrefix2Infix2() {run_case("PermutePrefix2Infix2.glue",true);}
+// SLEIR:PermutePrefix2Postfix: 2 tests
+// PermutePrefix2Postfix1.glue
+test bool test_PermutePrefix2Postfix1() = run_case("PermutePrefix2Postfix1.glue",false);
+void show_PermutePrefix2Postfix1() {run_case("PermutePrefix2Postfix1.glue",true);}
+// PermutePrefix2Postfix2.glue
+test bool test_PermutePrefix2Postfix2() = run_case("PermutePrefix2Postfix2.glue",false);
+void show_PermutePrefix2Postfix2() {run_case("PermutePrefix2Postfix2.glue",true);}
 // SLEIR:RAssocAll: 0 tests
 
-// SLEIR:Reroot2top: 0 tests
-
-// SLEIR:RetireLs: 0 tests
-
-// SLEIR:RetireMs: 0 tests
-
-// SLEIR:RetireTs: 0 tests
-
-// SLEIR:SplitAllT: 0 tests
-
+// SLEIR:Reroot2top: 5 tests
+// Reroot2top1.glue
+test bool test_Reroot2top1() = run_case("Reroot2top1.glue",false);
+void show_Reroot2top1() {run_case("Reroot2top1.glue",true);}
+// Reroot2top2.glue
+test bool test_Reroot2top2() = run_case("Reroot2top2.glue",false);
+void show_Reroot2top2() {run_case("Reroot2top2.glue",true);}
+// Reroot2top3.glue
+test bool test_Reroot2top3() = run_case("Reroot2top3.glue",false);
+void show_Reroot2top3() {run_case("Reroot2top3.glue",true);}
+// Reroot2top4.glue
+test bool test_Reroot2top4() = run_case("Reroot2top4.glue",false);
+void show_Reroot2top4() {run_case("Reroot2top4.glue",true);}
+// Reroot2top5.glue
+test bool test_Reroot2top5() = run_case("Reroot2top5.glue",false);
+void show_Reroot2top5() {run_case("Reroot2top5.glue",true);}
+// SLEIR:RetireLs: 7 tests
+// RetireLs1.glue
+test bool test_RetireLs1() = run_case("RetireLs1.glue",false);
+void show_RetireLs1() {run_case("RetireLs1.glue",true);}
+// RetireLs2.glue
+test bool test_RetireLs2() = run_case("RetireLs2.glue",false);
+void show_RetireLs2() {run_case("RetireLs2.glue",true);}
+// RetireLs3.glue
+test bool test_RetireLs3() = run_case("RetireLs3.glue",false);
+void show_RetireLs3() {run_case("RetireLs3.glue",true);}
+// RetireLs4.glue
+test bool test_RetireLs4() = run_case("RetireLs4.glue",false);
+void show_RetireLs4() {run_case("RetireLs4.glue",true);}
+// RetireLs5.glue
+test bool test_RetireLs5() = run_case("RetireLs5.glue",false);
+void show_RetireLs5() {run_case("RetireLs5.glue",true);}
+// RetireLs6.glue
+test bool test_RetireLs6() = run_case("RetireLs6.glue",false);
+void show_RetireLs6() {run_case("RetireLs6.glue",true);}
+// RetireLs7.glue
+test bool test_RetireLs7() = run_case("RetireLs7.glue",false);
+void show_RetireLs7() {run_case("RetireLs7.glue",true);}
+// SLEIR:RetireMs: 8 tests
+// RetireMs1.glue
+test bool test_RetireMs1() = run_case("RetireMs1.glue",false);
+void show_RetireMs1() {run_case("RetireMs1.glue",true);}
+// RetireMs2.glue
+test bool test_RetireMs2() = run_case("RetireMs2.glue",false);
+void show_RetireMs2() {run_case("RetireMs2.glue",true);}
+// RetireMs3.glue
+test bool test_RetireMs3() = run_case("RetireMs3.glue",false);
+void show_RetireMs3() {run_case("RetireMs3.glue",true);}
+// RetireMs4.glue
+test bool test_RetireMs4() = run_case("RetireMs4.glue",false);
+void show_RetireMs4() {run_case("RetireMs4.glue",true);}
+// RetireMs5.glue
+test bool test_RetireMs5() = run_case("RetireMs5.glue",false);
+void show_RetireMs5() {run_case("RetireMs5.glue",true);}
+// RetireMs6.glue
+test bool test_RetireMs6() = run_case("RetireMs6.glue",false);
+void show_RetireMs6() {run_case("RetireMs6.glue",true);}
+// RetireMs7.glue
+test bool test_RetireMs7() = run_case("RetireMs7.glue",false);
+void show_RetireMs7() {run_case("RetireMs7.glue",true);}
+// RetireMs8.glue
+test bool test_RetireMs8() = run_case("RetireMs8.glue",false);
+void show_RetireMs8() {run_case("RetireMs8.glue",true);}
+// SLEIR:RetireTs: 9 tests
+// RetireTs1.glue
+test bool test_RetireTs1() = run_case("RetireTs1.glue",false);
+void show_RetireTs1() {run_case("RetireTs1.glue",true);}
+// RetireTs2.glue
+test bool test_RetireTs2() = run_case("RetireTs2.glue",false);
+void show_RetireTs2() {run_case("RetireTs2.glue",true);}
+// RetireTs3.glue
+test bool test_RetireTs3() = run_case("RetireTs3.glue",false);
+void show_RetireTs3() {run_case("RetireTs3.glue",true);}
+// RetireTs4.glue
+test bool test_RetireTs4() = run_case("RetireTs4.glue",false);
+void show_RetireTs4() {run_case("RetireTs4.glue",true);}
+// RetireTs5.glue
+test bool test_RetireTs5() = run_case("RetireTs5.glue",false);
+void show_RetireTs5() {run_case("RetireTs5.glue",true);}
+// RetireTs6.glue
+test bool test_RetireTs6() = run_case("RetireTs6.glue",false);
+void show_RetireTs6() {run_case("RetireTs6.glue",true);}
+// RetireTs7.glue
+test bool test_RetireTs7() = run_case("RetireTs7.glue",false);
+void show_RetireTs7() {run_case("RetireTs7.glue",true);}
+// RetireTs8.glue
+test bool test_RetireTs8() = run_case("RetireTs8.glue",false);
+void show_RetireTs8() {run_case("RetireTs8.glue",true);}
+// RetireTs9.glue
+test bool test_RetireTs9() = run_case("RetireTs9.glue",false);
+void show_RetireTs9() {run_case("RetireTs9.glue",true);}
+// SLEIR:SplitAllT: 8 tests
+// SplitAllT1.glue
+test bool test_SplitAllT1() = run_case("SplitAllT1.glue",false);
+void show_SplitAllT1() {run_case("SplitAllT1.glue",true);}
+// SplitAllT2.glue
+test bool test_SplitAllT2() = run_case("SplitAllT2.glue",false);
+void show_SplitAllT2() {run_case("SplitAllT2.glue",true);}
+// SplitAllT3.glue
+test bool test_SplitAllT3() = run_case("SplitAllT3.glue",false);
+void show_SplitAllT3() {run_case("SplitAllT3.glue",true);}
+// SplitAllT4.glue
+test bool test_SplitAllT4() = run_case("SplitAllT4.glue",false);
+void show_SplitAllT4() {run_case("SplitAllT4.glue",true);}
+// SplitAllT5.glue
+test bool test_SplitAllT5() = run_case("SplitAllT5.glue",false);
+void show_SplitAllT5() {run_case("SplitAllT5.glue",true);}
+// SplitAllT6.glue
+test bool test_SplitAllT6() = run_case("SplitAllT6.glue",false);
+void show_SplitAllT6() {run_case("SplitAllT6.glue",true);}
+// SplitAllT7.glue
+test bool test_SplitAllT7() = run_case("SplitAllT7.glue",false);
+void show_SplitAllT7() {run_case("SplitAllT7.glue",true);}
+// SplitAllT8.glue
+test bool test_SplitAllT8() = run_case("SplitAllT8.glue",false);
+void show_SplitAllT8() {run_case("SplitAllT8.glue",true);}
 // SLEIR:UnchainAll: 0 tests
 
-// SLEIR:UndefineTrivial: 0 tests
-
-// SLEIR:UnfoldMax: 0 tests
-
-// SLEIR:VerticalAll: 0 tests
-
+// SLEIR:UndefineTrivial: 5 tests
+// UndefineTrivial1.glue
+test bool test_UndefineTrivial1() = run_case("UndefineTrivial1.glue",false);
+void show_UndefineTrivial1() {run_case("UndefineTrivial1.glue",true);}
+// UndefineTrivial2.glue
+test bool test_UndefineTrivial2() = run_case("UndefineTrivial2.glue",false);
+void show_UndefineTrivial2() {run_case("UndefineTrivial2.glue",true);}
+// UndefineTrivial3.glue
+test bool test_UndefineTrivial3() = run_case("UndefineTrivial3.glue",false);
+void show_UndefineTrivial3() {run_case("UndefineTrivial3.glue",true);}
+// UndefineTrivial4.glue
+test bool test_UndefineTrivial4() = run_case("UndefineTrivial4.glue",false);
+void show_UndefineTrivial4() {run_case("UndefineTrivial4.glue",true);}
+// UndefineTrivial5.glue
+test bool test_UndefineTrivial5() = run_case("UndefineTrivial5.glue",false);
+void show_UndefineTrivial5() {run_case("UndefineTrivial5.glue",true);}
+// SLEIR:UnfoldMax: 5 tests
+// UnfoldMax1.glue
+test bool test_UnfoldMax1() = run_case("UnfoldMax1.glue",false);
+void show_UnfoldMax1() {run_case("UnfoldMax1.glue",true);}
+// UnfoldMax2.glue
+test bool test_UnfoldMax2() = run_case("UnfoldMax2.glue",false);
+void show_UnfoldMax2() {run_case("UnfoldMax2.glue",true);}
+// UnfoldMax3.glue
+test bool test_UnfoldMax3() = run_case("UnfoldMax3.glue",false);
+void show_UnfoldMax3() {run_case("UnfoldMax3.glue",true);}
+// UnfoldMax4.glue
+test bool test_UnfoldMax4() = run_case("UnfoldMax4.glue",false);
+void show_UnfoldMax4() {run_case("UnfoldMax4.glue",true);}
+// UnfoldMax5.glue
+test bool test_UnfoldMax5() = run_case("UnfoldMax5.glue",false);
+void show_UnfoldMax5() {run_case("UnfoldMax5.glue",true);}
+// SLEIR:VerticalAll: 6 tests
+// VerticalAll1.glue
+test bool test_VerticalAll1() = run_case("VerticalAll1.glue",false);
+void show_VerticalAll1() {run_case("VerticalAll1.glue",true);}
+// VerticalAll2.glue
+test bool test_VerticalAll2() = run_case("VerticalAll2.glue",false);
+void show_VerticalAll2() {run_case("VerticalAll2.glue",true);}
+// VerticalAll3.glue
+test bool test_VerticalAll3() = run_case("VerticalAll3.glue",false);
+void show_VerticalAll3() {run_case("VerticalAll3.glue",true);}
+// VerticalAll4.glue
+test bool test_VerticalAll4() = run_case("VerticalAll4.glue",false);
+void show_VerticalAll4() {run_case("VerticalAll4.glue",true);}
+// VerticalAll5.glue
+test bool test_VerticalAll5() = run_case("VerticalAll5.glue",false);
+void show_VerticalAll5() {run_case("VerticalAll5.glue",true);}
+// VerticalAll6.glue
+test bool test_VerticalAll6() = run_case("VerticalAll6.glue",false);
+void show_VerticalAll6() {run_case("VerticalAll6.glue",true);}
 // SLEIR:WidenOpt2Star: 0 tests
 
 // SLEIR:WidenPlus2Star: 0 tests
