@@ -1,5 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
+// This file contains 317 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -691,11 +692,7 @@ void show_MassageAndNotXY2NotOrXY1() {run_case("MassageAndNotXY2NotOrXY1.glue",t
 // MassageAndNotXY2NotOrXY2.glue
 test bool test_MassageAndNotXY2NotOrXY2() = run_case("MassageAndNotXY2NotOrXY2.glue",false);
 void show_MassageAndNotXY2NotOrXY2() {run_case("MassageAndNotXY2NotOrXY2.glue",true);}
-// SLEIR:MassageAndNotYX2NotOrXY: 0 tests
-
 // SLEIR:MassageAndXY2NotOrNotXY: 0 tests
-
-// SLEIR:MassageAndYX2NotOrNotXY: 0 tests
 
 // SLEIR:MassageExcept2AndNot: 2 tests
 // MassageExcept2AndNot1.glue
@@ -762,11 +759,7 @@ test bool test_MassageMarkStar2StarMark2() = run_case("MassageMarkStar2StarMark2
 void show_MassageMarkStar2StarMark2() {run_case("MassageMarkStar2StarMark2.glue",true);}
 // SLEIR:MassageNotAndNotXY2OrXY: 0 tests
 
-// SLEIR:MassageNotAndNotXY2OrYX: 0 tests
-
 // SLEIR:MassageNotAndXY2OrNotXY: 0 tests
-
-// SLEIR:MassageNotAndXY2OrNotYX: 0 tests
 
 // SLEIR:MassageNotLabel2LabelNot: 2 tests
 // MassageNotLabel2LabelNot1.glue
@@ -786,11 +779,7 @@ void show_MassageNotMark2MarkNot2() {run_case("MassageNotMark2MarkNot2.glue",tru
 
 // SLEIR:MassageNotOrNotXY2AndXY: 0 tests
 
-// SLEIR:MassageNotOrNotXY2AndYX: 0 tests
-
 // SLEIR:MassageNotOrXY2AndNotXY: 0 tests
-
-// SLEIR:MassageNotOrXY2AndNotYX: 0 tests
 
 // SLEIR:MassageOpt2OptOpt: 0 tests
 
@@ -857,8 +846,6 @@ void show_MassageOrNotXY2NotAndXY1() {run_case("MassageOrNotXY2NotAndXY1.glue",t
 // MassageOrNotXY2NotAndXY2.glue
 test bool test_MassageOrNotXY2NotAndXY2() = run_case("MassageOrNotXY2NotAndXY2.glue",false);
 void show_MassageOrNotXY2NotAndXY2() {run_case("MassageOrNotXY2NotAndXY2.glue",true);}
-// SLEIR:MassageOrNotYX2NotAndXY: 0 tests
-
 // SLEIR:MassageOrOptEps2Opt: 0 tests
 
 // SLEIR:MassageOrOptPlus2Star: 0 tests
@@ -890,8 +877,6 @@ void show_MassageOrNotXY2NotAndXY2() {run_case("MassageOrNotXY2NotAndXY2.glue",t
 // SLEIR:MassageOrXPlus2Plus: 0 tests
 
 // SLEIR:MassageOrXY2NotAndNotXY: 0 tests
-
-// SLEIR:MassageOrYX2NotAndNotXY: 0 tests
 
 // SLEIR:MassagePlus2OrPlusX: 0 tests
 

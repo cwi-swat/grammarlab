@@ -30,6 +30,7 @@ public void main()
 	loc base = |project://grammarlab/src/test/set/sleir|;
 	str buffer = "@contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 		'@contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
+		'// This file contains %CX% test cases from <base>
 		'module \\test::SLEIR
 		'
 		'import IO;
@@ -67,5 +68,6 @@ public void main()
 		buffer += "//////////////////////////////////////////
 		'// Unknown:
 		'" + intercalate("\n",perop["Unknown"]);
-	writeFile(|project://grammarlab/src/test/SLEIR.rsc|, buffer);
+	
+	writeFile(|project://grammarlab/src/test/SLEIR.rsc|, replaceFirst(buffer,"%CX%", "<(0 | it + size(perop[k]) | k <- perop)>"));
 }
