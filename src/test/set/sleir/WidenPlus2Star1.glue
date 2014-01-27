@@ -1,0 +1,8 @@
+// Based on the XBGF test case called widen_global
+importG
+	program ::= <fun>:(function+) ;
+.
+WidenPlus2Star.
+diff
+	program ::= <fun>:(function*) ;
+.

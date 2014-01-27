@@ -1,0 +1,7 @@
+importG
+	program ::= function? ;
+.
+WidenOpt2Star.
+diff
+	program ::= function* ;
+.

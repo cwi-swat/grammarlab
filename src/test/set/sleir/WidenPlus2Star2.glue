@@ -1,0 +1,12 @@
+// Several nonterminals affected
+importG
+	program ::= <fun>:(function+) ;
+	function ::= name statement+;
+	statement ::= keyword (([a]::arg)+)? "END";
+.
+WidenPlus2Star.
+diff
+	program ::= <fun>:(function*) ;
+	function ::= name statement*;
+	statement ::= keyword (([a]::arg)*)? "END";
+.

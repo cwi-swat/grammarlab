@@ -1,0 +1,9 @@
+importG
+	program ::= function?;
+	function ::= name (argtype argname)?;
+.
+WidenOpt2Star.
+diff
+	program ::= function*;
+	function ::= name (argtype argname)*;
+.
