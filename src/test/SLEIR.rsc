@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 321 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 327 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -1265,12 +1265,27 @@ void show_WidenPlus2Star1() {run_case("WidenPlus2Star1.glue",true);}
 // WidenPlus2Star2.glue
 test bool test_WidenPlus2Star2() = run_case("WidenPlus2Star2.glue",false);
 void show_WidenPlus2Star2() {run_case("WidenPlus2Star2.glue",true);}
-// SLEIR:WidenX2Opt: 0 tests
-
-// SLEIR:WidenX2Plus: 0 tests
-
-// SLEIR:WidenX2Star: 0 tests
-
+// SLEIR:WidenX2Opt: 2 tests
+// WidenX2Opt1.glue
+test bool test_WidenX2Opt1() = run_case("WidenX2Opt1.glue",false);
+void show_WidenX2Opt1() {run_case("WidenX2Opt1.glue",true);}
+// WidenX2Opt2.glue
+test bool test_WidenX2Opt2() = run_case("WidenX2Opt2.glue",false);
+void show_WidenX2Opt2() {run_case("WidenX2Opt2.glue",true);}
+// SLEIR:WidenX2Plus: 2 tests
+// WidenX2Plus1.glue
+test bool test_WidenX2Plus1() = run_case("WidenX2Plus1.glue",false);
+void show_WidenX2Plus1() {run_case("WidenX2Plus1.glue",true);}
+// WidenX2Plus2.glue
+test bool test_WidenX2Plus2() = run_case("WidenX2Plus2.glue",false);
+void show_WidenX2Plus2() {run_case("WidenX2Plus2.glue",true);}
+// SLEIR:WidenX2Star: 2 tests
+// WidenX2Star1.glue
+test bool test_WidenX2Star1() = run_case("WidenX2Star1.glue",false);
+void show_WidenX2Star1() {run_case("WidenX2Star1.glue",true);}
+// WidenX2Star2.glue
+test bool test_WidenX2Star2() = run_case("WidenX2Star2.glue",false);
+void show_WidenX2Star2() {run_case("WidenX2Star2.glue",true);}
 // SLEIR:YaccifyAllL: 0 tests
 
 // SLEIR:YaccifyAllR: 0 tests
