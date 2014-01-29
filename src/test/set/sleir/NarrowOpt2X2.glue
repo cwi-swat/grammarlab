@@ -1,12 +1,12 @@
 // Several nonterminals affected
 importG
-	program ::= <fun>:function ;
-	function ::= name statement;
-	statement ::= keyword ([a]::arg)+ "END";
-.
-WidenX2Opt.
-diff
 	program ::= <fun>:(function?) ;
 	function ::= name statement?;
 	statement ::= keyword (([a]::arg)?)+ "END";
+.
+NarrowOpt2X.
+diff
+	program ::= <fun>:function ;
+	function ::= name statement;
+	statement ::= keyword ([a]::arg)+ "END";
 .

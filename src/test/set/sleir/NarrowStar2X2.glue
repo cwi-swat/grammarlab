@@ -1,12 +1,12 @@
 // Several nonterminals affected
 importG
-	program ::= <fun>:function ;
-	function ::= name statement;
-	statement ::= keyword ([a]::arg)? "END";
-.
-WidenX2Star.
-diff
 	program ::= <fun>:(function*) ;
 	function ::= name statement*;
 	statement ::= keyword (([a]::arg)*)? "END";
+.
+NarrowStar2X.
+diff
+	program ::= <fun>:function ;
+	function ::= name statement;
+	statement ::= keyword ([a]::arg)? "END";
 .

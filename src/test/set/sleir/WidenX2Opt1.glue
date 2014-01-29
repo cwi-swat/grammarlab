@@ -1,8 +1,0 @@
-// Based on the XBGF test case called widen_global
-importG
-	program ::= <fun>:function;
-.
-WidenX2Opt.
-diff
-	program ::= <fun>:(function?) ;
-.

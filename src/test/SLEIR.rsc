@@ -1026,16 +1026,31 @@ void show_MassageStarMark2MarkStar2() {run_case("MassageStarMark2MarkStar2.glue"
 
 // SLEIR:MassageX2NotNot: 0 tests
 
-// SLEIR:NarrowOpt2X: 0 tests
-
-// SLEIR:NarrowPlus2X: 0 tests
-
+// SLEIR:NarrowOpt2X: 2 tests
+// NarrowOpt2X1.glue
+test bool test_NarrowOpt2X1() = run_case("NarrowOpt2X1.glue",false);
+void show_NarrowOpt2X1() {run_case("NarrowOpt2X1.glue",true);}
+// NarrowOpt2X2.glue
+test bool test_NarrowOpt2X2() = run_case("NarrowOpt2X2.glue",false);
+void show_NarrowOpt2X2() {run_case("NarrowOpt2X2.glue",true);}
+// SLEIR:NarrowPlus2X: 2 tests
+// NarrowPlus2X1.glue
+test bool test_NarrowPlus2X1() = run_case("NarrowPlus2X1.glue",false);
+void show_NarrowPlus2X1() {run_case("NarrowPlus2X1.glue",true);}
+// NarrowPlus2X2.glue
+test bool test_NarrowPlus2X2() = run_case("NarrowPlus2X2.glue",false);
+void show_NarrowPlus2X2() {run_case("NarrowPlus2X2.glue",true);}
 // SLEIR:NarrowStar2Opt: 0 tests
 
 // SLEIR:NarrowStar2Plus: 0 tests
 
-// SLEIR:NarrowStar2X: 0 tests
-
+// SLEIR:NarrowStar2X: 2 tests
+// NarrowStar2X1.glue
+test bool test_NarrowStar2X1() = run_case("NarrowStar2X1.glue",false);
+void show_NarrowStar2X1() {run_case("NarrowStar2X1.glue",true);}
+// NarrowStar2X2.glue
+test bool test_NarrowStar2X2() = run_case("NarrowStar2X2.glue",false);
+void show_NarrowStar2X2() {run_case("NarrowStar2X2.glue",true);}
 // SLEIR:ParenthesizeAll: 0 tests
 
 // SLEIR:PermuteInfix2Postfix: 2 tests
@@ -1265,27 +1280,6 @@ void show_WidenPlus2Star1() {run_case("WidenPlus2Star1.glue",true);}
 // WidenPlus2Star2.glue
 test bool test_WidenPlus2Star2() = run_case("WidenPlus2Star2.glue",false);
 void show_WidenPlus2Star2() {run_case("WidenPlus2Star2.glue",true);}
-// SLEIR:WidenX2Opt: 2 tests
-// WidenX2Opt1.glue
-test bool test_WidenX2Opt1() = run_case("WidenX2Opt1.glue",false);
-void show_WidenX2Opt1() {run_case("WidenX2Opt1.glue",true);}
-// WidenX2Opt2.glue
-test bool test_WidenX2Opt2() = run_case("WidenX2Opt2.glue",false);
-void show_WidenX2Opt2() {run_case("WidenX2Opt2.glue",true);}
-// SLEIR:WidenX2Plus: 2 tests
-// WidenX2Plus1.glue
-test bool test_WidenX2Plus1() = run_case("WidenX2Plus1.glue",false);
-void show_WidenX2Plus1() {run_case("WidenX2Plus1.glue",true);}
-// WidenX2Plus2.glue
-test bool test_WidenX2Plus2() = run_case("WidenX2Plus2.glue",false);
-void show_WidenX2Plus2() {run_case("WidenX2Plus2.glue",true);}
-// SLEIR:WidenX2Star: 2 tests
-// WidenX2Star1.glue
-test bool test_WidenX2Star1() = run_case("WidenX2Star1.glue",false);
-void show_WidenX2Star1() {run_case("WidenX2Star1.glue",true);}
-// WidenX2Star2.glue
-test bool test_WidenX2Star2() = run_case("WidenX2Star2.glue",false);
-void show_WidenX2Star2() {run_case("WidenX2Star2.glue",true);}
 // SLEIR:YaccifyAllL: 0 tests
 
 // SLEIR:YaccifyAllR: 0 tests

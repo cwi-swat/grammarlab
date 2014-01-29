@@ -4,7 +4,7 @@ importG
 	function ::= name statement;
 	statement ::= keyword ([a]::arg)? "END";
 .
-WidenX2Plus.
+NarrowPlus2X.
 diff
 	program ::= <fun>:(function+) ;
 	function ::= name statement+;

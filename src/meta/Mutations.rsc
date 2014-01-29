@@ -61,7 +61,7 @@ void main()
 	)
 	{
 		from = replaceFirst(from,"1","");
-		to = replaceFirst(from,"2","");
+		to = replaceFirst(to,"2","");
 		if (from != "e")
 			{buf += function("narrow","Narrow<left>2<right>",from,to);cx+=1;}
 		if (to != "e")
