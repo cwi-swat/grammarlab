@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 327 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 331 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -1040,10 +1040,20 @@ void show_NarrowPlus2X1() {run_case("NarrowPlus2X1.glue",true);}
 // NarrowPlus2X2.glue
 test bool test_NarrowPlus2X2() = run_case("NarrowPlus2X2.glue",false);
 void show_NarrowPlus2X2() {run_case("NarrowPlus2X2.glue",true);}
-// SLEIR:NarrowStar2Opt: 0 tests
-
-// SLEIR:NarrowStar2Plus: 0 tests
-
+// SLEIR:NarrowStar2Opt: 2 tests
+// NarrowStar2Opt1.glue
+test bool test_NarrowStar2Opt1() = run_case("NarrowStar2Opt1.glue",false);
+void show_NarrowStar2Opt1() {run_case("NarrowStar2Opt1.glue",true);}
+// NarrowStar2Opt2.glue
+test bool test_NarrowStar2Opt2() = run_case("NarrowStar2Opt2.glue",false);
+void show_NarrowStar2Opt2() {run_case("NarrowStar2Opt2.glue",true);}
+// SLEIR:NarrowStar2Plus: 2 tests
+// NarrowStar2Plus1.glue
+test bool test_NarrowStar2Plus1() = run_case("NarrowStar2Plus1.glue",false);
+void show_NarrowStar2Plus1() {run_case("NarrowStar2Plus1.glue",true);}
+// NarrowStar2Plus2.glue
+test bool test_NarrowStar2Plus2() = run_case("NarrowStar2Plus2.glue",false);
+void show_NarrowStar2Plus2() {run_case("NarrowStar2Plus2.glue",true);}
 // SLEIR:NarrowStar2X: 2 tests
 // NarrowStar2X1.glue
 test bool test_NarrowStar2X1() = run_case("NarrowStar2X1.glue",false);
