@@ -1,0 +1,12 @@
+// de Morgan: three nonterminals
+importG
+	foo ::= ¬ ((¬x) | (¬y)) ;
+	bar ::= (¬ ((¬z) | (¬q))) & foo ;
+	wez ::= (¬ ((¬a) | (¬b))) & foo ;
+.
+MassageNotOrNotXY2AndXY.
+diff
+	foo ::= x & y ;
+	bar ::= z & c & foo ;
+	wez ::= z & foo & b ;
+.
