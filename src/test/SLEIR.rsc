@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 335 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 339 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -762,10 +762,20 @@ void show_MassageMarkStar2StarMark1() {run_case("MassageMarkStar2StarMark1.glue"
 // MassageMarkStar2StarMark2.glue
 test bool test_MassageMarkStar2StarMark2() = run_case("MassageMarkStar2StarMark2.glue",false);
 void show_MassageMarkStar2StarMark2() {run_case("MassageMarkStar2StarMark2.glue",true);}
-// SLEIR:MassageNotAndNotXY2OrXY: 0 tests
-
-// SLEIR:MassageNotAndXY2OrNotXY: 0 tests
-
+// SLEIR:MassageNotAndNotXY2OrXY: 2 tests
+// MassageNotAndNotXY2OrXY1.glue
+test bool test_MassageNotAndNotXY2OrXY1() = run_case("MassageNotAndNotXY2OrXY1.glue",false);
+void show_MassageNotAndNotXY2OrXY1() {run_case("MassageNotAndNotXY2OrXY1.glue",true);}
+// MassageNotAndNotXY2OrXY2.glue
+test bool test_MassageNotAndNotXY2OrXY2() = run_case("MassageNotAndNotXY2OrXY2.glue",false);
+void show_MassageNotAndNotXY2OrXY2() {run_case("MassageNotAndNotXY2OrXY2.glue",true);}
+// SLEIR:MassageNotAndXY2OrNotXY: 2 tests
+// MassageNotAndXY2OrNotXY1.glue
+test bool test_MassageNotAndXY2OrNotXY1() = run_case("MassageNotAndXY2OrNotXY1.glue",false);
+void show_MassageNotAndXY2OrNotXY1() {run_case("MassageNotAndXY2OrNotXY1.glue",true);}
+// MassageNotAndXY2OrNotXY2.glue
+test bool test_MassageNotAndXY2OrNotXY2() = run_case("MassageNotAndXY2OrNotXY2.glue",false);
+void show_MassageNotAndXY2OrNotXY2() {run_case("MassageNotAndXY2OrNotXY2.glue",true);}
 // SLEIR:MassageNotLabel2LabelNot: 2 tests
 // MassageNotLabel2LabelNot1.glue
 test bool test_MassageNotLabel2LabelNot1() = run_case("MassageNotLabel2LabelNot1.glue",false);
