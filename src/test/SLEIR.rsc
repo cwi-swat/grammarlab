@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 343 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 345 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -790,8 +790,13 @@ void show_MassageNotMark2MarkNot1() {run_case("MassageNotMark2MarkNot1.glue",tru
 // MassageNotMark2MarkNot2.glue
 test bool test_MassageNotMark2MarkNot2() = run_case("MassageNotMark2MarkNot2.glue",false);
 void show_MassageNotMark2MarkNot2() {run_case("MassageNotMark2MarkNot2.glue",true);}
-// SLEIR:MassageNotNot2X: 0 tests
-
+// SLEIR:MassageNotNot: 2 tests
+// MassageNotNot1.glue
+test bool test_MassageNotNot1() = run_case("MassageNotNot1.glue",false);
+void show_MassageNotNot1() {run_case("MassageNotNot1.glue",true);}
+// MassageNotNot2.glue
+test bool test_MassageNotNot2() = run_case("MassageNotNot2.glue",false);
+void show_MassageNotNot2() {run_case("MassageNotNot2.glue",true);}
 // SLEIR:MassageNotOrNotXY2AndXY: 2 tests
 // MassageNotOrNotXY2AndXY1.glue
 test bool test_MassageNotOrNotXY2AndXY1() = run_case("MassageNotOrNotXY2AndXY1.glue",false);
@@ -1053,8 +1058,6 @@ void show_MassageStarMark2MarkStar2() {run_case("MassageStarMark2MarkStar2.glue"
 // SLEIR:MassageStarPlus2Star: 0 tests
 
 // SLEIR:MassageStarStar2Star: 0 tests
-
-// SLEIR:MassageX2NotNot: 0 tests
 
 // SLEIR:NarrowOpt2X: 2 tests
 // NarrowOpt2X1.glue

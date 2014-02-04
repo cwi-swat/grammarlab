@@ -1,0 +1,10 @@
+// double negation: two nonterminals
+importG
+	foo ::= ¬(¬x);
+	bar ::= [labelled]::(¬(¬a)) <marked>:(¬(¬b)) (¬(¬c))* (¬(¬(¬d))) (¬(¬(e f)));
+.
+MassageNotNot.
+diff
+	foo ::= x ;
+	bar ::= [labelled]::a <marked>:b c* ¬d e f;
+.

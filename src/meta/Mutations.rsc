@@ -31,6 +31,8 @@ void main()
 			f = ""; t = "";
 			if (contains(pair[0],"_") && !contains(pair[1],"_")) {f = pair[0]; t = pair[1];}
 			elseif (!contains(pair[0],"_") && contains(pair[1],"_")) {f = pair[1]; t = pair[0];}
+			elseif (pair[0] == "x") {f = pair[1]; t = pair[0];}
+			elseif (pair[1] == "x") {f = pair[0]; t = pair[1];}
 			else {buf += "//ERROR: <pair[0]> =\> <pair[1]>";continue;}
 			buf += function("massage","Massage<left>",f,t);
 			cx += 1;

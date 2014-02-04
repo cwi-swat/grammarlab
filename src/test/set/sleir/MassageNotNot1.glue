@@ -1,0 +1,8 @@
+// double negation: one nonterminal
+importG
+	foo ::= ¬ (¬x);
+.
+MassageNotNot.
+diff
+	foo ::= x ;
+.
