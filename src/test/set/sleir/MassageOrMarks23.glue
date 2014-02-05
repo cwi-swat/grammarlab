@@ -1,0 +1,8 @@
+// two nested marks, one nonterminal
+importG
+	bar ::= <group>:(<main>:a | <aka>:a) | <alone>:a;
+.
+MassageOrMarks2.
+diff
+	bar ::= a;
+.

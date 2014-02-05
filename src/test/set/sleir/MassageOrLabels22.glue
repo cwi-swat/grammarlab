@@ -1,0 +1,10 @@
+// two labels, two nonterminals
+importG
+	foo ::= [main]::a | [aka]::a;
+	bar ::= [main]::a | [aka]::a | a;
+.
+MassageOrLabels2.
+diff
+	foo ::= a;
+	bar ::= a;
+.

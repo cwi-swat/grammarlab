@@ -1,0 +1,8 @@
+// two nested labels, one nonterminal
+importG
+	bar ::= [group]::([main]::a | [aka]::a) | [alone]::a;
+.
+MassageOrLabels2.
+diff
+	bar ::= a;
+.

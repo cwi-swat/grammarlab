@@ -1,0 +1,8 @@
+// three nested labels, one nonterminal
+importG
+	bar ::= [group]::([main]::a | [aka]::a | [wheel]::a) | [alone]::a | [least]::a;
+.
+MassageOrLabels3.
+diff
+	bar ::= a;
+.
