@@ -811,19 +811,9 @@ void show_MassageNotOrXY2AndNotXY1() {run_case("MassageNotOrXY2AndNotXY1.glue",t
 // MassageNotOrXY2AndNotXY2.glue
 test bool test_MassageNotOrXY2AndNotXY2() = run_case("MassageNotOrXY2AndNotXY2.glue",false);
 void show_MassageNotOrXY2AndNotXY2() {run_case("MassageNotOrXY2AndNotXY2.glue",true);}
-// SLEIR:MassageOpt2OptOpt: 0 tests
-
-// SLEIR:MassageOpt2OrEpsOpt: 0 tests
-
 // SLEIR:MassageOpt2OrEpsX: 0 tests
 
-// SLEIR:MassageOpt2OrOptEps: 0 tests
-
-// SLEIR:MassageOpt2OrOptX: 0 tests
-
 // SLEIR:MassageOpt2OrXEps: 0 tests
-
-// SLEIR:MassageOpt2OrXOpt: 0 tests
 
 // SLEIR:MassageOptLabel2LabelOpt: 2 tests
 // MassageOptLabel2LabelOpt1.glue
@@ -839,7 +829,7 @@ void show_MassageOptMark2MarkOpt1() {run_case("MassageOptMark2MarkOpt1.glue",tru
 // MassageOptMark2MarkOpt2.glue
 test bool test_MassageOptMark2MarkOpt2() = run_case("MassageOptMark2MarkOpt2.glue",false);
 void show_MassageOptMark2MarkOpt2() {run_case("MassageOptMark2MarkOpt2.glue",true);}
-// SLEIR:MassageOptOpt2Opt: 0 tests
+// SLEIR:MassageOptOpt: 0 tests
 
 // SLEIR:MassageOptPlus2Star: 0 tests
 
@@ -849,15 +839,9 @@ void show_MassageOptMark2MarkOpt2() {run_case("MassageOptMark2MarkOpt2.glue",tru
 
 // SLEIR:MassageOptSeqXStar2SLStar: 0 tests
 
-// SLEIR:MassageOptStar2Star: 0 tests
+// SLEIR:MassageOptStar: 0 tests
 
-// SLEIR:MassageOr1Star2Star: 0 tests
-
-// SLEIR:MassageOrEpsOpt2Opt: 0 tests
-
-// SLEIR:MassageOrEpsPlus2Star: 0 tests
-
-// SLEIR:MassageOrEpsStar2Star: 0 tests
+// SLEIR:MassageOrEpsOpt: 0 tests
 
 // SLEIR:MassageOrEpsX2Opt: 0 tests
 
@@ -920,35 +904,29 @@ void show_MassageOrNotXY2NotAndXY1() {run_case("MassageOrNotXY2NotAndXY1.glue",t
 // MassageOrNotXY2NotAndXY2.glue
 test bool test_MassageOrNotXY2NotAndXY2() = run_case("MassageOrNotXY2NotAndXY2.glue",false);
 void show_MassageOrNotXY2NotAndXY2() {run_case("MassageOrNotXY2NotAndXY2.glue",true);}
-// SLEIR:MassageOrOptEps2Opt: 0 tests
+// SLEIR:MassageOrOptEps: 0 tests
 
-// SLEIR:MassageOrOptPlus2Star: 0 tests
-
-// SLEIR:MassageOrOptStar2Star: 0 tests
-
-// SLEIR:MassageOrOptX2Opt: 0 tests
+// SLEIR:MassageOrOptX: 0 tests
 
 // SLEIR:MassageOrPlusEps2Star: 0 tests
 
 // SLEIR:MassageOrPlusOpt2Star: 0 tests
 
-// SLEIR:MassageOrPlusStar2Star: 0 tests
+// SLEIR:MassageOrPlusX: 0 tests
 
-// SLEIR:MassageOrPlusX2Plus: 0 tests
+// SLEIR:MassageOrStar: 0 tests
 
-// SLEIR:MassageOrStar12Star: 0 tests
+// SLEIR:MassageOrStarEps: 0 tests
 
-// SLEIR:MassageOrStarEps2Star: 0 tests
+// SLEIR:MassageOrStarOpt: 0 tests
 
-// SLEIR:MassageOrStarOpt2Star: 0 tests
-
-// SLEIR:MassageOrStarPlus2Star: 0 tests
+// SLEIR:MassageOrStarPlus: 0 tests
 
 // SLEIR:MassageOrXEps2Opt: 0 tests
 
-// SLEIR:MassageOrXOpt2Opt: 0 tests
+// SLEIR:MassageOrXOpt: 0 tests
 
-// SLEIR:MassageOrXPlus2Plus: 0 tests
+// SLEIR:MassageOrXPlus: 0 tests
 
 // SLEIR:MassageOrXY2NotAndNotXY: 2 tests
 // MassageOrXY2NotAndNotXY1.glue
@@ -957,20 +935,6 @@ void show_MassageOrXY2NotAndNotXY1() {run_case("MassageOrXY2NotAndNotXY1.glue",t
 // MassageOrXY2NotAndNotXY2.glue
 test bool test_MassageOrXY2NotAndNotXY2() = run_case("MassageOrXY2NotAndNotXY2.glue",false);
 void show_MassageOrXY2NotAndNotXY2() {run_case("MassageOrXY2NotAndNotXY2.glue",true);}
-// SLEIR:MassagePlus2OrPlusX: 0 tests
-
-// SLEIR:MassagePlus2OrXPlus: 0 tests
-
-// SLEIR:MassagePlus2PlusPlus: 0 tests
-
-// SLEIR:MassagePlus2SeqOptPlus: 0 tests
-
-// SLEIR:MassagePlus2SeqPlusOpt: 0 tests
-
-// SLEIR:MassagePlus2SeqPlusStar: 0 tests
-
-// SLEIR:MassagePlus2SeqStarPlus: 0 tests
-
 // SLEIR:MassagePlus2SeqStarX: 0 tests
 
 // SLEIR:MassagePlus2SeqXStar: 0 tests
@@ -991,9 +955,9 @@ test bool test_MassagePlusMark2MarkPlus2() = run_case("MassagePlusMark2MarkPlus2
 void show_MassagePlusMark2MarkPlus2() {run_case("MassagePlusMark2MarkPlus2.glue",true);}
 // SLEIR:MassagePlusOpt2Star: 0 tests
 
-// SLEIR:MassagePlusPlus2Plus: 0 tests
+// SLEIR:MassagePlusPlus: 0 tests
 
-// SLEIR:MassagePlusStar2Star: 0 tests
+// SLEIR:MassagePlusStar: 0 tests
 
 // SLEIR:MassageSLPlus2SeqStarX: 0 tests
 
@@ -1005,23 +969,23 @@ void show_MassagePlusMark2MarkPlus2() {run_case("MassagePlusMark2MarkPlus2.glue"
 
 // SLEIR:MassageSLStar2OptSeqXStar: 0 tests
 
-// SLEIR:MassageSeqOptPlus2Plus: 0 tests
+// SLEIR:MassageSeqOptPlus: 0 tests
 
-// SLEIR:MassageSeqOptStar2Star: 0 tests
+// SLEIR:MassageSeqOptStar: 0 tests
 
 // SLEIR:MassageSeqOptX2SeqXOpt: 0 tests
 
-// SLEIR:MassageSeqPlusOpt2Plus: 0 tests
+// SLEIR:MassageSeqPlusOpt: 0 tests
 
-// SLEIR:MassageSeqPlusStar2Plus: 0 tests
+// SLEIR:MassageSeqPlusStar: 0 tests
 
 // SLEIR:MassageSeqPlusX2SeqXPlus: 0 tests
 
-// SLEIR:MassageSeqStarOpt2Star: 0 tests
+// SLEIR:MassageSeqStarOpt: 0 tests
 
-// SLEIR:MassageSeqStarPlus2Plus: 0 tests
+// SLEIR:MassageSeqStarPlus: 0 tests
 
-// SLEIR:MassageSeqStarStar2Star: 0 tests
+// SLEIR:MassageSeqStarStar: 0 tests
 
 // SLEIR:MassageSeqStarX2Plus: 0 tests
 
@@ -1041,47 +1005,11 @@ void show_MassagePlusMark2MarkPlus2() {run_case("MassagePlusMark2MarkPlus2.glue"
 
 // SLEIR:MassageStar2OptPlus: 0 tests
 
-// SLEIR:MassageStar2OptStar: 0 tests
-
-// SLEIR:MassageStar2Or1Star: 0 tests
-
-// SLEIR:MassageStar2OrEpsPlus: 0 tests
-
-// SLEIR:MassageStar2OrEpsStar: 0 tests
-
-// SLEIR:MassageStar2OrOptPlus: 0 tests
-
-// SLEIR:MassageStar2OrOptStar: 0 tests
-
 // SLEIR:MassageStar2OrPlusEps: 0 tests
 
 // SLEIR:MassageStar2OrPlusOpt: 0 tests
 
-// SLEIR:MassageStar2OrPlusStar: 0 tests
-
-// SLEIR:MassageStar2OrStar1: 0 tests
-
-// SLEIR:MassageStar2OrStarEps: 0 tests
-
-// SLEIR:MassageStar2OrStarOpt: 0 tests
-
-// SLEIR:MassageStar2OrStarPlus: 0 tests
-
 // SLEIR:MassageStar2PlusOpt: 0 tests
-
-// SLEIR:MassageStar2PlusStar: 0 tests
-
-// SLEIR:MassageStar2SeqOptStar: 0 tests
-
-// SLEIR:MassageStar2SeqStarOpt: 0 tests
-
-// SLEIR:MassageStar2SeqStarStar: 0 tests
-
-// SLEIR:MassageStar2StarOpt: 0 tests
-
-// SLEIR:MassageStar2StarPlus: 0 tests
-
-// SLEIR:MassageStar2StarStar: 0 tests
 
 // SLEIR:MassageStarLabel2LabelStar: 2 tests
 // MassageStarLabel2LabelStar1.glue
@@ -1097,11 +1025,11 @@ void show_MassageStarMark2MarkStar1() {run_case("MassageStarMark2MarkStar1.glue"
 // MassageStarMark2MarkStar2.glue
 test bool test_MassageStarMark2MarkStar2() = run_case("MassageStarMark2MarkStar2.glue",false);
 void show_MassageStarMark2MarkStar2() {run_case("MassageStarMark2MarkStar2.glue",true);}
-// SLEIR:MassageStarOpt2Star: 0 tests
+// SLEIR:MassageStarOpt: 0 tests
 
-// SLEIR:MassageStarPlus2Star: 0 tests
+// SLEIR:MassageStarPlus: 0 tests
 
-// SLEIR:MassageStarStar2Star: 0 tests
+// SLEIR:MassageStarStar: 0 tests
 
 // SLEIR:NarrowOpt2X: 2 tests
 // NarrowOpt2X1.glue
