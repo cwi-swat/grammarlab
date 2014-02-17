@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= bar? ;
+.
+MassageOpt2OrEpsX.
+diff
+	foo ::= bar | ε ;
+.

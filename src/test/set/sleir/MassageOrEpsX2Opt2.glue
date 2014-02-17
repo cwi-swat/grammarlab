@@ -1,0 +1,12 @@
+// more nonterminals: one false!
+importG
+	foo ::= ε | bar ;
+	bar ::= wez | ε | foo;
+	wez ::= ε | foo+;
+.
+MassageOrEpsX2Opt.
+diff
+	foo ::= bar? ;
+	bar ::= wez | ε | foo;
+	wez ::= (foo+)?;
+.

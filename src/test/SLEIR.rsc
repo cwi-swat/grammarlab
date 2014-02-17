@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 361 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 369 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -811,10 +811,20 @@ void show_MassageNotOrXY2AndNotXY1() {run_case("MassageNotOrXY2AndNotXY1.glue",t
 // MassageNotOrXY2AndNotXY2.glue
 test bool test_MassageNotOrXY2AndNotXY2() = run_case("MassageNotOrXY2AndNotXY2.glue",false);
 void show_MassageNotOrXY2AndNotXY2() {run_case("MassageNotOrXY2AndNotXY2.glue",true);}
-// SLEIR:MassageOpt2OrEpsX: 0 tests
-
-// SLEIR:MassageOpt2OrXEps: 0 tests
-
+// SLEIR:MassageOpt2OrEpsX: 2 tests
+// MassageOpt2OrEpsX1.glue
+test bool test_MassageOpt2OrEpsX1() = run_case("MassageOpt2OrEpsX1.glue",false);
+void show_MassageOpt2OrEpsX1() {run_case("MassageOpt2OrEpsX1.glue",true);}
+// MassageOpt2OrEpsX2.glue
+test bool test_MassageOpt2OrEpsX2() = run_case("MassageOpt2OrEpsX2.glue",false);
+void show_MassageOpt2OrEpsX2() {run_case("MassageOpt2OrEpsX2.glue",true);}
+// SLEIR:MassageOpt2OrXEps: 2 tests
+// MassageOpt2OrXEps1.glue
+test bool test_MassageOpt2OrXEps1() = run_case("MassageOpt2OrXEps1.glue",false);
+void show_MassageOpt2OrXEps1() {run_case("MassageOpt2OrXEps1.glue",true);}
+// MassageOpt2OrXEps2.glue
+test bool test_MassageOpt2OrXEps2() = run_case("MassageOpt2OrXEps2.glue",false);
+void show_MassageOpt2OrXEps2() {run_case("MassageOpt2OrXEps2.glue",true);}
 // SLEIR:MassageOptLabel2LabelOpt: 2 tests
 // MassageOptLabel2LabelOpt1.glue
 test bool test_MassageOptLabel2LabelOpt1() = run_case("MassageOptLabel2LabelOpt1.glue",false);
@@ -843,8 +853,13 @@ void show_MassageOptMark2MarkOpt2() {run_case("MassageOptMark2MarkOpt2.glue",tru
 
 // SLEIR:MassageOrEpsOpt: 0 tests
 
-// SLEIR:MassageOrEpsX2Opt: 0 tests
-
+// SLEIR:MassageOrEpsX2Opt: 2 tests
+// MassageOrEpsX2Opt1.glue
+test bool test_MassageOrEpsX2Opt1() = run_case("MassageOrEpsX2Opt1.glue",false);
+void show_MassageOrEpsX2Opt1() {run_case("MassageOrEpsX2Opt1.glue",true);}
+// MassageOrEpsX2Opt2.glue
+test bool test_MassageOrEpsX2Opt2() = run_case("MassageOrEpsX2Opt2.glue",false);
+void show_MassageOrEpsX2Opt2() {run_case("MassageOrEpsX2Opt2.glue",true);}
 // SLEIR:MassageOrLabels2: 4 tests
 // MassageOrLabels21.glue
 test bool test_MassageOrLabels21() = run_case("MassageOrLabels21.glue",false);
@@ -922,8 +937,13 @@ void show_MassageOrNotXY2NotAndXY2() {run_case("MassageOrNotXY2NotAndXY2.glue",t
 
 // SLEIR:MassageOrStarPlus: 0 tests
 
-// SLEIR:MassageOrXEps2Opt: 0 tests
-
+// SLEIR:MassageOrXEps2Opt: 2 tests
+// MassageOrXEps2Opt1.glue
+test bool test_MassageOrXEps2Opt1() = run_case("MassageOrXEps2Opt1.glue",false);
+void show_MassageOrXEps2Opt1() {run_case("MassageOrXEps2Opt1.glue",true);}
+// MassageOrXEps2Opt2.glue
+test bool test_MassageOrXEps2Opt2() = run_case("MassageOrXEps2Opt2.glue",false);
+void show_MassageOrXEps2Opt2() {run_case("MassageOrXEps2Opt2.glue",true);}
 // SLEIR:MassageOrXOpt: 0 tests
 
 // SLEIR:MassageOrXPlus: 0 tests
