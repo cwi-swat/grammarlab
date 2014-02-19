@@ -122,14 +122,14 @@ public GGrammar mutate(MassageMarkNot2NotMark(), GGrammar g)
 @doc{massage ⊢ MassageOptOpt, Type III, page 9}
 public GGrammar mutate(MassageOptOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case optional(x) => optional(optional(x))};
+	g.P = visit(g.P){case optional(optional(x)) => optional(x)};
 	return g;
 }
 // SLEIR:MassageOptStar
 @doc{massage ⊢ MassageOptStar, Type III, page 9}
 public GGrammar mutate(MassageOptStar(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => optional(star(x))};
+	g.P = visit(g.P){case optional(star(x)) => star(x)};
 	return g;
 }
 // SLEIR:MassageOptPlus2Star
@@ -150,21 +150,21 @@ public GGrammar mutate(MassageStar2OptPlus(), GGrammar g)
 @doc{massage ⊢ MassageStarOpt, Type III, page 9}
 public GGrammar mutate(MassageStarOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => star(optional(x))};
+	g.P = visit(g.P){case star(optional(x)) => star(x)};
 	return g;
 }
 // SLEIR:MassageStarStar
 @doc{massage ⊢ MassageStarStar, Type III, page 9}
 public GGrammar mutate(MassageStarStar(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => star(star(x))};
+	g.P = visit(g.P){case star(star(x)) => star(x)};
 	return g;
 }
 // SLEIR:MassageStarPlus
 @doc{massage ⊢ MassageStarPlus, Type III, page 9}
 public GGrammar mutate(MassageStarPlus(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => star(plus(x))};
+	g.P = visit(g.P){case star(plus(x)) => star(x)};
 	return g;
 }
 // SLEIR:MassagePlusOpt2Star
@@ -185,63 +185,63 @@ public GGrammar mutate(MassageStar2PlusOpt(), GGrammar g)
 @doc{massage ⊢ MassagePlusStar, Type III, page 9}
 public GGrammar mutate(MassagePlusStar(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => plus(star(x))};
+	g.P = visit(g.P){case plus(star(x)) => star(x)};
 	return g;
 }
 // SLEIR:MassagePlusPlus
 @doc{massage ⊢ MassagePlusPlus, Type III, page 9}
 public GGrammar mutate(MassagePlusPlus(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => plus(plus(x))};
+	g.P = visit(g.P){case plus(plus(x)) => plus(x)};
 	return g;
 }
 // SLEIR:MassageSeqStarStar
 @doc{massage ⊢ MassageSeqStarStar, Type III, page 9}
 public GGrammar mutate(MassageSeqStarStar(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => sequence([star(x),star(x)])};
+	g.P = visit(g.P){case sequence([star(x),star(x)]) => star(x)};
 	return g;
 }
 // SLEIR:MassageSeqOptStar
 @doc{massage ⊢ MassageSeqOptStar, Type III, page 9}
 public GGrammar mutate(MassageSeqOptStar(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => sequence([optional(x),star(x)])};
+	g.P = visit(g.P){case sequence([optional(x),star(x)]) => star(x)};
 	return g;
 }
 // SLEIR:MassageSeqStarOpt
 @doc{massage ⊢ MassageSeqStarOpt, Type III, page 9}
 public GGrammar mutate(MassageSeqStarOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => sequence([star(x),optional(x)])};
+	g.P = visit(g.P){case sequence([star(x),optional(x)]) => star(x)};
 	return g;
 }
 // SLEIR:MassageSeqOptPlus
 @doc{massage ⊢ MassageSeqOptPlus, Type III, page 9}
 public GGrammar mutate(MassageSeqOptPlus(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => sequence([optional(x),plus(x)])};
+	g.P = visit(g.P){case sequence([optional(x),plus(x)]) => plus(x)};
 	return g;
 }
 // SLEIR:MassageSeqPlusOpt
 @doc{massage ⊢ MassageSeqPlusOpt, Type III, page 9}
 public GGrammar mutate(MassageSeqPlusOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => sequence([plus(x),optional(x)])};
+	g.P = visit(g.P){case sequence([plus(x),optional(x)]) => plus(x)};
 	return g;
 }
 // SLEIR:MassageSeqPlusStar
 @doc{massage ⊢ MassageSeqPlusStar, Type III, page 9}
 public GGrammar mutate(MassageSeqPlusStar(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => sequence([plus(x),star(x)])};
+	g.P = visit(g.P){case sequence([plus(x),star(x)]) => plus(x)};
 	return g;
 }
 // SLEIR:MassageSeqStarPlus
 @doc{massage ⊢ MassageSeqStarPlus, Type III, page 9}
 public GGrammar mutate(MassageSeqStarPlus(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => sequence([star(x),plus(x)])};
+	g.P = visit(g.P){case sequence([star(x),plus(x)]) => plus(x)};
 	return g;
 }
 // SLEIR:MassageSeqXStar2Plus
@@ -304,56 +304,56 @@ public GGrammar mutate(MassageOpt2OrEpsX(), GGrammar g)
 @doc{massage ⊢ MassageOrOptEps, Type III, page 9}
 public GGrammar mutate(MassageOrOptEps(), GGrammar g)
 {
-	g.P = visit(g.P){case optional(x) => choice([optional(x),epsilon()])};
+	g.P = visit(g.P){case choice([optional(x),epsilon()]) => optional(x)};
 	return g;
 }
 // SLEIR:MassageOrEpsOpt
 @doc{massage ⊢ MassageOrEpsOpt, Type III, page 9}
 public GGrammar mutate(MassageOrEpsOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case optional(x) => choice([epsilon(),optional(x)])};
+	g.P = visit(g.P){case choice([epsilon(),optional(x)]) => optional(x)};
 	return g;
 }
 // SLEIR:MassageOrOptX
 @doc{massage ⊢ MassageOrOptX, Type III, page 9}
 public GGrammar mutate(MassageOrOptX(), GGrammar g)
 {
-	g.P = visit(g.P){case optional(x) => choice([optional(x),x])};
+	g.P = visit(g.P){case choice([optional(x),x]) => optional(x)};
 	return g;
 }
 // SLEIR:MassageOrXOpt
 @doc{massage ⊢ MassageOrXOpt, Type III, page 9}
 public GGrammar mutate(MassageOrXOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case optional(x) => choice([x,optional(x)])};
+	g.P = visit(g.P){case choice([x,optional(x)]) => optional(x)};
 	return g;
 }
 // SLEIR:MassageOrStar
 @doc{massage ⊢ MassageOrStar, Type III, page 9}
 public GGrammar mutate(MassageOrStar(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => choice([star(x),x])};
+	g.P = visit(g.P){case choice([star(x),x]) => star(x)};
 	return g;
 }
 // SLEIR:MassageOrStarPlus
 @doc{massage ⊢ MassageOrStarPlus, Type III, page 9}
 public GGrammar mutate(MassageOrStarPlus(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => choice([star(x),plus(x)])};
+	g.P = visit(g.P){case choice([star(x),plus(x)]) => star(x)};
 	return g;
 }
 // SLEIR:MassageOrStarOpt
 @doc{massage ⊢ MassageOrStarOpt, Type III, page 9}
 public GGrammar mutate(MassageOrStarOpt(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => choice([star(x),optional(x)])};
+	g.P = visit(g.P){case choice([star(x),optional(x)]) => star(x)};
 	return g;
 }
 // SLEIR:MassageOrStarEps
 @doc{massage ⊢ MassageOrStarEps, Type III, page 9}
 public GGrammar mutate(MassageOrStarEps(), GGrammar g)
 {
-	g.P = visit(g.P){case star(x) => choice([star(x),epsilon()])};
+	g.P = visit(g.P){case choice([star(x),epsilon()]) => star(x)};
 	return g;
 }
 // SLEIR:MassageOrPlusEps2Star
@@ -388,42 +388,42 @@ public GGrammar mutate(MassageStar2OrPlusOpt(), GGrammar g)
 @doc{massage ⊢ MassageOrPlusX, Type III, page 9}
 public GGrammar mutate(MassageOrPlusX(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => choice([plus(x),x])};
+	g.P = visit(g.P){case choice([plus(x),x]) => plus(x)};
 	return g;
 }
 // SLEIR:MassageOrXPlus
 @doc{massage ⊢ MassageOrXPlus, Type III, page 9}
 public GGrammar mutate(MassageOrXPlus(), GGrammar g)
 {
-	g.P = visit(g.P){case plus(x) => choice([x,plus(x)])};
+	g.P = visit(g.P){case choice([x,plus(x)]) => plus(x)};
 	return g;
 }
 // SLEIR:MassageOrLabels2
 @doc{massage ⊢ MassageOrLabels2, Type III, page 9}
 public GGrammar mutate(MassageOrLabels2(), GGrammar g)
 {
-	g.P = visit(g.P){case x => choice([label(_,x),label(_,x)])};
+	g.P = visit(g.P){case choice([label(_,x),label(_,x)]) => x};
 	return g;
 }
 // SLEIR:MassageOrLabels3
 @doc{massage ⊢ MassageOrLabels3, Type III, page 9}
 public GGrammar mutate(MassageOrLabels3(), GGrammar g)
 {
-	g.P = visit(g.P){case x => choice([label(_,x),label(_,x),label(_,x)])};
+	g.P = visit(g.P){case choice([label(_,x),label(_,x),label(_,x)]) => x};
 	return g;
 }
 // SLEIR:MassageOrMarks2
 @doc{massage ⊢ MassageOrMarks2, Type III, page 9}
 public GGrammar mutate(MassageOrMarks2(), GGrammar g)
 {
-	g.P = visit(g.P){case x => choice([mark(_,x),mark(_,x)])};
+	g.P = visit(g.P){case choice([mark(_,x),mark(_,x)]) => x};
 	return g;
 }
 // SLEIR:MassageOrMarks3
 @doc{massage ⊢ MassageOrMarks3, Type III, page 9}
 public GGrammar mutate(MassageOrMarks3(), GGrammar g)
 {
-	g.P = visit(g.P){case x => choice([mark(_,x),mark(_,x),mark(_,x)])};
+	g.P = visit(g.P){case choice([mark(_,x),mark(_,x),mark(_,x)]) => x};
 	return g;
 }
 // SLEIR:MassageSeqXOpt2SeqOptX
@@ -542,7 +542,7 @@ public GGrammar mutate(MassageSLStar2OptSLPlus(), GGrammar g)
 @doc{massage ⊢ MassageNotNot, Type III, page 9}
 public GGrammar mutate(MassageNotNot(), GGrammar g)
 {
-	g.P = visit(g.P){case x => not(not(x))};
+	g.P = visit(g.P){case not(not(x)) => x};
 	return g;
 }
 // SLEIR:MassageNotAndXY2OrNotXY

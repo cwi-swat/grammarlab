@@ -27,13 +27,14 @@ void main()
 		pair := split(", ",zet)
 	)
 	{
+		//println("Left: .<left>.; right: .<right>.; pair: .<pair>.!");
 		cx += 1;
 		if (len(pair)!=2 || (isEmpty(left) && isEmpty(right)))
 			buf += "//ERROR: <pair[0]> =\> <pair[1]>";
 		elseif (isEmpty(left) && !isEmpty(right))
-			buf += function("massage","Massage<right>",pair[0],pair[1]);
+			buf += function("massage","Massage<right>",pair[1],pair[0]);
 		elseif (!isEmpty(left) && isEmpty(right))
-			buf += function("massage","Massage<left>",pair[1],pair[0]);
+			buf += function("massage","Massage<left>",pair[0],pair[1]);
 		else
 		{
 			buf += function("massage","Massage<left>2<right>",pair[0],pair[1]);
