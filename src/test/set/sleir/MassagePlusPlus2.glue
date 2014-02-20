@@ -1,0 +1,8 @@
+// nested double-plusses
+importG
+	foo ::= a+ (b+)+ ((c+)+)+ (((d+)+)+)+ (((e f)+)+)?;
+.
+MassageOptOpt.
+diff
+	foo ::= a+ b+ c+ d+ ((e f)+)? ;
+.

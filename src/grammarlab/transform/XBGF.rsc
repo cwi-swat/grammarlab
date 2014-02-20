@@ -594,9 +594,9 @@ bool massage_eq({sequence([star(x),x]), plus(x)}) = true; //@SeqStarX-Plus
 bool massage_eq({choice([x,epsilon()]), optional(x)}) = true; //@OrXEps-Opt
 bool massage_eq({choice([epsilon(),x]), optional(x)}) = true; //@OrEpsX-Opt
 bool massage_eq({choice([optional(x),epsilon()]), optional(x)}) = true; //@OrOptEps-
-bool massage_eq({choice([epsilon(),optional(x)]), optional(x)}) = true; //@OrEpsOpt-
+bool massage_eq({choice([epsilon(),optional(x)]), optional(x)}) = true;
 bool massage_eq({choice([optional(x),x]), optional(x)}) = true; //@OrOptX-
-bool massage_eq({choice([x,optional(x)]), optional(x)}) = true; //@OrXOpt-
+bool massage_eq({choice([x,optional(x)]), optional(x)}) = true;
 
 // disjunctions of optionality and closures, equivalent to x*
 bool massage_eq({choice([star(x),x]), star(x)}) = true; //@OrStar-
