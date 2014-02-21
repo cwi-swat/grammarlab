@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 375 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 383 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -854,8 +854,13 @@ void show_MassageOptOpt2() {run_case("MassageOptOpt2.glue",true);}
 
 // SLEIR:MassageOptSeqXStar2SLStar: 0 tests
 
-// SLEIR:MassageOptStar: 0 tests
-
+// SLEIR:MassageOptStar: 2 tests
+// MassageOptStar1.glue
+test bool test_MassageOptStar1() = run_case("MassageOptStar1.glue",false);
+void show_MassageOptStar1() {run_case("MassageOptStar1.glue",true);}
+// MassageOptStar2.glue
+test bool test_MassageOptStar2() = run_case("MassageOptStar2.glue",false);
+void show_MassageOptStar2() {run_case("MassageOptStar2.glue",true);}
 // SLEIR:MassageOrEpsX2Opt: 2 tests
 // MassageOrEpsX2Opt1.glue
 test bool test_MassageOrEpsX2Opt1() = run_case("MassageOrEpsX2Opt1.glue",false);
@@ -983,8 +988,13 @@ void show_MassagePlusPlus1() {run_case("MassagePlusPlus1.glue",true);}
 // MassagePlusPlus2.glue
 test bool test_MassagePlusPlus2() = run_case("MassagePlusPlus2.glue",false);
 void show_MassagePlusPlus2() {run_case("MassagePlusPlus2.glue",true);}
-// SLEIR:MassagePlusStar: 0 tests
-
+// SLEIR:MassagePlusStar: 2 tests
+// MassagePlusStar1.glue
+test bool test_MassagePlusStar1() = run_case("MassagePlusStar1.glue",false);
+void show_MassagePlusStar1() {run_case("MassagePlusStar1.glue",true);}
+// MassagePlusStar2.glue
+test bool test_MassagePlusStar2() = run_case("MassagePlusStar2.glue",false);
+void show_MassagePlusStar2() {run_case("MassagePlusStar2.glue",true);}
 // SLEIR:MassageSLPlus2SeqStarX: 0 tests
 
 // SLEIR:MassageSLPlus2SeqXStar: 0 tests
@@ -1051,10 +1061,20 @@ void show_MassageStarMark2MarkStar1() {run_case("MassageStarMark2MarkStar1.glue"
 // MassageStarMark2MarkStar2.glue
 test bool test_MassageStarMark2MarkStar2() = run_case("MassageStarMark2MarkStar2.glue",false);
 void show_MassageStarMark2MarkStar2() {run_case("MassageStarMark2MarkStar2.glue",true);}
-// SLEIR:MassageStarOpt: 0 tests
-
-// SLEIR:MassageStarPlus: 0 tests
-
+// SLEIR:MassageStarOpt: 2 tests
+// MassageStarOpt1.glue
+test bool test_MassageStarOpt1() = run_case("MassageStarOpt1.glue",false);
+void show_MassageStarOpt1() {run_case("MassageStarOpt1.glue",true);}
+// MassageStarOpt2.glue
+test bool test_MassageStarOpt2() = run_case("MassageStarOpt2.glue",false);
+void show_MassageStarOpt2() {run_case("MassageStarOpt2.glue",true);}
+// SLEIR:MassageStarPlus: 2 tests
+// MassageStarPlus1.glue
+test bool test_MassageStarPlus1() = run_case("MassageStarPlus1.glue",false);
+void show_MassageStarPlus1() {run_case("MassageStarPlus1.glue",true);}
+// MassageStarPlus2.glue
+test bool test_MassageStarPlus2() = run_case("MassageStarPlus2.glue",false);
+void show_MassageStarPlus2() {run_case("MassageStarPlus2.glue",true);}
 // SLEIR:MassageStarStar: 2 tests
 // MassageStarStar1.glue
 test bool test_MassageStarStar1() = run_case("MassageStarStar1.glue",false);

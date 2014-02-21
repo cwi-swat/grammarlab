@@ -1,0 +1,8 @@
+// nested star-plusses
+importG
+	foo ::= a* (b+)* ((c+)+)* (((d+)+)+)* (((e f)+)*)+;
+.
+MassageStarPlus.
+diff
+	foo ::= a* b* c* d* ((e f)*)+ ;
+.

@@ -1,0 +1,8 @@
+// nested star-optionals
+importG
+	foo ::= a* (b?)* ((c?)?)* (((d?)?)?)* (((e f)?)*)?;
+.
+MassageStarOpt.
+diff
+	foo ::= a* b* c* d* ((e f)*)? ;
+.

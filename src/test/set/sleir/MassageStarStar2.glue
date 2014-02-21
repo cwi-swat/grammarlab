@@ -1,4 +1,4 @@
-// nested double-optionals
+// nested double-stars
 importG
 	foo ::= a* (b*)* ((c*)*)* (((d*)*)*)* (((e f)*)*)+;
 .
