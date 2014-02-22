@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= bar* ;
+.
+MassageStar2PlusOpt.
+diff
+	foo ::= (bar?)+ ;
+.

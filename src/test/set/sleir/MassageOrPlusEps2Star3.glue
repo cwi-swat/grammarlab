@@ -1,0 +1,8 @@
+// sequence
+importG
+	foo ::= (bar+ | ε) ((a b c)+ | z | ε);
+.
+MassageOrPlusEps2Star.
+diff
+	foo ::= bar* ((a b c)* | z) ;
+.
