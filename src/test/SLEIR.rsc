@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 407 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 411 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -853,8 +853,13 @@ void show_MassageOptPlus2Star1() {run_case("MassageOptPlus2Star1.glue",true);}
 // MassageOptPlus2Star2.glue
 test bool test_MassageOptPlus2Star2() = run_case("MassageOptPlus2Star2.glue",false);
 void show_MassageOptPlus2Star2() {run_case("MassageOptPlus2Star2.glue",true);}
-// SLEIR:MassageOptSLPlus2SLStar: 0 tests
-
+// SLEIR:MassageOptSLPlus2SLStar: 2 tests
+// MassageOptSLPlus2SLStar1.glue
+test bool test_MassageOptSLPlus2SLStar1() = run_case("MassageOptSLPlus2SLStar1.glue",false);
+void show_MassageOptSLPlus2SLStar1() {run_case("MassageOptSLPlus2SLStar1.glue",true);}
+// MassageOptSLPlus2SLStar2.glue
+test bool test_MassageOptSLPlus2SLStar2() = run_case("MassageOptSLPlus2SLStar2.glue",false);
+void show_MassageOptSLPlus2SLStar2() {run_case("MassageOptSLPlus2SLStar2.glue",true);}
 // SLEIR:MassageOptSeqStarX2SLStar: 0 tests
 
 // SLEIR:MassageOptSeqXStar2SLStar: 0 tests
@@ -1025,8 +1030,13 @@ void show_MassagePlusStar2() {run_case("MassagePlusStar2.glue",true);}
 
 // SLEIR:MassageSLPlus2SeqXStar: 0 tests
 
-// SLEIR:MassageSLStar2OptSLPlus: 0 tests
-
+// SLEIR:MassageSLStar2OptSLPlus: 2 tests
+// MassageSLStar2OptSLPlus1.glue
+test bool test_MassageSLStar2OptSLPlus1() = run_case("MassageSLStar2OptSLPlus1.glue",false);
+void show_MassageSLStar2OptSLPlus1() {run_case("MassageSLStar2OptSLPlus1.glue",true);}
+// MassageSLStar2OptSLPlus2.glue
+test bool test_MassageSLStar2OptSLPlus2() = run_case("MassageSLStar2OptSLPlus2.glue",false);
+void show_MassageSLStar2OptSLPlus2() {run_case("MassageSLStar2OptSLPlus2.glue",true);}
 // SLEIR:MassageSLStar2OptSeqStarX: 0 tests
 
 // SLEIR:MassageSLStar2OptSeqXStar: 0 tests

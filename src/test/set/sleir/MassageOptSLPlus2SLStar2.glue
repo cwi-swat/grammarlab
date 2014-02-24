@@ -1,0 +1,10 @@
+// one nonterminal
+importG
+	program ::= ({function ";"}+)? ;
+	function ::= name "(" ({arg ";"}+)? ")";
+.
+MassageOptSLPlus2SLStar.
+diff
+	program ::= {function ";"}* ;
+	function ::= name "(" {arg ";"}* ")";
+.
