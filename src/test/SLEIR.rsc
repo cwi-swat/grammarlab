@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 419 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 427 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -1036,10 +1036,20 @@ void show_MassagePlusStar1() {run_case("MassagePlusStar1.glue",true);}
 // MassagePlusStar2.glue
 test bool test_MassagePlusStar2() = run_case("MassagePlusStar2.glue",false);
 void show_MassagePlusStar2() {run_case("MassagePlusStar2.glue",true);}
-// SLEIR:MassageSLPlus2SeqStarX: 0 tests
-
-// SLEIR:MassageSLPlus2SeqXStar: 0 tests
-
+// SLEIR:MassageSLPlus2SeqStarX: 2 tests
+// MassageSLPlus2SeqStarX1.glue
+test bool test_MassageSLPlus2SeqStarX1() = run_case("MassageSLPlus2SeqStarX1.glue",false);
+void show_MassageSLPlus2SeqStarX1() {run_case("MassageSLPlus2SeqStarX1.glue",true);}
+// MassageSLPlus2SeqStarX2.glue
+test bool test_MassageSLPlus2SeqStarX2() = run_case("MassageSLPlus2SeqStarX2.glue",false);
+void show_MassageSLPlus2SeqStarX2() {run_case("MassageSLPlus2SeqStarX2.glue",true);}
+// SLEIR:MassageSLPlus2SeqXStar: 2 tests
+// MassageSLPlus2SeqXStar1.glue
+test bool test_MassageSLPlus2SeqXStar1() = run_case("MassageSLPlus2SeqXStar1.glue",false);
+void show_MassageSLPlus2SeqXStar1() {run_case("MassageSLPlus2SeqXStar1.glue",true);}
+// MassageSLPlus2SeqXStar2.glue
+test bool test_MassageSLPlus2SeqXStar2() = run_case("MassageSLPlus2SeqXStar2.glue",false);
+void show_MassageSLPlus2SeqXStar2() {run_case("MassageSLPlus2SeqXStar2.glue",true);}
 // SLEIR:MassageSLStar2OptSLPlus: 2 tests
 // MassageSLStar2OptSLPlus1.glue
 test bool test_MassageSLStar2OptSLPlus1() = run_case("MassageSLStar2OptSLPlus1.glue",false);
@@ -1096,8 +1106,13 @@ void show_MassageSeqPlusOpt2() {run_case("MassageSeqPlusOpt2.glue",true);}
 
 // SLEIR:MassageSeqStarX2Plus: 0 tests
 
-// SLEIR:MassageSeqStarX2SLPlus: 0 tests
-
+// SLEIR:MassageSeqStarX2SLPlus: 2 tests
+// MassageSeqStarX2SLPlus1.glue
+test bool test_MassageSeqStarX2SLPlus1() = run_case("MassageSeqStarX2SLPlus1.glue",false);
+void show_MassageSeqStarX2SLPlus1() {run_case("MassageSeqStarX2SLPlus1.glue",true);}
+// MassageSeqStarX2SLPlus2.glue
+test bool test_MassageSeqStarX2SLPlus2() = run_case("MassageSeqStarX2SLPlus2.glue",false);
+void show_MassageSeqStarX2SLPlus2() {run_case("MassageSeqStarX2SLPlus2.glue",true);}
 // SLEIR:MassageSeqStarX2SeqXStar: 0 tests
 
 // SLEIR:MassageSeqXOpt2SeqOptX: 0 tests
@@ -1106,8 +1121,13 @@ void show_MassageSeqPlusOpt2() {run_case("MassageSeqPlusOpt2.glue",true);}
 
 // SLEIR:MassageSeqXStar2Plus: 0 tests
 
-// SLEIR:MassageSeqXStar2SLPlus: 0 tests
-
+// SLEIR:MassageSeqXStar2SLPlus: 2 tests
+// MassageSeqXStar2SLPlus1.glue
+test bool test_MassageSeqXStar2SLPlus1() = run_case("MassageSeqXStar2SLPlus1.glue",false);
+void show_MassageSeqXStar2SLPlus1() {run_case("MassageSeqXStar2SLPlus1.glue",true);}
+// MassageSeqXStar2SLPlus2.glue
+test bool test_MassageSeqXStar2SLPlus2() = run_case("MassageSeqXStar2SLPlus2.glue",false);
+void show_MassageSeqXStar2SLPlus2() {run_case("MassageSeqXStar2SLPlus2.glue",true);}
 // SLEIR:MassageSeqXStar2SeqStarX: 0 tests
 
 // SLEIR:MassageStar2OptPlus: 2 tests

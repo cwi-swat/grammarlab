@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= {element ","}+ ;
+.
+MassageSLPlus2SeqXStar.
+diff
+	foo ::= element (sep element)* ;
+.

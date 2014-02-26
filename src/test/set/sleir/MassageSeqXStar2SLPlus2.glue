@@ -1,0 +1,8 @@
+// nested in a choice
+importG
+	foo ::= bar (sep bar)* ((a (b a)*) | z);
+.
+MassageSeqXStar2SLPlus.
+diff
+	foo ::= {bar sep}+ ({a b}+ | z) ;
+.
