@@ -1,0 +1,8 @@
+// sequence
+importG
+	foo ::= (bar? | ε) ((a b c)? | ε);
+.
+MassageOrOptEps.
+diff
+	foo ::= bar? (a b c)? ;
+.

@@ -599,7 +599,7 @@ bool massage_eq({choice([optional(x),x]), optional(x)}) = true; //@OrOptX-
 bool massage_eq({choice([x,optional(x)]), optional(x)}) = true;
 
 // disjunctions of optionality and closures, equivalent to x*
-bool massage_eq({choice([star(x),x]), star(x)}) = true; //@OrStar-
+bool massage_eq({choice([star(x),x]), star(x)}) = true; //@OrStarX-
 bool massage_eq({choice([x,star(x)]), star(x)}) = true;
 bool massage_eq({choice([star(x),plus(x)]), star(x)}) = true; //@OrStarPlus-
 bool massage_eq({choice([plus(x),star(x)]), star(x)}) = true;
@@ -614,7 +614,7 @@ bool massage_eq({choice([optional(x),plus(x)]), star(x)}) = true;
 
 // disjunctions of optionality and closures, equivalent to x+
 bool massage_eq({choice([plus(x),x]), plus(x)}) = true; //@OrPlusX-
-bool massage_eq({choice([x,plus(x)]), plus(x)}) = true; //@OrXPlus-
+bool massage_eq({choice([x,plus(x)]), plus(x)}) = true;
 
 // introducing multiple labels and marks
 bool massage_eq({x, choice([label(_,x),label(_,x)])}) = true; //@-OrLabels2
