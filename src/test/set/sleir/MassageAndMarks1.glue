@@ -1,0 +1,8 @@
+// two marks, one nonterminal
+importG
+	foo ::= <main>:a & <aka>:a;
+.
+MassageAndMarks.
+diff
+	foo ::= a ;
+.

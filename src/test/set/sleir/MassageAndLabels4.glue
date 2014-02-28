@@ -1,0 +1,10 @@
+// labels inside conjunction
+importG
+	foo ::= [main]::a & [aka]::a;
+	bar ::= ([onelabel]::b & [lwolabel]::b) | b;
+.
+MassageAndLabels.
+diff
+	foo ::= a;
+	bar ::= b;
+.

@@ -1,8 +1,0 @@
-// three nested marks, one nonterminal
-importG
-	bar ::= <group>:(<main>:a | <aka>:a | <wheel>:a) | <alone>:a | <least>:a;
-.
-MassageOrMarks3.
-diff
-	bar ::= a;
-.

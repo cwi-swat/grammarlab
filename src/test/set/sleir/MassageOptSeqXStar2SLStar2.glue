@@ -1,6 +1,6 @@
 // nested in a choice
 importG
-	foo ::= (bar (sep bar)*)? ((a (b a)*)? | z);
+	foo ::= ((bar sep)* bar)? (((a b)* a)? | z);
 .
 MassageOptSeqStarX2SLStar.
 diff

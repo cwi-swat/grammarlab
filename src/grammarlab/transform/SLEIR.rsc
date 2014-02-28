@@ -402,6 +402,35 @@ public GGrammar mutate(MassageAndNot2NotOr(), GGrammar g)
 	return g;
 }
 
+// SLEIR:MassageOrLabels
+@doc{massage ⊢ MassageOrLabels, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageOrLabels(), GGrammar g)
+{
+	g.P = visit(g.P){case choice(L) => (label(_, GExpr x) := L[0] | it && label(_,x):=e | e <- tail(L)) ? x : choice(L)};
+	return g;
+}
+// SLEIR:MassageOrMarks
+@doc{massage ⊢ MassageOrMarks, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageOrMarks(), GGrammar g)
+{
+	g.P = visit(g.P){case choice(L) => (mark(_, GExpr x) := L[0] | it && mark(_,x):=e | e <- tail(L)) ? x : choice(L)};
+	return g;
+}
+// SLEIR:MassageAndLabels
+@doc{massage ⊢ MassageAndLabels, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageAndLabels(), GGrammar g)
+{
+	g.P = visit(g.P){case allof(L) => (label(_, GExpr x) := L[0] | it && label(_,x):=e | e <- tail(L)) ? x : allof(L)};
+	return g;
+}
+// SLEIR:MassageAndMarks
+@doc{massage ⊢ MassageAndMarks, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageAndMarks(), GGrammar g)
+{
+	g.P = visit(g.P){case allof(L) => (mark(_, GExpr x) := L[0] | it && mark(_,x):=e | e <- tail(L)) ? x : allof(L)};
+	return g;
+}
+
 //SLEIR:Narrow* -> see grammarlab::transform::sleir::Width
 
 // SLEIR:PermutePostfix2Prefix

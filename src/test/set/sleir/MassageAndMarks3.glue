@@ -1,0 +1,8 @@
+// nested marks, one nonterminal
+importG
+	bar ::= <group>:(<main>:a & <aka>:a) & <alone>:a;
+.
+MassageAndMarks.
+diff
+	bar ::= a;
+.

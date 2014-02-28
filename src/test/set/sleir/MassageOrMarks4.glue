@@ -1,0 +1,10 @@
+// marks inside conjunction
+importG
+	foo ::= <main>:a | <aka>:a;
+	bar ::= (<no>:b | <>:b) & b;
+.
+MassageOrMarks.
+diff
+	foo ::= a;
+	bar ::= b;
+.

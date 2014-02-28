@@ -1,0 +1,8 @@
+// two labels, one nonterminal
+importG
+	foo ::= [main]::a & [aka]::a;
+.
+MassageAndLabels.
+diff
+	foo ::= a ;
+.

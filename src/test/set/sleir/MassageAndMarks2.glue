@@ -1,0 +1,10 @@
+// marks on two nonterminals
+importG
+	foo ::= <main>:a & <aka>:a;
+	bar ::= <label>:b & <label2>:b & <label3>:b;
+.
+MassageAndMarks.
+diff
+	foo ::= a;
+	bar ::= b;
+.

@@ -2,7 +2,7 @@
 importG
 	foo ::= <main>:a | <aka>:a;
 .
-MassageOrMarks2.
+MassageOrMarks.
 diff
 	foo ::= a ;
 .

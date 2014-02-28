@@ -1,8 +1,0 @@
-// three marks, one nonterminal
-importG
-	foo ::= <main>:a | <aka>:a | <wheel>:a;
-.
-MassageOrMarks3.
-diff
-	foo ::= a ;
-.

@@ -25,6 +25,8 @@ lexical GlueKIterateXYXLeft = @category="MetaAmbiguity" "IterateXYXLeft";
 lexical GlueKIterateXYXRight = @category="MetaAmbiguity" "IterateXYXRight";
 lexical GlueKLAssocAll = @category="MetaAmbiguity" "LAssocAll";
 lexical GlueKLiftTopLabels = @category="MetaAmbiguity" "LiftTopLabels";
+lexical GlueKMassageAndLabels = @category="MetaAmbiguity" "MassageAndLabels";
+lexical GlueKMassageAndMarks = @category="MetaAmbiguity" "MassageAndMarks";
 lexical GlueKMassageAndNot2Except = @category="MetaAmbiguity" "MassageAndNot2Except";
 lexical GlueKMassageAndNot2NotOr = @category="MetaAmbiguity" "MassageAndNot2NotOr";
 lexical GlueKMassageExcept2AndNot = @category="MetaAmbiguity" "MassageExcept2AndNot";
@@ -52,10 +54,8 @@ lexical GlueKMassageOptSeqStarX2SLStar = @category="MetaAmbiguity" "MassageOptSe
 lexical GlueKMassageOptSeqXStar2SLStar = @category="MetaAmbiguity" "MassageOptSeqXStar2SLStar";
 lexical GlueKMassageOptStar = @category="MetaAmbiguity" "MassageOptStar";
 lexical GlueKMassageOrEpsX2Opt = @category="MetaAmbiguity" "MassageOrEpsX2Opt";
-lexical GlueKMassageOrLabels2 = @category="MetaAmbiguity" "MassageOrLabels2";
-lexical GlueKMassageOrLabels3 = @category="MetaAmbiguity" "MassageOrLabels3";
-lexical GlueKMassageOrMarks2 = @category="MetaAmbiguity" "MassageOrMarks2";
-lexical GlueKMassageOrMarks3 = @category="MetaAmbiguity" "MassageOrMarks3";
+lexical GlueKMassageOrLabels = @category="MetaAmbiguity" "MassageOrLabels";
+lexical GlueKMassageOrMarks = @category="MetaAmbiguity" "MassageOrMarks";
 lexical GlueKMassageOrNot2NotAnd = @category="MetaAmbiguity" "MassageOrNot2NotAnd";
 lexical GlueKMassageOrOptEps = @category="MetaAmbiguity" "MassageOrOptEps";
 lexical GlueKMassageOrOptX = @category="MetaAmbiguity" "MassageOrOptX";
@@ -136,7 +136,7 @@ lexical GlueKWidenPlus2Star = @category="MetaAmbiguity" "WidenPlus2Star";
 lexical GlueKYaccifyAllL = @category="MetaAmbiguity" "YaccifyAllL";
 lexical GlueKYaccifyAllR = @category="MetaAmbiguity" "YaccifyAllR";
 
-keyword GlueKw = GlueKAbridgeAll | GlueKChainMixed | GlueKConcatAllT | GlueKDefineMin | GlueKDeyaccifyAll | GlueKDisappearEverywhere | GlueKDistributeAll | GlueKDropSuffixN | GlueKEliminateTop | GlueKEquateAll | GlueKFoldMax | GlueKHorizontalAll | GlueKInlineMax | GlueKInlinePlus | GlueKInsertLayout | GlueKIterateXX | GlueKIterateXYXLeft | GlueKIterateXYXRight | GlueKLAssocAll | GlueKLiftTopLabels | GlueKMassageAndNot2Except | GlueKMassageAndNot2NotOr | GlueKMassageExcept2AndNot | GlueKMassageLabelNot2NotLabel | GlueKMassageLabelOpt2OptLabel | GlueKMassageLabelPlus2PlusLabel | GlueKMassageLabelStar2StarLabel | GlueKMassageMarkNot2NotMark | GlueKMassageMarkOpt2OptMark | GlueKMassageMarkPlus2PlusMark | GlueKMassageMarkStar2StarMark | GlueKMassageNotAnd2OrNot | GlueKMassageNotLabel2LabelNot | GlueKMassageNotMark2MarkNot | GlueKMassageNotNot | GlueKMassageNotOr2AndNot | GlueKMassageOpt2OrEpsX | GlueKMassageOpt2OrXEps | GlueKMassageOptLabel2LabelOpt | GlueKMassageOptMark2MarkOpt | GlueKMassageOptOpt | GlueKMassageOptPlus2Star | GlueKMassageOptSLPlus2SLStar | GlueKMassageOptSeqStarX2SLStar | GlueKMassageOptSeqXStar2SLStar | GlueKMassageOptStar | GlueKMassageOrEpsX2Opt | GlueKMassageOrLabels2 | GlueKMassageOrLabels3 | GlueKMassageOrMarks2 | GlueKMassageOrMarks3 | GlueKMassageOrNot2NotAnd | GlueKMassageOrOptEps | GlueKMassageOrOptX | GlueKMassageOrPlusEps2Star | GlueKMassageOrPlusOpt2Star | GlueKMassageOrPlusX | GlueKMassageOrStarEps | GlueKMassageOrStarOpt | GlueKMassageOrStarPlus | GlueKMassageOrStarX | GlueKMassageOrXEps2Opt | GlueKMassagePlus2SeqStarX | GlueKMassagePlus2SeqXStar | GlueKMassagePlusLabel2LabelPlus | GlueKMassagePlusMark2MarkPlus | GlueKMassagePlusOpt2Star | GlueKMassagePlusPlus | GlueKMassagePlusStar | GlueKMassageSLPlus2SeqStarX | GlueKMassageSLPlus2SeqXStar | GlueKMassageSLStar2OptSLPlus | GlueKMassageSLStar2OptSeqStarX | GlueKMassageSLStar2OptSeqXStar | GlueKMassageSeqOptPlus | GlueKMassageSeqOptStar | GlueKMassageSeqOptX2SeqXOpt | GlueKMassageSeqPlusOpt | GlueKMassageSeqPlusStar | GlueKMassageSeqPlusX2SeqXPlus | GlueKMassageSeqStarOpt | GlueKMassageSeqStarPlus | GlueKMassageSeqStarStar | GlueKMassageSeqStarX2Plus | GlueKMassageSeqStarX2SLPlus | GlueKMassageSeqStarX2SeqXStar | GlueKMassageSeqXOpt2SeqOptX | GlueKMassageSeqXPlus2SeqPlusX | GlueKMassageSeqXStar2Plus | GlueKMassageSeqXStar2SLPlus | GlueKMassageSeqXStar2SeqStarX | GlueKMassageStar2OptPlus | GlueKMassageStar2OrPlusEps | GlueKMassageStar2OrPlusOpt | GlueKMassageStar2PlusOpt | GlueKMassageStarLabel2LabelStar | GlueKMassageStarMark2MarkStar | GlueKMassageStarOpt | GlueKMassageStarPlus | GlueKMassageStarStar | GlueKNarrowOpt2X | GlueKNarrowPlus2X | GlueKNarrowStar2Opt | GlueKNarrowStar2Plus | GlueKNarrowStar2X | GlueKParenthesizeAll | GlueKPermuteInfix2Postfix | GlueKPermuteInfix2Prefix | GlueKPermutePostfix2Infix | GlueKPermutePostfix2Prefix | GlueKPermutePrefix2Infix | GlueKPermutePrefix2Postfix | GlueKRAssocAll | GlueKRedefineAll | GlueKRenameAllN | GlueKRenameAllT | GlueKReroot2top | GlueKRetireLs | GlueKRetireMs | GlueKRetireTs | GlueKSplitAllT | GlueKUnchainAll | GlueKUndefineTrivial | GlueKUnfoldMax | GlueKUniteBySuffix | GlueKVerticalAll | GlueKWidenOpt2Star | GlueKWidenPlus2Star | GlueKYaccifyAllL | GlueKYaccifyAllR;
+keyword GlueKw = GlueKAbridgeAll | GlueKChainMixed | GlueKConcatAllT | GlueKDefineMin | GlueKDeyaccifyAll | GlueKDisappearEverywhere | GlueKDistributeAll | GlueKDropSuffixN | GlueKEliminateTop | GlueKEquateAll | GlueKFoldMax | GlueKHorizontalAll | GlueKInlineMax | GlueKInlinePlus | GlueKInsertLayout | GlueKIterateXX | GlueKIterateXYXLeft | GlueKIterateXYXRight | GlueKLAssocAll | GlueKLiftTopLabels | GlueKMassageAndLabels | GlueKMassageAndMarks | GlueKMassageAndNot2Except | GlueKMassageAndNot2NotOr | GlueKMassageExcept2AndNot | GlueKMassageLabelNot2NotLabel | GlueKMassageLabelOpt2OptLabel | GlueKMassageLabelPlus2PlusLabel | GlueKMassageLabelStar2StarLabel | GlueKMassageMarkNot2NotMark | GlueKMassageMarkOpt2OptMark | GlueKMassageMarkPlus2PlusMark | GlueKMassageMarkStar2StarMark | GlueKMassageNotAnd2OrNot | GlueKMassageNotLabel2LabelNot | GlueKMassageNotMark2MarkNot | GlueKMassageNotNot | GlueKMassageNotOr2AndNot | GlueKMassageOpt2OrEpsX | GlueKMassageOpt2OrXEps | GlueKMassageOptLabel2LabelOpt | GlueKMassageOptMark2MarkOpt | GlueKMassageOptOpt | GlueKMassageOptPlus2Star | GlueKMassageOptSLPlus2SLStar | GlueKMassageOptSeqStarX2SLStar | GlueKMassageOptSeqXStar2SLStar | GlueKMassageOptStar | GlueKMassageOrEpsX2Opt | GlueKMassageOrLabels | GlueKMassageOrMarks | GlueKMassageOrNot2NotAnd | GlueKMassageOrOptEps | GlueKMassageOrOptX | GlueKMassageOrPlusEps2Star | GlueKMassageOrPlusOpt2Star | GlueKMassageOrPlusX | GlueKMassageOrStarEps | GlueKMassageOrStarOpt | GlueKMassageOrStarPlus | GlueKMassageOrStarX | GlueKMassageOrXEps2Opt | GlueKMassagePlus2SeqStarX | GlueKMassagePlus2SeqXStar | GlueKMassagePlusLabel2LabelPlus | GlueKMassagePlusMark2MarkPlus | GlueKMassagePlusOpt2Star | GlueKMassagePlusPlus | GlueKMassagePlusStar | GlueKMassageSLPlus2SeqStarX | GlueKMassageSLPlus2SeqXStar | GlueKMassageSLStar2OptSLPlus | GlueKMassageSLStar2OptSeqStarX | GlueKMassageSLStar2OptSeqXStar | GlueKMassageSeqOptPlus | GlueKMassageSeqOptStar | GlueKMassageSeqOptX2SeqXOpt | GlueKMassageSeqPlusOpt | GlueKMassageSeqPlusStar | GlueKMassageSeqPlusX2SeqXPlus | GlueKMassageSeqStarOpt | GlueKMassageSeqStarPlus | GlueKMassageSeqStarStar | GlueKMassageSeqStarX2Plus | GlueKMassageSeqStarX2SLPlus | GlueKMassageSeqStarX2SeqXStar | GlueKMassageSeqXOpt2SeqOptX | GlueKMassageSeqXPlus2SeqPlusX | GlueKMassageSeqXStar2Plus | GlueKMassageSeqXStar2SLPlus | GlueKMassageSeqXStar2SeqStarX | GlueKMassageStar2OptPlus | GlueKMassageStar2OrPlusEps | GlueKMassageStar2OrPlusOpt | GlueKMassageStar2PlusOpt | GlueKMassageStarLabel2LabelStar | GlueKMassageStarMark2MarkStar | GlueKMassageStarOpt | GlueKMassageStarPlus | GlueKMassageStarStar | GlueKNarrowOpt2X | GlueKNarrowPlus2X | GlueKNarrowStar2Opt | GlueKNarrowStar2Plus | GlueKNarrowStar2X | GlueKParenthesizeAll | GlueKPermuteInfix2Postfix | GlueKPermuteInfix2Prefix | GlueKPermutePostfix2Infix | GlueKPermutePostfix2Prefix | GlueKPermutePrefix2Infix | GlueKPermutePrefix2Postfix | GlueKRAssocAll | GlueKRedefineAll | GlueKRenameAllN | GlueKRenameAllT | GlueKReroot2top | GlueKRetireLs | GlueKRetireMs | GlueKRetireTs | GlueKSplitAllT | GlueKUnchainAll | GlueKUndefineTrivial | GlueKUnfoldMax | GlueKUniteBySuffix | GlueKVerticalAll | GlueKWidenOpt2Star | GlueKWidenPlus2Star | GlueKYaccifyAllL | GlueKYaccifyAllR;
 
 syntax GlueCommand
 	= GlueKAbridgeAll "."
@@ -159,6 +159,8 @@ syntax GlueCommand
 	| GlueKIterateXYXRight "."
 	| GlueKLAssocAll "."
 	| GlueKLiftTopLabels "."
+	| GlueKMassageAndLabels "."
+	| GlueKMassageAndMarks "."
 	| GlueKMassageAndNot2Except "."
 	| GlueKMassageAndNot2NotOr "."
 	| GlueKMassageExcept2AndNot "."
@@ -186,10 +188,8 @@ syntax GlueCommand
 	| GlueKMassageOptSeqXStar2SLStar "."
 	| GlueKMassageOptStar "."
 	| GlueKMassageOrEpsX2Opt "."
-	| GlueKMassageOrLabels2 "."
-	| GlueKMassageOrLabels3 "."
-	| GlueKMassageOrMarks2 "."
-	| GlueKMassageOrMarks3 "."
+	| GlueKMassageOrLabels "."
+	| GlueKMassageOrMarks "."
 	| GlueKMassageOrNot2NotAnd "."
 	| GlueKMassageOrOptEps "."
 	| GlueKMassageOrOptX "."

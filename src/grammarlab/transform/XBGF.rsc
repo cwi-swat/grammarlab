@@ -617,10 +617,14 @@ bool massage_eq({choice([plus(x),x]), plus(x)}) = true; //@OrPlusX-
 bool massage_eq({choice([x,plus(x)]), plus(x)}) = true;
 
 // introducing multiple labels and marks
-bool massage_eq({x, choice([label(_,x),label(_,x)])}) = true; //@-OrLabels2
-bool massage_eq({x, choice([label(_,x),label(_,x),label(_,x)])}) = true; //@-OrLabels3
-bool massage_eq({x, choice([mark(_,x),mark(_,x)])}) = true; //@-OrMarks2
-bool massage_eq({x, choice([mark(_,x),mark(_,x),mark(_,x)])}) = true; //@-OrMarks3
+bool massage_eq({x, choice([label(_,x),label(_,x)])}) = true; // next two covered by MassageOrLabels
+bool massage_eq({x, choice([label(_,x),label(_,x),label(_,x)])}) = true;
+bool massage_eq({x, choice([mark(_,x),mark(_,x)])}) = true; // next two covered by MassageOrMarks
+bool massage_eq({x, choice([mark(_,x),mark(_,x),mark(_,x)])}) = true;
+bool massage_eq({x, allof([label(_,x),label(_,x)])}) = true; // next two covered by MassageAndLabels
+bool massage_eq({x, allof([label(_,x),label(_,x),label(_,x)])}) = true;
+bool massage_eq({x, allof([mark(_,x),mark(_,x)])}) = true; // next two covered by MassageAndMarks
+bool massage_eq({x, allof([mark(_,x),mark(_,x),mark(_,x)])}) = true;
 
 // separator lists
 bool massage_eq({sequence([x,optional(sequence([y,x]))]), sequence([optional(sequence([x,y])),x])}) = true; //@SeqXOpt-SeqOptX
