@@ -1,8 +1,8 @@
-// de Morgan: one nonterminal
+// de Morgan: disjunction of nonterminals
 importG
 	foo ::= x | y ;
 .
-MassageOrXY2NotAndNotXY.
+MassageOrNot2NotAnd.
 diff
 	foo ::= ¬ ((¬x) & (¬y)) ;
 .

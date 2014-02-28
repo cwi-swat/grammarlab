@@ -371,6 +371,37 @@ public GGrammar mutate(LAssocAll(), GGrammar g)
 }
 
 //SLEIR:Massage* -> see grammarlab::transform::sleir::Massage
+// yet, some massage-related mutations are manually combined and redesigned
+
+// SLEIR:MassageOrNot2NotAnd
+@doc{massage ⊢ MassageOrNot2NotAnd, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageOrNot2NotAnd(), GGrammar g)
+{
+	g.P = visit(g.P){case choice(L) => not(allof([(not(ie):=e)?ie:not(e) | e <- L]))};
+	return g;
+}
+// SLEIR:MassageNotAnd2OrNot
+@doc{massage ⊢ MassageNotAnd2OrNot, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageNotAnd2OrNot(), GGrammar g)
+{
+	g.P = visit(g.P){case not(allof(L)) => choice([(not(ie):=e)?ie:not(e) | e <- L])};
+	return g;
+}
+// SLEIR:MassageNotOr2AndNot
+@doc{massage ⊢ MassageNotOr2AndNot, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageNotOr2AndNot(), GGrammar g)
+{
+	g.P = visit(g.P){case not(choice(L)) => allof([(not(ie):=e)?ie:not(e) | e <- L])};
+	return g;
+}
+// SLEIR:MassageAndNot2NotOr
+@doc{massage ⊢ MassageAndNot2NotOr, Type III, slightly redesigned from page 9}
+public GGrammar mutate(MassageAndNot2NotOr(), GGrammar g)
+{
+	g.P = visit(g.P){case allof(L) => not(choice([(not(ie):=e)?ie:not(e) | e <- L]))};
+	return g;
+}
+
 //SLEIR:Narrow* -> see grammarlab::transform::sleir::Width
 
 // SLEIR:PermutePostfix2Prefix

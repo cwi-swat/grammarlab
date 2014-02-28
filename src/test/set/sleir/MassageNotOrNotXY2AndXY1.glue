@@ -1,8 +1,0 @@
-// de Morgan: one nonterminal
-importG
-	foo ::= ¬ ((¬x) | (¬y)) ;
-.
-MassageNotOrNotXY2AndXY.
-diff
-	foo ::= x & y ;
-.

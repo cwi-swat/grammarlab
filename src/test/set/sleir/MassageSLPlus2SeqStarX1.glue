@@ -1,6 +1,6 @@
 // one nonterminal
 importG
-	foo ::= {element ","}+ ;
+	foo ::= {element sep}+ ;
 .
 MassageSLPlus2SeqStarX.
 diff

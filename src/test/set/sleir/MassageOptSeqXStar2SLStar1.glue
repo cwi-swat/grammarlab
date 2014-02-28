@@ -4,5 +4,5 @@ importG
 .
 MassageOptSeqXStar2SLStar.
 diff
-	foo ::= {element ","}* ;
+	foo ::= {element sep}* ;
 .

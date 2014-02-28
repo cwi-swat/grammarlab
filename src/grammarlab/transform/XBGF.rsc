@@ -634,13 +634,13 @@ bool massage_eq({optional(seplistplus(x,y)), sepliststar(x,y)}) = true; //@OptSL
 
 // Boolean grammars
 bool massage_eq({not(not(x)), x}) = true; //@NotNot-
-bool massage_eq({not(allof([x,y])), choice([not(x),not(y)])}) = true; //@NotAndXY-OrNotXY
+bool massage_eq({not(allof([x,y])), choice([not(x),not(y)])}) = true; // next four covered by MassageNotAnd2OrNot &  MassageOrNot2NotAnd
 bool massage_eq({not(allof([x,y])), choice([not(y),not(x)])}) = true;
-bool massage_eq({not(allof([not(x),not(y)])), choice([x,y])}) = true; //@NotAndNotXY-OrXY
+bool massage_eq({not(allof([not(x),not(y)])), choice([x,y])}) = true;
 bool massage_eq({not(allof([not(x),not(y)])), choice([y,x])}) = true;
-bool massage_eq({not(choice([x,y])), allof([not(x),not(y)])}) = true; //@NotOrXY-AndNotXY
+bool massage_eq({not(choice([x,y])), allof([not(x),not(y)])}) = true; // next four covered by MassageNotOr2AndNot &  MassageAndNot2NotOr
 bool massage_eq({not(choice([x,y])), allof([not(y),not(x)])}) = true;
-bool massage_eq({not(choice([not(x),not(y)])), allof([x,y])}) = true; //@NotOrNotXY-AndXY
+bool massage_eq({not(choice([not(x),not(y)])), allof([x,y])}) = true;	
 bool massage_eq({not(choice([not(x),not(y)])), allof([y,x])}) = true;
 bool massage_eq({allof([x,not(y)]), except(x,y)}) = true; //@AndNot-Except
 

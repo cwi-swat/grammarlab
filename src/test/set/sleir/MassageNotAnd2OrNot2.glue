@@ -1,0 +1,8 @@
+// de Morgan: negated conjunction of negated nonterminals
+importG
+	foo ::= ¬ ((¬x) & (¬y)) ;
+.
+MassageNotAnd2OrNot.
+diff
+	foo ::= x | y ;
+.

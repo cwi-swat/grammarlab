@@ -1,6 +1,6 @@
 @contributor{Super Awesome Automated SLEIR Test Suite Synchroniser}
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
-// This file contains 469 test cases from |project://grammarlab/src/test/set/sleir|
+// This file contains 465 test cases from |project://grammarlab/src/test/set/sleir|
 module \test::SLEIR
 
 import IO;
@@ -685,20 +685,16 @@ void show_MassageAndNot2Except1() {run_case("MassageAndNot2Except1.glue",true);}
 // MassageAndNot2Except2.glue
 test bool test_MassageAndNot2Except2() = run_case("MassageAndNot2Except2.glue",false);
 void show_MassageAndNot2Except2() {run_case("MassageAndNot2Except2.glue",true);}
-// SLEIR:MassageAndNotXY2NotOrXY: 2 tests
-// MassageAndNotXY2NotOrXY1.glue
-test bool test_MassageAndNotXY2NotOrXY1() = run_case("MassageAndNotXY2NotOrXY1.glue",false);
-void show_MassageAndNotXY2NotOrXY1() {run_case("MassageAndNotXY2NotOrXY1.glue",true);}
-// MassageAndNotXY2NotOrXY2.glue
-test bool test_MassageAndNotXY2NotOrXY2() = run_case("MassageAndNotXY2NotOrXY2.glue",false);
-void show_MassageAndNotXY2NotOrXY2() {run_case("MassageAndNotXY2NotOrXY2.glue",true);}
-// SLEIR:MassageAndXY2NotOrNotXY: 2 tests
-// MassageAndXY2NotOrNotXY1.glue
-test bool test_MassageAndXY2NotOrNotXY1() = run_case("MassageAndXY2NotOrNotXY1.glue",false);
-void show_MassageAndXY2NotOrNotXY1() {run_case("MassageAndXY2NotOrNotXY1.glue",true);}
-// MassageAndXY2NotOrNotXY2.glue
-test bool test_MassageAndXY2NotOrNotXY2() = run_case("MassageAndXY2NotOrNotXY2.glue",false);
-void show_MassageAndXY2NotOrNotXY2() {run_case("MassageAndXY2NotOrNotXY2.glue",true);}
+// SLEIR:MassageAndNot2NotOr: 3 tests
+// MassageAndNot2NotOr1.glue
+test bool test_MassageAndNot2NotOr1() = run_case("MassageAndNot2NotOr1.glue",false);
+void show_MassageAndNot2NotOr1() {run_case("MassageAndNot2NotOr1.glue",true);}
+// MassageAndNot2NotOr2.glue
+test bool test_MassageAndNot2NotOr2() = run_case("MassageAndNot2NotOr2.glue",false);
+void show_MassageAndNot2NotOr2() {run_case("MassageAndNot2NotOr2.glue",true);}
+// MassageAndNot2NotOr3.glue
+test bool test_MassageAndNot2NotOr3() = run_case("MassageAndNot2NotOr3.glue",false);
+void show_MassageAndNot2NotOr3() {run_case("MassageAndNot2NotOr3.glue",true);}
 // SLEIR:MassageExcept2AndNot: 2 tests
 // MassageExcept2AndNot1.glue
 test bool test_MassageExcept2AndNot1() = run_case("MassageExcept2AndNot1.glue",false);
@@ -762,20 +758,16 @@ void show_MassageMarkStar2StarMark1() {run_case("MassageMarkStar2StarMark1.glue"
 // MassageMarkStar2StarMark2.glue
 test bool test_MassageMarkStar2StarMark2() = run_case("MassageMarkStar2StarMark2.glue",false);
 void show_MassageMarkStar2StarMark2() {run_case("MassageMarkStar2StarMark2.glue",true);}
-// SLEIR:MassageNotAndNotXY2OrXY: 2 tests
-// MassageNotAndNotXY2OrXY1.glue
-test bool test_MassageNotAndNotXY2OrXY1() = run_case("MassageNotAndNotXY2OrXY1.glue",false);
-void show_MassageNotAndNotXY2OrXY1() {run_case("MassageNotAndNotXY2OrXY1.glue",true);}
-// MassageNotAndNotXY2OrXY2.glue
-test bool test_MassageNotAndNotXY2OrXY2() = run_case("MassageNotAndNotXY2OrXY2.glue",false);
-void show_MassageNotAndNotXY2OrXY2() {run_case("MassageNotAndNotXY2OrXY2.glue",true);}
-// SLEIR:MassageNotAndXY2OrNotXY: 2 tests
-// MassageNotAndXY2OrNotXY1.glue
-test bool test_MassageNotAndXY2OrNotXY1() = run_case("MassageNotAndXY2OrNotXY1.glue",false);
-void show_MassageNotAndXY2OrNotXY1() {run_case("MassageNotAndXY2OrNotXY1.glue",true);}
-// MassageNotAndXY2OrNotXY2.glue
-test bool test_MassageNotAndXY2OrNotXY2() = run_case("MassageNotAndXY2OrNotXY2.glue",false);
-void show_MassageNotAndXY2OrNotXY2() {run_case("MassageNotAndXY2OrNotXY2.glue",true);}
+// SLEIR:MassageNotAnd2OrNot: 3 tests
+// MassageNotAnd2OrNot1.glue
+test bool test_MassageNotAnd2OrNot1() = run_case("MassageNotAnd2OrNot1.glue",false);
+void show_MassageNotAnd2OrNot1() {run_case("MassageNotAnd2OrNot1.glue",true);}
+// MassageNotAnd2OrNot2.glue
+test bool test_MassageNotAnd2OrNot2() = run_case("MassageNotAnd2OrNot2.glue",false);
+void show_MassageNotAnd2OrNot2() {run_case("MassageNotAnd2OrNot2.glue",true);}
+// MassageNotAnd2OrNot3.glue
+test bool test_MassageNotAnd2OrNot3() = run_case("MassageNotAnd2OrNot3.glue",false);
+void show_MassageNotAnd2OrNot3() {run_case("MassageNotAnd2OrNot3.glue",true);}
 // SLEIR:MassageNotLabel2LabelNot: 2 tests
 // MassageNotLabel2LabelNot1.glue
 test bool test_MassageNotLabel2LabelNot1() = run_case("MassageNotLabel2LabelNot1.glue",false);
@@ -797,20 +789,16 @@ void show_MassageNotNot1() {run_case("MassageNotNot1.glue",true);}
 // MassageNotNot2.glue
 test bool test_MassageNotNot2() = run_case("MassageNotNot2.glue",false);
 void show_MassageNotNot2() {run_case("MassageNotNot2.glue",true);}
-// SLEIR:MassageNotOrNotXY2AndXY: 2 tests
-// MassageNotOrNotXY2AndXY1.glue
-test bool test_MassageNotOrNotXY2AndXY1() = run_case("MassageNotOrNotXY2AndXY1.glue",false);
-void show_MassageNotOrNotXY2AndXY1() {run_case("MassageNotOrNotXY2AndXY1.glue",true);}
-// MassageNotOrNotXY2AndXY2.glue
-test bool test_MassageNotOrNotXY2AndXY2() = run_case("MassageNotOrNotXY2AndXY2.glue",false);
-void show_MassageNotOrNotXY2AndXY2() {run_case("MassageNotOrNotXY2AndXY2.glue",true);}
-// SLEIR:MassageNotOrXY2AndNotXY: 2 tests
-// MassageNotOrXY2AndNotXY1.glue
-test bool test_MassageNotOrXY2AndNotXY1() = run_case("MassageNotOrXY2AndNotXY1.glue",false);
-void show_MassageNotOrXY2AndNotXY1() {run_case("MassageNotOrXY2AndNotXY1.glue",true);}
-// MassageNotOrXY2AndNotXY2.glue
-test bool test_MassageNotOrXY2AndNotXY2() = run_case("MassageNotOrXY2AndNotXY2.glue",false);
-void show_MassageNotOrXY2AndNotXY2() {run_case("MassageNotOrXY2AndNotXY2.glue",true);}
+// SLEIR:MassageNotOr2AndNot: 3 tests
+// MassageNotOr2AndNot1.glue
+test bool test_MassageNotOr2AndNot1() = run_case("MassageNotOr2AndNot1.glue",false);
+void show_MassageNotOr2AndNot1() {run_case("MassageNotOr2AndNot1.glue",true);}
+// MassageNotOr2AndNot2.glue
+test bool test_MassageNotOr2AndNot2() = run_case("MassageNotOr2AndNot2.glue",false);
+void show_MassageNotOr2AndNot2() {run_case("MassageNotOr2AndNot2.glue",true);}
+// MassageNotOr2AndNot3.glue
+test bool test_MassageNotOr2AndNot3() = run_case("MassageNotOr2AndNot3.glue",false);
+void show_MassageNotOr2AndNot3() {run_case("MassageNotOr2AndNot3.glue",true);}
 // SLEIR:MassageOpt2OrEpsX: 2 tests
 // MassageOpt2OrEpsX1.glue
 test bool test_MassageOpt2OrEpsX1() = run_case("MassageOpt2OrEpsX1.glue",false);
@@ -940,13 +928,16 @@ void show_MassageOrMarks33() {run_case("MassageOrMarks33.glue",true);}
 // MassageOrMarks34.glue
 test bool test_MassageOrMarks34() = run_case("MassageOrMarks34.glue",false);
 void show_MassageOrMarks34() {run_case("MassageOrMarks34.glue",true);}
-// SLEIR:MassageOrNotXY2NotAndXY: 2 tests
-// MassageOrNotXY2NotAndXY1.glue
-test bool test_MassageOrNotXY2NotAndXY1() = run_case("MassageOrNotXY2NotAndXY1.glue",false);
-void show_MassageOrNotXY2NotAndXY1() {run_case("MassageOrNotXY2NotAndXY1.glue",true);}
-// MassageOrNotXY2NotAndXY2.glue
-test bool test_MassageOrNotXY2NotAndXY2() = run_case("MassageOrNotXY2NotAndXY2.glue",false);
-void show_MassageOrNotXY2NotAndXY2() {run_case("MassageOrNotXY2NotAndXY2.glue",true);}
+// SLEIR:MassageOrNot2NotAnd: 3 tests
+// MassageOrNot2NotAnd1.glue
+test bool test_MassageOrNot2NotAnd1() = run_case("MassageOrNot2NotAnd1.glue",false);
+void show_MassageOrNot2NotAnd1() {run_case("MassageOrNot2NotAnd1.glue",true);}
+// MassageOrNot2NotAnd2.glue
+test bool test_MassageOrNot2NotAnd2() = run_case("MassageOrNot2NotAnd2.glue",false);
+void show_MassageOrNot2NotAnd2() {run_case("MassageOrNot2NotAnd2.glue",true);}
+// MassageOrNot2NotAnd3.glue
+test bool test_MassageOrNot2NotAnd3() = run_case("MassageOrNot2NotAnd3.glue",false);
+void show_MassageOrNot2NotAnd3() {run_case("MassageOrNot2NotAnd3.glue",true);}
 // SLEIR:MassageOrOptEps: 2 tests
 // MassageOrOptEps1.glue
 test bool test_MassageOrOptEps1() = run_case("MassageOrOptEps1.glue",false);
@@ -1023,13 +1014,6 @@ void show_MassageOrXEps2Opt1() {run_case("MassageOrXEps2Opt1.glue",true);}
 // MassageOrXEps2Opt2.glue
 test bool test_MassageOrXEps2Opt2() = run_case("MassageOrXEps2Opt2.glue",false);
 void show_MassageOrXEps2Opt2() {run_case("MassageOrXEps2Opt2.glue",true);}
-// SLEIR:MassageOrXY2NotAndNotXY: 2 tests
-// MassageOrXY2NotAndNotXY1.glue
-test bool test_MassageOrXY2NotAndNotXY1() = run_case("MassageOrXY2NotAndNotXY1.glue",false);
-void show_MassageOrXY2NotAndNotXY1() {run_case("MassageOrXY2NotAndNotXY1.glue",true);}
-// MassageOrXY2NotAndNotXY2.glue
-test bool test_MassageOrXY2NotAndNotXY2() = run_case("MassageOrXY2NotAndNotXY2.glue",false);
-void show_MassageOrXY2NotAndNotXY2() {run_case("MassageOrXY2NotAndNotXY2.glue",true);}
 // SLEIR:MassagePlus2SeqStarX: 2 tests
 // MassagePlus2SeqStarX1.glue
 test bool test_MassagePlus2SeqStarX1() = run_case("MassagePlus2SeqStarX1.glue",false);
