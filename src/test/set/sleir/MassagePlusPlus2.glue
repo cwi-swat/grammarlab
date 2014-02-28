@@ -2,7 +2,7 @@
 importG
 	foo ::= a+ (b+)+ ((c+)+)+ (((d+)+)+)+ (((e f)+)+)?;
 .
-MassageOptOpt.
+MassagePlusPlus.
 diff
 	foo ::= a+ b+ c+ d+ ((e f)+)? ;
 .

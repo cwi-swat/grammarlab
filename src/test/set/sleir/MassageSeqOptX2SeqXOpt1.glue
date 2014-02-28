@@ -1,8 +1,8 @@
 // one nonterminal
 importG
-	foo ::= bar? bar ;
+	foo ::= (bar wez)? bar ;
 .
 MassageSeqOptX2SeqXOpt.
 diff
-	foo ::= bar bar? ;
+	foo ::= bar (wez bar)? ;
 .

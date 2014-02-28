@@ -4,5 +4,5 @@ importG
 .
 MassagePlusStar.
 diff
-	foo ::= a* b* c* d* ((e f)*)? ;
+	foo ::= a+ b* c* d* ((e f)*)? ;
 .

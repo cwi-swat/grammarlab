@@ -1,8 +1,10 @@
 // sequence
 importG
-	foo ::= bar+ bar (a b)+ a b ;
+	foo ::= (bar wez)+ bar ;
+	bar ::= (a b)+ a c ;
 .
 MassageSeqPlusX2SeqXPlus.
 diff
-	foo ::= bar bar+ a b (a b)+ ;
+	foo ::= bar (wez bar)+ ;
+	bar ::= a (b a)+ c ;
 .

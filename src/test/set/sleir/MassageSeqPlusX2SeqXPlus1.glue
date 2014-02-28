@@ -1,8 +1,8 @@
 // one nonterminal
 importG
-	foo ::= bar+ bar ;
+	foo ::= (bar wez)+ bar ;
 .
 MassageSeqPlusX2SeqXPlus.
 diff
-	foo ::= bar bar+ ;
+	foo ::= bar (wez bar)+ ;
 .
