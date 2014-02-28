@@ -1,0 +1,8 @@
+// sequence
+importG
+	foo ::= bar+ (a b)+ ;
+.
+MassagePlus2SeqXStar.
+diff
+	foo ::= bar bar* a b (a b)* ;
+.

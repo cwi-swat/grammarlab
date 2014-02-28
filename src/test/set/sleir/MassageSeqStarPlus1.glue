@@ -1,0 +1,8 @@
+// one nonterminal
+importG
+	foo ::= bar* bar+ ;
+.
+MassageSeqStarPlus.
+diff
+	foo ::= bar+ ;
+.

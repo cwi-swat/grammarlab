@@ -1,0 +1,8 @@
+// sequence
+importG
+	foo ::= bar? bar (a b)? a b ;
+.
+MassageSeqOptX2SeqXOpt.
+diff
+	foo ::= bar bar? a b (a b)? ;
+.
