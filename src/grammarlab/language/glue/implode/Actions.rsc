@@ -2,9 +2,9 @@
 // MOCKUP: SHOULD BE GENERATED? 
 module grammarlab::language::glue::implode::Actions
 
-//import lang::json::\syntax::JSON;
+import lang::json::\syntax::JSON;
 import lang::json::ast::JSON;
-//import lang::json::ast::Implode;
+import lang::json::ast::Implode;
 
 import grammarlab::language::glue::implode::XBGF; // damn you, Rascal!
 import grammarlab::language::glue::abstract::Top;
@@ -25,8 +25,7 @@ GLUEA glimplode((GlueCommand)`<GlueKmerge _><GlueProduction+ ps>.`)
 GLUEA glimplode((GlueCommand)`<GlueKinclude _><GlueLoc z>.`)
 	= glaction(include(toLocation("<z>")));
 GLUEA glimplode((GlueCommand)`<GlueKannotate _><JSONText meta>.`)
-	= metadata(null());
-	//= metadata(lang::json::ast::Implode::buildAST(meta));
+	= metadata(lang::json::ast::Implode::buildAST(meta).members);
 GLUEA glimplode((GlueCommand)`<GlueKmaybexbgf _><GlueCommand c>`)
 {
 	if (xbgf(t) := glimplode(c))

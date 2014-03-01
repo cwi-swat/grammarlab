@@ -8,12 +8,13 @@ import grammarlab::language::GET;
 import lang::json::ast::JSON;
 
 alias GLUE = list[GLUEA];
+alias MetaInfo = map[str,Value];
 
 data GLUEA
 	= xbgf(XCommand tcmd)
 	| sleir(MCommand mcmd)
 	| glaction(LCommand xcmd)
-	| metadata(Value meta)
+	| metadata(MetaInfo meta)
 	;
 
 // WIP: GrammarLab actions

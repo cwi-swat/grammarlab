@@ -11,19 +11,10 @@ import grammarlab::language::glue::implode::Rename;
 import grammarlab::language::glue::abstract::Top;
 
 import grammarlab::language::glue::concrete::Top;
-import grammarlab::language::glue::concrete::BGF;
-import grammarlab::language::glue::concrete::XBGF;
-import grammarlab::language::glue::concrete::Scope;
-import grammarlab::language::glue::concrete::SLEIR;
-import grammarlab::language::glue::concrete::GET;
-import grammarlab::language::glue::concrete::Actions;
-import grammarlab::language::glue::concrete::Rename;
 
 import IO;
 import ParseTree;
-import vis::Figure;
 import vis::ParseTree;
-import vis::Render;
 
 public GLUE glimplode(start[GLUEC] raw) = [glimplode(c) | GlueCommand c <- raw.top.cs];
 public GLUE glimplode(GLUEC raw) = [glimplode(c) | GlueCommand c <- raw.cs];
@@ -31,5 +22,6 @@ public GLUE glimplode(GLUEC raw) = [glimplode(c) | GlueCommand c <- raw.cs];
 public default GLUE glimplode(GlueCommand c)
 {
 	println("Uncovered command: <c>");
-	render(space(visParsetree(c),std(gap(10,15)),std(resizable(true))));
+	renderParsetree(c);
+	return [];
 }

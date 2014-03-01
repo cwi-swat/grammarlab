@@ -2,19 +2,9 @@
 // GLUE = Grammar Lab Unified Entity
 module grammarlab::language::GLUE
 
-// These shoes are made for modularised parsing, that’s just what they’ll do
+// These shoes are made for language definition, that’s just what they’ll do
 import grammarlab::language::glue::concrete::Top;
-import grammarlab::language::glue::concrete::BGF;
-import grammarlab::language::glue::concrete::XBGF;
-import grammarlab::language::glue::concrete::Scope;
-import grammarlab::language::glue::concrete::SLEIR;
-import grammarlab::language::glue::concrete::Actions;
-import grammarlab::language::glue::concrete::Rename;
-// These shoes are made for implosion, that’s just what they’ll do
 import grammarlab::language::glue::abstract::Top;
-import grammarlab::language::glue::implode::XBGF;
-import grammarlab::language::glue::implode::SLEIR;
-import grammarlab::language::glue::implode::Actions;
 import grammarlab::language::glue::implode::Top;
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;
@@ -27,8 +17,12 @@ import grammarlab::language::glue::Interpreter;
 import grammarlab::transform::Normal;
 
 import ParseTree;
+import vis::ParseTree;
 import String;
 import IO;
+
+// troubleshooting
+import Ambiguity;
 
 public void startGlue()
 {
@@ -61,11 +55,10 @@ public void go()
 
 public void tr()
 {
-	t = getGlue(|project://grammarlab/src/tests/transform/set/renameL.glue|);
+	//t = getGlue(|project://grammarlab/src/tests/transform/set/renameL.glue|);
+	t = getGlue(|project://grammarlab/src/test/annotation.glue|);
+	renderParsetree(t);
+	if (/amb(_) := t) iprintln(diagnose(t));
 	d = glimplode(t);
 	iprintln(d);
-	//GGrammar g = EmptyGrammar;
-	//for (GLUEA step <- d)
-	//	g = execute(g,step);
-	//println(ppx(g));
 }

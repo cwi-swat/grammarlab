@@ -4,7 +4,7 @@ module grammarlab::language::glue::concrete::Actions
 
 import grammarlab::language::glue::concrete::BGF;
 import grammarlab::language::glue::concrete::GET;
-//extend lang::json::\syntax::JSON;
+import lang::json::\syntax::JSON;
 
 lexical GlueKdiff = @category="MetaKeyword" "diff";
 lexical GlueKmerge = @category="MetaKeyword" "merge";
@@ -26,6 +26,5 @@ syntax GlueCommand
 	| GlueKannotate JSONText "."
 	;
 
-lexical JSONText = [{] ![}]+ [}];
 lexical GlueLoc = [|] ![|]+ [|];
 lexical GlueWord = [a-zA-Z]+;
