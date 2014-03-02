@@ -1,16 +1,15 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - SWAT, CWI}
 module grammarlab::language::glue::implode::Top
 
+import grammarlab::language::glue::concrete::Top;
+import grammarlab::language::glue::abstract::Top;
+
 import grammarlab::language::glue::implode::XBGF;
 import grammarlab::language::glue::implode::Scope;
 import grammarlab::language::glue::implode::SLEIR;
 import grammarlab::language::glue::implode::GET;
 import grammarlab::language::glue::implode::Actions;
 import grammarlab::language::glue::implode::Rename;
-
-import grammarlab::language::glue::abstract::Top;
-
-import grammarlab::language::glue::concrete::Top;
 
 import IO;
 import ParseTree;

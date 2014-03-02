@@ -26,3 +26,14 @@ data LCommand
 	| extract(GExternalType src, loc where)
 	| export(GExternalType src, loc where, str name)
 	;
+
+// Reference from lang::json::ast::JSON
+//data Value
+//	= null() 
+//	| object(map[str memberName, Value memberValue] members) 
+//	| array(list[Value] values) 
+//	| integer(int n)
+//	| float(real r)
+//	| string(str s) 
+//	| boolean(bool b)
+//	;
