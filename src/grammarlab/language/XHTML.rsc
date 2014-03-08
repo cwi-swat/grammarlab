@@ -8,16 +8,23 @@ import IO;
 alias Attrs = map[str,str];
 data DocType = doctype(str name, str dtd);
 data HTML = html(Attrs attrs, DocType dt, Head h, Body b);
-data Head = head(list[HeadElement] es);
+data Head = hhead(list[HeadElement] es);		// NB: to avoid confusion with List::head
 data HeadElement
 	= meta(Attrs attrs)
 	| title(str t)
 	| link(Attrs attrs)
 	;
-data Body = body(list[BodyElement] es);
+data Body = body(Attrs attrs, list[BodyElement] es);
 data BodyElement
 	= div(Attrs attrs, BodyElement e)
 	| ahref(Attrs attrs, BodyElement e)			// NB: <a> is called ahref() in order to avoid name conflicts
+	| aname(str name)
+	| heading(int n, Attrs attrs, BodyElement e) // NB: quite far from the standard, one heading to rule them all
+	| ul(Attrs attrs, list[BodyElement] es)
+	| li(Attrs attrs, BodyElement e)
+	| em(Attrs attrs, BodyElement e)
+	| span(Attrs attrs, BodyElement e)
+	| hr()
 	| _seq(list[BodyElement] es)
 	| _text(str t)
 	;
@@ -27,14 +34,14 @@ HTML example
 		//("xmlns":"http://www.w3.org/1999/xhtml"),
 		(),
 		doctype("-//W3C//DTD XHTML 1.0 Strict//EN","http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"),
-		head([
+		hhead([
 			meta( ("http-equiv":"content-type", "content":"text/html; charset=utf-8") ),
 			title( "Dr. Vadim Zaytsev"),
 			link( ("href":"spider.css", "rel":"stylesheet", "type":"text/css") ),
 			link( ("rel":"shortcut icon", "href":"favicon.ico") ),
 			link( ("rel":"icon", "type":"image/png", "href":"favicon.png") )
 		]),
-		body([
+		body( (), [
 			div(
 				("class":"container"),
 				div(

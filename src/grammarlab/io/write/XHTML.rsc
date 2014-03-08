@@ -15,7 +15,7 @@ public Node html2xml(HTML r)
  		[head2xml(r.h), body2xml(r.b)]
  	));
 
-//data Head = head(list[HeadElement] es);
+//data Head = hhead(list[HeadElement] es);
 Node head2xml(Head r)
  = element(
  		none(),
@@ -44,7 +44,9 @@ Node headelement2xml(link(Attrs attrs))
  	);
 
 //data Body = body(list[BodyElement] es);
-Node body2xml(Body r) = element( none(), "body", [*bodyelement2xml(ie) | ie <- r.es]);
+Node body2xml(Body r) = element( none(), "body",
+	[attribute(name, r.attrs[name]) | name <- r.attrs] +
+	[*bodyelement2xml(ie) | ie <- r.es]);
 
 //data BodyElement
 //	= div(Attrs attr, BodyElement e)
@@ -59,10 +61,40 @@ list[Node] bodyelement2xml(div(Attrs attrs, BodyElement e))
  		[attribute(name, attrs[name]) | name <- attrs] +
  		bodyelement2xml(e)
  	)];
+list[Node] bodyelement2xml(hr())
+	= [element(none(),"hr",[])];
+list[Node] bodyelement2xml(heading(int n, Attrs attrs, BodyElement e))
+	//= [element(none(),"h<n>",[attribute(name, attrs[name]) | name <- attrs] + ((aname!="")?[element(none(), "a", [attribute("name", aname),charData(" ")])]:[]) + [charData(t)])];
+	= [element(none(),"h<n>",[attribute(name, attrs[name]) | name <- attrs] + bodyelement2xml(e))];
+list[Node] bodyelement2xml(ul(Attrs attrs, list[BodyElement] es))
+	= [element(	none(),
+		"ul",
+		[attribute(name, attrs[name]) | name <- attrs] +
+		[*bodyelement2xml(e) | e <- es]
+	)];
+list[Node] bodyelement2xml(li(Attrs attrs, BodyElement e))
+	= [element(	none(),
+		"li",
+		[attribute(name, attrs[name]) | name <- attrs] +
+		bodyelement2xml(e)
+	)];
 list[Node] bodyelement2xml(ahref(Attrs attrs, BodyElement e))
-	= [element(
- 		none(),
+	= [element(	none(),
  		"a",
+ 		[attribute(name, attrs[name]) | name <- attrs] +
+ 		bodyelement2xml(e)
+	)];
+list[Node] bodyelement2xml(aname(str name))
+	= [element(	none(), "a", [attribute("name", name), charData("")])];
+list[Node] bodyelement2xml(em(Attrs attrs, BodyElement e))
+	= [element(	none(),
+ 		"em",
+ 		[attribute(name, attrs[name]) | name <- attrs] +
+ 		bodyelement2xml(e)
+ 	)];
+list[Node] bodyelement2xml(span(Attrs attrs, BodyElement e))
+	= [element(	none(),
+ 		"span",
  		[attribute(name, attrs[name]) | name <- attrs] +
  		bodyelement2xml(e)
  	)];
