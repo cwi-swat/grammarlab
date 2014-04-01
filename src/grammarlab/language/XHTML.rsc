@@ -17,6 +17,8 @@ data HeadElement
 data Body = body(Attrs attrs, list[BodyElement] es);
 data BodyElement
 	= div(Attrs attrs, BodyElement e)
+	| span(Attrs attrs, BodyElement e)
+	| para(Attrs attrs, BodyElement e)
 	| ahref(Attrs attrs, BodyElement e)			// NB: <a> is called ahref() in order to avoid name conflicts
 	| aname(str name)
 	| heading(int n, Attrs attrs, BodyElement e) // NB: quite far from the standard, one heading to rule them all
@@ -29,8 +31,8 @@ data BodyElement
 	| dd(Attrs attrs, BodyElement e)
 	| em(Attrs attrs, BodyElement e)
 	| code(Attrs attrs, BodyElement e)
+	| pre(Attrs attrs, BodyElement e)
 	| strong(Attrs attrs, BodyElement e)
-	| span(Attrs attrs, BodyElement e)
 	| hr()
 	| br()
 	| _seq(list[BodyElement] es)

@@ -4,6 +4,7 @@ module grammarlab::io::write::XHTML
 import grammarlab::language::XHTML;
 import lang::xml::DOM;
 import IO;
+import String;
 
 // As it turns out, most xml-unparsing can be done with these two functions
 list[Node] universalxml(str tagname, Attrs attrs, BodyElement e) = [element( none(), tagname, [attribute(name, attrs[name]) | name <- attrs] + bodyelement2xml(e) )];
@@ -58,6 +59,8 @@ list[Node] bodyelement2xml(em(Attrs attrs, BodyElement e)) = universalxml("em",a
 list[Node] bodyelement2xml(code(Attrs attrs, BodyElement e)) = universalxml("code",attrs,e);
 list[Node] bodyelement2xml(strong(Attrs attrs, BodyElement e)) = universalxml("strong",attrs,e);
 list[Node] bodyelement2xml(span(Attrs attrs, BodyElement e)) = universalxml("span",attrs,e);
+list[Node] bodyelement2xml(para(Attrs attrs, BodyElement e)) = universalxml("p",attrs,e);
+list[Node] bodyelement2xml(pre(Attrs attrs, BodyElement e)) = universalxml("pre",attrs,e);
 list[Node] bodyelement2xml(_text(str t)) = [charData(t)];
 list[Node] bodyelement2xml(_seq(list[BodyElement] es)) = [*bodyelement2xml(ie) | ie <- es];
 default list[Node] bodyelement2xml(BodyElement e)
@@ -66,6 +69,11 @@ default list[Node] bodyelement2xml(BodyElement e)
 	return [charData("<e>")];
 }
 
-public str html2str(HTML r) = xmlRaw(html2xml(r));
+public str html2str(HTML r)
+	= replaceFirst(replaceFirst(xmlRaw(html2xml(r)),
+	"\<?xml version=\"1.0\" encoding=\"UTF-8\"?\>",
+	"\<!DOCTYPE html PUBLIC \"<r.dt.name>\" \"<r.dt.dtd>\"\>"
+	), "\<html\>","\<html xmlns=\"http://www.w3.org/1999/xhtml\"\>"
+	);
 
 public void writeHTML(HTML r, loc f) = writeFile(f,html2str(r));
