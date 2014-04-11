@@ -90,6 +90,7 @@ GExpr mapexpr(Node n)
 		case element(none(),"seplistplus",[e1,e2]): return seplistplus(mapexpr(e1),mapexpr(e2));
 		case element(none(),"sepliststar",[e1,e2]): return sepliststar(mapexpr(e1),mapexpr(e2));
 		case element(none(),"nonterminal",[]): throw "ERROR: empty nonterminal!";
+		//case comment(_): return nothing();
 		default: throw "ERROR in mapexpr:\n<n>";
 	}
 }

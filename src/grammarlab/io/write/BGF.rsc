@@ -49,7 +49,8 @@ Node expr2xml(GExpr ex)
 		//case label(str n, GExpr expr): e = element(none(),"labelled",[element(none(),"label",[charData(s)]),expr2xml(expr)]);
 		case label(str n, GExpr expr): e = element(none(),"selectable",[element(none(),"selector",[charData(n)]),expr2xml(expr)]);
 		case mark("", GExpr expr): e = element(none(),"marked",[expr2xml(expr)]);
-		case mark(str n, GExpr expr): e = element(none(),"selectable",[element(none(),"selector",[charData(n)]),expr2xml(expr)]);
+		//case mark(str n, GExpr expr): e = element(none(),"selectable",[element(none(),"selector",[charData(n)]),expr2xml(expr)]);
+		case mark(str n, GExpr expr): e = element(none(),"marked",[element(none(),"mark",[charData(n)]),expr2xml(expr)]);
 		case sequence(L): e = element(none(),"sequence",[expr2xml(expr) | expr <- L]);
 		case choice(L): e = element(none(),"choice",[expr2xml(expr) | expr <- L]);
 		case allof(L): e = element(none(),"allof",[expr2xml(expr) | expr <- L]);

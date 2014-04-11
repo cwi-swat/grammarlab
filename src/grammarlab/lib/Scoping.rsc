@@ -115,6 +115,7 @@ public tuple[GProdList,GProdList,GProdList] splitPbyW(GProdList ps, XScope w)
 }
 
 // TODO move it to analyse::Metrics
+public set[str] allNs(GGrammar g) = toSet(g.S) + toSet(g.N) + usedNs(g.P);
 public set[str] allNs(GProdList ps) = definedNs(ps) + usedNs(ps);
 public set[str] allTs(GProdList ps) = {s | /terminal(str s) := ps};
 public set[str] usedNs(GProdList ps) = {s | /nonterminal(str s) := ps};

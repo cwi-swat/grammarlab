@@ -33,6 +33,8 @@ data BodyElement
 	| code(Attrs attrs, BodyElement e)
 	| pre(Attrs attrs, BodyElement e)
 	| strong(Attrs attrs, BodyElement e)
+	| sub(Attrs attrs, BodyElement e)
+	| sup(Attrs attrs, BodyElement e)
 	| hr()
 	| br()
 	| _seq(list[BodyElement] es)

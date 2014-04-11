@@ -359,10 +359,10 @@ public XResult transform(eliminate(str x), GGrammar g)
 	if (x in g.S)
 		return <problemStr("Cannot eliminate root nonterminal",x),g>;
 	if (x notin g.N)
-		return <freshName(x),g>;
+		return <freshN(x),g>;
 	GProdList ps = [p | GProd p <- g.P, p.lhs != x];
 	if (/nonterminal(x) := ps)
-		return <notFreshName(x),g>;
+		return <notFreshN(x),g>;
 	return <ok(), grammar(g.N - x, ps, g.S)>;
 }
 
@@ -1048,17 +1048,17 @@ public XResult transform(unite(str x, str y), GGrammar g)
 {
 	if (x == y)
 		return <problemStr("Nonterminal is already united with itself",x),g>;
-	used = allNs(g.P);
-	if (x notin used)
+	if (x notin g.S && x notin g.N && /nonterminal(x) !:= g.P)
 		return <freshN(x),g>;
-	if (y notin used)
+	if (y notin g.S && y notin g.N && /nonterminal(y) !:= g.P)
 		return <freshN(y),g>;
-	<ps1x,ps2x,ps3x> = splitPbyW(g.P, innt(x));
-	GProdList ps4x = ps1x + [production(y, p.rhs) | p <- ps2x, p.lhs == x] + ps3x;
-	if (x in usedNs(ps4x))
-		return transform(replace(nonterminal(x),nonterminal(y),globally()), grammar(g.N,ps4x,g.S));
+	list[str] newS = [ (n==x)? y : n | n <- g.S ];
+	list[str] newN = [ (n==x)? y : n | n <- g.N ];
+	GProdList newP = [ (p.lhs == x) ? production(y,p.rhs) : p | p <- g.P ];
+	if (/nonterminal(x) := g.P)
+		return transform(replace(nonterminal(x),nonterminal(y),globally()), grammar(newN,newP,newS));
 	else
-		return <ok(),grammar(g.N,ps4x,g.S)>;
+		return <ok(),grammar(newN,newP,newS)>;
 }
 
 // XBGF:unlabel

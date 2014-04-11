@@ -5,6 +5,7 @@ module grammarlab::export::GLUE
 import grammarlab::language::glue::abstract::Top;
 // import grammarlab::language::glue::Scope;
 import grammarlab::language::SLEIR;
+import grammarlab::language::GET;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::export::Grammar;
@@ -22,7 +23,20 @@ public default str ppx(GLUEA smth) = "??<smth>??";
 
 public str ppx(LCommand::diff(GGrammar g)) = "diff\n\t<ppx(g)>.";
 public str ppx(LCommand::include(loc z)) = "include <z> .";
+public str ppx(LCommand::extract(GExternalType src, loc where)) = "extract <ppget(src)> <where>.";
+// TODO: for now name is always "Unknown"
+public str ppx(LCommand::export(GExternalType src, loc where, str name)) = "export <ppget(src)> <where>.";
 public default str ppx(LCommand smth) = "??L??<smth>??";
+
+str ppget(GETrscd()) = "RascalADT";
+str ppget(GETrscs()) = "RascalSyntax";
+str ppget(GETrscf()) = "RascalFunctions";
+str ppget(GETsdf()) = "SDF";
+str ppget(GETbgf()) = "BGF";
+str ppget(GETrng()) = "RelaxNG";
+str ppget(GETxsd()) = "XMLSchemaDefinition";
+str ppget(GETpgf()) = "PGF";
+default str ppget(GExternalType src) = "<src>";
 
 public str ppx(MCommand::AbridgeAll()) = "AbridgeAll.";
 public str ppx(MCommand::DeyaccifyAll()) = "DeyaccifyAll.";

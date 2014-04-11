@@ -35,6 +35,11 @@ public int VAR(GGrammar g) = ulen(g.S+g.N, {name | /nonterminal(str name) := g.P
 public list[str] listTERM(GGrammar g) = squeeze([name | /terminal(str name) := g.P]);
 public int TERM(GGrammar g) = len(listTERM(g));
 
+// LET = letter terminal symbols (single-symbol alphabetic)
+// TODO: include diacritics?
+public list[str] listLET(GGrammar g) = squeeze([name | /terminal(str name) := g.P, /^[a-zA-Zα-ωΑ-Ω]$/ := name]);
+public int LET(GGrammar g) = len(listLET(g));
+
 // KWDS = keyword terminal symbols (alphabetic)
 public list[str] listKWDS(GGrammar g) = squeeze([name | /terminal(str name) := g.P, /^[a-zA-Z_][a-zA-Z_]+$/ := name]);
 public int KWDS(GGrammar g) = len(listKWDS(g));
@@ -48,10 +53,12 @@ public list[str] listSIGN(GGrammar g) = squeeze([name | /terminal(str name) := g
 public int SIGN(GGrammar g) = len(listSIGN(g));
 
 // MAR = number of different markers
-public int MAR(GGrammar g) = ulen({name | /mark(str name, _) := g.P});
+public list[str] listMAR(GGrammar g) = squeeze([name | /mark(str name, _) := g.P]);
+public int MAR(GGrammar g) = len(listMAR(g));
 
 // LAB = number of unique labels
-public int LAB(GGrammar g) = ulen({name | /label(str name, _) := g.P});
+public list[str] listLAB(GGrammar g) = squeeze([name | /label(str name, _) := g.P]);
+public int LAB(GGrammar g) = len(listLAB(g));
 
 // VOC = vocabulary
 public int VOC(GGrammar g) = /* PROD(g) + */ VAR(g) + TERM(g) + MAR(g) + LAB(g);
@@ -86,3 +93,9 @@ public int SYMB(sepliststar(GExpr expr, GExpr sep)) = SYMB(expr) + 1 + SYMB(sep)
 public int SYMB(seplistplus(GExpr expr, GExpr sep)) = SYMB(expr) + 1 + SYMB(sep);
 public int SYMB(nothing()) = 0; // soft error
 public default int SYMB(GExpr e) = 1;
+
+// Same with frequencies
+public lrel[str,int] freqTerminals(list[str] ts, GGrammar g) = [<s,len([1|/terminal(s)<-g.P])> | s<-ts];
+public lrel[str,int] freqNonterminals(list[str] ns, GGrammar g) = [<s,len([1|/nonterminal(s)<-g.P])> | s<-ns];
+public lrel[str,int] freqMAR(GGrammar g) = [<s,len([1|/mark(s,_)<-g.P])> | s <- listMAR(g)];
+public lrel[str,int] freqLAB(GGrammar g) = [<s,len([1|/label(s,_)<-g.P])> | s <- listLAB(g)];

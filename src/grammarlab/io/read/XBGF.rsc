@@ -12,10 +12,15 @@ public XSequence readXBGF(loc f)
 {
 	Node N = parseXMLDOMTrim(readFile(f));
 	if (document(element(namespace(_,"http://planet-sl.org/xbgf"),"sequence",L)) := N)
-		return [mapxbgf(step) | step <- L, element(namespace(_,"http://planet-sl.org/xbgf"),name,kids) := step];
+		return [mapxbgf(nocomment(step)) | step <- L, element(namespace(_,"http://planet-sl.org/xbgf"),name,kids) := step];
 	else
 		throw "<f> is not a proper XBGF file";
 }
+
+Node nocomment(Node n) = innermost visit(n)
+{
+	case [*L1,comment(_),*L2] => L1 + L2
+};
 
 XCommand mapxbgf(Node el)
 {
