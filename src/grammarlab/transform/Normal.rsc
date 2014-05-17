@@ -3,8 +3,9 @@ module grammarlab::transform::Normal
 
 import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
+import grammarlab::lib::Sizes;
 import grammarlab::transform::SLEIR;
-import List; //toSet
+//import List; //toSet
 
 public GGrammar  normanon(GGrammar g)   =  RetireSs(RetireLs(g));
 public GProdList normanon(GProdList ps) = [RetireSs(RetireLs(p)) | p <- ps];
