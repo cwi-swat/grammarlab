@@ -2,7 +2,6 @@
 @doc{This vaguely corresponds to XEDD from SLPS}
 module grammarlab::notation::Operations
 
-import grammarlab::language::Grammar;
 import grammarlab::language::EBNF;
 
 @doc{rename-metasymbol(s,v1,v2) from the BX2012 paper (EC-EASST vol. 49, page 5).}
