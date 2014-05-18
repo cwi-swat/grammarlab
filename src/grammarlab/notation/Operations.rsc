@@ -35,10 +35,15 @@ EBNF add(EBNF bnf1, EBNF bnf2)
 	return bnf1 + bnf2;
 }
 
-@doc{A simple difference, with some extra assertions}
-EBNF sub(EBNF bnf1, EBNF bnf2)
+@doc{A simple difference}
+EBNF sub(EBNF bnf1, EBNF bnf2) = bnf1 - bnf2;
+// TODO: special rules for nonterminals_may_start_with()
+// TODO: special rules for nonterminals_may_contain()
+
+@doc{A strict difference with some extra assertions}
+EBNF ssub(EBNF bnf1, EBNF bnf2)
 {
 	for (m <- bnf1, m in bnf2)
 		assert bnf1[m] == bnf2[m] : "Notations disagree on metasymbol <m>";
-	return bnf1 + bnf2;
+	return bnf1 - bnf2;
 }

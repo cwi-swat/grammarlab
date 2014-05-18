@@ -23,7 +23,7 @@ bool findInnerChoices(GGrammar g)
 
 // NB: this detection favours start_... and end_... metasymbols to their postfix counterparts
 // to avoid issues with group detection
-EBNF detect(GGrammar g)
+public EBNF detect(GGrammar g)
 {
 	EBNF c = ();
 	// start_grammar_symbol()
@@ -41,8 +41,21 @@ EBNF detect(GGrammar g)
 	if (/sequence(_) := g.P) c += fromDefault(concatenate_symbol());
 	// start_comment_symbol()
 	// end_comment_symbol()
-	// start_group_symbol()
-	// end_group_symbol()
+	if (/label(_,sequence(_)) := g.P
+	|| /mark(_,sequence(_)) := g.P
+	|| /choice([*_,sequence(_),*_]) := g.P
+	|| /allof([*_,sequence(_),*_]) := g.P
+	|| /not(sequence(_)) := g.P
+	|| /except(_,sequence(_)) := g.P
+	|| /except(sequence(_),_) := g.P
+	|| /optional(sequence(_)) := g.P
+	|| /star(sequence(_)) := g.P
+	|| /plus(sequence(_)) := g.P
+	|| /sepliststar(_,sequence(_)) := g.P
+	|| /sepliststar(sequence(_),_) := g.P
+	|| /seplistplus(_,sequence(_)) := g.P
+	|| /seplistplus(sequence(_),_) := g.P
+	) c += fromDefault(start_group_symbol(), end_group_symbol());
 	if (/optional(_) := g.P) c += fromDefault(start_option_symbol(), end_option_symbol());
 	if (/terminal(_) := g.P) c += fromDefault(start_terminal_symbol(), end_terminal_symbol());
 	if (/nonterminal(_) := g.P) c += fromDefault(start_nonterminal_symbol(), end_nonterminal_symbol());
@@ -95,5 +108,5 @@ void main()
 	iprintln(detect(grammar([],[],[])));
 	iprintln(detect(grammar([],[production("foo",epsilon())],[])));
 	iprintln(detect(grammar([],[production("foo",nonterminal("bar"))],[])));
-	iprintln(detect(grammar([],[production("foo",choice([nonterminal("bar"),epsilon()]))],[])));
+	iprintln(detect(grammar([],[production("foo",choice([nonterminal("bar"),sequence([terminal("a"),terminal("b")])]))],[])));
 }
