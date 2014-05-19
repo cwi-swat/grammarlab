@@ -39,14 +39,16 @@ public EBNF add(EBNF bnf1, EBNF bnf2)
 	return bnf1 + bnf2;
 }
 
-public EBNF add(EBNF bnf1, set[Metasymbol] bnfset2) = bnf1 - (k:fromDefault(k) | k <- bnfset2);
+public EBNF add(EBNF bnf1, WNF wnf2) = bnf1 + (() | it + fromDefault(k) | k <- wnf2);
+public WNF add(WNF bnf1, WNF wnf2) = wnf1 + wnf2;
 
 @doc{A simple difference}
 public EBNF sub(EBNF bnf1, EBNF bnf2) = bnf1 - bnf2;
 // TODO: special rules for nonterminals_may_start_with()
 // TODO: special rules for nonterminals_may_contain()
 
-public EBNF sub(EBNF bnf1, set[Metasymbol] bnfset2) = bnf1 - (k:"" | k <- bnfset2);
+public EBNF sub(EBNF bnf1, WNF wnf2) = bnf1 - (k:"" | k <- wnf2);
+public WNF sub(WNF bnf1, WNF wnf2) = wnf1 - wnf2;
 
 @doc{A strict difference with some extra assertions}
 public EBNF ssub(EBNF bnf1, EBNF bnf2)
@@ -56,4 +58,4 @@ public EBNF ssub(EBNF bnf1, EBNF bnf2)
 	return bnf1 - bnf2;
 }
 
-public EBNF subadd(EBNF bnf1, set[Metasymbol] bnfset2, set[Metasymbol] bnfset3) = add(sub(bnf1,bnfset2),bnfset3);
+public EBNF subadd(EBNF bnf1, WNF wnf2, WNF wnf3) = add(sub(bnf1,wnf2),wnf3);

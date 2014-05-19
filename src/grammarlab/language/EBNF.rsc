@@ -2,6 +2,7 @@
 module grammarlab::language::EBNF
 
 alias EBNF = map[Metasymbol,str];
+alias WNF = set[Metasymbol];
 
 data Metasymbol
 	= start_grammar_symbol()
@@ -71,3 +72,6 @@ data Metasymbol
 
 public str getMeta(Metasymbol ms, EBNF ebnf) = ms in ebnf ? ebnf[ms] : "";
 public str getMetaE(Metasymbol ms, EBNF ebnf) = ms in ebnf ? ebnf[ms] : "ERROR<ms>!";
+
+public bool isEBNFinWNF(EBNF e, WNF w) = domain(e) <= w;
+public bool isWNFinEBNF(WNF w, EBNF e) = w <= domain(e);

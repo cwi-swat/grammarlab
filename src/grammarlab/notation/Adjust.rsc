@@ -9,6 +9,7 @@ import grammarlab::language::Grammar;
 import grammarlab::language::EBNF;
 //import grammarlab::lib::ebnf::Default;
 import grammarlab::lib::ebnf::Glue;
+import grammarlab::lib::Sizes;
 
 import Map;
 import IO;
@@ -36,20 +37,21 @@ EBNF MyEBNF = (
 	nonterminals_may_start_with():"abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ",
 	nonterminals_may_contain(): "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ⟙_-/"
 	);
+WNF MyWNF = domain(MyEBNF);
 
 void m()
 {
 	GGrammar g1 = grammar([],[production("foo",optional(nonterminal("bar")))],[]);
-	EBNF bnf1 = detect(g1);
-	EBNF bnf2 = MyEBNF;
-	println("A - B = <sub(bnf1,bnf2)>");
-	println("B - A = <sub(bnf2,bnf1)>");
+	WNF wnf1 = detect(g1);
+	WNF wnf2 = MyWNF;
+	println("A - B = <wnf1 - wnf2>");
+	println("B - A = <wnf2 - wnf1>");
 	g2 = g1;
-	bnfi = bnf1;
+	wnfi = wnf1;
 	while(true)
 	{
-		s = sub(bnfi,bnf2);
-		println("\tA - B = <sub(bnfi,bnf2)>");
+		s = wnfi - wnf2;
+		println("\tA - B = <s>");
 		if (isEmpty(s))
 		{
 			println("Difference in notations successfully bridged!");
@@ -57,15 +59,15 @@ void m()
 		}
 		for (p <- ruleset)
 		{
-			println("if (<p.ls <= domain(s)> && <p.rs <= domain(bnf2)>) ...");
-			if (p.ls <= domain(s) && p.rs <= domain(bnf2))
+			println("if (<p.ls <= s> && <p.rs <= wnf2>) ...");
+			if (p.ls <= s && p.rs <= wnf2)
 			{
-				<bnfi,g2> = p.f(<bnfi,g2>);
+				<wnfi,g2> = p.f(<wnfi,g2>);
 				println("\t<p.ls> =\> <p.rs>!");
 			}
 		}
 		sp = s;
-		s = sub(bnfi,bnf2);
+		s = wnfi - wnf2;
 		if (s == sp)
 		{
 			println("Difference in notations cannot be bridged.");
