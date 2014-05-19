@@ -46,11 +46,13 @@ void m()
 	s = sub(bnf1,bnf2);
 	println("B - A = <sub(bnf2,bnf1)>");
 	g2 = g1;
+	bnfi = bnf1;
 	for (p <- ruleset)
 	{
+		println("if (<p.ls <= domain(s)> && <p.rs <= domain(bnf2)>) ...");
 		if (p.ls <= domain(s) && p.rs <= domain(bnf2))
 		{
-			g2 = p.f(g2);
+			<bnfi,g2> = p.f(<bnfi,g2>);
 			println("Applied rule <p.ls> =\> <p.rs>!");
 		}
 		else
