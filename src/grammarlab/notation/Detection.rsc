@@ -1,16 +1,13 @@
 @contributor{Vadim Zaytsev - vadim@grammarware.net - UvA}
 module grammarlab::notation::Detection
 
+import grammarlab::notation::Operations;
 import grammarlab::language::Grammar;
 import grammarlab::language::EBNF;
-import grammarlab::lib::ebnf::Default;
 import String; // stringChars, charAt
 import List; // intercalate
 import Set; // isEmpty
 import IO;
-
-EBNF fromDefault(Metasymbol m) = (m : (m in DefaultEBNF) ? DefaultEBNF[m] : "");
-EBNF fromDefault(Metasymbol m1, Metasymbol m2) = fromDefault(m1) + fromDefault(m2);
 
 // Somewhat ugly, but who cares
 bool findInnerChoices(GGrammar g)

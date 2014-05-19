@@ -43,19 +43,33 @@ void m()
 	EBNF bnf1 = detect(g1);
 	EBNF bnf2 = MyEBNF;
 	println("A - B = <sub(bnf1,bnf2)>");
-	s = sub(bnf1,bnf2);
 	println("B - A = <sub(bnf2,bnf1)>");
 	g2 = g1;
 	bnfi = bnf1;
-	for (p <- ruleset)
+	while(true)
 	{
-		println("if (<p.ls <= domain(s)> && <p.rs <= domain(bnf2)>) ...");
-		if (p.ls <= domain(s) && p.rs <= domain(bnf2))
+		s = sub(bnfi,bnf2);
+		println("\tA - B = <sub(bnfi,bnf2)>");
+		if (isEmpty(s))
 		{
-			<bnfi,g2> = p.f(<bnfi,g2>);
-			println("Applied rule <p.ls> =\> <p.rs>!");
+			println("Difference in notations successfully bridged!");
+			break;
 		}
-		else
-			println("Inapplicable: <p.ls> =\> <p.rs>!");
+		for (p <- ruleset)
+		{
+			println("if (<p.ls <= domain(s)> && <p.rs <= domain(bnf2)>) ...");
+			if (p.ls <= domain(s) && p.rs <= domain(bnf2))
+			{
+				<bnfi,g2> = p.f(<bnfi,g2>);
+				println("\t<p.ls> =\> <p.rs>!");
+			}
+		}
+		sp = s;
+		s = sub(bnfi,bnf2);
+		if (s == sp)
+		{
+			println("Difference in notations cannot be bridged.");
+			break;
+		}
 	}
 }
