@@ -2,7 +2,31 @@
 module grammarlab::language::EBNF
 
 alias EBNF = map[Metasymbol,str];
-alias WNF = set[Metasymbol];
+//alias WNF = set[Metasymbol];
+
+alias WNF = set[Metaconcept];
+
+data Metaconcept
+	// zero-arity metaconcepts
+	= mc_universal()
+	| mc_emptystring()
+	| mc_emptylanguage()
+	| mc_string()
+	| mc_number()
+	| mc_boolean()
+	// unary metaconcepts
+	| mc_optionality()
+	| mc_star()
+	| mc_plus()
+	| mc_group()
+	// binary metaconcepts
+	| mc_sep_star()
+	| mc_sep_plus()
+	// multiary metaconcepts
+	| mc_disjunction()
+	| mc_conjunction()
+	| mc_concatenation()
+	;
 
 data Metasymbol
 	= start_grammar_symbol()

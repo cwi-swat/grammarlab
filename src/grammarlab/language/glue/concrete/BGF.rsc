@@ -52,7 +52,14 @@ GExpr mapDs({GlueDefinition "|"}+ ds)
 	GExprList es = [mapD(d) | GlueDefinition d <- ds];
 	return (len(es)==1) ? es[0] : choice(es);
 }
-GExpr mapS((GlueSymbol)`<GlueNonterminal n>`) = nonterminal("<n.name >");
+GExpr mapS((GlueSymbol)`<GlueNonterminal n>`) = mapNT("<n.name >");
+// MANUAL START
+//string() | integer() | boolean();
+GExpr mapNT("STRING") = val(string());
+GExpr mapNT("INTEGER") = val(integer());
+GExpr mapNT("BOOLEAN") = val(boolean());
+default GExpr mapNT(str n) = nonterminal(n); 
+// MANUAL END
 GExpr mapS((GlueSymbol)`<GlueTerminal t>`) = terminal("<t.name>");
 GExpr mapS((GlueSymbol)`(<{GlueDefinition "|"}+ ds>)`) = mapIDs(ds);GExpr mapS((GlueSymbol)`¬<GlueSymbol smb>`) = not(mapS(smb));
 GExpr mapS((GlueSymbol)`<GlueSymbol smb>?`) = optional(mapS(smb));

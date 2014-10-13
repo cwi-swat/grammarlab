@@ -53,8 +53,10 @@ list[Node] bodyelement2xml(dd(Attrs attrs, BodyElement e)) = universalxml("dd",a
 list[Node] bodyelement2xml(dt(Attrs attrs, BodyElement e)) = universalxml("dt",attrs,e);
 list[Node] bodyelement2xml(ahref(Attrs attrs, BodyElement e)) = universalxml("a",attrs,e);
 list[Node] bodyelement2xml(aname(str name)) = [element( none(), "a", [attribute("name", name), charData("")])];
-list[Node] bodyelement2xml(img(str src, str alt))
+list[Node] bodyelement2xml(img(str src, str alt, ""))
 	= [element(	none(), "img", [attribute("src", src), attribute("alt", alt), charData("")])];
+list[Node] bodyelement2xml(img(str src, str alt, str title))
+	= [element(	none(), "img", [attribute("src", src), attribute("alt", alt), attribute("title", title), charData("")])];
 list[Node] bodyelement2xml(em(Attrs attrs, BodyElement e)) = universalxml("em",attrs,e);
 list[Node] bodyelement2xml(code(Attrs attrs, BodyElement e)) = universalxml("code",attrs,e);
 list[Node] bodyelement2xml(strong(Attrs attrs, BodyElement e)) = universalxml("strong",attrs,e);
@@ -64,6 +66,7 @@ list[Node] bodyelement2xml(sup(Attrs attrs, BodyElement e)) = universalxml("sup"
 list[Node] bodyelement2xml(para(Attrs attrs, BodyElement e)) = universalxml("p",attrs,e);
 list[Node] bodyelement2xml(pre(Attrs attrs, BodyElement e)) = universalxml("pre",attrs,e);
 list[Node] bodyelement2xml(_text(str t)) = [charData(t)];
+list[Node] bodyelement2xml(_tab()) = [charRef(9)];
 list[Node] bodyelement2xml(_seq(list[BodyElement] es)) = [*bodyelement2xml(ie) | ie <- es];
 default list[Node] bodyelement2xml(BodyElement e)
 {

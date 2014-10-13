@@ -22,7 +22,7 @@ data BodyElement
 	| ahref(Attrs attrs, BodyElement e)			// NB: <a> is called ahref() in order to avoid name conflicts
 	| aname(str name)
 	| heading(int n, Attrs attrs, BodyElement e) // NB: quite far from the standard, one heading to rule them all
-	| img(str src, str alt)
+	| img(str src, str alt, str title)
 	| ul(Attrs attrs, list[BodyElement] es)
 	| dl(Attrs attrs, list[BodyElement] es)
 	| ol(Attrs attrs, list[BodyElement] es)
@@ -39,6 +39,7 @@ data BodyElement
 	| br()
 	| _seq(list[BodyElement] es)
 	| _text(str t)
+	| _tab()
 	;
 
 HTML example

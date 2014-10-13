@@ -4,7 +4,8 @@ module grammarlab::language::glue::implode::Actions
 
 import lang::json::\syntax::JSON;
 import lang::json::ast::JSON;
-import lang::json::ast::Implode;
+//import lang::json::ast::Implode;
+import grammarlab::language::glue::implode::JSONImplode;
 
 import grammarlab::language::glue::implode::XBGF; // damn you, Rascal!
 import grammarlab::language::glue::abstract::Top;

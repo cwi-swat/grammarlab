@@ -4,10 +4,11 @@ module grammarlab::language::glue::implode::GET
 
 import grammarlab::language::GET;
 import grammarlab::language::glue::abstract::Top;
-import grammarlab::language::glue::concrete::BGF;
-import grammarlab::language::glue::concrete::GET;
-import grammarlab::language::glue::concrete::Actions;
+import grammarlab::language::glue::concrete::Top;
+//import grammarlab::language::glue::concrete::GET;
+//import grammarlab::language::glue::concrete::Actions;
 import IO;
+//import lang::std::Layout;
 
 loc toLocation(str s) = (/\|<car:.*>\:\/\/<cdr:.*>\|/ := s) ? |<car>://<cdr>| : |cwd:///<s>|;
 

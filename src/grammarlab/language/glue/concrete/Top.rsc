@@ -9,6 +9,7 @@ extend grammarlab::language::glue::concrete::BGF;
 extend grammarlab::language::glue::concrete::Scope;
 extend grammarlab::language::glue::concrete::Rename;
 extend grammarlab::language::glue::concrete::GET;
+extend grammarlab::language::json::Concrete;
 
 // These shoes are made for IDE support, that’s just what they’ll do
 import util::IDE;

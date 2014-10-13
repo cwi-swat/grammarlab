@@ -8,7 +8,7 @@ import grammarlab::language::GET;
 import lang::json::ast::JSON;
 
 alias GLUE = list[GLUEA];
-alias MetaInfo = map[str,Value];
+alias MetaInfo = map[str,JSON];
 
 data GLUEA
 	= xbgf(XCommand tcmd)
@@ -28,10 +28,10 @@ data LCommand
 	;
 
 // Reference from lang::json::ast::JSON
-//data Value
+//data JSON
 //	= null() 
-//	| object(map[str memberName, Value memberValue] members) 
-//	| array(list[Value] values) 
+//	| object(map[str memberName, JSON memberValue] members) 
+//	| array(list[JSON] values) 
 //	| integer(int n)
 //	| float(real r)
 //	| string(str s) 

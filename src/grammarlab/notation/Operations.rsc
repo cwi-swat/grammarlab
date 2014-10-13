@@ -5,6 +5,7 @@ module grammarlab::notation::Operations
 import grammarlab::language::EBNF;
 import grammarlab::lib::ebnf::Default;
 
+public EBNF fromDefault(WNF w) = (m : (m in DefaultEBNF) ? DefaultEBNF[m] : "" | m <- w);
 public EBNF fromDefault(Metasymbol m) = (m : (m in DefaultEBNF) ? DefaultEBNF[m] : "");
 public EBNF fromDefault(Metasymbol m1, Metasymbol m2) = fromDefault(m1) + fromDefault(m2);
 
