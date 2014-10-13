@@ -17,7 +17,12 @@ test bool main()
 	{
 		loc uri = base+"<d>/<f>";
 		println("Parsing <uri>...");
-		loadGlue(uri);
+		g = loadGlue(uri);
+		if (/amb(_,_) := g)
+		{
+			println("Ambiguous!");
+			return false;
+		} 
 	}
 	return true;
 }

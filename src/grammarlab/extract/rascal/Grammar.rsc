@@ -6,6 +6,7 @@ import Grammar;
 import ParseTree;
 import IO;
 import String;
+import Set;
 
 import grammarlab::language::Grammar;
 import grammarlab::lib::Squeeze;
@@ -56,6 +57,7 @@ GExpr symbol2expr(\opt(Symbol s)) = grammarlab::language::Grammar::optional(symb
 GExpr symbol2expr(\iter-seps(Symbol item, list[Symbol] seps)) = iterplusseps2expr(item,[s | s <- seps, layouts(_) !:= s]);
 GExpr symbol2expr(\iter-star-seps(Symbol item, list[Symbol] seps)) = iterstarseps2expr(item,[s | s <- seps, layouts(_) !:= s]);
 GExpr symbol2expr(\seq(list[Symbol] ss)) = rhs2expr(ss);
+GExpr symbol2expr(\alt(set[Symbol] ss)) = grammarlab::language::Grammar::choice([symbol2expr(e) | e<-ss]);
 GExpr symbol2expr(\conditional(Symbol s, set[Condition] cs)) //= symbol2expr(s);
 {
 	println("Ignoring conditions on <s>: <cs>");
