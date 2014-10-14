@@ -15,6 +15,7 @@ data GLUEA
 	| sleir(MCommand mcmd)
 	| glaction(LCommand xcmd)
 	| metadata(MetaInfo meta)
+	| greedy(GLUE gcmds)
 	;
 
 // WIP: GrammarLab actions
@@ -26,14 +27,3 @@ data LCommand
 	| extract(GExternalType src, loc where)
 	| export(GExternalType src, loc where, str name)
 	;
-
-// Reference from lang::json::ast::JSON
-//data JSON
-//	= null() 
-//	| object(map[str memberName, JSON memberValue] members) 
-//	| array(list[JSON] values) 
-//	| integer(int n)
-//	| float(real r)
-//	| string(str s) 
-//	| boolean(bool b)
-//	;

@@ -73,7 +73,8 @@ GExpr type2expr((Type)`tuple[<{TypeArg ","}+ arguments>]`)
 GExpr type2expr((Type)`str`)
 	= grammarlab::language::Grammar::val(grammarlab::language::Grammar::string());
 GExpr type2expr((Type)`bool`)
-	= grammarlab::language::Grammar::choice([grammarlab::language::Grammar::terminal("true"),grammarlab::language::Grammar::terminal("false")]);
+	//= grammarlab::language::Grammar::choice([grammarlab::language::Grammar::terminal("true"),grammarlab::language::Grammar::terminal("false")]);
+	= grammarlab::language::Grammar::val(grammarlab::language::Grammar::boolean());
 GExpr type2expr((Type)`void`)
 	= grammarlab::language::Grammar::empty();
 GExpr type2expr((Type)`datetime`)
@@ -87,6 +88,7 @@ GExpr type2expr((Type)`set[<TypeArg ta>]`)
 	= grammarlab::language::Grammar::star(typearg2expr(ta));
 GExpr type2expr((Type)`list[<TypeArg ta>]`)
 	= grammarlab::language::Grammar::star(typearg2expr(ta));
+GExpr type2expr((Type)`<Type t>()`) = type2expr(t);
 
 // TODO: FunctionType (arguable!)
 default GExpr type2expr(Type t)// = grammarlab::language::Grammar::empty();
@@ -97,6 +99,7 @@ default GExpr type2expr(Type t)// = grammarlab::language::Grammar::empty();
 }
 
 GExpr typearg2expr((TypeArg)`<Type t>`) = type2expr(t);
+GExpr typearg2expr((TypeArg)`<Type t>()`) = type2expr(t);
 GExpr typearg2expr((TypeArg)`<Type t><Name n>`) = grammarlab::language::Grammar::mark(grammarlab::extract::rascal::Name::name2string("<n>"),type2expr(t));
 default GExpr typearg2expr(TypeArg ta) //= empty();
 {

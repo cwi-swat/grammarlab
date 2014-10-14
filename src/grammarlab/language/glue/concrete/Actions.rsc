@@ -11,11 +11,12 @@ lexical GlueKdiff = @category="MetaKeyword" "diff";
 lexical GlueKmerge = @category="MetaKeyword" "merge";
 lexical GlueKinclude = @category="MetaKeyword" "include";
 lexical GlueKextract = @category="MetaKeyword" "extract";
+lexical GlueKgreedy = @category="MetaKeyword" "greedy";
 lexical GlueKexport = @category="MetaKeyword" "export";
 lexical GlueKmaybexbgf = @category="MetaKeyword" "maybe";
 lexical GlueKannotate = @category="MetaKeyword" "annotate";
 
-keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKextract | GlueKexport | GlueKmaybexbgf | GlueKannotate;
+keyword GlueKw = GlueKdiff | GlueKmerge | GlueKinclude | GlueKextract | GlueKgreedy | GlueKexport | GlueKmaybexbgf | GlueKannotate;
 
 syntax GlueCommand
 	= GlueKdiff GlueProduction+ "."
@@ -25,6 +26,7 @@ syntax GlueCommand
 	| GlueKexport GlueKSource GlueLoc "."
 	| GlueKmaybexbgf GlueCommand // plain recursion covers more than we want!
 	| GlueKannotate JSONText "."
+	| GlueKgreedy "{" GlueCommand+ "}" "."
 	;
 
 lexical GlueLoc = "|" GlueNotBar "|";

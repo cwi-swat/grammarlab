@@ -26,7 +26,7 @@ GGrammar extractG(loc z)
 	try
 		m = parse(#Module,trim(readFile(z)));
 	catch:
-		m = parse(#Module,z);
+		m = parse(#start[Module],z).top;
 	GProdList ps = module2decls(m);
 	println("Extraction completed.");
 	return grammar(squeeze([p.lhs | p <- ps]), ps, []);

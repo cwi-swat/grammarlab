@@ -18,6 +18,9 @@ import vis::ParseTree;
 public GLUE glimplode(start[GLUEC] raw) = [glimplode(c) | GlueCommand c <- raw.top.cs];
 public GLUE glimplode(GLUEC raw) = [glimplode(c) | GlueCommand c <- raw.cs];
 
+public GLUEA glimplode((GlueCommand)`<GlueKgreedy _>{<GlueCommand+ cmds>}.`)
+	= greedy([glimplode(c) | GlueCommand c <- cmds]);
+
 public default GLUE glimplode(GlueCommand c)
 {
 	println("Uncovered command: <c>");

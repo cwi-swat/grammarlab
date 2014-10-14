@@ -42,6 +42,14 @@ public GGrammar execute(GGrammar g1, glaction(diff(GGrammar g2)))
 public GGrammar execute(GGrammar g1, glaction(merge(GGrammar g2)))
 	= mergeGs(g1,g2);
 public GGrammar execute(GGrammar g1, glaction(include(loc z))) = execute(g1,loadGlue(z));
+public GGrammar execute(GGrammar g, greedy(GLUE cmds))
+{
+	println("[GLUE] Greedy mode on.");
+	for (GLUEA cmd <- cmds)
+		g = mergeGs(g,execute(g,cmd));
+	println("[GLUE] Greedy mode off.");
+	return g;
+}
 public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 // clone of execute(GGrammar g, xbgf(XCommand cmd))
 {
@@ -53,7 +61,7 @@ public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 	}
 	else
 	{
-		println("[GLUE] XBGF error in maybe <cmd>, proceding without changes.");
+		println("[GLUE] XBGF error in maybe <cmd>, proceeding without changes.");
 		report(r.r);
 		// TODO: annotate with red squigglies
 		return g;
