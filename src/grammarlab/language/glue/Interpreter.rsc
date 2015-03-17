@@ -68,7 +68,11 @@ public GGrammar execute(GGrammar g, glaction(maybexbgf(XCommand cmd)))
 	}
 }
 
-public GGrammar execute(GGrammar g1, sleir(MCommand mcmd)) = grammarlab::transform::SLEIR::mutate(mcmd,g1);
+public GGrammar execute(GGrammar g1, sleir(MCommand mcmd))
+{
+	println("[SLEIR] <mcmd>");
+	return grammarlab::transform::SLEIR::mutate(mcmd,g1);
+}
 
 //TODO: deal with extractors in a separate file
 public GGrammar execute(GGrammar g, glaction(extract(GExternalType t, loc z))) = getG(t,z);

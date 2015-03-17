@@ -3,13 +3,14 @@
 module grammarlab::export::GLUE
 
 import grammarlab::language::glue::abstract::Top;
-// import grammarlab::language::glue::Scope;
+import grammarlab::language::XScope;
 import grammarlab::language::SLEIR;
 import grammarlab::language::GET;
 import grammarlab::language::Grammar;
 import grammarlab::language::X;
 import grammarlab::export::Grammar;
 import grammarlab::export::XBNF;
+import grammarlab::export::XScope;
 import grammarlab::lib::RascalPlus;
 import grammarlab::lib::ebnf::Glue;
 import String;
